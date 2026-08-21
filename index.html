@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fiches de Bande → EPUB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="parchment-frame">
+  <header class="masthead">
+    <p class="eyebrow">École d'Artillerie de Nuln — Registre des Bandes</p>
+    <h1 class="title-blackletter">Fiches de Bande</h1>
+    <p class="subtitle">Convertissez un export JSON BattleScribe en livre EPUB illustré, en français, prêt pour votre liseuse.</p>
+  </header>
+
+  <section id="upload-section" class="ledger-block">
+    <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Déposer ou choisir un fichier JSON">
+      <div class="seal">✒</div>
+      <p class="drop-title">Déposez votre fichier .json ici</p>
+      <p class="drop-sub">ou cliquez pour parcourir vos fichiers</p>
+      <input type="file" id="file-input" accept="application/json,.json" hidden />
+    </div>
+    <p id="file-error" class="error-msg" hidden></p>
+  </section>
+
+  <section id="preview-section" class="ledger-block" hidden>
+    <h2 class="section-title">Bande — <span id="preview-nom"></span></h2>
+    <div class="preview-grid">
+      <div class="stat-card"><span class="stat-label">Coût</span><span class="stat-value" id="preview-gc"></span></div>
+      <div class="stat-card"><span class="stat-label">Valeur de Bande</span><span class="stat-value" id="preview-wr"></span></div>
+      <div class="stat-card"><span class="stat-label">Magot (co)</span><span class="stat-value" id="preview-magot"></span></div>
+      <div class="stat-card"><span class="stat-label">Expérience totale</span><span class="stat-value" id="preview-xp"></span></div>
+    </div>
+
+    <div class="preview-columns">
+      <div>
+        <h3 class="mini-title">Héros (<span id="count-heros"></span>)</h3>
+        <ul id="list-heros" class="preview-list"></ul>
+      </div>
+      <div>
+        <h3 class="mini-title">Hommes de main (<span id="count-hdm"></span>)</h3>
+        <ul id="list-hdm" class="preview-list"></ul>
+      </div>
+    </div>
+
+    <div id="warning-box" class="warning-box" hidden>
+      <strong>Traduction incomplète</strong>
+      <p>Les passages suivants n'ont pas de traduction connue et ont été conservés en anglais dans l'EPUB :</p>
+      <ul id="warning-list"></ul>
+    </div>
+
+    <button id="generate-btn" class="btn-primary">Générer l'EPUB</button>
+    <p id="generate-status" class="status-msg" aria-live="polite"></p>
+  </section>
+
+  <footer class="footer-note">
+    <p>Tout le traitement se fait dans votre navigateur : votre fichier n'est jamais envoyé sur un serveur.</p>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

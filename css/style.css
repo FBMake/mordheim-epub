@@ -1,0 +1,230 @@
+/* ------------------------------------------------------------------
+   Identité visuelle : registre de guilde / parchemin d'artillerie.
+   Palette : crème parchemin, encre noyer, laiton terni, cire rouge.
+   Signature : bord de page façon parchemin déchiré (clip-path),
+   directement inspiré des gabarits "Règles / Bande / Héros" fournis.
+   ------------------------------------------------------------------ */
+
+:root {
+  --parchment: #ede0c8;
+  --parchment-dark: #e0d0ac;
+  --ink: #241d15;
+  --ink-soft: #5a4a30;
+  --brass: #8a6e3d;
+  --gunmetal: #1c232b;
+  --wax: #7a2e2e;
+  --wax-light: #9c4444;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--gunmetal);
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,0.04), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(255,255,255,0.03), transparent 40%);
+  color: var(--ink);
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 18px;
+  min-height: 100vh;
+}
+
+.parchment-frame {
+  max-width: 760px;
+  margin: 3rem auto;
+  padding: 3rem 3.2rem 2.5rem;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0) 12%),
+    var(--parchment);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+  position: relative;
+  clip-path: polygon(
+    0.5% 2%, 4% 0%, 12% 1%, 22% 0.3%, 35% 1.2%, 50% 0%, 65% 1%, 78% 0.2%, 90% 1%, 98% 0%, 100% 3%,
+    99.3% 15%, 100% 30%, 99% 45%, 100% 60%, 99.4% 75%, 100% 88%, 99% 97%,
+    92% 100%, 80% 99%, 68% 100%, 55% 99.2%, 40% 100%, 25% 99%, 13% 100%, 3% 99%, 0% 96%,
+    1% 82%, 0% 68%, 1.2% 55%, 0% 40%, 0.8% 25%, 0% 12%
+  );
+}
+
+.masthead {
+  text-align: center;
+  margin-bottom: 2.2rem;
+  border-bottom: 3px double var(--brass);
+  padding-bottom: 1.4rem;
+}
+
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--wax);
+  margin: 0 0 0.6rem;
+}
+
+.title-blackletter {
+  font-family: "UnifrakturCook", "EB Garamond", serif;
+  font-size: 3.4rem;
+  line-height: 1;
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+  text-shadow: 1px 1px 0 rgba(138,110,61,0.35);
+}
+
+.subtitle {
+  color: var(--ink-soft);
+  font-style: italic;
+  max-width: 46ch;
+  margin: 0 auto;
+}
+
+.ledger-block { margin-bottom: 2.2rem; }
+
+.dropzone {
+  border: 2px dashed var(--brass);
+  border-radius: 2px;
+  padding: 2.6rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(255,255,255,0.25);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.dropzone:hover, .dropzone:focus-visible, .dropzone.dragover {
+  background: rgba(255,255,255,0.5);
+  border-color: var(--wax);
+  outline: none;
+}
+.seal {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  border-radius: 50%;
+  background: var(--wax);
+  color: var(--parchment);
+  font-size: 1.3rem;
+  margin-bottom: 0.9rem;
+}
+.drop-title { font-weight: 600; font-size: 1.15rem; margin: 0.2rem 0; }
+.drop-sub { color: var(--ink-soft); margin: 0; font-size: 0.95rem; }
+
+.error-msg {
+  color: #fff;
+  background: var(--wax);
+  padding: 0.7rem 1rem;
+  margin-top: 0.9rem;
+  border-radius: 2px;
+}
+
+.section-title {
+  font-family: "UnifrakturCook", serif;
+  font-size: 1.8rem;
+  border-bottom: 1px solid var(--brass);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+  margin-bottom: 1.6rem;
+}
+.stat-card {
+  background: rgba(255,255,255,0.35);
+  border: 1px solid var(--brass);
+  padding: 0.7rem 0.5rem;
+  text-align: center;
+}
+.stat-label {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.25rem;
+}
+.stat-value {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--wax);
+}
+
+.preview-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.6rem;
+}
+.mini-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--brass);
+  padding-bottom: 0.3rem;
+}
+.preview-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+.preview-list li {
+  padding: 0.3rem 0;
+  border-bottom: 1px dotted rgba(90,74,48,0.35);
+}
+
+.warning-box {
+  background: rgba(122,46,46,0.08);
+  border: 1px solid var(--wax);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.4rem;
+  font-size: 0.92rem;
+}
+.warning-box ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  background: var(--wax);
+  color: var(--parchment);
+  border: none;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-primary:hover { background: var(--wax-light); }
+.btn-primary:disabled { background: #a08e6a; cursor: not-allowed; }
+
+.status-msg {
+  text-align: center;
+  color: var(--ink-soft);
+  margin-top: 0.8rem;
+  min-height: 1.4em;
+}
+
+.footer-note {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--brass);
+  padding-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .parchment-frame { padding: 2rem 1.2rem; margin: 1rem; }
+  .title-blackletter { font-size: 2.4rem; }
+  .preview-grid { grid-template-columns: repeat(2, 1fr); }
+  .preview-columns { grid-template-columns: 1fr; }
+}

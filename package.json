@@ -1,0 +1,14 @@
+{
+  "name": "mordheim-epub",
+  "version": "1.0.0",
+  "description": "G\u00e9n\u00e8re un EPUB (fiches de bande, h\u00e9ros, hommes de main) en fran\u00e7ais \u00e0 partir d'un export JSON BattleScribe.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test:parser": "node test/test-parser.mjs",
+    "test:epub": "node test/test-epub.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
