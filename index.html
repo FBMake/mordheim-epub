@@ -13,7 +13,7 @@
 
 <div class="parchment-frame">
   <header class="masthead">
-    <p class="eyebrow">École d'Artillerie de Nuln — Registre des Bandes</p>
+    <p class="eyebrow">Mordheim — Registre des Bandes</p>
     <h1 class="title-blackletter">Fiches de Bande</h1>
     <p class="subtitle">Convertissez un export JSON BattleScribe en livre EPUB illustré, en français, prêt pour votre liseuse.</p>
   </header>
@@ -26,6 +26,20 @@
       <input type="file" id="file-input" accept="application/json,.json" hidden />
     </div>
     <p id="file-error" class="error-msg" hidden></p>
+  </section>
+
+  <section id="perso-upload-section" class="ledger-block" hidden>
+    <div id="perso-dropzone" class="dropzone dropzone-secondary" tabindex="0" role="button" aria-label="Déposer ou choisir un fichier de personnalisation">
+      <p class="drop-title">Fichier de personnalisation (optionnel)</p>
+      <p class="drop-sub">Déposez ici le fichier « …-personnalisation.json » téléchargé la dernière fois, pour retrouver noms, bios et photos.</p>
+      <input type="file" id="perso-file-input" accept="application/json,.json" hidden />
+    </div>
+    <p id="perso-loaded-msg" class="status-msg" hidden></p>
+    <div id="orphans-box" class="warning-box" hidden>
+      <strong>Personnalisations orphelines</strong>
+      <p>Ces personnalisations ne correspondent à aucune figurine du fichier chargé (figurine supprimée depuis ?). Elles sont conservées et seront réincluses dans le prochain fichier de personnalisation téléchargé.</p>
+      <ul id="orphans-list"></ul>
+    </div>
   </section>
 
   <section id="preview-section" class="ledger-block" hidden>
@@ -54,7 +68,11 @@
       <ul id="warning-list"></ul>
     </div>
 
-    <button id="generate-btn" class="btn-primary">Générer l'EPUB</button>
+    <h2 class="section-title">Personnaliser les figurines</h2>
+    <p class="hint-text">Nom, bio et photo sont optionnels. Ils seront sauvegardés dans un fichier à part (le JSON New Recruit n'est jamais modifié) — pensez à télécharger ce fichier après chaque session pour ne rien perdre.</p>
+    <div id="perso-cards" class="perso-cards"></div>
+
+    <button id="generate-btn" class="btn-primary">Générer l'EPUB + le fichier de personnalisation</button>
     <p id="generate-status" class="status-msg" aria-live="polite"></p>
   </section>
 
@@ -63,7 +81,7 @@
   </footer>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/vendor/jszip.min.js"></script>
 <script type="module" src="js/app.js"></script>
 </body>
 </html>

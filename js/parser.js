@@ -218,7 +218,9 @@ function collectSkills(selections, ruleDict, report, out) {
 
 function extractCharacterCard(sel, ruleDict, report) {
   const card = {
+    id: sel.id, // identifiant stable BattleScribe, utilisé pour la personnalisation
     nom: translateName(sel.name),
+    typeOrigine: translateName(sel.name), // conservé même si l'utilisateur renomme la figurine
     coutGc: findCost(sel.costs, "points"),
     coutWr: findCost(sel.costs, "wb-rating"),
     xp: 0,
@@ -228,6 +230,11 @@ function extractCharacterCard(sel, ruleDict, report) {
     competences: [],
     reglesSpeciales: (sel.rules || []).map((r) => lookupRule(ruleDict, r.name)),
     augmentations: [],
+    // Champs de personnalisation, remplis ensuite par personalization.js
+    // (jamais lus depuis le JSON BattleScribe, qui ne les contient pas).
+    nomPersonnalise: "",
+    bio: "",
+    photo: null, // data URL (JPEG compressé) ou null
   };
   walkModelSelections(sel.selections || [], ruleDict, report, card);
   return card;

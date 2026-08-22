@@ -1,9 +1,18 @@
 /**
  * epub-builder.js
  * ---------------
- * Construit un fichier .epub (EPUB 3, compatible envoi vers Kindle via
- * "Envoyer vers Kindle" / Amazon convertit l'EPUB en AZW3 à la réception)
- * à partir du modèle normalisé produit par parser.js.
+ * Construit un fichier .epub à partir du modèle normalisé (parser.js)
+ * éventuellement enrichi par personalization.js (nom, bio, photo par
+ * figurine).
+ *
+ * Organisation retenue avec l'utilisateur :
+ *   1. Bande       – infos générales + noms des règles de bande (sans
+ *                     description, renvoi vers le chapitre Règles)
+ *   2. Héros       – fiches (equip + noms de compétences/règles)
+ *   3. Hommes de main – idem
+ *   4. Règles      – compendium : TOUTES les règles/compétences citées
+ *                     dans l'ouvrage, une seule fois chacune, triées par
+ *                     ordre alphabétique.
  *
  * Dépend de la variable globale JSZip (chargée via CDN dans index.html).
  */
@@ -21,6 +30,10 @@ function nl2p(text) {
     .filter(Boolean)
     .map((p) => `<p>${esc(p)}</p>`)
     .join("\n");
+}
+
+function frSort(a, b) {
+  return a.localeCompare(b, "fr", { sensitivity: "base" });
 }
 
 const CSS = `
@@ -54,11 +67,29 @@ h2.card-name {
   color: #5a4a30;
   margin: 0 0 0.6em 0;
 }
+.card-header {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 0.4em;
+}
+.card-photo {
+  float: right;
+  width: 30%;
+  max-width: 140px;
+  margin: 0 0 0.6em 0.8em;
+  border: 1px solid #8a6e3d;
+}
+.card-bio {
+  font-style: italic;
+  color: #3a2f20;
+  margin: 0.3em 0 0.8em 0;
+}
 table.stats {
   width: 100%;
   border-collapse: collapse;
   margin: 0.6em 0 1em 0;
   font-size: 0.95em;
+  clear: both;
 }
 table.stats th, table.stats td {
   border: 1px solid #8a6e3d;
@@ -78,10 +109,15 @@ table.stats th {
   margin-top: 0.9em;
   margin-bottom: 0.2em;
 }
-ul.equip-list, ul.skill-list {
+ul.equip-list, ul.skill-list, ul.tag-list {
   margin: 0.2em 0 0.6em 0;
   padding-left: 1.2em;
 }
+ul.tag-list { list-style: none; padding-left: 0; }
+ul.tag-list li {
+  display: inline;
+}
+ul.tag-list li:not(:last-child)::after { content: " · "; }
 .rule-block {
   margin-bottom: 0.9em;
   padding: 0.5em 0.8em;
@@ -110,42 +146,49 @@ hr.sep {
 }
 `;
 
-function characterCardHtml(card) {
-  const equip = card.equipement.length
-    ? `<div class="section-label">Équipement</div><ul class="equip-list">${card.equipement
-        .map((e) => {
-          const details = e.details
-            .filter((d) => d.value)
-            .map((d) => `${esc(d.label)}\u00a0: ${esc(d.value)}`)
-            .join(" — ");
-          return `<li><strong>${esc(e.nom)}</strong>${
-            details ? ` <em>(${details})</em>` : ""
-          }</li>`;
-        })
-        .join("\n")}</ul>`
+function equipmentListHtml(equipement) {
+  if (!equipement.length) return "";
+  return `<div class="section-label">Équipement</div><ul class="equip-list">${equipement
+    .map((e) => {
+      const details = e.details
+        .filter((d) => d.value)
+        .map((d) => `${esc(d.label)}\u00a0: ${esc(d.value)}`)
+        .join(" — ");
+      return `<li><strong>${esc(e.nom)}</strong>${
+        details ? ` <em>(${details})</em>` : ""
+      }</li>`;
+    })
+    .join("\n")}</ul>`;
+}
+
+// Les compétences/règles ne sont plus détaillées ici : simple liste de
+// noms, renvoyant au chapitre "Règles" en fin d'ouvrage (décision prise
+// avec l'utilisateur pour éviter les doublons de texte).
+function nameTagsHtml(label, items) {
+  if (!items.length) return "";
+  const uniqueNames = [...new Set(items.map((i) => i.name))];
+  return `<div class="section-label">${esc(label)}</div><ul class="tag-list">${uniqueNames
+    .map((n) => `<li>${esc(n)}</li>`)
+    .join("")}</ul>`;
+}
+
+function characterCardHtml(card, imageFileByCardId) {
+  const displayName = card.nomPersonnalise || card.nom;
+  const showOriginType =
+    card.nomPersonnalise && card.nomPersonnalise !== card.typeOrigine;
+
+  const photoFile = imageFileByCardId.get(card.id);
+  const photoHtml = photoFile
+    ? `<img class="card-photo" src="images/${photoFile}" alt="Portrait de ${esc(
+        displayName
+      )}"/>`
     : "";
 
-  const comp = card.competences.length
-    ? `<div class="section-label">Compétences</div><ul class="skill-list">${card.competences
-        .map(
-          (c) =>
-            `<li><strong>${esc(c.name)}</strong>${
-              c.description ? ` — ${esc(c.description)}` : ""
-            }</li>`
-        )
-        .join("\n")}</ul>`
-    : "";
+  const bioHtml = card.bio ? `<p class="card-bio">${esc(card.bio)}</p>` : "";
 
-  const regles = card.reglesSpeciales.length
-    ? `<div class="section-label">Règles spéciales</div>${card.reglesSpeciales
-        .map(
-          (r) =>
-            `<div class="rule-block"><h3>${esc(r.name)}</h3>${nl2p(
-              r.description
-            )}</div>`
-        )
-        .join("\n")}`
-    : "";
+  const equip = equipmentListHtml(card.equipement);
+  const comp = nameTagsHtml("Compétences", card.competences);
+  const regles = nameTagsHtml("Règles spéciales", card.reglesSpeciales);
 
   const aug = card.augmentations.length
     ? `<div class="section-label">Augmentations</div><p>${card.augmentations
@@ -153,15 +196,21 @@ function characterCardHtml(card) {
         .join(", ")}</p>`
     : "";
 
-  const promue = card.promue
-    ? `<p><em>Figurine promue.</em></p>`
-    : "";
+  const promue = card.promue ? `<p><em>Figurine promue.</em></p>` : "";
 
   const s = card.stats;
   return `
 <div class="card">
-  <h2 class="card-name">${esc(card.nom)}</h2>
-  <p class="card-type">${card.coutGc} po · Valeur de Bande ${card.coutWr} · Expérience ${card.xp}</p>
+  <div class="card-header">
+    ${photoHtml}
+    <h2 class="card-name">${esc(displayName)}</h2>
+    <p class="card-type">${
+      showOriginType ? `${esc(card.typeOrigine)} · ` : ""
+    }${card.coutGc} po · Valeur de Bande ${card.coutWr} · Expérience ${
+    card.xp
+  }</p>
+    ${bioHtml}
+  </div>
   <table class="stats">
     <tr><th>M</th><th>CC</th><th>CT</th><th>F</th><th>E</th><th>PV</th><th>I</th><th>A</th><th>Cd</th></tr>
     <tr><td>${esc(s.M)}</td><td>${esc(s.CC)}</td><td>${esc(s.CT)}</td><td>${esc(
@@ -195,29 +244,29 @@ function chapterHtml(title, bodyHtml, lang = "fr") {
 }
 
 /**
- * Construit les 4 chapitres XHTML à partir du modèle normalisé.
+ * Rassemble, sans doublon et triées par ordre alphabétique, toutes les
+ * règles/compétences citées n'importe où dans le modèle (règles de
+ * bande + compétences et règles spéciales de chaque figurine).
  */
-function buildChapters(model) {
+function buildCompendium(model) {
+  const byName = new Map();
+  const add = (r) => {
+    if (!r || !r.name) return;
+    if (!byName.has(r.name)) byName.set(r.name, r);
+  };
+  model.reglesGenerales.forEach(add);
+  [...model.heros, ...model.hommesDeMain].forEach((card) => {
+    card.competences.forEach(add);
+    card.reglesSpeciales.forEach(add);
+  });
+  return [...byName.values()].sort((a, b) => frSort(a.name, b.name));
+}
+
+function buildChapters(model, imageFileByCardId) {
   const chapters = [];
 
-  // 1) Règles
-  const reglesBody =
-    model.reglesGenerales
-      .map(
-        (r) =>
-          `<div class="rule-block"><h3>${esc(r.name)}</h3>${nl2p(
-            r.description
-          )}</div>`
-      )
-      .join("\n") || "<p><em>Aucune règle générale trouvée.</em></p>";
-  chapters.push({
-    id: "regles",
-    file: "regles.xhtml",
-    title: "Règles",
-    html: chapterHtml("Règles", reglesBody),
-  });
-
-  // 2) Bande
+  // 1) Bande
+  const reglesBandeNoms = model.reglesGenerales.map((r) => r.name);
   const bandeBody = `
 <p class="meta-line">${esc(model.meta.catalogue)}</p>
 <div class="section-label">Nom de la bande</div>
@@ -234,6 +283,13 @@ function buildChapters(model) {
 <p>${model.meta.gc} po — Valeur de Bande officielle\u00a0: ${
     model.meta.warbandRating
   }</p>
+${
+  reglesBandeNoms.length
+    ? `<div class="section-label">Règles de bande</div><ul class="tag-list">${reglesBandeNoms
+        .map((n) => `<li>${esc(n)}</li>`)
+        .join("")}</ul><p><em>Voir le détail de chaque règle dans le chapitre « Règles » en fin d'ouvrage.</em></p>`
+    : ""
+}
 `;
   chapters.push({
     id: "bande",
@@ -242,9 +298,11 @@ function buildChapters(model) {
     html: chapterHtml("Bande", bandeBody),
   });
 
-  // 3) Héros
+  // 2) Héros
   const herosBody =
-    model.heros.map(characterCardHtml).join('\n<hr class="sep"/>\n') ||
+    model.heros
+      .map((c) => characterCardHtml(c, imageFileByCardId))
+      .join('\n<hr class="sep"/>\n') ||
     "<p><em>Aucun héros dans cette bande.</em></p>";
   chapters.push({
     id: "heros",
@@ -253,15 +311,35 @@ function buildChapters(model) {
     html: chapterHtml("Héros", herosBody),
   });
 
-  // 4) Hommes de main
+  // 3) Hommes de main
   const hdmBody =
-    model.hommesDeMain.map(characterCardHtml).join('\n<hr class="sep"/>\n') ||
+    model.hommesDeMain
+      .map((c) => characterCardHtml(c, imageFileByCardId))
+      .join('\n<hr class="sep"/>\n') ||
     "<p><em>Aucun homme de main dans cette bande.</em></p>";
   chapters.push({
     id: "hommes-de-main",
     file: "hommes-de-main.xhtml",
     title: "Hommes de main",
     html: chapterHtml("Hommes de main", hdmBody),
+  });
+
+  // 4) Règles (compendium, en dernier, sans doublon)
+  const compendium = buildCompendium(model);
+  const reglesBody =
+    compendium
+      .map(
+        (r) =>
+          `<div class="rule-block"><h3>${esc(r.name)}</h3>${nl2p(
+            r.description
+          )}</div>`
+      )
+      .join("\n") || "<p><em>Aucune règle référencée.</em></p>";
+  chapters.push({
+    id: "regles",
+    file: "regles.xhtml",
+    title: "Règles",
+    html: chapterHtml("Règles", reglesBody),
   });
 
   return chapters;
@@ -275,9 +353,15 @@ function uuid() {
   });
 }
 
+function dataUrlToBase64(dataUrl) {
+  const comma = dataUrl.indexOf(",");
+  return comma === -1 ? dataUrl : dataUrl.slice(comma + 1);
+}
+
 /**
  * Construit le Blob .epub complet.
- * @param {object} model - modèle normalisé (voir parser.js)
+ * @param {object} model - modèle normalisé (voir parser.js), avec ou
+ *   sans personnalisation appliquée (card.nomPersonnalise/bio/photo)
  * @returns {Promise<Blob>}
  */
 export async function buildEpub(model) {
@@ -288,7 +372,18 @@ export async function buildEpub(model) {
   }
   const zip = new JSZip();
   const bookId = `urn:uuid:${uuid()}`;
-  const chapters = buildChapters(model);
+
+  // Prépare les images (une par figurine ayant une photo) et leur nom
+  // de fichier dans l'EPUB.
+  const imageFileByCardId = new Map();
+  const allCards = [...model.heros, ...model.hommesDeMain];
+  for (const card of allCards) {
+    if (card.photo) {
+      imageFileByCardId.set(card.id, `${card.id}.jpg`);
+    }
+  }
+
+  const chapters = buildChapters(model, imageFileByCardId);
 
   // mimetype DOIT être le premier fichier, non compressé
   zip.file("mimetype", "application/epub+zip", { compression: "STORE" });
@@ -309,10 +404,26 @@ export async function buildEpub(model) {
     oebps.file(ch.file, ch.html);
   }
 
-  const manifestItems = chapters
+  const imagesFolder = oebps.folder("images");
+  for (const card of allCards) {
+    const filename = imageFileByCardId.get(card.id);
+    if (filename) {
+      imagesFolder.file(filename, dataUrlToBase64(card.photo), {
+        base64: true,
+      });
+    }
+  }
+
+  const chapterManifestItems = chapters
     .map(
       (ch) =>
         `<item id="${ch.id}" href="${ch.file}" media-type="application/xhtml+xml"/>`
+    )
+    .join("\n    ");
+  const imageManifestItems = [...imageFileByCardId.entries()]
+    .map(
+      ([cardId, filename], i) =>
+        `<item id="img-${i}" href="images/${filename}" media-type="image/jpeg"/>`
     )
     .join("\n    ");
   const spineItems = chapters
@@ -344,7 +455,8 @@ export async function buildEpub(model) {
       .replace(/\.\d+Z$/, "Z")}</meta>
   </metadata>
   <manifest>
-    ${manifestItems}
+    ${chapterManifestItems}
+    ${imageManifestItems}
     <item id="css" href="style.css" media-type="text/css"/>
     <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
     <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>

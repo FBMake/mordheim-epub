@@ -32,15 +32,61 @@ JS sont chargés en modules ES natifs directement par le navigateur.
 ## Structure du projet
 
 ```
-index.html          Interface (upload, aperçu, bouton de génération)
-css/style.css        Identité visuelle (parchemin, gothique, ledger)
-js/translations.js   Dictionnaire de traduction EN → FR
-js/parser.js         JSON BattleScribe → modèle normalisé
-js/epub-builder.js   Modèle normalisé → fichier .epub (via JSZip)
-js/app.js            Câblage de l'interface
-sample-data/         Exemple de roster pour les tests
-test/                Scripts Node de test (parseur + génération EPUB)
+index.html            Interface (upload roster + personnalisation, aperçu, génération)
+css/style.css          Identité visuelle (parchemin, gothique, ledger)
+js/translations.js     Dictionnaire de traduction EN → FR
+js/parser.js           JSON BattleScribe → modèle normalisé
+js/personalization.js  Personnalisation (nom/bio/photo) + fichier compagnon
+js/epub-builder.js     Modèle normalisé → fichier .epub (via JSZip)
+js/app.js              Câblage de l'interface
+js/vendor/jszip.min.js JSZip embarqué (pas d'appel à un CDN externe)
+sample-data/           Exemple de roster pour les tests
+test/                  Scripts Node de test (parseur, epub, personnalisation)
 ```
+
+## Personnaliser un personnage (nom, bio, photo)
+
+Le JSON exporté par New Recruit ne contient ni nom personnalisé, ni bio,
+ni photo — ces informations vivent donc dans un **fichier compagnon**
+séparé (`<bande>-personnalisation.json`), jamais dans le JSON
+BattleScribe (qui n'est jamais modifié).
+
+Fonctionnement :
+
+1. Chargez votre export JSON New Recruit.
+2. Un panneau "Personnaliser les figurines" apparaît sous l'aperçu :
+   pour chaque héros/homme de main, vous pouvez saisir un nom, une bio,
+   et déposer une photo (redimensionnée et compressée automatiquement
+   en JPEG ~500px pour rester léger).
+3. Cliquez sur **Générer l'EPUB + le fichier de personnalisation** :
+   deux fichiers sont téléchargés — l'EPUB, et le fichier compagnon.
+   **Gardez ce dernier** quelque part (même dossier que vos exports New
+   Recruit, par exemple).
+4. La prochaine fois : chargez le nouvel export JSON New Recruit, PUIS
+   le fichier de personnalisation dans la zone dédiée juste en dessous
+   — noms, bios et photos sont automatiquement réappliqués.
+
+### Association figurine ↔ personnalisation
+
+Chaque personnalisation est associée à l'identifiant interne (`id`)
+stable généré par New Recruit pour cette figurine, tant que vous ne la
+supprimez/recréez pas. Si une personnalisation ne retrouve plus sa
+figurine (ex. figurine supprimée), l'application vous prévient dans un
+encart "Personnalisations orphelines" **et les conserve** dans le
+prochain fichier téléchargé plutôt que de les perdre silencieusement.
+
+## Organisation de l'EPUB (mise à jour)
+
+Pour éviter les répétitions du texte des règles, la structure a changé :
+
+1. **Bande** — infos générales + noms des règles de bande (sans le
+   détail, renvoi vers le chapitre Règles)
+2. **Héros** — fiches avec nom personnalisé, photo, bio, équipement,
+   et simple liste des noms de compétences/règles (sans description)
+3. **Hommes de main** — idem
+4. **Règles** — un seul chapitre en fin d'ouvrage rassemblant **toutes**
+   les règles et compétences citées dans le livre, chacune une seule
+   fois, triées par ordre alphabétique.
 
 ## Comment fonctionne la traduction
 
@@ -74,9 +120,6 @@ Ces points n'ont volontairement pas été décidés/implémentés sans vous
 en parler d'abord :
 
 - Pas de gestion de plusieurs bandes / plusieurs fichiers à la fois.
-- Pas de champ "Bio" ni de portrait (absents du JSON fourni — vos
-  gabarits ont des cases prévues pour ça, mais rien à y mettre pour
-  l'instant).
 - Le nom du type de bande affiché dans le chapitre "Bande" reprend le
   nom du catalogue BattleScribe (`Gunnery School Of Nuln (1b)`) : dites-moi
   si vous préférez un intitulé différent.
@@ -84,6 +127,14 @@ en parler d'abord :
   d'équivalent trouvé dans le JSON fourni (probablement une réserve
   vide côté association BattleScribe) — elle n'apparaît donc pas dans
   l'EPUB. Signalez-moi où la trouver dans le JSON si elle existe.
+- Les polices "UnifrakturCook"/"EB Garamond"/"JetBrains Mono" sont
+  chargées depuis Google Fonts (seul appel réseau externe restant :
+  purement décoratif, ne transmet aucune donnée de votre bande, et le
+  site fonctionne même si ce chargement échoue). JSZip, lui, est
+  embarqué localement (`js/vendor/`) pour éviter toute dépendance à un
+  CDN.
+- Le fichier de personnalisation n'est pas chiffré : ne l'hébergez pas
+  publiquement si vos photos/bios sont sensibles.
 
 ## Tests locaux (optionnel, nécessite Node.js)
 
@@ -91,4 +142,11 @@ en parler d'abord :
 npm install
 npm run test:parser   # affiche le modèle normalisé en JSON
 npm run test:epub     # génère test-output.epub à la racine
+node test/test-personalization.mjs   # cycle complet personnalisation/orpheline
 ```
+
+Le projet a aussi été testé de bout en bout dans un vrai navigateur
+(Chromium via Playwright) : upload du roster, personnalisation d'une
+figurine (nom, bio, photo), génération des deux fichiers, ré-import du
+fichier de personnalisation, et détection d'une personnalisation
+orpheline.
