@@ -18,17 +18,6 @@ envoyé vers un serveur, la génération de l'EPUB se fait en local avec
 5. Envoyez-le à votre liseuse (ex. "Envoyer vers Kindle", ou copie
    directe si votre liseuse lit l'EPUB nativement).
 
-## Déploiement sur GitHub Pages
-
-1. Poussez ce dossier sur un dépôt GitHub.
-2. Dans les paramètres du dépôt → **Pages** → source = branche
-   principale, dossier `/ (root)`.
-3. L'application sera disponible à
-   `https://<votre-compte>.github.io/<nom-du-depot>/`.
-
-Aucune étape de build n'est nécessaire (pas de bundler) : les fichiers
-JS sont chargés en modules ES natifs directement par le navigateur.
-
 ## Structure du projet
 
 ```
@@ -136,14 +125,6 @@ en parler d'abord :
 - Le fichier de personnalisation n'est pas chiffré : ne l'hébergez pas
   publiquement si vos photos/bios sont sensibles.
 
-## Tests locaux (optionnel, nécessite Node.js)
-
-```bash
-npm install
-npm run test:parser   # affiche le modèle normalisé en JSON
-npm run test:epub     # génère test-output.epub à la racine
-node test/test-personalization.mjs   # cycle complet personnalisation/orpheline
-```
 
 Le projet a aussi été testé de bout en bout dans un vrai navigateur
 (Chromium via Playwright) : upload du roster, personnalisation d'une
