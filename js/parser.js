@@ -130,17 +130,13 @@ function extractEquipmentItem(sel, report) {
       if (!c.name) continue;
       let text = c.$text || "";
       if (c.name === "Spéciale" || c.name === "Special") {
-        const known =
-          WEAPON_SPECIAL_TRANSLATIONS[sel.name] ||
-          WEAPON_SPECIAL_TRANSLATIONS[baseName];
-        if (known) {
-          text = known;
-        } else if (text && !isFrenchText(text)) {
-          markUntranslated(report, `Règle spéciale de l'objet « ${sel.name} »`);
-        }
-      } else {
-        text = translateValue(text);
+        const known = WEAPON_SPECIAL_TRANSLATIONS[sel.name] || WEAPON_SPECIAL_TRANSLATIONS[baseName];
+        if (known) { text = known; }
+        else if (text && !isFrenchText(text)) { markUntranslated(report, `Règle spéciale de l'objet « ${sel.name} »`); }
+        if (text) reglesArmesOut.push({ name: translateName(sel.name), description: text });
+        continue; // ne va plus dans item.details
       }
+      text = translateValue(text);
       item.details.push({ label: translateName(c.name), value: text });
     }
   }
@@ -158,7 +154,7 @@ function walkModelSelections(selections, ruleDict, report, out) {
 
     if (name === "Équipement") {
       for (const eq of sel.selections || []) {
-        out.equipement.push(extractEquipmentItem(eq, report));
+        out.equipement.push(extractEquipmentItem(eq, report, out.reglesArmes)); // +out.reglesArmes
       }
       continue;
     }
@@ -187,6 +183,11 @@ function walkModelSelections(selections, ruleDict, report, out) {
 
     if (sel.group === "Characteristic Increases") {
       out.augmentations.push(normalizeStatBump(name));
+      continue;
+    }
+
+    if (INJURY_CONTAINER_RE.test(name)) {
+      collectInjuries(sel.selections || [], ruleDict, out.blessures);
       continue;
     }
 
@@ -228,6 +229,8 @@ function extractCharacterCard(sel, ruleDict, report) {
     stats: extractStats(sel),
     equipement: [],
     competences: [],
+    reglesArmes: [],
+    blessures: [],
     reglesSpeciales: (sel.rules || []).map((r) => lookupRule(ruleDict, r.name)),
     augmentations: [],
     // Champs de personnalisation, remplis ensuite par personalization.js
@@ -343,4 +346,16 @@ export function parseRoster(json) {
   model.nonTraduits = Array.from(report.untranslated);
 
   return model;
+}
+
+
+
+function collectInjuries(selections, ruleDict, out) {
+  for (const sel of selections || []) {
+    if (Array.isArray(sel.rules) && sel.rules.length) {
+      for (const r of sel.rules) out.push(lookupRule(ruleDict, r.name));
+    } else if (Array.isArray(sel.selections) && sel.selections.length) {
+      collectInjuries(sel.selections, ruleDict, out);
+    }
+  }
 }

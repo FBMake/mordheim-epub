@@ -135,6 +135,8 @@ ul.tag-list li:not(:last-child)::after { content: " · "; }
 }
 .card {
   page-break-inside: avoid;
+  page-break-after: always;
+  break-after: page;
   margin-bottom: 2em;
   border: 1px solid #8a6e3d;
   padding: 0.8em 1em;
@@ -176,7 +178,11 @@ function characterCardHtml(card, imageFileByCardId) {
   const displayName = card.nomPersonnalise || card.nom;
   const showOriginType =
     card.nomPersonnalise && card.nomPersonnalise !== card.typeOrigine;
-
+  const blessures = card.blessures.length
+    ? `<div class="section-label">Blessures</div>${card.blessures.map(
+        (b) => `<div class="rule-block"><h3>${esc(b.name)}</h3>${nl2p(b.description)}</div>`
+      ).join("\n")}`
+    : "";
   const photoFile = imageFileByCardId.get(card.id);
   const photoHtml = photoFile
     ? `<img class="card-photo" src="images/${photoFile}" alt="Portrait de ${esc(
@@ -187,8 +193,6 @@ function characterCardHtml(card, imageFileByCardId) {
   const bioHtml = card.bio ? `<p class="card-bio">${esc(card.bio)}</p>` : "";
 
   const equip = equipmentListHtml(card.equipement);
-  const comp = nameTagsHtml("Compétences", card.competences);
-  const regles = nameTagsHtml("Règles spéciales", card.reglesSpeciales);
 
   const aug = card.augmentations.length
     ? `<div class="section-label">Augmentations</div><p>${card.augmentations
@@ -221,8 +225,7 @@ function characterCardHtml(card, imageFileByCardId) {
   </table>
   ${promue}
   ${equip}
-  ${comp}
-  ${regles}
+  ${blessures}   
   ${aug}
 </div>`;
 }
@@ -248,18 +251,18 @@ function chapterHtml(title, bodyHtml, lang = "fr") {
  * règles/compétences citées n'importe où dans le modèle (règles de
  * bande + compétences et règles spéciales de chaque figurine).
  */
-function buildCompendium(model) {
-  const byName = new Map();
-  const add = (r) => {
-    if (!r || !r.name) return;
-    if (!byName.has(r.name)) byName.set(r.name, r);
+function buildCompendiums(model) {
+  const dedupe = (list) => {
+    const byName = new Map();
+    for (const r of list) if (r && r.name && !byName.has(r.name)) byName.set(r.name, r);
+    return [...byName.values()].sort((a, b) => frSort(a.name, b.name));
   };
-  model.reglesGenerales.forEach(add);
-  [...model.heros, ...model.hommesDeMain].forEach((card) => {
-    card.competences.forEach(add);
-    card.reglesSpeciales.forEach(add);
-  });
-  return [...byName.values()].sort((a, b) => frSort(a.name, b.name));
+  const allCards = [...model.heros, ...model.hommesDeMain];
+  return {
+    armes: dedupe(allCards.flatMap((c) => c.reglesArmes)),
+    speciales: dedupe(allCards.flatMap((c) => [...c.competences, ...c.reglesSpeciales])),
+    equipe: dedupe(model.reglesGenerales),
+  };
 }
 
 function buildChapters(model, imageFileByCardId) {
@@ -325,22 +328,32 @@ ${
   });
 
   // 4) Règles (compendium, en dernier, sans doublon)
-  const compendium = buildCompendium(model);
-  const reglesBody =
-    compendium
-      .map(
-        (r) =>
-          `<div class="rule-block"><h3>${esc(r.name)}</h3>${nl2p(
-            r.description
-          )}</div>`
-      )
-      .join("\n") || "<p><em>Aucune règle référencée.</em></p>";
-  chapters.push({
-    id: "regles",
-    file: "regles.xhtml",
-    title: "Règles",
-    html: chapterHtml("Règles", reglesBody),
-  });
+  const { armes, speciales, equipe } = buildCompendiums(model);
+  const section = (titre, items) =>
+    `<h2 class="card-name">${esc(titre)}</h2>${
+      items.length ? items.map(ruleBlockHtml).join("\n") : "<p><em>Aucune règle référencée.</em></p>"
+    }`;
+  const reglesBody = [
+    section("Règles des Armes", armes),
+    section("Règles Spéciales", speciales),
+    section("Règles d'Équipe", equipe),
+  ].join('\n<hr class="sep"/>\n');
+  // const compendium = buildCompendium(model);
+  // const reglesBody =
+  //   compendium
+  //     .map(
+  //       (r) =>
+  //         `<div class="rule-block"><h3>${esc(r.name)}</h3>${nl2p(
+  //           r.description
+  //         )}</div>`
+  //     )
+  //     .join("\n") || "<p><em>Aucune règle référencée.</em></p>";
+  // chapters.push({
+  //   id: "regles",
+  //   file: "regles.xhtml",
+  //   title: "Règles",
+  //   html: chapterHtml("Règles", reglesBody),
+  // });
 
   return chapters;
 }
