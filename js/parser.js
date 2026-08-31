@@ -120,7 +120,7 @@ function extractStats(selection) {
   return stats;
 }
 
-function extractEquipmentItem(sel, report) {
+function extractEquipmentItem(sel, report, reglesArmesOut) {
   const item = { nom: translateName(sel.name), details: [] };
   const profile = (sel.profiles || [])[0];
   // "Dague gratuite" doit chercher la traduction sous "Dague", etc.
@@ -130,11 +130,20 @@ function extractEquipmentItem(sel, report) {
       if (!c.name) continue;
       let text = c.$text || "";
       if (c.name === "Spéciale" || c.name === "Special") {
-        const known = WEAPON_SPECIAL_TRANSLATIONS[sel.name] || WEAPON_SPECIAL_TRANSLATIONS[baseName];
-        if (known) { text = known; }
-        else if (text && !isFrenchText(text)) { markUntranslated(report, `Règle spéciale de l'objet « ${sel.name} »`); }
-        if (text) reglesArmesOut.push({ name: translateName(sel.name), description: text });
-        continue; // ne va plus dans item.details
+        // La règle d'arme part désormais dans le chapitre "Règles des
+        // armes" en fin d'ouvrage, plus dans la fiche personnage.
+        const known =
+          WEAPON_SPECIAL_TRANSLATIONS[sel.name] ||
+          WEAPON_SPECIAL_TRANSLATIONS[baseName];
+        if (known) {
+          text = known;
+        } else if (text && !isFrenchText(text)) {
+          markUntranslated(report, `Règle spéciale de l'objet « ${sel.name} »`);
+        }
+        if (text) {
+          reglesArmesOut.push({ name: translateName(sel.name), description: text });
+        }
+        continue;
       }
       text = translateValue(text);
       item.details.push({ label: translateName(c.name), value: text });
@@ -143,10 +152,12 @@ function extractEquipmentItem(sel, report) {
   return item;
 }
 
+const INJURY_CONTAINER_RE = /^(serious injury|blessures? graves?)$/i;
+
 /**
  * Parcourt récursivement les `selections` imbriquées d'une figurine et
- * en extrait : équipement, compétences, règles, expérience, promotion,
- * augmentations de caractéristiques.
+ * en extrait : équipement, compétences, règles, blessures, expérience,
+ * promotion, augmentations de caractéristiques.
  */
 function walkModelSelections(selections, ruleDict, report, out) {
   for (const sel of selections || []) {
@@ -154,13 +165,18 @@ function walkModelSelections(selections, ruleDict, report, out) {
 
     if (name === "Équipement") {
       for (const eq of sel.selections || []) {
-        out.equipement.push(extractEquipmentItem(eq, report, out.reglesArmes)); // +out.reglesArmes
+        out.equipement.push(extractEquipmentItem(eq, report, out.reglesArmes));
       }
       continue;
     }
 
     if (name === "Compétences") {
       collectSkills(sel.selections || [], ruleDict, report, out);
+      continue;
+    }
+
+    if (INJURY_CONTAINER_RE.test(name)) {
+      collectInjuries(sel.selections || [], ruleDict, out.blessures);
       continue;
     }
 
@@ -186,15 +202,23 @@ function walkModelSelections(selections, ruleDict, report, out) {
       continue;
     }
 
-    if (INJURY_CONTAINER_RE.test(name)) {
-      collectInjuries(sel.selections || [], ruleDict, out.blessures);
-      continue;
-    }
-
     // Sous-groupe générique (ex. contient d'autres selections) : on
     // continue de creuser au cas où (structure BattleScribe imbriquée).
     if (Array.isArray(sel.selections) && sel.selections.length) {
       walkModelSelections(sel.selections, ruleDict, report, out);
+    }
+  }
+}
+
+/** Recherche récursive de blessures graves (mêmes patrons qu'une compétence). */
+function collectInjuries(selections, ruleDict, out) {
+  for (const sel of selections || []) {
+    if (Array.isArray(sel.rules) && sel.rules.length) {
+      for (const r of sel.rules) {
+        out.push(lookupRule(ruleDict, r.name));
+      }
+    } else if (Array.isArray(sel.selections) && sel.selections.length) {
+      collectInjuries(sel.selections, ruleDict, out);
     }
   }
 }
@@ -229,9 +253,9 @@ function extractCharacterCard(sel, ruleDict, report) {
     stats: extractStats(sel),
     equipement: [],
     competences: [],
+    reglesSpeciales: (sel.rules || []).map((r) => lookupRule(ruleDict, r.name)),
     reglesArmes: [],
     blessures: [],
-    reglesSpeciales: (sel.rules || []).map((r) => lookupRule(ruleDict, r.name)),
     augmentations: [],
     // Champs de personnalisation, remplis ensuite par personalization.js
     // (jamais lus depuis le JSON BattleScribe, qui ne les contient pas).
@@ -346,16 +370,4 @@ export function parseRoster(json) {
   model.nonTraduits = Array.from(report.untranslated);
 
   return model;
-}
-
-
-
-function collectInjuries(selections, ruleDict, out) {
-  for (const sel of selections || []) {
-    if (Array.isArray(sel.rules) && sel.rules.length) {
-      for (const r of sel.rules) out.push(lookupRule(ruleDict, r.name));
-    } else if (Array.isArray(sel.selections) && sel.selections.length) {
-      collectInjuries(sel.selections, ruleDict, out);
-    }
-  }
 }
