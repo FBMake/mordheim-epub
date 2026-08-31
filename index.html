@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fiches de Bande → EPUB</title>
+<title>Fiches de Bande → Word</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -13,9 +13,9 @@
 
 <div class="parchment-frame">
   <header class="masthead">
-    <p class="eyebrow">Mordheim — Registre des Bandes</p>
+    <p class="eyebrow">École d'Artillerie de Nuln — Registre des Bandes</p>
     <h1 class="title-blackletter">Fiches de Bande</h1>
-    <p class="subtitle">Convertissez un export JSON BattleScribe en livre EPUB illustré, en français, prêt pour votre liseuse.</p>
+    <p class="subtitle">Convertissez un export JSON BattleScribe en document Word illustré, en français, une fiche par page — prêt à imprimer ou à envoyer sur votre liseuse.</p>
   </header>
 
   <section id="upload-section" class="ledger-block">
@@ -64,7 +64,7 @@
 
     <div id="warning-box" class="warning-box" hidden>
       <strong>Traduction incomplète</strong>
-      <p>Les passages suivants n'ont pas de traduction connue et ont été conservés en anglais dans l'EPUB :</p>
+      <p>Les passages suivants n'ont pas de traduction connue et ont été conservés en anglais dans le document :</p>
       <ul id="warning-list"></ul>
     </div>
 
@@ -72,7 +72,7 @@
     <p class="hint-text">Nom, bio et photo sont optionnels. Ils seront sauvegardés dans un fichier à part (le JSON New Recruit n'est jamais modifié) — pensez à télécharger ce fichier après chaque session pour ne rien perdre.</p>
     <div id="perso-cards" class="perso-cards"></div>
 
-    <button id="generate-btn" class="btn-primary">Générer l'EPUB + le fichier de personnalisation</button>
+    <button id="generate-btn" class="btn-primary">Générer le DOCX + le fichier de personnalisation</button>
     <p id="generate-status" class="status-msg" aria-live="polite"></p>
   </section>
 
@@ -81,7 +81,6 @@
   </footer>
 </div>
 
-<script src="js/vendor/jszip.min.js"></script>
 <script type="module" src="js/app.js"></script>
 </body>
 </html>
