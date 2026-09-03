@@ -347,7 +347,9 @@ export async function buildDocx(model) {
     for (const r of items) children.push(...ruleParagraphs(r));
   };
   section("Règles des Armes", armes);
+  children.push(new Paragraph({ children: [new PageBreak()] }));
   section("Règles Spéciales", speciales);
+  children.push(new Paragraph({ children: [new PageBreak()] }));
   section("Règles d'Équipe", equipe);
 
   const doc = new Document({
