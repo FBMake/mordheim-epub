@@ -908,3 +908,417 @@ Object.assign(RULE_TRANSLATIONS, {
       "Expérimentale, non publiée par GW/Fanatic. Approuvée par des personnes ayant déjà soumis du matériel de grade 1a/1b et garantissant sa qualité.",
   },
 });
+
+
+
+// --- Étape 4 : Épées Louées & Personae Dramatis (Characters.cat) — 81
+// règles traduites depuis BSData/mordheim (100% EN à l'origine). Ferme
+// le lot des règles "communes" (384 au total dans le dépôt : 279 communes
+// + 105 propres à une bande officielle précise, restant à traduire).
+Object.assign(RULE_TRANSLATIONS, {
+  "(2 2 2 2 2) Alchemist’s Laboratory": {
+    name: "Laboratoire de l'Alchimiste",
+    description:
+      "Dans les ruines, vous trouvez un butin d’une valeur de 3D6 Co et un vieux carnet en piteux état. L’un de vos Héros peut étudier le carnet de l’Alchimiste ; la sagesse supplémentaire qu’il en tirera lui permettra de choisir parmi les compétences Académiques lorsqu’il gagnera une nouvelle compétence, en plus des compétences qui lui sont normalement accessibles.",
+  },
+  "(5 5 5 5 5 5) Fighting Arena": {
+    name: "Fosse de Combat",
+    description:
+      "Vous trouvez un manuel d’entraînement, que vous pouvez soit vendre pour 100 Co, soit laisser lire à l’un de vos Héros. Les connaissances supplémentaires acquises par votre Héros en lisant le manuel lui permettent de choisir parmi les compétences de Combat lorsqu’il gagne une nouvelle compétence, et sa Capacité de Combat peut désormais être augmentée d’un point supplémentaire au-delà de son maximum racial normal (par exemple, un Humain possédant ce livre aura désormais une Capacité de Combat maximale de 7).",
+  },
+  "(un)Holy Relic": {
+    name: "Relique Sacrée",
+    description:
+      "Une figurine portant une relique sacrée réussit automatiquement le premier test de Commandement qu’elle doit effectuer au cours de la partie. Si la relique est portée par le chef, elle lui permet de réussir automatiquement le premier test de Déroute s’il n’a effectué aucun test de Commandement auparavant. Vous ne pouvez ignorer que le premier test de Commandement au cours d’une même partie : posséder deux reliques sacrées ou plus ne permet pas d’ignorer les tests suivants.",
+  },
+  "A Fistful of Crowns": {
+    name: "Une Poignée de Couronnes",
+    description:
+      "Ces gars-là feraient littéralement n’importe quoi pour de l’argent/de la malepierre et sont connus pour changer de camp et poignarder leurs anciens employeurs dans le dos pour quelques couronnes seulement.\n\nPour représenter cela, le ou les joueurs adverses peuvent tenter de soudoyer le duo afin qu’il trahisse ses employeurs et change de camp.\nAu début de la partie, tout joueur souhaitant tenter cela doit secrètement inscrire la somme qu’il est prêt à leur offrir (celle-ci doit bien entendu être supérieure à leur coût initial de recrutement !).\n\nIl est également conseillé au joueur qui les contrôle/emploie d’inscrire secrètement une contre-offre au début de la partie.\nLe joueur qui tente le pot-de-vin peut alors, au début de n’importe lequel de ses tours, tenter de les soudoyer (même s’ils sont engagés au corps à corps !).\n\nS’il le fait, il doit révéler la somme inscrite et, si celle-ci est supérieure au coût de recrutement du duo augmenté du montant de la contre-offre du joueur qui les contrôle, il prend le contrôle du duo jusqu’à la fin de la partie.\nSeul le joueur qui contrôle le duo doit payer la somme supplémentaire ; ainsi, si le joueur qui les contrôlait initialement en perd le contrôle à la suite d’un pot-de-vin, il n’a pas à payer sa contre-offre.\n\nCes histoires de pots-de-vin peuvent bien sûr devenir particulièrement intéressantes dans les parties multijoueurs, lorsque différents joueurs tentent de les soudoyer à des moments différents.\nQuel que soit le joueur qui réussit à les soudoyer, ou si le joueur qui les contrôle conserve le contrôle, celui-ci doit payer cette somme supplémentaire.",
+  },
+  "Aenur Sword of Twilight": {
+    name: "Aenur, Épée du Crépuscule",
+    description:
+      "Peut être recruté : toute bande, à l’exception des Skavens, des Morts-vivants et des Possédés, peut recruter Aenur.\n\n150 couronnes d’or pour le recruter.",
+  },
+  "Amulet of the Moon": {
+    name: "Amulette de la Lune",
+    description:
+      "Une fois activé, cet ancien dispositif crée une aura scintillante autour de son porteur, ce qui rend les ennemis plus à même de le distinguer difficilement.\n\nTout tir visant une figurine équipée de l’amulette subit un malus de -1 pour toucher.\nL’amulette confère également une sauvegarde spéciale de 5+ contre les tirs.",
+  },
+  "Arabian Merchant": {
+    name: "Marchand Arabien",
+    description:
+      "Peut être recruté : toute bande d’alignement bon peut recruter un Marchand Arabien (c’est-à-dire les Mercenaires, les Nains, les Chasseurs de Sorcières, les Pillards des Tombes, etc.).\n\n20 couronnes d’or pour le recruter + 10 couronnes d’or d’entretien.",
+  },
+  "Beast Hunter": {
+    name: "Chasseur de Bêtes",
+    description:
+      "Peut être recruté : toute bande autre que les Skavens, les Hommes-bêtes, les Morts-vivants, les Orques & Gobelins, les Possédés et le Carnaval du Chaos peut recruter un Chasseur de Bêtes.\n\n35 couronnes d’or pour le recruter + 15 couronnes d’or d’entretien.",
+  },
+  "Beastmen Vengeance": {
+    name: "Vengeance sur les Hommes-Bêtes",
+    description:
+      "Le Chasseur de Bêtes hait tous les Hommes-bêtes (cela inclut les Gors, les Ungors, les Centigors et les Minotaures) et combat sans frais d’entretien lors des parties contre des Hommes-bêtes.",
+  },
+  "Bertha Bestraufrung, high matriarch of the sisterhood": {
+    name: "Bertha Bestraufrung, Haute Matriarche des Sœurs",
+    description:
+      "Peut être recrutée : Bertha Bestraufrung ne rejoindra que les bandes de Sœurs de Sigmar.",
+  },
+  "Bicker": {
+    name: "Chamaillerie",
+    description:
+      "Lancez 1D6 au début du tour pour chaque Gnoblar situé à 2\" ou moins d’un autre Gnoblar et qui n’est pas engagé au corps à corps.\nSur un résultat de 1, le Gnoblar commence à se chamailler, à insulter et/ou à intimider l’autre Gnoblar et ne peut rien faire d’autre durant ce tour.",
+  },
+  "Big Game Hunter": {
+    name: "Grand Chasseur de Gibier",
+    description:
+      "Peut être recruté : le Grand Chasseur de Gibier peut être recruté par toute bande humaine.\n\n40 couronnes d’or pour le recruter + 18 couronnes d’or d’entretien.",
+  },
+  "BlackBlood": {
+    name: "Sang Noir",
+    description:
+      "Si la figurine perd une Blessure au corps à corps, toute figurine en contact socle à socle avec elle subit une touche de Force 3 (sans coup critique) provenant de son sang corrosif qui gicle.",
+  },
+  "Blessed Stag Hide": {
+    name: "Peau de Cerf Bénie",
+    description:
+      "Cette peau animale est portée comme une cape et constitue un symbole d’honneur une fois bénie par les hiérarques de Taal.\nUne peau bénie confère à son porteur une grâce inégalée, lui permettant de relancer une fois par tour un test d’Initiative raté.",
+  },
+  "Cathayan Silk Clothes": {
+    name: "Vêtements de Soie Cathayane",
+    description:
+      "Toute bande de Mercenaires dont le chef porte des vêtements de soie peut relancer son premier test de Déroute raté. Cependant, après chaque bataille au cours de laquelle le chef est mis hors de combat, lancez 1D6. Sur un résultat de 1 à 3, les vêtements sont ruinés et doivent être jetés.",
+  },
+  "Cloven Hoofs": {
+    name: "Sabots Fourchus",
+    description:
+      "Gagne +1 en Mouvement.",
+  },
+  "Conch Shell Horn": {
+    name: "Cor en Coquillage",
+    description:
+      "Le cor en coquillage est utilisé par les guerriers Piranhas expérimentés pour avertir la bande de l’approche d’ennemis.\n\nAu début de la partie, un guerrier Piranha peut utiliser le cor pour relancer le jet déterminant qui déploie en premier et qui joue en premier.\nPlusieurs figurines possédant un cor ne peuvent pas imposer une deuxième relance. (Guerriers Piranhas uniquement.)",
+  },
+  "Countess Marianna Chevaux": {
+    name: "Comtesse Marianna Chevaux",
+    description:
+      "Peut être recrutée : toute bande, à l’exception des Chasseurs de Sorcières, des Sœurs de Sigmar, des Morts-vivants, des Elfes et de toute autre bande dévouée à Sigmar, peut recruter Marianna (notez que les Mercenaires sont des hommes à la foi laxiste et ne sont pas concernés ici).\n\n150 couronnes d’or pour la recruter ; 75 couronnes d’or d’entretien.",
+  },
+  "Crimson Shade": {
+    name: "Teinte Cramoisie",
+    description:
+      "Une figurine utilisant de la Teinte Cramoisie voit son Initiative augmenter de +D3 points, et son Mouvement et sa Force de +1 (cet effet dure une partie). La Teinte Cramoisie n’a aucun effet sur les Morts-vivants tels que les Vampires et les Zombies, ni sur les Possédés.\n\nEffets secondaires : après la bataille, lancez 2D6. Sur un résultat de 2-3, la figurine devient dépendante et vous devez essayer de lui acheter une nouvelle dose de Teinte Cramoisie avant chaque bataille à partir de maintenant. Si vous ne parvenez pas à en acheter, elle quittera votre bande. Sur un résultat de 12, l’Initiative de la figurine augmente définitivement de +1.",
+  },
+  "Daemon Soul": {
+    name: "Âme Démoniaque",
+    description:
+      "La figurine bénéficie d’une sauvegarde de 4+ contre les effets des sorts ou des prières.",
+  },
+  "Dark Venom": {
+    name: "Venin Noir",
+    description:
+      "Toute touche causée par une arme enduite de Venin Noir compte comme ayant +1 en Force ; les sauvegardes d’armure sont modifiées pour tenir compte de l’augmentation de Force de l’attaque.",
+  },
+  "Dead Eye Shot": {
+    name: "Œil de Lynx",
+    description:
+      "Le Tireur d’élite possède les yeux d’un aigle et peut atteindre les plus petites cibles.\nIl ignore les modificateurs de tir dus aux couverts lorsqu’il tire avec son arbalète.",
+  },
+  "Deathwish": {
+    name: "Vœu de Mort",
+    description:
+      "Les Tueurs de Troll recherchent une mort honorable au combat.\nIls sont totalement immunisés à toute psychologie et n’ont jamais besoin d’effectuer de test lorsqu’ils combattent seuls.",
+  },
+  "Dodge.": {
+    name: "Esquive",
+    description:
+      "Il peut éviter toute touche provenant d’une arme de tir sur un résultat de 5+ sur 1D6. Notez que ce jet est effectué contre les tirs dès qu’une touche est obtenue, pour déterminer si le guerrier l’esquive ou non, avant de jeter pour blesser et avant tout effet provenant d’autres compétences ou équipements (tels que les porte-bonheur).",
+  },
+  "Dwarf Troll Slayer": {
+    name: "Tueur de Troll Nain",
+    description:
+      "Peut être recruté : les Mercenaires et les Chasseurs de Sorcières peuvent recruter un Tueur de Troll Nain.\n\nLes bandes comprenant des Elfes peuvent recruter des Tueurs, mais doivent payer 20 couronnes d’or après chaque bataille au lieu de 10.\n\nLes Nains ne supportent pas les faibles oreilles pointues, à moins d’y être obligés ou d’être convenablement dédommagés pour leur souffrance.",
+  },
+  "Elf Ranger": {
+    name: "Ranger Elfe",
+    description:
+      "Entretien : 20 Co\nValeur : +12 pts (+1/exp)\nPeut être recruté : les Mercenaires et les Chasseurs de Sorcières peuvent recruter des Rangers Elfes. Les bandes comprenant des Nains peuvent recruter des Rangers Elfes, mais doivent payer 40 couronnes d’or après chaque bataille au lieu de 20.",
+  },
+  "Elven Cloak": {
+    name: "Cape Elfique",
+    description:
+      "Un guerrier visant avec une arme de tir un guerrier portant une cape elfique subit -1 à son jet pour toucher.",
+  },
+  "Expert Pistolier": {
+    name: "Pistolier Expert",
+    description:
+      "La maîtrise d’un Bandit de grand chemin avec une paire de pistolets est sans égale ; il combine ainsi les effets des compétences Pistolier et Tireur d’élite.",
+  },
+  "Expert Rider": {
+    name: "Cavalier Expert",
+    description:
+      "Un Bandit de grand chemin est un cavalier hors pair. Lorsqu’il est monté, il compte comme étant immobile pour tirer (c’est-à-dire qu’il ne subit pas le malus de -1 pour toucher) et bénéficie également de cette compétence, car il peut recharger rapidement à cheval.",
+  },
+  "Ferocious Charge": {
+    name: "Charge Féroce",
+    description:
+      "Le Nain peut doubler ses Attaques durant le tour où il charge.\nIl subit un malus de -1 pour toucher durant ce tour.",
+  },
+  "Fighting Undead": {
+    name: "Combattre les Morts-Vivants",
+    description:
+      "En raison de sa vocation de Vampire Assassin devenu Chasseur de Vampires, tous les Vampires Haïssent Marianna.",
+  },
+  "Freelancer Mount": {
+    name: "Monture du Franc-Tireur",
+    description:
+      "Si vous utilisez les règles optionnelles concernant les figurines montées, un Franc-tireur chevauche un destrier (et possède la compétence Monter un destrier de l’article Des selles flamboyantes).\n\nMonté, le Franc-tireur possède une sauvegarde d’armure de 3+. À pied, sa sauvegarde est de 4+.",
+  },
+  "Funerary Rites": {
+    name: "Rites Funéraires",
+    description:
+      "Les Prêtres de Morr ne sont en aucun cas des sorciers ; cependant, ils disposent de nombreux Rites Funéraires qu’ils peuvent accomplir.\n\nAinsi, les Prêtres de Morr peuvent choisir un Rite Funéraire dans la liste ci-dessous, en utilisant les règles de Magie de la page 56 du Livre des Règles de Mordheim.",
+  },
+  "Great Claw": {
+    name: "Grande Griffe",
+    description:
+      "Il ne peut porter aucune arme dans ce bras, mais gagne une Attaque supplémentaire au corps à corps avec un bonus de +1 en Force.",
+  },
+  "Halfling Cook Book": {
+    name: "Livre de Cuisine Halfling",
+    description:
+      "Le nombre maximum de guerriers autorisés dans votre bande est augmenté de +1 (notez que ni une bande de Morts-vivants ni une bande du Carnaval du Chaos ne peut utiliser cet objet).",
+  },
+  "Halfling Scout": {
+    name: "Éclaireur Halfling",
+    description:
+      "Entretien : +5 Co\nValeur : +5 pts (+1/exp)\nPeut être recruté : toute bande à l’exception des Skavens, des Morts-vivants et des Possédés peut recruter un Éclaireur Halfling.",
+  },
+  "Hard Head": {
+    name: "Tête Dure",
+    description:
+      "Les Tueurs de Troll ignorent les règles spéciales des masses, gourdins, etc.\nIls ne sont pas faciles à assommer !",
+  },
+  "Hide in Shadows": {
+    name: "Se Fondre dans l'Ombre",
+    description:
+      "L’Assassin peut se fondre dans les ombres afin que ses adversaires ne le voient pas.\nTant qu’il se trouve à 1\" ou moins d’un mur ou d’un autre obstacle linéaire (haie, clôture, puits, etc.), les figurines adverses doivent réussir un test d’Initiative pour pouvoir le charger ou lui tirer dessus.",
+  },
+  "High Matriarch": {
+    name: "Haute Matriarche",
+    description:
+      "En tant que Haute Matriarche de la Miséricorde des Sœurs de Sigmar, Bertha devient automatiquement le chef de toute bande qu’elle rejoint.",
+  },
+  "Highwayman": {
+    name: "Bandit de Grand Chemin",
+    description:
+      "Peut être recruté : toute bande, à l’exception des Sœurs de Sigmar, des Chasseurs de Sorcières et des Elfes d’alignement bon, peut recruter un Bandit de grand chemin.\n\nUn Bandit de grand chemin ne rejoindra jamais une bande qui contient également un Patrouilleur.\n\n35 couronnes d’or pour le recruter + 20 couronnes d’or d’entretien.",
+  },
+  "Highwayman Mount": {
+    name: "Monture du Bandit de Grand Chemin",
+    description:
+      "Si vous utilisez les règles optionnelles concernant les figurines montées, un Bandit de grand chemin chevauche un cheval.\n\nMonté, le Bandit de grand chemin possède une sauvegarde d’armure de 6+. À pied, il n’a aucune sauvegarde d’armure.",
+  },
+  "Holy Tome": {
+    name: "Tome Sacré",
+    description:
+      "Un Prêtre-Guerrier ou une Sœur de Sigmar possédant un tome sacré peut ajouter +1 au résultat lorsqu’il ou elle détermine s’il ou elle peut réciter un sort avec succès.",
+  },
+  "Imperial Assassin": {
+    name: "Assassin Impérial",
+    description:
+      "Peut être recruté : toute bande, à l’exception des Chasseurs de Sorcières et des Sœurs de Sigmar. Les Orques & Gobelins ou les Skavens peuvent recruter l’Assassin.\n\n40 couronnes d’or pour le recruter + 20 couronnes d’or d’entretien.",
+  },
+  "Inseparable": {
+    name: "Inséparables",
+    description:
+      "Ces gars-là sont comme des frères (de très mauvais frères, désagréables au possible !) et sont totalement inséparables.\n\nIls doivent être recrutés par paire et doivent rester à 8\" ou moins l’un de l’autre.\n\nSi l’un d’eux est mis hors de combat, l’autre tentera de le traîner hors du champ de bataille et de le mettre en sécurité.\nDans une campagne, si l’un des membres du duo prend sa retraite, l’autre prendra sa retraite.",
+  },
+  "Intercept": {
+    name: "Interception",
+    description:
+      "Le garde du corps intercepte toute figurine tirant sur le Marchand ou le chargeant.\n\nToutes les attaques sont dirigées contre lui et, s’il est chargé, placez le garde du corps devant le Marchand pour le protéger.\n\nLe garde du corps ne chargera que si le Marchand charge également et ne peut pas intercepter une attaque s’il est déjà engagé au combat.",
+  },
+  "Invincible Swordsman": {
+    name: "Épéiste Invincible",
+    description:
+      "Aenur touche toujours ses adversaires sur un résultat de 2+ au corps à corps.",
+  },
+  "Johann the Knife": {
+    name: "Johann le Couteau",
+    description:
+      "Peut être recruté : toute bande à l’exception des Skavens, des Morts-vivants et des Possédés peut recruter Johann.\n\n70 couronnes d’or pour le recruter + 30 couronnes d’or d’entretien.\nJohann est dépendant à la Teinte Cramoisie ; vous pouvez donc le recruter pour une dose de Teinte Cramoisie si vous le souhaitez.",
+  },
+  "Knife Fighter Extraordinaire": {
+    name: "Lanceur de Couteaux Hors Pair",
+    description:
+      "Johann possède à juste titre la réputation d’être le meilleur combattant au couteau de tout l’Empire.\n\nContrairement aux guerriers normaux, il peut combiner les compétences Combattant au couteau et Tir rapide (oui, il peut lancer six couteaux de lancer en un tour s’il ne se déplace pas !).",
+  },
+  "Largely Insignificant": {
+    name: "Globalement Insignifiants",
+    description:
+      "Les Gnoblars comptent dans le nombre de guerriers d’une bande mais ne sont pas pris en compte pour les tests de Déroute, ni pour déterminer la taille initiale de la bande ni comme figurines perdues.",
+  },
+  "Lethal Marksman": {
+    name: "Tireur Mortel",
+    description:
+      "Maître de l’arbalète, un Patrouilleur combine les compétences Tireur d’élite et Œil d’aigle.",
+  },
+  "Mad Cap Mushrooms (Orcs)": {
+    name: "Champignons Bonnet de Fou (Orques)",
+    description:
+      "Tout guerrier qui prend des Champignons Bonnet de Fou avant une bataille est sujet à la frénésie. Les Champignons Bonnet de Fou n’ont aucun effet sur les Morts-vivants tels que les Vampires et les Zombies, ni sur les Possédés.\nEffet secondaire : après la bataille, lancez 1D6. Sur un résultat de 1, la figurine devient définitivement stupide.\n1 utilisation",
+  },
+  "Magic Gubbinz": {
+    name: "Bricoles Magiques",
+    description:
+      "Il s’agit de bricoles et d’objets divers transportés par le Chaman afin de concentrer ses pouvoirs.\nLa plupart sont des pattes de chauve-souris, des lèvres de lézard et autres choses du même genre, mais semblent néanmoins procurer des avantages à leur propriétaire.\n\nLe Chaman peut relancer un test de Magie raté sur un résultat de 4+ sur 1D6.",
+  },
+  "Monster Slayer": {
+    name: "Tueur de Monstres",
+    description:
+      "Le Tueur de Troll blesse toujours n’importe quel adversaire sur un résultat de 4+ sur 1D6, quelle que soit son Endurance, à moins que sa propre Force (avec les modificateurs d’arme) ne lui permette de blesser sur un résultat inférieur.",
+  },
+  "Mordhiem Map": {
+    name: "Carte de Mordheim",
+    description:
+      "Lorsque vous achetez une carte, lancez 1D6 :\n\n1 Fausse. La carte est fausse et totalement sans valeur. Elle vous entraîne dans une quête inutile. Votre adversaire peut choisir automatiquement le prochain scénario que vous jouerez.\n\n2-3 Imprécise. Bien que grossière, la carte est généralement exacte (enfin… certaines parties… peut-être !). Vous pouvez relancer un dé quelconque durant votre prochaine phase d’Exploration si vous le souhaitez, mais vous devez accepter le résultat du second jet.\n\n4 Carte des catacombes. La carte indique un passage à travers les catacombes jusqu’à la cité. Vous pouvez automatiquement choisir le scénario lors de votre prochaine bataille.\n\n5 Exacte. La carte est récente et très détaillée. Vous pouvez relancer jusqu’à trois dés durant votre prochaine phase d’Exploration si vous le souhaitez. Vous devez accepter le résultat du second jet.\n\n6 Carte maîtresse. Il s’agit de l’une des douze cartes maîtresses de Mordheim réalisées pour le Comte von Steinhardt d’Ostermark. Désormais, vous pouvez toujours relancer un dé lorsque vous jetez sur le tableau d’Exploration, tant que le Héros qui possède cette carte n’a pas été mis hors de combat durant la bataille.",
+  },
+  "Nicodemus, The Cursed Pilgrim": {
+    name: "Nicodemus, le Pèlerin Maudit",
+    description:
+      "Peut être recruté : toute bande à l’exception des Skavens, des Morts-vivants et des Possédés peut recruter Nicodemus. N’oubliez pas qu’il doit être recherché, comme tous les autres personnages spéciaux.",
+  },
+  "Ogre Bodyguard": {
+    name: "Garde du Corps Ogre",
+    description:
+      "Entretien : 30 Co\nValeur : +25 (+1/exp)\nArmes/Armure : soit deux épées, haches ou gourdins (ou n’importe quelle combinaison de ceux-ci), soit une arme à deux mains (vous pouvez choisir laquelle). Les Ogres portent une armure légère.\n\nPeut être recruté : toute bande à l’exception des Skavens peut recruter un Garde du corps Ogre.",
+  },
+  "Pitfighter": {
+    name: "Gladiateur",
+    description:
+      "30 couronnes d’or pour le recruter + 15 couronnes d’or d’entretien.\nValeur : +22 pts (+1/exp)\n\nPeut être recruté : toute bande à l’exception des Skavens, des Morts-vivants et des Possédés peut recruter un Gladiateur.",
+  },
+  "Rare": {
+    name: "Rare",
+    description:
+      "10",
+  },
+  "Rarity": {
+    name: "Rareté",
+    description:
+      "Rareté 11",
+  },
+  "Righteous Fury": {
+    name: "Fureur Vertueuse",
+    description:
+      "La figurine hait toutes les bandes de Skavens, de Morts-vivants ou de Possédés ainsi que toutes les figurines qui les composent.",
+  },
+  "Roadwarden": {
+    name: "Patrouilleur",
+    description:
+      "Peut être recruté : toute bande d’alignement bon peut recruter un Patrouilleur, comme les Chasseurs de Sorcières, les Sœurs de Sigmar, les Nains et les Mercenaires humains.\nUn Patrouilleur ne rejoindra jamais une bande qui contient également un Bandit de grand chemin.\n\n40 couronnes d’or pour le recruter + 20 couronnes d’or d’entretien.",
+  },
+  "Roadwarden Mount": {
+    name: "Monture du Patrouilleur",
+    description:
+      "Si vous utilisez les règles optionnelles concernant les figurines montées, un Patrouilleur chevauche un cheval.\n\nMonté, le Patrouilleur possède une sauvegarde d’armure de 4+. À pied, sa sauvegarde est de 5+.",
+  },
+  "Scorpion Tail": {
+    name: "Queue de Scorpion",
+    description:
+      "Le mutant possède une longue queue barbelée dont l’extrémité est empoisonnée, ce qui lui permet d’effectuer une Attaque supplémentaire de Force 5 à chaque phase de corps à corps. Si la figurine touchée par la queue est immunisée au poison, la Force de la touche est réduite à 2.",
+  },
+  "Sigmar's Handmaiden": {
+    name: "Servante de Sigmar",
+    description:
+      "Bertha est favorisée par Sigmar plus que toutes les autres Sœurs.\n\nElle gagne +2 à tous ses jets visant à déterminer si ses Prières de Sigmar sont exaucées.",
+  },
+  "Spines": {
+    name: "Épines",
+    description:
+      "Toute figurine en contact socle à socle avec le mutant subit automatiquement une touche de Force 1 au début de chaque phase de corps à corps. Les Épines ne provoquent jamais de coups critiques.",
+  },
+  "Strike To injure": {
+    name: "Frappe Précise",
+    description:
+      "Ajoutez +1 à tous les jets de Blessures causés par la figurine au corps à corps.",
+  },
+  "Superior Black Powder": {
+    name: "Poudre Noire Supérieure",
+    description:
+      "+1 en Force à toutes les armes à poudre noire que possède la figurine. Il y a suffisamment de poudre noire supérieure pour durer une partie.",
+  },
+  "Tears of Shallaya": {
+    name: "Larmes de Shallya",
+    description:
+      "Une figurine qui boit une fiole de Larmes de Shallya au début d’une bataille est totalement immunisée contre tous les poisons pendant toute la durée du combat. Les guerriers Morts-vivants et Possédés ne peuvent pas utiliser les Larmes de Shallya. Une fiole de Larmes de Shallya contient suffisamment de liquide pour durer toute une bataille.",
+  },
+  "Tentacle": {
+    name: "Tentacule",
+    description:
+      "Peut agripper son adversaire au corps à corps afin de réduire ses Attaques de -1, jusqu’à un minimum de 1. Le mutant peut décider quelle Attaque son adversaire perd.",
+  },
+  "The Noctu": {
+    name: "Le Noctu",
+    description:
+      "La gemme volée dans le repaire de Serutat possède de puissantes propriétés de camouflage.\nLe voile d’ombre qu’elle crée réduit de -1 tous les jets pour toucher de tir visant Marianna.",
+  },
+  "Tilean Marksman": {
+    name: "Tireur Tiléen",
+    description:
+      "Peut être recruté : toute bande à l’exception des Skavens, des Orques et des Morts-vivants peut recruter le Tireur Tilean.\n\n30 couronnes d’or pour le recruter + 15 couronnes d’or d’entretien.",
+  },
+  "Ulli & Marquand": {
+    name: "Ulli & Marquand",
+    description:
+      "Peut être recruté : toute bande à l’exception des Sœurs de Sigmar et des Chasseurs de Sorcières peut recruter ces vauriens.\n\n30 couronnes d’or pour les recruter par paire.",
+  },
+  "Unblinking Eye": {
+    name: "Œil Sans Sommeil",
+    description:
+      "Grâce aux dispositifs sorciers construits par les Ingénieurs en Sorcellerie du Clan Skrvre.\n\nVeskit peut repérer les ennemis cachés dans un rayon égal à deux fois sa valeur d’Initiative en pouces.",
+  },
+  "Unscrupulous": {
+    name: "Sans Scrupules",
+    description:
+      "Un Bandit de grand chemin, malgré tout son talent et sa bravoure, n’est pas digne de confiance.\nÀ la fin de chaque bataille, lancez 1D6 ; sur un résultat de 1, la bande reçoit 1 trésor de moins que normalement, car le Bandit de grand chemin l’a volé pour lui-même (ce Trésor n’est pas dépensé pour le Bandit de grand chemin, il est perdu !).\nÉvidemment, si cela continue à se produire, il appartiendra au chef de la bande de décider s’il souhaite ou non conserver le Bandit de grand chemin à son service…",
+  },
+  "Veskit, High executioner of clan eshin": {
+    name: "Veskit, Grand Bourreau du Clan Eshin",
+    description:
+      "Peut être recruté : Veskit ne peut être recruté que par les bandes de Skavens.\n\n80 couronnes d’or pour le recruter + 35 couronnes d’or d’entretien.",
+  },
+  "Wanderers": {
+    name: "Vagabonds",
+    description:
+      "Ulli & Marquand ne restent avec une bande que pour la durée de la bataille.\nUne bande qui a utilisé Ulli & Marquand lors de sa dernière bataille ne peut pas les rechercher avant d’avoir livré au moins une bataille sans eux.",
+  },
+  "Warlock": {
+    name: "Sorcier",
+    description:
+      "Entretien : 15 Co\nValeur : +16 (+1/exp)\n\nLes Sorciers sont des Magiciens et possèdent deux sorts générés aléatoirement dans la liste de Magie Mineure. Voir la section Magie pour plus de détails.\n\nPeut être recruté : toute bande à l’exception des Chasseurs de Sorcières et des Sœurs de Sigmar peut recruter un Sorcier.",
+  },
+  "Weapons Master": {
+    name: "Maître des Armes",
+    description:
+      "L’Assassin est un maître des armes et peut utiliser toute arme qu’il trouve.\nVous pouvez acheter des armes pour l’Assassin comme vous le feriez pour n’importe quel autre membre de votre bande. Cependant, contrairement aux autres membres de votre bande, toute arme que vous donnez à un Assassin lui appartient et il ne la donnera pas plus tard à un autre membre de la bande.\nDe plus, bien qu’il sache les utiliser, un Assassin n’utilisera jamais d’arme à poudre noire, car de tels dispositifs sont bien trop voyants pour quelqu’un exerçant sa profession.",
+  },
+  "Where’s the Money?": {
+    name: "Où est l'Argent ?",
+    description:
+      "Ces gars-là n’accepteront probablement aucune mauvaise excuse si une bande ne peut pas payer leur rémunération supplémentaire.\nSi un joueur ne peut pas payer la somme supplémentaire en couronnes ou en malepierre (la bande doit vendre toute malepierre nécessaire pour payer le recrutement ou le pot-de-vin), le duo privera la bande d’un montant équivalent en équipement (selon sa valeur marchande).\n\nÀ défaut, ils déchaîneront leur colère sur le chef de la bande : jouez immédiatement un combat au corps à corps entre le duo et le chef de la bande seul, à mort !",
+  },
+  "Wolfcloak": {
+    name: "Cape en Loup",
+    description:
+      "Pour obtenir une Cape en loup, un Héros doit payer 10 Co (pour représenter les frais de déplacement jusqu’à Middenheim et la participation à une chasse). De plus, le Héros doit obtenir un résultat inférieur ou égal à sa Force sur 1D6. S’il réussit, le Héros trouve et tue le loup et peut porter sa cape comme preuve de son habileté et de sa prouesse. Notez que les Middenheimers peuvent acheter des Capes en loup lors de la création de leur bande sans effectuer de test de disponibilité. Une figurine portant une Cape en loup gagne +1 à ses sauvegardes d’armure contre toutes les attaques de tir.",
+  },
+  "You can never escape your past...": {
+    name: "On n'échappe jamais à son passé...",
+    description:
+      "Au dernier tour de la partie durant lequel Marianna est encore debout, ou dès qu’une bande effectue une Déroute mettant fin à la partie, lancez 1D6 :\n\n1-3  Marianna a découvert que Serutat se rapproche et quittera le service de la bande après la partie.\n4-5  Marianna a découvert une piste utile qu’elle doit poursuivre dans cette région et restera pour une autre partie si la bande peut payer son entretien.\n6      Un groupe de serviteurs de Serutat l’a rattrapée ! Jouez D3 tours supplémentaires comme si la bande perdante n’avait pas effectué de Déroute (dans la confusion, le décompte est réinitialisé).\nUn groupe de serviteurs déterminé aléatoirement « apparaît » à 2D6\" ou moins de Marianna, le joueur adverse choisit où.\nMarianna joue le premier tour, puis les serviteurs, après quoi l’ordre des tours revient à la normale, les serviteurs étant considérés comme un joueur supplémentaire.\nLes serviteurs n’attaquent que Marianna et doivent se déplacer vers elle aussi rapidement que possible, mais attaqueront quiconque se trouve sur leur chemin.\nSi sa bande se bat pour l’aider (en mettant au moins un serviteur hors de combat) et qu’elle survit, Marianna combattra gratuitement lors de la prochaine bataille ; sinon, elle partira.\n\nLancez 1D6  Serviteurs\n1-2  D3+1 Zombies\n3-4  D3+1 Goules\n6      Vampire (épée & armure légère) + 2 Goules",
+  },
+});
