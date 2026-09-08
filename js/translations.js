@@ -910,7 +910,6 @@ Object.assign(RULE_TRANSLATIONS, {
 });
 
 
-
 // --- Étape 4 : Épées Louées & Personae Dramatis (Characters.cat) — 81
 // règles traduites depuis BSData/mordheim (100% EN à l'origine). Ferme
 // le lot des règles "communes" (384 au total dans le dépôt : 279 communes
@@ -1320,5 +1319,493 @@ Object.assign(RULE_TRANSLATIONS, {
     name: "On n'échappe jamais à son passé...",
     description:
       "Au dernier tour de la partie durant lequel Marianna est encore debout, ou dès qu’une bande effectue une Déroute mettant fin à la partie, lancez 1D6 :\n\n1-3  Marianna a découvert que Serutat se rapproche et quittera le service de la bande après la partie.\n4-5  Marianna a découvert une piste utile qu’elle doit poursuivre dans cette région et restera pour une autre partie si la bande peut payer son entretien.\n6      Un groupe de serviteurs de Serutat l’a rattrapée ! Jouez D3 tours supplémentaires comme si la bande perdante n’avait pas effectué de Déroute (dans la confusion, le décompte est réinitialisé).\nUn groupe de serviteurs déterminé aléatoirement « apparaît » à 2D6\" ou moins de Marianna, le joueur adverse choisit où.\nMarianna joue le premier tour, puis les serviteurs, après quoi l’ordre des tours revient à la normale, les serviteurs étant considérés comme un joueur supplémentaire.\nLes serviteurs n’attaquent que Marianna et doivent se déplacer vers elle aussi rapidement que possible, mais attaqueront quiconque se trouve sur leur chemin.\nSi sa bande se bat pour l’aider (en mettant au moins un serviteur hors de combat) et qu’elle survit, Marianna combattra gratuitement lors de la prochaine bataille ; sinon, elle partira.\n\nLancez 1D6  Serviteurs\n1-2  D3+1 Zombies\n3-4  D3+1 Goules\n6      Vampire (épée & armure légère) + 2 Goules",
+  },
+});
+
+
+// --- Étape 5 : règles propres aux bandes officielles (96 sur 99 ; 3 noms
+// ambigus laissés de côté car leur texte diffère selon la bande et le
+// dictionnaire actuel n'est pas namespacé par bande : Animals, Wizard,
+// da cunnin' plan — voir discussion avec l'utilisateur).
+Object.assign(RULE_TRANSLATIONS, {
+  "Absolute Faith": {
+    name: "Foi Absolue",
+    description:
+      "Elle peut relancer tous les tests de Peur et n'a pas à tester si elle combat seule contre plusieurs adversaires.",
+  },
+  "Always Hungry": {
+    name: "Toujours Affamé",
+    description:
+      "Un Troll nécessite un coût d'entretien.\nCet entretien représente les quantités copieuses de nourriture qui doivent être données au Troll afin de le maintenir loyal envers la bande.\nLa bande doit payer 15 couronnes d'or après chaque partie afin de garder le Troll.\nSi la bande manque d'or pour payer l'entretien, le Boss a la possibilité de sacrifier deux Guerriers Goblins ou Squigs des Cavernes au Troll au lieu d'acheter de la nourriture (les Trolls mangent presque n'importe quoi).\nSi cette taxe n'est pas payée (que ce soit en or ou en membres de la bande), le Troll prend faim et s'éloigne à la recherche de nourriture.",
+  },
+  "Ancient Enemies": {
+    name: "Ennemis Ancestraux",
+    description:
+      "Les bandes de Kislevites ne peuvent jamais s'allier (voir l'article « Règles multijoueurs pour Mordheim » du Town Cryer pour plus de détails sur les alliances de bandes) avec aucun type de bande du Chaos.\nCette restriction s'applique aux bandes suivantes :\n  Possédés,\n  Hommes-bêtes,\n  Skavens,\n  Elfes Noirs,\n  Nains du Chaos,\net toute autre bande que les joueurs jugent suffisamment « Chaotique »",
+  },
+  "Animal": {
+    name: "Animal",
+    description:
+      "Un Minotaure est bien plus bestial que ses frères Hommes-bêtes et, bien qu'il puisse gagner de l'Expérience, il ne pourra jamais devenir un Héros.",
+  },
+  "Animal Friendship": {
+    name: "Amitié Animale",
+    description:
+      "Ayant grandi au milieu des animaux de la forêt, ce guerrier dégage un certain charme envers tous les animaux « normaux » (c'est-à-dire destriers, chiens de guerre, etc.).\nLes animaux ne l'attaqueront jamais et jusqu'à deux chiens de garde (voir livre de règles de Mordheim, page 54) appartenant au guerrier ne comptent pas dans le nombre maximum de modèles de la bande.",
+  },
+  "Animosity": {
+    name: "Animosité",
+    description:
+      "Au début du tour du joueur Orc, lancez un D6 pour chaque Homme de Main qui est soit un Orc soit un Goblin et qui n'est pas en combat au corps à corps.\n\nLancez sur le tableau ci-dessous si un 1 est obtenu.\n\n1 « J'ai entendu ça ! »\nS'il y a un Homme de Main ou Franc-Tireur Orc ou Goblin allié à portée de charge (s'il y a plusieurs cibles à portée, choisissez la plus proche de la figurine enragée), le guerrier doit immédiatement charger et livrer un tour de combat au corps à corps contre la cible.\nÀ la fin de ce tour de combat, les figurines s'écarteront immédiatement de 1\" et ne seront plus considérées comme étant en combat rapproché.\nS'il n'y a pas d'Hommes de Main ou Francs-Tireurs Orcs ou Goblins alliés à portée de charge et que le guerrier est armé d'une arme à projectile, il tire immédiatement sur l'Homme de Main ou Franc-Tireur Orc ou Goblin allié le plus proche.\nSi rien de ce qui précède ne s'applique, ou si le modèle allié le plus proche est un Héros Orc, le guerrier se comporte comme si un 2-5 avait été obtenu sur ce tableau.\nDans tous les cas, le guerrier en question ne peut faire aucune autre action ce tour-ci, bien qu'il puisse se défendre s'il est attaqué au combat au corps à corps.\n\n2-5 « Qu'est-ce t'as dit ? »\nLe guerrier est à peu près sûr d'avoir entendu un bruit offensant venant de l'Orc ou du Goblin allié le plus proche, mais il n'en est pas tout à fait certain.\nIl passe son tour à lancer des injures à son camarade.\nIl ne peut rien faire d'autre ce tour-ci, bien qu'il puisse se défendre s'il est attaqué au corps à corps.\n\n6 « J'vais leur montrer ! »\nLe guerrier s'imagine que ses camarades rient de lui dans son dos et lui donnent de vilains surnoms.\nPour leur en imposer, il décide qu'il sera le premier au baston !\nCette figurine doit se déplacer aussi vite que possible vers la figurine ennemie la plus proche, en chargeant au combat si possible.\nS'il n'y a pas de figurine ennemie en vue, le guerrier Orc ou Goblin peut effectuer un déplacement normal immédiatement.\nCe déplacement s'ajoute à son déplacement régulier lors de la phase de Mouvement, il peut donc se déplacer deux fois en un seul tour si vous le souhaitez.\nSi le déplacement supplémentaire amène le guerrier Orc ou Goblin à portée de charge d'une figurine ennemie, le guerrier doit charger au combat rapproché pendant son mouvement régulier.",
+  },
+  "Armour Use": {
+    name: "Port de l'Armure",
+    description:
+      "Les Nains ne subissent jamais de pénalités de mouvement pour le port d'une armure.",
+  },
+  "Bear Handler": {
+    name: "Montreur d'Ours",
+    description:
+      "Une bande kislevite qui comprend un Dompteur d'Ours est autorisée à acheter un Ours comme homme de main.\nCet ours a été dressé pour obéir aux ordres du Dompteur et réussira donc automatiquement ses tests de Stupidité lorsqu'il se trouve à moins de 6\" du Dompteur d'Ours (même si le Dompteur est À terre ou Assommé).",
+  },
+  "Bear Hug": {
+    name: "Étreinte d'Ours",
+    description:
+      "Si l'Ours touche le même guerrier ennemi avec ses deux attaques lors du même tour de combat, le joueur peut choisir d'effectuer une seule attaque « Étreinte d'Ours » au lieu de résoudre les attaques normalement.\nSi cette option est choisie, chaque joueur doit lancer un D6 et ajouter la Force de son modèle au résultat.\nSi le total de l'Ours est supérieur ou si les totaux sont égaux, le guerrier adverse subit une seule blessure automatique sans sauvegarde d'Armure autorisée.\nSi le total du guerrier ennemi est supérieur, le guerrier s'est défait de la prise de l'Ours et ne subit aucun dégât de l'attaque.",
+  },
+  "Bellowing Roar": {
+    name: "Rugissement Tonitruant",
+    description:
+      "Seul le Chef Homme-bête peut posséder cette compétence. Il peut relancer tout test de Déroute raté.",
+  },
+  "Black Fury": {
+    name: "Fureur Noire",
+    description:
+      "Difficulté : 8\n\nLe Sorcier peut immédiatement charger n'importe quelle figurine ennemie à moins de 12\" (en ignorant les terrains et les figurines interposées) et gagne 2 Attaques supplémentaires et +1 en Force pendant la phase de combat rapproché de ce tour uniquement.",
+  },
+  "Blackblood": {
+    name: "Sang Noir",
+    description:
+      "Si le modèle perd un PV au combat rapproché, toute figurine en contact socle à socle avec lui subit une touche de Force 3 (pas de coups critiques) à cause de la projection de sang corrosif.",
+  },
+  "Blessed Sight": {
+    name: "Vision Bénie",
+    description:
+      "Une Augure peut relancer tous les tests de caractéristique ratés (escalade, résistance aux sorts ou toute autre raison), ainsi que tous les jets pour toucher en combat rapproché ou au tir. Vous devez accepter le second résultat.\n\nDe plus, une Augure peut utiliser sa Vision Bénie pour aider la Sœurité lorsqu'elles recherchent de la pierre magique dans la ville. Si l'Augure n'est pas mise Hors de combat pendant la bataille, vous pouvez lancer deux dés pour elle pendant la phase d'exploration et choisir l'un ou l'autre dé comme résultat.",
+  },
+  "Bloated Foulness": {
+    name: "Infâme Difformité",
+    description:
+      "Le Banni est une masse énorme et répugnante de plis adipeux et malades.\n\nIl gagne +1 PV et +1 Endurance mais son Mouvement est réduit de -1.",
+  },
+  "Blood Oath": {
+    name: "Serment de Sang",
+    description:
+      "Le chef d'une bande d'Ostland prête parfois un serment du sang de ne jamais abandonner un membre de sa « famille » tombé au combat.\nTelle est sa détermination à protéger ses parents par le sang qu'il est extrêmement difficile de le faire dérouter du terrain.\nSeul le chef d'une bande peut avoir cette compétence, qui lui permet de relancer un seul test de Déroute une fois par partie.",
+  },
+  "Bloodgreed": {
+    name: "Soif de Sang",
+    description:
+      "Si un Minotaure met tous ses ennemis Hors de combat en combat rapproché, il devient frénétique sur un résultat de 4+ avec un D6.",
+  },
+  "Bull Rush": {
+    name: "Charge de Taureau",
+    description:
+      "Ce guerrier est énorme, même selon les critères d'Ostland, et peut utiliser son tour de taille massif pour terrasser ses adversaires.\n\nLorsqu'il charge, ce Héros peut tenter de renverser son adversaire au lieu d'effectuer ses attaques normales.\nLancez pour toucher une fois avec un bonus de +1 pour toucher, bien qu'aucun jet « pour blesser » ne soit nécessaire.\nAu lieu de cela, si le guerrier touche avec cette attaque, le modèle adverse est mis À terre.\n\n(Les modèles dotés de la compétence Charge de Taureau doivent avoir un ventre de buveur de bière convenablement gros modelé en mastic quand cela est possible !)",
+  },
+  "Burn The Witch": {
+    name: "Brûlez la Sorcière",
+    description:
+      "Haït tous les Lanceurs de Sorts",
+  },
+  "Charge": {
+    name: "Charge",
+    description:
+      "Les Loups Funèbres sont des créatures baveuses qui submergent leurs adversaires lorsqu'ils chargent.\nLes Loups Funèbres combattent avec 2 attaques au lieu d'une lors du tour où ils chargent.",
+  },
+  "Children of the Horned Rat": {
+    name: "Enfants du Rat Cornu",
+    description:
+      "Difficulté : Auto\n\nCe sort doit être utilisé avant la partie, et ne peut être utilisé qu'une seule fois. Lorsqu'il est lancé, le sort invoque D3 Rats Géants, qui sont placés à moins de 6\" du Sorcier. Le Sorcier ne peut lancer ce sort avec succès qu'une seule fois par bataille, et les rats disparaissent après la bataille. Ils ne comptent pas dans la taille maximale de la bande Skaven.",
+  },
+  "Cloud of Flies": {
+    name: "Nuée de Mouches",
+    description:
+      "Les Porte-Pestes sont entourés d'une nuée de mouches qui bourdonnent autour d'eux et de leur adversaire en combat.\nElles n'affectent pas le Porte-Peste mais distraient les ennemis en bourdonnant dans leurs yeux, leurs narines et leur bouche.\n\nL'adversaire en combat rapproché d'un Porte-Peste subit un malus de -1 pour toucher sur toutes ses attaques.",
+  },
+  "Crazed": {
+    name: "Frénétique",
+    description:
+      "Les Âmes Noires ont été rendues folles par la possession démoniaque et ne connaissent pas la peur.\nIls réussissent automatiquement tous les tests de Commandement qu'ils sont tenus de passer.",
+  },
+  "Daemonic": {
+    name: "Démoniaque",
+    description:
+      "Les Nurglings sont des Démons du seigneur de la maladie Nurgle et ne sont pas faits de chair vivante, mais des forces éternelles et immuables du Chaos.\n\nPar conséquent, ils ne gagnent jamais d'Expérience.",
+  },
+  "Daemonic Aura": {
+    name: "Aura Démoniaque",
+    description:
+      "En raison de la nature Magique et intangible des Démons, ils bénéficient d'une sauvegarde d'Armure spéciale de 5+.\n\nCelle-ci est modifiée par la Force de l'attaque comme d'habitude et est totalement annulée par les armes magiques et les sorts.\n\nLes attaques des Porte-Pestes sont également considérées comme Magiques.",
+  },
+  "Daemonic Instability": {
+    name: "Instabilité Démoniaque",
+    description:
+      "Les Porte-Pestes sont liés au monde par une Magie Noire très volatile et instable.\n\nS'il est mis Hors de combat, un Porte-Peste est banni et effectivement détruit sur un jet de D6 de 1-3 (ne lancez pas de jet de blessure grave).\n\nDe plus, si la bande déroute, chaque Porte-Peste de la bande doit immédiatement passer un test de Commandement.\n\nSi ce test est raté, le Porte-Peste est considéré comme détruit.",
+  },
+  "Dangerous to Know": {
+    name: "Fréquentation Dangereuse",
+    description:
+      "En raison de sa nature plutôt malade, une bande du Carnaval du Chaos aurait beaucoup de mal à garder des Francs-Tireurs en vie ! Par conséquent, un Carnaval du Chaos ne peut jamais engager aucun type de Franc-Tireur.",
+  },
+  "Demonic": {
+    name: "Démoniaque",
+    description:
+      "Les Porte-Pestes sont des Démons du seigneur de la maladie Nurgle et ne sont pas faits de chair vivante, mais des forces éternelles et immuables du Chaos.\n\nPar conséquent, ils ne gagnent jamais d'Expérience.",
+  },
+  "Distasteful Company": {
+    name: "Compagnie Déplaisante",
+    description:
+      "De nombreux Francs-Tireurs refusent de travailler pour des Orcs, car ils savent que les Orcs sont tout aussi susceptibles de les manger que de se battre à leurs côtés.\nLes Orcs ne peuvent engager que les Francs-Tireurs suivants :\n  Combattants des Fosses, Gardes du Corps Ogres ou Sorciers.",
+  },
+  "Drunk": {
+    name: "Ivre",
+    description:
+      "Les Brutes sont complètement imbibées d'alcool frelaté et de bière bon marché.\n\nÀ ce titre, ils réussissent automatiquement tous les tests basés sur le Commandement qu'ils sont tenus de passer.",
+  },
+  "Drunken": {
+    name: "Ivrogne",
+    description:
+      "Les Centigors ont tendance à boire de vastes quantités de bière infâme, de vin et de spiritueux pillés avant la bataille, se stimulant jusqu'à entrer dans une frénésie d'ivrogne.\n\nLancez 1D6 au début de chaque tour.\n\nSur un 1, ils doivent tester la stupidité pour ce tour.\nSur un 2-5, rien ne se passe.\nSur un 6, ils deviennent sujets à la frénésie pour ce tour.\n\nTant qu'ils sont sujets à la fois à la stupidité et à la frénésie, ils sont immuns à toutes les autres formes de psychologie.",
+  },
+  "Dumb Monster": {
+    name: "Monstre Idiot",
+    description:
+      "Un Troll est bien trop stupide pour jamais apprendre de nouvelles compétences.\nLes Trolls ne gagnent pas d'expérience.",
+  },
+  "Expert Weaponsmith": {
+    name: "Armurier Expert",
+    description:
+      "Un Ingénieur Nain peut augmenter la portée des armes à projectile de la bande. Toutes les armes à projectile naines de la bande voient leur portée augmentée de 3\" pour les Pistolets et de 6\" pour les Arbalètes et les Arquebuses. Toute augmentation de portée n'est maintenue que tant que l'Ingénieur Nain reste avec la bande.",
+  },
+  "Extra Tough": {
+    name: "Extrêmement Résistant",
+    description:
+      "Relancez les dés de Blessures Graves des Héros lorsqu'ils sont mis Hors de combat.",
+  },
+  "Eye of the Warp": {
+    name: "Œil du Warp",
+    description:
+      "Difficulté : 8\n\nToutes les figurines debout en contact socle à socle avec le Sorcier doivent immédiatement passer un test de Commandement. En cas d'échec, elles subissent chacune une touche de Force 3 et doivent s'enfuir de 2D6 directement à l'opposé du Sorcier, exactement comme si elles avaient perdu leur sang-froid en combattant contre plus d'un adversaire.",
+  },
+  "Fanatic": {
+    name: "Fanatique",
+    description:
+      "Réussit tous ses tests de commandement, ne peut jamais être le chef",
+  },
+  "Fearless": {
+    name: "Intrépide",
+    description:
+      "Immunisé à la peur, à la terreur et aux tests de Seul au Monde.",
+  },
+  "Fiercely Loyal": {
+    name: "Farouchement Loyal",
+    description:
+      "Un tel dévouement est ancré dans la relation entre le Dompteur d'Ours et l'ours que si son dresseur est blessé, l'ours se tiendra souvent au-dessus du corps pour le protéger, ou traînera même le corps du dresseur en lieu sûr.\n\nTant que son ours n'est pas mis Hors de combat pendant une partie, un Dompteur d'Ours ignore les résultats suivants sur la table des Blessures Graves :\n - Vendu dans les fosses\n - Dépouillé\n - Capturé\net ignore les résultats équivalents dans des contextes comme Lustrie qui ont leur propre table spéciale de Blessures Graves.\n\nSi l'un de ces résultats est obtenu pour le Dompteur d'Ours, traitez le résultat comme une « Guérison Complète » à la place.",
+  },
+  "Foul Odour": {
+    name: "Odeur Infecte",
+    description:
+      "Les Ostlandais sont d'immenses buveurs et pas très hygiéniques ! Ce guerrier surpasse tous les autres.\nAprès une vie de boisson, l'alcool n'a plus beaucoup d'effet sur lui... ce qui ne l'empêche pas d'en consommer d'énormes quantités !\nSes vêtements non lavés et sa sueur puent l'alcool et tous les ennemis vivants (hors Non-morts ou Possédés) ont un malus de -1 pour le toucher au combat rapproché.\nDe plus, le guerrier ne peut porter aucune flamme nue (torche, lanterne, etc.) et les attaques enflammées contre lui sont résolues avec une Force de +1 car ses vêtements imbibés d'alcool brûlent facilement.",
+  },
+  "Gnawdoom": {
+    name: "Rongemort",
+    description:
+      "Difficulté : 7\n\nLe Rongemort cause 2D6 touches de Force 1 à une seule figurine située à moins de 8\" du lanceur.",
+  },
+  "Goblin Animosity": {
+    name: "Animosité Goblin",
+    description:
+      "Un Guerrier Goblin qui rate son test d'Animosité et obtient un 1 comme résultat ne chargera jamais un Homme de Main Orc, bien qu'il utilise toujours ses armes à projectile pour attaquer normalement.\nLes Goblins ont bien trop peur des Orcs pour les défier individuellement.",
+  },
+  "Great Traders": {
+    name: "Grands Commerçants",
+    description:
+      "En tant que commerçants nés ayant des contacts dans les guildes marchandes, les bandes de Marienburg reçoivent un bonus de +1 lorsqu'elles tentent de trouver des objets rares.\nPour refléter leur immense richesse, les Marienbourgeois commencent avec 100 couronnes d'or supplémentaires (600 au total) lorsqu'ils combattent dans une campagne.\nLors d'une partie ponctuelle, ils ont droit à 20 % de couronnes d'or supplémentaires lors du recrutement d'une bande.\nPar exemple, dans une partie à 1 000 couronnes d'or, une bande de Marienbourgeois aura 1 200 co.",
+  },
+  "Grudgebearers": {
+    name: "Rancuniers",
+    description:
+      "Les Nains gardent une rancune ancestrale envers les Elfes depuis l'époque où les deux races se battaient pour la suprématie dans le Vieux Monde. Une bande de Nains ne peut jamais inclure aucun type de Franc-Tireur ou Dramatis Personae Elfe.",
+  },
+  "Gun-Rest": {
+    name: "Appui-Fusil",
+    description:
+      "Un guerrier Streltsi armé à la fois d'une hallebarde et d'une arquebuse peut utiliser la hallebarde comme repose-fusil.\n\nLe guerrier reçoit un bonus de +1 à son jet « pour toucher » avec l'arquebuse, tant qu'il n'a pas bougé pendant ce tour (cela s'applique même si le guerrier possède une compétence qui lui permet de bouger et tirer avec son arquebuse - il ne doit pas bouger s'il veut appuyer son arme).",
+  },
+  "Hate Chaos": {
+    name: "Haine du Chaos",
+    description:
+      "Des années de lutte acharnée contre les forces du Chaos ont laissé des traces chez le peuple Cosaque.\nLes Cosaques sont sujets à la Haine contre toutes les forces du Chaos (par ex. les membres de toute bande à laquelle les joueurs appliqueraient la règle spéciale Ennemis Ancestraux).",
+  },
+  "Hate Orcs and Goblins": {
+    name: "Haine des Orques et Gobelins",
+    description:
+      "Tous les Nains haïssent les Orcs et les Gobliss",
+  },
+  "Horned One": {
+    name: "Cornu",
+    description:
+      "L'Homme-bête possède de puissantes cornes et peut effectuer une Attaque supplémentaire avec sa Force de base lors d'un tour où il charge.",
+  },
+  "Incomparable Miners": {
+    name: "Mineurs Incomparables",
+    description:
+      "Les Nains passent une grande partie de leur vie sous terre à chercher des minéraux précieux, et ils sont les meilleurs au monde dans ce domaine. Dans la cité de Mordheim, ils appliquent des compétences similaires à la recherche de pierre magique. Lors de la recherche de pierre magique à la fin d'une partie, ajoutez +1 au nombre de fragments trouvés pour une bande de Nains.",
+  },
+  "Infiltration": {
+    name: "Infiltration",
+    description:
+      "Un Skaven possédant cette compétence est toujours placé sur le champ de bataille après la bande adverse et peut être placé n'importe où sur la table tant qu'il est hors de vue de la bande adverse et à plus de 12\" de toute figurine ennemie. Si les deux joueurs ont des figurines qui s'infiltrent, lancez un D6 pour chacun, et le jet le plus bas s'installe en premier.",
+  },
+  "Inheritance": {
+    name: "Héritage",
+    description:
+      "Lors de la création de la bande kislevite, le Capitaine Druzhina est autorisé à acheter un objet dans la liste d'équipement des Guerriers Kislevites à la moitié de son coût normal.\nCet objet représente un précieux héritage familial transmis de génération en génération.\n\nPerdre un objet ancestral est considéré comme très irrespectueux et si l'objet est perdu (par exemple à la suite d'un résultat « Dépouillé » sur la table des blessures graves), le capitaine DOIT le remplacer par un substitut de facture raffinée aussi rapidement que possible sous peine d'être hanté par les esprits en colère de ses ancêtres.\nPour remplacer un objet ancestral, le Capitaine doit acheter le même équipement à 150 % de son prix normal.\nCe coût plus élevé représente les détails raffinés et les matériaux précieux utilisés dans la fabrication de l'objet.\n\nTant que l'objet n'est pas remplacé, le Capitaine subit un malus de -1 à tous ses tests et jets pour toucher.",
+  },
+  "Leader": {
+    name: "Chef",
+    description:
+      "Tout guerrier se trouvant à moins de 6\" du Boss Orc peut utiliser sa valeur de Commandement lorsqu'il passe des tests de Commandement.",
+  },
+  "Lowest of the Low": {
+    name: "Le Plus Bas de l'Échelle",
+    description:
+      "Les Ungors se trouvent au plus bas de l'échelle sociale des Hommes-bêtes et, quelle que soit l'Expérience qu'ils accumulent, ils n'obtiendront jamais une position d'autorité.\n\nSi un Ungor obtient le résultat « Le gars a du talent », le jet doit être relancé.",
+  },
+  "Manhater": {
+    name: "Haine des Hommes",
+    description:
+      "Sera affecté par les règles de haine lorsqu'il combat contre n'importe quelle bande d'Humains.",
+  },
+  "Mark of Nurgle": {
+    name: "Marque de Nurgle",
+    description:
+      "Le Banni est marqué du grand symbole de Nurgle, les trois sphères, qui suintent constamment du pus infâme.\n\nIl gagne +1 PV et est immunisé à tous les poisons.",
+  },
+  "May Hire": {
+    name: "Peut Engager",
+    description:
+      "Une bande kislevite a accès à la même sélection de Francs-Tireurs que les bandes de Mercenaires Humains du livre de règles de Mordheim.",
+  },
+  "Middenheim Strength": {
+    name: "Force de Middenheim",
+    description:
+      "Les hommes de Middenheim sont célèbres pour leur prouesse physique.\nPour représenter leur avantage en termes de taille et de carrure, les Champions et Capitaines d'une bande de Middenheim commencent avec une Force de 4 au lieu d'une Force de 3.",
+  },
+  "Minderz": {
+    name: "Surveillants",
+    description:
+      "Chaque Squig des Cavernes doit toujours rester à moins de 6\" d'un Guerrier Goblin qui maintient la créature au pas. Si un Squig des Cavernes se retrouve sans Goblin à moins de 6\" au début de sa phase de Mouvement, il devient sauvage. À partir de ce moment, déplacez le Squig de 2D6\" dans une direction aléatoire à chacune de ses phases de Mouvement. Si son mouvement le met en contact avec une autre figurine (amie ou ennemie), il l'engagera au combat au corps à corps normalement. Le Squig des Cavernes échappe au contrôle du joueur Orc & Goblin jusqu'à la fin de la partie.",
+  },
+  "Movement": {
+    name: "Mouvement",
+    description:
+      "Les Squigs des Cavernes n'ont pas de valeur de Mouvement fixe mais se déplacent avec une démarche bondissante et lourde. Pour représenter cela, lorsque vous déplacez des Squigs, lancez 2D6 pour la distance de déplacement. Les Squigs ne courent jamais et ne déclarent jamais de charges. Au lieu de cela, ils sont autorisés à entrer en contact avec des figurines ennemies grâce à leur mouvement normal de 2D6\". Si cela se produit, ils sont considérés comme chargeant pour le tour de combat rapproché suivant, tout comme s'ils avaient déclaré une charge.",
+  },
+  "Mutant": {
+    name: "Mutant",
+    description:
+      "L'Homme-bête peut acheter une mutation.\n\nVoir la section Mutants pour les règles spéciales.",
+  },
+  "No Respect": {
+    name: "Aucun Respect",
+    description:
+      "Les Brutes font l'objet d'un étrange mélange de pitié et de peur abjecte pour leurs semblables et ne peuvent jamais devenir chef de bande.",
+  },
+  "Nurgle’s Blessings": {
+    name: "Bénédictions de Nurgle",
+    description:
+      "Les Bannis doivent commencer la partie avec une ou plusieurs Bénédictions de Nurgle.",
+  },
+  "Nurgle’s Rot": {
+    name: "Pourriture de Nurgle",
+    description:
+      "Le Banni est infecté par la pestilence mortelle de son seigneur – la Pourriture de Nurgle.\n\nDe plus, le Banni est immunisé à tous les poisons.\n\nLa Pourriture de Nurgle est une contagion mortelle pour laquelle il n'existe aucun remède connu.\nCette maladie virulente peut se transmettre lors des combats au corps à corps.\n\nSi le Banni réussit un jet pour toucher de 6, le modèle ciblé contracte la Pourriture (note : la Pourriture de Nurgle n'affecte que les vivants, les Non-morts, les Démons et les Possédés ne sont donc pas affectés).\n\nLorsqu'un guerrier a contracté la Pourriture, notez-le sur la feuille de bande.\n\nPlutôt que de tuer la victime immédiatement, la Pourriture peut mettre un certain temps à s'installer.\nÀ partir de maintenant, avant le début de chaque bataille, le guerrier doit réussir un test d'Endurance.\n\nEn cas de réussite, sa constitution a réussi à repousser les effets de la Pourriture.\n\nEn cas d'échec, le guerrier perd définitivement un point d'Endurance (s'il atteint zéro, il a succombé à la Pourriture et est mort, retirez-le de la feuille de bande).\n\nDe plus, si un 6 est obtenu au test d'Endurance, il a transmis sans le vouloir la Pourriture à un autre membre de la bande (désignez aléatoirement un membre de la bande et notez-le sur la feuille).",
+  },
+  "Plague Cart": {
+    name: "Charrette Pesteuse",
+    description:
+      "La nature Démoniaque de la Charette Pesteuse remplit d'énergie aussi bien les Démons que les mortels du Carnaval du Chaos.\n\nLe nombre maximum de guerriers autorisés dans la bande est augmenté de +2.\n\nDe plus, l'Instabilité Démoniaque des Démons au sein de la bande est légèrement compensée.\n\nLes Porte-Pestes et les Nurglings peuvent relancer leurs tests de Commandement pour l'Instabilité et bénéficient de +1 à leurs tests de Blessure s'ils sont mis Hors de combat.",
+  },
+  "Prayers": {
+    name: "Prières",
+    description:
+      "Un Prêtre de Taal peut utiliser les prières de Taal énumérées ci-dessous.",
+  },
+  "Promotion": {
+    name: "Promotion",
+    description:
+      "Un Halfling promu au rang de héros via l'avancement « Le gars a du talent » ne peut pas choisir la liste de compétences de Force.\nLes Halflings ne sont pas réputés pour leur grande force !",
+  },
+  "Protection of Sigmar": {
+    name: "Protection de Sigmar",
+    description:
+      "Tout sort qui l'affecterait est annulé sur un jet de D6 de 4+. Notez que si le sort est annulé, il n'affectera pas non plus les autres figurines.",
+  },
+  "Regeneration": {
+    name: "Régénération",
+    description:
+      "Les Trolls ont une physiologie unique qui leur permet de régénérer leurs blessures.\nChaque fois qu'un ennemi inflige avec succès une blessure à un Troll, lancez un D6 : sur un résultat de 4 ou plus, la blessure est ignorée et le Troll n'est pas blessé.\nLes Trolls ne peuvent pas régénérer les blessures causées par le feu ou la Magie basée sur le feu.\nLes Trolls ne lancent jamais de jet de Blessure après une bataille.",
+  },
+  "Reikland Leadership": {
+    name: "Commandement du Reikland",
+    description:
+      "Les Mercenaires du Reikland sont habitués aux exigences de la discipline militaire et possèdent une loyauté très développée entre officiers et hommes.\nPour représenter cela, les combattants peuvent utiliser le Commandement de leur Capitaine s'ils se trouvent à moins de 12\" au lieu des 6\" habituels.\n\nUne solide tradition d'entraînement martial est également responsable du niveau élevé de tir à l'arc parmi le peuple du Reikland.\nTous les Tireurs ajoutent donc +1 à leur Capacité de Tir, qu'ils soient recrutés lors de la formation initiale de la bande ou ajoutés plus tard (cela est inclus dans leur profil).",
+  },
+  "Resource Hunter": {
+    name: "Chercheur de Ressources",
+    description:
+      "Lors d'un jet sur le tableau d'Exploration, le Héros peut modifier un jet de dé de +1/-1.",
+  },
+  "Runts": {
+    name: "Avortons",
+    description:
+      "Les Goblins peuvent gagner de l'expérience, mais s'ils obtiennent « Le gars a du talent », ils sont immédiatement tués par leurs maîtres Orcs pour être devenus trop « insolents » (retirez le Gobbo de la feuille de bande).",
+  },
+  "Self Sufficient": {
+    name: "Autosuffisant",
+    description:
+      "Les hommes d'Ostland n'ont aucun désir de donner leur or chèrement gagné à des étrangers.\nPar conséquent, ils ne peuvent jamais engager de Mercenaires, à l'exception des Ogres (qui ne sont pas rares en Ostland).",
+  },
+  "Sign of Sigmar": {
+    name: "Signe de Sigmar",
+    description:
+      "Les adversaires Possédés ou Non-morts perdent leur première attaque contre la Prêtresse lors du premier tour de combat rapproché (jusqu'à un minimum de 1).",
+  },
+  "Slow Witted": {
+    name: "Esprit Lent",
+    description:
+      "Bien que les Ogres soient capables de gagner de l'expérience et de s'améliorer, ce ne sont pas les créatures les plus intelligentes.\n\nLes Ogres ne gagnent des avancements qu'à la moitié du rythme des autres (c'est-à-dire qu'ils doivent accumuler deux fois plus d'expérience que la normale pour obtenir un avancement).",
+  },
+  "Sorcerer's Curse": {
+    name: "Malédiction du Sorcier",
+    description:
+      "Difficulté : 6\n\nLe sort a une portée de 12\" et affecte une seule figurine à portée. La cible doit relancer toutes ses sauvegardes d'armure et ses jets pour toucher réussis pendant la phase de combat rapproché des Skavens ainsi que pendant ses propres phases de tir et de combat rapproché suivantes.",
+  },
+  "Stream of Corruption": {
+    name: "Jet de Corruption",
+    description:
+      "Les Porte-Pestes peuvent vomir un jet grotesque d'icots, d'entrailles et de crasse.\n\nCeci est considéré comme une attaque de tir d'une portée de 6\" et est résolu avec une Force de 3 sans sauvegarde d'armure autorisée.",
+  },
+  "Strictures": {
+    name: "Restrictions",
+    description:
+      "Les Prêtres de Taal ne peuvent jamais porter d'Armure Lourde.",
+  },
+  "Swarm": {
+    name: "Essaim",
+    description:
+      "Vous pouvez invoquer autant de Nurglings que vous le souhaitez (c'est-à-dire que vous pouvez avoir plus de cinq Nurglings dans un groupe de Hommes de Main).",
+  },
+  "Taunt": {
+    name: "Provocation",
+    description:
+      "Après des années à provoquer ses adversaires dans des bagarres d'ivrognes, cet Ostlandais a appris certaines des insultes les plus viles de l'Empire.\nPendant la phase de Tir, le guerrier peut choisir d'insulter un ennemi au lieu de tirer avec une arme à projectile ou de lancer un sort.\nLe guerrier doit pouvoir voir l'ennemi et l'insulte suit toutes les règles de Ligne de Vue pour le tir (vous devez insulter l'ennemi le plus proche, etc.).\nLe joueur doit insulter la figurine ennemie d'une manière ou d'une autre dans la mesure du possible (peut-être que son chapeau ressemble à un perroquet étranglé ou que sa mère était une Bretonnienne !).\nL'ennemi passe ensuite un test de Commandement.\nS'il réussit, rien ne se passe, mais s'il échoue, il doit passer sa prochaine phase de Mouvement à essayer d'entrer en combat rapproché avec le guerrier qui l'a provoqué.",
+  },
+  "Thick Skull": {
+    name: "Crâne Épais",
+    description:
+      "Sauvegarde de 3+ sur un D6 pour éviter d'être assommé. Si la sauvegarde est réussie, le résultat assommé devient à terre. Si le Nain porte également un casque, cette sauvegarde passe à 2+ au lieu de 3+.",
+  },
+  "Trained": {
+    name: "Dressé",
+    description:
+      "Un ours ne se soucie pas de la mission de la bande ni de son inimitié envers les autres bandes - il ne fait que suivre les ordres de son dresseur.\n\nParfois, il s'ennuie en attendant les ordres ; pour cette raison, les Ours Dressés sont soumis aux règles de Stupidité.\nS'il reçoit une « attention particulière » de la part de son dresseur, il obéira un peu mieux ; un ours n'est donc pas tenu de passer ces tests de Stupidité si le Dompteur d'Ours de la bande se trouve à moins de 6\".\n\nEn fait, c'est le seul membre de la bande que l'ours écoutera ; un Ours Dressé n'utilisera jamais le Commandement du chef de bande pour les tests qu'il doit passer.\nIl peut cependant utiliser le Commandement du Dompteur d'Ours s'il se trouve à moins de 6\" de lui.\n\nNotez que la bande ne peut pas contrôler l'ours sans Dompteur d'Ours.\n\nL'Ours Dressé ne peut être utilisé dans aucune partie à laquelle le Dompteur d'Ours de la bande ne participe pas (ce qui signifie que si la bande n'inclut aucun Dompteur d'Ours, la bande doit garder l'ours au camp jusqu'à ce qu'elle en engage un nouveau !).",
+  },
+  "Trample": {
+    name: "Piétinement",
+    description:
+      "En plus de leurs armes, les Centigors utilisent leurs sabots et leur taille imposante pour écraser leurs ennemis.\nCeci compte comme une attaque supplémentaire, qui ne bénéficie d'aucun bonus ou pénalité d'arme...",
+  },
+  "True Grit": {
+    name: "Cran Véritable",
+    description:
+      "Lors d'un jet sur la Table des Blessures pour ce Héros, un résultat de 1-3 est traité comme À terre, 4-5 comme Assommé et 6 comme Hors de combat.",
+  },
+  "Unliving": {
+    name: "Non-Vivant",
+    description:
+      "Les Loups Funèbres ne gagnent pas d'expérience.\nOn n'apprend pas de nouveaux tours à un vieux singe !",
+  },
+  "Unnatural Strength": {
+    name: "Force Contre-Nature",
+    description:
+      "Les Brutes commencent la partie avec la compétence Costaud de la liste de compétences de Force du livre de règles de Mordheim.",
+  },
+  "Utter Determination": {
+    name: "Détermination Totale",
+    description:
+      "Seule la Matriarche peut avoir cette compétence, qui lui permet de relancer tout test de Déroute raté.",
+  },
+  "Vomit Attack": {
+    name: "Attaque de Vomi",
+    description:
+      "Au lieu de ses attaques normales, un Troll peut régurgiter ses sucs digestifs extrêmement corrosifs sur un malheureux adversaire en combat rapproché.\nIl s'agit d'une attaque unique qui touche automatiquement avec une Force de 5 et ignore les sauvegardes d'armure.",
+  },
+  "Warpfire": {
+    name: "Feu du Warp",
+    description:
+      "Difficulté : 8\n\nLe sort a une portée de 8\", touchant la première figurine sur sa trajectoire. Le sort cause D3 touches de Force 4 à sa cible, et une touche de Force 3 à chaque figurine se trouvant à moins de 2\" de la cible.",
+  },
+  "Woodland Dwelling": {
+    name: "Habitant des Bois",
+    description:
+      "Les Centigors sont des créatures des forêts profondes et sombres.\nIls ne subissent aucune pénalité de mouvement pour se déplacer à travers les zones boisées.",
+  },
+  "art of silent death": {
+    name: "Art de la Mort Silencieuse",
+    description:
+      "En combat rapproché, le Skaven peut se battre à mains nues sans aucune pénalité et compte comme ayant deux armes (c'est-à-dire +1 attaque). De plus, un Héros Skaven possédant cette compétence causera un coup critique sur un jet Pour Blesser de 5-6 au lieu de seulement 6. Cette compétence peut être utilisée conjointement avec les Griffes d'Combat Eshin (+2 Attaques au lieu de +1).",
+  },
+  "black hunger": {
+    name: "Faim Noire",
+    description:
+      "Le Héros Skaven peut déclarer au début de son tour qu'il utilise cette compétence. Le Héros peut ajouter +1 attaque et +D3\" au mouvement total de son profil pour la durée de son propre tour, mais subira D3 touches S3 sans sauvegarde d'armure possible à la fin du tour.",
+  },
+  "tail fighting": {
+    name: "Combat à la Queue",
+    description:
+      "Le Skaven peut manier un bouclier, un couteau ou une épée avec sa queue. La figurine gagne une attaque supplémentaire avec l'arme appropriée ou un bonus de +1 à sa sauvegarde d'armure.",
+  },
+  "waaagh!": {
+    name: "Waaagh !",
+    description:
+      "Le guerrier peut ajouter +D3\" à sa portée de charge.",
+  },
+  "wall runner": {
+    name: "Coureur de Murailles",
+    description:
+      "Le Skaven n'a pas besoin de passer de test d'Initiative lorsqu'il escalade des murs et d'autres surfaces escarpées.",
+  },
+  "well ’ard": {
+    name: "Bien Coriace",
+    description:
+      "Telle est la résistance de l'Orc qu'il peut ajouter +1 à toutes ses sauvegardes d'armure.",
+  },
+  "’ard ead": {
+    name: "Tête Dure",
+    description:
+      "Il bénéficie d'une sauvegarde spéciale de 3+ sur un D6 pour éviter d'être assommé. Si la sauvegarde est réussie, traitez un résultat assommé comme à terre à la place. Si l'Orc porte également un casque, cette sauvegarde passe à 2+ au lieu de 3+ (cela remplace la règle spéciale habituelle du casque).",
+  },
+  "’eadbasher": {
+    name: "Fracasse-Crâne",
+    description:
+      "Tous les résultats À terre causés par l'Orc en combat rapproché comptent comme des résultats Assommé à la place.",
+  },
+  "’ere we go!": {
+    name: "C'est Parti !",
+    description:
+      "Le modèle peut ignorer les tests de Peur et de Terreur lorsqu'il charge.",
   },
 });
