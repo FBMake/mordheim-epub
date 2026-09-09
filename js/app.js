@@ -1,5 +1,5 @@
 import { parseRoster } from "./parser.js";
-import { buildDocx } from "./docx-builder.js";
+import { buildPdf } from "./pdf-builder.js";
 import {
   resizeAndCompressImage,
   serializePersonalization,
@@ -306,11 +306,11 @@ generateBtn.addEventListener("click", async () => {
 
     const base = safeBaseName(currentModel.meta.nom);
 
-    const blob = await buildDocx(currentModel);
+    const blob = await buildPdf(currentModel);
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `${base}.docx`;
+    a.download = `${base}.pdf`;
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -321,7 +321,7 @@ generateBtn.addEventListener("click", async () => {
     downloadPersonalizationFile(json, base);
 
     generateStatus.textContent =
-      "Document Word et fichier de personnalisation téléchargés ✓ — gardez ce dernier pour la prochaine fois.";
+      "PDF et fichier de personnalisation téléchargés ✓ — gardez ce dernier pour la prochaine fois.";
   } catch (err) {
     console.error(err);
     generateStatus.textContent = `Erreur lors de la génération : ${err.message}`;

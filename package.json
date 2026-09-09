@@ -1,12 +1,11 @@
 {
-  "name": "mordheim-epub",
+  "name": "mordheim-pdf",
   "version": "1.0.0",
-  "description": "G\u00e9n\u00e8re un document Word (.docx) (fiches de bande, h\u00e9ros, hommes de main) en fran\u00e7ais \u00e0 partir d'un export JSON BattleScribe.",
+  "description": "G\u00e9n\u00e8re un PDF (fiches de bande, h\u00e9ros, hommes de main, gabarits image) en fran\u00e7ais \u00e0 partir d'un export JSON BattleScribe.",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test:parser": "node test/test-parser.mjs",
-    "test:docx": "node test/test-docx-full.mjs",
     "test:perso": "node test/test-personalization.mjs"
   },
   "keywords": [],
