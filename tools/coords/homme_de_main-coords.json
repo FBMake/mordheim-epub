@@ -1,0 +1,109 @@
+{
+  "image": "homme_de_main.png",
+  "width": 1414,
+  "height": 2000,
+  "fields": {
+    "nom": {
+      "x": 260,
+      "y": 262,
+      "align": "left",
+      "size": 32
+    },
+    "type": {
+      "x": 260,
+      "y": 335,
+      "align": "left",
+      "size": 26
+    },
+    "type_code": {
+      "x": 495,
+      "y": 335,
+      "align": "center",
+      "size": 26
+    },
+    "bio": {
+      "x": 90,
+      "y": 400,
+      "align": "left",
+      "size": 20,
+      "maxWidth": 720,
+      "lineHeight": 28
+    },
+    "photo": {
+      "x": 908,
+      "y": 130,
+      "width": 450,
+      "height": 560
+    },
+    "stat_M": {
+      "x": 158,
+      "y": 845,
+      "align": "center",
+      "size": 26
+    },
+    "stat_CC": {
+      "x": 293,
+      "y": 845,
+      "align": "center",
+      "size": 26
+    },
+    "stat_CT": {
+      "x": 428,
+      "y": 845,
+      "align": "center",
+      "size": 26
+    },
+    "stat_F": {
+      "x": 563,
+      "y": 845,
+      "align": "center",
+      "size": 26
+    },
+    "stat_E": {
+      "x": 698,
+      "y": 845,
+      "align": "center",
+      "size": 26
+    },
+    "stat_PV": {
+      "x": 833,
+      "y": 845,
+      "align": "center",
+      "size": 26
+    },
+    "stat_I": {
+      "x": 968,
+      "y": 845,
+      "align": "center",
+      "size": 26
+    },
+    "stat_A": {
+      "x": 1104,
+      "y": 845,
+      "align": "center",
+      "size": 26
+    },
+    "stat_CD": {
+      "x": 1239,
+      "y": 845,
+      "align": "center",
+      "size": 26
+    },
+    "equipement": {
+      "x": 90,
+      "y": 1040,
+      "align": "left",
+      "size": 20,
+      "maxWidth": 1250,
+      "lineHeight": 27
+    },
+    "competences_blessures": {
+      "x": 90,
+      "y": 1450,
+      "align": "left",
+      "size": 20,
+      "maxWidth": 1250,
+      "lineHeight": 27
+    }
+  }
+}

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Pointeur de coordonnées v3 — gabarits PDF</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; display: flex; height: 100vh; }
+  #sidebar {
+    width: 380px; flex-shrink: 0; padding: 1rem; background: #1c232b; color: #ede0c8;
+    overflow-y: auto; box-sizing: border-box;
+  }
+  #sidebar h1 { font-size: 1.05rem; margin-top: 0; }
+  #sidebar h2 { font-size: 0.85rem; margin: 1.1rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; color: #b9ac8f; }
+  #sidebar p.hint { font-size: 0.78rem; color: #b9ac8f; line-height: 1.4; }
+  #canvas-wrap { flex: 1; overflow: auto; background: #333; text-align: center; }
+  canvas { cursor: crosshair; margin: 1rem auto; display: block; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+  button, input[type="file"] {
+    width: 100%; margin: 0.25rem 0; padding: 0.45rem; box-sizing: border-box;
+    font-size: 0.8rem; border-radius: 3px; border: 1px solid #8a6e3d; background: #2a333e; color: #ede0c8; cursor: pointer;
+  }
+  button.primary { background: #7a2e2e; }
+  button.primary:hover { background: #9c4444; }
+  button.small { width: auto; padding: 0.2rem 0.5rem; margin: 0 0.2rem 0.2rem 0; }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .mode-btns { display: flex; gap: 0.35rem; }
+  .mode-btns button { flex: 1; font-size: 0.72rem; padding: 0.4rem 0.2rem; }
+  .mode-btns button.active { background: #7a2e2e; }
+  .undo-btns { display: flex; gap: 0.4rem; }
+  ul#field-list { list-style: none; padding: 0; margin: 0.3rem 0; font-size: 0.78rem; max-height: 160px; overflow-y: auto; }
+  ul#field-list li {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.25rem 0.4rem; border-bottom: 1px solid #3a4451; cursor: pointer;
+  }
+  ul#field-list li:hover { background: #2a333e; }
+  ul#field-list li.selected { background: #4a3020; }
+  ul#field-list li button { width: auto; padding: 0.05rem 0.4rem; margin: 0; background: #3a4451; }
+  #status { font-size: 0.75rem; color: #f0c14b; min-height: 2.4em; }
+  label { font-size: 0.76rem; display: block; margin-top: 0.5rem; color: #d8cbb0; }
+  input[type="number"], input[type="text"], select {
+    width: 100%; box-sizing: border-box; padding: 0.28rem; font-size: 0.8rem;
+    background: #fff; border: 1px solid #8a6e3d; border-radius: 2px;
+  }
+  .row2 { display: flex; gap: 0.5rem; }
+  .row2 > div { flex: 1; }
+  .row3 { display: flex; gap: 0.4rem; }
+  .row3 > div { flex: 1; }
+  #edit-panel, #grid-panel { border: 1px solid #8a6e3d; padding: 0.6rem; margin-top: 0.4rem; display: none; }
+  #edit-panel.visible, #grid-panel.visible { display: block; }
+  #edit-panel h3, #grid-panel h3 { margin: 0 0 0.4rem; font-size: 0.85rem; color: #f0c14b; }
+  hr { border: none; border-top: 1px solid #3a4451; margin: 0.8rem 0; }
+  .check-label { display: flex; align-items: center; gap: 0.4em; }
+  .check-label input { width: auto; }
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+  <h1>📍 Pointeur de coordonnées v3</h1>
+  <p class="hint">
+    <strong>Point</strong> : un clic = texte sur une ligne.<br/>
+    <strong>Boîte</strong> : cliquez-glissez = zone (photo, texte multi-ligne).<br/>
+    <strong>Grille</strong> : cliquez-glissez = zone à répartir en colonnes/lignes.<br/>
+    Cliquez sur un repère placé pour le modifier ou le déplacer (glisser).
+  </p>
+
+  <input type="file" id="file-input" accept="image/*" />
+  <p id="status"></p>
+
+  <div class="undo-btns">
+    <button id="undo-btn" disabled>↩ Annuler (Ctrl+Z)</button>
+    <button id="redo-btn" disabled>↪ Rétablir (Ctrl+Y)</button>
+  </div>
+
+  <h2>Mode de placement</h2>
+  <div class="mode-btns">
+    <button id="mode-point" class="active">Point</button>
+    <button id="mode-box">Boîte</button>
+    <button id="mode-grid">Grille</button>
+  </div>
+
+  <h2>Champs placés (<span id="field-count">0</span>)</h2>
+  <ul id="field-list"></ul>
+
+  <div id="edit-panel">
+    <h3 id="edit-title">Champ</h3>
+    <label>Nom du champ</label>
+    <input type="text" id="edit-name" />
+    <div class="row2">
+      <div><label>X</label><input type="number" id="edit-x" /></div>
+      <div><label>Y</label><input type="number" id="edit-y" /></div>
+    </div>
+    <div class="row2" id="edit-size-row">
+      <div><label>Largeur</label><input type="number" id="edit-width" /></div>
+      <div><label>Hauteur</label><input type="number" id="edit-height" /></div>
+    </div>
+    <div id="text-only-fields">
+      <label>Alignement</label>
+      <select id="edit-align">
+        <option value="left">Gauche</option>
+        <option value="center">Centré</option>
+        <option value="right">Droite</option>
+      </select>
+      <label>Taille de police (px)</label>
+      <input type="number" id="edit-fontsize" />
+      <label class="check-label"><input type="checkbox" id="edit-multiline" />Texte multi-ligne (retour à la ligne auto)</label>
+      <div id="multiline-fields" style="display:none;">
+        <label>Largeur max du texte (px)</label>
+        <input type="number" id="edit-maxwidth" />
+        <label>Hauteur de ligne (px)</label>
+        <input type="number" id="edit-lineheight" />
+      </div>
+    </div>
+    <button class="primary" id="apply-btn">✓ Appliquer les modifications</button>
+    <button id="delete-btn">🗑 Supprimer ce champ</button>
+  </div>
+
+  <div id="grid-panel">
+    <h3>Configurer la grille</h3>
+    <p class="hint">Zone dessinée : <span id="grid-area-info"></span></p>
+    <label>Nom de base</label>
+    <input type="text" id="grid-basename" value="champ" />
+    <div class="row2">
+      <div><label>Colonnes</label><input type="number" id="grid-cols" value="9" min="1" /></div>
+      <div><label>Lignes</label><input type="number" id="grid-rows" value="1" min="1" /></div>
+    </div>
+    <div class="row2">
+      <div><label>Espace horizontal</label><input type="number" id="grid-gapx" value="0" /></div>
+      <div><label>Espace vertical</label><input type="number" id="grid-gapy" value="0" /></div>
+    </div>
+    <label>Type de cellule</label>
+    <select id="grid-type">
+      <option value="point">Point (texte simple)</option>
+      <option value="multiline">Texte multi-ligne</option>
+      <option value="box">Boîte vide</option>
+      <option value="image">Image</option>
+    </select>
+    <div class="row2">
+      <div><label>Alignement</label>
+        <select id="grid-align">
+          <option value="left">Gauche</option>
+          <option value="center" selected>Centré</option>
+          <option value="right">Droite</option>
+        </select>
+      </div>
+      <div><label>Taille police</label><input type="number" id="grid-fontsize" value="26" /></div>
+    </div>
+    <p class="hint" id="grid-preview-info"></p>
+    <div class="row2">
+      <button class="primary" id="grid-create-btn">✓ Créer la grille</button>
+      <button id="grid-cancel-btn">✕ Annuler</button>
+    </div>
+  </div>
+
+  <hr/>
+  <button id="export-btn">⬇ Télécharger le JSON</button>
+  <button id="load-json-btn">↑ Recharger un JSON existant</button>
+  <input type="file" id="json-input" accept="application/json" hidden />
+</div>
+
+<div id="canvas-wrap">
+  <canvas id="canvas"></canvas>
+</div>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const fileInput = document.getElementById('file-input');
+const jsonInput = document.getElementById('json-input');
+const statusEl = document.getElementById('status');
+const fieldListEl = document.getElementById('field-list');
+const fieldCountEl = document.getElementById('field-count');
+
+let img = null;
+let imgName = "";
+let fields = {};
+let selectedName = null;
+let mode = 'point'; // 'point' | 'box' | 'grid'
+let drag = null;
+let pendingGridArea = null; // {x,y,width,height} en attente de configuration
+
+// ---------------------------------------------------------------------
+// Undo / Redo : pile d'instantanés de `fields` (clonage JSON, données
+// simples donc sans risque de référence partagée).
+// ---------------------------------------------------------------------
+let undoStack = [];
+let redoStack = [];
+const MAX_HISTORY = 60;
+
+function snapshot() { return JSON.stringify(fields); }
+
+function pushHistory() {
+  undoStack.push(snapshot());
+  if (undoStack.length > MAX_HISTORY) undoStack.shift();
+  redoStack = [];
+  updateHistoryButtons();
+}
+
+function undo() {
+  if (!undoStack.length) return;
+  redoStack.push(snapshot());
+  fields = JSON.parse(undoStack.pop());
+  selectedName = null;
+  document.getElementById('edit-panel').classList.remove('visible');
+  renderFieldList();
+  draw();
+  updateHistoryButtons();
+  statusEl.textContent = "Action annulée.";
+}
+
+function redo() {
+  if (!redoStack.length) return;
+  undoStack.push(snapshot());
+  fields = JSON.parse(redoStack.pop());
+  selectedName = null;
+  document.getElementById('edit-panel').classList.remove('visible');
+  renderFieldList();
+  draw();
+  updateHistoryButtons();
+  statusEl.textContent = "Action rétablie.";
+}
+
+function updateHistoryButtons() {
+  document.getElementById('undo-btn').disabled = undoStack.length === 0;
+  document.getElementById('redo-btn').disabled = redoStack.length === 0;
+}
+
+document.getElementById('undo-btn').addEventListener('click', undo);
+document.getElementById('redo-btn').addEventListener('click', redo);
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key.toLowerCase() === 'z') { e.preventDefault(); undo(); }
+  else if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'y' || (e.shiftKey && e.key.toLowerCase() === 'z'))) { e.preventDefault(); redo(); }
+});
+
+// ---------------------------------------------------------------------
+// Modes
+// ---------------------------------------------------------------------
+function setMode(m) {
+  mode = m;
+  document.getElementById('mode-point').classList.toggle('active', m === 'point');
+  document.getElementById('mode-box').classList.toggle('active', m === 'box');
+  document.getElementById('mode-grid').classList.toggle('active', m === 'grid');
+  if (m !== 'grid') { pendingGridArea = null; document.getElementById('grid-panel').classList.remove('visible'); }
+}
+document.getElementById('mode-point').addEventListener('click', () => setMode('point'));
+document.getElementById('mode-box').addEventListener('click', () => setMode('box'));
+document.getElementById('mode-grid').addEventListener('click', () => setMode('grid'));
+
+function isBoxType(f) { return f.type === 'box' || f.type === 'image'; }
+function hasOwnSize(f) { return Number.isFinite(f.width) && Number.isFinite(f.height); }
+
+// ---------------------------------------------------------------------
+// Rendu
+// ---------------------------------------------------------------------
+function draw(previewBox) {
+  if (!img) return;
+  canvas.width = img.width;
+  canvas.height = img.height;
+  ctx.drawImage(img, 0, 0);
+
+  for (const [name, f] of Object.entries(fields)) {
+    const isSel = name === selectedName;
+    const color = isSel ? "#ff2d2d" : (f.type === 'image' ? "#2d7dff" : (hasOwnSize(f) ? "#ff9d2d" : "#00c853"));
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+    ctx.lineWidth = isSel ? 3 : 2;
+
+    if (hasOwnSize(f)) {
+      ctx.strokeRect(f.x, f.y, f.width, f.height);
+      ctx.fillRect(f.x + f.width - 8, f.y + f.height - 8, 8, 8);
+    } else {
+      ctx.beginPath();
+      ctx.arc(f.x, f.y, 5, 0, Math.PI * 2);
+      ctx.fill();
+      if (f.type === 'multiline' && f.maxWidth) {
+        ctx.setLineDash([4, 3]);
+        ctx.beginPath();
+        ctx.moveTo(f.x, f.y + 4);
+        ctx.lineTo(f.x + f.maxWidth, f.y + 4);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+    }
+    ctx.font = "bold 15px sans-serif";
+    ctx.fillText(name, f.x + 4, f.y - 6);
+  }
+
+  if (previewBox) {
+    ctx.strokeStyle = "#ff9d2d";
+    ctx.lineWidth = 2;
+    ctx.setLineDash([6, 4]);
+    ctx.strokeRect(previewBox.x, previewBox.y, previewBox.w, previewBox.h);
+    ctx.setLineDash([]);
+  }
+
+  if (pendingGridArea) drawGridPreview();
+}
+
+function drawGridPreview() {
+  const area = pendingGridArea;
+  const cols = Math.max(1, parseInt(document.getElementById('grid-cols').value, 10) || 1);
+  const rows = Math.max(1, parseInt(document.getElementById('grid-rows').value, 10) || 1);
+  const gapX = parseFloat(document.getElementById('grid-gapx').value) || 0;
+  const gapY = parseFloat(document.getElementById('grid-gapy').value) || 0;
+  const cellW = (area.width - gapX * (cols - 1)) / cols;
+  const cellH = (area.height - gapY * (rows - 1)) / rows;
+
+  ctx.strokeStyle = "#ff2d2d";
+  ctx.lineWidth = 2;
+  ctx.setLineDash([5, 4]);
+  ctx.strokeRect(area.x, area.y, area.width, area.height);
+  ctx.strokeStyle = "rgba(255,45,45,0.6)";
+  ctx.lineWidth = 1;
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const cx = area.x + c * (cellW + gapX);
+      const cy = area.y + r * (cellH + gapY);
+      ctx.strokeRect(cx, cy, cellW, cellH);
+    }
+  }
+  ctx.setLineDash([]);
+  document.getElementById('grid-preview-info').textContent =
+    `Cellule : ${cellW.toFixed(0)} × ${cellH.toFixed(0)} px — ${cols * rows} champ(s) au total.`;
+}
+
+// ---------------------------------------------------------------------
+// Liste des champs / sélection / édition
+// ---------------------------------------------------------------------
+function renderFieldList() {
+  fieldListEl.innerHTML = "";
+  const names = Object.keys(fields);
+  fieldCountEl.textContent = names.length;
+  for (const name of names) {
+    const li = document.createElement('li');
+    li.className = name === selectedName ? "selected" : "";
+    const span = document.createElement('span');
+    span.textContent = name;
+    span.style.flex = "1";
+    span.addEventListener('click', () => selectField(name));
+    li.appendChild(span);
+    const del = document.createElement('button');
+    del.textContent = "✕";
+    del.className = "small";
+    del.addEventListener('click', (e) => {
+      e.stopPropagation();
+      pushHistory();
+      delete fields[name];
+      if (selectedName === name) selectField(null);
+      renderFieldList();
+      draw();
+    });
+    li.appendChild(del);
+    fieldListEl.appendChild(li);
+  }
+}
+
+function selectField(name) {
+  selectedName = name;
+  renderFieldList();
+  const panel = document.getElementById('edit-panel');
+  if (!name) { panel.classList.remove('visible'); draw(); return; }
+  const f = fields[name];
+  panel.classList.add('visible');
+  document.getElementById('edit-title').textContent = `Champ : ${name}`;
+  document.getElementById('edit-name').value = name;
+  document.getElementById('edit-x').value = Math.round(f.x);
+  document.getElementById('edit-y').value = Math.round(f.y);
+
+  const showSizeRow = f.type === 'image' || f.type === 'box' || hasOwnSize(f);
+  document.getElementById('edit-size-row').style.display = showSizeRow ? "flex" : "none";
+  document.getElementById('edit-width').value = hasOwnSize(f) ? Math.round(f.width) : "";
+  document.getElementById('edit-height').value = hasOwnSize(f) ? Math.round(f.height) : "";
+
+  const isImage = f.type === 'image';
+  document.getElementById('text-only-fields').style.display = isImage ? "none" : "block";
+  document.getElementById('edit-align').value = f.align || "left";
+  document.getElementById('edit-fontsize').value = f.size || 22;
+  const isMultiline = f.type === 'multiline';
+  document.getElementById('edit-multiline').checked = isMultiline;
+  document.getElementById('multiline-fields').style.display = isMultiline ? "block" : "none";
+  document.getElementById('edit-maxwidth').value = f.maxWidth || 400;
+  document.getElementById('edit-lineheight').value = f.lineHeight || Math.round((f.size || 22) * 1.3);
+
+  draw();
+}
+
+document.getElementById('edit-multiline').addEventListener('change', (e) => {
+  document.getElementById('multiline-fields').style.display = e.target.checked ? "block" : "none";
+});
+
+document.getElementById('apply-btn').addEventListener('click', () => {
+  if (!selectedName) return;
+  const newName = document.getElementById('edit-name').value.trim();
+  if (!newName) { statusEl.textContent = "Le nom ne peut pas être vide."; return; }
+
+  const old = fields[selectedName];
+  const isImage = old.type === 'image';
+  const isMultiline = !isImage && document.getElementById('edit-multiline').checked;
+  const widthVal = parseFloat(document.getElementById('edit-width').value);
+  const heightVal = parseFloat(document.getElementById('edit-height').value);
+  const enteredSize = Number.isFinite(widthVal) && Number.isFinite(heightVal);
+
+  const updated = {
+    x: parseFloat(document.getElementById('edit-x').value),
+    y: parseFloat(document.getElementById('edit-y').value),
+  };
+  if ((isImage || old.type === 'box' || hasOwnSize(old)) && enteredSize) {
+    updated.width = widthVal;
+    updated.height = heightVal;
+  }
+  if (!isImage) {
+    updated.align = document.getElementById('edit-align').value;
+    updated.size = parseFloat(document.getElementById('edit-fontsize').value);
+    if (isMultiline) {
+      updated.type = 'multiline';
+      updated.maxWidth = parseFloat(document.getElementById('edit-maxwidth').value);
+      updated.lineHeight = parseFloat(document.getElementById('edit-lineheight').value);
+    } else {
+      updated.type = old.type === 'box' ? 'box' : 'point';
+    }
+  } else {
+    updated.type = 'image';
+  }
+
+  pushHistory();
+  delete fields[selectedName];
+  fields[newName] = updated;
+  selectedName = newName;
+  renderFieldList();
+  selectField(newName);
+  statusEl.textContent = `Champ "${newName}" mis à jour.`;
+});
+
+document.getElementById('delete-btn').addEventListener('click', () => {
+  if (!selectedName) return;
+  pushHistory();
+  delete fields[selectedName];
+  selectField(null);
+  renderFieldList();
+  draw();
+});
+
+// ---------------------------------------------------------------------
+// Grille
+// ---------------------------------------------------------------------
+['grid-cols', 'grid-rows', 'grid-gapx', 'grid-gapy'].forEach((id) => {
+  document.getElementById(id).addEventListener('input', () => { if (pendingGridArea) draw(); });
+});
+
+document.getElementById('grid-create-btn').addEventListener('click', () => {
+  if (!pendingGridArea) return;
+  const area = pendingGridArea;
+  const baseName = document.getElementById('grid-basename').value.trim() || "champ";
+  const cols = Math.max(1, parseInt(document.getElementById('grid-cols').value, 10) || 1);
+  const rows = Math.max(1, parseInt(document.getElementById('grid-rows').value, 10) || 1);
+  const gapX = parseFloat(document.getElementById('grid-gapx').value) || 0;
+  const gapY = parseFloat(document.getElementById('grid-gapy').value) || 0;
+  const type = document.getElementById('grid-type').value;
+  const align = document.getElementById('grid-align').value;
+  const size = parseFloat(document.getElementById('grid-fontsize').value) || 26;
+  const cellW = (area.width - gapX * (cols - 1)) / cols;
+  const cellH = (area.height - gapY * (rows - 1)) / rows;
+
+  pushHistory();
+  let n = 1;
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const cx = area.x + c * (cellW + gapX);
+      const cy = area.y + r * (cellH + gapY);
+      const name = rows === 1 ? `${baseName}_${n}` : `${baseName}_r${r + 1}c${c + 1}`;
+      const field = { x: type === 'point' || type === 'multiline' ? cx : cx, y: cy };
+      if (type === 'image' || type === 'box') {
+        field.width = cellW;
+        field.height = cellH;
+        field.type = type;
+      } else {
+        field.align = align;
+        field.size = size;
+        field.type = type;
+        if (type === 'multiline') { field.maxWidth = cellW; field.lineHeight = Math.round(size * 1.3); }
+      }
+      fields[name] = field;
+      n++;
+    }
+  }
+  pendingGridArea = null;
+  document.getElementById('grid-panel').classList.remove('visible');
+  setMode('point');
+  renderFieldList();
+  draw();
+  statusEl.textContent = `Grille créée : ${cols * rows} champ(s) ("${baseName}_...").`;
+});
+
+document.getElementById('grid-cancel-btn').addEventListener('click', () => {
+  pendingGridArea = null;
+  document.getElementById('grid-panel').classList.remove('visible');
+  draw();
+});
+
+// ---------------------------------------------------------------------
+// Chargement image / JSON
+// ---------------------------------------------------------------------
+fileInput.addEventListener('change', () => {
+  const file = fileInput.files[0];
+  if (!file) return;
+  imgName = file.name;
+  const reader = new FileReader();
+  reader.onload = () => {
+    img = new Image();
+    img.onload = () => {
+      draw();
+      statusEl.textContent = `Image chargée : ${imgName} (${img.width}×${img.height}px)`;
+    };
+    img.src = reader.result;
+  };
+  reader.readAsDataURL(file);
+});
+
+function canvasPos(e) {
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  return { x: (e.clientX - rect.left) * scaleX, y: (e.clientY - rect.top) * scaleY };
+}
+
+function hitTest(x, y) {
+  for (const [name, f] of Object.entries(fields)) {
+    if (hasOwnSize(f)) {
+      const w = f.width, h = f.height;
+      if (x >= f.x + w - 10 && x <= f.x + w + 2 && y >= f.y + h - 10 && y <= f.y + h + 2) return { name, kind: 'resize' };
+      if (x >= f.x && x <= f.x + w && y >= f.y && y <= f.y + h) return { name, kind: 'move' };
+    } else {
+      if (Math.hypot(x - f.x, y - f.y) < 10) return { name, kind: 'move' };
+    }
+  }
+  return null;
+}
+
+canvas.addEventListener('mousedown', (e) => {
+  if (!img) { statusEl.textContent = "Chargez d'abord une image."; return; }
+  const { x, y } = canvasPos(e);
+
+  if (mode === 'grid') {
+    drag = { kind: 'draw-grid', startX: x, startY: y };
+    return;
+  }
+
+  const hit = hitTest(x, y);
+  if (hit) {
+    selectField(hit.name);
+    const f = fields[hit.name];
+    pushHistory(); // un seul instantané avant le glisser (annulable en un coup)
+    drag = { name: hit.name, kind: hit.kind, startX: x, startY: y, origX: f.x, origY: f.y, origW: f.width, origH: f.height };
+    return;
+  }
+
+  if (mode === 'point') {
+    let name = prompt("Nom de ce champ ?");
+    if (!name) return;
+    pushHistory();
+    fields[name] = { x, y, type: 'point', align: 'left', size: 26 };
+    renderFieldList();
+    selectField(name);
+    statusEl.textContent = `Champ "${name}" placé.`;
+  } else {
+    drag = { kind: 'draw-new', startX: x, startY: y };
+  }
+});
+
+canvas.addEventListener('mousemove', (e) => {
+  if (!drag || !img) return;
+  const { x, y } = canvasPos(e);
+
+  if (drag.kind === 'draw-new' || drag.kind === 'draw-grid') {
+    const box = { x: Math.min(drag.startX, x), y: Math.min(drag.startY, y), w: Math.abs(x - drag.startX), h: Math.abs(y - drag.startY) };
+    draw(drag.kind === 'draw-new' ? box : null);
+    if (drag.kind === 'draw-grid') {
+      pendingGridArea = { x: box.x, y: box.y, width: box.w, height: box.h };
+      draw();
+    }
+    return;
+  }
+  const f = fields[drag.name];
+  if (drag.kind === 'move') {
+    f.x = drag.origX + (x - drag.startX);
+    f.y = drag.origY + (y - drag.startY);
+  } else if (drag.kind === 'resize') {
+    f.width = Math.max(10, drag.origW + (x - drag.startX));
+    f.height = Math.max(10, drag.origH + (y - drag.startY));
+  }
+  draw();
+});
+
+canvas.addEventListener('mouseup', (e) => {
+  if (!drag) return;
+  const { x, y } = canvasPos(e);
+
+  if (drag.kind === 'draw-new') {
+    const w = Math.abs(x - drag.startX), h = Math.abs(y - drag.startY);
+    if (w > 8 && h > 8) {
+      let name = prompt("Nom de ce champ (boîte) ?");
+      if (name) {
+        const isPhoto = /photo|image/i.test(name);
+        pushHistory();
+        fields[name] = {
+          x: Math.min(drag.startX, x), y: Math.min(drag.startY, y), width: w, height: h,
+          type: isPhoto ? 'image' : 'multiline',
+          align: 'left', size: 20, maxWidth: w, lineHeight: 26,
+        };
+        renderFieldList();
+        selectField(name);
+        statusEl.textContent = `Champ "${name}" (boîte) placé.`;
+      }
+    }
+  } else if (drag.kind === 'draw-grid') {
+    const w = Math.abs(x - drag.startX), h = Math.abs(y - drag.startY);
+    if (w > 20 && h > 10) {
+      pendingGridArea = { x: Math.min(drag.startX, x), y: Math.min(drag.startY, y), width: w, height: h };
+      document.getElementById('grid-area-info').textContent = `${Math.round(w)} × ${Math.round(h)} px à (${Math.round(pendingGridArea.x)}, ${Math.round(pendingGridArea.y)})`;
+      document.getElementById('grid-panel').classList.add('visible');
+      draw();
+    } else {
+      pendingGridArea = null;
+    }
+  } else {
+    renderFieldList();
+    selectField(drag.name);
+  }
+  drag = null;
+  if (!pendingGridArea) draw();
+});
+
+document.getElementById('export-btn').addEventListener('click', () => {
+  if (!img) { statusEl.textContent = "Chargez d'abord une image."; return; }
+  const cleanFields = {};
+  for (const [name, f] of Object.entries(fields)) {
+    const out = { x: Math.round(f.x), y: Math.round(f.y) };
+    if (hasOwnSize(f)) { out.width = Math.round(f.width); out.height = Math.round(f.height); }
+    if (f.type !== 'image') {
+      out.align = f.align || 'left';
+      out.size = f.size || 22;
+      if (f.type === 'multiline' && Number.isFinite(f.maxWidth)) {
+        out.maxWidth = f.maxWidth;
+        out.lineHeight = Number.isFinite(f.lineHeight) ? f.lineHeight : Math.round(out.size * 1.3);
+      }
+    }
+    cleanFields[name] = out;
+  }
+  const payload = { image: imgName, width: img.width, height: img.height, fields: cleanFields };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = imgName.replace(/\.[^.]+$/, "") + "-coords.json";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+});
+
+document.getElementById('load-json-btn').addEventListener('click', () => jsonInput.click());
+jsonInput.addEventListener('change', () => {
+  const file = jsonInput.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      pushHistory();
+      fields = {};
+      for (const [name, f] of Object.entries(data.fields || {})) {
+        let type = 'point';
+        if (name === 'photo' || f.type === 'image') type = 'image';
+        else if (f.maxWidth !== undefined) type = 'multiline';
+        else if (f.width !== undefined && f.height !== undefined) type = 'box';
+        fields[name] = { ...f, type };
+      }
+      selectedName = null;
+      renderFieldList();
+      document.getElementById('edit-panel').classList.remove('visible');
+      draw();
+      statusEl.textContent = `Coordonnées rechargées depuis ${file.name} (${Object.keys(fields).length} champs).`;
+    } catch (err) {
+      statusEl.textContent = "Fichier JSON invalide : " + err.message;
+    }
+  };
+  reader.readAsText(file);
+});
+</script>
+</body>
+</html>
