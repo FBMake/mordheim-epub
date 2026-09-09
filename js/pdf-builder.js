@@ -149,7 +149,7 @@ function characterFieldValues(card) {
     competences_blessures: [
       ...card.competences.map((c) => c.name),
       ...card.reglesSpeciales.map((r) => r.name),
-      ...card.blessures.map((b) => `${b.name} — ${b.description}`),
+      ...card.blessures.map((b) => b.name),
       ...(card.augmentations.length ? [`Augmentations: ${card.augmentations.join(", ")}`] : []),
     ].join("\n"),
   };
@@ -170,26 +170,43 @@ function buildCompendiums(model) {
     armes: dedupe(allCards.flatMap((c) => c.reglesArmes)),
     speciales: dedupe(allCards.flatMap((c) => [...c.competences, ...c.reglesSpeciales])),
     equipe: dedupe(model.reglesGenerales),
+    blessures: dedupe(allCards.flatMap((c) => c.blessures)),
   };
 }
 
 /**
  * Ajoute les pages du chapitre Règles sur le gabarit "vierge" (bordure +
  * titre conservés), en répartissant le texte sur autant de pages que
- * nécessaire.
+ * nécessaire. La zone de texte et les tailles de police viennent du
+ * fichier tools/coords/regles-coords.json (modifiable avec l'outil
+ * tools/coord-picker.html, comme les autres gabarits).
  */
 async function addRulesPages(pdfDoc, font, boldFont, model) {
   const imageBytes = await fetchBytes("data/templates/regles-vierge.png");
   const image = await pdfDoc.embedPng(imageBytes);
-  const W = 1414, H = 2000;
-  const contentX = 90, contentTop = 220, contentBottom = H - 60, contentWidth = W - 180;
-  const bodySize = 20, titleSize = 24, lineHeight = 27, sectionGap = 16;
 
-  const { armes, speciales, equipe } = buildCompendiums(model);
+  let coords;
+  try {
+    coords = await fetchJson("tools/coords/regles-coords.json");
+  } catch {
+    coords = null;
+  }
+  const W = (coords && coords.width) || 1414;
+  const H = (coords && coords.height) || 2000;
+  const contentField = coords?.fields?.content || { x: 90, y: 220, width: W - 180, height: H - 280 };
+  const contentX = contentField.x, contentTop = contentField.y, contentWidth = contentField.width;
+  const contentBottom = contentField.y + contentField.height;
+  const titleSize = coords?.fields?.section_title?.size || 24;
+  const bodySize = coords?.fields?.rule_body?.size || 20;
+  const lineHeight = Math.round(bodySize * 1.35);
+  const sectionGap = 16;
+
+  const { armes, speciales, equipe, blessures } = buildCompendiums(model);
   const sections = [
     ["Règles des Armes", armes],
     ["Règles Spéciales", speciales],
     ["Règles d'Équipe", equipe],
+    ["Blessures", blessures],
   ];
 
   let page = null;

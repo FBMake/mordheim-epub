@@ -1,0 +1,10 @@
+{
+  "image": "regles-vierge.png",
+  "width": 1414,
+  "height": 2000,
+  "fields": {
+    "content": { "x": 90, "y": 220, "width": 1234, "height": 1720 },
+    "section_title": { "x": 90, "y": 220, "align": "left", "size": 24 },
+    "rule_body": { "x": 90, "y": 260, "align": "left", "size": 20 }
+  }
+}
