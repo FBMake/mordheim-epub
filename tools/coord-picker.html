@@ -66,6 +66,14 @@
   <input type="file" id="file-input" accept="image/*" />
   <p id="status"></p>
 
+  <h2>Police du document (globale)</h2>
+  <select id="doc-font">
+    <option value="TimesRoman">Times Roman (serif)</option>
+    <option value="Helvetica">Helvetica (sans-serif)</option>
+    <option value="Courier">Courier (monospace)</option>
+  </select>
+  <p class="hint">S'applique à tout le PDF généré (aperçu ci-dessous approximatif — le rendu PDF final utilise la vraie police).</p>
+
   <div class="undo-btns">
     <button id="undo-btn" disabled>↩ Annuler (Ctrl+Z)</button>
     <button id="redo-btn" disabled>↪ Rétablir (Ctrl+Y)</button>
@@ -102,6 +110,7 @@
       </select>
       <label>Taille de police (px)</label>
       <input type="number" id="edit-fontsize" />
+      <p class="hint">Aperçu : <span id="edit-font-preview" style="font-size:16px;">Exemple Aa 123</span></p>
       <label class="check-label"><input type="checkbox" id="edit-multiline" />Texte multi-ligne (retour à la ligne auto)</label>
       <div id="multiline-fields" style="display:none;">
         <label>Largeur max du texte (px)</label>
@@ -144,6 +153,7 @@
       </div>
       <div><label>Taille police</label><input type="number" id="grid-fontsize" value="26" /></div>
     </div>
+    <p class="hint">Aperçu : <span id="grid-font-preview" style="font-size:16px;">Exemple Aa 123</span></p>
     <p class="hint" id="grid-preview-info"></p>
     <div class="row2">
       <button class="primary" id="grid-create-btn">✓ Créer la grille</button>
@@ -177,6 +187,35 @@ let selectedName = null;
 let mode = 'point'; // 'point' | 'box' | 'grid'
 let drag = null;
 let pendingGridArea = null; // {x,y,width,height} en attente de configuration
+let docFont = 'TimesRoman';
+
+const FONT_CSS = {
+  TimesRoman: '"Times New Roman", Georgia, serif',
+  Helvetica: 'Helvetica, Arial, sans-serif',
+  Courier: '"Courier New", monospace',
+};
+
+document.getElementById('doc-font').addEventListener('change', (e) => {
+  docFont = e.target.value;
+  updateFontPreviews();
+  draw();
+});
+
+function updateFontPreviews() {
+  const css = FONT_CSS[docFont];
+  const editSize = document.getElementById('edit-fontsize').value || 22;
+  const editPreview = document.getElementById('edit-font-preview');
+  editPreview.style.fontFamily = css;
+  editPreview.style.fontSize = Math.min(parseFloat(editSize), 48) + "px";
+
+  const gridSize = document.getElementById('grid-fontsize').value || 26;
+  const gridPreview = document.getElementById('grid-font-preview');
+  gridPreview.style.fontFamily = css;
+  gridPreview.style.fontSize = Math.min(parseFloat(gridSize), 48) + "px";
+}
+document.getElementById('edit-fontsize').addEventListener('input', updateFontPreviews);
+document.getElementById('grid-fontsize').addEventListener('input', updateFontPreviews);
+updateFontPreviews();
 
 // ---------------------------------------------------------------------
 // Undo / Redo : pile d'instantanés de `fields` (clonage JSON, données
@@ -269,8 +308,13 @@ function draw(previewBox) {
       ctx.fillRect(f.x + f.width - 8, f.y + f.height - 8, 8, 8);
     } else {
       ctx.beginPath();
-      ctx.arc(f.x, f.y, 5, 0, Math.PI * 2);
+      ctx.arc(f.x, f.y, 4, 0, Math.PI * 2);
       ctx.fill();
+      if (f.type === 'point' || f.type === 'multiline') {
+        const size = f.size || 22;
+        ctx.font = `${size}px ${FONT_CSS[docFont]}`;
+        ctx.fillText("Exemple Aa 123", f.x, f.y + size * 0.75);
+      }
       if (f.type === 'multiline' && f.maxWidth) {
         ctx.setLineDash([4, 3]);
         ctx.beginPath();
@@ -645,7 +689,7 @@ document.getElementById('export-btn').addEventListener('click', () => {
     }
     cleanFields[name] = out;
   }
-  const payload = { image: imgName, width: img.width, height: img.height, fields: cleanFields };
+  const payload = { image: imgName, width: img.width, height: img.height, font: docFont, fields: cleanFields };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -667,6 +711,9 @@ jsonInput.addEventListener('change', () => {
       const data = JSON.parse(reader.result);
       pushHistory();
       fields = {};
+      docFont = data.font && FONT_CSS[data.font] ? data.font : 'TimesRoman';
+      document.getElementById('doc-font').value = docFont;
+      updateFontPreviews();
       for (const [name, f] of Object.entries(data.fields || {})) {
         let type = 'point';
         if (name === 'photo' || f.type === 'image') type = 'image';

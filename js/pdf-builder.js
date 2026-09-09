@@ -15,6 +15,12 @@
 
 import { PDFDocument, rgb, StandardFonts } from "./vendor/pdf-lib.esm.min.js";
 
+const FONT_MAP = {
+  TimesRoman: { regular: StandardFonts.TimesRoman, bold: StandardFonts.TimesRomanBold },
+  Helvetica: { regular: StandardFonts.Helvetica, bold: StandardFonts.HelveticaBold },
+  Courier: { regular: StandardFonts.Courier, bold: StandardFonts.CourierBold },
+};
+
 const INK = rgb(0x24 / 255, 0x1d / 255, 0x15 / 255);
 const WAX = rgb(0x7a / 255, 0x2e / 255, 0x2e / 255);
 
@@ -231,8 +237,14 @@ async function addRulesPages(pdfDoc, font, boldFont, model) {
  */
 export async function buildPdf(model) {
   const pdfDoc = await PDFDocument.create();
-  const font = await pdfDoc.embedFont(StandardFonts.TimesRoman);
-  const boldFont = await pdfDoc.embedFont(StandardFonts.TimesRomanBold);
+
+  // Le choix de police est global : on lit celui du gabarit "bande"
+  // (les 3 fichiers de coordonnées doivent normalement être cohérents,
+  // puisque défini une seule fois dans l'outil de pointage).
+  const bandeCoordsForFont = await fetchJson("tools/coords/bande-coords.json");
+  const fontChoice = FONT_MAP[bandeCoordsForFont.font] || FONT_MAP.TimesRoman;
+  const font = await pdfDoc.embedFont(fontChoice.regular);
+  const boldFont = await pdfDoc.embedFont(fontChoice.bold);
 
   // 1) Bande
   const bandeCoords = await fetchJson("tools/coords/bande-coords.json");

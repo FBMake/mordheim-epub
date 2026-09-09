@@ -84,13 +84,30 @@ Format d'un fichier de coordonnées :
 1. Ouvrez `tools/coord-picker.html` dans votre navigateur (double-clic,
    pas besoin de serveur).
 2. Chargez l'image du gabarit à pointer.
-3. Cliquez à l'endroit voulu, donnez un nom au champ (ex. `nom`,
-   `stat_M`), ajustez alignement/taille si besoin.
-4. Répétez pour chaque champ, puis **téléchargez le JSON**.
-5. Remplacez le fichier correspondant dans `tools/coords/` et adaptez
-   si besoin le nom des champs utilisés dans `js/pdf-builder.js`
-   (fonction `characterFieldValues` pour les fiches perso, ou la
-   section "Bande" de `buildPdf`).
+3. Choisissez la **police du document** (Times Roman, Helvetica ou
+   Courier) — un seul choix global, appliqué à tout le PDF généré.
+4. Trois modes de placement :
+   - **Point** : un clic = un champ texte sur une seule ligne.
+   - **Boîte** : cliquez-glissez pour délimiter une zone (photo, ou
+     texte multi-ligne avec retour à la ligne automatique).
+   - **Grille** : cliquez-glissez pour délimiter une zone, puis
+     choisissez le nombre de colonnes/lignes et l'espacement — génère
+     toute une rangée de champs d'un coup (ex. les 9 colonnes de
+     stats).
+5. Cliquez sur un champ déjà placé (dans la liste ou sur l'image) pour
+   le modifier, le renommer, ou le glisser/redimensionner directement
+   à la souris. Un aperçu au format et à la police choisie s'affiche
+   pendant l'édition, pour juger de la taille réelle.
+6. **Annuler/Rétablir** (Ctrl+Z / Ctrl+Y) à tout moment.
+7. **Téléchargez le JSON**, remplacez le fichier correspondant dans
+   `tools/coords/`.
+
+**Note sur la police** : seules les 3 familles standard du PDF (Times
+Roman, Helvetica, Courier) sont proposées — elles ne nécessitent aucun
+fichier de police à embarquer et fonctionnent partout. Une police plus
+décorative (gothique, façon site web) demanderait d'embarquer un
+fichier de police externe dont il faudrait d'abord vérifier la licence
+d'utilisation ; ce n'est pas fait pour l'instant.
 
 **État actuel des coordonnées** : posées par mesure directe sur vos
 images (avec une image de référence graduée pour vérifier), puis

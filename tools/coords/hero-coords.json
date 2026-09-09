@@ -3,647 +3,107 @@
   "width": 1414,
   "height": 2000,
   "fields": {
-    "photo": {
-      "x": 919,
-      "y": 156,
-      "width": 376,
-      "height": 529
-    },
     "nom": {
-      "x": 263,
-      "y": 289,
+      "x": 260,
+      "y": 262,
+      "align": "left",
+      "size": 32
+    },
+    "type": {
+      "x": 260,
+      "y": 335,
       "align": "left",
       "size": 26
     },
-    "type": {
-      "x": 264,
-      "y": 399,
-      "align": "left",
+    "type_code": {
+      "x": 495,
+      "y": 335,
+      "align": "center",
       "size": 26
     },
     "bio": {
-      "x": 106,
-      "y": 533,
-      "width": 759,
-      "height": 154,
+      "x": 90,
+      "y": 400,
       "align": "left",
       "size": 20,
-      "maxWidth": 759,
-      "lineHeight": 26
+      "maxWidth": 720,
+      "lineHeight": 28
+    },
+    "photo": {
+      "x": 908,
+      "y": 130,
+      "width": 450,
+      "height": 560
     },
     "stat_M": {
-      "x": 150,
-      "y": 830,
+      "x": 158,
+      "y": 845,
       "align": "center",
       "size": 26
     },
     "stat_CC": {
-      "x": 272,
-      "y": 830,
+      "x": 293,
+      "y": 845,
       "align": "center",
       "size": 26
     },
     "stat_CT": {
-      "x": 394,
-      "y": 830,
+      "x": 428,
+      "y": 845,
       "align": "center",
       "size": 26
     },
     "stat_F": {
-      "x": 516,
-      "y": 830,
+      "x": 563,
+      "y": 845,
       "align": "center",
       "size": 26
     },
     "stat_E": {
-      "x": 638,
-      "y": 830,
+      "x": 698,
+      "y": 845,
       "align": "center",
       "size": 26
     },
     "stat_PV": {
-      "x": 760,
-      "y": 830,
+      "x": 833,
+      "y": 845,
       "align": "center",
       "size": 26
     },
     "stat_I": {
-      "x": 882,
-      "y": 830,
+      "x": 968,
+      "y": 845,
       "align": "center",
       "size": 26
     },
     "stat_A": {
-      "x": 1004,
-      "y": 830,
+      "x": 1104,
+      "y": 845,
       "align": "center",
       "size": 26
     },
     "stat_CD": {
-      "x": 1126,
-      "y": 830,
+      "x": 1239,
+      "y": 845,
       "align": "center",
       "size": 26
     },
     "equipement": {
-      "x": 102,
-      "y": 1028,
-      "width": 1194,
-      "height": 287,
+      "x": 90,
+      "y": 1040,
       "align": "left",
       "size": 20,
-      "maxWidth": 1194,
-      "lineHeight": 26
+      "maxWidth": 1250,
+      "lineHeight": 27
     },
     "competences_blessures": {
-      "x": 101,
-      "y": 1422,
-      "width": 1194,
-      "height": 280,
+      "x": 90,
+      "y": 1450,
       "align": "left",
       "size": 20,
-      "maxWidth": 1194,
-      "lineHeight": 26
-    },
-    "h_xp_r1c1": {
-      "x": 110,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c2": {
-      "x": 149,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c3": {
-      "x": 188,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c4": {
-      "x": 228,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c5": {
-      "x": 267,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c6": {
-      "x": 307,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c7": {
-      "x": 346,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c8": {
-      "x": 386,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c9": {
-      "x": 425,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c10": {
-      "x": 464,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c11": {
-      "x": 504,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c12": {
-      "x": 543,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c13": {
-      "x": 583,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c14": {
-      "x": 622,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c15": {
-      "x": 662,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c16": {
-      "x": 701,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c17": {
-      "x": 740,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c18": {
-      "x": 780,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c19": {
-      "x": 819,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c20": {
-      "x": 859,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c21": {
-      "x": 898,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c22": {
-      "x": 938,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c23": {
-      "x": 977,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c24": {
-      "x": 1016,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c25": {
-      "x": 1056,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c26": {
-      "x": 1095,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c27": {
-      "x": 1135,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c28": {
-      "x": 1174,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c29": {
-      "x": 1214,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r1c30": {
-      "x": 1253,
-      "y": 1775,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c1": {
-      "x": 110,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c2": {
-      "x": 149,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c3": {
-      "x": 188,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c4": {
-      "x": 228,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c5": {
-      "x": 267,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c6": {
-      "x": 307,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c7": {
-      "x": 346,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c8": {
-      "x": 386,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c9": {
-      "x": 425,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c10": {
-      "x": 464,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c11": {
-      "x": 504,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c12": {
-      "x": 543,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c13": {
-      "x": 583,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c14": {
-      "x": 622,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c15": {
-      "x": 662,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c16": {
-      "x": 701,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c17": {
-      "x": 740,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c18": {
-      "x": 780,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c19": {
-      "x": 819,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c20": {
-      "x": 859,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c21": {
-      "x": 898,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c22": {
-      "x": 938,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c23": {
-      "x": 977,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c24": {
-      "x": 1016,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c25": {
-      "x": 1056,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c26": {
-      "x": 1095,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c27": {
-      "x": 1135,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c28": {
-      "x": 1174,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c29": {
-      "x": 1214,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r2c30": {
-      "x": 1253,
-      "y": 1814,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c1": {
-      "x": 110,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c2": {
-      "x": 149,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c3": {
-      "x": 188,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c4": {
-      "x": 228,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c5": {
-      "x": 267,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c6": {
-      "x": 307,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c7": {
-      "x": 346,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c8": {
-      "x": 386,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c9": {
-      "x": 425,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c10": {
-      "x": 464,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c11": {
-      "x": 504,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c12": {
-      "x": 543,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c13": {
-      "x": 583,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c14": {
-      "x": 622,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c15": {
-      "x": 662,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c16": {
-      "x": 701,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c17": {
-      "x": 740,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c18": {
-      "x": 780,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c19": {
-      "x": 819,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c20": {
-      "x": 859,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c21": {
-      "x": 898,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c22": {
-      "x": 938,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c23": {
-      "x": 977,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c24": {
-      "x": 1016,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c25": {
-      "x": 1056,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c26": {
-      "x": 1095,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c27": {
-      "x": 1135,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c28": {
-      "x": 1174,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c29": {
-      "x": 1214,
-      "y": 1853,
-      "align": "center",
-      "size": 26
-    },
-    "h_xp_r3c30": {
-      "x": 1253,
-      "y": 1853,
-      "align": "center",
-      "size": 26
+      "maxWidth": 1250,
+      "lineHeight": 27
     }
   }
 }
