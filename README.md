@@ -37,10 +37,32 @@ appel à un CDN externe).
 Aucune étape de build n'est nécessaire (pas de bundler) : les fichiers
 JS sont chargés en modules ES natifs directement par le navigateur.
 
+## Installer l'application (PWA)
+
+Le site est une PWA : une fois ouvert depuis GitHub Pages
+(`https://fbmake.github.io/mordheim-epub/`), il peut être installé comme
+une application et fonctionne ensuite **hors ligne** (seules les polices
+Google demandent une première visite en ligne).
+
+- **Android (Chrome)** : menu ⋮ → **Installer l'application** (ou
+  « Ajouter à l'écran d'accueil »).
+- **iPhone / iPad (Safari)** : bouton Partager → **Sur l'écran
+  d'accueil**.
+- **Ordinateur (Chrome / Edge)** : icône d'installation à droite de la
+  barre d'adresse, ou menu → **Installer Fiches de Bande**.
+
+Fichiers concernés : `manifest.webmanifest`, `sw.js` (service worker)
+et `icons/`. Si vous ajoutez un fichier nécessaire à la génération du
+PDF, ajoutez-le à la liste `PRECACHE` de `sw.js` et incrémentez
+`CACHE_VERSION`.
+
 ## Structure du projet
 
 ```
 index.html              Interface (upload roster + personnalisation, aperçu, génération)
+manifest.webmanifest    Manifeste PWA (nom, couleurs, icônes)
+sw.js                   Service worker PWA (cache hors ligne)
+icons/                  Icônes de l'application installée
 css/style.css            Identité visuelle du SITE (parchemin, gothique, ledger)
 js/translations.js       Dictionnaire de traduction EN → FR
 js/parser.js             JSON BattleScribe → modèle normalisé
