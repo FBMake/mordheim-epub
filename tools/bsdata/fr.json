@@ -1,0 +1,208 @@
+{
+  "_note": "Traductions françaises des données extraites par extract.py. Les résumés de règles sont rédigés pour l'application (pas de texte copié des livres).",
+  "bandes": {
+    "Reiklanders.cat": {
+      "id": "reikland",
+      "nom": "Mercenaires du Reikland",
+      "tresor": 500,
+      "effectifMax": 15,
+      "regles": ["Reikland Leadership"],
+      "guerriers": {
+        "Mercenary Captain": { "nom": "Capitaine mercenaire" },
+        "Champion": { "nom": "Champion" },
+        "Youngblood": { "nom": "Jeune sang" },
+        "Warriors": { "nom": "Guerriers" },
+        "Marksmen": { "nom": "Tireurs" },
+        "Swordsmen": { "nom": "Spadassins" }
+      }
+    },
+    "Middenheimers.cat": {
+      "id": "middenheim",
+      "nom": "Mercenaires de Middenheim",
+      "tresor": 500,
+      "effectifMax": 15,
+      "regles": ["Middenheim Strength"],
+      "guerriers": {
+        "Mercenary Captain": { "nom": "Capitaine mercenaire" },
+        "Champion": { "nom": "Champion" },
+        "Youngblood": { "nom": "Jeune sang" },
+        "Warriors": { "nom": "Guerriers" },
+        "Marksmen": { "nom": "Tireurs" },
+        "Swordsmen": { "nom": "Spadassins" }
+      }
+    },
+    "Marienburgers.cat": {
+      "id": "marienburg",
+      "nom": "Mercenaires de Marienburg",
+      "tresor": 600,
+      "effectifMax": 15,
+      "regles": ["Great Traders"],
+      "guerriers": {
+        "Mercenary Captain": { "nom": "Capitaine mercenaire" },
+        "Champion": { "nom": "Champion" },
+        "Youngblood": { "nom": "Jeune sang" },
+        "Warriors": { "nom": "Guerriers" },
+        "Marksmen": { "nom": "Tireurs" },
+        "Swordsmen": { "nom": "Spadassins" }
+      }
+    },
+    "Cult of the Possessed.cat": {
+      "id": "possedes",
+      "nom": "Culte des Possédés",
+      "tresor": 500,
+      "effectifMax": 15,
+      "regles": [],
+      "guerriers": {
+        "Magister": { "nom": "Magister", "regles": ["Wizard (Chaos Rituals)"] },
+        "Possessed": { "nom": "Possédés" },
+        "Mutants": { "nom": "Mutants" },
+        "Darksouls": { "nom": "Âmes damnées" },
+        "Brethren": { "nom": "Frères du culte" },
+        "Beastmen": { "nom": "Hommes-bêtes" }
+      }
+    },
+    "Witch Hunters.cat": {
+      "id": "repurgateurs",
+      "nom": "Répurgateurs",
+      "tresor": 500,
+      "effectifMax": 12,
+      "regles": [],
+      "guerriers": {
+        "Witch Hunter Captain": { "nom": "Capitaine répurgateur" },
+        "Warrior Priest": { "nom": "Prêtre-guerrier", "regles": ["Prayers of Sigmar"] },
+        "Witch Hunter": { "nom": "Répurgateur" },
+        "Zealots": { "nom": "Zélotes" },
+        "Flagellants": { "nom": "Flagellants" },
+        "Warhounds": { "nom": "Chiens de guerre" }
+      }
+    },
+    "Sisters of Sigmar.cat": {
+      "id": "soeurs",
+      "nom": "Sœurs de Sigmar",
+      "tresor": 500,
+      "effectifMax": 15,
+      "regles": [],
+      "guerriers": {
+        "Sigmarite Matriarch": { "nom": "Matriarche sigmarite", "regles": ["Prayers of Sigmar"] },
+        "Sister Superior": { "nom": "Sœur supérieure" },
+        "Augur": { "nom": "Augure" },
+        "Sisters": { "nom": "Sœurs" },
+        "Novices": { "nom": "Novices" }
+      }
+    },
+    "Undead.cat": {
+      "id": "morts-vivants",
+      "nom": "Morts-Vivants",
+      "tresor": 500,
+      "effectifMax": 15,
+      "regles": [],
+      "guerriers": {
+        "Vampire": { "nom": "Vampire" },
+        "Necromancer": { "nom": "Nécromancien", "regles": ["Wizard (Necromancy)"] },
+        "Dregs": { "nom": "Larbins" },
+        "Zombies": { "nom": "Zombies" },
+        "Ghouls": { "nom": "Goules" },
+        "Dire Wolves": { "nom": "Loups funestes" }
+      }
+    },
+    "Skaven.cat": {
+      "id": "skavens",
+      "nom": "Skavens du Clan Eshin",
+      "tresor": 500,
+      "effectifMax": 20,
+      "regles": [],
+      "guerriers": {
+        "Assassin Adept": { "nom": "Maître assassin" },
+        "Eshin Sorcerer": { "nom": "Sorcier d'Eshin", "regles": ["Wizard (Magic of the Horned Rat)"] },
+        "Black Skaven": { "nom": "Skavens noirs" },
+        "Night Runners": { "nom": "Coureurs nocturnes" },
+        "Verminkin": { "nom": "Guerriers vermine" },
+        "Giant Rats": { "nom": "Rats géants" },
+        "Rat Ogre": { "nom": "Rat-ogre" }
+      }
+    }
+  },
+  "regles": {
+    "Leader": { "nom": "Chef", "resume": "Les guerriers de la bande situés à 6 ps ou moins du chef peuvent utiliser son Commandement pour leurs tests de Commandement." },
+    "Reikland Leadership": { "nom": "Discipline du Reikland", "resume": "Rompus à la discipline militaire, les guerriers peuvent utiliser le Commandement de leur capitaine jusqu'à 12 ps au lieu de 6. Les Tireurs, fameux archers du Reikland, ont +1 en CT (déjà compté dans leur profil)." },
+    "Middenheim Strength": { "nom": "Carrure de Middenheim", "resume": "Les gens du Nord sont bâtis comme des bœufs : le capitaine et les champions commencent avec une Force de 4 au lieu de 3 (déjà compté dans leur profil)." },
+    "Great Traders": { "nom": "Grands marchands", "resume": "Grâce à leurs contacts dans les guildes, les Marienbourgeois ajoutent +1 à leurs jets pour trouver des objets rares. Leur fortune leur donne 600 co au départ d'une campagne au lieu de 500 (+20 % en partie isolée)." },
+    "Mutations": { "nom": "Mutations", "resume": "La figurine peut commencer avec une ou plusieurs mutations, achetées au recrutement. Un mutant doit en avoir au moins une." },
+    "Fear": { "nom": "Peur", "resume": "Inspire la peur : un ennemi chargé par cette figurine, ou qui veut la charger, doit d'abord réussir un test de Commandement. Les créatures qui causent la peur ne craignent pas celles qui la causent aussi." },
+    "Crazed": { "nom": "Démence", "resume": "Rendues folles par la possession démoniaque, les Âmes damnées ne connaissent pas la peur et réussissent automatiquement tous leurs tests de Commandement." },
+    "Fanatic": { "nom": "Fanatique", "resume": "Portés par leur foi, les Flagellants réussissent automatiquement tous leurs tests de Commandement mais ne peuvent jamais devenir chef de la bande." },
+    "Animals": { "nom": "Animaux", "resume": "Les animaux ne gagnent jamais d'expérience." },
+    "Burn The Witch": { "nom": "Au bûcher !", "resume": "Le répurgateur voue une haine féroce à tous les lanceurs de sorts (voir Haine)." },
+    "Hatred": { "nom": "Haine", "resume": "Lors du premier tour de chaque corps à corps contre un ennemi qu'elle hait, la figurine peut relancer tous ses jets pour toucher ratés." },
+    "Blessed Sight": { "nom": "Vision bénie", "resume": "L'Augure peut relancer ses tests de caractéristique ratés et ses jets pour toucher ratés (au tir comme au corps à corps) ; le second résultat est définitif. Si elle n'est pas hors de combat, lancez deux dés pour elle lors de l'exploration et gardez celui de votre choix." },
+    "Immune To Psycology": { "nom": "Insensible à la psychologie", "resume": "N'est jamais affecté par la psychologie (peur, déroute…) et ne quitte jamais un corps à corps de son plein gré." },
+    "Imune to Poison": { "nom": "Insensible au poison", "resume": "Aucun poison n'a d'effet sur cette figurine." },
+    "No Pain": { "nom": "Insensible à la douleur", "resume": "Un résultat « Sonné » est traité comme « À terre »." },
+    "May not run": { "nom": "Lent", "resume": "Ne peut pas courir, mais peut charger normalement." },
+    "No Brain": { "nom": "Sans cervelle", "resume": "Créature dépourvue d'intelligence : ne gagne jamais d'expérience." },
+    "Unliving": { "nom": "Non-vivant", "resume": "Les Loups funestes ne gagnent jamais d'expérience." },
+    "Charge": { "nom": "Charge sauvage", "resume": "Les Loups funestes ont 2 Attaques au lieu d'1 lors du tour où ils chargent." },
+    "Stupidity": { "nom": "Stupidité", "resume": "Au début de chacun de ses tours, la figurine teste son Commandement. En cas d'échec, elle ne lance pas de sorts et ne combat pas jusqu'à son prochain tour ; hors corps à corps, elle avance au hasard ou reste immobile." },
+    "Large Target": { "nom": "Grande cible", "resume": "Grande cible : les tireurs ont +1 pour la toucher et peuvent la viser même si elle n'est pas l'ennemi le plus proche." },
+    "Wizard (Chaos Rituals)": { "nom": "Sorcier (Rituels du Chaos)", "resume": "Lance des sorts tirés des Rituels du Chaos." },
+    "Wizard (Necromancy)": { "nom": "Sorcier (Nécromancie)", "resume": "Lance des sorts tirés de la Nécromancie." },
+    "Wizard (Magic of the Horned Rat)": { "nom": "Sorcier (Magie du Rat Cornu)", "resume": "Lance des sorts tirés de la Magie du Rat Cornu." },
+    "Prayers of Sigmar": { "nom": "Prières de Sigmar", "resume": "Peut invoquer les Prières de Sigmar comme un sorcier lance ses sorts." }
+  },
+  "competences": {
+    "Combat Skills": "Combat",
+    "Shooting Skills": "Tir",
+    "Academic Skills": "Érudition",
+    "Strength Skills": "Force",
+    "Speed Skills": "Vitesse",
+    "Special Skills (Sisters)": "Spéciales (Sœurs de Sigmar)",
+    "Special Skills (Skaven)": "Spéciales (Skavens)"
+  },
+  "categoriesEquipement": {
+    "Hand-to-hand Weapons": "Armes de corps à corps",
+    "Missile Weapons": "Armes de tir",
+    "Armour": "Armures",
+    "Miscellaneous": "Divers"
+  },
+  "equipement": {
+    "Helmet": "Casque",
+    "Buckler": "Rondache",
+    "Shield": "Bouclier",
+    "Light Armour": "Armure légère",
+    "Heavy Armour": "Armure lourde",
+    "Dagger": "Dague",
+    "Free Dagger": "Dague gratuite",
+    "Axe": "Hache",
+    "Club": "Gourdin",
+    "Mace": "Masse",
+    "Hammer": "Marteau",
+    "Sword": "Épée",
+    "Spear": "Lance",
+    "Halberd": "Hallebarde",
+    "Flail": "Fléau",
+    "Morning Star": "Morgenstern",
+    "Double-handed weapon": "Arme lourde",
+    "Sigmarite Warhammer": "Marteau de guerre sigmarite",
+    "Steel Whip": "Fouet d'acier",
+    "Fighting Claws": "Griffes de combat",
+    "Weeping Blades": "Lames suintantes",
+    "Bow": "Arc",
+    "Shortbow": "Arc court",
+    "Longbow": "Arc long",
+    "Crossbow": "Arbalète",
+    "Sling": "Fronde",
+    "Pistol": "Pistolet",
+    "Duelling Pistol": "Pistolet de duel",
+    "Crossbow Pistol": "Pistolet-arbalète",
+    "Handgun": "Arquebuse",
+    "Blunderbuss": "Tromblon",
+    "Hochland Long Rifle": "Long fusil d'Hochland",
+    "Warplock Pistol": "Pistolet à malepierre",
+    "Blowpipe": "Sarbacane",
+    "Throwing Knives/Stars": "Couteaux et étoiles de lancer",
+    "Wolfcloak": "Cape de loup",
+    "Blessed Water": "Eau bénite",
+    "Holy Relic": "Relique sacrée",
+    "Holy Tome": "Livre saint"
+  }
+}

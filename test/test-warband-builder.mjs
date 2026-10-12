@@ -1,7 +1,12 @@
 import assert from "assert/strict";
 import { parseRoster } from "../js/parser.js";
 import {
+  BANDES,
   buildRoster,
+  coutCalcule,
+  getGuerrier,
+  newFigurineFromModele,
+  prixEquipement,
   creationTotals,
   creationWarnings,
   duplicateFigurine,
@@ -85,3 +90,47 @@ assert.equal(back[0].creation.figurines[0].competences[1], "Compétence maison")
 assert.equal(normalizeRecord({ slot: 2, nom: "x", roster: buildRoster(c) }).creation, null);
 assert.equal(normalizeCreation({ figurines: [{ id: "a", coutGc: "-3", stats: { M: 5 } }] }).figurines[0].coutGc, 0);
 console.log("Sauvegarde des bandes créées OK");
+
+// --- Bandes du livre de base (js/data/bandes.js) ---
+assert.equal(BANDES.length, 8);
+for (const b of BANDES) {
+  const chefs = b.guerriers.filter((g) => g.categorie === "heros" && g.min === 1);
+  assert.equal(chefs.length, 1, `${b.nom} : un seul chef obligatoire`);
+  assert.ok(chefs[0].regles.some((r) => r.nom === "Chef"), `${b.nom} : le chef a la règle Chef`);
+  for (const g of b.guerriers) {
+    assert.ok(Number.isFinite(g.cout) && g.cout > 0, `${g.id} : coût`);
+    assert.ok(g.profil && g.profil.Cd, `${g.id} : profil`);
+    for (const r of g.regles) assert.ok(r.resume, `${g.id} : résumé de « ${r.nom} »`);
+  }
+}
+console.log("Données des bandes OK");
+
+const mb = newCreation("Les Rats du Port", "", "marienburg");
+assert.equal(mb.faction, "Mercenaires de Marienburg");
+assert.equal(mb.tresorDepart, 600);
+assert.deepEqual(mb.reglesBande, ["Grands marchands"]);
+const capitaine = newFigurineFromModele("marienburg/mercenary-captain");
+assert.equal(capitaine.type, "Capitaine mercenaire");
+assert.equal(capitaine.xp, 20);
+assert.equal(capitaine.stats.Cd, "8");
+assert.deepEqual(capitaine.equipement, ["Dague gratuite"]);
+capitaine.equipement.push("Épée", "Pistolet");
+assert.equal(prixEquipement(getGuerrier(capitaine.modele), "Épée"), 10);
+assert.equal(coutCalcule(capitaine), 60 + 0 + 10 + 15);
+capitaine.coutGc = coutCalcule(capitaine);
+mb.figurines.push(capitaine);
+for (let i = 0; i < 6; i++) mb.figurines.push(newFigurineFromModele("marienburg/swordsmen"));
+const w = creationWarnings(mb);
+assert.ok(w.some((x) => x.includes("Spadassins") && x.includes("5 au maximum")), w.join("\n"));
+mb.figurines.pop();
+assert.deepEqual(creationWarnings(mb), []);
+const m = parseRoster(buildRoster(mb));
+assert.equal(m.meta.catalogue, "Mercenaires de Marienburg");
+// Les règles reprises des données gardent leur nom français et leur résumé dans le PDF.
+const regleChef = m.heros[0].reglesSpeciales.find((r) => r.name === "Chef");
+assert.ok(regleChef?.description.includes("Commandement"));
+assert.ok(m.reglesGenerales.find((r) => r.name === "Grands marchands")?.description.includes("600 co"));
+assert.deepEqual(m.nonTraduits, []);
+assert.equal(normalizeCreation(mb).figurines[0].modele, "marienburg/mercenary-captain");
+assert.equal(normalizeCreation({ ...mb, bandeId: "inconnue" }).bandeId, "");
+console.log("Création d'après les données OK");

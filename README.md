@@ -69,6 +69,7 @@ js/parser.js             JSON BattleScribe → modèle normalisé
 js/personalization.js    Personnalisation (nom/bio/photo) + fichier compagnon
 js/warband-store.js      Emplacements de bande (IndexedDB) et suivi de partie
 js/warband-builder.js    Création de bande de zéro → export au format BattleScribe
+js/data/bandes.js        Données des bandes du livre de base (générées, voir tools/bsdata/)
 js/pdf-builder.js        Modèle normalisé → fichier .pdf (via pdf-lib, gabarits image)
 js/app.js                Câblage de l'interface
 js/vendor/pdf-lib.esm.min.js   pdf-lib embarqué (pas d'appel à un CDN externe)
@@ -217,12 +218,41 @@ repris dans le PDF. Une bande créée est convertie en export au format
 BattleScribe (`js/warband-builder.js`), puis traitée exactement comme
 une bande importée.
 
-**Limite** : le dépôt ne contient pas les catalogues de règles
-(profils, coûts et listes d'équipement de chaque bande). Coûts et
-caractéristiques se saisissent donc à la main, sans vérification des
-listes d'équipement ni des effectifs propres à chaque bande. Une bande
-importée reste en lecture seule dans *Composition* : on la modifie dans
-New Recruit puis on réimporte l'export.
+**Bandes du livre de base** (Reikland, Middenheim, Marienburg, Culte
+des Possédés, Répurgateurs, Sœurs de Sigmar, Morts-Vivants, Skavens du
+Clan Eshin) : *Recruter* propose les guerriers de la bande avec leur
+profil, leur coût et leur effectif maximum, la fiche du guerrier propose
+sa liste d'équipement (le coût suit les achats) et son accès aux
+compétences, et la composition est contrôlée (effectifs, taille de la
+bande, chef obligatoire, équipement hors liste). Le menu *Règles des
+bandes* permet de consulter ces données. Pour les autres factions, tout
+se saisit à la main.
+
+Une bande importée reste en lecture seule dans *Composition* : on la
+modifie dans New Recruit puis on réimporte l'export.
+
+### Données des bandes (`js/data/bandes.js`)
+
+Générées à partir des catalogues communautaires
+[BSData/mordheim](https://github.com/BSData/mordheim) : seules les
+données de jeu (noms, profils, coûts, effectifs, listes d'équipement,
+accès aux compétences) sont extraites. Les noms sont traduits et les
+règles **résumées** en français dans `tools/bsdata/fr.json` ; le texte
+des livres de règles n'est pas reproduit.
+
+```bash
+git clone --depth 1 https://github.com/BSData/mordheim.git /tmp/bsdata
+python3 -I tools/bsdata/extract.py /tmp/bsdata /tmp/raw.json "Reiklanders.cat" "Middenheimers.cat" \
+  "Marienburgers.cat" "Cult of the Possessed.cat" "Witch Hunters.cat" "Sisters of Sigmar.cat" \
+  "Undead.cat" "Skaven.cat"
+python3 -I tools/bsdata/build.py /tmp/raw.json tools/bsdata/fr.json js/data/bandes.js
+```
+
+Pour ajouter une bande : ajoutez son catalogue à la commande `extract.py`
+et sa traduction dans `fr.json` (`build.py` liste tout ce qui manque).
+BSData ne publie pour l'instant que les 16 bandes officielles « 1a » ;
+les bandes plus récentes (annuels, Town Cryer) y ont été retirées
+temporairement.
 
 ## Mes bandes : 4 emplacements dans le navigateur
 

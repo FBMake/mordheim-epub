@@ -21,7 +21,13 @@ import {
   requestPersistence,
 } from "./warband-store.js";
 import {
+  BANDES,
   FACTIONS,
+  coutCalcule,
+  getBande,
+  getGuerrier,
+  newFigurineFromModele,
+  prixEquipement,
   EQUIPEMENT_COURANT,
   STAT_KEYS,
   TRESOR_DEPART,
@@ -109,6 +115,7 @@ function showView(name) {
   navButtons.forEach((b) => b.classList.toggle("active", b.dataset.view === name));
   if (name === "nouvelle") prepareNewForm();
   if (name === "accueil") renderSlots();
+  if (name === "regles") renderReglesBande();
 }
 
 function showTab(name) {
@@ -137,7 +144,7 @@ document.getElementById("unsaved-go").addEventListener("click", () => {
 function fillDatalist(id, values) {
   document.getElementById(id).innerHTML = values.map((v) => `<option value="${escapeHtml(v)}"></option>`).join("");
 }
-fillDatalist("factions-list", FACTIONS);
+fillDatalist("factions-list", [...BANDES.map((b) => b.nom), ...FACTIONS]);
 fillDatalist("rules-list", knownRuleNames());
 fillDatalist("equipment-list", EQUIPEMENT_COURANT);
 
@@ -571,12 +578,17 @@ const newTresor = document.getElementById("new-tresor");
 const newSlot = document.getElementById("new-slot");
 const newStatus = document.getElementById("new-status");
 const FACTION_AUTRE = "__autre__";
+const BANDE_PREFIX = "bande:";
 
+const option = (value, label) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`;
 newFaction.innerHTML =
-  FACTIONS.map((f) => `<option value="${escapeHtml(f)}">${escapeHtml(f)}</option>`).join("") +
-  `<option value="${FACTION_AUTRE}">Autre (saisie libre)…</option>`;
+  `<optgroup label="Avec profils, coûts et listes">${BANDES.map((b) => option(BANDE_PREFIX + b.id, b.nom)).join("")}</optgroup>` +
+  `<optgroup label="Saisie manuelle">${FACTIONS.map((f) => option(f, f)).join("")}${option(FACTION_AUTRE, "Autre…")}</optgroup>`;
 newFaction.addEventListener("change", () => {
   newFactionAutreWrap.hidden = newFaction.value !== FACTION_AUTRE;
+  // Trésor de départ propre à la bande (ex. 600 co pour Marienburg).
+  const bande = getBande(newFaction.value.slice(BANDE_PREFIX.length));
+  newTresor.value = bande ? bande.tresor : TRESOR_DEPART;
 });
 
 /** Remplit la liste des emplacements : le premier vide est proposé par défaut. */
@@ -599,7 +611,8 @@ async function prepareNewForm() {
 
 newForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const faction = newFaction.value === FACTION_AUTRE ? newFactionAutre.value : newFaction.value;
+  const bandeId = newFaction.value.startsWith(BANDE_PREFIX) ? newFaction.value.slice(BANDE_PREFIX.length) : "";
+  const faction = newFaction.value === FACTION_AUTRE ? newFactionAutre.value : bandeId ? "" : newFaction.value;
   const n = Number(newSlot.value);
   try {
     const existing = await getSlot(n);
@@ -613,7 +626,7 @@ newForm.addEventListener("submit", async (e) => {
       return;
     }
     await flushSave();
-    const creation = newCreation(newNom.value, faction);
+    const creation = newCreation(newNom.value, faction, bandeId);
     const tresor = Number(newTresor.value);
     creation.tresorDepart = Number.isFinite(tresor) && newTresor.value !== "" ? Math.max(0, tresor) : TRESOR_DEPART;
     activeSlot = n;
@@ -622,6 +635,7 @@ newForm.addEventListener("submit", async (e) => {
     await saveNow();
     newForm.reset();
     newFactionAutreWrap.hidden = true;
+    newTresor.value = getBande(newFaction.value.slice(BANDE_PREFIX.length))?.tresor ?? TRESOR_DEPART;
     showView("bande");
     showTab("composition");
   } catch (err) {
@@ -720,6 +734,9 @@ function unitCard(fig) {
     fig.equipement.length ? `Équipement : ${escapeHtml(fig.equipement.join(", "))}` : "",
     fig.competences.length ? `Compétences : ${escapeHtml(fig.competences.join(", "))}` : "",
     fig.regles.length ? `Règles : ${escapeHtml(fig.regles.join(", "))}` : "",
+    getGuerrier(fig.modele)?.competences.length
+      ? `<span class="muted">Accès aux compétences : ${escapeHtml(getGuerrier(fig.modele).competences.join(", "))}</span>`
+      : "",
   ].filter(Boolean);
   div.innerHTML = `
     <div class="unit-head">
@@ -798,8 +815,61 @@ creaTresor.addEventListener("change", () => {
   applyCreationChange();
 });
 document.querySelectorAll(".add-btn").forEach((b) =>
-  b.addEventListener("click", () => openFigDialog(null, b.dataset.add))
+  b.addEventListener("click", () => {
+    if (getBande(currentCreation?.bandeId)) openRecruitDialog(b.dataset.add);
+    else openFigDialog(null, b.dataset.add);
+  })
 );
+
+// ---------------------------------------------------------------------
+// Recrutement d'après les données de la bande
+// ---------------------------------------------------------------------
+const recruitDialog = document.getElementById("recruit-dialog");
+let recruitCategorie = "heros";
+
+function reglesText(regles) {
+  return regles.map((r) => `<abbr title="${escapeHtml(r.resume)}">${escapeHtml(r.nom)}</abbr>`).join(", ");
+}
+
+function openRecruitDialog(categorie) {
+  recruitCategorie = categorie;
+  const bande = getBande(currentCreation.bandeId);
+  const isHero = categorie === "heros";
+  document.getElementById("recruit-title").textContent = `Recruter ${isHero ? "un héros" : "un homme de main"}`;
+  const list = document.getElementById("recruit-list");
+  list.innerHTML = "";
+  for (const g of bande.guerriers.filter((x) => x.categorie === categorie)) {
+    const n = currentCreation.figurines.filter((f) => f.modele === g.id).length;
+    const complet = g.max !== null && n >= g.max;
+    const div = document.createElement("div");
+    div.className = `unit-card${complet ? " complet" : ""}`;
+    div.innerHTML = `
+      <div class="unit-head">
+        <span class="unit-name">${escapeHtml(g.nom)}</span>
+        <span class="unit-cost">${g.cout} co${g.xp ? ` · ${g.xp} xp` : ""} · ${n}/${g.max ?? "∞"}</span>
+      </div>
+      <div class="stat-line">${statLine(g.profil)}</div>
+      ${g.regles.length ? `<p class="unit-detail">Règles : ${reglesText(g.regles)}</p>` : ""}
+      <div class="slot-actions"></div>`;
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "btn-slot";
+    b.textContent = complet ? "Effectif maximum atteint" : "Recruter";
+    b.disabled = complet;
+    b.addEventListener("click", () => {
+      recruitDialog.close();
+      openFigDialog(null, categorie, newFigurineFromModele(g.id));
+    });
+    div.querySelector(".slot-actions").appendChild(b);
+    list.appendChild(div);
+  }
+  recruitDialog.showModal();
+}
+document.getElementById("recruit-cancel").addEventListener("click", () => recruitDialog.close());
+document.getElementById("recruit-libre").addEventListener("click", () => {
+  recruitDialog.close();
+  openFigDialog(null, recruitCategorie);
+});
 
 // ---------------------------------------------------------------------
 // Fiche d'édition d'une figurine (fenêtre)
@@ -813,25 +883,72 @@ const figStats = document.getElementById("fig-stats");
 let figDraft = null; // copie en cours d'édition
 let figOriginal = null; // figurine remplacée à la validation (null = recrutement)
 
+// Le coût saisi à la main n'est plus recalculé (objet acheté à un autre prix…).
+figCout.addEventListener("input", () => (figCout.dataset.manuel = "1"));
+
 figStats.innerHTML = STAT_KEYS.map(
   (k) => `<label class="stat-edit"><span>${k}</span><input type="text" class="perso-nom-input" data-stat="${k}" maxlength="4" /></label>`
 ).join("");
 
-function openFigDialog(fig, categorie = "heros") {
+/** Coût recalculé d'après la liste d'équipement du guerrier, si la figurine en vient. */
+function syncCout() {
+  if (figCout.dataset.manuel === "1") return;
+  const calc = coutCalcule(figDraft);
+  if (calc !== null) figCout.value = calc;
+}
+
+function renderArsenal(guerrier) {
+  const box = document.getElementById("fig-arsenal");
+  box.hidden = !guerrier?.equipement.length;
+  if (box.hidden) return;
+  const liste = document.getElementById("fig-arsenal-liste");
+  liste.innerHTML = "";
+  for (const cat of guerrier.equipement) {
+    const row = document.createElement("div");
+    row.className = "arsenal-cat";
+    row.innerHTML = `<p class="arsenal-titre">${escapeHtml(cat.categorie)}</p>`;
+    for (const o of cat.objets) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip chip-btn";
+      b.textContent = `${o.nom} · ${o.cout ?? 0} co`;
+      b.addEventListener("click", () => {
+        figDraft.equipement.push(o.nom);
+        renderFigEquipement();
+        syncCout();
+      });
+      row.appendChild(b);
+    }
+    liste.appendChild(row);
+  }
+}
+
+function renderFigEquipement() {
+  chipEditor(document.getElementById("fig-equipement"), figDraft.equipement, {
+    datalist: "equipment-list",
+    placeholder: "Épée, arc, armure légère...",
+    onChange: syncCout,
+  });
+}
+
+function openFigDialog(fig, categorie = "heros", draft = null) {
   figOriginal = fig;
-  figDraft = fig ? structuredClone(fig) : newFigurine(categorie);
+  figDraft = draft || (fig ? structuredClone(fig) : newFigurine(categorie));
+  const guerrier = getGuerrier(figDraft.modele);
   const isHero = figDraft.categorie === "heros";
   document.getElementById("fig-title").textContent = fig
     ? `Modifier ${isHero ? "le héros" : "l'homme de main"}`
     : `Recruter ${isHero ? "un héros" : "un homme de main"}`;
   figType.value = figDraft.type;
   figCout.value = figDraft.coutGc;
+  figCout.dataset.manuel = "";
   figXp.value = figDraft.xp;
   figStats.querySelectorAll("input").forEach((inp) => (inp.value = figDraft.stats[inp.dataset.stat]));
-  chipEditor(document.getElementById("fig-equipement"), figDraft.equipement, {
-    datalist: "equipment-list",
-    placeholder: "Épée, arc, armure légère...",
-  });
+  renderFigEquipement();
+  renderArsenal(guerrier);
+  document.getElementById("fig-acces").textContent = guerrier?.competences.length
+    ? `(accès : ${guerrier.competences.join(", ")})`
+    : "";
   chipEditor(document.getElementById("fig-competences"), figDraft.competences, {
     datalist: "rules-list",
     placeholder: "Nom de compétence",
@@ -855,6 +972,8 @@ figForm.addEventListener("submit", (e) => {
     const pending = document.querySelector(`#${id} .chip-add input`);
     if (pending?.value.trim()) figDraft[key].push(pending.value.trim());
   }
+  // Le coût suit l'équipement ajouté, sauf si le joueur l'a modifié après coup.
+  syncCout();
   figDraft.type = figType.value.trim();
   figDraft.coutGc = Math.max(0, Number(figCout.value) || 0);
   figDraft.xp = Math.max(0, Number(figXp.value) || 0);
@@ -870,6 +989,54 @@ figForm.addEventListener("submit", (e) => {
   applyCreationChange();
 });
 document.getElementById("fig-cancel").addEventListener("click", () => figDialog.close());
+
+// ---------------------------------------------------------------------
+// Règles des bandes (consultation des données)
+// ---------------------------------------------------------------------
+const reglesSelect = document.getElementById("regles-bande-select");
+reglesSelect.innerHTML = BANDES.map((b) => option(b.id, b.nom)).join("");
+
+function renderReglesBande() {
+  if (currentCreation?.bandeId && !reglesSelect.dataset.touched) reglesSelect.value = currentCreation.bandeId;
+  const b = getBande(reglesSelect.value) || BANDES[0];
+  const regle = (r) => `<li><strong>${escapeHtml(r.nom)}</strong>${r.resume ? ` : ${escapeHtml(r.resume)}` : ""}</li>`;
+  const guerrier = (g) => `
+    <div class="unit-card">
+      <div class="unit-head">
+        <span class="unit-name">${escapeHtml(g.nom)}</span>
+        <span class="unit-cost">${g.cout} co${g.xp ? ` · ${g.xp} xp` : ""} · ${g.min ? `${g.min} à ` : "0 à "}${g.max ?? "∞"}</span>
+      </div>
+      <div class="stat-line">${statLine(g.profil)}</div>
+      ${g.regles.length ? `<p class="unit-detail">Règles : ${reglesText(g.regles)}</p>` : ""}
+      ${g.competences.length ? `<p class="unit-detail">Accès aux compétences : ${escapeHtml(g.competences.join(", "))}</p>` : ""}
+      ${
+        g.equipement.length
+          ? `<details class="arsenal"><summary>Liste d'équipement</summary>${g.equipement
+              .map(
+                (c) =>
+                  `<p class="unit-detail"><em>${escapeHtml(c.categorie)}</em> : ${c.objets
+                    .map((o) => `${escapeHtml(o.nom)} (${o.cout ?? 0})`)
+                    .join(", ")}</p>`
+              )
+              .join("")}</details>`
+          : ""
+      }
+    </div>`;
+  const regles = [...new Map(b.guerriers.flatMap((g) => g.regles).map((r) => [r.nom, r])).values()];
+  document.getElementById("regles-bande-contenu").innerHTML = `
+    <p class="unit-detail">Trésor de départ : <strong>${b.tresor} co</strong> · ${b.effectifMax} figurines au maximum, dont 6 héros.</p>
+    ${b.regles.length ? `<h3 class="mini-title">Règles de la bande</h3><ul class="regles-list">${b.regles.map(regle).join("")}</ul>` : ""}
+    <h3 class="mini-title">Héros</h3>
+    <div class="unit-list">${b.guerriers.filter((g) => g.categorie === "heros").map(guerrier).join("")}</div>
+    <h3 class="mini-title">Hommes de main</h3>
+    <div class="unit-list">${b.guerriers.filter((g) => g.categorie === "hdm").map(guerrier).join("")}</div>
+    ${regles.length ? `<h3 class="mini-title">Règles spéciales des guerriers</h3><ul class="regles-list">${regles.map(regle).join("")}</ul>` : ""}`;
+  document.getElementById("regles-source").textContent = `Source des données : ${b.source}.`;
+}
+reglesSelect.addEventListener("change", () => {
+  reglesSelect.dataset.touched = "1";
+  renderReglesBande();
+});
 
 // ---------------------------------------------------------------------
 // Emplacements de bande (base locale IndexedDB, voir warband-store.js)

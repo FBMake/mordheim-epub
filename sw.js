@@ -10,7 +10,7 @@
    Pensez à incrémenter CACHE_VERSION quand la liste PRECACHE change.
    ------------------------------------------------------------------ */
 
-const CACHE_VERSION = "v3";
+const CACHE_VERSION = "v4";
 const APP_CACHE = `fiches-bande-app-${CACHE_VERSION}`;
 const FONT_CACHE = "fiches-bande-fonts";
 
@@ -25,6 +25,7 @@ const PRECACHE = [
   "js/personalization.js",
   "js/warband-store.js",
   "js/warband-builder.js",
+  "js/data/bandes.js",
   "js/pdf-builder.js",
   "js/vendor/pdf-lib.esm.min.js",
   "data/templates/bande.png",

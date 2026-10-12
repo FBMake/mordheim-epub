@@ -15,14 +15,15 @@
  * personnalisation, suivi de partie, PDF) traite donc une bande créée
  * exactement comme une bande importée.
  *
- * Le dépôt ne contient pas les catalogues de règles (profils, coûts et
- * listes d'équipement par bande) : coûts et caractéristiques sont saisis
- * à la main. Seuls les noms de compétences/règles connus du dictionnaire
- * de traduction sont proposés en saisie automatique (leur texte français
- * est alors repris dans le PDF).
+ * Pour les bandes décrites dans js/data/bandes.js (données BSData
+ * traduites), `creation.bandeId` et `figurine.modele` renvoient à la bande
+ * et au guerrier recrutés : profil, coût, listes d'équipement et
+ * effectifs sont alors proposés et contrôlés. Pour une autre faction, tout
+ * se saisit à la main.
  */
 
 import { RULE_TRANSLATIONS } from "./translations.js";
+import { BANDES } from "./data/bandes.js";
 
 export const CREATION_VERSION = 1;
 export const GENERATED_BY = "mordheim-epub";
@@ -30,16 +31,10 @@ export const TRESOR_DEPART = 500;
 export const MAX_HEROS = 6;
 export const STAT_KEYS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "Cd"];
 
-/** Bandes proposées à la création (saisie libre possible en plus). */
+export { BANDES };
+
+/** Autres factions proposées à la création, sans données de règles (saisie manuelle). */
 export const FACTIONS = [
-  "Mercenaires du Reikland",
-  "Mercenaires de Middenheim",
-  "Mercenaires de Marienburg",
-  "Culte des Possédés",
-  "Chasseurs de Sorcières",
-  "Sœurs de Sigmar",
-  "Morts-Vivants",
-  "Skavens du Clan Eshin",
   "Orques & Gobelins",
   "Nains Chasseurs de Trésor",
   "Hommes-Bêtes",
@@ -63,6 +58,44 @@ export const EQUIPEMENT_COURANT = [
   "Herbes de soin", "Eau bénite", "Talisman de Sigmar", "Cheval", "Chien de guerre",
 ];
 
+// ---------------------------------------------------------------------
+// Données des bandes (js/data/bandes.js)
+// ---------------------------------------------------------------------
+
+const bandesById = new Map(BANDES.map((b) => [b.id, b]));
+const guerriersById = new Map(BANDES.flatMap((b) => b.guerriers.map((g) => [g.id, g])));
+// Résumés français des règles de bande et de guerrier, par nom français.
+const resumes = new Map();
+for (const b of BANDES) {
+  for (const r of [...b.regles, ...b.guerriers.flatMap((g) => g.regles)]) {
+    if (r.resume && !resumes.has(r.nom)) resumes.set(r.nom, r.resume);
+  }
+}
+
+export function getBande(id) {
+  return bandesById.get(id) || null;
+}
+
+export function getGuerrier(id) {
+  return guerriersById.get(id) || null;
+}
+
+/** Prix d'un objet dans la liste d'équipement d'un guerrier (null si absent). */
+export function prixEquipement(guerrier, nom) {
+  for (const cat of guerrier?.equipement || []) {
+    const objet = cat.objets.find((o) => o.nom === nom);
+    if (objet) return objet.cout ?? 0;
+  }
+  return null;
+}
+
+/** Coût d'une figurine recrutée d'après les données : guerrier + équipement de sa liste. */
+export function coutCalcule(fig) {
+  const g = getGuerrier(fig.modele);
+  if (!g) return null;
+  return g.cout + (fig.equipement || []).reduce((s, nom) => s + (prixEquipement(g, nom) ?? 0), 0);
+}
+
 let idCounter = 0;
 function newId() {
   idCounter += 1;
@@ -74,20 +107,44 @@ function defaultStats() {
   return { M: "4", CC: "3", CT: "3", F: "3", E: "3", PV: "1", I: "3", A: "1", Cd: "7" };
 }
 
-export function newCreation(nom = "", faction = "") {
+/**
+ * @param {string} nom
+ * @param {string} faction - nom libre, ou ignoré si `bandeId` désigne une bande connue
+ * @param {string} [bandeId] - identifiant d'une bande de js/data/bandes.js
+ */
+export function newCreation(nom = "", faction = "", bandeId = "") {
+  const bande = getBande(bandeId);
   return {
     version: CREATION_VERSION,
     nom: nom.trim() || "Nouvelle bande",
-    faction: faction.trim(),
-    tresorDepart: TRESOR_DEPART,
-    reglesBande: [],
+    faction: bande ? bande.nom : faction.trim(),
+    bandeId: bande ? bande.id : "",
+    tresorDepart: bande ? bande.tresor : TRESOR_DEPART,
+    reglesBande: bande ? bande.regles.map((r) => r.nom) : [],
     figurines: [],
   };
+}
+
+/** Figurine recrutée d'après un guerrier des données (profil, coût, XP et règles repris). */
+export function newFigurineFromModele(guerrierId) {
+  const g = getGuerrier(guerrierId);
+  if (!g) throw new Error(`Guerrier inconnu : ${guerrierId}`);
+  const fig = newFigurine(g.categorie);
+  fig.modele = g.id;
+  fig.type = g.nom;
+  fig.coutGc = g.cout;
+  fig.xp = g.xp;
+  for (const k of STAT_KEYS) fig.stats[k] = g.profil?.[k] || "-";
+  fig.regles = g.regles.map((r) => r.nom);
+  // Chaque guerrier a droit à une dague gratuite quand sa liste la prévoit.
+  if (prixEquipement(g, "Dague gratuite") !== null) fig.equipement.push("Dague gratuite");
+  return fig;
 }
 
 export function newFigurine(categorie = "heros") {
   return {
     id: newId(),
+    modele: "",
     categorie: categorie === "hdm" ? "hdm" : "heros",
     type: "",
     coutGc: 0,
@@ -119,6 +176,8 @@ function cleanList(list) {
 export function normalizeCreation(c) {
   if (!c || typeof c !== "object") return null;
   const out = newCreation(String(c.nom || ""), String(c.faction || ""));
+  // Une bande inconnue des données (mise à jour retirée…) reste lisible en saisie manuelle.
+  out.bandeId = getBande(c.bandeId) ? c.bandeId : "";
   out.tresorDepart = c.tresorDepart === undefined ? TRESOR_DEPART : toInt(c.tresorDepart);
   out.reglesBande = cleanList(c.reglesBande);
   out.figurines = (Array.isArray(c.figurines) ? c.figurines : [])
@@ -130,6 +189,7 @@ export function normalizeCreation(c) {
       }
       return {
         id: String(f.id),
+        modele: getGuerrier(f.modele) ? f.modele : "",
         categorie: f.categorie === "hdm" ? "hdm" : "heros",
         type: String(f.type || "").trim(),
         coutGc: toInt(f.coutGc),
@@ -153,6 +213,7 @@ export function knownRuleNames() {
   for (const val of Object.values(RULE_TRANSLATIONS)) {
     if (val?.name) names.add(val.name);
   }
+  for (const nom of resumes.keys()) names.add(nom);
   return [...names].sort((a, b) => a.localeCompare(b, "fr"));
 }
 
@@ -202,6 +263,26 @@ export function creationWarnings(creation) {
   if (t.reste < 0) out.push(`Budget dépassé de ${-t.reste} co (trésor de départ : ${t.tresor} co).`);
   if (t.heros > MAX_HEROS) out.push(`${t.heros} héros : une bande en compte ${MAX_HEROS} au maximum.`);
   if (t.effectif && !t.heros) out.push("Aucun héros : il faut au moins un chef.");
+
+  const bande = getBande(creation?.bandeId);
+  if (!bande) return out;
+  if (t.effectif > bande.effectifMax) {
+    out.push(`${t.effectif} figurines : les ${bande.nom} en comptent ${bande.effectifMax} au maximum.`);
+  }
+  const figs = creation.figurines || [];
+  for (const g of bande.guerriers) {
+    const n = figs.filter((f) => f.modele === g.id).length;
+    if (g.max !== null && n > g.max) out.push(`${n} × ${g.nom} : ${g.max} au maximum.`);
+    if (g.min && n < g.min && figs.length) out.push(`${g.nom} : il en faut au moins ${g.min}.`);
+  }
+  for (const f of figs) {
+    const g = getGuerrier(f.modele);
+    if (!g) continue;
+    const horsListe = f.equipement.filter((nom) => prixEquipement(g, nom) === null);
+    if (horsListe.length) {
+      out.push(`${f.type || g.nom} : ${horsListe.join(", ")} hors de sa liste d'équipement (objet trouvé ou acheté au comptoir ?).`);
+    }
+  }
   return out;
 }
 
@@ -214,10 +295,11 @@ function cost(typeId, name, value) {
 }
 
 function ruleEntries(names, prefix) {
+  // Règle issue des données de bande : on garde son nom français et son résumé.
   return cleanList(names).map((n, i) => ({
     id: `${prefix}-r${i}`,
-    name: resolveRuleName(n),
-    description: "",
+    name: resumes.has(n) ? n : resolveRuleName(n),
+    description: resumes.get(n) || "",
   }));
 }
 

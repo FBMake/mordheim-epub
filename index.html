@@ -31,6 +31,7 @@
     <button type="button" class="nav-btn" data-view="accueil">Mes bandes</button>
     <button type="button" class="nav-btn" data-view="nouvelle">Nouvelle bande</button>
     <button type="button" class="nav-btn" data-view="import">Importer</button>
+    <button type="button" class="nav-btn" data-view="regles">Règles des bandes</button>
     <button type="button" class="nav-btn nav-bande" data-view="bande" hidden>Bande ouverte</button>
   </nav>
 
@@ -78,6 +79,18 @@
       <button type="submit" class="btn-primary">Créer la bande</button>
       <p id="new-status" class="status-msg" aria-live="polite"></p>
     </form>
+  </section>
+
+  <!-- ============ Règles des bandes (données BSData traduites) ============ -->
+  <section id="view-regles" class="view ledger-block" hidden>
+    <h2 class="section-title">Règles des bandes</h2>
+    <p class="hint-text">Profils, coûts, effectifs, listes d'équipement et accès aux compétences des bandes du livre de base. Les règles sont résumées : reportez-vous au livre de règles pour le texte complet.</p>
+    <label class="perso-label">
+      Bande
+      <select id="regles-bande-select" class="perso-nom-input"></select>
+    </label>
+    <div id="regles-bande-contenu"></div>
+    <p class="hint-text small" id="regles-source"></p>
   </section>
 
   <!-- ============ Import d'un export New Recruit / BattleScribe ============ -->
@@ -227,7 +240,7 @@
 
   <footer class="footer-note">
     <p>Tout le traitement se fait dans votre navigateur : vos bandes ne sont jamais envoyées sur un serveur.</p>
-    <p>V0.4</p>
+    <p>V0.5</p>
   </footer>
 </div>
 
@@ -254,7 +267,11 @@
     <div class="stats-edit" id="fig-stats"></div>
     <p class="perso-label">Équipement</p>
     <div class="chip-editor" id="fig-equipement"></div>
-    <p class="perso-label">Compétences</p>
+    <details class="arsenal" id="fig-arsenal" hidden>
+      <summary>Liste d'équipement de ce guerrier</summary>
+      <div id="fig-arsenal-liste"></div>
+    </details>
+    <p class="perso-label">Compétences <span class="hint-inline" id="fig-acces"></span></p>
     <div class="chip-editor" id="fig-competences"></div>
     <p class="perso-label">Règles spéciales</p>
     <div class="chip-editor" id="fig-regles"></div>
@@ -263,6 +280,16 @@
       <button type="submit" id="fig-ok" class="btn-slot btn-ok">Valider</button>
     </div>
   </form>
+</dialog>
+
+<!-- Choix d'un guerrier à recruter (bande avec données) -->
+<dialog id="recruit-dialog" class="fig-dialog">
+  <h3 class="section-title small" id="recruit-title">Recruter</h3>
+  <div id="recruit-list" class="unit-list"></div>
+  <div class="dialog-actions">
+    <button type="button" id="recruit-libre" class="btn-secondary">Figurine hors liste…</button>
+    <button type="button" id="recruit-cancel" class="btn-secondary">Annuler</button>
+  </div>
 </dialog>
 
 <datalist id="factions-list"></datalist>
