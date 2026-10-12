@@ -17,6 +17,8 @@
 }
 
 * { box-sizing: border-box; }
+/* L'attribut hidden doit l'emporter sur les display: flex des composants. */
+[hidden] { display: none !important; }
 
 html, body {
   margin: 0;
@@ -74,11 +76,41 @@ html, body {
 }
 
 .masthead {
+  position: relative;
   text-align: center;
   margin-bottom: 2.2rem;
-  border-bottom: 3px double var(--brass);
-  padding-bottom: 1.4rem;
+  padding-bottom: 1.8rem;
 }
+/* Ligne de séparation dessinée (images/deco/separateur.webp). */
+.masthead::after, .footer-note::before {
+  content: "";
+  display: block;
+  height: 23px;
+  background: url("../images/deco/separateur.webp") center / contain no-repeat;
+  opacity: 0.85;
+}
+.masthead::after { position: absolute; left: 0; right: 0; bottom: 0; }
+.footer-note::before { margin-bottom: 0.6rem; }
+
+/* Dessins décoratifs, à l'encre brune, de part et d'autre du titre. */
+.deco {
+  position: absolute;
+  top: 0.4rem;
+  width: auto;
+  height: 4.6rem;
+  opacity: 0.8;
+  pointer-events: none;
+}
+.deco-gauche { left: 0; transform: rotate(-8deg); }
+.deco-droite { right: 0; }
+.footer-deco {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0.4rem 0 -0.4rem;
+}
+.footer-deco img { height: 3.6rem; width: auto; opacity: 0.75; }
+.footer-deco img + img { transform: scaleX(-1); }
 
 .eyebrow {
   font-family: "JetBrains Mono", monospace;
@@ -146,9 +178,9 @@ html, body {
 .section-title {
   font-family: "UnifrakturCook", serif;
   font-size: 1.8rem;
-  border-bottom: 1px solid var(--brass);
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.9rem;
   margin-bottom: 1.1rem;
+  background: url("../images/deco/separateur.webp") left bottom / min(100%, 460px) auto no-repeat;
 }
 
 .preview-grid {
@@ -243,8 +275,6 @@ html, body {
   text-align: center;
   font-size: 0.82rem;
   color: var(--ink-soft);
-  border-top: 1px solid var(--brass);
-  padding-top: 1rem;
 }
 
 .dropzone-secondary {
@@ -323,9 +353,36 @@ html, body {
   color: var(--ink);
   padding: 0.35rem 0.5rem;
   border: 1px solid var(--brass);
-  background: #fff;
+  border-radius: 2px;
+  /* Encart de parchemin plus clair, légèrement creusé, plutôt que du blanc. */
+  background: rgba(250, 240, 218, 0.55);
+  box-shadow: inset 0 1px 3px rgba(90, 74, 48, 0.25);
   resize: vertical;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
+.perso-nom-input::placeholder, .perso-bio-input::placeholder { color: rgba(90, 74, 48, 0.6); font-style: italic; }
+.perso-nom-input:hover, .perso-bio-input:hover { background-color: rgba(252, 245, 228, 0.7); }
+.perso-nom-input:focus, .perso-bio-input:focus {
+  outline: none;
+  border-color: var(--wax);
+  background-color: rgba(252, 245, 228, 0.85);
+  box-shadow: inset 0 1px 3px rgba(90, 74, 48, 0.25), 0 0 0 2px rgba(122, 46, 46, 0.18);
+}
+/* Sélecteur : même encart, flèche couleur cire, liste déroulante en parchemin. */
+select.perso-nom-input {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%237a2e2e' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+}
+select.perso-nom-input option, select.perso-nom-input optgroup {
+  background-color: #efe2c4;
+  color: var(--ink);
+}
+select.perso-nom-input optgroup { font-style: normal; font-weight: 600; color: var(--wax); }
 
 /* Emplacements de bande (base locale) */
 .slots {
@@ -391,6 +448,7 @@ select.perso-nom-input { width: 100%; }
     padding: calc(var(--w) * 0.165) calc(var(--w) * 0.185) calc(var(--w) * 0.155);
   }
   .title-blackletter { font-size: 2.4rem; }
+  .deco { height: 2.2rem; top: -0.7rem; }
   .preview-grid { grid-template-columns: repeat(2, 1fr); }
   .preview-columns { grid-template-columns: 1fr; }
   .perso-card { grid-template-columns: 1fr; justify-items: center; }
