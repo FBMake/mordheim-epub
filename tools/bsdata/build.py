@@ -37,7 +37,9 @@ def build(raw, fr):
             wfr = meta["guerriers"].get(w["nom"])
             if not wfr:
                 continue  # figurine non recrutable à la création (ex. zombie relevé en cours de partie)
-            regles = list(w["regles"])
+            # « remplacer » précise une règle ambiguë des données (ex. Wizard → domaine de magie).
+            remplacer = wfr.get("remplacer", {})
+            regles = [remplacer.get(r, r) for r in w["regles"]]
             if w["categorie"] == "heros" and w["min"] >= 1 and "Leader" not in regles:
                 regles.insert(0, "Leader")
             regles += [r for r in wfr.get("regles", []) if r not in regles]

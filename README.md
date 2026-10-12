@@ -69,7 +69,7 @@ js/parser.js             JSON BattleScribe → modèle normalisé
 js/personalization.js    Personnalisation (nom/bio/photo) + fichier compagnon
 js/warband-store.js      Emplacements de bande (IndexedDB) et suivi de partie
 js/warband-builder.js    Création de bande de zéro → export au format BattleScribe
-js/data/bandes.js        Données des bandes du livre de base (générées, voir tools/bsdata/)
+js/data/bandes.js        Données des bandes officielles (générées, voir tools/bsdata/)
 js/pdf-builder.js        Modèle normalisé → fichier .pdf (via pdf-lib, gabarits image)
 js/app.js                Câblage de l'interface
 js/vendor/pdf-lib.esm.min.js   pdf-lib embarqué (pas d'appel à un CDN externe)
@@ -218,9 +218,11 @@ repris dans le PDF. Une bande créée est convertie en export au format
 BattleScribe (`js/warband-builder.js`), puis traitée exactement comme
 une bande importée.
 
-**Bandes du livre de base** (Reikland, Middenheim, Marienburg, Culte
-des Possédés, Répurgateurs, Sœurs de Sigmar, Morts-Vivants, Skavens du
-Clan Eshin) : *Recruter* propose les guerriers de la bande avec leur
+**Bandes officielles de BSData** (livre de base : Reikland, Middenheim,
+Marienburg, Culte des Possédés, Répurgateurs, Sœurs de Sigmar,
+Morts-Vivants, Skavens du Clan Eshin ; puis Nains chasseurs de trésor,
+Bande d'Orques, Pillards hommes-bêtes, Carnaval du Chaos, Kislevites,
+Mercenaires d'Averland et d'Ostland) : *Recruter* propose les guerriers de la bande avec leur
 profil, leur coût et leur effectif maximum, la fiche du guerrier propose
 sa liste d'équipement (le coût suit les achats) et son accès aux
 compétences, et la composition est contrôlée (effectifs, taille de la
@@ -242,14 +244,14 @@ des livres de règles n'est pas reproduit.
 
 ```bash
 git clone --depth 1 https://github.com/BSData/mordheim.git /tmp/bsdata
-python3 -I tools/bsdata/extract.py /tmp/bsdata /tmp/raw.json "Reiklanders.cat" "Middenheimers.cat" \
-  "Marienburgers.cat" "Cult of the Possessed.cat" "Witch Hunters.cat" "Sisters of Sigmar.cat" \
-  "Undead.cat" "Skaven.cat"
+python3 -I tools/bsdata/extract.py /tmp/bsdata /tmp/raw.json   # tous les catalogues de bandes
 python3 -I tools/bsdata/build.py /tmp/raw.json tools/bsdata/fr.json js/data/bandes.js
 ```
 
-Pour ajouter une bande : ajoutez son catalogue à la commande `extract.py`
-et sa traduction dans `fr.json` (`build.py` liste tout ce qui manque).
+Seules les bandes décrites dans `fr.json` sont reprises : pour en ajouter
+une, ajoutez sa traduction (`build.py` liste tout ce qui manque). Une
+règle ambiguë des données se précise par guerrier avec `remplacer`
+(ex. `"Wizard"` → `"Wizard (Chaos Rituals)"`).
 BSData ne publie pour l'instant que les 16 bandes officielles « 1a » ;
 les bandes plus récentes (annuels, Town Cryer) y ont été retirées
 temporairement.

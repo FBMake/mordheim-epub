@@ -35,15 +35,8 @@ export { BANDES };
 
 /** Autres factions proposées à la création, sans données de règles (saisie manuelle). */
 export const FACTIONS = [
-  "Orques & Gobelins",
-  "Nains Chasseurs de Trésor",
-  "Hommes-Bêtes",
-  "Carnaval du Chaos",
   "Elfes Noirs",
-  "Kislevites",
   "Pirates",
-  "Mercenaires d'Averland",
-  "Mercenaires d'Ostland",
   "École d'Artillerie de Nuln",
 ];
 
