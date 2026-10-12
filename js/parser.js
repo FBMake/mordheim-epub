@@ -69,7 +69,8 @@ function buildCanonicalRuleDictionary(rosterRoot, report) {
     }
     // Aucune traduction connue : on garde l'anglais et on le signale.
     dict.set(name, { name, description: descriptions[0] || "" });
-    markUntranslated(report, `Règle « ${name} »`);
+    // Une règle sans texte (saisie à la main dans une bande créée) n'a rien à traduire.
+    if (descriptions.some(Boolean)) markUntranslated(report, `Règle « ${name} »`);
   }
   return dict;
 }
