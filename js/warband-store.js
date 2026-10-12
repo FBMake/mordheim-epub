@@ -10,7 +10,9 @@
  *   - les personnalisations (nom, bio, photo) par figurine,
  *   - les personnalisations orphelines (figurine disparue du roster),
  *   - le suivi de partie (XP, état, notes par figurine ; magot et notes
- *     de la bande) qui remplace les valeurs du roster dans le PDF.
+ *     de la bande) qui remplace les valeurs du roster dans le PDF,
+ *   - pour une bande créée dans l'application, son modèle éditable
+ *     (`creation`, voir warband-builder.js) dont le roster est généré.
  *
  * IndexedDB plutôt que localStorage : les photos (data URL JPEG) pèsent
  * vite plus que les ~5 Mo autorisés par localStorage.
@@ -18,6 +20,8 @@
  * Les fonctions « pures » (sans IndexedDB) sont exportées séparément pour
  * être testables sous Node (voir test/test-warband-store.mjs).
  */
+
+import { normalizeCreation } from "./warband-builder.js";
 
 export const SLOT_COUNT = 4;
 export const EXPORT_FORMAT = "mordheim-epub-bandes";
@@ -86,6 +90,9 @@ export function normalizeRecord(rec) {
     customisations,
     orphelines,
     partie: cleanPartie(rec.partie),
+    // Bande créée dans l'application (warband-builder.js) : modèle éditable
+    // dont `roster` est généré. null pour une bande importée.
+    creation: normalizeCreation(rec.creation),
     majLe: rec.majLe || new Date().toISOString(),
   };
 }

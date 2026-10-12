@@ -365,3 +365,143 @@ select.perso-nom-input { width: 100%; }
   .perso-card { grid-template-columns: 1fr; justify-items: center; }
   .perso-fields { width: 100%; }
 }
+
+/* Menu principal */
+.app-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin: -0.8rem 0 2rem;
+}
+.nav-btn, .tab-btn {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--brass);
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+}
+.nav-btn:hover, .tab-btn:hover { background: rgba(255,255,255,0.45); }
+.nav-btn.active, .tab-btn.active { background: var(--wax); border-color: var(--wax); color: var(--parchment); }
+.nav-bande { max-width: 16ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Bande ouverte et son menu */
+.bande-head { text-align: center; margin-bottom: 1rem; }
+.bande-head .eyebrow { margin-bottom: 0.3rem; }
+.bande-title {
+  font-family: "UnifrakturCook", serif;
+  font-size: 2.2rem;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.bande-origine { margin: 0.3rem 0 0; font-size: 0.85rem; color: var(--ink-soft); font-style: italic; }
+.bande-menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 3px double var(--brass);
+  margin-bottom: 1.4rem;
+}
+.bande-menu .tab-btn { border-bottom: none; padding: 0.7rem 0.3rem; }
+.bande-menu .tab-btn + .tab-btn { border-left: none; }
+.tab-panel { animation: fadein 0.15s ease; }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+
+/* Formulaires */
+.form-stack { display: flex; flex-direction: column; gap: 0.8rem; }
+.compo-settings {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+.hint-text.left { text-align: left; }
+
+/* Composition : cartes de figurine */
+.unit-list { display: flex; flex-direction: column; gap: 0.6rem; margin: 0.6rem 0 0.8rem; }
+.unit-card {
+  background: rgba(255,255,255,0.35);
+  border: 1px solid var(--brass);
+  padding: 0.6rem 0.8rem;
+}
+.unit-head { display: flex; justify-content: space-between; gap: 0.6rem; align-items: baseline; }
+.unit-name { font-weight: 600; overflow-wrap: anywhere; }
+.unit-name em { font-weight: 400; color: var(--ink-soft); }
+.unit-cost { font-family: "JetBrains Mono", monospace; font-size: 0.78rem; color: var(--wax); white-space: nowrap; }
+.stat-line {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  margin: 0.4rem 0;
+  border: 1px solid rgba(138,110,61,0.5);
+}
+.stat-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  padding: 0.15rem 0;
+}
+.stat-cell + .stat-cell { border-left: 1px solid rgba(138,110,61,0.35); }
+.stat-cell b { font-size: 0.62rem; color: var(--ink-soft); }
+.unit-detail { margin: 0.15rem 0; font-size: 0.88rem; }
+.add-btn { margin-bottom: 1.6rem; }
+
+/* Listes éditables (équipement, compétences, règles) */
+.chip-editor { margin-bottom: 0.4rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.4rem; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid var(--brass);
+  padding: 0.1rem 0.2rem 0.1rem 0.5rem;
+  font-size: 0.92rem;
+}
+.chip-del {
+  border: none;
+  background: transparent;
+  color: var(--wax);
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.25rem;
+}
+.chip-add { display: flex; gap: 0.4rem; }
+.chip-add input { flex: 1; min-width: 0; }
+
+/* Fenêtre d'édition d'une figurine */
+.fig-dialog {
+  width: min(640px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  border: 2px solid var(--brass);
+  background: var(--parchment);
+  color: var(--ink);
+  padding: 1.2rem 1.4rem;
+}
+.fig-dialog::backdrop { background: rgba(10,12,15,0.7); }
+.fig-dialog > form > .perso-label { margin: 0.2rem 0 -0.4rem; }
+.section-title.small { font-size: 1.5rem; margin: 0 0 0.4rem; }
+.stats-edit { display: grid; grid-template-columns: repeat(9, 1fr); gap: 0.25rem; }
+.stat-edit { display: flex; flex-direction: column; align-items: center; font-family: "JetBrains Mono", monospace; font-size: 0.7rem; color: var(--ink-soft); }
+.stat-edit input { width: 100%; text-align: center; padding: 0.3rem 0.1rem; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 0.4rem; }
+.btn-ok { background: var(--wax); font-size: 0.78rem; padding: 0.55rem 1.1rem; }
+.btn-ok:hover { background: var(--wax-light); }
+
+@media (max-width: 640px) {
+  .bande-menu { grid-template-columns: repeat(2, 1fr); }
+  .bande-menu .tab-btn:nth-child(3) { border-left: 1px solid var(--brass); }
+  .compo-settings { grid-template-columns: 1fr; }
+  .stats-edit { grid-template-columns: repeat(5, 1fr); }
+  .stat-cell { font-size: 0.72rem; }
+  .bande-title { font-size: 1.8rem; }
+}
+
+/* Les champs remplissent leur colonne sans déborder des grilles. */
+.perso-label { min-width: 0; }
+.perso-label > .perso-nom-input { width: 100%; min-width: 0; }

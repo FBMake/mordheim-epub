@@ -67,6 +67,8 @@ css/style.css            Identité visuelle du SITE (parchemin, gothique, ledger
 js/translations.js       Dictionnaire de traduction EN → FR
 js/parser.js             JSON BattleScribe → modèle normalisé
 js/personalization.js    Personnalisation (nom/bio/photo) + fichier compagnon
+js/warband-store.js      Emplacements de bande (IndexedDB) et suivi de partie
+js/warband-builder.js    Création de bande de zéro → export au format BattleScribe
 js/pdf-builder.js        Modèle normalisé → fichier .pdf (via pdf-lib, gabarits image)
 js/app.js                Câblage de l'interface
 js/vendor/pdf-lib.esm.min.js   pdf-lib embarqué (pas d'appel à un CDN externe)
@@ -189,6 +191,39 @@ même temps que le PDF, à réimporter la prochaine fois à côté de votre
 nouvel export JSON. Voir le panneau "Personnaliser les figurines" dans
 l'application.
 
+## Menus de l'application
+
+- **Menu principal** : *Mes bandes* (les 4 emplacements), *Nouvelle
+  bande*, *Importer* (export JSON New Recruit / BattleScribe) et, dès
+  qu'une bande est ouverte, un raccourci vers elle.
+- **Menu de bande** : *Composition*, *Suivi de partie*, *Figurines*
+  (nom, bio, photo, XP, état et blessures de chaque figurine) et
+  *Imprimer* (PDF + fichier de personnalisation).
+
+## Créer une bande de zéro
+
+*Nouvelle bande* demande un nom, une faction (liste ou saisie libre),
+le trésor de départ (500 co par défaut) et l'emplacement où la ranger.
+L'onglet *Composition* permet ensuite de recruter, modifier, dupliquer
+ou retirer héros et hommes de main : type, coût, XP, les 9
+caractéristiques, équipement, compétences et règles spéciales. Le coût
+total, le reste du trésor (versé au magot), la valeur de bande et
+quelques contrôles (budget dépassé, plus de 6 héros, pas de chef) sont
+calculés au fil de la saisie.
+
+Les compétences et règles connues du dictionnaire de traduction sont
+proposées en saisie automatique : leur texte français complet est alors
+repris dans le PDF. Une bande créée est convertie en export au format
+BattleScribe (`js/warband-builder.js`), puis traitée exactement comme
+une bande importée.
+
+**Limite** : le dépôt ne contient pas les catalogues de règles
+(profils, coûts et listes d'équipement de chaque bande). Coûts et
+caractéristiques se saisissent donc à la main, sans vérification des
+listes d'équipement ni des effectifs propres à chaque bande. Une bande
+importée reste en lecture seule dans *Composition* : on la modifie dans
+New Recruit puis on réimporte l'export.
+
 ## Mes bandes : 4 emplacements dans le navigateur
 
 Le panneau « Mes bandes » garde jusqu'à **4 bandes** dans une petite
@@ -236,6 +271,7 @@ Le code est dans `js/warband-store.js` (fonctions testées par
 node test/test-parser.mjs           # affiche le modèle normalisé en JSON
 node test/test-personalization.mjs  # cycle personnalisation/orpheline
 node test/test-warband-store.mjs    # emplacements, suivi de partie, sauvegarde
+node test/test-warband-builder.mjs  # création de bande de zéro
 ```
 
 Le PDF lui-même doit être testé dans un navigateur (il dépend de
