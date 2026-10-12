@@ -29,23 +29,48 @@ html, body {
   font-family: "EB Garamond", Georgia, serif;
   font-size: 18px;
   min-height: 100vh;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
+/* Le parchemin (images/parchemin-*.webp, voir tools/parchemin/) est découpé
+   en trois : rouleau du haut, motif de papier répété verticalement, rouleau
+   du bas. Tout est dimensionné en % de la largeur, donc le rouleau garde ses
+   proportions quelle que soit la taille d'écran, et le papier s'allonge avec
+   le contenu sans se déformer. Image recomposée : 1305 x 1156 px. */
 .parchment-frame {
-  max-width: 760px;
-  margin: 3rem auto;
-  padding: 3rem 3.2rem 2.5rem;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0) 12%),
-    var(--parchment);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.55);
   position: relative;
-  clip-path: polygon(
-    0.5% 2%, 4% 0%, 12% 1%, 22% 0.3%, 35% 1.2%, 50% 0%, 65% 1%, 78% 0.2%, 90% 1%, 98% 0%, 100% 3%,
-    99.3% 15%, 100% 30%, 99% 45%, 100% 60%, 99.4% 75%, 100% 88%, 99% 97%,
-    92% 100%, 80% 99%, 68% 100%, 55% 99.2%, 40% 100%, 25% 99%, 13% 100%, 3% 99%, 0% 96%,
-    1% 82%, 0% 68%, 1.2% 55%, 0% 40%, 0.8% 25%, 0% 12%
-  );
+  isolation: isolate;
+  /* Largeur du rouleau. Les marges internes en % se calculeraient sur la
+     largeur de la page, pas du rouleau : on passe donc par cette variable. */
+  --w: min(980px, 100vw - 3rem);
+  width: var(--w);
+  margin: 1.5rem auto;
+  aspect-ratio: 1305 / 1156; /* hauteur minimale : le rouleau entier */
+  /* Le contenu reste sur le papier, entre les rouleaux et les bords déchirés. */
+  padding: calc(var(--w) * 0.16) calc(var(--w) * 0.19) calc(var(--w) * 0.15);
+}
+/* Rouleau du haut et du bas, posés sur le motif du milieu. */
+.parchment-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    url("../images/parchemin-haut.webp") center top / 100% auto no-repeat,
+    url("../images/parchemin-bas.webp") center bottom / 100% auto no-repeat;
+  pointer-events: none;
+}
+/* Papier du milieu : commence ligne 395 et s'arrête ligne 825
+   (les marges en % se calculent sur la largeur, comme les images). */
+.parchment-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: calc(395% / 13.05) 0 calc(331% / 13.05);
+  z-index: -2;
+  background: url("../images/parchemin-milieu.webp") center top / 100% auto repeat-y;
+  pointer-events: none;
 }
 
 .masthead {
@@ -358,7 +383,13 @@ select.perso-nom-input { width: 100%; }
 
 @media (max-width: 640px) {
   .slots { grid-template-columns: 1fr; }
-  .parchment-frame { padding: 2rem 1.2rem; margin: 1rem; }
+  /* Sur mobile, le rouleau déborde un peu de l'écran (embouts rognés)
+     pour laisser plus de largeur au texte. */
+  .parchment-frame {
+    --w: 124vw;
+    margin: 0.5rem 0 0.5rem -12vw;
+    padding: calc(var(--w) * 0.165) calc(var(--w) * 0.185) calc(var(--w) * 0.155);
+  }
   .title-blackletter { font-size: 2.4rem; }
   .preview-grid { grid-template-columns: repeat(2, 1fr); }
   .preview-columns { grid-template-columns: 1fr; }
