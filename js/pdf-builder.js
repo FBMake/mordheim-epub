@@ -151,6 +151,9 @@ function characterFieldValues(card) {
       ...card.reglesSpeciales.map((r) => r.name),
       ...card.blessures.map((b) => b.name),
       ...(card.augmentations.length ? [`Augmentations: ${card.augmentations.join(", ")}`] : []),
+      // Suivi de partie (voir warband-store.js), absent du roster BattleScribe.
+      ...(card.statut ? [`État : ${card.statut}`] : []),
+      ...(card.notesPartie ? [card.notesPartie] : []),
     ].join("\n"),
   };
 }
@@ -270,7 +273,7 @@ export async function buildPdf(model) {
     nom_bande: model.meta.nom,
     type_bande: model.meta.catalogue,
     bio: reglesBandeNoms ? `Règles de bande : ${reglesBandeNoms}` : "",
-    equipement_col1: "",
+    equipement_col1: model.bande.notesPartie || "",
     equipement_col2: "",
     magot_couronnes: String(model.bande.magotOr),
     magot_pierres: String(model.bande.magotPierres),

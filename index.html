@@ -27,6 +27,19 @@
     <p class="subtitle">Convertissez un export JSON BattleScribe en document Word illustré, en français, une fiche par page — prêt à imprimer ou à envoyer sur votre liseuse.</p>
   </header>
 
+  <section id="registre-section" class="ledger-block">
+    <h2 class="section-title">Mes bandes</h2>
+    <p class="hint-text">Jusqu'à 4 bandes gardées dans ce navigateur, avec leurs personnalisations et le suivi de partie. Les modifications d'une bande ouverte sont sauvegardées automatiquement.</p>
+    <div id="slots" class="slots"></div>
+    <p id="slot-status" class="status-msg" aria-live="polite"></p>
+    <div class="slot-tools">
+      <button type="button" id="export-slots-btn" class="btn-secondary">Exporter la sauvegarde</button>
+      <button type="button" id="import-slots-btn" class="btn-secondary">Importer une sauvegarde</button>
+      <input type="file" id="import-slots-input" accept="application/json,.json" hidden />
+    </div>
+    <p class="hint-text small">Les données restent sur cet appareil et peuvent être effacées avec l'historique du navigateur : exportez régulièrement la sauvegarde pour ne rien perdre (ou pour passer d'un appareil à l'autre).</p>
+  </section>
+
   <section id="upload-section" class="ledger-block">
     <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Déposer ou choisir un fichier JSON">
       <div class="seal">✒</div>
@@ -77,8 +90,25 @@
       <ul id="warning-list"></ul>
     </div>
 
+    <h2 class="section-title">Suivi de partie</h2>
+    <p class="hint-text">Ces valeurs remplacent celles de l'export dans le PDF. Laissez un champ vide pour reprendre la valeur de l'export.</p>
+    <div class="partie-grid">
+      <label class="perso-label">
+        Magot (co)
+        <input type="number" id="partie-magot-or" class="perso-nom-input" inputmode="numeric" />
+      </label>
+      <label class="perso-label">
+        Pierres magiques
+        <input type="number" id="partie-magot-pierres" class="perso-nom-input" inputmode="numeric" />
+      </label>
+    </div>
+    <label class="perso-label">
+      Réserve d'équipement / notes de bande
+      <textarea id="partie-notes" class="perso-bio-input" rows="3" placeholder="Objets en réserve, événements de campagne..."></textarea>
+    </label>
+
     <h2 class="section-title">Personnaliser les figurines</h2>
-    <p class="hint-text">Nom, bio et photo sont optionnels. Ils seront sauvegardés dans un fichier à part (le JSON New Recruit n'est jamais modifié) — pensez à télécharger ce fichier après chaque session pour ne rien perdre.</p>
+    <p class="hint-text">Nom, bio et photo sont optionnels. Si la bande est enregistrée dans un emplacement, tout est sauvegardé automatiquement dans ce navigateur ; un fichier de personnalisation est aussi téléchargé avec le PDF (le JSON New Recruit n'est jamais modifié).</p>
     <div id="perso-cards" class="perso-cards"></div>
 
     <button id="generate-btn" class="btn-primary">Générer le PDF + le fichier de personnalisation</button>
@@ -87,7 +117,7 @@
 
   <footer class="footer-note">
     <p>Tout le traitement se fait dans votre navigateur : votre fichier n'est jamais envoyé sur un serveur.</p>
-    <p>V0.2</p>
+    <p>V0.3</p>
   </footer>
 </div>
 
