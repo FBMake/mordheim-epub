@@ -302,7 +302,62 @@ html, body {
   resize: vertical;
 }
 
+/* Emplacements de bande (base locale) */
+.slots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+.slot-card {
+  border: 1px solid var(--brass);
+  background: rgba(255,255,255,0.35);
+  padding: 0.7rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.slot-card.empty { background: rgba(255,255,255,0.12); border-style: dashed; }
+.slot-card.active { border: 2px solid var(--wax); background: rgba(255,255,255,0.55); }
+.slot-num {
+  margin: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+.slot-name { margin: 0; font-weight: 600; font-size: 1.05rem; overflow-wrap: anywhere; }
+.slot-card.empty .slot-name { font-style: italic; color: var(--ink-soft); font-weight: 400; }
+.slot-meta { margin: 0; font-size: 0.8rem; color: var(--ink-soft); }
+.slot-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+.btn-slot, .btn-secondary {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--brass);
+  color: var(--parchment);
+  border: none;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+.btn-slot:hover, .btn-secondary:hover { background: var(--ink-soft); }
+.slot-tools { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 0.8rem; }
+.btn-secondary { font-size: 0.78rem; padding: 0.55rem 0.9rem; }
+.hint-text.small { font-size: 0.8rem; margin-top: 0; text-align: center; }
+
+/* Suivi de partie */
+.partie-grid, .partie-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+.partie-grid { margin-bottom: 0.6rem; }
+#partie-notes { margin-bottom: 1.6rem; }
+select.perso-nom-input { width: 100%; }
+
 @media (max-width: 640px) {
+  .slots { grid-template-columns: 1fr; }
   .parchment-frame { padding: 2rem 1.2rem; margin: 1rem; }
   .title-blackletter { font-size: 2.4rem; }
   .preview-grid { grid-template-columns: repeat(2, 1fr); }

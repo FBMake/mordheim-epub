@@ -189,11 +189,40 @@ même temps que le PDF, à réimporter la prochaine fois à côté de votre
 nouvel export JSON. Voir le panneau "Personnaliser les figurines" dans
 l'application.
 
+## Mes bandes : 4 emplacements dans le navigateur
+
+Le panneau « Mes bandes » garde jusqu'à **4 bandes** dans une petite
+base de données locale (IndexedDB) du navigateur, sur l'appareil
+utilisé. Rien n'est envoyé sur un serveur.
+
+- **Enregistrer ici** : range la bande chargée dans un emplacement.
+  Si l'emplacement contient déjà la même bande (même nom), elle est
+  **mise à jour** avec le nouvel export : noms, bios, photos, états et
+  notes de partie sont conservés, les figurines disparues deviennent
+  orphelines ; XP et magot reprennent les valeurs du nouvel export.
+- **Ouvrir** : réaffiche une bande enregistrée. Toute modification
+  (personnalisation ou suivi de partie) est **sauvegardée
+  automatiquement**.
+- **Suivi de partie** : XP, état (blessé, hors de combat, mort) et
+  notes par figurine ; magot, pierres et réserve / notes de bande. Ces
+  valeurs remplacent celles de l'export dans le PDF (champ vide = valeur
+  de l'export). L'état et les notes apparaissent dans la case
+  Compétences/Blessures de la fiche, les notes de bande dans la Réserve
+  d'équipement.
+- **Exporter / Importer la sauvegarde** : un fichier
+  `mordheim-bandes-AAAA-MM-JJ.json` regroupe les 4 emplacements. À faire
+  régulièrement, car le navigateur peut effacer ses données (nettoyage
+  de l'historique, navigation privée), et pour passer d'un appareil à
+  l'autre.
+
+Le code est dans `js/warband-store.js` (fonctions testées par
+`node test/test-warband-store.mjs`).
+
 ## Ce que l'app NE fait PAS (pour l'instant)
 
-- Pas de gestion de plusieurs bandes / plusieurs fichiers à la fois.
-- La "Réserve d'équipement" et la Bio de bande restent vides (pas
-  d'équivalent trouvé dans le JSON BattleScribe).
+- La Bio de bande reste vide (pas d'équivalent trouvé dans le JSON
+  BattleScribe) ; la "Réserve d'équipement" n'est remplie que par les
+  notes de bande du suivi de partie.
 - Coordonnées des gabarits perfectibles (voir section dédiée
   ci-dessus).
 - Seules les règles **communes** à (quasi) toutes les bandes et les
@@ -206,6 +235,7 @@ l'application.
 ```bash
 node test/test-parser.mjs           # affiche le modèle normalisé en JSON
 node test/test-personalization.mjs  # cycle personnalisation/orpheline
+node test/test-warband-store.mjs    # emplacements, suivi de partie, sauvegarde
 ```
 
 Le PDF lui-même doit être testé dans un navigateur (il dépend de

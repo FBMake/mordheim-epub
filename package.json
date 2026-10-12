@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test:parser": "node test/test-parser.mjs",
-    "test:perso": "node test/test-personalization.mjs"
+    "test:perso": "node test/test-personalization.mjs",
+    "test:bandes": "node test/test-warband-store.mjs"
   },
   "keywords": [],
   "author": "",
