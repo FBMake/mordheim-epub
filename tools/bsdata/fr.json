@@ -6,14 +6,28 @@
       "nom": "Mercenaires du Reikland",
       "tresor": 500,
       "effectifMax": 15,
-      "regles": ["Reikland Leadership"],
+      "regles": [
+        "Reikland Leadership"
+      ],
       "guerriers": {
-        "Mercenary Captain": { "nom": "Capitaine mercenaire" },
-        "Champion": { "nom": "Champion" },
-        "Youngblood": { "nom": "Jeune sang" },
-        "Warriors": { "nom": "Guerriers" },
-        "Marksmen": { "nom": "Tireurs" },
-        "Swordsmen": { "nom": "Spadassins" }
+        "Mercenary Captain": {
+          "nom": "Capitaine mercenaire"
+        },
+        "Champion": {
+          "nom": "Champion"
+        },
+        "Youngblood": {
+          "nom": "Jeune sang"
+        },
+        "Warriors": {
+          "nom": "Guerriers"
+        },
+        "Marksmen": {
+          "nom": "Tireurs"
+        },
+        "Swordsmen": {
+          "nom": "Spadassins"
+        }
       }
     },
     "Middenheimers.cat": {
@@ -21,14 +35,28 @@
       "nom": "Mercenaires de Middenheim",
       "tresor": 500,
       "effectifMax": 15,
-      "regles": ["Middenheim Strength"],
+      "regles": [
+        "Middenheim Strength"
+      ],
       "guerriers": {
-        "Mercenary Captain": { "nom": "Capitaine mercenaire" },
-        "Champion": { "nom": "Champion" },
-        "Youngblood": { "nom": "Jeune sang" },
-        "Warriors": { "nom": "Guerriers" },
-        "Marksmen": { "nom": "Tireurs" },
-        "Swordsmen": { "nom": "Spadassins" }
+        "Mercenary Captain": {
+          "nom": "Capitaine mercenaire"
+        },
+        "Champion": {
+          "nom": "Champion"
+        },
+        "Youngblood": {
+          "nom": "Jeune sang"
+        },
+        "Warriors": {
+          "nom": "Guerriers"
+        },
+        "Marksmen": {
+          "nom": "Tireurs"
+        },
+        "Swordsmen": {
+          "nom": "Spadassins"
+        }
       }
     },
     "Marienburgers.cat": {
@@ -36,14 +64,28 @@
       "nom": "Mercenaires de Marienburg",
       "tresor": 600,
       "effectifMax": 15,
-      "regles": ["Great Traders"],
+      "regles": [
+        "Great Traders"
+      ],
       "guerriers": {
-        "Mercenary Captain": { "nom": "Capitaine mercenaire" },
-        "Champion": { "nom": "Champion" },
-        "Youngblood": { "nom": "Jeune sang" },
-        "Warriors": { "nom": "Guerriers" },
-        "Marksmen": { "nom": "Tireurs" },
-        "Swordsmen": { "nom": "Spadassins" }
+        "Mercenary Captain": {
+          "nom": "Capitaine mercenaire"
+        },
+        "Champion": {
+          "nom": "Champion"
+        },
+        "Youngblood": {
+          "nom": "Jeune sang"
+        },
+        "Warriors": {
+          "nom": "Guerriers"
+        },
+        "Marksmen": {
+          "nom": "Tireurs"
+        },
+        "Swordsmen": {
+          "nom": "Spadassins"
+        }
       }
     },
     "Cult of the Possessed.cat": {
@@ -53,12 +95,27 @@
       "effectifMax": 15,
       "regles": [],
       "guerriers": {
-        "Magister": { "nom": "Magister", "regles": ["Wizard (Chaos Rituals)"] },
-        "Possessed": { "nom": "Possédés" },
-        "Mutants": { "nom": "Mutants" },
-        "Darksouls": { "nom": "Âmes damnées" },
-        "Brethren": { "nom": "Frères du culte" },
-        "Beastmen": { "nom": "Hommes-bêtes" }
+        "Magister": {
+          "nom": "Magister",
+          "regles": [
+            "Wizard (Chaos Rituals)"
+          ]
+        },
+        "Possessed": {
+          "nom": "Possédés"
+        },
+        "Mutants": {
+          "nom": "Mutants"
+        },
+        "Darksouls": {
+          "nom": "Âmes damnées"
+        },
+        "Brethren": {
+          "nom": "Frères du culte"
+        },
+        "Beastmen": {
+          "nom": "Hommes-bêtes"
+        }
       }
     },
     "Witch Hunters.cat": {
@@ -68,12 +125,27 @@
       "effectifMax": 12,
       "regles": [],
       "guerriers": {
-        "Witch Hunter Captain": { "nom": "Capitaine répurgateur" },
-        "Warrior Priest": { "nom": "Prêtre-guerrier", "regles": ["Prayers of Sigmar"] },
-        "Witch Hunter": { "nom": "Répurgateur" },
-        "Zealots": { "nom": "Zélotes" },
-        "Flagellants": { "nom": "Flagellants" },
-        "Warhounds": { "nom": "Chiens de guerre" }
+        "Witch Hunter Captain": {
+          "nom": "Capitaine répurgateur"
+        },
+        "Warrior Priest": {
+          "nom": "Prêtre-guerrier",
+          "regles": [
+            "Prayers of Sigmar"
+          ]
+        },
+        "Witch Hunter": {
+          "nom": "Répurgateur"
+        },
+        "Zealots": {
+          "nom": "Zélotes"
+        },
+        "Flagellants": {
+          "nom": "Flagellants"
+        },
+        "Warhounds": {
+          "nom": "Chiens de guerre"
+        }
       }
     },
     "Sisters of Sigmar.cat": {
@@ -83,11 +155,24 @@
       "effectifMax": 15,
       "regles": [],
       "guerriers": {
-        "Sigmarite Matriarch": { "nom": "Matriarche sigmarite", "regles": ["Prayers of Sigmar"] },
-        "Sister Superior": { "nom": "Sœur supérieure" },
-        "Augur": { "nom": "Augure" },
-        "Sisters": { "nom": "Sœurs" },
-        "Novices": { "nom": "Novices" }
+        "Sigmarite Matriarch": {
+          "nom": "Matriarche sigmarite",
+          "regles": [
+            "Prayers of Sigmar"
+          ]
+        },
+        "Sister Superior": {
+          "nom": "Sœur supérieure"
+        },
+        "Augur": {
+          "nom": "Augure"
+        },
+        "Sisters": {
+          "nom": "Sœurs"
+        },
+        "Novices": {
+          "nom": "Novices"
+        }
       }
     },
     "Undead.cat": {
@@ -97,12 +182,27 @@
       "effectifMax": 15,
       "regles": [],
       "guerriers": {
-        "Vampire": { "nom": "Vampire" },
-        "Necromancer": { "nom": "Nécromancien", "regles": ["Wizard (Necromancy)"] },
-        "Dregs": { "nom": "Larbins" },
-        "Zombies": { "nom": "Zombies" },
-        "Ghouls": { "nom": "Goules" },
-        "Dire Wolves": { "nom": "Loups funestes" }
+        "Vampire": {
+          "nom": "Vampire"
+        },
+        "Necromancer": {
+          "nom": "Nécromancien",
+          "regles": [
+            "Wizard (Necromancy)"
+          ]
+        },
+        "Dregs": {
+          "nom": "Larbins"
+        },
+        "Zombies": {
+          "nom": "Zombies"
+        },
+        "Ghouls": {
+          "nom": "Goules"
+        },
+        "Dire Wolves": {
+          "nom": "Loups funestes"
+        }
       }
     },
     "Skaven.cat": {
@@ -112,42 +212,608 @@
       "effectifMax": 20,
       "regles": [],
       "guerriers": {
-        "Assassin Adept": { "nom": "Maître assassin" },
-        "Eshin Sorcerer": { "nom": "Sorcier d'Eshin", "regles": ["Wizard (Magic of the Horned Rat)"] },
-        "Black Skaven": { "nom": "Skavens noirs" },
-        "Night Runners": { "nom": "Coureurs nocturnes" },
-        "Verminkin": { "nom": "Guerriers vermine" },
-        "Giant Rats": { "nom": "Rats géants" },
-        "Rat Ogre": { "nom": "Rat-ogre" }
+        "Assassin Adept": {
+          "nom": "Maître assassin"
+        },
+        "Eshin Sorcerer": {
+          "nom": "Sorcier d'Eshin",
+          "regles": [
+            "Wizard (Magic of the Horned Rat)"
+          ]
+        },
+        "Black Skaven": {
+          "nom": "Skavens noirs"
+        },
+        "Night Runners": {
+          "nom": "Coureurs nocturnes"
+        },
+        "Verminkin": {
+          "nom": "Guerriers vermine"
+        },
+        "Giant Rats": {
+          "nom": "Rats géants"
+        },
+        "Rat Ogre": {
+          "nom": "Rat-ogre"
+        }
+      }
+    },
+    "Dwarf Treasure Hunters.cat": {
+      "id": "nains",
+      "nom": "Nains chasseurs de trésor",
+      "tresor": 500,
+      "effectifMax": 12,
+      "regles": [
+        "Hard Head",
+        "Armour Use",
+        "Hate Orcs and Goblins",
+        "Grudgebearers",
+        "Incomparable Miners",
+        "Hard to Kill"
+      ],
+      "guerriers": {
+        "Noble": {
+          "nom": "Noble nain"
+        },
+        "Engineer": {
+          "nom": "Ingénieur"
+        },
+        "Troll Slayer": {
+          "nom": "Tueurs de trolls"
+        },
+        "Clansmen": {
+          "nom": "Guerriers du clan"
+        },
+        "Thunderers": {
+          "nom": "Arquebusiers"
+        },
+        "Beardlings": {
+          "nom": "Jeunes barbes"
+        }
+      }
+    },
+    "Orc Mob.cat": {
+      "id": "orques",
+      "nom": "Bande d'Orques",
+      "tresor": 500,
+      "effectifMax": 20,
+      "regles": [
+        "Animosity",
+        "Distasteful Company"
+      ],
+      "guerriers": {
+        "Orc Boss": {
+          "nom": "Boss orque"
+        },
+        "Orc Shaman": {
+          "nom": "Chamane orque",
+          "regles": [
+            "Wizard (Waaagh! Magic)"
+          ]
+        },
+        "Orc Big Uns": {
+          "nom": "Grands Kostauds"
+        },
+        "Orc Boyz": {
+          "nom": "Boyz orques"
+        },
+        "Goblin Warriors": {
+          "nom": "Guerriers gobelins"
+        },
+        "Cave Squig": {
+          "nom": "Squigs des cavernes"
+        },
+        "Troll": {
+          "nom": "Troll"
+        }
+      }
+    },
+    "Beastmen Raiders.cat": {
+      "id": "hommes-betes",
+      "nom": "Pillards hommes-bêtes",
+      "tresor": 500,
+      "effectifMax": 15,
+      "regles": [],
+      "guerriers": {
+        "Beastmen Chieftain": {
+          "nom": "Chef homme-bête"
+        },
+        "Beastmen Shaman": {
+          "nom": "Chamane homme-bête",
+          "remplacer": {
+            "Wizard": "Wizard (Chaos Rituals)"
+          }
+        },
+        "Bestigors": {
+          "nom": "Bestigors"
+        },
+        "Centigors": {
+          "nom": "Centigor"
+        },
+        "Gor": {
+          "nom": "Gors"
+        },
+        "Ungor": {
+          "nom": "Ungors"
+        },
+        "Warhounds of Chaos": {
+          "nom": "Chiens du Chaos"
+        },
+        "Minotaur": {
+          "nom": "Minotaure"
+        }
+      }
+    },
+    "Carnival of Chaos.cat": {
+      "id": "carnaval",
+      "nom": "Carnaval du Chaos",
+      "tresor": 500,
+      "effectifMax": 15,
+      "regles": [
+        "Dangerous to Know"
+      ],
+      "guerriers": {
+        "Carnival Master": {
+          "nom": "Maître du Carnaval",
+          "remplacer": {
+            "Wizard": "Wizard (Nurgle Rituals)"
+          }
+        },
+        "Brutes": {
+          "nom": "Brutes"
+        },
+        "Tainted Ones": {
+          "nom": "Corrompus"
+        },
+        "Brethren": {
+          "nom": "Frères du Carnaval"
+        },
+        "Plague Bearers": {
+          "nom": "Porte-peste"
+        },
+        "Nurglings": {
+          "nom": "Nurglings"
+        },
+        "Plague Cart": {
+          "nom": "Char de la peste"
+        }
+      }
+    },
+    "Kislevites.cat": {
+      "id": "kislevites",
+      "nom": "Kislevites",
+      "tresor": 500,
+      "effectifMax": 15,
+      "regles": [
+        "May Hire",
+        "Ancient Enemies"
+      ],
+      "guerriers": {
+        "Druzhina Captain": {
+          "nom": "Capitaine druzhina"
+        },
+        "Esaul": {
+          "nom": "Esaoul"
+        },
+        "Bear Tamer": {
+          "nom": "Dresseur d'ours"
+        },
+        "Youths": {
+          "nom": "Jeunes"
+        },
+        "Warriors": {
+          "nom": "Guerriers"
+        },
+        "Cossacks": {
+          "nom": "Cosaques"
+        },
+        "Streltsi": {
+          "nom": "Streltsi"
+        },
+        "Trained Bear": {
+          "nom": "Ours dressé"
+        }
+      }
+    },
+    "Averlanders.cat": {
+      "id": "averland",
+      "nom": "Mercenaires d'Averland",
+      "tresor": 500,
+      "effectifMax": 15,
+      "regles": [],
+      "guerriers": {
+        "Captain": {
+          "nom": "Capitaine"
+        },
+        "Sergeant": {
+          "nom": "Sergent"
+        },
+        "Bergjaeger": {
+          "nom": "Bergjaeger"
+        },
+        "Youngblood": {
+          "nom": "Jeune sang"
+        },
+        "Mountainguard": {
+          "nom": "Gardes des montagnes"
+        },
+        "Marksmen": {
+          "nom": "Tireurs"
+        },
+        "Halflings Scouts": {
+          "nom": "Éclaireurs halflings"
+        }
+      }
+    },
+    "Ostlanders.cat": {
+      "id": "ostland",
+      "nom": "Mercenaires d'Ostland",
+      "tresor": 500,
+      "effectifMax": 15,
+      "regles": [
+        "Self Sufficient"
+      ],
+      "guerriers": {
+        "Elder": {
+          "nom": "Ancien"
+        },
+        "Blood Brothers": {
+          "nom": "Frères de sang"
+        },
+        "Priest of Taal": {
+          "nom": "Prêtre de Taal",
+          "remplacer": {
+            "Prayers": "Prayers of Taal"
+          }
+        },
+        "Kin": {
+          "nom": "Parentèle"
+        },
+        "Jaeger": {
+          "nom": "Jaegers"
+        },
+        "Ruffians": {
+          "nom": "Ruffians"
+        },
+        "Ogre": {
+          "nom": "Ogre"
+        }
       }
     }
   },
   "regles": {
-    "Leader": { "nom": "Chef", "resume": "Les guerriers de la bande situés à 6 ps ou moins du chef peuvent utiliser son Commandement pour leurs tests de Commandement." },
-    "Reikland Leadership": { "nom": "Discipline du Reikland", "resume": "Rompus à la discipline militaire, les guerriers peuvent utiliser le Commandement de leur capitaine jusqu'à 12 ps au lieu de 6. Les Tireurs, fameux archers du Reikland, ont +1 en CT (déjà compté dans leur profil)." },
-    "Middenheim Strength": { "nom": "Carrure de Middenheim", "resume": "Les gens du Nord sont bâtis comme des bœufs : le capitaine et les champions commencent avec une Force de 4 au lieu de 3 (déjà compté dans leur profil)." },
-    "Great Traders": { "nom": "Grands marchands", "resume": "Grâce à leurs contacts dans les guildes, les Marienbourgeois ajoutent +1 à leurs jets pour trouver des objets rares. Leur fortune leur donne 600 co au départ d'une campagne au lieu de 500 (+20 % en partie isolée)." },
-    "Mutations": { "nom": "Mutations", "resume": "La figurine peut commencer avec une ou plusieurs mutations, achetées au recrutement. Un mutant doit en avoir au moins une." },
-    "Fear": { "nom": "Peur", "resume": "Inspire la peur : un ennemi chargé par cette figurine, ou qui veut la charger, doit d'abord réussir un test de Commandement. Les créatures qui causent la peur ne craignent pas celles qui la causent aussi." },
-    "Crazed": { "nom": "Démence", "resume": "Rendues folles par la possession démoniaque, les Âmes damnées ne connaissent pas la peur et réussissent automatiquement tous leurs tests de Commandement." },
-    "Fanatic": { "nom": "Fanatique", "resume": "Portés par leur foi, les Flagellants réussissent automatiquement tous leurs tests de Commandement mais ne peuvent jamais devenir chef de la bande." },
-    "Animals": { "nom": "Animaux", "resume": "Les animaux ne gagnent jamais d'expérience." },
-    "Burn The Witch": { "nom": "Au bûcher !", "resume": "Le répurgateur voue une haine féroce à tous les lanceurs de sorts (voir Haine)." },
-    "Hatred": { "nom": "Haine", "resume": "Lors du premier tour de chaque corps à corps contre un ennemi qu'elle hait, la figurine peut relancer tous ses jets pour toucher ratés." },
-    "Blessed Sight": { "nom": "Vision bénie", "resume": "L'Augure peut relancer ses tests de caractéristique ratés et ses jets pour toucher ratés (au tir comme au corps à corps) ; le second résultat est définitif. Si elle n'est pas hors de combat, lancez deux dés pour elle lors de l'exploration et gardez celui de votre choix." },
-    "Immune To Psycology": { "nom": "Insensible à la psychologie", "resume": "N'est jamais affecté par la psychologie (peur, déroute…) et ne quitte jamais un corps à corps de son plein gré." },
-    "Imune to Poison": { "nom": "Insensible au poison", "resume": "Aucun poison n'a d'effet sur cette figurine." },
-    "No Pain": { "nom": "Insensible à la douleur", "resume": "Un résultat « Sonné » est traité comme « À terre »." },
-    "May not run": { "nom": "Lent", "resume": "Ne peut pas courir, mais peut charger normalement." },
-    "No Brain": { "nom": "Sans cervelle", "resume": "Créature dépourvue d'intelligence : ne gagne jamais d'expérience." },
-    "Unliving": { "nom": "Non-vivant", "resume": "Les Loups funestes ne gagnent jamais d'expérience." },
-    "Charge": { "nom": "Charge sauvage", "resume": "Les Loups funestes ont 2 Attaques au lieu d'1 lors du tour où ils chargent." },
-    "Stupidity": { "nom": "Stupidité", "resume": "Au début de chacun de ses tours, la figurine teste son Commandement. En cas d'échec, elle ne lance pas de sorts et ne combat pas jusqu'à son prochain tour ; hors corps à corps, elle avance au hasard ou reste immobile." },
-    "Large Target": { "nom": "Grande cible", "resume": "Grande cible : les tireurs ont +1 pour la toucher et peuvent la viser même si elle n'est pas l'ennemi le plus proche." },
-    "Wizard (Chaos Rituals)": { "nom": "Sorcier (Rituels du Chaos)", "resume": "Lance des sorts tirés des Rituels du Chaos." },
-    "Wizard (Necromancy)": { "nom": "Sorcier (Nécromancie)", "resume": "Lance des sorts tirés de la Nécromancie." },
-    "Wizard (Magic of the Horned Rat)": { "nom": "Sorcier (Magie du Rat Cornu)", "resume": "Lance des sorts tirés de la Magie du Rat Cornu." },
-    "Prayers of Sigmar": { "nom": "Prières de Sigmar", "resume": "Peut invoquer les Prières de Sigmar comme un sorcier lance ses sorts." }
+    "Leader": {
+      "nom": "Chef",
+      "resume": "Les guerriers de la bande situés à 6 ps ou moins du chef peuvent utiliser son Commandement pour leurs tests de Commandement."
+    },
+    "Reikland Leadership": {
+      "nom": "Discipline du Reikland",
+      "resume": "Rompus à la discipline militaire, les guerriers peuvent utiliser le Commandement de leur capitaine jusqu'à 12 ps au lieu de 6. Les Tireurs, fameux archers du Reikland, ont +1 en CT (déjà compté dans leur profil)."
+    },
+    "Middenheim Strength": {
+      "nom": "Carrure de Middenheim",
+      "resume": "Les gens du Nord sont bâtis comme des bœufs : le capitaine et les champions commencent avec une Force de 4 au lieu de 3 (déjà compté dans leur profil)."
+    },
+    "Great Traders": {
+      "nom": "Grands marchands",
+      "resume": "Grâce à leurs contacts dans les guildes, les Marienbourgeois ajoutent +1 à leurs jets pour trouver des objets rares. Leur fortune leur donne 600 co au départ d'une campagne au lieu de 500 (+20 % en partie isolée)."
+    },
+    "Mutations": {
+      "nom": "Mutations",
+      "resume": "La figurine peut commencer avec une ou plusieurs mutations, achetées au recrutement. Un mutant doit en avoir au moins une."
+    },
+    "Fear": {
+      "nom": "Peur",
+      "resume": "Inspire la peur : un ennemi chargé par cette figurine, ou qui veut la charger, doit d'abord réussir un test de Commandement. Les créatures qui causent la peur ne craignent pas celles qui la causent aussi."
+    },
+    "Crazed": {
+      "nom": "Démence",
+      "resume": "Rendues folles par la possession démoniaque, les Âmes damnées ne connaissent pas la peur et réussissent automatiquement tous leurs tests de Commandement."
+    },
+    "Fanatic": {
+      "nom": "Fanatique",
+      "resume": "Portés par leur foi, les Flagellants réussissent automatiquement tous leurs tests de Commandement mais ne peuvent jamais devenir chef de la bande."
+    },
+    "Animals": {
+      "nom": "Animaux",
+      "resume": "Les animaux ne gagnent jamais d'expérience."
+    },
+    "Burn The Witch": {
+      "nom": "Au bûcher !",
+      "resume": "Le répurgateur voue une haine féroce à tous les lanceurs de sorts (voir Haine)."
+    },
+    "Hatred": {
+      "nom": "Haine",
+      "resume": "Lors du premier tour de chaque corps à corps contre un ennemi qu'elle hait, la figurine peut relancer tous ses jets pour toucher ratés."
+    },
+    "Blessed Sight": {
+      "nom": "Vision bénie",
+      "resume": "L'Augure peut relancer ses tests de caractéristique ratés et ses jets pour toucher ratés (au tir comme au corps à corps) ; le second résultat est définitif. Si elle n'est pas hors de combat, lancez deux dés pour elle lors de l'exploration et gardez celui de votre choix."
+    },
+    "Immune To Psycology": {
+      "nom": "Insensible à la psychologie",
+      "resume": "N'est jamais affecté par la psychologie (peur, déroute…) et ne quitte jamais un corps à corps de son plein gré."
+    },
+    "Imune to Poison": {
+      "nom": "Insensible au poison",
+      "resume": "Aucun poison n'a d'effet sur cette figurine."
+    },
+    "No Pain": {
+      "nom": "Insensible à la douleur",
+      "resume": "Un résultat « Sonné » est traité comme « À terre »."
+    },
+    "May not run": {
+      "nom": "Lent",
+      "resume": "Ne peut pas courir, mais peut charger normalement."
+    },
+    "No Brain": {
+      "nom": "Sans cervelle",
+      "resume": "Créature dépourvue d'intelligence : ne gagne jamais d'expérience."
+    },
+    "Unliving": {
+      "nom": "Non-vivant",
+      "resume": "Les Loups funestes ne gagnent jamais d'expérience."
+    },
+    "Charge": {
+      "nom": "Charge sauvage",
+      "resume": "Les Loups funestes ont 2 Attaques au lieu d'1 lors du tour où ils chargent."
+    },
+    "Stupidity": {
+      "nom": "Stupidité",
+      "resume": "Au début de chacun de ses tours, la figurine teste son Commandement. En cas d'échec, elle ne lance pas de sorts et ne combat pas jusqu'à son prochain tour ; hors corps à corps, elle avance au hasard ou reste immobile."
+    },
+    "Large Target": {
+      "nom": "Grande cible",
+      "resume": "Grande cible : les tireurs ont +1 pour la toucher et peuvent la viser même si elle n'est pas l'ennemi le plus proche."
+    },
+    "Wizard (Chaos Rituals)": {
+      "nom": "Sorcier (Rituels du Chaos)",
+      "resume": "Lance des sorts tirés des Rituels du Chaos."
+    },
+    "Wizard (Necromancy)": {
+      "nom": "Sorcier (Nécromancie)",
+      "resume": "Lance des sorts tirés de la Nécromancie."
+    },
+    "Wizard (Magic of the Horned Rat)": {
+      "nom": "Sorcier (Magie du Rat Cornu)",
+      "resume": "Lance des sorts tirés de la Magie du Rat Cornu."
+    },
+    "Prayers of Sigmar": {
+      "nom": "Prières de Sigmar",
+      "resume": "Peut invoquer les Prières de Sigmar comme un sorcier lance ses sorts."
+    },
+    "Always Hungry": {
+      "nom": "Toujours affamé",
+      "resume": "Le Troll coûte 15 co d'entretien après chaque partie. À défaut, le Boss peut lui sacrifier deux Gobelins ou Squigs ; sinon le Troll s'en va chercher pitance ailleurs."
+    },
+    "Ancient Enemies": {
+      "nom": "Ennemis ancestraux",
+      "resume": "Une bande kislevite ne peut jamais s'allier à une bande du Chaos (Possédés, Hommes-bêtes, Skavens, Elfes noirs, Nains du Chaos…)."
+    },
+    "Animal": {
+      "nom": "Bête",
+      "resume": "Le Minotaure peut gagner de l'expérience mais ne devient jamais un héros."
+    },
+    "Animosity": {
+      "nom": "Animosité",
+      "resume": "Au début du tour, lancez 1D6 pour chaque homme de main orque ou gobelin hors corps à corps. Sur 1, il se querelle : il peut charger ou tirer sur un allié orque ou gobelin proche, rester sur place ou s'élancer vers l'ennemi, selon un second jet."
+    },
+    "Armour Use": {
+      "nom": "Habitués à l'armure",
+      "resume": "Les Nains ne subissent jamais de pénalité de mouvement due à leur armure."
+    },
+    "Bear Handler": {
+      "nom": "Dresseur d'ours",
+      "resume": "Permet de recruter un Ours dressé. À 6 ps ou moins du dresseur (même à terre ou sonné), l'ours réussit automatiquement ses tests de Stupidité."
+    },
+    "Bear Hug": {
+      "nom": "Étreinte de l'ours",
+      "resume": "Si l'ours touche la même cible de ses deux attaques, il peut les remplacer par une étreinte : chacun lance 1D6 + Force ; si l'ours égale ou bat son adversaire, celui-ci subit une blessure sans sauvegarde d'armure."
+    },
+    "Bloodgreed": {
+      "nom": "Soif de sang",
+      "resume": "Si le Minotaure met hors de combat tous ses adversaires au corps à corps, il devient frénétique sur 4+."
+    },
+    "Cloud of Flies": {
+      "nom": "Nuée de mouches",
+      "resume": "Les mouches qui l'entourent harcèlent ses adversaires : -1 pour toucher au corps à corps contre lui."
+    },
+    "Daemonic": {
+      "nom": "Démon",
+      "resume": "Démon fait des forces immuables du Chaos et non de chair : ne gagne jamais d'expérience."
+    },
+    "Demonic": {
+      "nom": "Démon",
+      "resume": "Démon fait des forces immuables du Chaos et non de chair : ne gagne jamais d'expérience."
+    },
+    "Daemonic Aura": {
+      "nom": "Aura démoniaque",
+      "resume": "Sauvegarde spéciale de 5+, modifiée par la Force de l'attaque et annulée par les armes magiques et les sorts. Ses attaques comptent comme magiques."
+    },
+    "Daemonic Instability": {
+      "nom": "Instabilité démoniaque",
+      "resume": "Mis hors de combat, il est banni sur 1-3 (pas de jet de blessure grave). Si la bande se met en déroute, chacun doit réussir un test de Commandement ou être détruit."
+    },
+    "Dangerous to Know": {
+      "nom": "Fréquentation dangereuse",
+      "resume": "Trop pestilentiel pour qu'un mercenaire y survive : le Carnaval ne peut recruter aucune épée à louer."
+    },
+    "Deathwish": {
+      "nom": "Vœu de mort",
+      "resume": "Le Tueur cherche une fin glorieuse : insensible à la psychologie, il n'a jamais à tester lorsqu'il combat seul."
+    },
+    "Distasteful Company": {
+      "nom": "Compagnie peu recommandable",
+      "resume": "Peu de mercenaires acceptent de servir des Orques : seuls les Gladiateurs, Gardes du corps ogres et Sorciers mercenaires peuvent être recrutés."
+    },
+    "Drunk": {
+      "nom": "Ivres",
+      "resume": "Imbibés de tord-boyaux, les Ruffians réussissent automatiquement tous leurs tests de Commandement."
+    },
+    "Drunken": {
+      "nom": "Ivrognes",
+      "resume": "Au début de chaque tour, lancez 1D6 : sur 1, le Centigor est soumis à la Stupidité ; sur 6, à la Frénésie. Tant qu'il subit l'une ou l'autre, il ignore le reste de la psychologie."
+    },
+    "Dumb Monster": {
+      "nom": "Monstre stupide",
+      "resume": "Trop bête pour apprendre : le Troll ne gagne jamais d'expérience."
+    },
+    "Expert Weaponsmith": {
+      "nom": "Armurier expert",
+      "resume": "Tant que l'Ingénieur reste dans la bande, la portée des armes de tir naines augmente de 3 ps pour les pistolets et de 6 ps pour les arbalètes et arquebuses."
+    },
+    "Fiercely Loyal": {
+      "nom": "Fidélité farouche",
+      "resume": "Tant que son ours n'est pas mis hors de combat, le dresseur traite les résultats « Vendu aux arènes », « Dépouillé » et « Capturé » des blessures graves comme une guérison complète."
+    },
+    "Goblin Animosity": {
+      "nom": "Animosité gobeline",
+      "resume": "Un Gobelin qui obtient « J'l'ai entendu ! » n'ose jamais charger un Orque ; il peut toutefois lui tirer dessus."
+    },
+    "Grudgebearers": {
+      "nom": "Rancuniers",
+      "resume": "En souvenir des guerres anciennes, une bande naine ne recrute jamais d'épée à louer ni de personnage elfe."
+    },
+    "Guardian": {
+      "nom": "Gardien",
+      "resume": "Le Gardien fait corps avec le char : il ne le quitte jamais, n'est blessé que si le char est détruit, ne gagne pas d'expérience et ses attaques transmettent la Pourriture de Nurgle."
+    },
+    "Gun-Rest": {
+      "nom": "Appui de tir",
+      "resume": "Armé d'une hallebarde et d'une arquebuse, le Streltsi qui ne bouge pas peut appuyer son arme sur la hallebarde : +1 pour toucher avec l'arquebuse."
+    },
+    "Hard Head": {
+      "nom": "Tête dure",
+      "resume": "Les Nains ignorent les règles spéciales des masses, gourdins et autres armes contondantes utilisées contre eux."
+    },
+    "Hard to Kill": {
+      "nom": "Durs à cuire",
+      "resume": "Sur le tableau des blessures, 1-2 = à terre, 3-5 = sonné, 6 = hors de combat."
+    },
+    "Hate Chaos": {
+      "nom": "Haine du Chaos",
+      "resume": "Les Cosaques haïssent toutes les forces du Chaos (voir Haine)."
+    },
+    "Hate Orcs and Goblins": {
+      "nom": "Haine des peaux-vertes",
+      "resume": "Tous les Nains haïssent les Orques et les Gobelins (voir Haine)."
+    },
+    "Immune to Poison": {
+      "nom": "Insensible au poison",
+      "resume": "Aucun poison n'a d'effet sur cette figurine."
+    },
+    "Immune to Psychology": {
+      "nom": "Insensible à la psychologie",
+      "resume": "N'est jamais affecté par la psychologie (peur, déroute…) et ne quitte jamais un corps à corps de son plein gré."
+    },
+    "Incomparable Miners": {
+      "nom": "Mineurs incomparables",
+      "resume": "Experts en minerais, les Nains ajoutent +1 au nombre de fragments de malepierre trouvés à la fin de chaque partie."
+    },
+    "Lowest of the Low": {
+      "nom": "Moins que rien",
+      "resume": "Au bas de l'échelle, un Ungor ne devient jamais héros : relancez le résultat « Ce gars a du talent »."
+    },
+    "May Hire": {
+      "nom": "Recrutement",
+      "resume": "Une bande kislevite peut recruter les mêmes épées à louer que les bandes de mercenaires humains."
+    },
+    "Minderz": {
+      "nom": "Gardiens de squigs",
+      "resume": "Chaque Squig doit rester à 6 ps ou moins d'un Gobelin. Sinon, au début de son mouvement, il devient incontrôlable et bondit de 2D6 ps dans une direction aléatoire jusqu'à la fin de la partie."
+    },
+    "Movement": {
+      "nom": "Bonds",
+      "resume": "Le Squig n'a pas de Mouvement fixe : il bondit de 2D6 ps, ne court jamais et ne déclare pas de charge, mais compte comme chargeant s'il entre en contact avec un ennemi."
+    },
+    "No Respect": {
+      "nom": "Aucun respect",
+      "resume": "Objets de pitié et de crainte, les Ruffians ne peuvent jamais devenir chef de la bande."
+    },
+    "Not Orcs": {
+      "nom": "Pas des Orques",
+      "resume": "Pour le test de déroute, chaque Gobelin ou Squig hors de combat ne compte que pour une demi-figurine."
+    },
+    "Nurgle’s Blessings": {
+      "nom": "Bénédictions de Nurgle",
+      "resume": "Le Corrompu commence la partie avec au moins une Bénédiction de Nurgle, achetée au recrutement."
+    },
+    "Nurgle’s Rot": {
+      "nom": "Pourriture de Nurgle",
+      "resume": "Insensible au poison. Sur un jet pour toucher de 6 au corps à corps, la cible vivante contracte la Pourriture : avant chaque partie, elle doit réussir un test d'Endurance ou perdre définitivement 1 point d'Endurance."
+    },
+    "Plague Cart": {
+      "nom": "Char de la peste",
+      "resume": "Le char augmente de 2 l'effectif maximum de la bande. Porte-peste et Nurglings relancent leurs tests d'instabilité et ajoutent +1 à leurs jets de blessure."
+    },
+    "Prayers of Taal": {
+      "nom": "Prières de Taal",
+      "resume": "Peut invoquer les Prières de Taal comme un sorcier lance ses sorts."
+    },
+    "Promotion": {
+      "nom": "Promotion",
+      "resume": "Un halfling promu héros (« Ce gars a du talent ») ne peut pas choisir la liste Force."
+    },
+    "Regeneration": {
+      "nom": "Régénération",
+      "resume": "Chaque blessure infligée au Troll est ignorée sur 4+, sauf si elle vient du feu ou d'une magie de feu. Le Troll ne lance jamais de blessure grave après la partie."
+    },
+    "Runts": {
+      "nom": "Avortons",
+      "resume": "Un Gobelin qui obtient « Ce gars a du talent » est aussitôt tué par ses maîtres orques : retirez-le de la feuille de bande."
+    },
+    "Self Sufficient": {
+      "nom": "Autarcie",
+      "resume": "Les Ostlandais ne paient pas d'étrangers : ils ne recrutent aucune épée à louer, sauf des Ogres."
+    },
+    "Set Traps": {
+      "nom": "Poseur de pièges",
+      "resume": "En passant un tour sans rien faire d'autre, le Bergjaeger pose un pion piège. Toute figurine qui passe à 2 ps le déclenche sur 3+ et subit une touche de F4 ; le pion est ensuite retiré."
+    },
+    "Slow Witted": {
+      "nom": "Lent d'esprit",
+      "resume": "L'Ogre doit accumuler deux fois plus d'expérience que les autres pour chaque progression."
+    },
+    "Stream of Corruption": {
+      "nom": "Flot de corruption",
+      "resume": "Attaque de tir de 6 ps de portée, Force 3, sans sauvegarde d'armure."
+    },
+    "Strictures": {
+      "nom": "Préceptes",
+      "resume": "Un Prêtre de Taal ne peut jamais porter d'armure lourde."
+    },
+    "Swarm": {
+      "nom": "Essaim",
+      "resume": "Un groupe de Nurglings n'est pas limité à cinq figurines."
+    },
+    "Trained": {
+      "nom": "Dressé",
+      "resume": "Soumis à la Stupidité, sauf à 6 ps ou moins du Dresseur d'ours, dont il peut seul utiliser le Commandement. L'ours ne joue pas si le dresseur est absent."
+    },
+    "Trample": {
+      "nom": "Piétinement",
+      "resume": "Les sabots du Centigor lui donnent une attaque supplémentaire qui ne bénéficie d'aucun bonus ni pénalité d'arme."
+    },
+    "Unnatural Strength": {
+      "nom": "Force surnaturelle",
+      "resume": "Les Brutes commencent avec la compétence Homme fort."
+    },
+    "Vomit Attack": {
+      "nom": "Vomissure",
+      "resume": "Au lieu de ses attaques, le Troll peut vomir sur un adversaire au contact : une seule attaque qui touche automatiquement à Force 5, sans sauvegarde d'armure."
+    },
+    "Woodland Dwelling": {
+      "nom": "Sylvestre",
+      "resume": "Le Centigor ne subit aucune pénalité de mouvement en forêt."
+    },
+    "Wizard (Nurgle Rituals)": {
+      "nom": "Sorcier (Rituels de Nurgle)",
+      "resume": "Lance des sorts tirés des Rituels de Nurgle."
+    },
+    "Wizard (Waaagh! Magic)": {
+      "nom": "Sorcier (Magie de la Waaagh!)",
+      "resume": "Lance des sorts tirés de la Magie de la Waaagh!."
+    }
   },
   "competences": {
     "Combat Skills": "Combat",
@@ -156,7 +822,11 @@
     "Strength Skills": "Force",
     "Speed Skills": "Vitesse",
     "Special Skills (Sisters)": "Spéciales (Sœurs de Sigmar)",
-    "Special Skills (Skaven)": "Spéciales (Skavens)"
+    "Special Skills (Skaven)": "Spéciales (Skavens)",
+    "Special Skills (Dwarven)": "Spéciales (Nains)",
+    "Special Skills (Troll Slayer)": "Spéciales (Tueurs de trolls)",
+    "Special Skils (Orc Mob)": "Spéciales (Orques)",
+    "Special Skills (Beastmen)": "Spéciales (Hommes-bêtes)"
   },
   "categoriesEquipement": {
     "Hand-to-hand Weapons": "Armes de corps à corps",
@@ -203,6 +873,16 @@
     "Wolfcloak": "Cape de loup",
     "Blessed Water": "Eau bénite",
     "Holy Relic": "Relique sacrée",
-    "Holy Tome": "Livre saint"
+    "Holy Tome": "Livre saint",
+    "Gromril Armour": "Armure en gromril",
+    "Dwarf Axe": "Hache naine",
+    "Ball and Chain": "Boulet et chaîne",
+    "Hunting Arrows": "Flèches de chasse",
+    "Mad Cap Mushrooms": "Champignons fous",
+    "Squig Prodder": "Pique à squig",
+    "Brace of Pistols": "Paire de pistolets",
+    "Brace of Duelling Pistols": "Paire de pistolets de duel",
+    "Double Barrelled Pistol": "Pistolet à deux canons",
+    "Double Barrelled Hunting Rifle": "Fusil de chasse à deux canons"
   }
 }

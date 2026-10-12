@@ -91,15 +91,16 @@ assert.equal(normalizeRecord({ slot: 2, nom: "x", roster: buildRoster(c) }).crea
 assert.equal(normalizeCreation({ figurines: [{ id: "a", coutGc: "-3", stats: { M: 5 } }] }).figurines[0].coutGc, 0);
 console.log("Sauvegarde des bandes créées OK");
 
-// --- Bandes du livre de base (js/data/bandes.js) ---
-assert.equal(BANDES.length, 8);
+// --- Bandes officielles de BSData (js/data/bandes.js) ---
+assert.equal(BANDES.length, 15);
 for (const b of BANDES) {
   const chefs = b.guerriers.filter((g) => g.categorie === "heros" && g.min === 1);
   assert.equal(chefs.length, 1, `${b.nom} : un seul chef obligatoire`);
   assert.ok(chefs[0].regles.some((r) => r.nom === "Chef"), `${b.nom} : le chef a la règle Chef`);
   for (const g of b.guerriers) {
     assert.ok(Number.isFinite(g.cout) && g.cout > 0, `${g.id} : coût`);
-    assert.ok(g.profil && g.profil.Cd, `${g.id} : profil`);
+    // Le Char de la peste n'a qu'une Endurance et des points de vie.
+    assert.ok(g.profil && (g.profil.Cd || g.profil.E), `${g.id} : profil`);
     for (const r of g.regles) assert.ok(r.resume, `${g.id} : résumé de « ${r.nom} »`);
   }
 }

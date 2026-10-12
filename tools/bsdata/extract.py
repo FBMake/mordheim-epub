@@ -8,7 +8,8 @@ Usage : python3 -I tools/bsdata/extract.py <dossier du dépôt BSData> <sortie.j
 
 Seules les données de jeu sont extraites (noms, chiffres, listes) : les
 textes de règles ne sont pas repris, ils sont résumés en français dans
-data/bandes/ (voir README).
+tools/bsdata/fr.json (voir README). Sans catalogue nommé, toutes les bandes
+sont extraites (hors data.cat et Characters.cat).
 """
 import json
 import sys
@@ -53,7 +54,12 @@ class Index:
 def constraint(e, kind, scopes):
     for c in e.findall(f"{NS}constraints/{NS}constraint"):
         if c.get("type") == kind and c.get("scope") in scopes and c.get("field") == "selections":
-            return int(float(c.get("value")))
+            value = int(float(c.get("value")))
+            # Limite relevée sous condition (ex. ours dressé : 0, ou 1 avec un dresseur).
+            for m in e.iter(f"{NS}modifier"):
+                if m.get("field") == c.get("id") and m.get("type") == "set":
+                    value = max(value, int(float(m.get("value"))))
+            return value
     return None
 
 
@@ -91,7 +97,7 @@ def warrior(e, idx):
     w = {
         "nom": e.get("name"),
         "categorie": categorie,
-        "cout": num(costs(e).get("points", 0)),
+        "cout": num(costs(e).get("points") or 0),
         "min": constraint(e, "min", ("roster", "force")) or 0,
         "max": constraint(e, "max", ("roster", "force")),
         "profil": model_profile(e),
@@ -104,7 +110,7 @@ def warrior(e, idx):
     # contenue dans le groupe (type « model »).
     for child in e.findall(f"{NS}selectionEntries/{NS}selectionEntry"):
         if child.get("type") == "model" or child.get("name") == e.get("name"):
-            w["cout"] = num(costs(child).get("points", w["cout"]))
+            w["cout"] = num(costs(child).get("points") or w["cout"])
             w["max"] = constraint(child, "max", ("force", "roster")) or w["max"]
     for link in e.findall(f"{NS}entryLinks/{NS}entryLink"):
         t = idx.target(link)
@@ -120,7 +126,10 @@ def warrior(e, idx):
             w["regles"].append(il.get("name"))
     # Accès aux compétences : listes non masquées par défaut (les autres ne
     # s'ouvrent qu'avec un objet trouvé, ex. manuel d'entraînement).
-    for grp in e.findall(f"{NS}selectionEntryGroups/{NS}selectionEntryGroup"):
+    skills = e.findall(f"{NS}selectionEntryGroups/{NS}selectionEntryGroup") + e.findall(
+        f"{NS}selectionEntries/{NS}selectionEntry"
+    )
+    for grp in skills:
         if grp.get("name") == "Skills":
             w["competences"] = [
                 l.get("name") for l in grp.findall(f"{NS}entryLinks/{NS}entryLink") if l.get("hidden") != "true"
