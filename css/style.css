@@ -37,7 +37,7 @@ html, body {
    en trois : rouleau du haut, motif de papier répété verticalement, rouleau
    du bas. Tout est dimensionné en % de la largeur, donc le rouleau garde ses
    proportions quelle que soit la taille d'écran, et le papier s'allonge avec
-   le contenu sans se déformer. Image source : 1305 x 1206 px. */
+   le contenu sans se déformer. Image recomposée : 1305 x 1156 px. */
 .parchment-frame {
   position: relative;
   isolation: isolate;
@@ -46,7 +46,7 @@ html, body {
   --w: min(980px, 100vw - 3rem);
   width: var(--w);
   margin: 1.5rem auto;
-  aspect-ratio: 1305 / 1206; /* hauteur minimale : le rouleau entier */
+  aspect-ratio: 1305 / 1156; /* hauteur minimale : le rouleau entier */
   /* Le contenu reste sur le papier, entre les rouleaux et les bords déchirés. */
   padding: calc(var(--w) * 0.16) calc(var(--w) * 0.19) calc(var(--w) * 0.15);
 }
@@ -61,13 +61,13 @@ html, body {
     url("../images/parchemin-bas.webp") center bottom / 100% auto no-repeat;
   pointer-events: none;
 }
-/* Papier du milieu : commence ligne 420 et s'arrête ligne 850
+/* Papier du milieu : commence ligne 395 et s'arrête ligne 825
    (les marges en % se calculent sur la largeur, comme les images). */
 .parchment-frame::after {
   content: "";
   position: absolute;
   inset: 0;
-  margin: calc(420% / 13.05) 0 calc(356% / 13.05);
+  margin: calc(395% / 13.05) 0 calc(331% / 13.05);
   z-index: -2;
   background: url("../images/parchemin-milieu.webp") center top / 100% auto repeat-y;
   pointer-events: none;
