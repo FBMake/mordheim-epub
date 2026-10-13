@@ -111,6 +111,24 @@ function drawField(page, font, text, field) {
   });
 }
 
+/** Coche les cases d'expérience du gabarit (une par point, rangée par rangée). */
+function cocherXp(page, zone, xp) {
+  const n = Math.min(Math.max(0, Math.round(Number(xp) || 0)), zone.rangs.length * zone.parRang);
+  const marge = zone.largeur * 0.2;
+  for (let i = 0; i < n; i++) {
+    const x = zone.x + (i % zone.parRang) * zone.pas;
+    const yHaut = zone.rangs[Math.floor(i / zone.parRang)];
+    const y = page.getHeight() - yHaut - zone.hauteur;
+    page.drawRectangle({
+      x: x + marge,
+      y: y + marge,
+      width: zone.largeur - 2 * marge,
+      height: zone.hauteur - 2 * marge,
+      color: INK,
+    });
+  }
+}
+
 async function embedImageFile(pdfDoc, path) {
   const bytes = await fetchBytes(path);
   return pdfDoc.embedPng(bytes);
@@ -123,9 +141,10 @@ async function addTemplatePage(pdfDoc, font, templateName, coords, values, extra
   page.drawImage(image, { x: 0, y: 0, width: coords.width, height: coords.height });
 
   for (const [key, field] of Object.entries(coords.fields)) {
-    if (key === "photo") continue; // géré séparément (image, pas texte)
+    if (key === "photo" || key === "xp_cases") continue; // gérés séparément (image, cases)
     drawField(page, font, values[key], field);
   }
+  if (coords.fields.xp_cases && extra?.xp) cocherXp(page, coords.fields.xp_cases, extra.xp);
 
   if (coords.fields.photo && extra && extra.photoDataUrl) {
     try {
@@ -306,7 +325,7 @@ export async function buildPdf(model) {
   for (const card of model.heros) {
     await addTemplatePage(
       pdfDoc, font, "hero.png", heroCoords,
-      characterFieldValues(card), { photoDataUrl: card.photo }
+      characterFieldValues(card), { photoDataUrl: card.photo, xp: card.xp }
     );
   }
 
@@ -315,7 +334,7 @@ export async function buildPdf(model) {
   for (const card of model.hommesDeMain) {
     await addTemplatePage(
       pdfDoc, font, "homme_de_main.png", hdmCoords,
-      characterFieldValues(card), { photoDataUrl: card.photo }
+      characterFieldValues(card), { photoDataUrl: card.photo, xp: card.xp }
     );
   }
 

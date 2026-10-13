@@ -8,6 +8,7 @@
  *   { version, nom, faction, tresorDepart, reglesBande[], figurines[] }
  * avec, pour chaque figurine :
  *   { id, categorie: "heros" | "hdm", type, coutGc, xp, stats{M..Cd},
+ *     nombre, surcout,
  *     equipement[], competences[], regles[] }
  *
  * `buildRoster(creation)` le convertit en un JSON au format d'export
@@ -32,6 +33,10 @@ export const CREATION_VERSION = 1;
 export const GENERATED_BY = "mordheim-epub";
 export const TRESOR_DEPART = 500;
 export const MAX_HEROS = 6;
+/** Un groupe d'hommes de main compte de 1 à 5 figurines identiques. */
+export const MAX_GROUPE = 5;
+/** Une recrue qui rejoint un groupe existant coûte 2 co de plus par point d'expérience du groupe. */
+export const SURCOUT_XP_RECRUE = 2;
 export const STAT_KEYS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "Cd"];
 
 export { BANDES };
@@ -162,7 +167,40 @@ export function newFigurine(categorie = "heros") {
     equipement: [],
     competences: [],
     regles: [],
+    // Hommes de main : taille du groupe, et ce que les recrues ajoutées en
+    // campagne ont coûté en plus du prix de base (expérience du groupe).
+    nombre: 1,
+    surcout: 0,
+    // Jets de progression déjà faits par le groupe : [{ des: [d1, d2], resultat }].
+    progressions: [],
   };
+}
+
+/**
+ * Coût d'une nouvelle recrue dans un groupe d'hommes de main existant.
+ * @param {number} [xp] - expérience actuelle du groupe (suivi de partie), sinon celle de la fiche
+ */
+export function coutRecrue(fig, xp = fig.xp) {
+  return toInt(fig.coutGc) + SURCOUT_XP_RECRUE * toInt(xp);
+}
+
+/**
+ * Ajoute une recrue à un groupe d'hommes de main pendant la campagne : elle
+ * reçoit l'équipement et l'expérience du groupe, et paie le surcoût
+ * d'expérience. Renvoie le prix payé, ou null si le groupe est complet.
+ */
+export function recruterDansGroupe(fig, xp = fig.xp) {
+  if (fig.categorie !== "hdm" || toInt(fig.nombre) >= MAX_GROUPE) return null;
+  const prix = coutRecrue(fig, xp);
+  fig.nombre = toInt(fig.nombre) + 1;
+  fig.surcout = toInt(fig.surcout) + SURCOUT_XP_RECRUE * toInt(xp);
+  return prix;
+}
+
+/** Règles d'un homme de main : celles de son guerrier dans les données, non modifiables. */
+function reglesHommeDeMain(f) {
+  const g = getGuerrier(f.modele);
+  return g ? g.regles.map((r) => r.nom) : cleanList(f.regles);
 }
 
 /** Copie d'une figurine avec un nouvel identifiant (ex. un 2e homme de main). */
@@ -196,17 +234,24 @@ export function normalizeCreation(c) {
       for (const k of STAT_KEYS) {
         if (f.stats?.[k] !== undefined && f.stats[k] !== null) stats[k] = String(f.stats[k]).trim() || "-";
       }
+      const hdm = f.categorie === "hdm";
       return {
         id: String(f.id),
         modele: getGuerrier(f.modele) ? f.modele : "",
-        categorie: f.categorie === "hdm" ? "hdm" : "heros",
+        categorie: hdm ? "hdm" : "heros",
         type: String(f.type || "").trim(),
         coutGc: toInt(f.coutGc),
         xp: toInt(f.xp),
         stats,
         equipement: cleanList(f.equipement),
-        competences: cleanList(f.competences),
-        regles: cleanList(f.regles),
+        // Les hommes de main n'apprennent pas de compétences et gardent les règles de leur profil.
+        competences: hdm ? [] : cleanList(f.competences),
+        regles: hdm ? reglesHommeDeMain(f) : cleanList(f.regles),
+        nombre: hdm ? Math.max(1, toInt(f.nombre ?? 1)) : 1,
+        surcout: hdm ? toInt(f.surcout) : 0,
+        progressions: (Array.isArray(f.progressions) ? f.progressions : [])
+          .filter((p) => Array.isArray(p?.des) && p.des.length === 2)
+          .map((p) => ({ des: p.des.map((d) => Math.min(6, Math.max(1, toInt(d)))), resultat: String(p.resultat || "") })),
       };
     });
   return out;
@@ -267,20 +312,31 @@ function nomFrancaisRegle(name) {
 // Totaux et contrôles
 // ---------------------------------------------------------------------
 
+/** Nombre de figurines d'une entrée : 1 pour un héros, la taille du groupe pour des hommes de main. */
+export function tailleGroupe(f) {
+  return f?.categorie === "hdm" ? Math.max(1, toInt(f.nombre ?? 1)) : 1;
+}
+
+/** Coût total d'une entrée : prix par figurine × taille du groupe, plus le surcoût des recrues. */
+export function coutEntree(f) {
+  return toInt(f.coutGc) * tailleGroupe(f) + (f?.categorie === "hdm" ? toInt(f.surcout) : 0);
+}
+
 export function creationTotals(creation) {
   const figs = creation?.figurines || [];
-  const cout = figs.reduce((s, f) => s + toInt(f.coutGc), 0);
+  const cout = figs.reduce((s, f) => s + coutEntree(f), 0);
   const heros = figs.filter((f) => f.categorie === "heros").length;
+  const effectif = figs.reduce((s, f) => s + tailleGroupe(f), 0);
   const tresor = toInt(creation?.tresorDepart ?? TRESOR_DEPART);
   return {
     cout,
     tresor,
     reste: tresor - cout,
     heros,
-    hdm: figs.length - heros,
-    effectif: figs.length,
-    // Valeur de bande Mordheim : 5 par figurine + 1 par point d'expérience.
-    valeurDeBande: figs.reduce((s, f) => s + 5 + toInt(f.xp), 0),
+    hdm: effectif - heros,
+    effectif,
+    // Valeur de bande Mordheim : 5 par figurine + 1 par point d'expérience (chaque membre d'un groupe a l'XP du groupe).
+    valeurDeBande: figs.reduce((s, f) => s + (5 + toInt(f.xp)) * tailleGroupe(f), 0),
   };
 }
 
@@ -298,11 +354,14 @@ export function creationWarnings(creation) {
   }
   const figs = creation.figurines || [];
   for (const g of bande.guerriers) {
-    const n = figs.filter((f) => f.modele === g.id).length;
+    const n = figs.filter((f) => f.modele === g.id).reduce((s, f) => s + tailleGroupe(f), 0);
     if (g.max !== null && n > g.max) out.push(t("alerte.max", { n, nom: locGuerrier(g), max: g.max }));
     if (g.min && n < g.min && figs.length) out.push(t("alerte.min", { nom: locGuerrier(g), min: g.min }));
   }
   for (const f of figs) {
+    if (tailleGroupe(f) > MAX_GROUPE) {
+      out.push(t("alerte.groupe", { nom: loc(f.type) || t("categorie.hdm"), n: tailleGroupe(f), max: MAX_GROUPE }));
+    }
     const g = getGuerrier(f.modele);
     if (!g) continue;
     const horsListe = f.equipement.filter((nom) => prixEquipement(g, nom) === null);
@@ -369,10 +428,13 @@ function figurineSelection(fig) {
   return {
     id: fig.id,
     name: type,
-    number: 1,
+    number: tailleGroupe(fig),
     type: isHero ? "model" : "unit",
     categories: [{ id: `${fig.id}-cat`, name: isHero ? "Héros" : "Hommes de main", primary: true }],
-    costs: [cost("points", " gc", toInt(fig.coutGc)), cost("wb-rating", " Warband Rating", 5 + toInt(fig.xp))],
+    costs: [
+      cost("points", " gc", coutEntree(fig)),
+      cost("wb-rating", " Warband Rating", (5 + toInt(fig.xp)) * tailleGroupe(fig)),
+    ],
     profiles: [
       {
         id: `${fig.id}-p`,

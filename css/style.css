@@ -730,3 +730,12 @@ abbr[title] { text-decoration: underline dotted; cursor: help; }
   .tombe { flex-wrap: wrap; }
   .tombe-ramener { width: 100%; }
 }
+
+/* Piste d'expérience en cases, comme sur la fiche d'origine (cases épaisses = progression). */
+.xp-piste { display: grid; grid-template-columns: repeat(30, 1fr); gap: 2px; margin: 0.35rem 0; max-width: 32rem; }
+.xp-piste.xp-hdm { grid-template-columns: repeat(14, 1fr); max-width: 15rem; }
+.xp-case { aspect-ratio: 1; min-width: 0; padding: 0; border: 1px solid #b9ab8f; background: transparent; border-radius: 1px; }
+button.xp-case { cursor: pointer; }
+.xp-case.seuil { border: 2px solid var(--ink); }
+.xp-case.cochee { background: var(--ink); border-color: var(--ink); }
+.xp-plus { grid-column: 1 / -1; font-size: 0.7rem; color: var(--ink-soft); }

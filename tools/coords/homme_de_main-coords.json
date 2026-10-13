@@ -104,6 +104,18 @@
       "size": 20,
       "maxWidth": 1250,
       "lineHeight": 27
+    },
+    "xp_cases": {
+      "x": 109,
+      "pas": 39.41,
+      "largeur": 30,
+      "hauteur": 30,
+      "rangs": [
+        1776,
+        1814,
+        1853
+      ],
+      "parRang": 30
     }
   }
 }

@@ -242,7 +242,8 @@ function conditionRemplie(condition, fig) {
  */
 export function competencesAccessibles(fig, guerrier) {
   if (fig.categorie !== "heros") return [];
-  const listes = guerrier ? guerrier.competences : LISTES_COMMUNES;
+  // Un homme de main promu (« Ce gars a du talent ») n'a pas de listes dans les données : listes communes.
+  const listes = guerrier?.categorie === "heros" ? guerrier.competences : LISTES_COMMUNES;
   const acquises = new Set((fig.competences || []).map((c) => c.toLowerCase()));
   return listes
     .filter((liste) => COMPETENCES[liste])

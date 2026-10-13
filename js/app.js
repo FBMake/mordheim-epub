@@ -35,6 +35,11 @@ import {
   creationTotals,
   creationWarnings,
   duplicateFigurine,
+  coutEntree,
+  coutRecrue,
+  recruterDansGroupe,
+  tailleGroupe,
+  MAX_GROUPE,
   knownRuleNames,
   newCreation,
   newFigurine,
@@ -42,6 +47,8 @@ import {
 import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
 import { flagSvg } from "./flags.js";
 import { loc, locBande, locCompetence, locGuerrier, locNomRegle, locRegle } from "./donnees-langue.js";
+import { pisteXpHtml } from "./experience.js";
+import { appliquerProgression, lancer2D6, progressionsDues, promouvoir, resultatProgression } from "./progression.js";
 import { competencesAccessibles, maximumsGuerrier } from "./data/competences.js";
 import { RESULTATS, appliquerCombat, bilanFigurine, splitItems } from "./combats.js";
 import { MORT, blessuresPour, getBlessure, libelleBlessure, malusTotal, nomBlessure, texteMalus } from "./blessures.js";
@@ -341,6 +348,7 @@ function persoCardTemplate(card, categorie) {
           </select>
         </label>
       </div>
+      <div class="xp-piste-wrap"></div>
       ${bilanHtml(card.id)}
       ${
         currentModel.heros.includes(card)
@@ -375,9 +383,30 @@ function persoCardTemplate(card, categorie) {
     return partie.figurines[card.id];
   };
   const xpInput = div.querySelector(".partie-xp-input");
+  // Piste d'expérience en cases à cocher, comme sur la fiche d'origine : cliquer
+  // une case fixe l'XP à cette valeur (cliquer la dernière cochée la décoche).
+  const pisteBox = div.querySelector(".xp-piste-wrap");
+  const renderPiste = () => {
+    const xp = partie.figurines[card.id]?.xp ?? card.xpRoster ?? card.xp;
+    pisteBox.innerHTML = pisteXpHtml(xp, currentModel.heros.includes(card) ? "heros" : "hdm", {
+      modifiable: true,
+      titre: t("perso.xpPiste"),
+    });
+  };
+  renderPiste();
+  pisteBox.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-xp]");
+    if (!b) return;
+    figurine().xp = Number(b.dataset.xp);
+    xpInput.value = b.dataset.xp;
+    renderPiste();
+    refreshTotals(currentModel);
+    scheduleSave();
+  });
   xpInput.addEventListener("input", () => {
     const n = xpInput.value === "" ? null : Number(xpInput.value);
     figurine().xp = Number.isFinite(n) ? n : null;
+    renderPiste();
     refreshTotals(currentModel);
     scheduleSave();
   });
@@ -1056,15 +1085,26 @@ function statLine(stats) {
   return STAT_KEYS.map((k) => `<span class="stat-cell"><b>${t(`profil.${k}`)}</b>${escapeHtml(stats[k])}</span>`).join("");
 }
 
+/** XP actuelle d'une figurine : celle du suivi de partie si elle a été saisie, sinon celle de la fiche. */
+function xpCourante(fig) {
+  return partie.figurines[fig.id]?.xp ?? fig.xp;
+}
+
 function unitCard(fig) {
   const div = document.createElement("div");
   div.className = "unit-card";
   const custom = customisations[fig.id]?.nom;
-  const titre = escapeHtml(loc(fig.type) || t(fig.categorie === "heros" ? "categorie.heros" : "categorie.hdm"));
+  const groupe = fig.categorie === "hdm";
+  const nombre = tailleGroupe(fig);
+  const titre =
+    escapeHtml(loc(fig.type) || t(groupe ? "categorie.hdm" : "categorie.heros")) + (nombre > 1 ? ` ×${nombre}` : "");
   const details = [
     fig.equipement.length ? escapeHtml(t("unite.equipement", { liste: fig.equipement.map(loc).join(", ") })) : "",
     fig.competences.length ? escapeHtml(t("unite.competences", { liste: fig.competences.map(locNomRegle).join(", ") })) : "",
     fig.regles.length ? escapeHtml(t("unite.regles", { liste: fig.regles.map(locNomRegle).join(", ") })) : "",
+    fig.progressions?.length
+      ? escapeHtml(t("unite.progressions", { liste: fig.progressions.map((p) => `${p.des[0] + p.des[1]} (${texteProgression(p.resultat)})`).join(", ") }))
+      : "",
     getGuerrier(fig.modele)?.competences.length
       ? `<span class="muted">${escapeHtml(t("unite.acces", { liste: getGuerrier(fig.modele).competences.map(loc).join(", ") }))}</span>`
       : "",
@@ -1072,9 +1112,12 @@ function unitCard(fig) {
   div.innerHTML = `
     <div class="unit-head">
       <span class="unit-name">${custom ? `${escapeHtml(custom)} <em>(${titre})</em>` : titre}</span>
-      <span class="unit-cost">${fig.coutGc} ${t("monnaie")} · ${fig.xp} xp</span>
+      <span class="unit-cost">${
+        nombre > 1 ? t("unite.coutGroupe", { total: coutEntree(fig), unite: fig.coutGc }) : `${coutEntree(fig)} ${t("monnaie")}`
+      } · ${fig.xp} xp</span>
     </div>
     <div class="stat-line">${statLine(fig.stats)}</div>
+    ${pisteXpHtml(xpCourante(fig), fig.categorie, { titre: t("perso.xpPiste") })}
     ${details.map((d) => `<p class="unit-detail">${d}</p>`).join("")}
     <div class="slot-actions"></div>
   `;
@@ -1088,6 +1131,24 @@ function unitCard(fig) {
     actions.appendChild(b);
   };
   addBtn(t("unite.modifier"), () => openFigDialog(fig));
+  const dues = groupe ? progressionsDues(fig, xpCourante(fig)) : 0;
+  if (dues) addBtn(t("unite.progression", { n: dues }), () => openProgDialog(fig));
+  if (groupe && nombre < MAX_GROUPE) {
+    // Recrue en cours de campagne : même équipement et même XP que le groupe,
+    // payée 2 co de plus par point d'expérience.
+    const xp = xpCourante(fig);
+    addBtn(t("unite.recrue", { prix: coutRecrue(fig, xp) }), () => {
+      const prix = coutRecrue(fig, xp);
+      if (!confirm(t("unite.confirmRecrue", { prix, base: fig.coutGc, xp, nom: loc(fig.type) || t("categorie.hdm") }))) return;
+      recruterDansGroupe(fig, xp);
+      // Un magot saisi dans le suivi de partie paie la recrue ; sinon le trésor restant baisse de lui-même.
+      if (partie.magotOr !== null && partie.magotOr !== undefined) {
+        partie.magotOr -= prix;
+        renderPartieInputs();
+      }
+      applyCreationChange();
+    });
+  }
   addBtn(t("unite.dupliquer"), () => {
     const i = currentCreation.figurines.indexOf(fig);
     currentCreation.figurines.splice(i + 1, 0, duplicateFigurine(fig));
@@ -1102,6 +1163,70 @@ function unitCard(fig) {
   });
   return div;
 }
+
+// ---------------------------------------------------------------------
+// Progression des hommes de main (2D6 à chaque seuil d'expérience)
+// ---------------------------------------------------------------------
+const progDialog = document.getElementById("prog-dialog");
+const progD1 = document.getElementById("prog-d1");
+const progD2 = document.getElementById("prog-d2");
+const progChoix = document.getElementById("prog-choix");
+let progFig = null;
+
+/** Texte d'un résultat enregistré : une caractéristique (« CC ») ou « talent ». */
+function texteProgression(resultat) {
+  return resultat === "talent" ? t("prog.talent") : `+1 ${t(`profil.${resultat}`)}`;
+}
+
+function renderProgResultat(message = "") {
+  const total = Number(progD1.value) + Number(progD2.value);
+  const valide = [progD1.value, progD2.value].every((v) => /^[1-6]$/.test(v));
+  const res = valide ? resultatProgression(total) : null;
+  document.getElementById("prog-choix-wrap").hidden = res?.code !== "CC/CT";
+  document.getElementById("prog-resultat").textContent = res
+    ? `${total} : ${t(`prog.res.${res.code}`)}${message ? ` ${message}` : ""}`
+    : "";
+}
+
+function lancerProg() {
+  [progD1.value, progD2.value] = lancer2D6();
+  renderProgResultat();
+}
+
+function openProgDialog(fig) {
+  progFig = fig;
+  document.getElementById("prog-title").textContent = t("prog.titre", { nom: loc(fig.type) || t("categorie.hdm") });
+  lancerProg();
+  progDialog.showModal();
+}
+
+progD1.addEventListener("input", () => renderProgResultat());
+progD2.addEventListener("input", () => renderProgResultat());
+document.getElementById("prog-lancer").addEventListener("click", lancerProg);
+document.getElementById("prog-cancel").addEventListener("click", () => progDialog.close());
+document.getElementById("prog-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const fig = progFig;
+  const r = appliquerProgression(fig, [Number(progD1.value), Number(progD2.value)], {
+    choix: progChoix.value,
+    guerrier: getGuerrier(fig.modele),
+  });
+  if (r.relancer) {
+    // Caractéristique déjà au maximum de la race : on relance sans rien enregistrer.
+    renderProgResultat(t("prog.auMaximum", { stat: t(`profil.${r.stat}`) }));
+    return;
+  }
+  if (r.code === "talent") {
+    const heros = promouvoir(fig, newFigurine, xpCourante(fig));
+    if (heros) {
+      const figs = currentCreation.figurines;
+      figs.splice(figs.indexOf(fig) + 1, 0, heros);
+    }
+  }
+  progDialog.close();
+  progFig = null;
+  applyCreationChange();
+});
 
 function renderCreation() {
   const c = currentCreation;
@@ -1174,7 +1299,7 @@ function openRecruitDialog(categorie) {
   const list = document.getElementById("recruit-list");
   list.innerHTML = "";
   for (const g of bande.guerriers.filter((x) => x.categorie === categorie)) {
-    const n = currentCreation.figurines.filter((f) => f.modele === g.id).length;
+    const n = currentCreation.figurines.filter((f) => f.modele === g.id).reduce((s, f) => s + tailleGroupe(f), 0);
     const complet = g.max !== null && n >= g.max;
     const div = document.createElement("div");
     div.className = `unit-card${complet ? " complet" : ""}`;
@@ -1214,6 +1339,7 @@ const figForm = document.getElementById("fig-form");
 const figType = document.getElementById("fig-type");
 const figCout = document.getElementById("fig-cout");
 const figXp = document.getElementById("fig-xp");
+const figNombre = document.getElementById("fig-nombre");
 const figStats = document.getElementById("fig-stats");
 let figDraft = null; // copie en cours d'édition
 let figOriginal = null; // figurine remplacée à la validation (null = recrutement)
@@ -1353,6 +1479,11 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   figCout.value = figDraft.coutGc;
   figCout.dataset.manuel = "";
   figXp.value = figDraft.xp;
+  // Hommes de main : un groupe de figurines identiques, coût indiqué par figurine.
+  document.getElementById("fig-nombre-wrap").hidden = isHero;
+  figNombre.max = MAX_GROUPE;
+  figNombre.value = tailleGroupe(figDraft);
+  document.getElementById("fig-cout-label").textContent = t(isHero ? "fig.cout" : "fig.coutUnitaire");
   figStats.querySelectorAll("input").forEach((inp) => (inp.value = figDraft.stats[inp.dataset.stat]));
   renderFigEquipement();
   renderArsenal(guerrier);
@@ -1362,14 +1493,26 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
     : guerrier?.competences.length
       ? t("fig.acces", { liste: guerrier.competences.map(loc).join(", ") })
       : "";
-  renderFigCompetences();
-  chipEditor(document.getElementById("fig-regles"), figDraft.regles, {
-    datalist: "rules-list",
-    placeholder: t("fig.regles.exemple"),
-    // « Chef » ou « Sorcier » ouvrent certaines compétences.
-    onChange: renderCompetencesChoix,
-    label: locNomRegle,
-  });
+  // Les hommes de main n'apprennent pas de compétences ; leurs règles sont
+  // celles de leur profil dans les données, affichées sans être modifiables.
+  document.getElementById("fig-competences-bloc").hidden = !isHero;
+  if (isHero) renderFigCompetences();
+  const reglesFixes = !isHero && !!guerrier;
+  const reglesBox = document.getElementById("fig-regles");
+  const reglesTexte = document.getElementById("fig-regles-fixes");
+  reglesBox.hidden = reglesFixes;
+  reglesTexte.hidden = !reglesFixes;
+  if (reglesFixes) {
+    reglesTexte.innerHTML = guerrier.regles.length ? reglesText(guerrier.regles) : escapeHtml(t("fig.aucuneRegle"));
+  } else {
+    chipEditor(reglesBox, figDraft.regles, {
+      datalist: "rules-list",
+      placeholder: t("fig.regles.exemple"),
+      // « Chef » ou « Sorcier » ouvrent certaines compétences.
+      onChange: renderCompetencesChoix,
+      label: locNomRegle,
+    });
+  }
   figDialog.showModal();
   figType.focus();
 }
@@ -1382,6 +1525,7 @@ figForm.addEventListener("submit", (e) => {
     ["fig-competences", "competences"],
     ["fig-regles", "regles"],
   ]) {
+    if (document.getElementById(id).closest("[hidden]")) continue;
     const pending = document.querySelector(`#${id} .chip-add input`);
     if (pending?.value.trim()) figDraft[key].push(pending.value.trim());
   }
@@ -1390,6 +1534,10 @@ figForm.addEventListener("submit", (e) => {
   if (figType.value.trim() !== loc(figDraft.type)) figDraft.type = figType.value.trim();
   figDraft.coutGc = Math.max(0, Number(figCout.value) || 0);
   figDraft.xp = Math.max(0, Number(figXp.value) || 0);
+  if (figDraft.categorie === "hdm") {
+    figDraft.nombre = Math.min(MAX_GROUPE, Math.max(1, Math.round(Number(figNombre.value)) || 1));
+    figDraft.competences = [];
+  }
   figStats.querySelectorAll("input").forEach((inp) => {
     figDraft.stats[inp.dataset.stat] = inp.value.trim() || "-";
   });
