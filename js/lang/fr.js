@@ -134,6 +134,9 @@ export default {
   "unite.retirer": "Retirer",
   "unite.confirmRetirer": "Retirer « {nom} » de la bande ?",
   "unite.cetteFigurine": "cette figurine",
+  "unite.coutGroupe": "{total} co ({unite} co chacun)",
+  "unite.recrue": "Recruter (+{prix} co)",
+  "unite.confirmRecrue": "Ajouter une recrue à « {nom} » pour {prix} co ? Elle reçoit l'équipement et les {xp} XP du groupe : {base} co + 2 co par point d'expérience.",
   "chip.ajouter": "Ajouter",
   "chip.retirer": "Retirer {item}",
 
@@ -310,6 +313,9 @@ export default {
   "fig.modifierHdm": "Modifier l'homme de main",
   "fig.recruterHeros": "Recruter un héros",
   "fig.recruterHdm": "Recruter un homme de main",
+  "fig.nombre": "Nombre",
+  "fig.coutUnitaire": "Coût par figurine (co)",
+  "fig.aucuneRegle": "Aucune règle spéciale.",
   "recrue.titre": "Recruter",
   "recrue.horsListe": "Figurine hors liste…",
   "recrue.recruter": "Recruter",
@@ -325,4 +331,5 @@ export default {
   "alerte.horsListe": "{nom} : {liste} hors de sa liste d'équipement (objet trouvé ou acheté au comptoir ?).",
   "alerte.competences": "{nom} : {liste} hors de ses listes de compétences.",
   "alerte.maximum": "{nom} : {stat} {valeur} dépasse le maximum de sa race ({max}).",
+  "alerte.groupe": "{nom} : groupe de {n}, {max} hommes de main au plus.",
 };

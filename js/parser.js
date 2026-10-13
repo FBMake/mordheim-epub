@@ -373,6 +373,12 @@ export function parseRoster(json, { lang = getLang() } = {}) {
 
     if (cat === "Hommes de main") {
       const card = extractCharacterCard(sel, ruleDict, report);
+      // Groupe de plusieurs hommes de main identiques : « Spadassins ×3 ».
+      card.nombre = sel.number > 1 ? sel.number : 1;
+      if (card.nombre > 1) {
+        card.nom = `${card.nom} ×${card.nombre}`;
+        card.typeOrigine = card.nom;
+      }
       model.hommesDeMain.push(card);
       model.bande.xpTotal += card.xp;
       continue;

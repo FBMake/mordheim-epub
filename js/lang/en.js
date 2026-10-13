@@ -134,6 +134,9 @@ export default {
   "unite.retirer": "Remove",
   "unite.confirmRetirer": "Remove “{nom}” from the warband?",
   "unite.cetteFigurine": "this model",
+  "unite.coutGroupe": "{total} gc ({unite} gc each)",
+  "unite.recrue": "Recruit (+{prix} gc)",
+  "unite.confirmRecrue": "Add a recruit to “{nom}” for {prix} gc? They get the group's equipment and {xp} XP: {base} gc + 2 gc per experience point.",
   "chip.ajouter": "Add",
   "chip.retirer": "Remove {item}",
 
@@ -310,6 +313,9 @@ export default {
   "fig.modifierHdm": "Edit the henchman",
   "fig.recruterHeros": "Recruit a hero",
   "fig.recruterHdm": "Recruit a henchman",
+  "fig.nombre": "Number",
+  "fig.coutUnitaire": "Cost per model (gc)",
+  "fig.aucuneRegle": "No special rules.",
   "recrue.titre": "Recruit",
   "recrue.horsListe": "Model not in the list…",
   "recrue.recruter": "Recruit",
@@ -325,4 +331,5 @@ export default {
   "alerte.horsListe": "{nom}: {liste} not in their equipment list (found or bought at the trading post?).",
   "alerte.competences": "{nom}: {liste} not in their skill lists.",
   "alerte.maximum": "{nom}: {stat} {valeur} exceeds their race maximum ({max}).",
+  "alerte.groupe": "{nom}: group of {n}, {max} henchmen at most.",
 };

@@ -11,6 +11,7 @@
     "test:creation": "node test/test-warband-builder.mjs",
     "test:combats": "node test/test-combats.mjs",
     "test:competences": "node test/test-competences.mjs",
+    "test:groupes": "node test/test-groupes.mjs",
     "test:anglais": "node test/test-anglais.mjs"
   },
   "keywords": [],
