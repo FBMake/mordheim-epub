@@ -92,7 +92,10 @@ html, body {
 .masthead::after { position: absolute; left: 0; right: 0; bottom: 0; }
 .footer-note::before { margin-bottom: 0.6rem; }
 
-/* Dessins décoratifs, à l'encre brune, de part et d'autre du titre. */
+/* Dessins décoratifs, à l'encre brune. Règle : un dessin placé d'un côté a
+   son reflet de l'autre (classe .miroir), sauf s'il contient une lettre :
+   il est alors répété sans inversion (blason au S). */
+.miroir { transform: scaleX(-1); }
 .deco {
   position: absolute;
   top: 0.4rem;
@@ -101,7 +104,7 @@ html, body {
   opacity: 0.8;
   pointer-events: none;
 }
-.deco-gauche { left: 0; transform: rotate(-8deg); }
+.deco-gauche { left: 0; }
 .deco-droite { right: 0; }
 .footer-deco {
   display: flex;
@@ -110,7 +113,13 @@ html, body {
   margin: 0.4rem 0 -0.4rem;
 }
 .footer-deco img { height: 3.6rem; width: auto; opacity: 0.75; }
-.footer-deco img + img { transform: scaleX(-1); }
+.footer-version {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+.footer-version img { height: 1.8rem; width: auto; opacity: 0.7; }
 
 .eyebrow {
   font-family: "JetBrains Mono", monospace;
