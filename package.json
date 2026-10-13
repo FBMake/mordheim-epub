@@ -10,6 +10,7 @@
     "test:bandes": "node test/test-warband-store.mjs",
     "test:creation": "node test/test-warband-builder.mjs",
     "test:combats": "node test/test-combats.mjs",
+    "test:competences": "node test/test-competences.mjs",
     "test:anglais": "node test/test-anglais.mjs"
   },
   "keywords": [],

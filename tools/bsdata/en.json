@@ -562,6 +562,110 @@
     "Smashed Leg": {
       "nom": "Smashed Leg",
       "resume": "Roll a D6: on a 1 the warrior may no longer run (he may still charge); on a 2-6 he misses the next game."
+    },
+    "Black Hunger": {
+      "nom": "Black Hunger",
+      "resume": "Declared at the start of the Skaven Hero's turn: +1 Attack and +D3\" Movement for that turn, but he suffers D3 Strength 3 hits with no armour save at the end of the turn."
+    },
+    "Tail Fighting": {
+      "nom": "Tail Fighting",
+      "resume": "The Skaven wields a shield, a knife or a sword with its tail: +1 Attack with that weapon, or +1 to its armour save."
+    },
+    "Wall Runner": {
+      "nom": "Wall Runner",
+      "resume": "The Skaven never needs to take Initiative tests when climbing walls and other sheer surfaces."
+    },
+    "Infiltration": {
+      "nom": "Infiltration",
+      "resume": "Deployed after the enemy warband, anywhere on the table out of sight of the enemy and more than 12\" from any enemy model. If both sides infiltrate, each rolls a D6 and the lowest sets up first."
+    },
+    "Art of Silent Death": {
+      "nom": "Art of Silent Death",
+      "resume": "Fights unarmed without penalty and counts as having two weapons (+1 Attack). Causes a critical hit on a to wound roll of 5-6. With Eshin Fighting Claws, +2 Attacks instead of +1."
+    },
+    "Horned One": {
+      "nom": "Horned One",
+      "resume": "Mighty horns give the Beastman an extra Attack at his basic Strength in the turn he charges."
+    },
+    "Bellowing Battle-Roar": {
+      "nom": "Bellowing Battle-Roar",
+      "resume": ""
+    },
+    "Manhunter": {
+      "nom": "Manhunter",
+      "resume": ""
+    },
+    "Ambush": {
+      "nom": "Ambush",
+      "resume": ""
+    },
+    "Sign of Sigmar": {
+      "nom": "Sign of Sigmar",
+      "resume": "Possessed and Undead opponents lose their first attack against her in the first round of close combat (to a minimum of 1)."
+    },
+    "Protection of Sigmar": {
+      "nom": "Protection of Sigmar",
+      "resume": "Any spell that would affect her is cancelled on a D6 roll of 4+; a cancelled spell affects no other model either."
+    },
+    "Utter Determination": {
+      "nom": "Utter Determination",
+      "resume": "Matriarch only: she may re-roll any failed Rout test."
+    },
+    "Righteous Fury": {
+      "nom": "Righteous Fury",
+      "resume": "Hates all Skaven, Undead and Possessed warbands and every model in them."
+    },
+    "Absolute Faith": {
+      "nom": "Absolute Faith",
+      "resume": "May re-roll all Fear tests and never has to test when fighting alone against several enemies."
+    },
+    "Master of Blades": {
+      "nom": "Master of Blades",
+      "resume": ""
+    },
+    "Extra Tough": {
+      "nom": "Extra Tough",
+      "resume": "Re-roll the serious injury roll when this Hero is taken out of action."
+    },
+    "Resource Hunter": {
+      "nom": "Resource Hunter",
+      "resume": "When rolling on the Exploration chart, the Hero may modify one dice by +1 or -1."
+    },
+    "True Grit": {
+      "nom": "True Grit",
+      "resume": "On the injury chart, 1-3 = knocked down, 4-5 = stunned, 6 = out of action."
+    },
+    "Thick Skull": {
+      "nom": "Thick Skull",
+      "resume": "3+ save on a D6 to avoid being stunned (2+ with a helmet): a saved stunned result becomes knocked down."
+    },
+    "Waaagh!": {
+      "nom": "Waaagh!",
+      "resume": "May add +D3\" to his charge range."
+    },
+    "Ere We Go!": {
+      "nom": "'Ere We Go!",
+      "resume": ""
+    },
+    "Da Cunnin' Plan": {
+      "nom": "Da Cunnin' Plan",
+      "resume": ""
+    },
+    "'Ard Head": {
+      "nom": "'Ard Head",
+      "resume": ""
+    },
+    "Ferocious Charge": {
+      "nom": "Ferocious Charge",
+      "resume": "May double his Attacks in the turn he charges, at -1 to hit that turn."
+    },
+    "Monster Slayer": {
+      "nom": "Monster Slayer",
+      "resume": "Always wounds on a 4+ whatever the target's Toughness, unless his own Strength (with weapon modifiers) would wound on a lower roll."
+    },
+    "Berserker": {
+      "nom": "Berserker",
+      "resume": "+1 to hit in the turn he charges."
     }
   },
   "alias": {
@@ -595,6 +699,14 @@
     "Haine Tenace": "Bitter Emity",
     "Endurci": "Hardened",
     "Horribles Balafres": "Horrible Scars",
-    "Jambe Écrasée": "Smashed Leg"
+    "Jambe Écrasée": "Smashed Leg",
+    "Maniement des armes": "Weapons Traning",
+    "Maître des lames": "Master of Blades",
+    "En avant !": "Ere We Go!",
+    "Le plan rusé": "Da Cunnin' Plan",
+    "Rugissement guerrier": "Bellowing Battle-Roar",
+    "Chasseur d'hommes": "Manhunter",
+    "Embuscade": "Ambush",
+    "Lanceur de couteaux": "Knife Fighter"
   }
 }

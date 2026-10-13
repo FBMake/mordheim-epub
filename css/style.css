@@ -106,35 +106,37 @@ html, body {
 }
 .deco-gauche { left: 0; }
 
-/* Choix de la langue : écusson du pays courant, menu des pays en dessous. */
+/* Choix de la langue : petit écusson discret en bout de menu principal,
+   menu des pays déroulé en dessous. */
 .lang-switch {
   position: relative;
   display: flex;
-  justify-content: center;
-  margin-bottom: 0.5rem;
+  align-items: center;
+  padding-left: 0.35rem;
+  border-left: 1px solid rgba(138, 110, 61, 0.45);
 }
 .ecusson { width: 100%; height: 100%; display: block; }
 .lang-btn {
-  width: 30px;
-  height: 36px;
-  padding: 0;
+  display: flex;
+  padding: 0.3rem 0.15rem;
   border: none;
   background: none;
   cursor: pointer;
-  filter: drop-shadow(0 1px 1px rgba(36, 29, 21, 0.4));
-  transition: transform 0.15s ease;
+  opacity: 0.75;
+  transition: opacity 0.15s ease;
 }
-.lang-btn:hover, .lang-btn:focus-visible { transform: scale(1.1); outline: none; }
+.lang-btn .ecusson { width: 13px; height: 16px; flex: none; }
+.lang-btn:hover, .lang-btn:focus-visible, .lang-btn[aria-expanded="true"] { opacity: 1; }
+.lang-btn:focus-visible { outline: 1px dotted var(--brass); outline-offset: 2px; }
 .lang-menu {
   position: absolute;
-  top: calc(100% + 0.4rem);
-  left: 50%;
-  transform: translateX(-50%);
+  top: calc(100% + 0.3rem);
+  right: 0;
   z-index: 5;
   display: flex;
   flex-direction: column;
-  min-width: 13rem;
-  padding: 0.35rem;
+  min-width: 11rem;
+  padding: 0.3rem;
   background: #efe2c4;
   border: 1px solid var(--brass);
   box-shadow: 0 8px 20px rgba(36, 29, 21, 0.35);
@@ -494,6 +496,10 @@ select.perso-nom-input { width: 100%; }
   }
   .title-blackletter { font-size: 2.4rem; }
   .deco { height: 2.2rem; top: 2.4rem; }
+  /* Le menu passe sur plusieurs lignes : l'écusson se range avec les
+     derniers boutons, et la liste des pays reste centrée dessous. */
+  .lang-switch { border-left: none; padding-left: 0; }
+  .lang-menu { right: auto; left: 50%; transform: translateX(-50%); }
   .preview-grid { grid-template-columns: repeat(2, 1fr); }
   .preview-columns { grid-template-columns: 1fr; }
   .perso-card { grid-template-columns: 1fr; justify-items: center; }
@@ -504,8 +510,9 @@ select.perso-nom-input { width: 100%; }
 .app-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.4rem 0.35rem;
   justify-content: center;
+  align-items: center;
   margin: -0.8rem 0 2rem;
 }
 .nav-btn, .tab-btn {
@@ -663,6 +670,8 @@ select.perso-nom-input { width: 100%; }
 .stats-edit { display: grid; grid-template-columns: repeat(9, 1fr); gap: 0.25rem; }
 .stat-edit { display: flex; flex-direction: column; align-items: center; font-family: "JetBrains Mono", monospace; font-size: 0.7rem; color: var(--ink-soft); }
 .stat-edit input { width: 100%; text-align: center; padding: 0.3rem 0.1rem; }
+.stat-edit input:invalid { border-color: var(--wax); }
+.stat-max { min-height: 1em; font-size: 0.6rem; }
 .dialog-actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 0.4rem; }
 .btn-ok { background: var(--wax); font-size: 0.78rem; padding: 0.55rem 1.1rem; }
 .btn-ok:hover { background: var(--wax-light); }
@@ -694,8 +703,30 @@ abbr[title] { text-decoration: underline dotted; cursor: help; }
 .arsenal-cat { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; margin-top: 0.4rem; }
 .arsenal-titre { width: 100%; margin: 0; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); }
 .chip-btn { cursor: pointer; font-family: inherit; color: var(--ink); padding: 0.15rem 0.5rem; }
-.chip-btn:hover { background: #fff; border-color: var(--wax); }
+.chip-btn:hover:not(:disabled) { background: #fff; border-color: var(--wax); }
+.chip-btn:disabled { opacity: 0.45; cursor: default; }
 .regles-list { padding-left: 1.1rem; font-size: 0.92rem; margin: 0.4rem 0 1.2rem; }
 .regles-list li { margin-bottom: 0.35rem; }
 #regles-bande-select { margin-bottom: 1rem; }
 #recruit-dialog .unit-list { max-height: 60vh; overflow-y: auto; }
+
+/* Blessures et cimetière */
+.blessure-select { margin-bottom: 0.2rem; }
+.cimetiere { margin: 0 0 1.6rem; padding-top: 0.6rem; border-top: 1px solid var(--brass); }
+.cimetiere-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.tombe {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px dashed var(--brass);
+  background: rgba(0,0,0,0.04);
+}
+.tombe-photo { width: 44px; height: 44px; object-fit: cover; filter: grayscale(1); opacity: 0.8; }
+.tombe-croix { width: 44px; text-align: center; font-size: 1.6rem; color: var(--ink-soft); }
+.tombe-texte { flex: 1; min-width: 0; display: flex; flex-direction: column; overflow-wrap: anywhere; }
+.tombe-detail { font-size: 0.85rem; color: var(--ink-soft); }
+@media (max-width: 520px) {
+  .tombe { flex-wrap: wrap; }
+  .tombe-ramener { width: 100%; }
+}

@@ -26,6 +26,8 @@ for (const [key, val] of Object.entries(RULE_TRANSLATIONS)) {
 }
 for (const [key, val] of Object.entries(EN.regles)) if (!cleRegle.has(val.nom)) cleRegle.set(val.nom, key);
 const cleRegleMinuscule = new Map([...cleRegle].map(([nom, key]) => [nom.toLowerCase(), key]));
+// Les clés de RULE_TRANSLATIONS ne sont pas toujours écrites comme celles de EN.regles (« black hunger »).
+const regleParCle = new Map(Object.entries(EN.regles).map(([key, val]) => [key.toLowerCase(), val]));
 
 // Nom français → nom anglais (bandes, guerriers, objets, listes de compétences, libellés).
 const noms = new Map([
@@ -51,9 +53,11 @@ export function nomAnglais(nom) {
 
 /** Version anglaise { nom, resume } d'une règle (nom français, clé ou nom anglais), ou null. */
 export function regleAnglaise(nom) {
-  const key = EN.regles[nom] ? nom : cleRegle.get(nom) || cleRegleMinuscule.get(String(nom).toLowerCase());
+  const key = regleParCle.has(String(nom).toLowerCase())
+    ? nom
+    : cleRegle.get(nom) || cleRegleMinuscule.get(String(nom).toLowerCase());
   if (!key) return null;
-  return EN.regles[key] || { nom: key, resume: "" };
+  return regleParCle.get(key.toLowerCase()) || { nom: key, resume: "" };
 }
 
 /** Noms anglais des règles et compétences connues (saisie automatique en anglais). */
@@ -85,6 +89,12 @@ export function locRegle(r) {
   if (!enAnglais()) return r;
   const en = regleAnglaise(r.nom);
   return en ? { nom: en.nom, resume: en.resume } : r;
+}
+
+/** Compétence de js/data/competences.js ({ en, nom, resume }) dans la langue de l'interface. */
+export function locCompetence(c) {
+  if (!enAnglais()) return c;
+  return regleAnglaise(c.en) || { nom: c.en, resume: "" };
 }
 
 /** Nom seul d'une règle ou compétence dans la langue de l'interface. */

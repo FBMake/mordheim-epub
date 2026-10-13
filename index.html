@@ -22,10 +22,6 @@
 
 <div class="parchment-frame">
   <header class="masthead">
-    <div class="lang-switch">
-      <button type="button" id="lang-btn" class="lang-btn" aria-haspopup="true" aria-expanded="false" data-i18n-aria-label="langue.choisir" data-i18n-title="langue.choisir"></button>
-      <div id="lang-menu" class="lang-menu" role="menu" hidden></div>
-    </div>
     <img class="deco deco-gauche" src="images/deco/blason-s.webp" alt="" width="159" height="151" />
     <img class="deco deco-droite" src="images/deco/blason-s.webp" alt="" width="159" height="151" />
     <p class="eyebrow" data-i18n="entete.surtitre">Registre des Bandes</p>
@@ -39,6 +35,10 @@
     <button type="button" class="nav-btn" data-view="import" data-i18n="nav.import">Importer</button>
     <button type="button" class="nav-btn" data-view="regles" data-i18n="nav.regles">Règles des bandes</button>
     <button type="button" class="nav-btn nav-bande" data-view="bande" hidden>Bande ouverte</button>
+    <div class="lang-switch">
+      <button type="button" id="lang-btn" class="lang-btn" aria-haspopup="true" aria-expanded="false" data-i18n-aria-label="langue.choisir" data-i18n-title="langue.choisir"></button>
+      <div id="lang-menu" class="lang-menu" role="menu" hidden></div>
+    </div>
   </nav>
 
   <!-- ============ Accueil : les 4 emplacements ============ -->
@@ -225,6 +225,11 @@
       <p class="hint-text" data-i18n="figurines.aide">Nom, bio et photo sont optionnels. Si la bande est enregistrée dans un emplacement, tout est sauvegardé automatiquement dans ce navigateur.</p>
       <p id="figurines-empty" class="hint-text" hidden data-i18n="figurines.aucune">Aucune figurine pour l'instant : recrutez-en depuis l'onglet Composition.</p>
       <div id="perso-cards" class="perso-cards"></div>
+      <section id="cimetiere" class="cimetiere" hidden>
+        <h3 class="mini-title" data-i18n="cimetiere.titre">Cimetière</h3>
+        <p class="hint-text small left" data-i18n="cimetiere.aide">Les figurines mortes n'ont plus de fiche dans le PDF et ne comptent plus dans la valeur de bande. Une erreur ? Ramenez-les parmi les vivants.</p>
+        <ul id="cimetiere-list" class="cimetiere-list"></ul>
+      </section>
       <section id="perso-upload-section">
         <div id="perso-dropzone" class="dropzone dropzone-secondary" tabindex="0" role="button" aria-label="Déposer ou choisir un fichier de personnalisation" data-i18n-aria-label="persoFichier.zoneAria">
           <p class="drop-title" data-i18n="persoFichier.titre">Fichier de personnalisation (optionnel)</p>
@@ -255,7 +260,7 @@
 
   <footer class="footer-note">
     <p data-i18n="pied.confidentialite">Tout le traitement se fait dans votre navigateur : vos bandes ne sont jamais envoyées sur un serveur.</p>
-    <p>V0.12</p>
+    <p>V0.13</p>
   </footer>
 </div>
 
@@ -288,6 +293,10 @@
     </details>
     <p class="perso-label"><span data-i18n="fig.competences">Compétences</span> <span class="hint-inline" id="fig-acces"></span></p>
     <div class="chip-editor" id="fig-competences"></div>
+    <details class="arsenal" id="fig-comp-choix" hidden>
+      <summary data-i18n="fig.competencesAccessibles">Compétences accessibles</summary>
+      <div id="fig-comp-liste"></div>
+    </details>
     <p class="perso-label" data-i18n="fig.regles">Règles spéciales</p>
     <div class="chip-editor" id="fig-regles"></div>
     <div class="dialog-actions">

@@ -41,8 +41,10 @@ import {
 } from "./warband-builder.js";
 import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
 import { flagSvg } from "./flags.js";
-import { loc, locBande, locGuerrier, locNomRegle, locRegle } from "./donnees-langue.js";
+import { loc, locBande, locCompetence, locGuerrier, locNomRegle, locRegle } from "./donnees-langue.js";
+import { competencesAccessibles, maximumsGuerrier } from "./data/competences.js";
 import { RESULTATS, appliquerCombat, bilanFigurine, splitItems } from "./combats.js";
+import { MORT, blessuresPour, getBlessure, libelleBlessure, malusTotal, nomBlessure, texteMalus } from "./blessures.js";
 
 setLang(detectLang(), { remember: false });
 
@@ -59,6 +61,8 @@ const persoLoadedMsg = document.getElementById("perso-loaded-msg");
 const orphansBox = document.getElementById("orphans-box");
 const orphansList = document.getElementById("orphans-list");
 const persoCardsContainer = document.getElementById("perso-cards");
+const cimetiereBox = document.getElementById("cimetiere");
+const cimetiereList = document.getElementById("cimetiere-list");
 
 let currentModel = null;
 // customisations[id] = { nom, bio, photo } — source de vérité pour la génération.
@@ -229,6 +233,66 @@ function bilanHtml(id) {
   return `<p class="perso-bilan">${escapeHtml(t("bilan.texte", { n: b.combats, xp: b.xp }))}${blessures}</p>`;
 }
 
+const estMort = (card) => card.statut === "Mort";
+
+/**
+ * Liste de blessures choisies dans la table (voir blessures.js) :
+ * pastilles supprimables + liste déroulante pour en ajouter une.
+ * `onAdd(id)` peut renvoyer false pour ne pas garder la blessure dans la liste.
+ */
+function blessuresEditor(container, list, estHeros, { permanentes = false, onAdd, onChange } = {}) {
+  const render = () => {
+    container.innerHTML = "";
+    if (list.length) {
+      const chips = document.createElement("div");
+      chips.className = "chips";
+      list.forEach((id, i) => {
+        const chip = document.createElement("span");
+        chip.className = "chip";
+        const malus = texteMalus(getBlessure(id)?.malus);
+        chip.textContent = nomBlessure(id) + (malus ? ` (${malus})` : "");
+        const del = document.createElement("button");
+        del.type = "button";
+        del.className = "chip-del";
+        del.setAttribute("aria-label", t("chip.retirer", { item: nomBlessure(id) }));
+        del.textContent = "×";
+        del.addEventListener("click", () => {
+          list.splice(i, 1);
+          render();
+          onChange?.();
+        });
+        chip.appendChild(del);
+        chips.appendChild(chip);
+      });
+      container.appendChild(chips);
+    }
+    const select = document.createElement("select");
+    select.className = "perso-nom-input blessure-select";
+    select.setAttribute("aria-label", t("blessures.ajouter"));
+    select.innerHTML =
+      option("", t("blessures.ajouter")) +
+      blessuresPour(estHeros, { permanentes }).map((b) => option(b.id, libelleBlessure(b, estHeros))).join("");
+    select.addEventListener("change", () => {
+      const id = select.value;
+      if (!id) return;
+      if (onAdd?.(id) !== false) list.push(id);
+      render();
+      onChange?.();
+    });
+    container.appendChild(select);
+  };
+  render();
+}
+
+/** « Profil après blessures : M 3, E 2 » (vide sans malus). */
+function profilBlesseHtml(card) {
+  const malus = malusTotal(card.blessuresPartie);
+  const keys = Object.keys(malus).filter((k) => card.stats[k] !== card.statsRoster?.[k]);
+  if (!keys.length) return "";
+  const profil = keys.map((k) => `${k} ${card.stats[k]} (${malus[k] > 0 ? "+" : "−"}${Math.abs(malus[k])})`).join(", ");
+  return `<p class="perso-bilan">${escapeHtml(t("blessures.profil", { profil }))}</p>`;
+}
+
 function persoCardTemplate(card, categorie) {
   const custom = ensureCustomisation(card.id);
   const div = document.createElement("div");
@@ -278,6 +342,12 @@ function persoCardTemplate(card, categorie) {
         </label>
       </div>
       ${bilanHtml(card.id)}
+      ${
+        currentModel.heros.includes(card)
+          ? `<div class="perso-label">${escapeHtml(t("blessures.titre"))}<div class="blessures-editor"></div></div>`
+          : ""
+      }
+      <div class="profil-blesse">${profilBlesseHtml(card)}</div>
       <label class="perso-label">
         ${t("perso.notes")}
         <input type="text" class="perso-nom-input partie-notes-input" placeholder="${escapeHtml(t("perso.notes.exemple"))}"
@@ -300,7 +370,8 @@ function persoCardTemplate(card, categorie) {
   });
 
   const figurine = () => {
-    if (!partie.figurines[card.id]) partie.figurines[card.id] = { xp: null, statut: "", notes: "" };
+    if (!partie.figurines[card.id]) partie.figurines[card.id] = { xp: null, statut: "", notes: "", blessures: [] };
+    partie.figurines[card.id].blessures ||= [];
     return partie.figurines[card.id];
   };
   const xpInput = div.querySelector(".partie-xp-input");
@@ -314,8 +385,28 @@ function persoCardTemplate(card, categorie) {
   statutInput.addEventListener("change", () => {
     figurine().statut = statutInput.value;
     refreshTotals(currentModel);
+    // Une figurine déclarée morte part au cimetière.
+    if (statutInput.value === "Mort") renderPersoCards(currentModel);
     scheduleSave();
   });
+
+  const blessuresBox = div.querySelector(".blessures-editor");
+  if (blessuresBox) {
+    blessuresEditor(blessuresBox, figurine().blessures, true, {
+      permanentes: true,
+      onAdd: (id) => {
+        if (id !== MORT) return true;
+        figurine().statut = "Mort";
+        return false;
+      },
+      onChange: () => {
+        refreshTotals(currentModel);
+        if (estMort(card)) renderPersoCards(currentModel);
+        else div.querySelector(".profil-blesse").innerHTML = profilBlesseHtml(card);
+        scheduleSave();
+      },
+    });
+  }
   const partieNotesInput = div.querySelector(".partie-notes-input");
   partieNotesInput.addEventListener("input", () => {
     figurine().notes = partieNotesInput.value;
@@ -344,12 +435,45 @@ function persoCardTemplate(card, categorie) {
 
 function renderPersoCards(model) {
   persoCardsContainer.innerHTML = "";
-  model.heros.forEach((card) =>
+  model.heros.filter((c) => !estMort(c)).forEach((card) =>
     persoCardsContainer.appendChild(persoCardTemplate(card, t("categorie.heros")))
   );
-  model.hommesDeMain.forEach((card) =>
+  model.hommesDeMain.filter((c) => !estMort(c)).forEach((card) =>
     persoCardsContainer.appendChild(persoCardTemplate(card, t("categorie.hdm")))
   );
+  renderCimetiere(model);
+}
+
+/** Cimetière : les figurines mortes, sans fiche dans le PDF, que l'on peut ramener. */
+function renderCimetiere(model) {
+  const morts = [
+    ...model.heros.filter(estMort).map((card) => [card, t("categorie.heros")]),
+    ...model.hommesDeMain.filter(estMort).map((card) => [card, t("categorie.hdm")]),
+  ];
+  cimetiereBox.hidden = morts.length === 0;
+  cimetiereList.innerHTML = "";
+  for (const [card, categorie] of morts) {
+    const custom = customisations[card.id] || {};
+    const blessures = card.blessuresPartie.map(nomBlessure);
+    const li = document.createElement("li");
+    li.className = "tombe";
+    li.innerHTML = `
+      ${custom.photo ? `<img class="tombe-photo" src="${custom.photo}" alt="" />` : `<span class="tombe-croix" aria-hidden="true">✝</span>`}
+      <div class="tombe-texte">
+        <strong>${escapeHtml(custom.nom || card.nom)}</strong>
+        <span class="tombe-detail">${escapeHtml(categorie)} — ${escapeHtml(card.nom)} · ${card.xp} xp</span>
+        ${blessures.length ? `<span class="tombe-detail">${escapeHtml(t("bilan.blessures", { liste: blessures.join(", ") }))}</span>` : ""}
+      </div>
+      <button type="button" class="btn-slot tombe-ramener">${escapeHtml(t("cimetiere.ramener"))}</button>
+    `;
+    li.querySelector(".tombe-ramener").addEventListener("click", () => {
+      partie.figurines[card.id].statut = "";
+      refreshTotals(currentModel);
+      renderPersoCards(currentModel);
+      scheduleSave();
+    });
+    cimetiereList.appendChild(li);
+  }
 }
 
 function renderOrphans() {
@@ -596,6 +720,8 @@ const combatResultat = document.getElementById("combat-resultat");
 const combatEffets = document.getElementById("combat-effets");
 const combatsList = document.getElementById("combats-list");
 const INCHANGE = "__inchange__";
+// Blessures choisies dans la fenêtre de combat, par figurine.
+let combatBlessures = new Map();
 
 function renderResultatOptions() {
   combatResultat.innerHTML = ["", ...RESULTATS].map((r) => option(r, t(`resultat.${r}`))).join("");
@@ -607,7 +733,9 @@ function openCombatDialog() {
   combatForm.reset();
   renderResultatOptions();
   document.getElementById("combat-date").value = new Date().toISOString().slice(0, 10);
-  const cards = [...currentModel.heros, ...currentModel.hommesDeMain];
+  // Les morts ne combattent plus.
+  const cards = [...currentModel.heros, ...currentModel.hommesDeMain].filter((c) => !estMort(c));
+  combatBlessures = new Map(cards.map((c) => [c.id, []]));
   combatEffets.innerHTML = cards
     .map(
       (card) => `
@@ -628,10 +756,10 @@ function openCombatDialog() {
       </div>
       <details class="effet-details">
         <summary>${t("effet.details")}</summary>
-        <label class="perso-label">
+        <div class="perso-label">
           ${t("effet.blessure")}
-          <input type="text" class="perso-nom-input effet-blessure" placeholder="${escapeHtml(t("effet.blessure.exemple"))}" />
-        </label>
+          <div class="effet-blessures"></div>
+        </div>
         <div class="partie-row">
           <label class="perso-label">
             ${t("effet.gagne")}
@@ -646,6 +774,17 @@ function openCombatDialog() {
     </fieldset>`
     )
     .join("");
+  for (const card of cards) {
+    const fs = combatEffets.querySelector(`.combat-effet[data-id="${CSS.escape(card.id)}"]`);
+    const estHeros = currentModel.heros.includes(card);
+    blessuresEditor(fs.querySelector(".effet-blessures"), combatBlessures.get(card.id), estHeros, {
+      // Choisir « mort » règle aussi l'état après le combat.
+      onAdd: (id) => {
+        if (id === MORT) fs.querySelector(".effet-statut").value = "Mort";
+        return true;
+      },
+    });
+  }
   combatEffets.hidden = cards.length === 0;
   combatDialog.showModal();
 }
@@ -665,7 +804,7 @@ combatForm.addEventListener("submit", () => {
       nom: fs.dataset.nom,
       xp: fs.querySelector(".effet-xp").value,
       statut: statut === INCHANGE ? null : statut,
-      blessure: fs.querySelector(".effet-blessure").value,
+      blessures: combatBlessures.get(fs.dataset.id) || [],
       gagne: splitItems(fs.querySelector(".effet-gagne").value),
       perdu: splitItems(fs.querySelector(".effet-perdu").value),
     };
@@ -713,6 +852,8 @@ function effetLigne(e) {
   if (e.xp) parts.push(t("combats.xpCourt", { n: e.xp }));
   if (e.statut !== null) parts.push(t(`statut.${e.statut}`));
   if (e.blessure) parts.push(e.blessure);
+  // « Mort » est déjà dit par l'état.
+  parts.push(...e.blessures.filter((id) => !(id === MORT && e.statut === "Mort")).map(nomBlessure));
   parts.push(...e.gagne.map((o) => `+${o}`), ...e.perdu.map((o) => `−${o}`));
   return `<li><strong>${escapeHtml(e.nom)}</strong> : ${escapeHtml(parts.join(", "))}</li>`;
 }
@@ -1082,8 +1223,33 @@ figCout.addEventListener("input", () => (figCout.dataset.manuel = "1"));
 
 function renderFigStatLabels() {
   figStats.innerHTML = STAT_KEYS.map(
-    (k) => `<label class="stat-edit"><span>${t(`profil.${k}`)}</span><input type="text" class="perso-nom-input" data-stat="${k}" maxlength="4" /></label>`
+    (k) =>
+      `<label class="stat-edit"><span>${t(`profil.${k}`)}</span><input type="text" class="perso-nom-input" data-stat="${k}" maxlength="4" /><small class="stat-max"></small></label>`
   ).join("");
+}
+
+/** Une caractéristique au-dessus du maximum de la race bloque la validation. */
+function checkStatMax(inp) {
+  const max = inp.dataset.max === "" || inp.dataset.max === undefined ? NaN : Number(inp.dataset.max);
+  const v = Number(inp.value.trim());
+  inp.setCustomValidity(inp.value.trim() !== "" && Number.isFinite(v) && v > max ? inp.title : "");
+}
+figStats.addEventListener("input", (e) => {
+  if (e.target.matches("input[data-stat]")) checkStatMax(e.target);
+});
+
+function applyStatMaximums(guerrier) {
+  const maxima = maximumsGuerrier(guerrier);
+  figStats.querySelectorAll("input").forEach((inp) => {
+    const max = maxima?.max[inp.dataset.stat];
+    const known = max !== undefined;
+    inp.dataset.max = known ? max : "";
+    inp.title = known
+      ? t(maxima.sansProgression ? "fig.maximumSansProgression" : "fig.maximum", { race: maxima.race, max })
+      : "";
+    inp.nextElementSibling.textContent = known ? `≤ ${max}` : "";
+    checkStatMax(inp);
+  });
 }
 renderFigStatLabels();
 
@@ -1129,6 +1295,51 @@ function renderFigEquipement() {
   });
 }
 
+function renderFigCompetences() {
+  chipEditor(document.getElementById("fig-competences"), figDraft.competences, {
+    datalist: "rules-list",
+    placeholder: t("fig.competences.exemple"),
+    onChange: renderCompetencesChoix,
+    label: locNomRegle,
+  });
+  renderCompetencesChoix();
+}
+
+/**
+ * Compétences que la figurine peut apprendre, triées par liste : celles de
+ * ses listes d'accès seulement (aucune pour un homme de main), en grisant
+ * celles déjà acquises ou réservées (chef, sorcier, matriarche…).
+ */
+function renderCompetencesChoix() {
+  const box = document.getElementById("fig-comp-choix");
+  const listes = competencesAccessibles(figDraft, getGuerrier(figDraft.modele));
+  box.hidden = !listes.length;
+  if (box.hidden) return;
+  const liste = document.getElementById("fig-comp-liste");
+  liste.innerHTML = "";
+  for (const l of listes) {
+    const row = document.createElement("div");
+    row.className = "arsenal-cat";
+    row.innerHTML = `<p class="arsenal-titre">${escapeHtml(loc(l.liste))}</p>`;
+    for (const c of l.competences) {
+      const affiche = locCompetence(c);
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip chip-btn";
+      b.textContent = affiche.nom;
+      b.disabled = c.acquise || !c.permise;
+      const etat = c.acquise ? t("fig.competenceAcquise") : !c.permise ? t("fig.competenceReservee") : "";
+      b.title = [etat, affiche.resume].filter(Boolean).join(" · ");
+      b.addEventListener("click", () => {
+        figDraft.competences.push(c.nom);
+        renderFigCompetences();
+      });
+      row.appendChild(b);
+    }
+    liste.appendChild(row);
+  }
+}
+
 function openFigDialog(fig, categorie = "heros", draft = null) {
   figOriginal = fig;
   figDraft = draft || (fig ? structuredClone(fig) : newFigurine(categorie));
@@ -1145,17 +1356,18 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   figStats.querySelectorAll("input").forEach((inp) => (inp.value = figDraft.stats[inp.dataset.stat]));
   renderFigEquipement();
   renderArsenal(guerrier);
-  document.getElementById("fig-acces").textContent = guerrier?.competences.length
-    ? t("fig.acces", { liste: guerrier.competences.map(loc).join(", ") })
-    : "";
-  chipEditor(document.getElementById("fig-competences"), figDraft.competences, {
-    datalist: "rules-list",
-    placeholder: t("fig.competences.exemple"),
-    label: locNomRegle,
-  });
+  applyStatMaximums(guerrier);
+  document.getElementById("fig-acces").textContent = !isHero
+    ? t("fig.competencesHdm")
+    : guerrier?.competences.length
+      ? t("fig.acces", { liste: guerrier.competences.map(loc).join(", ") })
+      : "";
+  renderFigCompetences();
   chipEditor(document.getElementById("fig-regles"), figDraft.regles, {
     datalist: "rules-list",
     placeholder: t("fig.regles.exemple"),
+    // « Chef » ou « Sorcier » ouvrent certaines compétences.
+    onChange: renderCompetencesChoix,
     label: locNomRegle,
   });
   figDialog.showModal();
