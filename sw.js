@@ -29,6 +29,7 @@ const PRECACHE = [
   "js/combats.js",
   "js/blessures.js",
   "js/progression.js",
+  "js/experience.js",
   "js/lang/fr.js",
   "js/lang/en.js",
   "js/flags.js",

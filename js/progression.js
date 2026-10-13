@@ -20,8 +20,9 @@
  */
 
 import { maximumsGuerrier } from "./data/competences.js";
+import { SEUILS_HDM } from "./experience.js";
 
-export const SEUILS_HDM = [2, 5, 9, 14];
+export { SEUILS_HDM };
 
 /** Résultat du tableau pour un total de 2D6. */
 export function resultatProgression(total) {

@@ -17,6 +17,8 @@
  * Dépend de la variable globale JSZip (chargée via CDN dans index.html).
  */
 
+import { pisteXpHtml } from "./experience.js";
+
 function esc(s) {
   return String(s ?? "")
     .replace(/&/g, "&amp;")
@@ -83,6 +85,27 @@ h2.card-name {
   font-style: italic;
   color: #3a2f20;
   margin: 0.3em 0 0.8em 0;
+}
+.xp-piste {
+  line-height: 0;
+  margin: 0.2em 0 0.4em 0;
+}
+.xp-case {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin: 1px;
+  border: 1px solid #b9ab8f;
+}
+.xp-case.seuil {
+  border: 2px solid #2b2118;
+}
+.xp-case.cochee {
+  background: #2b2118;
+}
+.xp-plus {
+  font-size: 0.7em;
+  line-height: 1;
 }
 table.stats {
   width: 100%;
@@ -174,7 +197,7 @@ function nameTagsHtml(label, items) {
     .join("")}</ul>`;
 }
 
-function characterCardHtml(card, imageFileByCardId) {
+function characterCardHtml(card, imageFileByCardId, categorie = "heros") {
   const displayName = card.nomPersonnalise || card.nom;
   const showOriginType =
     card.nomPersonnalise && card.nomPersonnalise !== card.typeOrigine;
@@ -213,6 +236,7 @@ function characterCardHtml(card, imageFileByCardId) {
     }${card.coutGc} po · Valeur de Bande ${card.coutWr} · Expérience ${
     card.xp
   }</p>
+    ${pisteXpHtml(card.xp, categorie)}
     ${bioHtml}
   </div>
   <table class="stats">
@@ -317,7 +341,7 @@ ${
   // 3) Hommes de main
   const hdmBody =
     model.hommesDeMain
-      .map((c) => characterCardHtml(c, imageFileByCardId))
+      .map((c) => characterCardHtml(c, imageFileByCardId, "hdm"))
       .join('\n<hr class="sep"/>\n') ||
     "<p><em>Aucun homme de main dans cette bande.</em></p>";
   chapters.push({

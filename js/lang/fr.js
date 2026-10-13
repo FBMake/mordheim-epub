@@ -261,6 +261,7 @@ export default {
   "perso.bio": "Bio",
   "perso.bio.exemple": "Quelques lignes d'histoire...",
   "perso.xp": "XP",
+  "perso.xpPiste": "Expérience : chaque case est un point, les cases épaisses marquent une progression.",
   "perso.etat": "État",
   "perso.notes": "Notes de partie",
   "perso.notes.exemple": "Objet trouvé, événement de campagne...",

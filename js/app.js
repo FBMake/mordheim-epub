@@ -47,6 +47,7 @@ import {
 import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
 import { flagSvg } from "./flags.js";
 import { loc, locBande, locCompetence, locGuerrier, locNomRegle, locRegle } from "./donnees-langue.js";
+import { pisteXpHtml } from "./experience.js";
 import { appliquerProgression, lancer2D6, progressionsDues, promouvoir, resultatProgression } from "./progression.js";
 import { competencesAccessibles, maximumsGuerrier } from "./data/competences.js";
 import { RESULTATS, appliquerCombat, bilanFigurine, splitItems } from "./combats.js";
@@ -347,6 +348,7 @@ function persoCardTemplate(card, categorie) {
           </select>
         </label>
       </div>
+      <div class="xp-piste-wrap"></div>
       ${bilanHtml(card.id)}
       ${
         currentModel.heros.includes(card)
@@ -381,9 +383,30 @@ function persoCardTemplate(card, categorie) {
     return partie.figurines[card.id];
   };
   const xpInput = div.querySelector(".partie-xp-input");
+  // Piste d'expérience en cases à cocher, comme sur la fiche d'origine : cliquer
+  // une case fixe l'XP à cette valeur (cliquer la dernière cochée la décoche).
+  const pisteBox = div.querySelector(".xp-piste-wrap");
+  const renderPiste = () => {
+    const xp = partie.figurines[card.id]?.xp ?? card.xpRoster ?? card.xp;
+    pisteBox.innerHTML = pisteXpHtml(xp, currentModel.heros.includes(card) ? "heros" : "hdm", {
+      modifiable: true,
+      titre: t("perso.xpPiste"),
+    });
+  };
+  renderPiste();
+  pisteBox.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-xp]");
+    if (!b) return;
+    figurine().xp = Number(b.dataset.xp);
+    xpInput.value = b.dataset.xp;
+    renderPiste();
+    refreshTotals(currentModel);
+    scheduleSave();
+  });
   xpInput.addEventListener("input", () => {
     const n = xpInput.value === "" ? null : Number(xpInput.value);
     figurine().xp = Number.isFinite(n) ? n : null;
+    renderPiste();
     refreshTotals(currentModel);
     scheduleSave();
   });
@@ -1094,6 +1117,7 @@ function unitCard(fig) {
       } · ${fig.xp} xp</span>
     </div>
     <div class="stat-line">${statLine(fig.stats)}</div>
+    ${pisteXpHtml(xpCourante(fig), fig.categorie, { titre: t("perso.xpPiste") })}
     ${details.map((d) => `<p class="unit-detail">${d}</p>`).join("")}
     <div class="slot-actions"></div>
   `;

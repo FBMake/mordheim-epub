@@ -42,3 +42,13 @@ c.figurines.push(g);
 assert.equal(normalizeCreation(c).figurines[0].progressions.length, 2);
 
 console.log("test-progression : OK");
+
+// --- Piste d'expérience en cases ---
+import { pisteXp, pisteXpHtml } from "../js/experience.js";
+assert.equal(pisteXp("heros").cases, 90);
+assert.equal(pisteXp("hdm").cases, 14);
+const html = pisteXpHtml(3, "hdm", { modifiable: true });
+assert.equal((html.match(/cochee/g) || []).length, 3);
+assert.equal((html.match(/seuil/g) || []).length, 4);
+assert.match(html, /data-xp="2" aria-label="3"/); // cliquer la dernière case cochée la décoche
+console.log("test-experience : OK");

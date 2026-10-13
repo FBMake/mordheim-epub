@@ -261,6 +261,7 @@ export default {
   "perso.bio": "Bio",
   "perso.bio.exemple": "A few lines of backstory...",
   "perso.xp": "XP",
+  "perso.xpPiste": "Experience: each box is one point, thick boxes mark an advance.",
   "perso.etat": "Status",
   "perso.notes": "Game notes",
   "perso.notes.exemple": "Found an item, campaign event...",
