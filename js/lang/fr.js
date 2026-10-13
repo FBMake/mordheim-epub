@@ -260,6 +260,8 @@ export default {
 
   // Imprimer
   "imprimer.aide": "Une fiche par page sur vos gabarits illustrés : bande, héros, hommes de main et règles. Un fichier de personnalisation est téléchargé avec le PDF (le JSON New Recruit n'est jamais modifié).",
+  "nonTraduit.regle": "Règle « {nom} »",
+  "nonTraduit.special": "Règle spéciale de l'objet « {nom} »",
   "imprimer.nonTraduit.titre": "Traduction incomplète",
   "imprimer.nonTraduit.texte": "Les passages suivants n'ont pas de traduction connue et ont été conservés en anglais dans le document :",
   "imprimer.generer": "Générer le PDF + le fichier de personnalisation",

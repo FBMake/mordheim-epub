@@ -2,8 +2,9 @@
  * parser.js
  * ---------
  * Transforme un export JSON BattleScribe (roster Mordheim) en un modèle
- * normalisé, entièrement en français, prêt à être injecté dans les
- * gabarits EPUB (voir epub-builder.js).
+ * normalisé, dans la langue de l'interface (français, ou anglais : les
+ * textes anglais d'origine du roster, sinon ceux de donnees-langue.js),
+ * prêt à être injecté dans les gabarits EPUB (voir epub-builder.js).
  *
  * Ce fichier NE MODIFIE JAMAIS le JSON d'origine : il le lit et construit
  * un nouvel objet. Le fichier importé par l'utilisateur reste intact et
@@ -18,6 +19,8 @@ import {
   VALUE_TRANSLATIONS,
   normalizeStatBump,
 } from "./translations.js";
+import { getLang, t } from "./i18n.js";
+import { nomAnglais, regleAnglaise } from "./donnees-langue.js";
 
 // Liste des passages qui n'ont pas pu être traduits automatiquement.
 // Remplie pendant le parsing, exposée dans le modèle final pour être
@@ -34,7 +37,7 @@ function markUntranslated(report, label) {
 // 1) Construction du dictionnaire canonique des règles/compétences
 //    (une entrée par "name", en français, valable pour tout le document)
 // ---------------------------------------------------------------------
-function buildCanonicalRuleDictionary(rosterRoot, report) {
+function buildCanonicalRuleDictionary(rosterRoot, report, en) {
   const byName = new Map(); // name -> [{description}]
 
   function walk(obj) {
@@ -58,6 +61,10 @@ function buildCanonicalRuleDictionary(rosterRoot, report) {
 
   const dict = new Map(); // name -> { name(fr), description(fr) }
   for (const [name, descriptions] of byName.entries()) {
+    if (en) {
+      dict.set(name, englishRule(name, descriptions, report));
+      continue;
+    }
     const frVersion = descriptions.find((d) => isFrenchText(d));
     if (frVersion) {
       dict.set(name, { name, description: frVersion });
@@ -70,22 +77,39 @@ function buildCanonicalRuleDictionary(rosterRoot, report) {
     // Aucune traduction connue : on garde l'anglais et on le signale.
     dict.set(name, { name, description: descriptions[0] || "" });
     // Une règle sans texte (saisie à la main dans une bande créée) n'a rien à traduire.
-    if (descriptions.some(Boolean)) markUntranslated(report, `Règle « ${name} »`);
+    if (descriptions.some(Boolean)) markUntranslated(report, t("nonTraduit.regle", { nom: name }));
   }
   return dict;
+}
+
+/**
+ * Version anglaise d'une règle : le texte anglais du roster s'il existe
+ * (export BattleScribe d'origine), sinon le résumé anglais des données
+ * (bande créée dans l'appli, dont les règles sont écrites en français).
+ */
+function englishRule(name, descriptions, report) {
+  const known = regleAnglaise(name);
+  const description =
+    descriptions.find((d) => d && !isFrenchText(d)) || known?.resume || descriptions.find(Boolean) || "";
+  if (isFrenchText(description)) markUntranslated(report, t("nonTraduit.regle", { nom: name }));
+  return { name: known?.nom || name, description };
 }
 
 function lookupRule(dict, name) {
   return dict.get(name) || { name, description: "" };
 }
 
+// Langue du modèle en cours de construction (fixée par parseRoster).
+let english = false;
+
 function translateName(name) {
   if (!name) return name;
+  if (english) return nomAnglais(name);
   return NAME_TRANSLATIONS[name] || name;
 }
 
 function translateValue(v) {
-  if (!v) return v;
+  if (!v || english) return v;
   return VALUE_TRANSLATIONS[v] || v;
 }
 
@@ -134,12 +158,11 @@ function extractEquipmentItem(sel, report, reglesArmesOut) {
         // La règle d'arme part désormais dans le chapitre "Règles des
         // armes" en fin d'ouvrage, plus dans la fiche personnage.
         const known =
-          WEAPON_SPECIAL_TRANSLATIONS[sel.name] ||
-          WEAPON_SPECIAL_TRANSLATIONS[baseName];
+          !english && (WEAPON_SPECIAL_TRANSLATIONS[sel.name] || WEAPON_SPECIAL_TRANSLATIONS[baseName]);
         if (known) {
           text = known;
-        } else if (text && !isFrenchText(text)) {
-          markUntranslated(report, `Règle spéciale de l'objet « ${sel.name} »`);
+        } else if (text && isFrenchText(text) === english) {
+          markUntranslated(report, t("nonTraduit.special", { nom: sel.name }));
         }
         if (text) {
           reglesArmesOut.push({ name: translateName(sel.name), description: text });
@@ -271,7 +294,8 @@ function extractCharacterCard(sel, ruleDict, report) {
 // ---------------------------------------------------------------------
 // 3) Point d'entrée principal
 // ---------------------------------------------------------------------
-export function parseRoster(json) {
+export function parseRoster(json, { lang = getLang() } = {}) {
+  english = lang === "en";
   const report = makeReport();
   if (!json || !json.roster) {
     throw new Error(
@@ -284,14 +308,14 @@ export function parseRoster(json) {
     throw new Error("Aucune force trouvée dans ce roster.");
   }
 
-  const ruleDict = buildCanonicalRuleDictionary(roster, report);
+  const ruleDict = buildCanonicalRuleDictionary(roster, report, english);
 
   const model = {
     meta: {
       nom: roster.name || "Bande sans nom",
       gc: findCost(roster.costs, "points"),
       warbandRating: findCost(roster.costs, "wb-rating"),
-      catalogue: (force.catalogueName || "").trim(),
+      catalogue: translateName((force.catalogueName || "").trim()),
     },
     bande: {
       magotOr: 0,

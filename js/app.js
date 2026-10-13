@@ -41,6 +41,7 @@ import {
 } from "./warband-builder.js";
 import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
 import { flagSvg } from "./flags.js";
+import { loc, locBande, locCompetence, locGuerrier, locNomRegle, locRegle } from "./donnees-langue.js";
 import { competencesAccessibles, maximumsGuerrier } from "./data/competences.js";
 import { RESULTATS, appliquerCombat, bilanFigurine, splitItems } from "./combats.js";
 import { MORT, blessuresPour, getBlessure, libelleBlessure, malusTotal, nomBlessure, texteMalus } from "./blessures.js";
@@ -153,8 +154,12 @@ document.getElementById("unsaved-go").addEventListener("click", () => {
 function fillDatalist(id, values) {
   document.getElementById(id).innerHTML = values.map((v) => `<option value="${escapeHtml(v)}"></option>`).join("");
 }
-fillDatalist("factions-list", [...BANDES.map((b) => b.nom), ...FACTIONS]);
-fillDatalist("rules-list", knownRuleNames());
+/** Saisies automatiques qui dépendent de la langue (noms des bandes et des règles). */
+function fillLangDatalists() {
+  fillDatalist("factions-list", [...BANDES.map(locBande), ...FACTIONS]);
+  fillDatalist("rules-list", knownRuleNames());
+}
+fillLangDatalists();
 fillDatalist("equipment-list", EQUIPEMENT_COURANT);
 
 // ---------------------------------------------------------------------
@@ -908,7 +913,7 @@ const option = (value, label) => `<option value="${escapeHtml(value)}">${escapeH
 function renderFactionOptions() {
   const keep = newFaction.value;
   newFaction.innerHTML =
-    `<optgroup label="${escapeHtml(t("nouvelle.groupeDonnees"))}">${BANDES.map((b) => option(BANDE_PREFIX + b.id, b.nom)).join("")}</optgroup>` +
+    `<optgroup label="${escapeHtml(t("nouvelle.groupeDonnees"))}">${BANDES.map((b) => option(BANDE_PREFIX + b.id, locBande(b))).join("")}</optgroup>` +
     `<optgroup label="${escapeHtml(t("nouvelle.groupeManuel"))}">${FACTIONS.map((f) => option(f, f)).join("")}${option(FACTION_AUTRE, t("nouvelle.autre"))}</optgroup>`;
   if (keep) newFaction.value = keep;
 }
@@ -991,7 +996,7 @@ function applyCreationChange() {
  * Petite liste éditable de mots (équipement, compétences, règles) :
  * pastilles supprimables + champ avec saisie automatique.
  */
-function chipEditor(container, list, { datalist, placeholder, onChange }) {
+function chipEditor(container, list, { datalist, placeholder, onChange, label = (item) => item }) {
   const render = () => {
     container.innerHTML = "";
     const chips = document.createElement("div");
@@ -999,11 +1004,11 @@ function chipEditor(container, list, { datalist, placeholder, onChange }) {
     list.forEach((item, i) => {
       const chip = document.createElement("span");
       chip.className = "chip";
-      chip.textContent = item;
+      chip.textContent = label(item);
       const del = document.createElement("button");
       del.type = "button";
       del.className = "chip-del";
-      del.setAttribute("aria-label", t("chip.retirer", { item }));
+      del.setAttribute("aria-label", t("chip.retirer", { item: label(item) }));
       del.textContent = "×";
       del.addEventListener("click", () => {
         list.splice(i, 1);
@@ -1055,13 +1060,13 @@ function unitCard(fig) {
   const div = document.createElement("div");
   div.className = "unit-card";
   const custom = customisations[fig.id]?.nom;
-  const titre = escapeHtml(fig.type || t(fig.categorie === "heros" ? "categorie.heros" : "categorie.hdm"));
+  const titre = escapeHtml(loc(fig.type) || t(fig.categorie === "heros" ? "categorie.heros" : "categorie.hdm"));
   const details = [
-    fig.equipement.length ? escapeHtml(t("unite.equipement", { liste: fig.equipement.join(", ") })) : "",
-    fig.competences.length ? escapeHtml(t("unite.competences", { liste: fig.competences.join(", ") })) : "",
-    fig.regles.length ? escapeHtml(t("unite.regles", { liste: fig.regles.join(", ") })) : "",
+    fig.equipement.length ? escapeHtml(t("unite.equipement", { liste: fig.equipement.map(loc).join(", ") })) : "",
+    fig.competences.length ? escapeHtml(t("unite.competences", { liste: fig.competences.map(locNomRegle).join(", ") })) : "",
+    fig.regles.length ? escapeHtml(t("unite.regles", { liste: fig.regles.map(locNomRegle).join(", ") })) : "",
     getGuerrier(fig.modele)?.competences.length
-      ? `<span class="muted">${escapeHtml(t("unite.acces", { liste: getGuerrier(fig.modele).competences.join(", ") }))}</span>`
+      ? `<span class="muted">${escapeHtml(t("unite.acces", { liste: getGuerrier(fig.modele).competences.map(loc).join(", ") }))}</span>`
       : "",
   ].filter(Boolean);
   div.innerHTML = `
@@ -1089,7 +1094,7 @@ function unitCard(fig) {
     applyCreationChange();
   });
   addBtn(t("unite.retirer"), () => {
-    if (!confirm(t("unite.confirmRetirer", { nom: custom || fig.type || t("unite.cetteFigurine") }))) return;
+    if (!confirm(t("unite.confirmRetirer", { nom: custom || loc(fig.type) || t("unite.cetteFigurine") }))) return;
     currentCreation.figurines = currentCreation.figurines.filter((f) => f !== fig);
     delete customisations[fig.id];
     delete partie.figurines[fig.id];
@@ -1101,7 +1106,7 @@ function unitCard(fig) {
 function renderCreation() {
   const c = currentCreation;
   if (document.activeElement !== creaNom) creaNom.value = c.nom;
-  if (document.activeElement !== creaFaction) creaFaction.value = c.faction;
+  if (document.activeElement !== creaFaction) creaFaction.value = loc(c.faction);
   if (document.activeElement !== creaTresor) creaTresor.value = c.tresorDepart;
 
   const tot = creationTotals(c);
@@ -1124,6 +1129,7 @@ function renderCreation() {
     datalist: "rules-list",
     placeholder: t("compo.regleBandePlaceholder"),
     onChange: applyCreationChange,
+    label: locNomRegle,
   });
 }
 
@@ -1154,7 +1160,10 @@ const recruitDialog = document.getElementById("recruit-dialog");
 let recruitCategorie = "heros";
 
 function reglesText(regles) {
-  return regles.map((r) => `<abbr title="${escapeHtml(r.resume)}">${escapeHtml(r.nom)}</abbr>`).join(", ");
+  return regles
+    .map(locRegle)
+    .map((r) => `<abbr title="${escapeHtml(r.resume)}">${escapeHtml(r.nom)}</abbr>`)
+    .join(", ");
 }
 
 function openRecruitDialog(categorie) {
@@ -1171,7 +1180,7 @@ function openRecruitDialog(categorie) {
     div.className = `unit-card${complet ? " complet" : ""}`;
     div.innerHTML = `
       <div class="unit-head">
-        <span class="unit-name">${escapeHtml(g.nom)}</span>
+        <span class="unit-name">${escapeHtml(locGuerrier(g))}</span>
         <span class="unit-cost">${g.cout} ${t("monnaie")}${g.xp ? ` · ${g.xp} xp` : ""} · ${n}/${g.max ?? "∞"}</span>
       </div>
       <div class="stat-line">${statLine(g.profil)}</div>
@@ -1260,12 +1269,12 @@ function renderArsenal(guerrier) {
   for (const cat of guerrier.equipement) {
     const row = document.createElement("div");
     row.className = "arsenal-cat";
-    row.innerHTML = `<p class="arsenal-titre">${escapeHtml(cat.categorie)}</p>`;
+    row.innerHTML = `<p class="arsenal-titre">${escapeHtml(loc(cat.categorie))}</p>`;
     for (const o of cat.objets) {
       const b = document.createElement("button");
       b.type = "button";
       b.className = "chip chip-btn";
-      b.textContent = `${o.nom} · ${o.cout ?? 0} ${t("monnaie")}`;
+      b.textContent = `${loc(o.nom)} · ${o.cout ?? 0} ${t("monnaie")}`;
       b.addEventListener("click", () => {
         figDraft.equipement.push(o.nom);
         renderFigEquipement();
@@ -1282,6 +1291,7 @@ function renderFigEquipement() {
     datalist: "equipment-list",
     placeholder: t("fig.equipement.exemple"),
     onChange: syncCout,
+    label: loc,
   });
 }
 
@@ -1290,6 +1300,7 @@ function renderFigCompetences() {
     datalist: "rules-list",
     placeholder: t("fig.competences.exemple"),
     onChange: renderCompetencesChoix,
+    label: locNomRegle,
   });
   renderCompetencesChoix();
 }
@@ -1309,15 +1320,16 @@ function renderCompetencesChoix() {
   for (const l of listes) {
     const row = document.createElement("div");
     row.className = "arsenal-cat";
-    row.innerHTML = `<p class="arsenal-titre">${escapeHtml(l.liste)}</p>`;
+    row.innerHTML = `<p class="arsenal-titre">${escapeHtml(loc(l.liste))}</p>`;
     for (const c of l.competences) {
+      const affiche = locCompetence(c);
       const b = document.createElement("button");
       b.type = "button";
       b.className = "chip chip-btn";
-      b.textContent = c.nom;
+      b.textContent = affiche.nom;
       b.disabled = c.acquise || !c.permise;
       const etat = c.acquise ? t("fig.competenceAcquise") : !c.permise ? t("fig.competenceReservee") : "";
-      b.title = [etat, c.resume].filter(Boolean).join(" · ");
+      b.title = [etat, affiche.resume].filter(Boolean).join(" · ");
       b.addEventListener("click", () => {
         figDraft.competences.push(c.nom);
         renderFigCompetences();
@@ -1336,7 +1348,8 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   document.getElementById("fig-title").textContent = fig
     ? t(isHero ? "fig.modifierHeros" : "fig.modifierHdm")
     : t(isHero ? "fig.recruterHeros" : "fig.recruterHdm");
-  figType.value = figDraft.type;
+  // Le type est enregistré en français ; il s'affiche dans la langue de l'interface.
+  figType.value = loc(figDraft.type);
   figCout.value = figDraft.coutGc;
   figCout.dataset.manuel = "";
   figXp.value = figDraft.xp;
@@ -1347,7 +1360,7 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   document.getElementById("fig-acces").textContent = !isHero
     ? t("fig.competencesHdm")
     : guerrier?.competences.length
-      ? t("fig.acces", { liste: guerrier.competences.join(", ") })
+      ? t("fig.acces", { liste: guerrier.competences.map(loc).join(", ") })
       : "";
   renderFigCompetences();
   chipEditor(document.getElementById("fig-regles"), figDraft.regles, {
@@ -1355,6 +1368,7 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
     placeholder: t("fig.regles.exemple"),
     // « Chef » ou « Sorcier » ouvrent certaines compétences.
     onChange: renderCompetencesChoix,
+    label: locNomRegle,
   });
   figDialog.showModal();
   figType.focus();
@@ -1373,7 +1387,7 @@ figForm.addEventListener("submit", (e) => {
   }
   // Le coût suit l'équipement ajouté, sauf si le joueur l'a modifié après coup.
   syncCout();
-  figDraft.type = figType.value.trim();
+  if (figType.value.trim() !== loc(figDraft.type)) figDraft.type = figType.value.trim();
   figDraft.coutGc = Math.max(0, Number(figCout.value) || 0);
   figDraft.xp = Math.max(0, Number(figXp.value) || 0);
   figStats.querySelectorAll("input").forEach((inp) => {
@@ -1393,28 +1407,36 @@ document.getElementById("fig-cancel").addEventListener("click", () => figDialog.
 // Règles des bandes (consultation des données)
 // ---------------------------------------------------------------------
 const reglesSelect = document.getElementById("regles-bande-select");
-reglesSelect.innerHTML = BANDES.map((b) => option(b.id, b.nom)).join("");
+function renderReglesOptions() {
+  const keep = reglesSelect.value;
+  reglesSelect.innerHTML = BANDES.map((b) => option(b.id, locBande(b))).join("");
+  if (keep) reglesSelect.value = keep;
+}
+renderReglesOptions();
 
 function renderReglesBande() {
   if (currentCreation?.bandeId && !reglesSelect.dataset.touched) reglesSelect.value = currentCreation.bandeId;
   const b = getBande(reglesSelect.value) || BANDES[0];
-  const regle = (r) => `<li><strong>${escapeHtml(r.nom)}</strong>${r.resume ? ` : ${escapeHtml(r.resume)}` : ""}</li>`;
+  const regle = (r) => {
+    const { nom, resume } = locRegle(r);
+    return `<li><strong>${escapeHtml(nom)}</strong>${resume ? ` : ${escapeHtml(resume)}` : ""}</li>`;
+  };
   const guerrier = (g) => `
     <div class="unit-card">
       <div class="unit-head">
-        <span class="unit-name">${escapeHtml(g.nom)}</span>
+        <span class="unit-name">${escapeHtml(locGuerrier(g))}</span>
         <span class="unit-cost">${g.cout} ${t("monnaie")}${g.xp ? ` · ${g.xp} xp` : ""} · ${t("regles.effectif", { min: g.min || 0, max: g.max ?? "∞" })}</span>
       </div>
       <div class="stat-line">${statLine(g.profil)}</div>
       ${g.regles.length ? `<p class="unit-detail">${t("unite.regles", { liste: reglesText(g.regles) })}</p>` : ""}
-      ${g.competences.length ? `<p class="unit-detail">${escapeHtml(t("unite.acces", { liste: g.competences.join(", ") }))}</p>` : ""}
+      ${g.competences.length ? `<p class="unit-detail">${escapeHtml(t("unite.acces", { liste: g.competences.map(loc).join(", ") }))}</p>` : ""}
       ${
         g.equipement.length
           ? `<details class="arsenal"><summary>${t("regles.listeEquipement")}</summary>${g.equipement
               .map(
                 (c) =>
-                  `<p class="unit-detail"><em>${escapeHtml(c.categorie)}</em> : ${c.objets
-                    .map((o) => `${escapeHtml(o.nom)} (${o.cout ?? 0})`)
+                  `<p class="unit-detail"><em>${escapeHtml(loc(c.categorie))}</em> : ${c.objets
+                    .map((o) => `${escapeHtml(loc(o.nom))} (${o.cout ?? 0})`)
                     .join(", ")}</p>`
               )
               .join("")}</details>`
@@ -1716,8 +1738,13 @@ function changeLang(code) {
   setLang(code);
   applyStaticTexts();
   renderFactionOptions();
+  renderReglesOptions();
+  fillLangDatalists();
   renderFigStatLabels();
   if (currentModel) {
+    // Noms et règles de la bande dans la nouvelle langue.
+    currentModel = parseRoster(currentRoster);
+    applyPartie(currentModel, partie);
     renderPreview(currentModel);
     renderPersoCards(currentModel);
     renderCombats();

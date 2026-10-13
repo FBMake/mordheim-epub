@@ -26,6 +26,7 @@ import { RULE_TRANSLATIONS } from "./translations.js";
 import { BANDES } from "./data/bandes.js";
 import { competencesHorsListe, depassementsMaximum } from "./data/competences.js";
 import { t } from "./i18n.js";
+import { enAnglais, loc, locBande, locGuerrier, nomsReglesAnglais, regleAnglaise } from "./donnees-langue.js";
 
 export const CREATION_VERSION = 1;
 export const GENERATED_BY = "mordheim-epub";
@@ -215,8 +216,9 @@ export function normalizeCreation(c) {
 // Compétences et règles connues (saisie automatique)
 // ---------------------------------------------------------------------
 
-/** Noms français des règles/compétences du dictionnaire, triés. */
+/** Noms des règles/compétences du dictionnaire dans la langue de l'interface, triés. */
 export function knownRuleNames() {
+  if (enAnglais()) return nomsReglesAnglais();
   const names = new Set();
   for (const val of Object.values(RULE_TRANSLATIONS)) {
     if (val?.name) names.add(val.name);
@@ -234,6 +236,9 @@ let frToKey = null;
 export function resolveRuleName(saisie) {
   const name = String(saisie || "").trim();
   if (!name || RULE_TRANSLATIONS[name]) return name;
+  // Nom anglais d'une règle de bande (saisie en anglais) → son nom français dans les données.
+  const fr = nomFrancaisRegle(name);
+  if (fr) return fr;
   if (!frToKey) {
     frToKey = new Map();
     for (const [key, val] of Object.entries(RULE_TRANSLATIONS)) {
@@ -242,6 +247,20 @@ export function resolveRuleName(saisie) {
     }
   }
   return frToKey.get(name.toLowerCase()) || name;
+}
+
+let frParCle = null;
+function nomFrancaisRegle(name) {
+  if (!frParCle) {
+    frParCle = new Map();
+    for (const b of BANDES) {
+      for (const r of [...b.regles, ...b.guerriers.flatMap((g) => g.regles)]) {
+        const en = regleAnglaise(r.nom);
+        if (en && !frParCle.has(en.nom.toLowerCase())) frParCle.set(en.nom.toLowerCase(), r.nom);
+      }
+    }
+  }
+  return frParCle.get(name.toLowerCase()) || null;
 }
 
 // ---------------------------------------------------------------------
@@ -275,20 +294,20 @@ export function creationWarnings(creation) {
   const bande = getBande(creation?.bandeId);
   if (!bande) return out;
   if (tot.effectif > bande.effectifMax) {
-    out.push(t("alerte.effectif", { n: tot.effectif, bande: bande.nom, max: bande.effectifMax }));
+    out.push(t("alerte.effectif", { n: tot.effectif, bande: locBande(bande), max: bande.effectifMax }));
   }
   const figs = creation.figurines || [];
   for (const g of bande.guerriers) {
     const n = figs.filter((f) => f.modele === g.id).length;
-    if (g.max !== null && n > g.max) out.push(t("alerte.max", { n, nom: g.nom, max: g.max }));
-    if (g.min && n < g.min && figs.length) out.push(t("alerte.min", { nom: g.nom, min: g.min }));
+    if (g.max !== null && n > g.max) out.push(t("alerte.max", { n, nom: locGuerrier(g), max: g.max }));
+    if (g.min && n < g.min && figs.length) out.push(t("alerte.min", { nom: locGuerrier(g), min: g.min }));
   }
   for (const f of figs) {
     const g = getGuerrier(f.modele);
     if (!g) continue;
     const horsListe = f.equipement.filter((nom) => prixEquipement(g, nom) === null);
     if (horsListe.length) {
-      out.push(t("alerte.horsListe", { nom: f.type || g.nom, liste: horsListe.join(", ") }));
+      out.push(t("alerte.horsListe", { nom: loc(f.type) || locGuerrier(g), liste: horsListe.map(loc).join(", ") }));
     }
     const competences = competencesHorsListe(f, g);
     if (competences.length) {
@@ -311,11 +330,10 @@ function cost(typeId, name, value) {
 
 function ruleEntries(names, prefix) {
   // Règle issue des données de bande : on garde son nom français et son résumé.
-  return cleanList(names).map((n, i) => ({
-    id: `${prefix}-r${i}`,
-    name: resumes.has(n) ? n : resolveRuleName(n),
-    description: resumes.get(n) || "",
-  }));
+  return cleanList(names).map((n, i) => {
+    const name = resumes.has(n) ? n : resolveRuleName(n);
+    return { id: `${prefix}-r${i}`, name, description: resumes.get(name) || "" };
+  });
 }
 
 function figurineSelection(fig) {

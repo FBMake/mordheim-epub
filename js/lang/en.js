@@ -260,8 +260,10 @@ export default {
 
   // Print
   "imprimer.aide": "One sheet per page on your illustrated templates: warband, heroes, henchmen and rules. A customisation file is downloaded with the PDF (the New Recruit JSON is never modified).",
+  "nonTraduit.regle": "Rule “{nom}”",
+  "nonTraduit.special": "Special rule of item “{nom}”",
   "imprimer.nonTraduit.titre": "Incomplete translation",
-  "imprimer.nonTraduit.texte": "The following passages have no known translation and were kept in English in the document:",
+  "imprimer.nonTraduit.texte": "The following passages have no known English version and were kept as written in the file:",
   "imprimer.generer": "Generate the PDF + the customisation file",
   "imprimer.enCours": "Generating…",
   "imprimer.ok": "PDF and customisation file downloaded ✓ — keep the latter for next time.",
