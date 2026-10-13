@@ -73,7 +73,7 @@ js/data/bandes.js        Données des bandes officielles (générées, voir tool
 js/pdf-builder.js        Modèle normalisé → fichier .pdf (via pdf-lib, gabarits image)
 js/app.js                Câblage de l'interface
 js/vendor/pdf-lib.esm.min.js   pdf-lib embarqué (pas d'appel à un CDN externe)
-data/templates/          Tes 4 images de gabarit (+ regles-vierge.png, nettoyée)
+data/templates/<langue>/ Gabarits à imprimer, un dossier par langue (fr, en, es, de)
 tools/coord-picker.html  Outil pour pointer/mesurer les coordonnées d'un gabarit
 tools/coords/*.json      Coordonnées actuelles de chaque champ, par gabarit
 sample-data/             Exemple de roster pour les tests
@@ -82,7 +82,7 @@ test/                    Scripts Node de test (parseur, personnalisation)
 
 ## Remplissage des gabarits : comment ça marche
 
-Chaque gabarit (`data/templates/hero.png`, `homme_de_main.png`,
+Chaque gabarit (`data/templates/fr/hero.png`, `homme_de_main.png`,
 `bande.png`) est une image fixe : `pdf-builder.js` la pose en fond de
 page PDF, puis écrit le texte par-dessus aux coordonnées définies dans
 le fichier JSON correspondant (`tools/coords/hero-coords.json`, etc.).

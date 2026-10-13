@@ -22,6 +22,7 @@
  */
 
 import { normalizeCreation } from "./warband-builder.js";
+import { STATUTS, cleanCombat } from "./combats.js";
 
 export const SLOT_COUNT = 4;
 export const EXPORT_FORMAT = "mordheim-epub-bandes";
@@ -31,14 +32,14 @@ const DB_NAME = "mordheim-bandes";
 const DB_VERSION = 1;
 const STORE = "emplacements";
 
-export const STATUTS = ["", "Blessé", "Hors de combat", "Mort"];
+export { STATUTS };
 
 // ---------------------------------------------------------------------
 // Fonctions pures
 // ---------------------------------------------------------------------
 
 export function emptyPartie() {
-  return { magotOr: null, magotPierres: null, notes: "", figurines: {} };
+  return { magotOr: null, magotPierres: null, notes: "", figurines: {}, combats: [] };
 }
 
 function toNumberOrNull(v) {
@@ -56,6 +57,7 @@ function cleanPartie(p = {}) {
   out.magotOr = toNumberOrNull(p.magotOr);
   out.magotPierres = toNumberOrNull(p.magotPierres);
   out.notes = p.notes || "";
+  out.combats = (Array.isArray(p.combats) ? p.combats : []).map(cleanCombat);
   for (const [id, f] of Object.entries(p.figurines || {})) {
     out.figurines[id] = {
       xp: toNumberOrNull(f?.xp),
@@ -135,6 +137,8 @@ export function mergeIntoSlot(previous, model, customisations = {}) {
 
   const partie = emptyPartie();
   partie.notes = previous?.partie?.notes || "";
+  // L'historique des combats appartient à la bande, pas à l'export : on le garde.
+  partie.combats = (previous?.partie?.combats || []).map(cleanCombat);
   for (const [id, f] of Object.entries(previous?.partie?.figurines || {})) {
     if (ids.has(id) && (f.statut || f.notes)) {
       partie.figurines[id] = { xp: null, statut: f.statut || "", notes: f.notes || "" };

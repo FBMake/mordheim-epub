@@ -24,6 +24,7 @@
 
 import { RULE_TRANSLATIONS } from "./translations.js";
 import { BANDES } from "./data/bandes.js";
+import { t } from "./i18n.js";
 
 export const CREATION_VERSION = 1;
 export const GENERATED_BY = "mordheim-epub";
@@ -264,29 +265,29 @@ export function creationTotals(creation) {
 }
 
 export function creationWarnings(creation) {
-  const t = creationTotals(creation);
+  const tot = creationTotals(creation);
   const out = [];
-  if (t.reste < 0) out.push(`Budget dépassé de ${-t.reste} co (trésor de départ : ${t.tresor} co).`);
-  if (t.heros > MAX_HEROS) out.push(`${t.heros} héros : une bande en compte ${MAX_HEROS} au maximum.`);
-  if (t.effectif && !t.heros) out.push("Aucun héros : il faut au moins un chef.");
+  if (tot.reste < 0) out.push(t("alerte.budget", { depassement: -tot.reste, tresor: tot.tresor }));
+  if (tot.heros > MAX_HEROS) out.push(t("alerte.tropHeros", { n: tot.heros, max: MAX_HEROS }));
+  if (tot.effectif && !tot.heros) out.push(t("alerte.sansChef"));
 
   const bande = getBande(creation?.bandeId);
   if (!bande) return out;
-  if (t.effectif > bande.effectifMax) {
-    out.push(`${t.effectif} figurines : les ${bande.nom} en comptent ${bande.effectifMax} au maximum.`);
+  if (tot.effectif > bande.effectifMax) {
+    out.push(t("alerte.effectif", { n: tot.effectif, bande: bande.nom, max: bande.effectifMax }));
   }
   const figs = creation.figurines || [];
   for (const g of bande.guerriers) {
     const n = figs.filter((f) => f.modele === g.id).length;
-    if (g.max !== null && n > g.max) out.push(`${n} × ${g.nom} : ${g.max} au maximum.`);
-    if (g.min && n < g.min && figs.length) out.push(`${g.nom} : il en faut au moins ${g.min}.`);
+    if (g.max !== null && n > g.max) out.push(t("alerte.max", { n, nom: g.nom, max: g.max }));
+    if (g.min && n < g.min && figs.length) out.push(t("alerte.min", { nom: g.nom, min: g.min }));
   }
   for (const f of figs) {
     const g = getGuerrier(f.modele);
     if (!g) continue;
     const horsListe = f.equipement.filter((nom) => prixEquipement(g, nom) === null);
     if (horsListe.length) {
-      out.push(`${f.type || g.nom} : ${horsListe.join(", ")} hors de sa liste d'équipement (objet trouvé ou acheté au comptoir ?).`);
+      out.push(t("alerte.horsListe", { nom: f.type || g.nom, liste: horsListe.join(", ") }));
     }
   }
   return out;
@@ -363,13 +364,13 @@ function figurineSelection(fig) {
 /** Modèle de création → JSON au format d'export BattleScribe. */
 export function buildRoster(creation) {
   const c = normalizeCreation(creation) || newCreation();
-  const t = creationTotals(c);
+  const tot = creationTotals(c);
   const selections = [
     {
       id: "magot",
       name: "Magot",
       type: "upgrade",
-      selections: [{ id: "magot-or", name: "Or", number: Math.max(0, t.reste), type: "upgrade" }],
+      selections: [{ id: "magot-or", name: "Or", number: Math.max(0, tot.reste), type: "upgrade" }],
     },
   ];
   if (c.reglesBande.length) {
@@ -393,8 +394,8 @@ export function buildRoster(creation) {
       name: c.nom,
       generatedBy: GENERATED_BY,
       gameSystemName: "Mordheim",
-      costs: [cost("points", " gc", t.cout), cost("wb-rating", " Warband Rating", t.valeurDeBande)],
-      costLimits: [cost("points", " gc", t.tresor)],
+      costs: [cost("points", " gc", tot.cout), cost("wb-rating", " Warband Rating", tot.valeurDeBande)],
+      costLimits: [cost("points", " gc", tot.tresor)],
       forces: [
         {
           id: "force",
