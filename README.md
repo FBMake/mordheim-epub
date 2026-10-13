@@ -304,6 +304,7 @@ node test/test-parser.mjs           # affiche le modèle normalisé en JSON
 node test/test-personalization.mjs  # cycle personnalisation/orpheline
 node test/test-warband-store.mjs    # emplacements, suivi de partie, sauvegarde
 node test/test-warband-builder.mjs  # création de bande de zéro
+node test/test-competences.mjs      # listes de compétences et maximums de race
 ```
 
 Le PDF lui-même doit être testé dans un navigateur (il dépend de
