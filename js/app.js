@@ -41,6 +41,7 @@ import {
 } from "./warband-builder.js";
 import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
 import { flagSvg } from "./flags.js";
+import { RESULTATS, appliquerCombat, bilanFigurine, splitItems } from "./combats.js";
 
 setLang(detectLang(), { remember: false });
 
@@ -213,6 +214,16 @@ function ensureCustomisation(id) {
   return customisations[id];
 }
 
+/** Résumé de l'historique des combats d'une figurine (vide si aucun). */
+function bilanHtml(id) {
+  const b = bilanFigurine(partie.combats || [], id);
+  if (!b.combats) return "";
+  const blessures = b.blessures.length
+    ? `<br />${escapeHtml(t("bilan.blessures", { liste: b.blessures.join(", ") }))}`
+    : "";
+  return `<p class="perso-bilan">${escapeHtml(t("bilan.texte", { n: b.combats, xp: b.xp }))}${blessures}</p>`;
+}
+
 function persoCardTemplate(card, categorie) {
   const custom = ensureCustomisation(card.id);
   const div = document.createElement("div");
@@ -261,6 +272,7 @@ function persoCardTemplate(card, categorie) {
           </select>
         </label>
       </div>
+      ${bilanHtml(card.id)}
       <label class="perso-label">
         ${t("perso.notes")}
         <input type="text" class="perso-nom-input partie-notes-input" placeholder="${escapeHtml(t("perso.notes.exemple"))}"
@@ -374,6 +386,7 @@ function loadRoster(json, saved = null) {
   renderPreview(currentModel);
   renderPartieInputs();
   renderPersoCards(currentModel);
+  renderCombats();
   renderOrphans();
 }
 
@@ -568,6 +581,173 @@ partieNotes.addEventListener("input", () => {
   partie.notes = partieNotes.value;
   scheduleSave();
 });
+
+// ---------------------------------------------------------------------
+// Historique des combats (voir combats.js)
+// ---------------------------------------------------------------------
+const combatDialog = document.getElementById("combat-dialog");
+const combatForm = document.getElementById("combat-form");
+const combatResultat = document.getElementById("combat-resultat");
+const combatEffets = document.getElementById("combat-effets");
+const combatsList = document.getElementById("combats-list");
+const INCHANGE = "__inchange__";
+
+function renderResultatOptions() {
+  combatResultat.innerHTML = ["", ...RESULTATS].map((r) => option(r, t(`resultat.${r}`))).join("");
+}
+
+const nomFigurine = (card) => customisations[card.id]?.nom || card.nom;
+
+function openCombatDialog() {
+  combatForm.reset();
+  renderResultatOptions();
+  document.getElementById("combat-date").value = new Date().toISOString().slice(0, 10);
+  const cards = [...currentModel.heros, ...currentModel.hommesDeMain];
+  combatEffets.innerHTML = cards
+    .map(
+      (card) => `
+    <fieldset class="combat-effet" data-id="${escapeHtml(card.id)}" data-nom="${escapeHtml(nomFigurine(card))}">
+      <legend>${escapeHtml(nomFigurine(card))}</legend>
+      <div class="partie-row">
+        <label class="perso-label">
+          ${t("effet.xp")}
+          <input type="number" class="perso-nom-input effet-xp" inputmode="numeric" min="0" placeholder="0" />
+        </label>
+        <label class="perso-label">
+          ${t("effet.etat")}
+          <select class="perso-nom-input effet-statut">
+            ${option(INCHANGE, t("effet.inchange"))}
+            ${STATUTS.map((st) => option(st, t(`statut.${st}`))).join("")}
+          </select>
+        </label>
+      </div>
+      <details class="effet-details">
+        <summary>${t("effet.details")}</summary>
+        <label class="perso-label">
+          ${t("effet.blessure")}
+          <input type="text" class="perso-nom-input effet-blessure" placeholder="${escapeHtml(t("effet.blessure.exemple"))}" />
+        </label>
+        <div class="partie-row">
+          <label class="perso-label">
+            ${t("effet.gagne")}
+            <input type="text" class="perso-nom-input effet-gagne" placeholder="${escapeHtml(t("effet.gagne.exemple"))}" />
+          </label>
+          <label class="perso-label">
+            ${t("effet.perdu")}
+            <input type="text" class="perso-nom-input effet-perdu" placeholder="${escapeHtml(t("effet.gagne.exemple"))}" />
+          </label>
+        </div>
+      </details>
+    </fieldset>`
+    )
+    .join("");
+  combatEffets.hidden = cards.length === 0;
+  combatDialog.showModal();
+}
+
+document.getElementById("combat-new").addEventListener("click", () => {
+  if (currentModel) openCombatDialog();
+});
+document.getElementById("combat-cancel").addEventListener("click", () => combatDialog.close());
+
+combatForm.addEventListener("submit", () => {
+  if (!currentModel) return;
+  const val = (id) => document.getElementById(id).value;
+  const effets = [...combatEffets.querySelectorAll(".combat-effet")].map((fs) => {
+    const statut = fs.querySelector(".effet-statut").value;
+    return {
+      id: fs.dataset.id,
+      nom: fs.dataset.nom,
+      xp: fs.querySelector(".effet-xp").value,
+      statut: statut === INCHANGE ? null : statut,
+      blessure: fs.querySelector(".effet-blessure").value,
+      gagne: splitItems(fs.querySelector(".effet-gagne").value),
+      perdu: splitItems(fs.querySelector(".effet-perdu").value),
+    };
+  });
+  const cards = [...currentModel.heros, ...currentModel.hommesDeMain];
+  partie.combats ||= [];
+  appliquerCombat(
+    {
+      id: `combat-${Date.now().toString(36)}`,
+      date: val("combat-date"),
+      adversaire: val("combat-adversaire"),
+      scenario: val("combat-scenario"),
+      resultat: val("combat-resultat"),
+      gainOr: val("combat-gain-or"),
+      gainPierres: val("combat-gain-pierres"),
+      notes: val("combat-notes"),
+      effets,
+    },
+    {
+      partie,
+      creation: currentCreation,
+      xpActuel: Object.fromEntries(cards.map((c) => [c.id, c.xp])),
+      magotOr: currentModel.bande.magotOr,
+      magotPierres: currentModel.bande.magotPierres,
+    }
+  );
+  if (currentCreation) {
+    applyCreationChange();
+  } else {
+    refreshTotals(currentModel);
+    renderPersoCards(currentModel);
+    scheduleSave();
+  }
+  renderPartieInputs();
+  renderCombats();
+});
+
+function formatCombatDate(iso) {
+  const d = new Date(`${iso}T12:00:00`);
+  return Number.isNaN(d.getTime()) ? iso : d.toLocaleDateString(getLocale(), { dateStyle: "long" });
+}
+
+function effetLigne(e) {
+  const parts = [];
+  if (e.xp) parts.push(t("combats.xpCourt", { n: e.xp }));
+  if (e.statut !== null) parts.push(t(`statut.${e.statut}`));
+  if (e.blessure) parts.push(e.blessure);
+  parts.push(...e.gagne.map((o) => `+${o}`), ...e.perdu.map((o) => `−${o}`));
+  return `<li><strong>${escapeHtml(e.nom)}</strong> : ${escapeHtml(parts.join(", "))}</li>`;
+}
+
+function renderCombats() {
+  const combats = partie.combats || [];
+  document.getElementById("combats-vide").hidden = combats.length > 0;
+  combatsList.innerHTML = "";
+  for (const c of combats) {
+    const gains = [];
+    if (c.gainOr) gains.push(t("combats.gainOrCourt", { n: c.gainOr }));
+    if (c.gainPierres) gains.push(t("combats.gainPierresCourt", { n: c.gainPierres }));
+    const div = document.createElement("div");
+    div.className = `unit-card combat-card${c.resultat ? ` combat-${c.resultat}` : ""}`;
+    div.innerHTML = `
+      <div class="combat-head">
+        <strong>${escapeHtml(formatCombatDate(c.date))}</strong>
+        ${c.adversaire ? `<span>${escapeHtml(t("combats.contre", { nom: c.adversaire }))}</span>` : ""}
+        ${c.resultat ? `<span class="combat-resultat">${escapeHtml(t(`resultat.${c.resultat}`))}</span>` : ""}
+      </div>
+      ${c.scenario ? `<p class="combat-ligne">${escapeHtml(t("combats.scenarioLigne", { nom: c.scenario }))}</p>` : ""}
+      ${gains.length ? `<p class="combat-ligne">${escapeHtml(t("combats.gains", { liste: gains.join(", ") }))}</p>` : ""}
+      ${
+        c.effets.length
+          ? `<ul class="combat-effets-liste">${c.effets.map(effetLigne).join("")}</ul>`
+          : `<p class="combat-ligne"><em>${escapeHtml(t("combats.aucunEffet"))}</em></p>`
+      }
+      ${c.notes ? `<p class="combat-ligne combat-notes">${escapeHtml(c.notes)}</p>` : ""}
+      <button type="button" class="btn-link combat-suppr">${escapeHtml(t("combats.supprimer"))}</button>
+    `;
+    div.querySelector(".combat-suppr").addEventListener("click", () => {
+      if (!confirm(t("combats.confirmSupprimer"))) return;
+      partie.combats = partie.combats.filter((x) => x !== c);
+      renderCombats();
+      renderPersoCards(currentModel);
+      scheduleSave();
+    });
+    combatsList.appendChild(div);
+  }
+}
 
 // ---------------------------------------------------------------------
 // Nouvelle bande (création de zéro, voir warband-builder.js)
@@ -1329,6 +1509,7 @@ function changeLang(code) {
   if (currentModel) {
     renderPreview(currentModel);
     renderPersoCards(currentModel);
+    renderCombats();
   }
   const view = [...document.querySelectorAll(".view")].find((v) => !v.hidden)?.id.replace("view-", "");
   showView(view || "accueil");

@@ -123,6 +123,7 @@
     <nav class="bande-menu" aria-label="Menu de la bande" data-i18n-aria-label="bande.menuAria" role="tablist">
       <button type="button" class="tab-btn" data-tab="composition" role="tab" data-i18n="onglet.composition">Composition</button>
       <button type="button" class="tab-btn" data-tab="partie" role="tab" data-i18n="onglet.partie">Suivi de partie</button>
+      <button type="button" class="tab-btn" data-tab="combats" role="tab" data-i18n="onglet.combats">Combats</button>
       <button type="button" class="tab-btn" data-tab="figurines" role="tab" data-i18n="onglet.figurines">Figurines</button>
       <button type="button" class="tab-btn" data-tab="imprimer" role="tab" data-i18n="onglet.imprimer">Imprimer</button>
     </nav>
@@ -211,6 +212,14 @@
       </label>
     </div>
 
+    <!-- Historique des combats (voir combats.js) -->
+    <div class="tab-panel" data-panel="combats" hidden>
+      <p class="hint-text" data-i18n="combats.aide">Notez chaque combat de la bande : l'expérience gagnée, les blessures et l'équipement gagné ou perdu sont reportés sur les combattants, les gains sur le magot.</p>
+      <button type="button" id="combat-new" class="btn-secondary combat-new" data-i18n="combats.nouveau">+ Noter un combat</button>
+      <p id="combats-vide" class="hint-text small left" data-i18n="combats.aucun">Aucun combat pour l'instant.</p>
+      <div id="combats-list" class="unit-list"></div>
+    </div>
+
     <!-- Figurines : personnalisation + suivi par figurine -->
     <div class="tab-panel" data-panel="figurines" hidden>
       <p class="hint-text" data-i18n="figurines.aide">Nom, bio et photo sont optionnels. Si la bande est enregistrée dans un emplacement, tout est sauvegardé automatiquement dans ce navigateur.</p>
@@ -246,7 +255,7 @@
 
   <footer class="footer-note">
     <p data-i18n="pied.confidentialite">Tout le traitement se fait dans votre navigateur : vos bandes ne sont jamais envoyées sur un serveur.</p>
-    <p>V0.10</p>
+    <p>V0.11</p>
   </footer>
 </div>
 
@@ -284,6 +293,53 @@
     <div class="dialog-actions">
       <button type="button" id="fig-cancel" class="btn-secondary" data-i18n="fig.annuler">Annuler</button>
       <button type="submit" id="fig-ok" class="btn-slot btn-ok" data-i18n="fig.valider">Valider</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Nouveau combat : déroulé et effets sur chaque combattant -->
+<dialog id="combat-dialog" class="fig-dialog">
+  <form id="combat-form" method="dialog" class="form-stack">
+    <h3 class="section-title small" data-i18n="combats.titreForm">Nouveau combat</h3>
+    <div class="partie-grid">
+      <label class="perso-label">
+        <span data-i18n="combats.date">Date</span>
+        <input type="date" id="combat-date" class="perso-nom-input" required />
+      </label>
+      <label class="perso-label">
+        <span data-i18n="combats.adversaire">Adversaire</span>
+        <input type="text" id="combat-adversaire" class="perso-nom-input" maxlength="80" data-i18n-placeholder="combats.adversaire.exemple" />
+      </label>
+    </div>
+    <div class="partie-grid">
+      <label class="perso-label">
+        <span data-i18n="combats.scenario">Scénario</span>
+        <input type="text" id="combat-scenario" class="perso-nom-input" maxlength="80" data-i18n-placeholder="combats.scenario.exemple" />
+      </label>
+      <label class="perso-label">
+        <span data-i18n="combats.resultat">Résultat</span>
+        <select id="combat-resultat" class="perso-nom-input"></select>
+      </label>
+    </div>
+    <div class="partie-grid">
+      <label class="perso-label">
+        <span data-i18n="combats.gainOr">Couronnes gagnées</span>
+        <input type="number" id="combat-gain-or" class="perso-nom-input" inputmode="numeric" />
+      </label>
+      <label class="perso-label">
+        <span data-i18n="combats.gainPierres">Pierres magiques gagnées</span>
+        <input type="number" id="combat-gain-pierres" class="perso-nom-input" inputmode="numeric" />
+      </label>
+    </div>
+    <p class="perso-label" data-i18n="combats.effets">Effets sur les combattants</p>
+    <div id="combat-effets" class="combat-effets"></div>
+    <label class="perso-label">
+      <span data-i18n="combats.notes">Notes</span>
+      <textarea id="combat-notes" class="perso-bio-input" rows="2" data-i18n-placeholder="combats.notes.exemple"></textarea>
+    </label>
+    <div class="dialog-actions">
+      <button type="button" id="combat-cancel" class="btn-secondary" data-i18n="fig.annuler">Annuler</button>
+      <button type="submit" class="btn-slot btn-ok" data-i18n="combats.enregistrer">Enregistrer</button>
     </div>
   </form>
 </dialog>

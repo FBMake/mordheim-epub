@@ -1,14 +1,15 @@
 {
   "name": "mordheim-pdf",
   "version": "1.0.0",
-  "description": "G\u00e9n\u00e8re un PDF (fiches de bande, h\u00e9ros, hommes de main, gabarits image) en fran\u00e7ais \u00e0 partir d'un export JSON BattleScribe.",
+  "description": "Génère un PDF (fiches de bande, héros, hommes de main, gabarits image) en français à partir d'un export JSON BattleScribe.",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test:parser": "node test/test-parser.mjs",
     "test:perso": "node test/test-personalization.mjs",
     "test:bandes": "node test/test-warband-store.mjs",
-    "test:creation": "node test/test-warband-builder.mjs"
+    "test:creation": "node test/test-warband-builder.mjs",
+    "test:combats": "node test/test-combats.mjs"
   },
   "keywords": [],
   "author": "",

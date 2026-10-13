@@ -535,7 +535,7 @@ select.perso-nom-input { width: 100%; }
 .bande-origine { margin: 0.3rem 0 0; font-size: 0.85rem; color: var(--ink-soft); font-style: italic; }
 .bande-menu {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   border-bottom: 3px double var(--brass);
   margin-bottom: 1.4rem;
 }
@@ -584,6 +584,46 @@ select.perso-nom-input { width: 100%; }
 .unit-detail { margin: 0.15rem 0; font-size: 0.88rem; }
 .add-btn { margin-bottom: 1.6rem; }
 
+/* Historique des combats */
+.combat-new { margin: 0.2rem 0 0.6rem; }
+.combat-card { border-left-width: 4px; }
+.combat-victoire { border-left-color: #4f6b2e; }
+.combat-defaite { border-left-color: var(--wax); }
+.combat-head { display: flex; flex-wrap: wrap; gap: 0.3rem 0.6rem; align-items: baseline; }
+.combat-resultat {
+  margin-left: auto;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+.combat-ligne { margin: 0.2rem 0; font-size: 0.88rem; }
+.combat-notes { font-style: italic; white-space: pre-line; }
+.combat-effets-liste { margin: 0.3rem 0; padding-left: 1.2rem; font-size: 0.88rem; }
+.combat-suppr {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 0.3rem;
+  font: inherit;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.combat-suppr:hover { color: var(--wax); }
+.combat-effets { display: flex; flex-direction: column; gap: 0.5rem; }
+.combat-effet {
+  border: 1px solid rgba(138,110,61,0.6);
+  padding: 0.3rem 0.6rem 0.5rem;
+  margin: 0;
+  min-width: 0;
+}
+.combat-effet legend { font-weight: 600; padding: 0 0.3rem; overflow-wrap: anywhere; }
+.effet-details summary { cursor: pointer; font-size: 0.85rem; color: var(--ink-soft); margin: 0.2rem 0; }
+.perso-bilan { margin: 0.1rem 0 0.4rem; font-size: 0.85rem; color: var(--ink-soft); font-style: italic; }
+
 /* Listes éditables (équipement, compétences, règles) */
 .chip-editor { margin-bottom: 0.4rem; }
 .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.4rem; }
@@ -628,8 +668,11 @@ select.perso-nom-input { width: 100%; }
 .btn-ok:hover { background: var(--wax-light); }
 
 @media (max-width: 640px) {
-  .bande-menu { grid-template-columns: repeat(2, 1fr); }
-  .bande-menu .tab-btn:nth-child(3) { border-left: 1px solid var(--brass); }
+  /* 5 onglets : 3 sur la première ligne, 2 sur la seconde. */
+  .bande-menu { grid-template-columns: repeat(6, 1fr); }
+  .bande-menu .tab-btn { grid-column: span 2; }
+  .bande-menu .tab-btn:nth-child(n+4) { grid-column: span 3; }
+  .bande-menu .tab-btn:nth-child(4) { border-left: 1px solid var(--brass); }
   .compo-settings { grid-template-columns: 1fr; }
   .stats-edit { grid-template-columns: repeat(5, 1fr); }
   .stat-cell { font-size: 0.72rem; }
