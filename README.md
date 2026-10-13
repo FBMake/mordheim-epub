@@ -276,6 +276,17 @@ utilisé. Rien n'est envoyé sur un serveur.
   de l'export). L'état et les notes apparaissent dans la case
   Compétences/Blessures de la fiche, les notes de bande dans la Réserve
   d'équipement.
+- **Blessures graves** : choisies dans la table des blessures (jet de
+  D66 indiqué), sur la fiche d'un héros ou à la saisie d'un combat. Les
+  blessures permanentes restent sur la figurine et leurs malus sont
+  appliqués au profil (ex. blessure à la jambe : M −1) ; les ponctuelles
+  (capturé, dépouillé…) restent dans l'historique des combats. Les
+  hommes de main ne peuvent que mourir. Table et effets dans
+  `js/blessures.js`.
+- **Cimetière** : une figurine morte (blessure « Mort » ou état « Mort »)
+  passe au cimetière, en bas de l'onglet Figurines. Elle n'a plus de
+  fiche dans le PDF et ne compte plus dans l'expérience de la bande ;
+  « Ramener parmi les vivants » annule.
 - **Exporter / Importer la sauvegarde** : un fichier
   `mordheim-bandes-AAAA-MM-JJ.json` regroupe les 4 emplacements. À faire
   régulièrement, car le navigateur peut effacer ses données (nettoyage
