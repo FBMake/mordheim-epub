@@ -24,6 +24,7 @@
 
 import { RULE_TRANSLATIONS } from "./translations.js";
 import { BANDES } from "./data/bandes.js";
+import { competencesHorsListe, depassementsMaximum } from "./data/competences.js";
 import { t } from "./i18n.js";
 
 export const CREATION_VERSION = 1;
@@ -288,6 +289,13 @@ export function creationWarnings(creation) {
     const horsListe = f.equipement.filter((nom) => prixEquipement(g, nom) === null);
     if (horsListe.length) {
       out.push(t("alerte.horsListe", { nom: f.type || g.nom, liste: horsListe.join(", ") }));
+    }
+    const competences = competencesHorsListe(f, g);
+    if (competences.length) {
+      out.push(t("alerte.competences", { nom: f.type || g.nom, liste: competences.join(", ") }));
+    }
+    for (const d of depassementsMaximum(f, g)) {
+      out.push(t("alerte.maximum", { nom: f.type || g.nom, stat: t(`profil.${d.stat}`), valeur: d.valeur, max: d.max }));
     }
   }
   return out;

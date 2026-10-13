@@ -41,6 +41,7 @@ import {
 } from "./warband-builder.js";
 import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
 import { flagSvg } from "./flags.js";
+import { competencesAccessibles, maximumsGuerrier } from "./data/competences.js";
 import { RESULTATS, appliquerCombat, bilanFigurine, splitItems } from "./combats.js";
 
 setLang(detectLang(), { remember: false });
@@ -1073,8 +1074,33 @@ figCout.addEventListener("input", () => (figCout.dataset.manuel = "1"));
 
 function renderFigStatLabels() {
   figStats.innerHTML = STAT_KEYS.map(
-    (k) => `<label class="stat-edit"><span>${t(`profil.${k}`)}</span><input type="text" class="perso-nom-input" data-stat="${k}" maxlength="4" /></label>`
+    (k) =>
+      `<label class="stat-edit"><span>${t(`profil.${k}`)}</span><input type="text" class="perso-nom-input" data-stat="${k}" maxlength="4" /><small class="stat-max"></small></label>`
   ).join("");
+}
+
+/** Une caractéristique au-dessus du maximum de la race bloque la validation. */
+function checkStatMax(inp) {
+  const max = inp.dataset.max === "" || inp.dataset.max === undefined ? NaN : Number(inp.dataset.max);
+  const v = Number(inp.value.trim());
+  inp.setCustomValidity(inp.value.trim() !== "" && Number.isFinite(v) && v > max ? inp.title : "");
+}
+figStats.addEventListener("input", (e) => {
+  if (e.target.matches("input[data-stat]")) checkStatMax(e.target);
+});
+
+function applyStatMaximums(guerrier) {
+  const maxima = maximumsGuerrier(guerrier);
+  figStats.querySelectorAll("input").forEach((inp) => {
+    const max = maxima?.max[inp.dataset.stat];
+    const known = max !== undefined;
+    inp.dataset.max = known ? max : "";
+    inp.title = known
+      ? t(maxima.sansProgression ? "fig.maximumSansProgression" : "fig.maximum", { race: maxima.race, max })
+      : "";
+    inp.nextElementSibling.textContent = known ? `≤ ${max}` : "";
+    checkStatMax(inp);
+  });
 }
 renderFigStatLabels();
 
@@ -1119,6 +1145,49 @@ function renderFigEquipement() {
   });
 }
 
+function renderFigCompetences() {
+  chipEditor(document.getElementById("fig-competences"), figDraft.competences, {
+    datalist: "rules-list",
+    placeholder: t("fig.competences.exemple"),
+    onChange: renderCompetencesChoix,
+  });
+  renderCompetencesChoix();
+}
+
+/**
+ * Compétences que la figurine peut apprendre, triées par liste : celles de
+ * ses listes d'accès seulement (aucune pour un homme de main), en grisant
+ * celles déjà acquises ou réservées (chef, sorcier, matriarche…).
+ */
+function renderCompetencesChoix() {
+  const box = document.getElementById("fig-comp-choix");
+  const listes = competencesAccessibles(figDraft, getGuerrier(figDraft.modele));
+  box.hidden = !listes.length;
+  if (box.hidden) return;
+  const liste = document.getElementById("fig-comp-liste");
+  liste.innerHTML = "";
+  for (const l of listes) {
+    const row = document.createElement("div");
+    row.className = "arsenal-cat";
+    row.innerHTML = `<p class="arsenal-titre">${escapeHtml(l.liste)}</p>`;
+    for (const c of l.competences) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip chip-btn";
+      b.textContent = c.nom;
+      b.disabled = c.acquise || !c.permise;
+      const etat = c.acquise ? t("fig.competenceAcquise") : !c.permise ? t("fig.competenceReservee") : "";
+      b.title = [etat, c.resume].filter(Boolean).join(" · ");
+      b.addEventListener("click", () => {
+        figDraft.competences.push(c.nom);
+        renderFigCompetences();
+      });
+      row.appendChild(b);
+    }
+    liste.appendChild(row);
+  }
+}
+
 function openFigDialog(fig, categorie = "heros", draft = null) {
   figOriginal = fig;
   figDraft = draft || (fig ? structuredClone(fig) : newFigurine(categorie));
@@ -1134,16 +1203,18 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   figStats.querySelectorAll("input").forEach((inp) => (inp.value = figDraft.stats[inp.dataset.stat]));
   renderFigEquipement();
   renderArsenal(guerrier);
-  document.getElementById("fig-acces").textContent = guerrier?.competences.length
-    ? t("fig.acces", { liste: guerrier.competences.join(", ") })
-    : "";
-  chipEditor(document.getElementById("fig-competences"), figDraft.competences, {
-    datalist: "rules-list",
-    placeholder: t("fig.competences.exemple"),
-  });
+  applyStatMaximums(guerrier);
+  document.getElementById("fig-acces").textContent = !isHero
+    ? t("fig.competencesHdm")
+    : guerrier?.competences.length
+      ? t("fig.acces", { liste: guerrier.competences.join(", ") })
+      : "";
+  renderFigCompetences();
   chipEditor(document.getElementById("fig-regles"), figDraft.regles, {
     datalist: "rules-list",
     placeholder: t("fig.regles.exemple"),
+    // « Chef » ou « Sorcier » ouvrent certaines compétences.
+    onChange: renderCompetencesChoix,
   });
   figDialog.showModal();
   figType.focus();
