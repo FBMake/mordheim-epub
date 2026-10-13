@@ -47,6 +47,7 @@ import {
 import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
 import { flagSvg } from "./flags.js";
 import { loc, locBande, locCompetence, locGuerrier, locNomRegle, locRegle } from "./donnees-langue.js";
+import { appliquerProgression, lancer2D6, progressionsDues, promouvoir, resultatProgression } from "./progression.js";
 import { competencesAccessibles, maximumsGuerrier } from "./data/competences.js";
 import { RESULTATS, appliquerCombat, bilanFigurine, splitItems } from "./combats.js";
 import { MORT, blessuresPour, getBlessure, libelleBlessure, malusTotal, nomBlessure, texteMalus } from "./blessures.js";
@@ -1061,6 +1062,11 @@ function statLine(stats) {
   return STAT_KEYS.map((k) => `<span class="stat-cell"><b>${t(`profil.${k}`)}</b>${escapeHtml(stats[k])}</span>`).join("");
 }
 
+/** XP actuelle d'une figurine : celle du suivi de partie si elle a été saisie, sinon celle de la fiche. */
+function xpCourante(fig) {
+  return partie.figurines[fig.id]?.xp ?? fig.xp;
+}
+
 function unitCard(fig) {
   const div = document.createElement("div");
   div.className = "unit-card";
@@ -1073,6 +1079,9 @@ function unitCard(fig) {
     fig.equipement.length ? escapeHtml(t("unite.equipement", { liste: fig.equipement.map(loc).join(", ") })) : "",
     fig.competences.length ? escapeHtml(t("unite.competences", { liste: fig.competences.map(locNomRegle).join(", ") })) : "",
     fig.regles.length ? escapeHtml(t("unite.regles", { liste: fig.regles.map(locNomRegle).join(", ") })) : "",
+    fig.progressions?.length
+      ? escapeHtml(t("unite.progressions", { liste: fig.progressions.map((p) => `${p.des[0] + p.des[1]} (${texteProgression(p.resultat)})`).join(", ") }))
+      : "",
     getGuerrier(fig.modele)?.competences.length
       ? `<span class="muted">${escapeHtml(t("unite.acces", { liste: getGuerrier(fig.modele).competences.map(loc).join(", ") }))}</span>`
       : "",
@@ -1098,13 +1107,16 @@ function unitCard(fig) {
     actions.appendChild(b);
   };
   addBtn(t("unite.modifier"), () => openFigDialog(fig));
+  const dues = groupe ? progressionsDues(fig, xpCourante(fig)) : 0;
+  if (dues) addBtn(t("unite.progression", { n: dues }), () => openProgDialog(fig));
   if (groupe && nombre < MAX_GROUPE) {
     // Recrue en cours de campagne : même équipement et même XP que le groupe,
     // payée 2 co de plus par point d'expérience.
-    addBtn(t("unite.recrue", { prix: coutRecrue(fig) }), () => {
-      const prix = coutRecrue(fig);
-      if (!confirm(t("unite.confirmRecrue", { prix, base: fig.coutGc, xp: fig.xp, nom: loc(fig.type) || t("categorie.hdm") }))) return;
-      recruterDansGroupe(fig);
+    const xp = xpCourante(fig);
+    addBtn(t("unite.recrue", { prix: coutRecrue(fig, xp) }), () => {
+      const prix = coutRecrue(fig, xp);
+      if (!confirm(t("unite.confirmRecrue", { prix, base: fig.coutGc, xp, nom: loc(fig.type) || t("categorie.hdm") }))) return;
+      recruterDansGroupe(fig, xp);
       // Un magot saisi dans le suivi de partie paie la recrue ; sinon le trésor restant baisse de lui-même.
       if (partie.magotOr !== null && partie.magotOr !== undefined) {
         partie.magotOr -= prix;
@@ -1127,6 +1139,70 @@ function unitCard(fig) {
   });
   return div;
 }
+
+// ---------------------------------------------------------------------
+// Progression des hommes de main (2D6 à chaque seuil d'expérience)
+// ---------------------------------------------------------------------
+const progDialog = document.getElementById("prog-dialog");
+const progD1 = document.getElementById("prog-d1");
+const progD2 = document.getElementById("prog-d2");
+const progChoix = document.getElementById("prog-choix");
+let progFig = null;
+
+/** Texte d'un résultat enregistré : une caractéristique (« CC ») ou « talent ». */
+function texteProgression(resultat) {
+  return resultat === "talent" ? t("prog.talent") : `+1 ${t(`profil.${resultat}`)}`;
+}
+
+function renderProgResultat(message = "") {
+  const total = Number(progD1.value) + Number(progD2.value);
+  const valide = [progD1.value, progD2.value].every((v) => /^[1-6]$/.test(v));
+  const res = valide ? resultatProgression(total) : null;
+  document.getElementById("prog-choix-wrap").hidden = res?.code !== "CC/CT";
+  document.getElementById("prog-resultat").textContent = res
+    ? `${total} : ${t(`prog.res.${res.code}`)}${message ? ` ${message}` : ""}`
+    : "";
+}
+
+function lancerProg() {
+  [progD1.value, progD2.value] = lancer2D6();
+  renderProgResultat();
+}
+
+function openProgDialog(fig) {
+  progFig = fig;
+  document.getElementById("prog-title").textContent = t("prog.titre", { nom: loc(fig.type) || t("categorie.hdm") });
+  lancerProg();
+  progDialog.showModal();
+}
+
+progD1.addEventListener("input", () => renderProgResultat());
+progD2.addEventListener("input", () => renderProgResultat());
+document.getElementById("prog-lancer").addEventListener("click", lancerProg);
+document.getElementById("prog-cancel").addEventListener("click", () => progDialog.close());
+document.getElementById("prog-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const fig = progFig;
+  const r = appliquerProgression(fig, [Number(progD1.value), Number(progD2.value)], {
+    choix: progChoix.value,
+    guerrier: getGuerrier(fig.modele),
+  });
+  if (r.relancer) {
+    // Caractéristique déjà au maximum de la race : on relance sans rien enregistrer.
+    renderProgResultat(t("prog.auMaximum", { stat: t(`profil.${r.stat}`) }));
+    return;
+  }
+  if (r.code === "talent") {
+    const heros = promouvoir(fig, newFigurine, xpCourante(fig));
+    if (heros) {
+      const figs = currentCreation.figurines;
+      figs.splice(figs.indexOf(fig) + 1, 0, heros);
+    }
+  }
+  progDialog.close();
+  progFig = null;
+  applyCreationChange();
+});
 
 function renderCreation() {
   const c = currentCreation;

@@ -12,6 +12,7 @@
     "test:combats": "node test/test-combats.mjs",
     "test:competences": "node test/test-competences.mjs",
     "test:groupes": "node test/test-groupes.mjs",
+    "test:progression": "node test/test-progression.mjs",
     "test:anglais": "node test/test-anglais.mjs"
   },
   "keywords": [],

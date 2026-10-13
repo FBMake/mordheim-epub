@@ -370,6 +370,30 @@
   </div>
 </dialog>
 
+<!-- Jet de progression d'un groupe d'hommes de main (2D6) -->
+<dialog id="prog-dialog" class="fig-dialog">
+  <form id="prog-form" method="dialog" class="form-stack">
+    <h3 class="section-title small" id="prog-title">Progression</h3>
+    <p class="hint-text" data-i18n="prog.aide">Lancez 2D6 (ou saisissez vos propres dés) et appliquez le résultat au groupe.</p>
+    <div class="partie-row">
+      <label class="perso-label"><span data-i18n="prog.de1">Dé 1</span>
+        <input type="number" id="prog-d1" class="perso-nom-input" inputmode="numeric" min="1" max="6" required /></label>
+      <label class="perso-label"><span data-i18n="prog.de2">Dé 2</span>
+        <input type="number" id="prog-d2" class="perso-nom-input" inputmode="numeric" min="1" max="6" required /></label>
+    </div>
+    <button type="button" id="prog-lancer" class="btn-secondary" data-i18n="prog.lancer">Lancer les dés</button>
+    <p class="unit-detail" id="prog-resultat" aria-live="polite"></p>
+    <label class="perso-label" id="prog-choix-wrap" hidden>
+      <span data-i18n="prog.choix">Caractéristique</span>
+      <select id="prog-choix" class="perso-nom-input"><option value="CC">CC</option><option value="CT">CT</option></select>
+    </label>
+    <div class="dialog-actions">
+      <button type="button" id="prog-cancel" class="btn-secondary" data-i18n="fig.annuler">Annuler</button>
+      <button type="submit" class="btn-slot btn-ok" data-i18n="prog.appliquer">Appliquer</button>
+    </div>
+  </form>
+</dialog>
+
 <datalist id="factions-list"></datalist>
 <datalist id="rules-list"></datalist>
 <datalist id="equipment-list"></datalist>

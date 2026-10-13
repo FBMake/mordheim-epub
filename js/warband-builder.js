@@ -171,12 +171,17 @@ export function newFigurine(categorie = "heros") {
     // campagne ont coûté en plus du prix de base (expérience du groupe).
     nombre: 1,
     surcout: 0,
+    // Jets de progression déjà faits par le groupe : [{ des: [d1, d2], resultat }].
+    progressions: [],
   };
 }
 
-/** Coût d'une nouvelle recrue dans un groupe d'hommes de main existant. */
-export function coutRecrue(fig) {
-  return toInt(fig.coutGc) + SURCOUT_XP_RECRUE * toInt(fig.xp);
+/**
+ * Coût d'une nouvelle recrue dans un groupe d'hommes de main existant.
+ * @param {number} [xp] - expérience actuelle du groupe (suivi de partie), sinon celle de la fiche
+ */
+export function coutRecrue(fig, xp = fig.xp) {
+  return toInt(fig.coutGc) + SURCOUT_XP_RECRUE * toInt(xp);
 }
 
 /**
@@ -184,11 +189,11 @@ export function coutRecrue(fig) {
  * reçoit l'équipement et l'expérience du groupe, et paie le surcoût
  * d'expérience. Renvoie le prix payé, ou null si le groupe est complet.
  */
-export function recruterDansGroupe(fig) {
+export function recruterDansGroupe(fig, xp = fig.xp) {
   if (fig.categorie !== "hdm" || toInt(fig.nombre) >= MAX_GROUPE) return null;
-  const prix = coutRecrue(fig);
+  const prix = coutRecrue(fig, xp);
   fig.nombre = toInt(fig.nombre) + 1;
-  fig.surcout = toInt(fig.surcout) + SURCOUT_XP_RECRUE * toInt(fig.xp);
+  fig.surcout = toInt(fig.surcout) + SURCOUT_XP_RECRUE * toInt(xp);
   return prix;
 }
 
@@ -244,6 +249,9 @@ export function normalizeCreation(c) {
         regles: hdm ? reglesHommeDeMain(f) : cleanList(f.regles),
         nombre: hdm ? Math.max(1, toInt(f.nombre ?? 1)) : 1,
         surcout: hdm ? toInt(f.surcout) : 0,
+        progressions: (Array.isArray(f.progressions) ? f.progressions : [])
+          .filter((p) => Array.isArray(p?.des) && p.des.length === 2)
+          .map((p) => ({ des: p.des.map((d) => Math.min(6, Math.max(1, toInt(d)))), resultat: String(p.resultat || "") })),
       };
     });
   return out;
