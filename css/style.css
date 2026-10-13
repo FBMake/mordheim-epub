@@ -98,28 +98,64 @@ html, body {
 .miroir { transform: scaleX(-1); }
 .deco {
   position: absolute;
-  top: 0.4rem;
+  top: 2.6rem;
   width: auto;
   height: 4.6rem;
   opacity: 0.8;
   pointer-events: none;
 }
 .deco-gauche { left: 0; }
-.deco-droite { right: 0; }
-.footer-deco {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin: 0.4rem 0 -0.4rem;
-}
-.footer-deco img { height: 3.6rem; width: auto; opacity: 0.75; }
-.footer-version {
+
+/* Choix de la langue : écusson du pays courant, menu des pays en dessous. */
+.lang-switch {
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
+  margin-bottom: 0.5rem;
 }
-.footer-version img { height: 1.8rem; width: auto; opacity: 0.7; }
+.ecusson { width: 100%; height: 100%; display: block; }
+.lang-btn {
+  width: 30px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  filter: drop-shadow(0 1px 1px rgba(36, 29, 21, 0.4));
+  transition: transform 0.15s ease;
+}
+.lang-btn:hover, .lang-btn:focus-visible { transform: scale(1.1); outline: none; }
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  min-width: 13rem;
+  padding: 0.35rem;
+  background: #efe2c4;
+  border: 1px solid var(--brass);
+  box-shadow: 0 8px 20px rgba(36, 29, 21, 0.35);
+}
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.4rem 0.6rem;
+  border: none;
+  background: none;
+  font-family: "EB Garamond", serif;
+  font-size: 1rem;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+.lang-option .ecusson { width: 20px; height: 24px; flex: none; }
+.lang-option:hover, .lang-option:focus-visible { background: rgba(138, 110, 61, 0.18); outline: none; }
+.lang-option.active { font-weight: 600; color: var(--wax); }
+.deco-droite { right: 0; }
 
 .eyebrow {
   font-family: "JetBrains Mono", monospace;
@@ -457,7 +493,7 @@ select.perso-nom-input { width: 100%; }
     padding: calc(var(--w) * 0.165) calc(var(--w) * 0.185) calc(var(--w) * 0.155);
   }
   .title-blackletter { font-size: 2.4rem; }
-  .deco { height: 2.2rem; top: -0.7rem; }
+  .deco { height: 2.2rem; top: 2.4rem; }
   .preview-grid { grid-template-columns: repeat(2, 1fr); }
   .preview-columns { grid-template-columns: 1fr; }
   .perso-card { grid-template-columns: 1fr; justify-items: center; }

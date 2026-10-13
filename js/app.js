@@ -39,6 +39,10 @@ import {
   newCreation,
   newFigurine,
 } from "./warband-builder.js";
+import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
+import { flagSvg } from "./flags.js";
+
+setLang(detectLang(), { remember: false });
 
 const dropzone = document.getElementById("dropzone");
 const fileInput = document.getElementById("file-input");
@@ -138,7 +142,7 @@ navButtons.forEach((b) =>
 tabButtons.forEach((b) => b.addEventListener("click", () => showTab(b.dataset.tab)));
 document.getElementById("unsaved-go").addEventListener("click", () => {
   showView("accueil");
-  slotStatus.textContent = `Choisissez « Enregistrer ici » sur un emplacement pour garder « ${currentModel?.meta.nom} ».`;
+  slotStatus.textContent = t("slot.choisir", { nom: currentModel?.meta.nom });
 });
 
 function fillDatalist(id, values) {
@@ -152,10 +156,10 @@ fillDatalist("equipment-list", EQUIPEMENT_COURANT);
 // Aperçu de la bande
 // ---------------------------------------------------------------------
 function renderBandeHead(model) {
-  document.getElementById("bande-faction").textContent = model.meta.catalogue || "Faction non précisée";
+  document.getElementById("bande-faction").textContent = model.meta.catalogue || t("bande.factionInconnue");
   document.getElementById("bande-origine").textContent =
-    (currentCreation ? "Créée dans l'application" : "Importée depuis New Recruit / BattleScribe") +
-    (activeSlot ? ` · emplacement ${activeSlot}` : " · non enregistrée");
+    (currentCreation ? t("bande.creee") : t("bande.importee")) +
+    (activeSlot ? t("bande.emplacement", { n: activeSlot }) : t("bande.nonEnregistree"));
   document.getElementById("unsaved-box").hidden = Boolean(activeSlot);
   navBande.hidden = false;
   navBande.textContent = model.meta.nom;
@@ -164,7 +168,7 @@ function renderBandeHead(model) {
 function renderPreview(model) {
   document.getElementById("preview-nom").textContent = model.meta.nom;
   renderBandeHead(model);
-  document.getElementById("preview-gc").textContent = `${model.meta.gc} po`;
+  document.getElementById("preview-gc").textContent = t("stat.po", { n: model.meta.gc });
   document.getElementById("preview-wr").textContent = model.meta.warbandRating;
   document.getElementById("count-heros").textContent = model.heros.length;
   document.getElementById("count-hdm").textContent = model.hommesDeMain.length;
@@ -192,7 +196,7 @@ function refreshTotals(model) {
   document.getElementById("preview-xp").textContent = model.bande.xpTotal;
   const item = (h) => {
     const nom = escapeHtml(customisations[h.id]?.nom || h.nom);
-    const statut = h.statut ? ` — ${escapeHtml(h.statut)}` : "";
+    const statut = h.statut ? ` — ${escapeHtml(t(`statut.${h.statut}`))}` : "";
     return `<li>${nom} <em>(${h.xp} xp${statut})</em></li>`;
   };
   document.getElementById("list-heros").innerHTML = model.heros.map(item).join("");
@@ -221,45 +225,45 @@ function persoCardTemplate(card, categorie) {
         custom.photo || ""
       }" alt="" ${custom.photo ? "" : 'style="display:none"'} />
       <label class="perso-photo-btn">
-        Photo
+        ${t("perso.photo")}
         <input type="file" accept="image/*" class="perso-photo-input" hidden />
       </label>
     </div>
     <div class="perso-fields">
       <p class="perso-original-name">${categorie} — ${escapeHtml(card.nom)}</p>
       <label class="perso-label">
-        Nom personnalisé
+        ${t("perso.nom")}
         <input type="text" class="perso-nom-input" placeholder="${escapeHtml(card.nom)}" value="${escapeHtml(
           custom.nom
         )}" />
       </label>
       <label class="perso-label">
-        Bio
-        <textarea class="perso-bio-input" rows="2" placeholder="Quelques lignes d'histoire...">${escapeHtml(
+        ${t("perso.bio")}
+        <textarea class="perso-bio-input" rows="2" placeholder="${escapeHtml(t("perso.bio.exemple"))}">${escapeHtml(
           custom.bio
         )}</textarea>
       </label>
       <div class="partie-row">
         <label class="perso-label">
-          XP
+          ${t("perso.xp")}
           <input type="number" class="perso-nom-input partie-xp-input" inputmode="numeric"
             placeholder="${card.xpRoster ?? card.xp}" value="${partie.figurines[card.id]?.xp ?? ""}" />
         </label>
         <label class="perso-label">
-          État
+          ${t("perso.etat")}
           <select class="perso-nom-input partie-statut-input">
             ${STATUTS.map(
               (st) =>
                 `<option value="${st}" ${partie.figurines[card.id]?.statut === st ? "selected" : ""}>${
-                  st || "En forme"
+                  escapeHtml(t(`statut.${st}`))
                 }</option>`
             ).join("")}
           </select>
         </label>
       </div>
       <label class="perso-label">
-        Blessures / notes de partie
-        <input type="text" class="perso-nom-input partie-notes-input" placeholder="Œil crevé, objet trouvé..."
+        ${t("perso.notes")}
+        <input type="text" class="perso-nom-input partie-notes-input" placeholder="${escapeHtml(t("perso.notes.exemple"))}"
           value="${escapeHtml(partie.figurines[card.id]?.notes)}" />
       </label>
     </div>
@@ -314,7 +318,7 @@ function persoCardTemplate(card, categorie) {
       scheduleSave();
     } catch (err) {
       console.error(err);
-      showError(`Impossible de charger cette photo : ${err.message}`);
+      showError(t("perso.erreurPhoto", { err: err.message }));
     }
   });
 
@@ -324,10 +328,10 @@ function persoCardTemplate(card, categorie) {
 function renderPersoCards(model) {
   persoCardsContainer.innerHTML = "";
   model.heros.forEach((card) =>
-    persoCardsContainer.appendChild(persoCardTemplate(card, "Héros"))
+    persoCardsContainer.appendChild(persoCardTemplate(card, t("categorie.heros")))
   );
   model.hommesDeMain.forEach((card) =>
-    persoCardsContainer.appendChild(persoCardTemplate(card, "Homme de main"))
+    persoCardsContainer.appendChild(persoCardTemplate(card, t("categorie.hdm")))
   );
 }
 
@@ -360,7 +364,7 @@ function loadRoster(json, saved = null) {
   orphanCustomisations = new Map(
     Object.entries(saved?.orphelines || {}).map(([id, val]) => [
       id,
-      { nom: val.nom || val.label || "(sans nom)", bio: val.bio || "", photo: val.photo || null, label: val.label || "" },
+      { nom: val.nom || val.label || t("sansNom"), bio: val.bio || "", photo: val.photo || null, label: val.label || "" },
     ])
   );
   partie = saved?.partie ? structuredClone(saved.partie) : emptyPartie();
@@ -377,7 +381,7 @@ async function handleFile(file) {
   clearError();
   if (!file) return;
   if (!file.name.toLowerCase().endsWith(".json")) {
-    showError("Merci de déposer un fichier .json (export de roster BattleScribe).");
+    showError(t("import.pasJson"));
     return;
   }
   try {
@@ -394,7 +398,7 @@ async function handleFile(file) {
     showTab("composition");
   } catch (err) {
     console.error(err);
-    showError(`Impossible de lire ce fichier : ${err.message || "erreur inconnue"}.`);
+    showError(t("import.illisible", { err: err.message || t("erreur.inconnue") }));
   }
 }
 
@@ -445,7 +449,7 @@ async function handlePersoFile(file) {
       const isOrphan = orphans.some((o) => o.id === id);
       if (isOrphan) {
         orphanCustomisations.set(id, {
-          nom: val.nom || val._label || "(sans nom)",
+          nom: val.nom || val._label || t("sansNom"),
           bio: val.bio,
           photo: val.photo,
           label: val._label || "",
@@ -455,17 +459,17 @@ async function handlePersoFile(file) {
 
     renderPersoCards(currentModel);
     renderOrphans();
-    persoLoadedMsg.textContent = `Personnalisation chargée (${
-      Object.keys(customisations).filter(
+    persoLoadedMsg.textContent = t("persoFichier.charge", {
+      n: Object.keys(customisations).filter(
         (id) => customisations[id].nom || customisations[id].bio || customisations[id].photo
-      ).length
-    } figurine(s) personnalisée(s)).`;
+      ).length,
+    });
     persoLoadedMsg.hidden = false;
     refreshTotals(currentModel);
     scheduleSave();
   } catch (err) {
     console.error(err);
-    showError(`Fichier de personnalisation invalide : ${err.message}`);
+    showError(t("persoFichier.invalide", { err: err.message }));
   }
 }
 
@@ -497,7 +501,7 @@ persoDropzone.addEventListener("drop", (e) => handlePersoFile(e.dataTransfer.fil
 generateBtn.addEventListener("click", async () => {
   if (!currentModel) return;
   generateBtn.disabled = true;
-  generateStatus.textContent = "Génération en cours…";
+  generateStatus.textContent = t("imprimer.enCours");
   try {
     // Applique les personnalisations actuelles (issues des formulaires) au modèle.
     [...currentModel.heros, ...currentModel.hommesDeMain].forEach((card) => {
@@ -524,11 +528,10 @@ generateBtn.addEventListener("click", async () => {
     const json = serializePersonalization(activeMap, orphanCustomisations, currentModel.meta.nom);
     downloadPersonalizationFile(json, base);
 
-    generateStatus.textContent =
-      "PDF et fichier de personnalisation téléchargés ✓ — gardez ce dernier pour la prochaine fois.";
+    generateStatus.textContent = t("imprimer.ok");
   } catch (err) {
     console.error(err);
-    generateStatus.textContent = `Erreur lors de la génération : ${err.message}`;
+    generateStatus.textContent = t("imprimer.erreur", { err: err.message });
   } finally {
     generateBtn.disabled = false;
   }
@@ -581,9 +584,14 @@ const FACTION_AUTRE = "__autre__";
 const BANDE_PREFIX = "bande:";
 
 const option = (value, label) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`;
-newFaction.innerHTML =
-  `<optgroup label="Avec profils, coûts et listes">${BANDES.map((b) => option(BANDE_PREFIX + b.id, b.nom)).join("")}</optgroup>` +
-  `<optgroup label="Saisie manuelle">${FACTIONS.map((f) => option(f, f)).join("")}${option(FACTION_AUTRE, "Autre…")}</optgroup>`;
+function renderFactionOptions() {
+  const keep = newFaction.value;
+  newFaction.innerHTML =
+    `<optgroup label="${escapeHtml(t("nouvelle.groupeDonnees"))}">${BANDES.map((b) => option(BANDE_PREFIX + b.id, b.nom)).join("")}</optgroup>` +
+    `<optgroup label="${escapeHtml(t("nouvelle.groupeManuel"))}">${FACTIONS.map((f) => option(f, f)).join("")}${option(FACTION_AUTRE, t("nouvelle.autre"))}</optgroup>`;
+  if (keep) newFaction.value = keep;
+}
+renderFactionOptions();
 newFaction.addEventListener("change", () => {
   newFactionAutreWrap.hidden = newFaction.value !== FACTION_AUTRE;
   // Trésor de départ propre à la bande (ex. 600 co pour Marienburg).
@@ -598,11 +606,11 @@ async function prepareNewForm() {
   try {
     slots = await listSlots();
   } catch (err) {
-    newStatus.textContent = `Stockage local indisponible : ${err.message} (navigation privée ?)`;
+    newStatus.textContent = t("slot.stockageIndispo", { err: err.message });
   }
   const keep = newSlot.value;
   newSlot.innerHTML = slots
-    .map((rec, i) => `<option value="${i + 1}">${i + 1} — ${rec ? `remplacer « ${escapeHtml(rec.nom)} »` : "vide"}</option>`)
+    .map((rec, i) => `<option value="${i + 1}">${i + 1} — ${rec ? escapeHtml(t("nouvelle.slotRemplacer", { nom: rec.nom })) : t("nouvelle.slotVide")}</option>`)
     .join("");
   const firstEmpty = slots.findIndex((r) => !r);
   newSlot.value = keep && slots[Number(keep) - 1] === null ? keep : String(firstEmpty >= 0 ? firstEmpty + 1 : 1);
@@ -618,10 +626,7 @@ newForm.addEventListener("submit", async (e) => {
     const existing = await getSlot(n);
     if (
       existing &&
-      !confirm(
-        `L'emplacement ${n} contient déjà « ${existing.nom} ». La remplacer par la nouvelle bande ?\n` +
-          "La bande actuelle de cet emplacement sera définitivement effacée (exportez la sauvegarde avant si besoin)."
-      )
+      !confirm(t("nouvelle.confirmRemplacer", { n, nom: existing.nom }))
     ) {
       return;
     }
@@ -640,7 +645,7 @@ newForm.addEventListener("submit", async (e) => {
     showTab("composition");
   } catch (err) {
     console.error(err);
-    newStatus.textContent = `Création impossible : ${err.message}`;
+    newStatus.textContent = t("nouvelle.erreur", { err: err.message });
   }
 });
 
@@ -677,7 +682,7 @@ function chipEditor(container, list, { datalist, placeholder, onChange }) {
       const del = document.createElement("button");
       del.type = "button";
       del.className = "chip-del";
-      del.setAttribute("aria-label", `Retirer ${item}`);
+      del.setAttribute("aria-label", t("chip.retirer", { item }));
       del.textContent = "×";
       del.addEventListener("click", () => {
         list.splice(i, 1);
@@ -699,7 +704,7 @@ function chipEditor(container, list, { datalist, placeholder, onChange }) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "btn-slot";
-    btn.textContent = "Ajouter";
+    btn.textContent = t("chip.ajouter");
     const add = () => {
       const v = input.value.trim();
       if (!v) return;
@@ -722,26 +727,26 @@ function chipEditor(container, list, { datalist, placeholder, onChange }) {
 }
 
 function statLine(stats) {
-  return STAT_KEYS.map((k) => `<span class="stat-cell"><b>${k}</b>${escapeHtml(stats[k])}</span>`).join("");
+  return STAT_KEYS.map((k) => `<span class="stat-cell"><b>${t(`profil.${k}`)}</b>${escapeHtml(stats[k])}</span>`).join("");
 }
 
 function unitCard(fig) {
   const div = document.createElement("div");
   div.className = "unit-card";
   const custom = customisations[fig.id]?.nom;
-  const titre = escapeHtml(fig.type || (fig.categorie === "heros" ? "Héros" : "Homme de main"));
+  const titre = escapeHtml(fig.type || t(fig.categorie === "heros" ? "categorie.heros" : "categorie.hdm"));
   const details = [
-    fig.equipement.length ? `Équipement : ${escapeHtml(fig.equipement.join(", "))}` : "",
-    fig.competences.length ? `Compétences : ${escapeHtml(fig.competences.join(", "))}` : "",
-    fig.regles.length ? `Règles : ${escapeHtml(fig.regles.join(", "))}` : "",
+    fig.equipement.length ? escapeHtml(t("unite.equipement", { liste: fig.equipement.join(", ") })) : "",
+    fig.competences.length ? escapeHtml(t("unite.competences", { liste: fig.competences.join(", ") })) : "",
+    fig.regles.length ? escapeHtml(t("unite.regles", { liste: fig.regles.join(", ") })) : "",
     getGuerrier(fig.modele)?.competences.length
-      ? `<span class="muted">Accès aux compétences : ${escapeHtml(getGuerrier(fig.modele).competences.join(", "))}</span>`
+      ? `<span class="muted">${escapeHtml(t("unite.acces", { liste: getGuerrier(fig.modele).competences.join(", ") }))}</span>`
       : "",
   ].filter(Boolean);
   div.innerHTML = `
     <div class="unit-head">
       <span class="unit-name">${custom ? `${escapeHtml(custom)} <em>(${titre})</em>` : titre}</span>
-      <span class="unit-cost">${fig.coutGc} co · ${fig.xp} xp</span>
+      <span class="unit-cost">${fig.coutGc} ${t("monnaie")} · ${fig.xp} xp</span>
     </div>
     <div class="stat-line">${statLine(fig.stats)}</div>
     ${details.map((d) => `<p class="unit-detail">${d}</p>`).join("")}
@@ -756,14 +761,14 @@ function unitCard(fig) {
     b.addEventListener("click", onClick);
     actions.appendChild(b);
   };
-  addBtn("Modifier", () => openFigDialog(fig));
-  addBtn("Dupliquer", () => {
+  addBtn(t("unite.modifier"), () => openFigDialog(fig));
+  addBtn(t("unite.dupliquer"), () => {
     const i = currentCreation.figurines.indexOf(fig);
     currentCreation.figurines.splice(i + 1, 0, duplicateFigurine(fig));
     applyCreationChange();
   });
-  addBtn("Retirer", () => {
-    if (!confirm(`Retirer « ${custom || fig.type || "cette figurine"} » de la bande ?`)) return;
+  addBtn(t("unite.retirer"), () => {
+    if (!confirm(t("unite.confirmRetirer", { nom: custom || fig.type || t("unite.cetteFigurine") }))) return;
     currentCreation.figurines = currentCreation.figurines.filter((f) => f !== fig);
     delete customisations[fig.id];
     delete partie.figurines[fig.id];
@@ -778,9 +783,9 @@ function renderCreation() {
   if (document.activeElement !== creaFaction) creaFaction.value = c.faction;
   if (document.activeElement !== creaTresor) creaTresor.value = c.tresorDepart;
 
-  const t = creationTotals(c);
+  const tot = creationTotals(c);
   document.getElementById("crea-budget").textContent =
-    `Trésor de départ ${t.tresor} co · dépensé ${t.cout} co · reste ${t.reste} co (versé au magot) · ${t.effectif} figurine(s)`;
+    t("compo.budget", { tresor: tot.tresor, cout: tot.cout, reste: tot.reste, effectif: tot.effectif });
 
   const warnings = creationWarnings(c);
   document.getElementById("creation-warnings").hidden = !warnings.length;
@@ -790,19 +795,19 @@ function renderCreation() {
     const figs = c.figurines.filter((f) => f.categorie === cat);
     document.getElementById(`crea-count-${cat}`).textContent = figs.length;
     const list = document.getElementById(`crea-list-${cat}`);
-    list.innerHTML = figs.length ? "" : `<p class="hint-text small left">Personne pour l'instant.</p>`;
+    list.innerHTML = figs.length ? "" : `<p class="hint-text small left">${t("compo.personne")}</p>`;
     figs.forEach((f) => list.appendChild(unitCard(f)));
   }
 
   chipEditor(document.getElementById("crea-regles-bande"), c.reglesBande, {
     datalist: "rules-list",
-    placeholder: "Règle spéciale de la bande",
+    placeholder: t("compo.regleBandePlaceholder"),
     onChange: applyCreationChange,
   });
 }
 
 creaNom.addEventListener("change", () => {
-  currentCreation.nom = creaNom.value.trim() || "Nouvelle bande";
+  currentCreation.nom = creaNom.value.trim() || t("nouvelle.nomDefaut");
   applyCreationChange();
 });
 creaFaction.addEventListener("change", () => {
@@ -835,7 +840,7 @@ function openRecruitDialog(categorie) {
   recruitCategorie = categorie;
   const bande = getBande(currentCreation.bandeId);
   const isHero = categorie === "heros";
-  document.getElementById("recruit-title").textContent = `Recruter ${isHero ? "un héros" : "un homme de main"}`;
+  document.getElementById("recruit-title").textContent = t(isHero ? "fig.recruterHeros" : "fig.recruterHdm");
   const list = document.getElementById("recruit-list");
   list.innerHTML = "";
   for (const g of bande.guerriers.filter((x) => x.categorie === categorie)) {
@@ -846,15 +851,15 @@ function openRecruitDialog(categorie) {
     div.innerHTML = `
       <div class="unit-head">
         <span class="unit-name">${escapeHtml(g.nom)}</span>
-        <span class="unit-cost">${g.cout} co${g.xp ? ` · ${g.xp} xp` : ""} · ${n}/${g.max ?? "∞"}</span>
+        <span class="unit-cost">${g.cout} ${t("monnaie")}${g.xp ? ` · ${g.xp} xp` : ""} · ${n}/${g.max ?? "∞"}</span>
       </div>
       <div class="stat-line">${statLine(g.profil)}</div>
-      ${g.regles.length ? `<p class="unit-detail">Règles : ${reglesText(g.regles)}</p>` : ""}
+      ${g.regles.length ? `<p class="unit-detail">${t("unite.regles", { liste: reglesText(g.regles) })}</p>` : ""}
       <div class="slot-actions"></div>`;
     const b = document.createElement("button");
     b.type = "button";
     b.className = "btn-slot";
-    b.textContent = complet ? "Effectif maximum atteint" : "Recruter";
+    b.textContent = complet ? t("recrue.complet") : t("recrue.recruter");
     b.disabled = complet;
     b.addEventListener("click", () => {
       recruitDialog.close();
@@ -886,9 +891,12 @@ let figOriginal = null; // figurine remplacée à la validation (null = recrutem
 // Le coût saisi à la main n'est plus recalculé (objet acheté à un autre prix…).
 figCout.addEventListener("input", () => (figCout.dataset.manuel = "1"));
 
-figStats.innerHTML = STAT_KEYS.map(
-  (k) => `<label class="stat-edit"><span>${k}</span><input type="text" class="perso-nom-input" data-stat="${k}" maxlength="4" /></label>`
-).join("");
+function renderFigStatLabels() {
+  figStats.innerHTML = STAT_KEYS.map(
+    (k) => `<label class="stat-edit"><span>${t(`profil.${k}`)}</span><input type="text" class="perso-nom-input" data-stat="${k}" maxlength="4" /></label>`
+  ).join("");
+}
+renderFigStatLabels();
 
 /** Coût recalculé d'après la liste d'équipement du guerrier, si la figurine en vient. */
 function syncCout() {
@@ -911,7 +919,7 @@ function renderArsenal(guerrier) {
       const b = document.createElement("button");
       b.type = "button";
       b.className = "chip chip-btn";
-      b.textContent = `${o.nom} · ${o.cout ?? 0} co`;
+      b.textContent = `${o.nom} · ${o.cout ?? 0} ${t("monnaie")}`;
       b.addEventListener("click", () => {
         figDraft.equipement.push(o.nom);
         renderFigEquipement();
@@ -926,7 +934,7 @@ function renderArsenal(guerrier) {
 function renderFigEquipement() {
   chipEditor(document.getElementById("fig-equipement"), figDraft.equipement, {
     datalist: "equipment-list",
-    placeholder: "Épée, arc, armure légère...",
+    placeholder: t("fig.equipement.exemple"),
     onChange: syncCout,
   });
 }
@@ -937,8 +945,8 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   const guerrier = getGuerrier(figDraft.modele);
   const isHero = figDraft.categorie === "heros";
   document.getElementById("fig-title").textContent = fig
-    ? `Modifier ${isHero ? "le héros" : "l'homme de main"}`
-    : `Recruter ${isHero ? "un héros" : "un homme de main"}`;
+    ? t(isHero ? "fig.modifierHeros" : "fig.modifierHdm")
+    : t(isHero ? "fig.recruterHeros" : "fig.recruterHdm");
   figType.value = figDraft.type;
   figCout.value = figDraft.coutGc;
   figCout.dataset.manuel = "";
@@ -947,15 +955,15 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   renderFigEquipement();
   renderArsenal(guerrier);
   document.getElementById("fig-acces").textContent = guerrier?.competences.length
-    ? `(accès : ${guerrier.competences.join(", ")})`
+    ? t("fig.acces", { liste: guerrier.competences.join(", ") })
     : "";
   chipEditor(document.getElementById("fig-competences"), figDraft.competences, {
     datalist: "rules-list",
-    placeholder: "Nom de compétence",
+    placeholder: t("fig.competences.exemple"),
   });
   chipEditor(document.getElementById("fig-regles"), figDraft.regles, {
     datalist: "rules-list",
-    placeholder: "Chef, Peur, Animal...",
+    placeholder: t("fig.regles.exemple"),
   });
   figDialog.showModal();
   figType.focus();
@@ -1004,14 +1012,14 @@ function renderReglesBande() {
     <div class="unit-card">
       <div class="unit-head">
         <span class="unit-name">${escapeHtml(g.nom)}</span>
-        <span class="unit-cost">${g.cout} co${g.xp ? ` · ${g.xp} xp` : ""} · ${g.min ? `${g.min} à ` : "0 à "}${g.max ?? "∞"}</span>
+        <span class="unit-cost">${g.cout} ${t("monnaie")}${g.xp ? ` · ${g.xp} xp` : ""} · ${t("regles.effectif", { min: g.min || 0, max: g.max ?? "∞" })}</span>
       </div>
       <div class="stat-line">${statLine(g.profil)}</div>
-      ${g.regles.length ? `<p class="unit-detail">Règles : ${reglesText(g.regles)}</p>` : ""}
-      ${g.competences.length ? `<p class="unit-detail">Accès aux compétences : ${escapeHtml(g.competences.join(", "))}</p>` : ""}
+      ${g.regles.length ? `<p class="unit-detail">${t("unite.regles", { liste: reglesText(g.regles) })}</p>` : ""}
+      ${g.competences.length ? `<p class="unit-detail">${escapeHtml(t("unite.acces", { liste: g.competences.join(", ") }))}</p>` : ""}
       ${
         g.equipement.length
-          ? `<details class="arsenal"><summary>Liste d'équipement</summary>${g.equipement
+          ? `<details class="arsenal"><summary>${t("regles.listeEquipement")}</summary>${g.equipement
               .map(
                 (c) =>
                   `<p class="unit-detail"><em>${escapeHtml(c.categorie)}</em> : ${c.objets
@@ -1024,14 +1032,14 @@ function renderReglesBande() {
     </div>`;
   const regles = [...new Map(b.guerriers.flatMap((g) => g.regles).map((r) => [r.nom, r])).values()];
   document.getElementById("regles-bande-contenu").innerHTML = `
-    <p class="unit-detail">Trésor de départ : <strong>${b.tresor} co</strong> · ${b.effectifMax} figurines au maximum, dont 6 héros.</p>
-    ${b.regles.length ? `<h3 class="mini-title">Règles de la bande</h3><ul class="regles-list">${b.regles.map(regle).join("")}</ul>` : ""}
-    <h3 class="mini-title">Héros</h3>
+    <p class="unit-detail">${t("regles.tresor", { tresor: b.tresor, max: b.effectifMax })}</p>
+    ${b.regles.length ? `<h3 class="mini-title">${t("regles.reglesBande")}</h3><ul class="regles-list">${b.regles.map(regle).join("")}</ul>` : ""}
+    <h3 class="mini-title">${t("compo.heros")}</h3>
     <div class="unit-list">${b.guerriers.filter((g) => g.categorie === "heros").map(guerrier).join("")}</div>
-    <h3 class="mini-title">Hommes de main</h3>
+    <h3 class="mini-title">${t("compo.hdm")}</h3>
     <div class="unit-list">${b.guerriers.filter((g) => g.categorie === "hdm").map(guerrier).join("")}</div>
-    ${regles.length ? `<h3 class="mini-title">Règles spéciales des guerriers</h3><ul class="regles-list">${regles.map(regle).join("")}</ul>` : ""}`;
-  document.getElementById("regles-source").textContent = `Source des données : ${b.source}.`;
+    ${regles.length ? `<h3 class="mini-title">${t("regles.reglesGuerriers")}</h3><ul class="regles-list">${regles.map(regle).join("")}</ul>` : ""}`;
+  document.getElementById("regles-source").textContent = t("regles.source", { source: b.source });
 }
 reglesSelect.addEventListener("change", () => {
   reglesSelect.dataset.touched = "1";
@@ -1076,13 +1084,13 @@ async function saveNow() {
   if (!activeSlot || !currentModel) return;
   try {
     const rec = await putSlot(buildRecord(activeSlot));
-    const heure = new Date(rec.majLe).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
-    slotStatus.textContent = `Emplacement ${activeSlot} sauvegardé automatiquement (${heure}) ✓`;
+    const heure = new Date(rec.majLe).toLocaleTimeString(getLocale(), { hour: "2-digit", minute: "2-digit" });
+    slotStatus.textContent = t("slot.sauvegarde", { n: activeSlot, heure });
     renderBandeHead(currentModel);
     renderSlots();
   } catch (err) {
     console.error(err);
-    slotStatus.textContent = `Sauvegarde impossible : ${err.message}. Exportez la sauvegarde pour ne rien perdre.`;
+    slotStatus.textContent = t("slot.erreurSauvegarde", { err: err.message });
   }
 }
 
@@ -1092,7 +1100,7 @@ async function flushSave() {
 
 function formatDate(iso) {
   try {
-    return new Date(iso).toLocaleString("fr-FR", { dateStyle: "short", timeStyle: "short" });
+    return new Date(iso).toLocaleString(getLocale(), { dateStyle: "short", timeStyle: "short" });
   } catch {
     return "";
   }
@@ -1105,7 +1113,7 @@ async function renderSlots() {
   } catch (err) {
     console.error(err);
     slotsContainer.innerHTML = "";
-    slotStatus.textContent = `Stockage local indisponible : ${err.message} (navigation privée ?)`;
+    slotStatus.textContent = t("slot.stockageIndispo", { err: err.message });
     return;
   }
   slotsContainer.innerHTML = "";
@@ -1115,13 +1123,13 @@ async function renderSlots() {
     const div = document.createElement("div");
     div.className = `slot-card${rec ? "" : " empty"}${isActive ? " active" : ""}`;
     const catalogue = rec?.roster?.roster?.forces?.[0]?.catalogueName?.trim() || "";
-    const origine = rec ? (rec.creation ? "créée ici" : "importée") : "";
+    const origine = rec ? (rec.creation ? t("slot.creeeIci") : t("slot.importee")) : "";
     div.innerHTML = `
-      <p class="slot-num">Emplacement ${n}${isActive ? " · ouverte" : ""}</p>
-      <p class="slot-name">${rec ? escapeHtml(rec.nom) : "Vide"}</p>
+      <p class="slot-num">${t("slot.num", { n })}${isActive ? t("slot.ouverte") : ""}</p>
+      <p class="slot-name">${rec ? escapeHtml(rec.nom) : t("slot.vide")}</p>
       <p class="slot-meta">${
         rec
-          ? `${escapeHtml(catalogue)}${catalogue ? " · " : ""}${origine} · modifiée le ${formatDate(rec.majLe)}`
+          ? `${escapeHtml(catalogue)}${catalogue ? " · " : ""}${origine} · ${t("slot.modifieeLe", { date: formatDate(rec.majLe) })}`
           : "&nbsp;"
       }</p>
       <div class="slot-actions"></div>
@@ -1135,14 +1143,14 @@ async function renderSlots() {
       b.addEventListener("click", onClick);
       actions.appendChild(b);
     };
-    if (rec && !isActive) addBtn("Ouvrir", () => openSlot(n));
-    if (isActive) addBtn("Afficher", () => showView("bande"));
-    if (!rec) addBtn("Nouvelle bande", () => {
+    if (rec && !isActive) addBtn(t("slot.ouvrir"), () => openSlot(n));
+    if (isActive) addBtn(t("slot.afficher"), () => showView("bande"));
+    if (!rec) addBtn(t("slot.nouvelle"), () => {
       showView("nouvelle");
       newSlot.value = String(n);
     });
-    if (currentModel && !activeSlot) addBtn("Enregistrer ici", () => saveToSlot(n, rec));
-    if (rec) addBtn("Vider", () => clearSlot(n, rec));
+    if (currentModel && !activeSlot) addBtn(t("slot.enregistrerIci"), () => saveToSlot(n, rec));
+    if (rec) addBtn(t("slot.vider"), () => clearSlot(n, rec));
     slotsContainer.appendChild(div);
   });
 }
@@ -1162,7 +1170,7 @@ async function openSlot(n) {
     bandeView.scrollIntoView({ behavior: "smooth", block: "start" });
   } catch (err) {
     console.error(err);
-    slotStatus.textContent = `Impossible d'ouvrir l'emplacement ${n} : ${err.message}`;
+    slotStatus.textContent = t("slot.erreurOuvrir", { n, err: err.message });
   }
 }
 
@@ -1173,24 +1181,18 @@ async function saveToSlot(n, existing) {
   if (existing) {
     if (existing.nom === currentModel.meta.nom) {
       // Même bande (nouvel export après une partie) : on garde personnalisations et notes.
-      const ok = confirm(
-        `Mettre à jour « ${existing.nom} » (emplacement ${n}) avec ce fichier ?\n` +
-          "Noms, bios, photos et notes de partie sont conservés ; XP et magot reprennent les valeurs du nouvel export."
-      );
+      const ok = confirm(t("slot.confirmMaj", { nom: existing.nom, n }));
       if (!ok) return;
       merged = mergeIntoSlot(existing, currentModel, customisations);
     } else {
-      const ok = confirm(
-        `L'emplacement ${n} contient déjà « ${existing.nom} ». La remplacer par « ${currentModel.meta.nom} » ?\n` +
-          "La bande actuelle de cet emplacement sera définitivement effacée (exportez la sauvegarde avant si besoin)."
-      );
+      const ok = confirm(t("slot.confirmRemplacer", { n, ancien: existing.nom, nouveau: currentModel.meta.nom }));
       if (!ok) return;
     }
   }
   if (merged) {
     customisations = merged.customisations;
     orphanCustomisations = new Map(
-      Object.entries(merged.orphelines).map(([id, o]) => [id, { ...o, nom: o.nom || o.label || "(sans nom)" }])
+      Object.entries(merged.orphelines).map(([id, o]) => [id, { ...o, nom: o.nom || o.label || t("sansNom") }])
     );
     partie = merged.partie;
   }
@@ -1204,12 +1206,12 @@ async function saveToSlot(n, existing) {
     generateStatus.textContent = "";
   } catch (err) {
     console.error(err);
-    slotStatus.textContent = `Enregistrement impossible : ${err.message}`;
+    slotStatus.textContent = t("slot.erreurEnregistrer", { err: err.message });
   }
 }
 
 async function clearSlot(n, rec) {
-  if (!confirm(`Vider l'emplacement ${n} (« ${rec.nom} ») ? Cette bande sera effacée de ce navigateur.`)) return;
+  if (!confirm(t("slot.confirmVider", { n, nom: rec.nom }))) return;
   try {
     if (activeSlot === n) {
       clearTimeout(saveTimer);
@@ -1218,10 +1220,10 @@ async function clearSlot(n, rec) {
     }
     await deleteSlot(n);
     if (currentModel) renderBandeHead(currentModel);
-    slotStatus.textContent = `Emplacement ${n} vidé.`;
+    slotStatus.textContent = t("slot.vide.ok", { n });
   } catch (err) {
     console.error(err);
-    slotStatus.textContent = `Impossible de vider l'emplacement ${n} : ${err.message}`;
+    slotStatus.textContent = t("slot.erreurVider", { n, err: err.message });
   }
   renderSlots();
 }
@@ -1231,7 +1233,7 @@ document.getElementById("export-slots-btn").addEventListener("click", async () =
     await flushSave();
     const records = (await listSlots()).filter(Boolean);
     if (!records.length) {
-      slotStatus.textContent = "Aucune bande enregistrée à exporter.";
+      slotStatus.textContent = t("export.rien");
       return;
     }
     const blob = new Blob([serializeExport(records)], { type: "application/json" });
@@ -1243,10 +1245,10 @@ document.getElementById("export-slots-btn").addEventListener("click", async () =
     a.click();
     a.remove();
     URL.revokeObjectURL(url);
-    slotStatus.textContent = `Sauvegarde exportée (${records.length} bande(s)) ✓`;
+    slotStatus.textContent = t("export.ok", { n: records.length });
   } catch (err) {
     console.error(err);
-    slotStatus.textContent = `Export impossible : ${err.message}`;
+    slotStatus.textContent = t("export.erreur", { err: err.message });
   }
 });
 
@@ -1259,21 +1261,21 @@ importSlotsInput.addEventListener("change", async () => {
   try {
     const records = parseExport(await file.text());
     if (!records.length) {
-      slotStatus.textContent = "Ce fichier de sauvegarde ne contient aucune bande.";
+      slotStatus.textContent = t("importSauv.vide");
       return;
     }
     const liste = records.map((r) => `  ${r.slot}. ${r.nom}`).join("\n");
-    if (!confirm(`Importer ces bandes ? Elles remplaceront le contenu des mêmes emplacements :\n${liste}`)) return;
+    if (!confirm(t("importSauv.confirm", { liste }))) return;
     await flushSave();
     for (const rec of records) await putSlot(rec);
     const reopen = records.find((r) => r.slot === activeSlot);
     if (reopen) loadRoster(reopen.roster, reopen);
     else if (currentModel) renderBandeHead(currentModel);
-    slotStatus.textContent = `${records.length} bande(s) importée(s) ✓`;
+    slotStatus.textContent = t("importSauv.ok", { n: records.length });
     renderSlots();
   } catch (err) {
     console.error(err);
-    slotStatus.textContent = `Import impossible : ${err.message}`;
+    slotStatus.textContent = t("importSauv.erreur", { err: err.message });
   }
 });
 
@@ -1281,5 +1283,71 @@ document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "hidden") flushSave();
 });
 
+// ---------------------------------------------------------------------
+// Langue de l'interface (voir i18n.js) : écusson + menu des pays
+// ---------------------------------------------------------------------
+const langBtn = document.getElementById("lang-btn");
+const langMenu = document.getElementById("lang-menu");
+
+/** Textes fixes de la page, repérés par leurs attributs data-i18n*. */
+function applyStaticTexts() {
+  document.documentElement.lang = getLang();
+  document.querySelectorAll("[data-i18n]").forEach((el) => (el.textContent = t(el.dataset.i18n)));
+  // data-i18n-placeholder="clé" → attribut placeholder, etc.
+  for (const attr of ["placeholder", "aria-label", "title", "content"]) {
+    document.querySelectorAll(`[data-i18n-${attr}]`).forEach((el) =>
+      el.setAttribute(attr, t(el.getAttribute(`data-i18n-${attr}`)))
+    );
+  }
+  langBtn.innerHTML = flagSvg(getLang());
+  langMenu.innerHTML = "";
+  for (const l of LANGUES) {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = `lang-option${l.code === getLang() ? " active" : ""}`;
+    b.setAttribute("role", "menuitem");
+    b.lang = l.code;
+    b.innerHTML = `${flagSvg(l.code)}<span>${escapeHtml(l.pays)}</span>`;
+    b.addEventListener("click", () => changeLang(l.code));
+    langMenu.appendChild(b);
+  }
+}
+
+function toggleLangMenu(open = langMenu.hidden) {
+  langMenu.hidden = !open;
+  langBtn.setAttribute("aria-expanded", String(open));
+}
+
+/** Réaffiche tout ce qui dépend de la langue, sans perdre la bande ouverte. */
+function changeLang(code) {
+  toggleLangMenu(false);
+  if (code === getLang()) return;
+  setLang(code);
+  applyStaticTexts();
+  renderFactionOptions();
+  renderFigStatLabels();
+  if (currentModel) {
+    renderPreview(currentModel);
+    renderPersoCards(currentModel);
+  }
+  const view = [...document.querySelectorAll(".view")].find((v) => !v.hidden)?.id.replace("view-", "");
+  showView(view || "accueil");
+}
+
+langBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleLangMenu();
+});
+document.addEventListener("click", (e) => {
+  if (!langMenu.hidden && !langMenu.contains(e.target)) toggleLangMenu(false);
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !langMenu.hidden) {
+    toggleLangMenu(false);
+    langBtn.focus();
+  }
+});
+
+applyStaticTexts();
 requestPersistence();
 showView("accueil");

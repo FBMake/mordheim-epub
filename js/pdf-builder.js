@@ -14,6 +14,7 @@
  */
 
 import { PDFDocument, rgb, StandardFonts } from "./vendor/pdf-lib.esm.min.js";
+import { LANGUE_DEFAUT, getLang, t } from "./i18n.js";
 
 const FONT_MAP = {
   TimesRoman: { regular: StandardFonts.TimesRoman, bold: StandardFonts.TimesRomanBold },
@@ -28,6 +29,22 @@ async function fetchBytes(path) {
   const res = await fetch(path, { cache: "no-store" });
   if (!res.ok) throw new Error(`Impossible de charger ${path}`);
   return new Uint8Array(await res.arrayBuffer());
+}
+
+/**
+ * Gabarit de la langue choisie (data/templates/<langue>/<nom>), sinon le
+ * gabarit français : une langue sans gabarits imprime les fiches françaises.
+ */
+async function fetchTemplate(name) {
+  const lang = getLang();
+  if (lang !== LANGUE_DEFAUT) {
+    try {
+      return await fetchBytes(`data/templates/${lang}/${name}`);
+    } catch {
+      // Pas encore de gabarit dans cette langue.
+    }
+  }
+  return fetchBytes(`data/templates/${LANGUE_DEFAUT}/${name}`);
 }
 
 async function fetchJson(path) {
@@ -99,8 +116,8 @@ async function embedImageFile(pdfDoc, path) {
   return pdfDoc.embedPng(bytes);
 }
 
-async function addTemplatePage(pdfDoc, font, imagePath, coords, values, extra) {
-  const imageBytes = await fetchBytes(imagePath);
+async function addTemplatePage(pdfDoc, font, templateName, coords, values, extra) {
+  const imageBytes = await fetchTemplate(templateName);
   const image = await pdfDoc.embedPng(imageBytes);
   const page = pdfDoc.addPage([coords.width, coords.height]);
   page.drawImage(image, { x: 0, y: 0, width: coords.width, height: coords.height });
@@ -152,7 +169,7 @@ function characterFieldValues(card) {
       ...card.blessures.map((b) => b.name),
       ...(card.augmentations.length ? [`Augmentations: ${card.augmentations.join(", ")}`] : []),
       // Suivi de partie (voir warband-store.js), absent du roster BattleScribe.
-      ...(card.statut ? [`État : ${card.statut}`] : []),
+      ...(card.statut ? [t("pdf.etat", { statut: t(`statut.${card.statut}`) })] : []),
       ...(card.notesPartie ? [card.notesPartie] : []),
     ].join("\n"),
   };
@@ -185,7 +202,7 @@ function buildCompendiums(model) {
  * tools/coord-picker.html, comme les autres gabarits).
  */
 async function addRulesPages(pdfDoc, font, boldFont, model) {
-  const imageBytes = await fetchBytes("data/templates/regles-vierge.png");
+  const imageBytes = await fetchTemplate("regles-vierge.png");
   const image = await pdfDoc.embedPng(imageBytes);
 
   let coords;
@@ -269,7 +286,7 @@ export async function buildPdf(model) {
   // 1) Bande
   const bandeCoords = await fetchJson("tools/coords/bande-coords.json");
   const reglesBandeNoms = model.reglesGenerales.map((r) => r.name).join(", ");
-  await addTemplatePage(pdfDoc, font, "data/templates/bande.png", bandeCoords, {
+  await addTemplatePage(pdfDoc, font, "bande.png", bandeCoords, {
     nom_bande: model.meta.nom,
     type_bande: model.meta.catalogue,
     bio: reglesBandeNoms ? `Règles de bande : ${reglesBandeNoms}` : "",
@@ -285,7 +302,7 @@ export async function buildPdf(model) {
   const heroCoords = await fetchJson("tools/coords/hero-coords.json");
   for (const card of model.heros) {
     await addTemplatePage(
-      pdfDoc, font, "data/templates/hero.png", heroCoords,
+      pdfDoc, font, "hero.png", heroCoords,
       characterFieldValues(card), { photoDataUrl: card.photo }
     );
   }
@@ -294,7 +311,7 @@ export async function buildPdf(model) {
   const hdmCoords = await fetchJson("tools/coords/homme_de_main-coords.json");
   for (const card of model.hommesDeMain) {
     await addTemplatePage(
-      pdfDoc, font, "data/templates/homme_de_main.png", hdmCoords,
+      pdfDoc, font, "homme_de_main.png", hdmCoords,
       characterFieldValues(card), { photoDataUrl: card.photo }
     );
   }

@@ -10,7 +10,7 @@
    Pensez à incrémenter CACHE_VERSION quand la liste PRECACHE change.
    ------------------------------------------------------------------ */
 
-const CACHE_VERSION = "v8";
+const CACHE_VERSION = "v9";
 const APP_CACHE = `fiches-bande-app-${CACHE_VERSION}`;
 const FONT_CACHE = "fiches-bande-fonts";
 
@@ -24,9 +24,11 @@ const PRECACHE = [
   "images/parchemin-bas.webp",
   "images/deco/separateur.webp",
   "images/deco/blason-s.webp",
-  "images/deco/corbeau.webp",
-  "images/deco/sirene.webp",
   "js/app.js",
+  "js/i18n.js",
+  "js/lang/fr.js",
+  "js/lang/en.js",
+  "js/flags.js",
   "js/parser.js",
   "js/translations.js",
   "js/personalization.js",
@@ -35,10 +37,10 @@ const PRECACHE = [
   "js/data/bandes.js",
   "js/pdf-builder.js",
   "js/vendor/pdf-lib.esm.min.js",
-  "data/templates/bande.png",
-  "data/templates/hero.png",
-  "data/templates/homme_de_main.png",
-  "data/templates/regles-vierge.png",
+  "data/templates/fr/bande.png",
+  "data/templates/fr/hero.png",
+  "data/templates/fr/homme_de_main.png",
+  "data/templates/fr/regles-vierge.png",
   "tools/coords/bande-coords.json",
   "tools/coords/hero-coords.json",
   "tools/coords/homme_de_main-coords.json",
