@@ -225,6 +225,11 @@
       <p class="hint-text" data-i18n="figurines.aide">Nom, bio et photo sont optionnels. Si la bande est enregistrée dans un emplacement, tout est sauvegardé automatiquement dans ce navigateur.</p>
       <p id="figurines-empty" class="hint-text" hidden data-i18n="figurines.aucune">Aucune figurine pour l'instant : recrutez-en depuis l'onglet Composition.</p>
       <div id="perso-cards" class="perso-cards"></div>
+      <section id="cimetiere" class="cimetiere" hidden>
+        <h3 class="mini-title" data-i18n="cimetiere.titre">Cimetière</h3>
+        <p class="hint-text small left" data-i18n="cimetiere.aide">Les figurines mortes n'ont plus de fiche dans le PDF et ne comptent plus dans la valeur de bande. Une erreur ? Ramenez-les parmi les vivants.</p>
+        <ul id="cimetiere-list" class="cimetiere-list"></ul>
+      </section>
       <section id="perso-upload-section">
         <div id="perso-dropzone" class="dropzone dropzone-secondary" tabindex="0" role="button" aria-label="Déposer ou choisir un fichier de personnalisation" data-i18n-aria-label="persoFichier.zoneAria">
           <p class="drop-title" data-i18n="persoFichier.titre">Fichier de personnalisation (optionnel)</p>
@@ -255,7 +260,7 @@
 
   <footer class="footer-note">
     <p data-i18n="pied.confidentialite">Tout le traitement se fait dans votre navigateur : vos bandes ne sont jamais envoyées sur un serveur.</p>
-    <p>V0.11</p>
+    <p>V0.12</p>
   </footer>
 </div>
 

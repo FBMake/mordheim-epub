@@ -8,12 +8,16 @@
  * pour toutes :
  *   - XP gagnée ajoutée à l'XP actuelle de la figurine,
  *   - nouvel état (blessé, hors de combat, mort) si l'utilisateur en choisit un,
- *   - blessure ajoutée aux notes de la figurine,
+ *   - blessures choisies dans la table (voir blessures.js) : les permanentes
+ *     sont ajoutées à la figurine (malus sur son profil), « mort » l'envoie
+ *     au cimetière,
  *   - équipement gagné ou perdu : modifié directement sur une bande créée
  *     dans l'application, noté (+objet / −objet) sur une bande importée,
  *   - gains de la bande (couronnes, pierres magiques) ajoutés au magot.
  * Supprimer un combat de l'historique n'annule pas ces effets.
  */
+
+import { MORT, cleanBlessures, getBlessure, nomBlessure } from "./blessures.js";
 
 /** États possibles d'une figurine ("" : en forme). Valeurs enregistrées, traduites à l'affichage. */
 export const STATUTS = ["", "Blessé", "Hors de combat", "Mort"];
@@ -41,7 +45,9 @@ function cleanEffet(e = {}) {
     xp: toInt(e.xp),
     // null : état inchangé par ce combat.
     statut: STATUTS.includes(e.statut) ? e.statut : null,
+    // Texte libre des combats notés avant la table des blessures.
     blessure: String(e.blessure || "").trim(),
+    blessures: cleanBlessures(e.blessures),
     gagne: cleanList(e.gagne),
     perdu: cleanList(e.perdu),
   };
@@ -64,7 +70,7 @@ export function cleanCombat(c = {}) {
 
 /** Un effet sans rien de renseigné n'est pas gardé dans l'historique. */
 export function effetVide(e) {
-  return !e.xp && e.statut === null && !e.blessure && !e.gagne.length && !e.perdu.length;
+  return !e.xp && e.statut === null && !e.blessure && !e.blessures.length && !e.gagne.length && !e.perdu.length;
 }
 
 function appendNote(notes, line) {
@@ -88,10 +94,14 @@ export function appliquerCombat(combat, { partie, creation, xpActuel, magotOr, m
   c.effets = c.effets.filter((e) => !effetVide(e));
 
   for (const e of c.effets) {
-    const f = (partie.figurines[e.id] ||= { xp: null, statut: "", notes: "" });
+    const f = (partie.figurines[e.id] ||= { xp: null, statut: "", notes: "", blessures: [] });
+    f.blessures ||= [];
     if (e.xp) f.xp = Math.max(0, toInt(xpActuel[e.id]) + e.xp);
+    // Une blessure « mort » sans état choisi envoie la figurine au cimetière.
+    if (e.statut === null && e.blessures.includes(MORT)) e.statut = "Mort";
     if (e.statut !== null) f.statut = e.statut;
     if (e.blessure) f.notes = appendNote(f.notes, e.blessure);
+    f.blessures.push(...e.blessures.filter((id) => getBlessure(id).permanent));
 
     const fig = creation?.figurines.find((x) => x.id === e.id);
     if (fig) {
@@ -121,6 +131,6 @@ export function bilanFigurine(combats, id) {
   return {
     combats: effets.length,
     xp: effets.reduce((s, e) => s + e.xp, 0),
-    blessures: effets.map((e) => e.blessure).filter(Boolean),
+    blessures: effets.flatMap((e) => [e.blessure, ...e.blessures.map(nomBlessure)]).filter(Boolean),
   };
 }

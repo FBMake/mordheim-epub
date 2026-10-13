@@ -33,6 +33,35 @@ assert.equal(hero.xp, xpOrigine);
 assert.equal(model.bande.magotOr, model.bande.magotOrRoster);
 console.log("Suivi de partie OK");
 
+// --- Blessures : malus sur le profil, fiche du PDF ; les morts ne comptent plus ---
+{
+  const m = parseRoster(json);
+  const h = m.heros[0];
+  const statsOrigine = { ...h.stats };
+  const p = emptyPartie();
+  p.figurines[h.id] = { xp: 10, statut: "", notes: "", blessures: ["jambe", "jambe", "main"] };
+  applyPartie(m, p);
+  if (Number.isFinite(Number(statsOrigine.M))) {
+    assert.equal(h.stats.M, String(Math.max(1, Number(statsOrigine.M) - 2)));
+  }
+  if (Number.isFinite(Number(statsOrigine.CC))) {
+    assert.equal(h.stats.CC, String(Math.max(1, Number(statsOrigine.CC) - 1)));
+  }
+  assert.equal(h.blessures.length, h.blessuresRoster.length + 3);
+  const xpVivant = m.bande.xpTotal;
+  p.figurines[h.id].statut = "Mort";
+  applyPartie(m, p);
+  assert.equal(m.bande.xpTotal, xpVivant - 10, "un mort ne compte plus dans l'expérience de la bande");
+  // Retirer les blessures rend le profil d'origine.
+  applyPartie(m, emptyPartie());
+  assert.deepEqual(h.stats, statsOrigine);
+  // Les blessures survivent à l'enregistrement et à la mise à jour par un nouvel export.
+  const r = normalizeRecord({ slot: 1, roster: json, partie: p });
+  assert.deepEqual(r.partie.figurines[h.id].blessures, ["jambe", "jambe", "main"]);
+  assert.deepEqual(mergeIntoSlot(r, parseRoster(json)).partie.figurines[h.id].blessures, ["jambe", "jambe", "main"]);
+  console.log("Blessures OK");
+}
+
 // --- Export / import de la sauvegarde ---
 const rec = {
   slot: 2,

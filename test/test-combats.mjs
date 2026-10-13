@@ -66,4 +66,21 @@ assert.equal(rec.partie.combats.length, 2);
 const merged = mergeIntoSlot(rec, { heros: [], hommesDeMain: [] });
 assert.equal(merged.partie.combats.length, 2);
 
+// --- Blessures choisies dans la table : permanentes sur la figurine, « mort » au cimetière ---
+const p3 = emptyPartie();
+appliquerCombat(
+  {
+    effets: [
+      { id: "h1", nom: "Capitaine", statut: null, blessures: ["jambe", "capture", "inconnue", "jambe"] },
+      { id: "h2", nom: "Champion", statut: null, blessures: ["mort"] },
+    ],
+  },
+  { partie: p3, creation: null, xpActuel: {}, magotOr: 0, magotPierres: 0 }
+);
+assert.deepEqual(p3.figurines.h1.blessures, ["jambe", "jambe"], "les blessures ponctuelles restent dans l'historique");
+assert.equal(p3.figurines.h1.statut, "");
+assert.equal(p3.figurines.h2.statut, "Mort");
+assert.deepEqual(p3.combats[0].effets[0].blessures, ["jambe", "capture", "jambe"]);
+assert.equal(bilanFigurine(p3.combats, "h1").blessures.length, 3);
+
 console.log("test-combats : OK");

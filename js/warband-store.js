@@ -9,8 +9,8 @@
  *   - l'export JSON BattleScribe / New Recruit d'origine (jamais modifié),
  *   - les personnalisations (nom, bio, photo) par figurine,
  *   - les personnalisations orphelines (figurine disparue du roster),
- *   - le suivi de partie (XP, état, notes par figurine ; magot et notes
- *     de la bande) qui remplace les valeurs du roster dans le PDF,
+ *   - le suivi de partie (XP, état, blessures, notes par figurine ; magot
+ *     et notes de la bande) qui remplace les valeurs du roster dans le PDF,
  *   - pour une bande créée dans l'application, son modèle éditable
  *     (`creation`, voir warband-builder.js) dont le roster est généré.
  *
@@ -23,6 +23,7 @@
 
 import { normalizeCreation } from "./warband-builder.js";
 import { STATUTS, cleanCombat } from "./combats.js";
+import { appliquerMalus, cleanBlessures, regleBlessure } from "./blessures.js";
 
 export const SLOT_COUNT = 4;
 export const EXPORT_FORMAT = "mordheim-epub-bandes";
@@ -63,6 +64,8 @@ function cleanPartie(p = {}) {
       xp: toNumberOrNull(f?.xp),
       statut: STATUTS.includes(f?.statut) ? f.statut : "",
       notes: f?.notes || "",
+      // Blessures permanentes (identifiants de blessures.js).
+      blessures: cleanBlessures(f?.blessures),
     };
   }
   return out;
@@ -140,8 +143,9 @@ export function mergeIntoSlot(previous, model, customisations = {}) {
   // L'historique des combats appartient à la bande, pas à l'export : on le garde.
   partie.combats = (previous?.partie?.combats || []).map(cleanCombat);
   for (const [id, f] of Object.entries(previous?.partie?.figurines || {})) {
-    if (ids.has(id) && (f.statut || f.notes)) {
-      partie.figurines[id] = { xp: null, statut: f.statut || "", notes: f.notes || "" };
+    const blessures = cleanBlessures(f.blessures);
+    if (ids.has(id) && (f.statut || f.notes || blessures.length)) {
+      partie.figurines[id] = { xp: null, statut: f.statut || "", notes: f.notes || "", blessures };
     }
   }
   return { customisations: merged, orphelines, partie };
@@ -149,7 +153,8 @@ export function mergeIntoSlot(previous, model, customisations = {}) {
 
 /**
  * Applique le suivi de partie au modèle (muté en place) avant génération
- * du PDF ou affichage : XP, magot, totaux, état et notes par figurine.
+ * du PDF ou affichage : XP, magot, totaux, état, blessures (malus sur le
+ * profil) et notes par figurine. Les morts ne comptent plus dans les totaux.
  */
 export function applyPartie(model, partie) {
   const p = partie || emptyPartie();
@@ -157,10 +162,15 @@ export function applyPartie(model, partie) {
   for (const card of cards) {
     // Valeur d'origine du roster, gardée pour pouvoir annuler une saisie.
     if (card.xpRoster === undefined) card.xpRoster = card.xp;
+    if (card.statsRoster === undefined) card.statsRoster = { ...card.stats };
+    if (card.blessuresRoster === undefined) card.blessuresRoster = [...card.blessures];
     const f = p.figurines[card.id];
     card.xp = f?.xp ?? card.xpRoster;
     card.statut = f?.statut || "";
     card.notesPartie = f?.notes || "";
+    card.blessuresPartie = cleanBlessures(f?.blessures);
+    card.stats = appliquerMalus(card.statsRoster, card.blessuresPartie);
+    card.blessures = [...card.blessuresRoster, ...card.blessuresPartie.map(regleBlessure)];
   }
   if (model.bande.magotOrRoster === undefined) model.bande.magotOrRoster = model.bande.magotOr;
   if (model.bande.magotPierresRoster === undefined) {
@@ -168,7 +178,9 @@ export function applyPartie(model, partie) {
   }
   model.bande.magotOr = p.magotOr ?? model.bande.magotOrRoster;
   model.bande.magotPierres = p.magotPierres ?? model.bande.magotPierresRoster;
-  model.bande.xpTotal = cards.reduce((sum, c) => sum + (Number(c.xp) || 0), 0);
+  model.bande.xpTotal = cards
+    .filter((c) => c.statut !== "Mort")
+    .reduce((sum, c) => sum + (Number(c.xp) || 0), 0);
   model.bande.valeurDeBande = model.bande.xpTotal * 5;
   model.bande.notesPartie = p.notes || "";
   return model;

@@ -273,6 +273,9 @@ async function addRulesPages(pdfDoc, font, boldFont, model) {
  * @returns {Promise<Blob>}
  */
 export async function buildPdf(model) {
+  // Les figurines au cimetière (état « Mort ») n'ont plus de fiche.
+  const vivante = (card) => card.statut !== "Mort";
+  model = { ...model, heros: model.heros.filter(vivante), hommesDeMain: model.hommesDeMain.filter(vivante) };
   const pdfDoc = await PDFDocument.create();
 
   // Le choix de police est global : on lit celui du gabarit "bande"
