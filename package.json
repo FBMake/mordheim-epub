@@ -9,7 +9,8 @@
     "test:perso": "node test/test-personalization.mjs",
     "test:bandes": "node test/test-warband-store.mjs",
     "test:creation": "node test/test-warband-builder.mjs",
-    "test:combats": "node test/test-combats.mjs"
+    "test:combats": "node test/test-combats.mjs",
+    "test:anglais": "node test/test-anglais.mjs"
   },
   "keywords": [],
   "author": "",

@@ -70,6 +70,8 @@ js/personalization.js    Personnalisation (nom/bio/photo) + fichier compagnon
 js/warband-store.js      Emplacements de bande (IndexedDB) et suivi de partie
 js/warband-builder.js    Création de bande de zéro → export au format BattleScribe
 js/data/bandes.js        Données des bandes officielles (générées, voir tools/bsdata/)
+js/data/bandes-en.js     Noms et règles anglais de ces données (générés, voir tools/bsdata/)
+js/donnees-langue.js     Données de jeu dans la langue de l'interface (FR / EN)
 js/pdf-builder.js        Modèle normalisé → fichier .pdf (via pdf-lib, gabarits image)
 js/app.js                Câblage de l'interface
 js/vendor/pdf-lib.esm.min.js   pdf-lib embarqué (pas d'appel à un CDN externe)
@@ -255,6 +257,24 @@ règle ambiguë des données se précise par guerrier avec `remplacer`
 BSData ne publie pour l'instant que les 16 bandes officielles « 1a » ;
 les bandes plus récentes (annuels, Town Cryer) y ont été retirées
 temporairement.
+
+### Version anglaise (`js/data/bandes-en.js`)
+
+Quand l'interface passe en anglais, les données s'affichent sous leurs
+noms officiels anglais : bandes (« Reikland Mercenaries »…), guerriers,
+équipement, listes de compétences, et règles résumées en anglais. Les
+noms anglais viennent de BSData (clés de `fr.json`) ; `tools/bsdata/en.json`
+donne les noms des bandes, corrige quelques noms, résume les règles en
+anglais (règles de bande, compétences de base, blessures graves) et relie
+les noms français officiels des compétences à leur règle anglaise.
+
+```bash
+python3 -I tools/bsdata/build_en.py tools/bsdata/fr.json tools/bsdata/en.json js/data/bandes-en.js
+```
+
+Les bandes restent enregistrées en français : l'aperçu, le PDF et la
+composition sont recalculés dans la langue choisie. Pour un export
+BattleScribe, le texte anglais d'origine des règles est repris tel quel.
 
 ## Mes bandes : 4 emplacements dans le navigateur
 
