@@ -15,6 +15,13 @@
 export const SEUILS_HEROS = [2, 4, 6, 8, 11, 14, 17, 20, 24, 28, 32, 36, 41, 46, 51, 57, 63, 69, 76, 83, 90];
 export const SEUILS_HDM = [2, 5, 9, 14];
 
+/**
+ * Croix tracée à la main (deux traits effilés) qui coche une case : dessinée
+ * dans un carré 100×100, elle laisse voir le contour de la case.
+ * Utilisée par la page (CSS), l'EPUB et le PDF.
+ */
+export const CROIX_XP_PATH = "M12,12 Q56,38 90,88 Q38,62 12,12 Z M88,10 Q62,58 12,90 Q38,42 88,10 Z";
+
 /** Nombre de cases et seuils de la piste d'une catégorie ("heros" ou "hdm"). */
 export function pisteXp(categorie) {
   return categorie === "hdm"
