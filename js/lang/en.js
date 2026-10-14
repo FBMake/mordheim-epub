@@ -378,7 +378,7 @@ export default {
   "fig.limite.dagueGratuite": "only one free dagger per warrior",
   "equipement.alerte.deuxMains": "two-handed weapon and shield: the shield is useless in close combat, only its +1 save against shooting applies.",
   "equipement.alerte.morgenstern": "morning star and buckler: the morning star cannot be used with a buckler.",
-  "equipement.alerte.armureLourdeBouclier": "heavy armour and shield: -1 Movement.",
+  "equipement.alerte.armureLourdeBouclier": "heavy armour and shield: -1 Movement (applied to the profile).",
   "equipement.alerte.encombrant": "ball and chain (cumbersome): no other weapon or equipment except mad cap mushrooms.",
   "equipement.alerte.sorcier": "wizard: cannot cast spells while wearing armour, a shield, a helmet or a buckler.",
   "recrue.titre": "Recruit",

@@ -4,6 +4,7 @@ import {
   BANDES,
   equipementRefuse,
   avertissementsEquipement,
+  malusEquipement,
   autoriseDeuxMainsBouclier,
   buildRoster,
   coutCalcule,
@@ -184,5 +185,7 @@ console.log("Brouillon OK");
   // Sauf si une règle de la figurine l'autorise (règle inventée pour le test, sans description connue : aucune exception).
   assert.equal(autoriseDeuxMainsBouclier({ regles: ["Chef"], competences: [] }), false);
   assert.equal(autoriseDeuxMainsBouclier({ regles: ["Une Seule Attaque, Sans Bouclier"], competences: [] }), false);
+  assert.deepEqual(malusEquipement({ equipement: ["Armure lourde", "Bouclier"] }), { M: -1 });
+  assert.deepEqual(malusEquipement({ equipement: ["Armure lourde", "Rondache"] }), {});
   console.log("Limites d'équipement OK");
 }

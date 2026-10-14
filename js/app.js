@@ -50,6 +50,7 @@ import {
   texteSansXp,
   equipementRefuse,
   avertissementsEquipement,
+  malusEquipement,
 } from "./warband-builder.js";
 import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
 import { flagSvg } from "./flags.js";
@@ -72,7 +73,7 @@ import { competencesAccessibles, maximumsGuerrier } from "./data/competences.js"
 import { RESULTATS, appliquerCombat, bilanFigurine, splitItems } from "./combats.js";
 import {
   MORT,
-  appliquerMalus,
+  appliquerEcarts,
   blessuresPour,
   getBlessure,
   libelleBlessure,
@@ -1346,8 +1347,11 @@ function unitCard(fig, { lecture = false } = {}) {
   const sansXp = regleBloquantXp(fig);
   // Profil avec les blessures du suivi de partie ; améliorations en vert, malus en rouge.
   const blessures = partie.figurines[fig.id]?.blessures;
-  const stats = appliquerMalus(fig.stats, blessures);
-  const ecarts = ecartsProfil(fig, getGuerrier(fig.modele), malusTotal(blessures));
+  // L'équipement compte aussi (armure lourde et bouclier : -1 M), affiché comme un malus.
+  const malus = { ...malusTotal(blessures) };
+  for (const [k, v] of Object.entries(malusEquipement(fig))) malus[k] = (malus[k] || 0) + v;
+  const stats = appliquerEcarts(fig.stats, malus);
+  const ecarts = ecartsProfil(fig, getGuerrier(fig.modele), malus);
   // Équipement, compétences et règles rangés en colonnes de pastilles.
   // Compétences et règles : explication au survol (ou au toucher sur mobile).
   const bloc = (titre, items, avecInfo = false) => `

@@ -172,6 +172,12 @@ export function avertissementsEquipement(fig) {
   return out;
 }
 
+/** Effet de l'équipement sur le profil : armure lourde et bouclier, -1 en Mouvement. */
+export function malusEquipement(fig) {
+  const eq = fig?.equipement || [];
+  return eq.includes("Armure lourde") && eq.includes("Bouclier") ? { M: -1 } : {};
+}
+
 /**
  * Pourquoi un objet ne peut plus être ajouté à l'équipement (clé de l'emplacement
  * plein, ou "dagueGratuite" pour une deuxième dague gratuite), null s'il peut l'être.

@@ -378,7 +378,7 @@ export default {
   "fig.limite.dagueGratuite": "une seule dague gratuite par guerrier",
   "equipement.alerte.deuxMains": "arme à deux mains et bouclier : le bouclier ne sert pas au corps à corps, seulement pour son +1 à la sauvegarde contre le tir.",
   "equipement.alerte.morgenstern": "morgenstern et rondache : la morgenstern ne s'utilise pas avec une rondache.",
-  "equipement.alerte.armureLourdeBouclier": "armure lourde et bouclier : -1 en Mouvement.",
+  "equipement.alerte.armureLourdeBouclier": "armure lourde et bouclier : -1 en Mouvement (appliqué au profil).",
   "equipement.alerte.encombrant": "boulet et chaîne (encombrant) : aucune autre arme ni équipement, à part les champignons fous.",
   "equipement.alerte.sorcier": "sorcier : ne peut pas lancer de sort en portant une armure, un bouclier, un casque ou une rondache.",
   "recrue.titre": "Recruter",
