@@ -235,13 +235,18 @@ cervelle…) grise le champ XP et la piste.
 Marienburg, Culte des Possédés, Répurgateurs, Sœurs de Sigmar,
 Morts-Vivants, Skavens du Clan Eshin ; puis Nains chasseurs de trésor,
 Bande d'Orques, Pillards hommes-bêtes, Carnaval du Chaos, Kislevites,
-Mercenaires d'Averland et d'Ostland) : *Recruter* propose les guerriers de la bande avec leur
+Mercenaires d'Averland et d'Ostland) **et bandes des suppléments**
+(Amazones, Chevaliers de Bretonnie, Caravanes marchandes, Elfes Noirs,
+Gardiens des tombes, Gladiateurs, Gobelins de la forêt, Guerriers des
+Ombres, Hommes-Lézards, Mercenaires de Miragliano, Nains du Chaos,
+Norses, École d'Artillerie de Nuln, Pirates, Skavens du Clan Pestilens,
+Hors-la-loi de Stirwood) : *Recruter* propose les guerriers de la bande avec leur
 profil, leur coût et leur effectif maximum, la fiche du guerrier propose
 sa liste d'équipement (le coût suit les achats) et son accès aux
 compétences, et la composition est contrôlée (effectifs, taille de la
 bande, chef obligatoire, équipement hors liste). Le menu *Règles des
-bandes* permet de consulter ces données. Pour les autres factions, tout
-se saisit à la main.
+bandes* permet de consulter ces données. Pour une autre faction
+(« Autre… », nom libre), tout se saisit à la main.
 
 Une bande importée reste en lecture seule dans *Composition* : on la
 modifie dans New Recruit puis on réimporte l'export.
@@ -268,6 +273,18 @@ règle ambiguë des données se précise par guerrier avec `remplacer`
 BSData ne publie pour l'instant que les 16 bandes officielles « 1a » ;
 les bandes plus récentes (annuels, Town Cryer) y ont été retirées
 temporairement.
+
+### Bandes des suppléments (`tools/bsdata/supplements/`)
+
+Les bandes absentes de BSData sont saisies à la main d'après
+[mordheimer.net](https://mordheimer.net/docs/warbands/), un fichier JSON
+par bande, déjà en français : profils, coûts, effectifs, XP de départ,
+listes d'équipement (nom anglais et français), accès aux compétences,
+liste de compétences spéciales, maximums des nouvelles races et règles
+résumées en français et en anglais. Le champ `notes` de chaque fichier
+garde les points simplifiés ou à vérifier (montures, objets réservés,
+sorts non détaillés…). `build.py` et `build_en.py` les ajoutent
+automatiquement à `js/data/bandes.js` et `js/data/bandes-en.js`.
 
 ### Version anglaise (`js/data/bandes-en.js`)
 

@@ -1,0 +1,523 @@
+{
+  "id": "gladiateurs",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/pit-fighters",
+  "nomEn": "Pit Fighters",
+  "nom": "Gladiateurs",
+  "tresor": 500,
+  "effectifMax": 15,
+  "regles": [
+    "Fighting Styles",
+    "Free the Slaves!",
+    "In the Pit!"
+  ],
+  "guerriers": [
+    {
+      "cle": "Pit King",
+      "nom": "Roi de l'arène",
+      "categorie": "heros",
+      "cout": 80,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "4",
+        "PV": "1",
+        "I": "4",
+        "A": "2",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Pit Fighter"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Vitesse",
+        "Spéciales (Gladiateurs)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Orc Style",
+              "nom": "Style orque (casque, dague, hache, bouclier)",
+              "cout": 20
+            },
+            {
+              "en": "Undead Style",
+              "nom": "Style mort-vivant (casque, dague, gantelet à pointes, épée)",
+              "cout": 35
+            },
+            {
+              "en": "Empire Style",
+              "nom": "Style impérial (casque, dague, arme lourde, armure légère)",
+              "cout": 45
+            },
+            {
+              "en": "Chaos Style",
+              "nom": "Style du Chaos (casque, dague, fléau, bouclier, armure légère)",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Dwarf Troll Slayer",
+      "nom": "Tueur de trolls nain",
+      "categorie": "heros",
+      "cout": 50,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "3",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [
+        "Pit Fighter",
+        "Hard to Kill",
+        "Hard Head",
+        "Hate Orcs and Goblins",
+        "Grudgebearers",
+        "Deathwish"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Spéciales (Gladiateurs)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Flail",
+              "nom": "Fléau",
+              "cout": 15
+            },
+            {
+              "en": "Spiked Gauntlet",
+              "nom": "Gantelet à pointes",
+              "cout": 15
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Pit Veteran",
+      "nom": "Vétéran de l'arène",
+      "categorie": "heros",
+      "cout": 35,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Pit Fighter"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Vitesse",
+        "Spéciales (Gladiateurs)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Orc Style",
+              "nom": "Style orque (casque, dague, hache, bouclier)",
+              "cout": 20
+            },
+            {
+              "en": "Undead Style",
+              "nom": "Style mort-vivant (casque, dague, gantelet à pointes, épée)",
+              "cout": 35
+            },
+            {
+              "en": "Empire Style",
+              "nom": "Style impérial (casque, dague, arme lourde, armure légère)",
+              "cout": 45
+            },
+            {
+              "en": "Chaos Style",
+              "nom": "Style du Chaos (casque, dague, fléau, bouclier, armure légère)",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Pit Fighter",
+      "nom": "Gladiateur",
+      "categorie": "hdm",
+      "cout": 35,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Pit Fighter"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Orc Style",
+              "nom": "Style orque (casque, dague, hache, bouclier)",
+              "cout": 20
+            },
+            {
+              "en": "Undead Style",
+              "nom": "Style mort-vivant (casque, dague, gantelet à pointes, épée)",
+              "cout": 35
+            },
+            {
+              "en": "Empire Style",
+              "nom": "Style impérial (casque, dague, arme lourde, armure légère)",
+              "cout": 45
+            },
+            {
+              "en": "Chaos Style",
+              "nom": "Style du Chaos (casque, dague, fléau, bouclier, armure légère)",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Pursuer",
+      "nom": "Poursuivant",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": 7,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Pit Fighter",
+        "Evade"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Skink Style",
+              "nom": "Style skink (casque, dague, trident ou javelots, filet ou rondache)",
+              "cout": 25
+            },
+            {
+              "en": "Witch Elf Style",
+              "nom": "Style elfe sorcière (casque, dague, 2 épées ou lance et filet)",
+              "cout": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Ogre Pit Fighter",
+      "nom": "Gladiateur ogre",
+      "categorie": "hdm",
+      "cout": 165,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "3",
+        "CT": "2",
+        "F": "4",
+        "E": "4",
+        "PV": "3",
+        "I": "3",
+        "A": "2",
+        "Cd": "7"
+      },
+      "race": "ogre",
+      "sansProgression": false,
+      "regles": [
+        "Pit Fighter",
+        "Fear",
+        "Large Target",
+        "Slow Witted"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Flail",
+              "nom": "Fléau",
+              "cout": 15
+            },
+            {
+              "en": "Spiked Gauntlet",
+              "nom": "Gantelet à pointes",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Pit Fighter": {
+      "fr": {
+        "nom": "Combattant de fosse",
+        "resume": "Habitué aux combats en espace clos, le guerrier gagne +1 CC et +1 A lorsqu'il combat dans des ruines, des bâtiments ou dans l'arène."
+      },
+      "en": {
+        "nom": "Pit Fighter",
+        "resume": "Used to fighting in tight spaces, the warrior gains +1 WS and +1 A when fighting in ruins, buildings or the Pit."
+      }
+    },
+    "Fighting Styles": {
+      "fr": {
+        "nom": "Styles de combat",
+        "resume": "Chaque guerrier adopte un style de combat qui fixe ses armes et armures (l'ogre et le tueur utilisent leur propre liste). Un héros peut sortir de ces styles grâce aux compétences adaptées, et les styles peuvent être échangés ou rachetés à tout moment."
+      },
+      "en": {
+        "nom": "Fighting Styles",
+        "resume": "Each warrior adopts a fighting style that sets his weapons and armour (the Ogre and Slayer use their own list). Heroes may go beyond them through skills, and styles may be swapped or bought again at any time."
+      }
+    },
+    "Free the Slaves!": {
+      "fr": {
+        "nom": "Libérez les esclaves !",
+        "resume": "La bande ne vend jamais ses prisonniers aux marchands d'esclaves."
+      },
+      "en": {
+        "nom": "Free the Slaves!",
+        "resume": "The warband never sells captives to the slavers."
+      }
+    },
+    "In the Pit!": {
+      "fr": {
+        "nom": "Dans l'arène !",
+        "resume": "Un prisonnier peut être opposé à un gladiateur dans les fosses. Le vainqueur gladiateur gagne +2 XP, l'équipement du captif et 50 co ; si le captif gagne, il empoche 50 co et +2 XP et est libéré sur 4+ sur 1D6."
+      },
+      "en": {
+        "nom": "In the Pit!",
+        "resume": "A captive may be made to fight a Pit Fighter in the pits. A winning Pit Fighter gains +2 XP, the captive's gear and 50 gc; a winning captive gains 50 gc and +2 XP and is freed on a 4+ on a D6."
+      }
+    },
+    "Evade": {
+      "fr": {
+        "nom": "Dérobade",
+        "resume": "Quand il est chargé, le poursuivant peut tenter d'esquiver : un test d'Initiative réussi transforme la charge en charge ratée."
+      },
+      "en": {
+        "nom": "Evade",
+        "resume": "When charged, the Pursuer may try to evade: a passed Initiative test turns the charge into a failed charge."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Gladiateurs)",
+    "listeEn": "Special Skills (Pit Fighters)",
+    "competences": [
+      {
+        "en": "Bulging Biceps",
+        "nom": "Biceps saillants",
+        "resume": "Ignore la pénalité des armes lourdes et conserve le bonus de Force à chaque round de corps à corps.",
+        "resumeEn": "Ignores the heavy weapon penalty and keeps the Strength bonus in every round of close combat.",
+        "condition": null
+      },
+      {
+        "en": "Force of Will",
+        "nom": "Force de volonté",
+        "resume": "Quand il perd son dernier PV, le guerrier reste en jeu sur un jet de 1D6 inférieur ou égal à son Endurance, à refaire chaque round avec un malus cumulatif de -1.",
+        "resumeEn": "On losing his last wound he stays in the fight on a D6 roll equal to or under his Toughness, re-rolled each later round at a cumulative -1.",
+        "condition": null
+      },
+      {
+        "en": "Arms Master",
+        "nom": "Maître d'armes",
+        "resume": "Ignore les restrictions des armes difficiles à manier (par exemple morgenstern et rondache, ou deux morgensterns).",
+        "resumeEn": "Ignores 'difficult to use' restrictions, e.g. a morning star with a buckler or two morning stars.",
+        "condition": null
+      },
+      {
+        "en": "Body Slam",
+        "nom": "Placage",
+        "resume": "Au lieu de ses attaques de charge, porte une seule attaque à +1 F et +1 pour toucher, sans bonus d'arme ; critique sur 5+.",
+        "resumeEn": "Instead of normal charge attacks, makes one attack at +1 S and +1 to hit with no weapon bonuses; critical on a 5+.",
+        "condition": null
+      },
+      {
+        "en": "Grizzled Veteran",
+        "nom": "Vieux briscard",
+        "resume": "Le guerrier est insensible à la psychologie.",
+        "resumeEn": "The warrior is immune to psychology.",
+        "condition": null
+      },
+      {
+        "en": "Ferocious Charge",
+        "nom": "Charge féroce",
+        "resume": "Double ses attaques lors du tour où il charge, avec -1 pour toucher ce tour-là.",
+        "resumeEn": "Doubles his attacks on the turn he charges, at -1 to hit that turn.",
+        "condition": "gladiateurs/dwarf-troll-slayer"
+      },
+      {
+        "en": "Monster Slayer",
+        "nom": "Tueur de monstres",
+        "resume": "Blesse toujours sur 4+ quelle que soit l'Endurance adverse, sauf si sa Force lui permet un jet plus favorable.",
+        "resumeEn": "Always wounds on a 4+ whatever the Toughness, unless his Strength would need a lower roll.",
+        "condition": "gladiateurs/dwarf-troll-slayer"
+      },
+      {
+        "en": "Berserker",
+        "nom": "Forcené",
+        "resume": "+1 pour toucher au corps à corps lors du tour où il charge ; non cumulable avec Charge féroce.",
+        "resumeEn": "+1 to hit in close combat on the turn he charges; cannot be combined with Ferocious Charge.",
+        "condition": "gladiateurs/dwarf-troll-slayer"
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Équipement des gladiateurs vendu par 'styles' complets (prix du lot) : saisis en Divers. Le tueur de trolls ne peut avoir ni arme de tir ni armure ; hache naine réservée au tueur ; casque et armure légère réservés à l'ogre. Arme en gromril (tueur seulement) : 3 fois le prix de l'arme, non saisie. Les trois dernières compétences spéciales (Charge féroce, Tueur de monstres, Forcené) sont celles du tueur de trolls ; le tueur peut aussi utiliser les tables naines standard. Hommes de main par groupes de 1 à 5. La bande peut recruter tous les francs-tireurs sauf le rôdeur elfe. L'ogre promu ('Ce gars a du talent') a accès à Combat, Force et aux compétences de gladiateur. Version révisée (Town Cryer 21) ; une version ancienne (TC 14) existe."
+}

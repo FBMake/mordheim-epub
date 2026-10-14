@@ -813,6 +813,10 @@
     "Wizard (Waaagh! Magic)": {
       "nom": "Sorcier (Magie de la Waaagh!)",
       "resume": "Lance des sorts tirés de la Magie de la Waaagh!."
+    },
+    "Frenzy": {
+      "nom": "Frénésie",
+      "resume": "Charge toujours l'ennemi le plus proche à portée et double ses Attaques au corps à corps. Immunisée à la psychologie tant qu'elle n'est pas mise à terre ou sonnée."
     }
   },
   "competences": {

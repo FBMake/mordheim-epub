@@ -78,7 +78,7 @@ export default {
 
   // Règles des bandes
   "regles.titre": "Règles des bandes",
-  "regles.aide": "Profils, coûts, effectifs, listes d'équipement et accès aux compétences des bandes officielles (données BSData). Les règles sont résumées : reportez-vous au livre de règles pour le texte complet.",
+  "regles.aide": "Profils, coûts, effectifs, listes d'équipement et accès aux compétences des bandes officielles (données BSData et mordheimer.net). Les règles sont résumées : reportez-vous au livre de règles pour le texte complet.",
   "champ.bande": "Bande",
   "regles.tresor": "Trésor de départ : <strong>{tresor} co</strong> · {max} figurines au maximum, dont 6 héros.",
   "regles.reglesBande": "Règles de la bande",

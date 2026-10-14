@@ -55,6 +55,15 @@ assert.equal(maximumsGuerrier(getGuerrier("hommes-betes/minotaur")), null);
 chef.stats.CC = "7";
 assert.deepEqual(depassementsMaximum(chef, getGuerrier(chef.modele)), [{ stat: "CC", valeur: 7, max: 6 }]);
 
+// --- Bandes des suppléments : race, liste spéciale, animaux ---
+assert.equal(maximumsGuerrier(getGuerrier("elfes-noirs/high-born")).race, "Elfe");
+assert.equal(maximumsGuerrier(getGuerrier("elfes-noirs/high-born")).max.I, 9);
+assert.equal(maximumsGuerrier(getGuerrier("norses/wolf")).sansProgression, true);
+const capitainePirate = newFigurineFromModele("pirates/pirate-captain");
+const listesPirate = competencesAccessibles(capitainePirate, getGuerrier(capitainePirate.modele)).map((l) => l.liste);
+assert.ok(listesPirate.includes("Spéciales (Pirates)"));
+assert.ok(COMPETENCES["Spéciales (Pirates)"].every((x) => x.nom && x.resume));
+
 const c = newCreation("Test", "", "reikland");
 c.figurines.push(chef, champion);
 const alertes = creationWarnings(c).join("\n");

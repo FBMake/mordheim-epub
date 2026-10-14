@@ -1,0 +1,793 @@
+{
+ "id": "nains-du-chaos",
+ "url": "https://mordheimer.net/docs/warbands/grade-1c-warbands/sons-of-hashut",
+ "nomEn": "Sons of Hashut",
+ "nom": "Nains du Chaos",
+ "tresor": 500,
+ "effectifMax": 14,
+ "regles": [
+  "Slavers",
+  "Uncommon",
+  "Indentured Servants"
+ ],
+ "guerriers": [
+  {
+   "cle": "Apprentice Sorcerer",
+   "nom": "Apprenti sorcier",
+   "categorie": "heros",
+   "cout": 85,
+   "min": 1,
+   "max": 1,
+   "xp": 20,
+   "profil": {
+    "M": "3",
+    "CC": "4",
+    "CT": "3",
+    "F": "3",
+    "E": "4",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "9"
+   },
+   "race": "nainDuChaos",
+   "sansProgression": false,
+   "regles": [
+    "Leader",
+    "Wizard (Chaos Dwarf Magic)",
+    "Hard Head",
+    "Armour Use",
+    "Hard to Kill"
+   ],
+   "competences": [
+    "Combat",
+    "Érudition",
+    "Spéciales (Nains du Chaos)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Obsidian Weapon",
+       "nom": "Arme d'obsidienne",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Bull Centaur",
+   "nom": "Centaure-taureau",
+   "categorie": "heros",
+   "cout": 75,
+   "min": 0,
+   "max": 1,
+   "xp": 12,
+   "profil": {
+    "M": "7",
+    "CC": "4",
+    "CT": "3",
+    "F": "4",
+    "E": "4",
+    "PV": "1",
+    "I": "3",
+    "A": "2",
+    "Cd": "9"
+   },
+   "race": null,
+   "sansProgression": false,
+   "regles": [
+    "Large Target",
+    "Hard Head",
+    "Armour Use",
+    "Hard to Kill"
+   ],
+   "competences": [
+    "Combat",
+    "Force",
+    "Spéciales (Nains du Chaos)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Obsidian Weapon",
+       "nom": "Arme d'obsidienne",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Chaos Dwarf Champion",
+   "nom": "Champions nains du Chaos",
+   "categorie": "heros",
+   "cout": 50,
+   "min": 0,
+   "max": 2,
+   "xp": 8,
+   "profil": {
+    "M": "3",
+    "CC": "5",
+    "CT": "3",
+    "F": "3",
+    "E": "4",
+    "PV": "1",
+    "I": "2",
+    "A": "1",
+    "Cd": "9"
+   },
+   "race": "nainDuChaos",
+   "sansProgression": false,
+   "regles": [
+    "Hard Head",
+    "Armour Use",
+    "Hard to Kill"
+   ],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Force",
+    "Spéciales (Nains du Chaos)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Obsidian Weapon",
+       "nom": "Arme d'obsidienne",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Chaos Dwarf Warrior",
+   "nom": "Guerriers nains du Chaos",
+   "categorie": "hdm",
+   "cout": 40,
+   "min": 0,
+   "max": 6,
+   "xp": 0,
+   "profil": {
+    "M": "3",
+    "CC": "4",
+    "CT": "3",
+    "F": "3",
+    "E": "4",
+    "PV": "1",
+    "I": "2",
+    "A": "1",
+    "Cd": "9"
+   },
+   "race": "nainDuChaos",
+   "sansProgression": false,
+   "regles": [
+    "Hard Head",
+    "Armour Use",
+    "Hard to Kill"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Obsidian Weapon",
+       "nom": "Arme d'obsidienne",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Blunderbuss Chaos Dwarf",
+   "nom": "Nains du Chaos à tromblon",
+   "categorie": "hdm",
+   "cout": 40,
+   "min": 0,
+   "max": 3,
+   "xp": 0,
+   "profil": {
+    "M": "3",
+    "CC": "4",
+    "CT": "3",
+    "F": "3",
+    "E": "4",
+    "PV": "1",
+    "I": "2",
+    "A": "1",
+    "Cd": "9"
+   },
+   "race": "nainDuChaos",
+   "sansProgression": false,
+   "regles": [
+    "Hard Head",
+    "Armour Use",
+    "Hard to Kill"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Chaos Dwarf Blunderbuss",
+       "nom": "Tromblon nain du Chaos",
+       "cout": 40
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Hobgoblin",
+   "nom": "Hobgobelins",
+   "categorie": "hdm",
+   "cout": 15,
+   "min": 4,
+   "max": null,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "6"
+   },
+   "race": "gobelin",
+   "sansProgression": false,
+   "regles": [
+    "Skinny",
+    "Nobody Cares About Them"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Hobgoblin Poisoned Daggers",
+       "nom": "Dagues empoisonnées hobgobelines",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Shortbow",
+       "nom": "Arc court",
+       "cout": 5
+      },
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "reglesTexte": {
+  "Wizard (Chaos Dwarf Magic)": {
+   "fr": {
+    "nom": "Sorcier (Magie des Nains du Chaos)",
+    "resume": "L'apprenti sorcier est un sorcier qui connaît un sort tiré au hasard dans la liste des Nains du Chaos ; il ne peut pas lancer de sorts s'il porte une armure."
+   },
+   "en": {
+    "nom": "Wizard (Chaos Dwarf Magic)",
+    "resume": "The Apprentice Sorcerer is a wizard who knows one random spell from the Chaos Dwarf list; he cannot cast spells while wearing armour."
+   }
+  },
+  "Slavers": {
+   "fr": {
+    "nom": "Esclavagistes",
+    "resume": "Les esclaves capturés ne sont jamais libérés : chacun est sacrifié (+1 XP à l'apprenti sorcier) ou mis au travail (+1 fragment de malepierre après la partie, puis sur 1 au D6 l'esclave s'évade avec son équipement, sinon il meurt et la bande garde son équipement)."
+   },
+   "en": {
+    "nom": "Slavers",
+    "resume": "Captives are never freed: each is sacrificed (+1 XP for the Apprentice Sorcerer) or put to work (+1 wyrdstone after the game, then on a D6 roll of 1 the slave escapes with his gear, otherwise he dies and the warband keeps his gear)."
+   }
+  },
+  "Uncommon": {
+   "fr": {
+    "nom": "Peu nombreux",
+    "resume": "Recruter de nouveaux nains du Chaos coûte 1,5 fois l'expérience normale (arrondi au supérieur) ; ne s'applique pas aux hobgobelins."
+   },
+   "en": {
+    "nom": "Uncommon",
+    "resume": "Recruiting new members costs 1.5 times the normal experience (rounded up); this does not apply to Hobgoblins."
+   }
+  },
+  "Indentured Servants": {
+   "fr": {
+    "nom": "Serviteurs asservis",
+    "resume": "La bande doit compter au moins 4 hobgobelins ; si elle passe en dessous, elle ne peut recruter personne d'autre tant qu'elle n'en a pas de nouveau 4."
+   },
+   "en": {
+    "nom": "Indentured Servants",
+    "resume": "The warband must include at least 4 Hobgoblins; if it falls below 4, no one else may be recruited until it is back to 4."
+   }
+  },
+  "Skinny": {
+   "fr": {
+    "nom": "Maigrelet",
+    "resume": "Sur un résultat de 1 à 3 au jet de blessure grave, le hobgobelin abandonne la bande."
+   },
+   "en": {
+    "nom": "Skinny",
+    "resume": "On a Serious Injury roll of 1-3, the Hobgoblin deserts the warband."
+   }
+  },
+  "Nobody Cares About Them": {
+   "fr": {
+    "nom": "Tout le monde s'en fiche",
+    "resume": "Un hobgobelin compte pour une demi-figurine pour les tests de déroute et ne peut jamais devenir un héros."
+   },
+   "en": {
+    "nom": "Nobody Cares About Them",
+    "resume": "A Hobgoblin counts as half a model for Rout tests and can never become a Hero."
+   }
+  }
+ },
+ "competencesSpeciales": {
+  "liste": "Spéciales (Nains du Chaos)",
+  "listeEn": "Special Skills (Chaos Dwarfs)",
+  "competences": [
+   {
+    "en": "True Grit",
+    "nom": "Cran véritable",
+    "resume": "Ses jets de blessure donnent : 1-3 à terre, 4-5 sonné, 6 hors de combat.",
+    "resumeEn": "His injury rolls are: 1-3 knocked down, 4-5 stunned, 6 out of action.",
+    "condition": null
+   },
+   {
+    "en": "Extra Tough",
+    "nom": "Extrêmement résistant",
+    "resume": "Il peut relancer son jet de blessure grave après la partie et doit garder le second résultat.",
+    "resumeEn": "He may re-roll his post-game Serious Injury roll, keeping the second result.",
+    "condition": null
+   },
+   {
+    "en": "Unlimited Hatred",
+    "nom": "Haine sans limite",
+    "resume": "Il hait tous ses ennemis.",
+    "resumeEn": "He hates all enemies.",
+    "condition": null
+   },
+   {
+    "en": "Thick Skull",
+    "nom": "Crâne épais",
+    "resume": "Il a une sauvegarde de 3+ contre « sonné » (2+ avec un casque, au lieu de la règle normale du casque) ; réussie, il est seulement à terre.",
+    "resumeEn": "He has a 3+ save against being stunned (2+ with a helmet, replacing the normal helmet rule); if passed he is knocked down instead.",
+    "condition": null
+   }
+  ]
+ },
+ "races": {
+  "nainDuChaos": {
+   "nom": "Nain du Chaos",
+   "max": {
+    "M": 3,
+    "CC": 7,
+    "CT": 6,
+    "F": 4,
+    "E": 5,
+    "PV": 3,
+    "I": 5,
+    "A": 4,
+    "Cd": 10
+   }
+  }
+ },
+ "notes": "Version Sons of Hashut (grade 1c, Troll Magazine). Effectif min 3, max 14. Maximums des nains du Chaos non donnés par la page : maximums des nains repris (non confirmé). Centaure-taureau : race null (maximums inconnus), 1 PV selon la page ; il utilise la liste des nains du Chaos (pistolet compris, aucune exclusion indiquée). Hobgobelins : au moins 4, pas de maximum ; race « gobelin » choisie par défaut (non confirmé). La règle de bande « Armour » (aucune pénalité de mouvement en armure) est saisie sous la clé existante « Armour Use » ; Hard Head, Armour et Hard to Kill ne s'appliquent qu'aux nains du Chaos et au centaure-taureau (donc mis sur ces guerriers). Sorts : liste « Chaos Dwarf spell list » (mordheimer.net/docs/magic/chaos-dwarfs-magic), clé « Wizard (Chaos Dwarf Magic) » choisie par moi. Règles non détaillées sur la page : arme d'obsidienne (30 co ; règles de la page ou de Border Town Burning), tromblon nain du Chaos (40 co, « Prepare Shot » : tire un tour sur deux), dagues empoisonnées hobgobelines (15 co, Rare 9, +1 à la sauvegarde comme les dagues). Francs-tireurs : garde du corps ogre, gladiateur, sorcier, assassin impérial, éclaireur hobgobelin, plus ceux ouverts à tous et aux bandes orques/du Chaos ; jamais d'elfes. Compétence Crâne épais : la page la réserve à un héros nain (condition null). Paire de pistolets ajoutée à 30 co (« 30 for a brace »)."
+}

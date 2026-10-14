@@ -1,0 +1,910 @@
+{
+  "id": "elfes-noirs",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/dark-elves",
+  "nomEn": "Dark Elves",
+  "nom": "Elfes Noirs",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [
+    "Kindred Hatred",
+    "Excellent Sight",
+    "Black Powder Weapons"
+  ],
+  "guerriers": [
+    {
+      "cle": "High Born",
+      "nom": "Noble elfe noir",
+      "categorie": "heros",
+      "cout": 70,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "5",
+        "CC": "5",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Leader"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Elfes Noirs)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Dark Elf Blade",
+              "nom": "Lame elfe noire (amélioration)",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Repeater Crossbow",
+              "nom": "Arbalète à répétition",
+              "cout": 35
+            },
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 15
+            },
+            {
+              "en": "Sea Dragon Cloak",
+              "nom": "Cape de dragon des mers",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Beastmaster",
+      "nom": "Maître des bêtes",
+      "categorie": "heros",
+      "cout": 45,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Cold One Beasthound"
+      ],
+      "competences": [
+        "Combat",
+        "Vitesse",
+        "Spéciales (Elfes Noirs)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Beastlash",
+              "nom": "Fouet de dresseur",
+              "cout": 10
+            },
+            {
+              "en": "Dark Elf Blade",
+              "nom": "Lame elfe noire (amélioration)",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Repeater Crossbow",
+              "nom": "Arbalète à répétition",
+              "cout": 35
+            },
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 15
+            },
+            {
+              "en": "Sea Dragon Cloak",
+              "nom": "Cape de dragon des mers",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Fellblades",
+      "nom": "Lame maudite",
+      "categorie": "heros",
+      "cout": 40,
+      "min": 0,
+      "max": 2,
+      "xp": 12,
+      "profil": {
+        "M": "5",
+        "CC": "5",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Melee Specialists"
+      ],
+      "competences": [
+        "Combat",
+        "Vitesse",
+        "Spéciales (Elfes Noirs)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Dark Elf Blade",
+              "nom": "Lame elfe noire (amélioration)",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 15
+            },
+            {
+              "en": "Sea Dragon Cloak",
+              "nom": "Cape de dragon des mers",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Sorceress",
+      "nom": "Sorcière",
+      "categorie": "heros",
+      "cout": 55,
+      "min": 0,
+      "max": 1,
+      "xp": 12,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Wizard (Dark Elf Magic)"
+      ],
+      "competences": [
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Elfes Noirs)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Dark Elf Blade",
+              "nom": "Lame elfe noire (amélioration)",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Repeater Crossbow",
+              "nom": "Arbalète à répétition",
+              "cout": 35
+            },
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 15
+            },
+            {
+              "en": "Sea Dragon Cloak",
+              "nom": "Cape de dragon des mers",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Corsairs",
+      "nom": "Corsaires",
+      "categorie": "hdm",
+      "cout": 35,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Repeater Crossbow",
+              "nom": "Arbalète à répétition",
+              "cout": 35
+            },
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Sea Dragon Cloak",
+              "nom": "Cape de dragon des mers",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Shades",
+      "nom": "Ombres",
+      "categorie": "hdm",
+      "cout": 30,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "5",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Natural Stealth"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Repeater Crossbow",
+              "nom": "Arbalète à répétition",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Cold One Beasthounds",
+      "nom": "Chiens de Sang-froid",
+      "categorie": "hdm",
+      "cout": 30,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "3",
+        "CT": "0",
+        "F": "4",
+        "E": "4",
+        "PV": "1",
+        "I": "1",
+        "A": "1",
+        "Cd": "4"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Animals",
+        "Beastmaster",
+        "Stupidity",
+        "Scaly Skin",
+        "Fear"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Kindred Hatred": {
+      "fr": {
+        "nom": "Haine fratricide",
+        "resume": "Les guerriers de la bande haïssent tous les Hauts Elfes, y compris les Hauts Elfes recrutés comme francs-tireurs."
+      },
+      "en": {
+        "nom": "Kindred Hatred",
+        "resume": "The warband hates every High Elf model, High Elf Hired Swords included."
+      }
+    },
+    "Excellent Sight": {
+      "fr": {
+        "nom": "Vue perçante",
+        "resume": "Les elfes repèrent les ennemis cachés à une distance égale au double de leur Initiative en pas."
+      },
+      "en": {
+        "nom": "Excellent Sight",
+        "resume": "Elves detect Hidden enemies at twice their Initiative in inches."
+      }
+    },
+    "Black Powder Weapons": {
+      "fr": {
+        "nom": "Armes à poudre",
+        "resume": "La bande ne peut jamais utiliser d'armes à poudre noire."
+      },
+      "en": {
+        "nom": "Black Powder Weapons",
+        "resume": "The warband may never use black powder weapons."
+      }
+    },
+    "Cold One Beasthound": {
+      "fr": {
+        "nom": "Chiens de Sang-froid",
+        "resume": "Le maître des bêtes peut être accompagné de deux Chiens de Sang-froid au plus, achetés comme hommes de main."
+      },
+      "en": {
+        "nom": "Cold One Beasthound",
+        "resume": "The Beastmaster may be accompanied by up to two Cold One Beasthounds, bought as henchmen."
+      }
+    },
+    "Melee Specialists": {
+      "fr": {
+        "nom": "Spécialistes du corps à corps",
+        "resume": "Ces guerriers ne peuvent utiliser aucune arme de tir."
+      },
+      "en": {
+        "nom": "Melee Specialists",
+        "resume": "These warriors may not use any missile weapon."
+      }
+    },
+    "Wizard (Dark Elf Magic)": {
+      "fr": {
+        "nom": "Sorcier (Magie elfe noire)",
+        "resume": "La sorcière lance des sorts de la Magie elfe noire et ne peut pas lancer de sort si elle porte une armure."
+      },
+      "en": {
+        "nom": "Wizard (Dark Elf Magic)",
+        "resume": "The Sorceress casts Dark Elf Magic spells and cannot cast while wearing armour."
+      }
+    },
+    "Natural Stealth": {
+      "fr": {
+        "nom": "Discrétion naturelle",
+        "resume": "Un ennemi qui tente de repérer un elfe noir caché subit -1 à son Initiative."
+      },
+      "en": {
+        "nom": "Natural Stealth",
+        "resume": "Enemies trying to spot a Hidden Dark Elf suffer -1 to their Initiative."
+      }
+    },
+    "Beastmaster": {
+      "fr": {
+        "nom": "Lien avec le maître",
+        "resume": "Si le maître des bêtes meurt, les chiens s'enfuient et sont retirés de la liste ; ils ne combattent pas si le maître ne peut pas participer. Ils ne gagnent jamais d'expérience."
+      },
+      "en": {
+        "nom": "Beastmaster",
+        "resume": "If the Beastmaster dies the hounds run off and are removed; they cannot fight when he cannot. They never gain experience."
+      }
+    },
+    "Scaly Skin": {
+      "fr": {
+        "nom": "Peau écailleuse",
+        "resume": "Sauvegarde naturelle de 6+, que les modificateurs de Force ne peuvent pas dégrader au-delà de 6 ; annulée par un coup critique « sans sauvegarde »."
+      },
+      "en": {
+        "nom": "Scaly Skin",
+        "resume": "Natural 6+ armour save, never worse than 6 from Strength modifiers; negated by a 'no save' critical hit."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Elfes Noirs)",
+    "listeEn": "Special Skills (Dark Elves)",
+    "competences": [
+      {
+        "en": "Fury of Khaine",
+        "nom": "Furie de Khaine",
+        "resume": "Après avoir mis hors de combat tous ses adversaires, le héros peut faire un mouvement de poursuite de 4 ps ; s'il atteint un ennemi, il compte comme chargeant au tour suivant. Pas pendant le tour adverse.",
+        "resumeEn": "After taking all opponents out of action, the hero may make a 4\" follow-up move; contacting a new enemy counts as a charge next turn. Not in the opponent's turn.",
+        "condition": null
+      },
+      {
+        "en": "Powerful Build",
+        "nom": "Carrure puissante",
+        "resume": "Donne accès aux compétences de Force. Interdite à la sorcière ; deux guerriers au plus de la bande peuvent la posséder.",
+        "resumeEn": "Grants access to Strength skills. Not for the Sorceress; at most two warriors in the warband may have it.",
+        "condition": null
+      },
+      {
+        "en": "Fey Quickness",
+        "nom": "Vivacité féerique",
+        "resume": "Le héros évite les attaques de corps à corps ou de tir sur 6 ; sur 4+ dans le domaine concerné s'il a aussi Esquive latérale ou Esquive.",
+        "resumeEn": "The hero avoids melee or missile hits on a 6; on 4+ in the relevant area if he also has Step Aside or Dodge.",
+        "condition": null
+      },
+      {
+        "en": "Infiltration",
+        "nom": "Infiltration",
+        "resume": "Le héros se déploie après l'adversaire, hors de sa vue et à plus de 12 ps de tout ennemi. Si les deux camps infiltrent, le plus bas sur 1D6 se place en premier.",
+        "resumeEn": "The hero deploys after the enemy, out of sight and over 12\" from enemies. If both sides infiltrate, lowest D6 sets up first.",
+        "condition": null
+      },
+      {
+        "en": "Master of Poisons",
+        "nom": "Maître des poisons",
+        "resume": "Au lieu de chercher un objet rare, le héros fabrique 1D3-1 doses de Venin noir, à utiliser à la bataille suivante ; elles ne peuvent être ni vendues ni échangées.",
+        "resumeEn": "Instead of searching for a rare item, the hero brews D3-1 doses of Dark Venom for the next battle; they cannot be sold or traded.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {
+    "elfe": {
+      "nom": "Elfe",
+      "max": {
+        "M": 5,
+        "CC": 7,
+        "CT": 7,
+        "F": 4,
+        "E": 4,
+        "PV": 3,
+        "I": 9,
+        "A": 4,
+        "Cd": 10
+      }
+    }
+  },
+  "notes": "Lame elfe noire : +15 co dans la liste d'équipement mais +20 co dans la section équipement spécial (page contradictoire) ; 15 retenu. Réservée aux héros. Fouet de dresseur (Beastlash, 10 co, réservé au maître des bêtes ; prix comptoir 10+1D6). Venin noir réservé aux héros ; cape de dragon des mers réservée aux héros et aux corsaires (prix comptoir 50+2D6). Les Lames maudites (Fellblades) n'ont pas d'armes de tir. Chiens de Sang-froid : 0-2, uniquement si un maître des bêtes est présent ; aucune arme. Carrure puissante interdite à la sorcière (non exprimable dans condition). Maximums elfes repris du livre de règles (Elfe 5 7 7 4 4 3 9 4 10). Sorts de Magie elfe noire non saisis (page séparée). Les cartes BSData donnent 45 co pour les Fellblades et 35 co pour les chiens ; la page mordheimer (40 / 30) a été retenue."
+}

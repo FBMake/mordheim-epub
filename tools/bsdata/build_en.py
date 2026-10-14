@@ -11,8 +11,35 @@ js/data/bandes.js à son équivalent anglais. Le script s'arrête en listant
 toute règle ou bande sans version anglaise.
 """
 import json
+import re
 import sys
 from pathlib import Path
+
+
+def slug(nom):
+    return re.sub(r"[^a-z0-9]+", "-", nom.lower().replace("’", "").replace("'", "")).strip("-")
+
+
+def add_supplements(out, supplements, missing):
+    """Noms et résumés anglais des bandes saisies dans tools/bsdata/supplements/."""
+    for s in supplements:
+        out["bandes"][s["id"]] = s["nomEn"]
+        for g in s["guerriers"]:
+            out["guerriers"][f"{s['id']}/{slug(g['cle'])}"] = g["cle"]
+            for cat in g.get("equipement", []):
+                for o in cat["objets"]:
+                    out["equipement"].setdefault(o["nom"], o["en"])
+        for key, val in s.get("reglesTexte", {}).items():
+            if not val.get("en", {}).get("resume"):
+                missing.add(f"règle sans résumé anglais : {key}")
+            out["regles"].setdefault(key, val["en"])
+            out["reglesFr"].setdefault(val["fr"]["nom"], key)
+        cs = s.get("competencesSpeciales")
+        if cs:
+            out["competences"][cs["liste"]] = cs["listeEn"]
+            for c in cs["competences"]:
+                out["regles"].setdefault(c["en"], {"nom": c["en"], "resume": c["resumeEn"]})
+                out["reglesFr"].setdefault(c["nom"], c["en"])
 
 
 def build(fr, en):
@@ -20,7 +47,7 @@ def build(fr, en):
     out = {
         "bandes": {},
         "guerriers": {},
-        "regles": en["regles"],
+        "regles": dict(en["regles"]),
         "reglesFr": {},
         "equipement": {},
         "competences": {},
@@ -55,6 +82,8 @@ if __name__ == "__main__":
     fr = json.loads(Path(fr_path).read_text(encoding="utf-8"))
     en = json.loads(Path(en_path).read_text(encoding="utf-8"))
     data, missing = build(fr, en)
+    supplements = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((Path(fr_path).parent / "supplements").glob("*.json"))]
+    add_supplements(data, supplements, missing)
     if missing:
         print("Versions anglaises manquantes :\n  " + "\n  ".join(sorted(missing)))
         sys.exit(1)

@@ -41,25 +41,12 @@ export const STAT_KEYS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "Cd"];
 
 export { BANDES };
 
-/** Autres factions proposées à la création, sans données de règles (saisie manuelle). */
-export const FACTIONS = [
-  "Amazones",
-  "Caravane de marchands arabéens",
-  "Chevaliers de Bretonnie",
-  "École d'Artillerie de Nuln",
-  "Elfes Noirs",
-  "Gardiens des tombes",
-  "Gladiateurs",
-  "Gobelins de la forêt",
-  "Guerriers des Ombres",
-  "Hommes-Lézards",
-  "Hors-la-loi de la forêt de Stirwood",
-  "Mercenaires de Miragliano",
-  "Nains du Chaos",
-  "Norses",
-  "Pirates",
-  "Skavens du Clan Pestilens",
-].sort((a, b) => a.localeCompare(b, "fr"));
+/**
+ * Autres factions proposées à la création, sans données de règles (saisie
+ * manuelle). Toutes les bandes connues ont désormais leurs données
+ * (js/data/bandes.js) : il reste « Autre… », un nom de faction libre.
+ */
+export const FACTIONS = [];
 
 /** Équipement courant proposé en saisie automatique (saisie libre possible). */
 export const EQUIPEMENT_COURANT = [

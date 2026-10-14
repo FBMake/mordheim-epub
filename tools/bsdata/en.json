@@ -666,6 +666,10 @@
     "Berserker": {
       "nom": "Berserker",
       "resume": "+1 to hit in the turn he charges."
+    },
+    "Frenzy": {
+      "nom": "Frenzy",
+      "resume": "Must charge the nearest enemy within range and doubles its Attacks in close combat. Immune to psychology unless knocked down or stunned."
     }
   },
   "alias": {

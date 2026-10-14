@@ -78,7 +78,7 @@ export default {
 
   // Warband rules
   "regles.titre": "Warband rules",
-  "regles.aide": "Profiles, costs, numbers, equipment lists and skill access of the official warbands (BSData). Rules are summarised: refer to the rulebook for the full text.",
+  "regles.aide": "Profiles, costs, numbers, equipment lists and skill access of the official warbands (BSData and mordheimer.net). Rules are summarised: refer to the rulebook for the full text.",
   "champ.bande": "Warband",
   "regles.tresor": "Starting treasury: <strong>{tresor} gc</strong> · {max} models at most, including 6 heroes.",
   "regles.reglesBande": "Warband rules",

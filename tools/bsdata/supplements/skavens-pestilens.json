@@ -1,0 +1,659 @@
+{
+ "id": "skavens-pestilens",
+ "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/skaven-pestilens",
+ "nomEn": "Skaven of Clan Pestilens",
+ "nom": "Skavens du Clan Pestilens",
+ "tresor": 500,
+ "effectifMax": 15,
+ "regles": [],
+ "guerriers": [
+  {
+   "cle": "Plague Priest",
+   "nom": "Prêtre de la peste",
+   "categorie": "heros",
+   "cout": 85,
+   "min": 1,
+   "max": 1,
+   "xp": 20,
+   "profil": {
+    "M": "5",
+    "CC": "4",
+    "CT": "4",
+    "F": "4",
+    "E": "4",
+    "PV": "1",
+    "I": "5",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "skaven",
+   "sansProgression": false,
+   "regles": [
+    "Leader"
+   ],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Érudition",
+    "Force",
+    "Vitesse",
+    "Spéciales (Skavens du Clan Pestilens)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Flail",
+       "nom": "Fléau",
+       "cout": 15
+      },
+      {
+       "en": "Disease Dagger",
+       "nom": "Dague contaminée",
+       "cout": 15
+      },
+      {
+       "en": "Censer",
+       "nom": "Encensoir",
+       "cout": 40
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Sling",
+       "nom": "Fronde",
+       "cout": 2
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Pestilens Sorcerer",
+   "nom": "Sorcier Pestilens",
+   "categorie": "heros",
+   "cout": 45,
+   "min": 0,
+   "max": 1,
+   "xp": 8,
+   "profil": {
+    "M": "5",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "6"
+   },
+   "race": "skaven",
+   "sansProgression": false,
+   "regles": [
+    "Wizard (Magic of the Horned Rat)"
+   ],
+   "competences": [
+    "Érudition",
+    "Vitesse",
+    "Spéciales (Skavens du Clan Pestilens)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Flail",
+       "nom": "Fléau",
+       "cout": 15
+      },
+      {
+       "en": "Disease Dagger",
+       "nom": "Dague contaminée",
+       "cout": 15
+      },
+      {
+       "en": "Censer",
+       "nom": "Encensoir",
+       "cout": 40
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Sling",
+       "nom": "Fronde",
+       "cout": 2
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Plague Monk",
+   "nom": "Moines de la peste",
+   "categorie": "heros",
+   "cout": 45,
+   "min": 0,
+   "max": 2,
+   "xp": 8,
+   "profil": {
+    "M": "5",
+    "CC": "4",
+    "CT": "3",
+    "F": "3",
+    "E": "4",
+    "PV": "1",
+    "I": "5",
+    "A": "1",
+    "Cd": "6"
+   },
+   "race": "skaven",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Force",
+    "Vitesse",
+    "Spéciales (Skavens du Clan Pestilens)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Flail",
+       "nom": "Fléau",
+       "cout": 15
+      },
+      {
+       "en": "Disease Dagger",
+       "nom": "Dague contaminée",
+       "cout": 15
+      },
+      {
+       "en": "Censer",
+       "nom": "Encensoir",
+       "cout": 40
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Sling",
+       "nom": "Fronde",
+       "cout": 2
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Monk Initiate",
+   "nom": "Moines initiés",
+   "categorie": "heros",
+   "cout": 20,
+   "min": 0,
+   "max": 2,
+   "xp": 0,
+   "profil": {
+    "M": "5",
+    "CC": "2",
+    "CT": "3",
+    "F": "2",
+    "E": "2",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "4"
+   },
+   "race": "skaven",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Vitesse",
+    "Spéciales (Skavens du Clan Pestilens)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Flail",
+       "nom": "Fléau",
+       "cout": 15
+      },
+      {
+       "en": "Disease Dagger",
+       "nom": "Dague contaminée",
+       "cout": 15
+      },
+      {
+       "en": "Censer",
+       "nom": "Encensoir",
+       "cout": 40
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Sling",
+       "nom": "Fronde",
+       "cout": 2
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Plague Novice",
+   "nom": "Novices de la peste",
+   "categorie": "hdm",
+   "cout": 20,
+   "min": 0,
+   "max": null,
+   "xp": 0,
+   "profil": {
+    "M": "5",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "5"
+   },
+   "race": "skaven",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Sling",
+       "nom": "Fronde",
+       "cout": 2
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Giant Rat",
+   "nom": "Rats géants",
+   "categorie": "hdm",
+   "cout": 15,
+   "min": 0,
+   "max": null,
+   "xp": 0,
+   "profil": {
+    "M": "6",
+    "CC": "2",
+    "CT": "0",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "4"
+   },
+   "race": null,
+   "sansProgression": true,
+   "regles": [
+    "Animals"
+   ],
+   "competences": [],
+   "equipement": []
+  },
+  {
+   "cle": "Rat Ogre",
+   "nom": "Rat-ogre",
+   "categorie": "hdm",
+   "cout": 210,
+   "min": 0,
+   "max": 1,
+   "xp": 0,
+   "profil": {
+    "M": "6",
+    "CC": "3",
+    "CT": "3",
+    "F": "5",
+    "E": "5",
+    "PV": "3",
+    "I": "4",
+    "A": "3",
+    "Cd": "4"
+   },
+   "race": null,
+   "sansProgression": true,
+   "regles": [
+    "Fear",
+    "Stupidity",
+    "Large Target",
+    "Never Gain Experience"
+   ],
+   "competences": [],
+   "equipement": []
+  }
+ ],
+ "reglesTexte": {
+  "Never Gain Experience": {
+   "fr": {
+    "nom": "Sans expérience",
+    "resume": "Ce guerrier ne gagne jamais d'expérience."
+   },
+   "en": {
+    "nom": "Never Gain Experience",
+    "resume": "This warrior never gains experience."
+   }
+  }
+ },
+ "competencesSpeciales": {
+  "liste": "Spéciales (Skavens du Clan Pestilens)",
+  "listeEn": "Special Skills (Skaven Pestilens)",
+  "competences": [
+   {
+    "en": "Black Hunger",
+    "nom": "Faim noire",
+    "resume": "Au début de son tour, il peut gagner +1 A et +D3 ps de mouvement pour le tour ; à la fin du tour, il subit D3 touches de F3 sans sauvegarde d'armure.",
+    "resumeEn": "At the start of his turn he may gain +1 A and +D3\" movement for the turn; at the end of the turn he suffers D3 S3 hits with no armour save.",
+    "condition": null
+   },
+   {
+    "en": "Censer Bearer",
+    "nom": "Porte-encensoir",
+    "resume": "Nécessite Faim noire. Il devient sujet à la frénésie mais ne peut utiliser qu'un encensoir au corps à corps.",
+    "resumeEn": "Requires Black Hunger. He becomes subject to frenzy but may only use a censer in close combat.",
+    "condition": null
+   },
+   {
+    "en": "Rotten Body",
+    "nom": "Corps putride",
+    "resume": "Immunisé au poison et aux maladies ; s'il est mis hors de combat par un test raté en maniant un encensoir, il récupère automatiquement après la bataille.",
+    "resumeEn": "Immune to poison and disease; if taken out of action by a failed test while wielding a censer he automatically recovers after the battle.",
+    "condition": null
+   },
+   {
+    "en": "Contagious",
+    "nom": "Contagieux",
+    "resume": "Nécessite Corps putride. Un modèle qu'il met hors de combat au corps à corps fait un test d'Endurance : un résultat supérieur (ou un 6) inflige une blessure. Sans effet sur morts-vivants et possédés.",
+    "resumeEn": "Requires Rotten Body. A model he takes out of action in close combat takes a Toughness test; a roll above T (or a 6) causes a wound. Undead and possessed are exempt.",
+    "condition": null
+   },
+   {
+    "en": "Ignore Pain",
+    "nom": "Ignorer la douleur",
+    "resume": "Nécessite la compétence Robuste. Les résultats « sonné » sont traités comme « à terre ».",
+    "resumeEn": "Requires Resilient. Stunned results are treated as knocked down.",
+    "condition": null
+   }
+  ]
+ },
+ "races": {},
+ "notes": "Effectif min 3. La page indique « 500 warp tokens » pour le trésor de départ (lu comme 500 co, tous les coûts étant en co). Moines initiés : XP 0 ; Sorcier et Moines de la peste : 8. Le prêtre de la peste n'est pas sorcier par défaut (il peut apprendre la magie du Rat Cornu via le Liber Bubonicus s'il a Aptitude magique). Profil des rats géants selon la page (6 2 0 3 3 1 4 1 4 ; la BSData donnait 6 3 0 4 3 1 5 2 5). Rat-ogre : stupide sauf si un héros skaven est à 6 ps ou moins ; race laissée à null (maximums inconnus). Équipement spécial de clan (Rare) : encensoir 40 co (Rare 9, F+2 au 1er tour, deux mains, Brouillard de mort), dague contaminée 15 co (Rare 8), bannière Pestilens 10 co, éclats de malepierre 100+D6×10, Liber Bubonicus 200+D6×25, Liturgicus Infecticus 30+2D6, fiole de Pestilens 25+2D6, parchemin du rat familier 25+D6 (rat familier : 6 2 0 3 3 1 4 1 4), amulette de malepierre 10 co. Seuls encensoir et dague contaminée figurent dans la liste des héros. Corps putride/Contagieux/Faim noire : prérequis indiqués dans les résumés (condition null)."
+}

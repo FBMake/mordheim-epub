@@ -1,0 +1,956 @@
+{
+  "id": "caravanes-marchandes",
+  "url": "https://mordheimer.net/docs/warbands/grade-1c-warbands/merchant-caravans",
+  "nomEn": "Merchant Caravans",
+  "nom": "Caravanes marchandes",
+  "tresor": 600,
+  "effectifMax": 12,
+  "regles": [
+    "Trade",
+    "Open for Business",
+    "Rarity"
+  ],
+  "guerriers": [
+    {
+      "cle": "Merchant",
+      "nom": "Marchand",
+      "categorie": "heros",
+      "cout": 50,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Merchant"
+      ],
+      "competences": [
+        "Tir",
+        "Érudition",
+        "Spéciales (Caravane marchande)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Rapier",
+              "nom": "Rapière",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 30
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Cathayan Silk Cloak",
+              "nom": "Cape de soie de Cathay",
+              "cout": 40
+            },
+            {
+              "en": "Trade Wagon",
+              "nom": "Chariot marchand",
+              "cout": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Apprentice",
+      "nom": "Apprenti",
+      "categorie": "heros",
+      "cout": 15,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Rapier",
+              "nom": "Rapière",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 30
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Cathayan Silk Cloak",
+              "nom": "Cape de soie de Cathay",
+              "cout": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Knights Vanguard",
+      "nom": "Chevaliers d'avant-garde",
+      "categorie": "heros",
+      "cout": 45,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Lightning Reflexes",
+        "Ride Warhorse",
+        "Hirelings"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Rapier",
+              "nom": "Rapière",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Dragon Sword",
+              "nom": "Épée dragon",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 30
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Cathayan Silk Cloak",
+              "nom": "Cape de soie de Cathay",
+              "cout": 40
+            },
+            {
+              "en": "Warhorse",
+              "nom": "Cheval de guerre",
+              "cout": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Magician",
+      "nom": "Magicien",
+      "categorie": "heros",
+      "cout": 40,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Wizard (Lesser Magic)",
+        "Hirelings"
+      ],
+      "competences": [
+        "Érudition",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Rapier",
+              "nom": "Rapière",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 30
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Cathayan Silk Cloak",
+              "nom": "Cape de soie de Cathay",
+              "cout": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Sell-swords",
+      "nom": "Épées à louer",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Pike",
+              "nom": "Pique",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Marksmen",
+      "nom": "Tireurs d'élite",
+      "categorie": "hdm",
+      "cout": 30,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Blackguards",
+      "nom": "Gardes noirs",
+      "categorie": "hdm",
+      "cout": 35,
+      "min": 0,
+      "max": 3,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Strongman",
+        "Unreliable Hirelings"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Dragon Sword",
+              "nom": "Épée dragon",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Merchant": {
+      "fr": {
+        "nom": "Marchand",
+        "resume": "Le marchand dirige la caravane. S'il disparaît, un nouveau chef est désigné et reprend cette règle ; à défaut, un apprenti doit être recruté dès que possible."
+      },
+      "en": {
+        "nom": "Merchant",
+        "resume": "The Merchant leads the caravan. If he is lost a new leader takes over this rule; failing that, an Apprentice must be hired as soon as possible."
+      }
+    },
+    "Trade": {
+      "fr": {
+        "nom": "Commerce",
+        "resume": "Avant la recherche d'objets rares, le marchand peut vendre un objet rare stocké dans le chariot : sur 1D6, 1-2 moitié du prix de base, 3-4 prix de base, 5-6 une fois et demie le prix de base. Il peut aussi le garder pour réessayer plus tard."
+      },
+      "en": {
+        "nom": "Trade",
+        "resume": "Before searching for rare items the Merchant may sell one rare item stored in the wagon: on a D6, 1-2 half base price, 3-4 base price, 5-6 one and a half times the base price. He may keep it to try again later."
+      }
+    },
+    "Open for Business": {
+      "fr": {
+        "nom": "Boutique ouverte",
+        "resume": "Un héros peut rendre visite au marchand au lieu de chercher des objets rares pour acheter un objet stocké ou vendre un objet à un prix convenu entre les joueurs."
+      },
+      "en": {
+        "nom": "Open for Business",
+        "resume": "Instead of searching for rare items a Hero may visit the Merchant to buy a stored item or sell one at a price agreed between players."
+      }
+    },
+    "Rarity": {
+      "fr": {
+        "nom": "Rareté réduite",
+        "resume": "Un objet rare dont la rareté tombe à 2 ou moins (réputation du chariot, Débrouillardise…) s'achète comme un objet courant."
+      },
+      "en": {
+        "nom": "Rarity",
+        "resume": "A rare item whose rarity drops to 2 or less (wagon reputation, Streetwise…) can be bought as a common item."
+      }
+    },
+    "Lightning Reflexes": {
+      "fr": {
+        "nom": "Réflexes foudroyants",
+        "resume": "Quand il est chargé, le chevalier frappe en premier contre les chargeurs ; si ceux-ci frappent aussi en premier, l'Initiative départage."
+      },
+      "en": {
+        "nom": "Lightning Reflexes",
+        "resume": "When charged the knight strikes first against the chargers; if they also strike first, Initiative decides."
+      }
+    },
+    "Ride Warhorse": {
+      "fr": {
+        "nom": "Cavalier",
+        "resume": "Le chevalier est entraîné à monter un cheval de guerre."
+      },
+      "en": {
+        "nom": "Ride Warhorse",
+        "resume": "The knight is trained to ride a warhorse."
+      }
+    },
+    "Hirelings": {
+      "fr": {
+        "nom": "Mercenaires engagés",
+        "resume": "Payé par le marchand, ce héros ne peut jamais devenir chef de la bande."
+      },
+      "en": {
+        "nom": "Hirelings",
+        "resume": "Paid by the Merchant, this hero can never lead the warband."
+      }
+    },
+    "Wizard (Lesser Magic)": {
+      "fr": {
+        "nom": "Sorcier (Magie mineure)",
+        "resume": "Le magicien est un sorcier qui utilise la magie mineure."
+      },
+      "en": {
+        "nom": "Wizard (Lesser Magic)",
+        "resume": "The Magician is a wizard using Lesser Magic."
+      }
+    },
+    "Strongman": {
+      "fr": {
+        "nom": "Costaud",
+        "resume": "Peut utiliser une arme lourde sans frapper systématiquement en dernier : l'ordre des attaques se règle comme pour les autres armes."
+      },
+      "en": {
+        "nom": "Strongman",
+        "resume": "May use a double-handed weapon without always striking last; strike order is worked out as for other weapons."
+      }
+    },
+    "Unreliable Hirelings": {
+      "fr": {
+        "nom": "Mercenaires peu fiables",
+        "resume": "Ces guerriers ne peuvent jamais devenir héros : relancez le résultat « Ce gars a du talent »."
+      },
+      "en": {
+        "nom": "Unreliable Hirelings",
+        "resume": "These warriors can never become Heroes: re-roll 'The lad's got talent' results."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Caravane marchande)",
+    "listeEn": "Special Skills (Merchant)",
+    "competences": [
+      {
+        "en": "Bribery",
+        "nom": "Pots-de-vin",
+        "resume": "Lors d'un test de déroute, payer 5 co par membre non-héros encore en jeu permet d'ignorer un membre hors de combat pour ce test ; répétable tant qu'il reste de l'or.",
+        "resumeEn": "When a Rout test is due, paying 5 gc per non-Hero still in play lets one out-of-action member be ignored for it; repeatable while gold lasts.",
+        "condition": "chef"
+      },
+      {
+        "en": "Dubious Income",
+        "nom": "Revenus douteux",
+        "resume": "Après une bataille où il n'a pas été mis hors de combat, test de Cd : réussi, gagne 1 co par point d'XP du marchand ; raté, perd jusqu'à ce montant.",
+        "resumeEn": "After a battle he was not taken out of action in, take a Ld test: success gains 1 gc per Merchant XP, failure loses up to that much.",
+        "condition": "chef"
+      },
+      {
+        "en": "Wholesale",
+        "nom": "Vente en gros",
+        "resume": "Après chaque bataille (s'il n'a pas été mis hors de combat), cherche 1D3+1 objets rares au lieu d'un.",
+        "resumeEn": "After each battle (if not taken out of action) he searches for D3+1 rare items instead of one.",
+        "condition": "chef"
+      },
+      {
+        "en": "Deal Breaker",
+        "nom": "Négociateur redoutable",
+        "resume": "+1 au jet de vente de la règle Commerce.",
+        "resumeEn": "+1 to the sale roll of the Trade rule.",
+        "condition": "chef"
+      },
+      {
+        "en": "Connected",
+        "nom": "Relations",
+        "resume": "Au lieu d'une recherche d'objet rare normale, cherche au marché noir : parchemin de dissipation (50+4D6 co, rare 12), parchemin magique (100 co, rare 14), artefact mineur (200+D6×15 co, rare 16), artefact magique (350+D6×25 co, rare 18) ; non revendables.",
+        "resumeEn": "Instead of a normal rare search he visits the black market: dispel scroll (50+4D6 gc, rare 12), magic scroll (100 gc, rare 14), lesser artefact (200+D6x15 gc, rare 16), magical artefact (350+D6x25 gc, rare 18); cannot be sold back.",
+        "condition": "chef"
+      }
+    ]
+  },
+  "races": {},
+  "notes": "ATTENTION : la page Merchant Caravans décrit une seule version, celle de Border Town Burning (marches de Cathay) ; aucune variante arabéenne n'existe sur la page (seule mention : « un marchand d'Arabie » dans le texte d'ambiance). La bande est donc nommée « Caravanes marchandes ». Chariot marchand (Trade Wagon, 180 co, obligatoire, comprend deux chevaux de trait ; chariot E8 PV4, roues E6 PV1, cheval M8 CC1 CT0 F3 E3 PV1 I3 A0 Cd5) : listé par la page parmi les hommes de main obligatoires et dans l'équipement Divers des héros ; saisi comme objet du marchand seulement. Il stocke l'équipement (+1 aux jets d'objets rares par 5 objets rares différents stockés). Cheval de guerre réservé aux chevaliers d'avant-garde ; pique et hallebarde réservées aux épées à louer. Les chevaliers d'avant-garde utilisent les listes héros et cathayane (fusionnées). Le marchand peut prendre ses compétences spéciales à la place des listes standard. La bande peut recruter les francs-tireurs des bandes mercenaires. Maximums : profil humain."
+}

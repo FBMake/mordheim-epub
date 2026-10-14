@@ -1,0 +1,719 @@
+{
+  "id": "gobelins-foret",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/forest-goblins",
+  "nomEn": "Forest Goblins",
+  "nom": "Gobelins de la forêt",
+  "tresor": 500,
+  "effectifMax": 20,
+  "regles": [
+    "Natives",
+    "Animosity"
+  ],
+  "guerriers": [
+    {
+      "cle": "Chieftain",
+      "nom": "Chef",
+      "categorie": "heros",
+      "cout": 50,
+      "min": 1,
+      "max": 1,
+      "xp": 17,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "gobelin",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Ride Spiders"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 5
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Boss Pole",
+              "nom": "Perche de chef",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 25
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Brave",
+      "nom": "Brave",
+      "categorie": "heros",
+      "cout": 20,
+      "min": 0,
+      "max": 4,
+      "xp": 6,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "gobelin",
+      "sansProgression": false,
+      "regles": [
+        "Animosity"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse",
+        "Spéciales (Gobelins de la forêt)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 5
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Boss Pole",
+              "nom": "Perche de chef",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 25
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Shaman",
+      "nom": "Chaman",
+      "categorie": "heros",
+      "cout": 20,
+      "min": 0,
+      "max": 1,
+      "xp": 6,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "gobelin",
+      "sansProgression": false,
+      "regles": [
+        "Wizard (Forest Goblin Magic)"
+      ],
+      "competences": [
+        "Érudition",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 5
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Boss Pole",
+              "nom": "Perche de chef",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 25
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Forest Goblin",
+      "nom": "Gobelin de la forêt",
+      "categorie": "hdm",
+      "cout": 15,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "gobelin",
+      "sansProgression": false,
+      "regles": [
+        "Animosity"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 25
+            },
+            {
+              "en": "Throwing Weapons",
+              "nom": "Armes de jet",
+              "cout": 15
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Red Toof Goblin",
+      "nom": "Gobelin Dent-Rouge",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "gobelin",
+      "sansProgression": false,
+      "regles": [
+        "Animosity",
+        "Frenzy",
+        "Berserkers"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 25
+            },
+            {
+              "en": "Throwing Weapons",
+              "nom": "Armes de jet",
+              "cout": 15
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Slugga",
+      "nom": "Slugga",
+      "categorie": "hdm",
+      "cout": 20,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "gobelin",
+      "sansProgression": false,
+      "regles": [
+        "Animosity",
+        "Sluggas"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 25
+            },
+            {
+              "en": "Throwing Weapons",
+              "nom": "Armes de jet",
+              "cout": 15
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Gigantic Spider",
+      "nom": "Araignée gigantesque",
+      "categorie": "hdm",
+      "cout": 200,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "3",
+        "CT": "0",
+        "F": "5",
+        "E": "5",
+        "PV": "3",
+        "I": "4",
+        "A": "2",
+        "Cd": "4"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Fear",
+        "Large Target",
+        "Poisonous",
+        "Natives",
+        "Non-sentient",
+        "Stupidity",
+        "May Ride"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Natives": {
+      "fr": {
+        "nom": "Natifs",
+        "resume": "Le guerrier ignore les pénalités de mouvement en terrain boisé."
+      },
+      "en": {
+        "nom": "Natives",
+        "resume": "The warrior ignores movement penalties in wooded terrain."
+      }
+    },
+    "Ride Spiders": {
+      "fr": {
+        "nom": "Chevaucheur d'araignées",
+        "resume": "Le chef peut monter les araignées géantes et l'araignée gigantesque (règles optionnelles de monture)."
+      },
+      "en": {
+        "nom": "Ride Spiders",
+        "resume": "The Chieftain may ride Giant Spiders and the Gigantic Spider (optional mount rules)."
+      }
+    },
+    "Wizard (Forest Goblin Magic)": {
+      "fr": {
+        "nom": "Sorcier (Magie des gobelins de la forêt)",
+        "resume": "Le chaman est un sorcier : il commence avec un sort tiré au hasard dans la liste des gobelins de la forêt."
+      },
+      "en": {
+        "nom": "Wizard (Forest Goblin Magic)",
+        "resume": "The Shaman is a wizard who starts with one random spell from the Forest Goblin spell list."
+      }
+    },
+    "Berserkers": {
+      "fr": {
+        "nom": "Berserks",
+        "resume": "Ces gobelins sont sujets à la frénésie ; s'ils commencent leur tour à portée de charge d'un ennemi, ils ignorent l'animosité ce tour-là."
+      },
+      "en": {
+        "nom": "Berserkers",
+        "resume": "These goblins are subject to frenzy; if they start their turn within charge range of an enemy they ignore animosity that turn."
+      }
+    },
+    "Sluggas": {
+      "fr": {
+        "nom": "Sluggas",
+        "resume": "Lors de la phase de tir, le slugga peut lancer ses armes de jet jusqu'à trois fois ; non cumulable avec Tir rapide s'il est promu."
+      },
+      "en": {
+        "nom": "Sluggas",
+        "resume": "In the shooting phase a Slugga may throw its thrown weapons up to three times; cannot be combined with Quick Shot if promoted."
+      }
+    },
+    "Poisonous": {
+      "fr": {
+        "nom": "Venimeuse",
+        "resume": "Après une blessure, le jet de blessure donne : 1 à terre, 2-4 sonné, 5-6 hors de combat."
+      },
+      "en": {
+        "nom": "Poisonous",
+        "resume": "When it wounds, the injury roll is 1 knocked down, 2-4 stunned, 5-6 out of action."
+      }
+    },
+    "Non-sentient": {
+      "fr": {
+        "nom": "Créature sans conscience",
+        "resume": "L'araignée est sujette à la stupidité, peut escalader et ne gagne jamais d'expérience."
+      },
+      "en": {
+        "nom": "Non-sentient",
+        "resume": "The spider is subject to stupidity, may climb, and never gains experience."
+      }
+    },
+    "May Ride": {
+      "fr": {
+        "nom": "Monture",
+        "resume": "Le chef peut la chevaucher : il gagne +1 en sauvegarde d'armure et se déplace de 6 ps ; les tirs touchent le cavalier sur 1-2 et l'araignée sur 3-6, l'adversaire choisit sa cible au corps à corps. Montée, elle ignore la stupidité."
+      },
+      "en": {
+        "nom": "May Ride",
+        "resume": "The Chieftain may ride it: +1 armour save and moves 6\"; shots hit the rider on 1-2 and the spider on 3-6, the opponent picks the target in close combat. A ridden spider ignores stupidity."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Gobelins de la forêt)",
+    "listeEn": "Special Skills (Forest Goblins)",
+    "competences": [
+      {
+        "en": "Lose Animosity",
+        "nom": "Fin de l'animosité",
+        "resume": "Au lieu de choisir une compétence, le brave peut se débarrasser de la règle Animosité.",
+        "resumeEn": "Instead of choosing a skill, the Brave may remove the Animosity rule.",
+        "condition": "gobelins-foret/brave"
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Bande du supplément Nemesis Crown. Aucune ligne d'équipement n'est réservée à un guerrier ; le 'Boss Pole' (20 co) n'est pas expliqué sur la page. 'Throwing Weapons' 15 co saisi tel quel. Sarbacane : portée 8 ps, F1, empoisonnée (un 6 pour toucher blesse automatiquement, pas de critique), furtive. L'araignée gigantesque n'utilise aucun équipement ; race null. La page ne liste pas les sorts (liste 'Forest Goblin'). Les araignées géantes citées par la règle du chef n'ont pas de profil sur la page. Hommes de main par groupes de 1 à 5. La liste spéciale se limite à l'option du brave (retirer l'Animosité à la place d'une compétence)."
+}
