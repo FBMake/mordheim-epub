@@ -683,10 +683,23 @@ select.perso-nom-input { width: 100%; }
   align-items: center;
   font-family: "JetBrains Mono", monospace;
   font-size: 0.8rem;
-  padding: 0.15rem 0;
 }
 .stat-cell + .stat-cell { border-left: 1px solid rgba(138,110,61,0.35); }
-.stat-cell b { font-size: 0.62rem; color: var(--ink-soft); }
+/* Lettres sur fond foncé, chiffres sur fond clair. */
+.stat-cell b {
+  align-self: stretch;
+  text-align: center;
+  font-size: 0.62rem;
+  padding: 0.1rem 0;
+  background: var(--ink-soft);
+  color: var(--parchment);
+}
+.stat-cell > span {
+  align-self: stretch;
+  text-align: center;
+  padding: 0.1rem 0;
+  background: rgba(255, 250, 238, 0.7);
+}
 .unit-detail { margin: 0.15rem 0; font-size: 0.88rem; }
 .add-btn { margin-bottom: 1.6rem; }
 
@@ -776,6 +789,13 @@ select.perso-nom-input { width: 100%; }
 .section-title.small { font-size: 1.5rem; margin: 0 0 0.4rem; }
 .stats-edit { display: grid; grid-template-columns: repeat(9, 1fr); gap: 0.25rem; }
 .stat-edit { display: flex; flex-direction: column; align-items: center; font-family: "JetBrains Mono", monospace; font-size: 0.7rem; color: var(--ink-soft); }
+.stat-edit > span {
+  align-self: stretch;
+  text-align: center;
+  padding: 0.1rem 0;
+  background: var(--ink-soft);
+  color: var(--parchment);
+}
 .stat-edit input { width: 100%; text-align: center; padding: 0.3rem 0.1rem; }
 .stat-edit input:invalid { border-color: var(--wax); }
 .stat-max { min-height: 1em; font-size: 0.6rem; }
@@ -850,8 +870,8 @@ abbr[title], abbr[data-info] { text-decoration: underline dotted; cursor: help; 
 /* Améliorations (vert) et malus (rouge) par rapport au profil de base */
 .stat-plus { color: #3f6b22; }
 .stat-moins { color: #a32b2b; }
-.stat-cell.stat-plus { background: rgba(79, 140, 46, 0.16); font-weight: 600; }
-.stat-cell.stat-moins { background: rgba(163, 43, 43, 0.14); font-weight: 600; }
+.stat-cell.stat-plus > span { background: rgba(79, 140, 46, 0.22); font-weight: 600; }
+.stat-cell.stat-moins > span { background: rgba(163, 43, 43, 0.18); font-weight: 600; }
 .stat-chevron { font-style: normal; font-size: 0.8em; margin-left: 0.2em; vertical-align: 0.05em; }
 
 /* Carte d'un guerrier : équipement, compétences et règles en colonnes. */
