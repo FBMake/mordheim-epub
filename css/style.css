@@ -1009,7 +1009,7 @@ button.xp-case { cursor: pointer; }
 .depart-bloc .hint-inline { margin: 0.15rem 0 0.5rem; }
 .depart-slots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.4rem 0.8rem; }
 .depart-slot { display: flex; align-items: center; gap: 0.45rem; min-width: 0; }
-.depart-slot .depart-select { flex: 1; min-width: 0; }
+.depart-vide { color: var(--ink-soft); font-style: italic; font-size: 0.9rem; }
 .depart-num {
   flex: none;
   width: 1.5rem;
