@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title data-i18n="page.titre">Fiches de Bande</title>
 <meta name="description" data-i18n-content="page.description" content="Créez ou importez vos bandes Mordheim, suivez vos parties et imprimez des fiches PDF illustrées, en français." />
-<meta name="theme-color" content="#1a130d" />
+<meta name="theme-color" content="#2b1d12" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
@@ -20,8 +20,9 @@
 </head>
 <body>
 
-<div class="parchment-frame">
-  <header class="masthead">
+<!-- Menu sur le bois : à gauche sur grand écran, en haut (repliable) sur petit écran. -->
+<aside class="sidebar" id="sidebar">
+  <header class="masthead feuille">
     <img class="deco deco-gauche" src="images/deco/blason-s.webp" alt="" width="159" height="151" />
     <img class="deco deco-droite" src="images/deco/blason-s.webp" alt="" width="159" height="151" />
     <p class="eyebrow" data-i18n="entete.surtitre">Registre des Bandes</p>
@@ -29,18 +30,32 @@
     <p class="subtitle" data-i18n="entete.soustitre">Créez votre bande ou importez-la depuis New Recruit, suivez vos parties et imprimez des fiches illustrées en français.</p>
   </header>
 
-  <nav class="app-nav" aria-label="Menu principal" data-i18n-aria-label="nav.aria">
+  <div class="sidebar-outils">
+    <button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="app-nav">
+      <span class="menu-toggle-icone" aria-hidden="true"></span>
+      <span data-i18n="nav.menu">Menu</span>
+    </button>
+    <div class="lang-switch">
+      <button type="button" id="lang-btn" class="lang-btn" aria-haspopup="true" aria-expanded="false" data-i18n-aria-label="langue.choisir" data-i18n-title="langue.choisir"></button>
+      <div id="lang-menu" class="lang-menu" role="menu" hidden></div>
+    </div>
+  </div>
+
+  <nav class="app-nav" id="app-nav" aria-label="Menu principal" data-i18n-aria-label="nav.aria">
     <button type="button" class="nav-btn" data-view="accueil" data-i18n="nav.accueil">Mes bandes</button>
     <button type="button" class="nav-btn" data-view="nouvelle" data-i18n="nav.nouvelle">Nouvelle bande</button>
     <button type="button" class="nav-btn" data-view="import" data-i18n="nav.import">Importer</button>
     <button type="button" class="nav-btn" data-view="regles" data-i18n="nav.regles">Règles des bandes</button>
     <button type="button" class="nav-btn nav-bande" data-view="bande" hidden>Bande ouverte</button>
-    <div class="lang-switch">
-      <button type="button" id="lang-btn" class="lang-btn" aria-haspopup="true" aria-expanded="false" data-i18n-aria-label="langue.choisir" data-i18n-title="langue.choisir"></button>
-      <div id="lang-menu" class="lang-menu" role="menu" hidden></div>
-    </div>
   </nav>
 
+  <footer class="footer-note">
+    <p data-i18n="pied.confidentialite">Tout le traitement se fait dans votre navigateur : vos bandes ne sont jamais envoyées sur un serveur.</p>
+    <p>V0.18</p>
+  </footer>
+</aside>
+
+<main class="parchment-frame">
   <!-- ============ Accueil : les 4 emplacements ============ -->
   <section id="view-accueil" class="view ledger-block">
     <h2 class="section-title" data-i18n="accueil.titre">Mes bandes</h2>
@@ -258,11 +273,7 @@
     </div>
   </section>
 
-  <footer class="footer-note">
-    <p data-i18n="pied.confidentialite">Tout le traitement se fait dans votre navigateur : vos bandes ne sont jamais envoyées sur un serveur.</p>
-    <p>V0.17</p>
-  </footer>
-</div>
+</main>
 
 <!-- Fiche d'édition d'une figurine (bande créée) -->
 <dialog id="fig-dialog" class="fig-dialog">

@@ -10,7 +10,7 @@
    Pensez à incrémenter CACHE_VERSION quand la liste PRECACHE change.
    ------------------------------------------------------------------ */
 
-const CACHE_VERSION = "v16";
+const CACHE_VERSION = "v17";
 const APP_CACHE = `fiches-bande-app-${CACHE_VERSION}`;
 const FONT_CACHE = "fiches-bande-fonts";
 
@@ -21,6 +21,8 @@ const PRECACHE = [
   "css/style.css",
   "images/parchemin-haut.webp",
   "images/parchemin-milieu.webp",
+  "images/bois.webp",
+  "images/feuille.webp",
   "images/parchemin-bas.webp",
   "images/deco/separateur.webp",
   "images/deco/blason-s.webp",
