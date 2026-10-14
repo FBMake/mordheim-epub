@@ -125,11 +125,11 @@ for (let i = 0; i < 6; i++) mb.figurines.push(newFigurineFromModele("marienburg/
 const w = creationWarnings(mb);
 assert.ok(w.some((x) => x.includes("Spadassins") && x.includes("5 au maximum")), w.join("\n"));
 mb.figurines.pop();
-// Recruté avec 20 xp : 8 seuils déjà franchis (2, 4, 6, 8, 11, 14, 17, 20), donc 8 compétences de départ à choisir.
+// Recruté avec 20 xp : 8 seuils déjà franchis (2, 4, 6, 8, 11, 14, 17, 20), donc jusqu'à 8 compétences de départ, facultatives.
 assert.equal(competencesDepart(capitaine), 8);
-assert.deepEqual(creationWarnings(mb), ["Capitaine mercenaire : 8 compétence(s) de départ à choisir (recruté avec 20 xp)."]);
-capitaine.competences.push("Esquive", "Sprint", "Acrobate", "Frappe Précise", "Maître du Combat", "Tir Rapide", "Pistolier", "Coup Puissant");
-assert.equal(competencesDepartManquantes(capitaine), 0);
+assert.equal(competencesDepartManquantes(capitaine), 8);
+capitaine.competences.push("Esquive", "Sprint");
+assert.equal(competencesDepartManquantes(capitaine), 6);
 assert.deepEqual(creationWarnings(mb), []);
 const m = parseRoster(buildRoster(mb));
 assert.equal(m.meta.catalogue, "Mercenaires de Marienburg");

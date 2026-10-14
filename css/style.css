@@ -1024,7 +1024,6 @@ button.xp-case { cursor: pointer; }
   color: var(--parchment);
 }
 .depart-slot.vide .depart-num { background: transparent; color: var(--wax); border: 1.5px dashed var(--wax); }
-.error-inline { margin: 0.5rem 0 0; color: var(--wax); font-weight: 600; font-size: 0.9rem; }
 @media (max-width: 640px) {
   .depart-slots { grid-template-columns: 1fr; }
 }

@@ -58,7 +58,6 @@ import {
   appliquerProgression,
   appliquerProgressionHeros,
   competencesDepart,
-  competencesDepartManquantes,
   competencesLibres,
   ecartsProfil,
   lancer2D6,
@@ -1798,13 +1797,13 @@ function nbCompetencesDepart() {
 
 /**
  * Compétences de départ d'un héros recruté avec de l'expérience : une case
- * par seuil déjà franchi, remplie par une compétence de ses listes.
+ * par seuil déjà franchi, à remplir ou non selon les règles du groupe
+ * (les règles officielles n'en donnent pas).
  */
 function renderFigDepart() {
   const n = figDraft.categorie === "heros" ? nbCompetencesDepart() : 0;
   const bloc = document.getElementById("fig-depart-bloc");
   bloc.hidden = n === 0;
-  document.getElementById("fig-depart-erreur").hidden = true;
   if (!n) return;
   document.getElementById("fig-depart-titre").textContent = t("fig.depart", { n, xp: xpDepartFiche() });
   const box = document.getElementById("fig-depart-slots");
@@ -2090,17 +2089,6 @@ figForm.addEventListener("submit", (e) => {
   figDraft.xp = Math.max(0, Number(figXp.value) || 0);
   // Au recrutement (et tant que la bande est en brouillon), l'expérience saisie est le point de départ des progressions.
   if (!figOriginal || currentCreation.brouillon) figDraft.xpDepart = figDraft.xp;
-  // Les compétences de départ d'un héros recruté avec de l'expérience sont obligatoires.
-  const manquantes =
-    figDraft.categorie === "heros" && !regleBloquantXp(figDraft) ? competencesDepartManquantes(figDraft) : 0;
-  if (manquantes) {
-    renderFigDepart();
-    const erreur = document.getElementById("fig-depart-erreur");
-    erreur.textContent = t("fig.departManquantes", { n: manquantes });
-    erreur.hidden = false;
-    document.querySelector("#fig-depart-slots select")?.focus();
-    return;
-  }
   if (figDraft.categorie === "hdm") {
     figDraft.nombre = Math.min(MAX_GROUPE, Math.max(1, Math.round(Number(figNombre.value)) || 1));
     figDraft.competences = [];
