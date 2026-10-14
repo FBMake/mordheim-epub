@@ -1186,7 +1186,11 @@ function applyCreationChange() {
  *  - unique : refuse un mot déjà dans la liste (même règle en français ou en anglais).
  *  - avantModif() : appelé avant chaque ajout ou retrait ; false l'annule.
  */
-function chipEditor(container, list, { datalist, placeholder, onChange, label = (item) => item, unique = false, avantModif, info }) {
+/**
+ * `saisie: false` retire le champ texte : on ajoute alors seulement depuis
+ * une liste de pastilles à côté (fiche d'un guerrier avec ses données).
+ */
+function chipEditor(container, list, { datalist, placeholder, onChange, label = (item) => item, unique = false, avantModif, info, saisie = true }) {
   const render = () => {
     container.innerHTML = "";
     const chips = document.createElement("div");
@@ -1211,6 +1215,7 @@ function chipEditor(container, list, { datalist, placeholder, onChange, label = 
       chips.appendChild(chip);
     });
     container.appendChild(chips);
+    if (!saisie) return;
 
     const row = document.createElement("div");
     row.className = "chip-add";
@@ -1746,7 +1751,12 @@ function renderArsenal(guerrier) {
 }
 
 function renderFigEquipement() {
+  // Une seule façon d'ajouter : la liste d'équipement du guerrier quand les données en ont une,
+  // sinon le champ texte (bande saisie à la main).
+  const liste = Boolean(getGuerrier(figDraft.modele)?.equipement.length);
+  document.getElementById("fig-arsenal").open = liste;
   chipEditor(document.getElementById("fig-equipement"), figDraft.equipement, {
+    saisie: !liste,
     datalist: "equipment-list",
     placeholder: t("fig.equipement.exemple"),
     onChange: syncCout,
@@ -1764,6 +1774,8 @@ function confirmerModifManuelle() {
 
 function renderFigCompetences() {
   chipEditor(document.getElementById("fig-competences"), figDraft.competences, {
+    // Les compétences se choisissent dans les listes accessibles (listes communes à défaut de données).
+    saisie: false,
     info: descriptionRegle,
     datalist: "rules-list",
     placeholder: t("fig.competences.exemple"),
@@ -1809,7 +1821,6 @@ function renderFigDepart() {
   const box = document.getElementById("fig-depart-slots");
   box.innerHTML = "";
   const libres = competencesLibres(figDraft);
-  const listes = competencesAccessibles(figDraft, getGuerrier(figDraft.modele));
   for (let i = 0; i < n; i++) {
     const slot = document.createElement("div");
     slot.className = "depart-slot";
@@ -1827,28 +1838,9 @@ function renderFigDepart() {
       });
       slot.querySelector(".chip").appendChild(del);
     } else {
+      // Case vide : la compétence se choisit dans les pastilles « Compétences accessibles ».
       slot.classList.add("vide");
-      const select = document.createElement("select");
-      select.className = "perso-nom-input depart-select";
-      select.setAttribute("aria-label", t("fig.departChoisir"));
-      // Seulement les compétences de ses listes, ni déjà acquises ni réservées (chef, sorcier…).
-      select.innerHTML =
-        option("", t("fig.departChoisir")) +
-        listes
-          .map((l) => {
-            const items = l.competences.filter((c) => c.permise && !c.acquise);
-            return items.length
-              ? `<optgroup label="${escapeHtml(loc(l.liste))}">${items.map((c) => option(c.nom, locCompetence(c).nom)).join("")}</optgroup>`
-              : "";
-          })
-          .join("");
-      select.addEventListener("change", () => {
-        if (!select.value) return;
-        figDraft.competences.push(select.value);
-        renderFigCompetences();
-      });
-      slot.innerHTML = num;
-      slot.appendChild(select);
+      slot.innerHTML = `${num}<span class="depart-vide">${escapeHtml(t("fig.departChoisir"))}</span>`;
     }
     box.appendChild(slot);
   }
@@ -2025,7 +2017,7 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   document.getElementById("fig-competences-bloc").hidden = !isHero;
   // Pas de compétence encore : la saisie à la main est ouverte (recrutement, héros importé…).
   // Héros recruté avec de l'expérience : ses compétences se choisissent dans les cases de départ.
-  document.getElementById("fig-comp-modifier").open = !fig && !(isHero && nbCompetencesDepart());
+  document.getElementById("fig-comp-modifier").open = !fig;
   if (isHero) renderFigCompetences();
   const reglesFixes = !isHero && !!guerrier;
   const reglesBox = document.getElementById("fig-regles");
@@ -2043,8 +2035,12 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
           .join("")}</span>`
       : escapeHtml(t("fig.aucuneRegle"));
   } else {
+    // Règles des guerriers de la bande à choisir en pastilles ; champ texte seulement sans données.
+    const reglesConnues = reglesGuerriers(getBande(currentCreation?.bandeId));
+    reglesChoix.open = reglesConnues.length > 0;
     const renderRegles = () => {
       chipEditor(reglesBox, figDraft.regles, {
+        saisie: !reglesConnues.length,
     info: descriptionRegle,
         datalist: "rules-list",
         placeholder: t("fig.regles.exemple"),
@@ -2057,7 +2053,7 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
         reglesChoix,
         document.getElementById("fig-regles-liste"),
         figDraft.regles,
-        reglesGuerriers(getBande(currentCreation?.bandeId)),
+        reglesConnues,
         renderRegles
       );
       if (isHero) renderCompetencesChoix();
