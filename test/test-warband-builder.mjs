@@ -161,7 +161,7 @@ console.log("Brouillon OK");
   const refus = (eq, nom) => equipementRefuse(capitaine, eq, nom);
   assert.equal(refus(["Dague gratuite", "Épée"], "Épée"), null);
   assert.equal(refus(["Dague gratuite", "Épée", "Épée"], "Hache"), "corps");
-  assert.equal(refus(["Arbalète"], "Arbalète"), "tirDouble");
+  assert.equal(refus(["Arbalète"], "Arbalète"), null);
   assert.equal(refus(["Arbalète"], "Arc"), null);
   assert.equal(refus(["Arbalète", "Arc"], "Pistolet"), "tir");
   assert.equal(refus(["Armure légère"], "Armure lourde"), "armure");
@@ -178,6 +178,8 @@ console.log("Brouillon OK");
   assert.deepEqual(alertes(["Morgenstern", "Rondache"]), ["morgenstern"]);
   assert.deepEqual(alertes(["Armure lourde", "Bouclier"]), ["armureLourdeBouclier"]);
   assert.deepEqual(alertes(["Boulet et chaîne", "Champignons fous"]), []);
+  assert.deepEqual(alertes(["Bâton", "Casque"], ["Sorcier (Nécromancie)"]), ["sorcier"]);
+  assert.deepEqual(alertes(["Armure lourde"], ["Prières de Sigmar"]), []);
   assert.deepEqual(alertes(["Boulet et chaîne", "Champignons fous", "Dague gratuite"]), ["encombrant"]);
   // Sauf si une règle de la figurine l'autorise (règle inventée pour le test, sans description connue : aucune exception).
   assert.equal(autoriseDeuxMainsBouclier({ regles: ["Chef"], competences: [] }), false);
