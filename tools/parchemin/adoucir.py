@@ -1,9 +1,9 @@
-"""Brunit et adoucit le bord déchiré du parchemin.
+"""Adoucit le bord déchiré du parchemin.
 
 Lit les images brutes (tools/parchemin/brut/, sorties de split.py) et écrit
-les images du site (images/). Le papier est assombri progressivement sur les
-derniers pixels avant le bord, comme un papier roussi, et le contour est
-légèrement fondu : le parchemin ne tranche plus sur le fond sombre.
+les images du site (images/). Le contour est légèrement fondu, et le papier
+à peine assombri sur ses tout derniers pixels (réglages ci-dessous : plus
+LARGEUR est grand et SOMBRE petit, plus le bord paraît roussi).
 
     python3 tools/parchemin/adoucir.py tools/parchemin/brut images
 """
@@ -13,9 +13,9 @@ from PIL import Image
 
 src, dst = sys.argv[1], sys.argv[2]
 
-LARGEUR = 34        # px (image de 1305 px) sur lesquels le bord est bruni
-SOMBRE = 0.30       # luminosité restante tout au bord
-TEINTE = np.array([0.78, 0.55, 0.33])  # brun roussi vers lequel tire le bord
+LARGEUR = 6         # px (image de 1305 px) sur lesquels le bord est à peine assombri
+SOMBRE = 0.88       # luminosité restante tout au bord
+TEINTE = np.array([0.97, 0.93, 0.88])  # léger brun vers lequel tire le bord
 FONDU = 3           # px de contour rendus semi-transparents
 
 
@@ -35,8 +35,15 @@ def distance_au_bord(opaque, maxi):
     return d
 
 
-def traiter(nom, haut=0, bas=0, boucle=False):
+def traiter(nom, haut=0, bas=0, boucle=False, liseres=()):
     img = np.asarray(Image.open(f"{src}/parchemin-{nom}.webp").convert("RGBA")).astype(float)
+    # Lignes claires laissées par le raccord rouleau / papier : remplacées
+    # par un dégradé entre la ligne du dessus et celle du dessous.
+    for y0, y1 in liseres:
+        avant, apres = img[y0 - 1].copy(), img[y1 + 1].copy()
+        for i, y in enumerate(range(y0, y1 + 1), 1):
+            w = i / (y1 - y0 + 2)
+            img[y] = avant * (1 - w) + apres * w
     alpha = img[..., 3]
     # Les raccords entre morceaux (lignes en fondu) ne sont pas des bords :
     # on prolonge le contour au-delà pour ne pas les brunir.
@@ -66,6 +73,6 @@ def traiter(nom, haut=0, bas=0, boucle=False):
 
 
 # Fondus de raccord de split.py : 40 dernières lignes du haut, 50 premières du bas.
-traiter("haut", bas=40)
+traiter("haut", bas=40, liseres=[(152, 153)])
 traiter("milieu", boucle=True)
 traiter("bas", haut=50)

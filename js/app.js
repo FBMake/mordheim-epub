@@ -146,8 +146,18 @@ function showTab(name) {
   if (name === "composition" && currentCreation) renderCreation();
 }
 
+// Petit écran : le menu est replié en haut de la page.
+const sidebar = document.getElementById("sidebar");
+const menuToggle = document.getElementById("menu-toggle");
+function toggleMenu(open = !sidebar.classList.contains("menu-ouvert")) {
+  sidebar.classList.toggle("menu-ouvert", open);
+  menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+}
+menuToggle.addEventListener("click", () => toggleMenu());
+
 navButtons.forEach((b) =>
   b.addEventListener("click", async () => {
+    toggleMenu(false);
     await flushSave();
     showView(b.dataset.view);
   })

@@ -16,6 +16,7 @@ export default {
   "nav.import": "Import",
   "nav.regles": "Warband rules",
   "nav.bande": "Open warband",
+  "nav.menu": "Menu",
 
   // Home: slots
   "accueil.titre": "My warbands",

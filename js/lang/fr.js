@@ -16,6 +16,7 @@ export default {
   "nav.import": "Importer",
   "nav.regles": "Règles des bandes",
   "nav.bande": "Bande ouverte",
+  "nav.menu": "Menu",
 
   // Accueil : emplacements
   "accueil.titre": "Mes bandes",
