@@ -48,6 +48,7 @@ import {
   regleBloquantXp,
   reglesDeLaBande,
   texteSansXp,
+  equipementRefuse,
 } from "./warband-builder.js";
 import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
 import { flagSvg } from "./flags.js";
@@ -1736,19 +1737,25 @@ function renderArsenal(guerrier) {
   const box = document.getElementById("fig-arsenal");
   box.hidden = !guerrier?.equipement.length;
   if (box.hidden) return;
-  // Un objet peut être pris plusieurs fois (deux dagues…) : rien n'est grisé.
+  // Un objet peut être pris plusieurs fois (deux dagues…) dans la limite des règles :
+  // au-delà, il est grisé et sa bulle dit pourquoi.
   renderChoix(
     document.getElementById("fig-arsenal-liste"),
     guerrier.equipement.map((cat) => ({
       titre: loc(cat.categorie),
-      items: cat.objets.map((o) => ({
-        texte: `${loc(o.nom)} · ${o.cout ?? 0} ${t("monnaie")}`,
-        onPick: () => {
-          figDraft.equipement.push(o.nom);
-          renderFigEquipement();
-          syncCout();
-        },
-      })),
+      items: cat.objets.map((o) => {
+        const refus = equipementRefuse(guerrier, figDraft.equipement, o.nom);
+        return {
+          texte: `${loc(o.nom)} · ${o.cout ?? 0} ${t("monnaie")}`,
+          disabled: Boolean(refus),
+          title: refus ? t(`fig.limite.${refus}`) : "",
+          onPick: () => {
+            figDraft.equipement.push(o.nom);
+            renderFigEquipement();
+            syncCout();
+          },
+        };
+      }),
     }))
   );
 }
@@ -1756,15 +1763,21 @@ function renderArsenal(guerrier) {
 function renderFigEquipement() {
   // Une seule façon d'ajouter : la liste d'équipement du guerrier quand les données en ont une,
   // sinon le champ texte (bande saisie à la main).
-  const liste = Boolean(getGuerrier(figDraft.modele)?.equipement.length);
+  const guerrier = getGuerrier(figDraft.modele);
+  const liste = Boolean(guerrier?.equipement.length);
   document.getElementById("fig-arsenal").open = liste;
   chipEditor(document.getElementById("fig-equipement"), figDraft.equipement, {
     saisie: !liste,
     datalist: "equipment-list",
     placeholder: t("fig.equipement.exemple"),
-    onChange: syncCout,
+    onChange: () => {
+      syncCout();
+      renderArsenal(guerrier);
+    },
     label: loc,
   });
+  // Les limites dépendent de ce qui est déjà porté : la liste est regrisée à chaque ajout.
+  renderArsenal(guerrier);
 }
 
 // Les compétences d'un héros viennent de ses progressions : les modifier à la
@@ -2008,7 +2021,6 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   renderFigStatsEcarts();
   renderFigXpBloque();
   renderFigEquipement();
-  renderArsenal(guerrier);
   applyStatMaximums(guerrier);
   document.getElementById("fig-acces").textContent = !isHero
     ? t("fig.competencesHdm")

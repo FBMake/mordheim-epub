@@ -2,6 +2,7 @@ import assert from "assert/strict";
 import { parseRoster } from "../js/parser.js";
 import {
   BANDES,
+  equipementRefuse,
   buildRoster,
   coutCalcule,
   getGuerrier,
@@ -150,3 +151,21 @@ assert.equal(normalizeCreation({ ...mb, brouillon: "oui" }).brouillon, false);
 const { brouillon: _b, ...ancienne } = mb;
 assert.equal(normalizeCreation(ancienne).brouillon, false);
 console.log("Brouillon OK");
+
+// Limites d'équipement : 2 armes de corps à corps (hors dague gratuite), 2 armes de tir différentes,
+// une armure, un bouclier, un casque.
+{
+  const capitaine = BANDES.flatMap((b) => b.guerriers).find((g) => g.id === "marienburg/mercenary-captain");
+  const refus = (eq, nom) => equipementRefuse(capitaine, eq, nom);
+  assert.equal(refus(["Dague gratuite", "Épée"], "Épée"), null);
+  assert.equal(refus(["Dague gratuite", "Épée", "Épée"], "Hache"), "corps");
+  assert.equal(refus(["Arbalète"], "Arbalète"), "tirDouble");
+  assert.equal(refus(["Arbalète"], "Arc"), null);
+  assert.equal(refus(["Arbalète", "Arc"], "Pistolet"), "tir");
+  assert.equal(refus(["Armure légère"], "Armure lourde"), "armure");
+  assert.equal(refus(["Armure légère", "Casque"], "Bouclier"), null);
+  assert.equal(refus(["Bouclier"], "Rondache"), "bouclier");
+  assert.equal(refus(["Casque"], "Casque"), "casque");
+  assert.equal(refus(["Dague gratuite"], "Dague gratuite"), "dagueGratuite");
+  console.log("Limites d'équipement OK");
+}

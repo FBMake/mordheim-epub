@@ -103,6 +103,41 @@ export function prixEquipement(guerrier, nom) {
   return null;
 }
 
+/**
+ * Limites d'équipement des règles de Mordheim : deux armes de corps à corps
+ * en plus de la dague gratuite, deux armes de tir différentes (une paire de
+ * pistolets compte pour une), une armure, un bouclier (ou une rondache) et
+ * un casque. Le reste (divers) n'est pas limité.
+ */
+const LIMITES_EQUIPEMENT = { corps: 2, tir: 2, armure: 1, bouclier: 1, casque: 1 };
+
+/** Emplacement d'un objet de la liste d'un guerrier (null : objet libre ou inconnu). */
+export function emplacementEquipement(guerrier, nom) {
+  if (nom === "Dague gratuite") return null;
+  const cat = (guerrier?.equipement || []).find((c) => c.objets.some((o) => o.nom === nom));
+  if (!cat) return null;
+  if (cat.categorie === "Armes de corps à corps") return "corps";
+  if (cat.categorie === "Armes de tir") return "tir";
+  if (cat.categorie !== "Armures") return null;
+  if (nom === "Casque") return "casque";
+  if (nom === "Bouclier" || nom === "Rondache") return "bouclier";
+  return "armure";
+}
+
+/**
+ * Pourquoi un objet ne peut plus être ajouté à l'équipement (clé de l'emplacement
+ * plein, "tirDouble" pour une deuxième arme de tir identique, "dagueGratuite"
+ * pour une deuxième dague gratuite), null s'il peut l'être.
+ */
+export function equipementRefuse(guerrier, equipement, nom) {
+  if (nom === "Dague gratuite" && equipement.includes(nom)) return "dagueGratuite";
+  const emplacement = emplacementEquipement(guerrier, nom);
+  if (!emplacement) return null;
+  if (emplacement === "tir" && equipement.includes(nom)) return "tirDouble";
+  const pris = equipement.filter((e) => emplacementEquipement(guerrier, e) === emplacement).length;
+  return pris >= LIMITES_EQUIPEMENT[emplacement] ? emplacement : null;
+}
+
 /** Coût d'une figurine recrutée d'après les données : guerrier + équipement de sa liste. */
 export function coutCalcule(fig) {
   const g = getGuerrier(fig.modele);
