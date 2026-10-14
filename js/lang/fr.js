@@ -377,6 +377,8 @@ export default {
   "fig.limite.bouclier": "déjà un bouclier ou une rondache",
   "fig.limite.casque": "déjà un casque",
   "fig.limite.dagueGratuite": "une seule dague gratuite par guerrier",
+  "fig.limite.deuxMains": "inutilisable avec une arme à deux mains déjà portée",
+  "fig.limite.bouclierPorte": "arme à deux mains : inutilisable avec le bouclier ou la rondache déjà portés",
   "recrue.titre": "Recruter",
   "recrue.horsListe": "Figurine hors liste…",
   "recrue.recruter": "Recruter",

@@ -377,6 +377,8 @@ export default {
   "fig.limite.bouclier": "already a shield or buckler",
   "fig.limite.casque": "already a helmet",
   "fig.limite.dagueGratuite": "only one free dagger per warrior",
+  "fig.limite.deuxMains": "cannot be used with the two-handed weapon already carried",
+  "fig.limite.bouclierPorte": "two-handed weapon: cannot be used with the shield or buckler already carried",
   "recrue.titre": "Recruit",
   "recrue.horsListe": "Model not in the list…",
   "recrue.recruter": "Recruit",

@@ -1744,7 +1744,7 @@ function renderArsenal(guerrier) {
     guerrier.equipement.map((cat) => ({
       titre: loc(cat.categorie),
       items: cat.objets.map((o) => {
-        const refus = equipementRefuse(guerrier, figDraft.equipement, o.nom);
+        const refus = equipementRefuse(guerrier, figDraft.equipement, o.nom, figDraft);
         return {
           texte: `${loc(o.nom)} · ${o.cout ?? 0} ${t("monnaie")}`,
           disabled: Boolean(refus),
@@ -1806,6 +1806,7 @@ function renderFigCompetences() {
   renderCompetencesChoix();
   renderHistorique();
   renderFigDepart();
+  renderArsenal(getGuerrier(figDraft.modele));
 }
 
 /**
@@ -2056,7 +2057,7 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
     const renderRegles = () => {
       chipEditor(reglesBox, figDraft.regles, {
         saisie: !reglesConnues.length,
-    info: descriptionRegle,
+        info: descriptionRegle,
         datalist: "rules-list",
         placeholder: t("fig.regles.exemple"),
         // « Chef » ou « Sorcier » ouvrent certaines compétences ; « Animaux » interdit l'expérience.
@@ -2073,6 +2074,8 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
       );
       if (isHero) renderCompetencesChoix();
       renderFigXpBloque();
+      // Une règle peut autoriser le bouclier avec une arme à deux mains.
+      renderArsenal(guerrier);
     };
     renderRegles();
   }

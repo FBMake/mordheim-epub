@@ -3,6 +3,7 @@ import { parseRoster } from "../js/parser.js";
 import {
   BANDES,
   equipementRefuse,
+  autoriseDeuxMainsBouclier,
   buildRoster,
   coutCalcule,
   getGuerrier,
@@ -167,5 +168,13 @@ console.log("Brouillon OK");
   assert.equal(refus(["Bouclier"], "Rondache"), "bouclier");
   assert.equal(refus(["Casque"], "Casque"), "casque");
   assert.equal(refus(["Dague gratuite"], "Dague gratuite"), "dagueGratuite");
+  // Arme à deux mains et bouclier : incompatibles, dans un sens comme dans l'autre.
+  assert.equal(refus(["Arme lourde"], "Bouclier"), "deuxMains");
+  assert.equal(refus(["Hallebarde"], "Rondache"), "deuxMains");
+  assert.equal(refus(["Bouclier"], "Arme lourde"), "bouclierPorte");
+  assert.equal(refus(["Arme lourde"], "Casque"), null);
+  // Sauf si une règle de la figurine l'autorise (règle inventée pour le test, sans description connue : aucune exception).
+  assert.equal(autoriseDeuxMainsBouclier({ regles: ["Chef"], competences: [] }), false);
+  assert.equal(autoriseDeuxMainsBouclier({ regles: ["Une Seule Attaque, Sans Bouclier"], competences: [] }), false);
   console.log("Limites d'équipement OK");
 }

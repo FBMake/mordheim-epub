@@ -124,13 +124,41 @@ export function emplacementEquipement(guerrier, nom) {
   return "armure";
 }
 
+const ARMES_DEUX_MAINS = new Set(["Arme lourde", "Épée à deux mains", "Hallebarde", "Fléau", "Boulet et chaîne", "Pique"]);
+const BOUCLIERS = new Set(["Bouclier", "Rondache"]);
+
+/**
+ * Une règle ou une compétence de la figurine (y compris gagnée plus tard)
+ * l'autorise-t-elle à porter un bouclier avec une arme à deux mains ? On
+ * cherche dans sa description une phrase qui cite les deux sans négation.
+ */
+export function autoriseDeuxMainsBouclier(fig) {
+  return [...(fig?.regles || []), ...(fig?.competences || [])].some((nom) =>
+    (descriptionRegle(nom) || "")
+      .split(/[.;]/)
+      .some(
+        (phrase) =>
+          /armes? à deux mains|arme lourde/i.test(phrase) &&
+          /bouclier/i.test(phrase) &&
+          !/\b(ne|n'|sans|pas)\b/i.test(phrase)
+      )
+  );
+}
+
 /**
  * Pourquoi un objet ne peut plus être ajouté à l'équipement (clé de l'emplacement
  * plein, "tirDouble" pour une deuxième arme de tir identique, "dagueGratuite"
- * pour une deuxième dague gratuite), null s'il peut l'être.
+ * pour une deuxième dague gratuite, "deuxMains" / "bouclierPorte" pour un
+ * bouclier avec une arme à deux mains), null s'il peut l'être. `fig` donne
+ * les règles et compétences qui peuvent lever l'interdiction.
  */
-export function equipementRefuse(guerrier, equipement, nom) {
+export function equipementRefuse(guerrier, equipement, nom, fig = null) {
   if (nom === "Dague gratuite" && equipement.includes(nom)) return "dagueGratuite";
+  // Une arme à deux mains ne s'utilise pas avec un bouclier ou une rondache.
+  if (!autoriseDeuxMainsBouclier(fig)) {
+    if (BOUCLIERS.has(nom) && equipement.some((e) => ARMES_DEUX_MAINS.has(e))) return "deuxMains";
+    if (ARMES_DEUX_MAINS.has(nom) && equipement.some((e) => BOUCLIERS.has(e))) return "bouclierPorte";
+  }
   const emplacement = emplacementEquipement(guerrier, nom);
   if (!emplacement) return null;
   if (emplacement === "tir" && equipement.includes(nom)) return "tirDouble";
