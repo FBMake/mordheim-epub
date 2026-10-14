@@ -16,10 +16,11 @@ import {
 } from "../js/warband-builder.js";
 
 // --- Les francs-tireurs du livre de base sont dans les données ---
-assert.ok(FRANCS_TIREURS.length >= 7, "7 francs-tireurs au moins");
+assert.ok(FRANCS_TIREURS.length >= 50, "francs-tireurs du livre et des suppléments");
 for (const g of FRANCS_TIREURS) {
   assert.equal(g.categorie, "franc", g.id);
-  assert.ok(g.prime > 0 && g.solde >= 0 && g.valeur > 0, g.id);
+  // Le vieux prospecteur se paie en trésors : prime 0.
+  assert.ok(g.prime >= 0 && g.solde >= 0 && g.valeur > 0, g.id);
   assert.ok(g.regles.some((r) => r.nom === "Franc-tireur"), `${g.id} : règle Franc-tireur`);
 }
 

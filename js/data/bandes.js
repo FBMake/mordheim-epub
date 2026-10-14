@@ -47021,6 +47021,130 @@ export const COMPETENCES_SUPPLEMENTS = {
    null
   ]
  ],
+ "Spéciales (Assassin impérial)": [
+  [
+   "Backstabber",
+   "Attaque sournoise",
+   "Peut charger un ennemi qu'il ne voit pas s'il est à portée ; +1 pour toucher et +1 aux jets de blessure au premier tour de combat.",
+   null
+  ],
+  [
+   "Hide in Shadows",
+   "Se fondre dans l'ombre",
+   "À 1 ps d'un mur ou d'un obstacle, l'ennemi doit réussir un test d'Initiative pour le charger ou lui tirer dessus.",
+   null
+  ]
+ ],
+ "Spéciales (Marchand arabien)": [
+  [
+   "Bribery",
+   "Pots-de-vin",
+   "Payer 5 co par homme de main pour ignorer une perte lors d'un test de déroute.",
+   null
+  ],
+  [
+   "Dubious Income",
+   "Revenus douteux",
+   "Test de Commandement après la partie : gagne ou perd autant d'or que son expérience.",
+   null
+  ],
+  [
+   "Wholesale",
+   "Vente en gros",
+   "Recherche 1D3+1 objets rares.",
+   null
+  ],
+  [
+   "Deal Breaker",
+   "Négociateur",
+   "+1 lors d'une vente.",
+   null
+  ],
+  [
+   "Connected",
+   "Relations",
+   "Peut chercher parchemins et artefacts au marché noir.",
+   null
+  ]
+ ],
+ "Spéciales (Voleur halfling)": [
+  [
+   "Wily Thief",
+   "Voleur rusé",
+   "S'il met un ennemi hors de combat sans être lui-même mis hors de combat, la bande gagne un trésor supplémentaire.",
+   null
+  ]
+ ],
+ "Spéciales (Rôdeur kislévite)": [
+  [
+   "Animal Call",
+   "Appel animal",
+   "Caché, il peut troubler les ennemis à 18 ps : ceux qui ne peuvent pas charger doivent réussir un test de Commandement ou être déplacés par lui.",
+   null
+  ],
+  [
+   "Herb Lore",
+   "Herboristerie",
+   "À la phase de récupération, soigne 1 PV sur 4+ à une figurine en contact (elle comprise), sans bouger ce tour.",
+   null
+  ]
+ ],
+ "Spéciales (Pisteur)": [
+  [
+   "Lookout!",
+   "Attention !",
+   "Aide la bande à éviter un piège ou un danger.",
+   null
+  ],
+  [
+   "This Way!",
+   "Par ici !",
+   "Une figurine en contact avec lui peut franchir un terrain infranchissable comme lui.",
+   null
+  ]
+ ],
+ "Spéciales (Éclaireur hobgobelin)": [
+  [
+   "Spy",
+   "Espion",
+   "Peut redéployer des figurines après le déploiement.",
+   null
+  ],
+  [
+   "Potshot",
+   "Tir au jugé",
+   "Peut tirer à l'arc après avoir couru, à -2.",
+   null
+  ]
+ ],
+ "Spéciales (Pyromane)": [
+  [
+   "Rocket Science",
+   "Artificier",
+   "Modifie de 1 le jet des feux d'artifice.",
+   null
+  ],
+  [
+   "Display Artist",
+   "Artiste pyrotechnicien",
+   "Peut faire exploser une fusée à volonté sur un test d'Initiative.",
+   null
+  ]
+ ],
+ "Spéciales (Forgeron d'épées)": [
+  [
+   "Honing",
+   "Affûtage",
+   "Affûte jusqu'à trois épées pour la partie suivante.",
+   null
+  ],
+  [
+   "Farrier",
+   "Maréchal-ferrant",
+   "Réduit le risque de perdre des chevaux.",
+   null
+  ]
+ ],
  "Spéciales (Éclaireur elfe)": [
   [
    "Wisdom",
@@ -47209,6 +47333,3901 @@ export const RACES_SUPPLEMENTS = {
 };
 // Francs-tireurs (tools/bsdata/francs-tireurs*.json) et groupes de bandes de leurs employeurs.
 export const FRANCS_TIREURS = [
+ {
+  "id": "francs-tireurs/arabian-merchant",
+  "nom": "Marchand arabien",
+  "categorie": "franc",
+  "cout": 20,
+  "prime": 20,
+  "solde": 10,
+  "valeur": 10,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "2",
+   "CT": "2",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Marchandage",
+    "resume": "Possède la compétence Marchandage."
+   },
+   {
+    "nom": "Prêteur sur gages",
+    "resume": "S'il survit à la partie, la bande gagne quelques couronnes de plus pour chaque objet vendu."
+   },
+   {
+    "nom": "Négociant",
+    "resume": "Après chaque partie à laquelle il survit, il visite un marché (marché noir, marchandises étrangères ou receleur) et lance 1D6 pour savoir ce qu'il propose."
+   },
+   {
+    "nom": "Tailleur de pierre",
+    "resume": "Quand la bande vend de la malepierre, il peut la tailler : un jet de 1D6 rapporte un bonus ou une perte."
+   },
+   {
+    "nom": "Garde du corps du marchand",
+    "resume": "Il est accompagné d'un garde qui reste à 1 ps de lui et intercepte les tirs et charges qui le visent, sauf s'il est déjà au corps à corps ; ce garde n'a aucun autre rôle dans la bande."
+   }
+  ],
+  "competences": [
+   "Érudition",
+   "Spéciales (Marchand arabien)"
+  ],
+  "equipementDepart": [
+   "Cimeterre"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Cimeterre",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@mercenaires",
+    "repurgateurs",
+    "soeurs",
+    "@nains",
+    "kislevites",
+    "bretonnie",
+    "nuln",
+    "stirwood",
+    "caravanes-marchandes",
+    "amazones",
+    "guerriers-ombres"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Arabian Merchant"
+ },
+ {
+  "id": "francs-tireurs/beast-hunter",
+  "nom": "Chasseur de bêtes",
+  "categorie": "franc",
+  "cout": 35,
+  "prime": 35,
+  "solde": 15,
+  "valeur": 18,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "4",
+   "F": "3",
+   "E": "4",
+   "PV": "1",
+   "I": "4",
+   "A": "2",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Vengeance contre les hommes-bêtes",
+    "resume": "Hait tous les hommes-bêtes (gors, ungors, centigors, minotaures) et ne réclame aucune solde après une bataille contre eux."
+   },
+   {
+    "nom": "Trophées de crânes",
+    "resume": "Provoque la peur chez tous les hommes-bêtes."
+   },
+   {
+    "nom": "Prédateur",
+    "resume": "Dans une bataille en pleine nature contre des hommes-bêtes, il peut être placé caché après le déploiement des deux bandes, hors de la zone ennemie."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Force"
+  ],
+  "equipementDepart": [
+   "Hache",
+   "Hache",
+   "Hache de jet",
+   "Armure légère"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Hache",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Hache de jet",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure légère",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "@skavens",
+    "hommes-betes",
+    "@morts-vivants",
+    "@orques",
+    "possedes",
+    "carnaval"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Beast Hunter"
+ },
+ {
+  "id": "francs-tireurs/highwayman",
+  "nom": "Bandit de grand chemin",
+  "categorie": "franc",
+  "cout": 35,
+  "prime": 35,
+  "solde": 20,
+  "valeur": 20,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "4",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "3",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Pistolier expert",
+    "resume": "Cumule les effets des compétences Pistolier et Tireur habile."
+   },
+   {
+    "nom": "Sans scrupules",
+    "resume": "Après chaque partie, lancez 1D6 : sur 1, la bande perd un trésor, qu'il garde pour lui."
+   },
+   {
+    "nom": "Cavalier expert (bandit)",
+    "resume": "À cheval, il compte comme immobile pour tirer (pas de -1) et recharge rapidement en selle."
+   },
+   {
+    "nom": "Diligences",
+    "resume": "Dans un scénario avec une diligence ou un chariot, il peut relancer un dé par tour, jusqu'à ce qu'un dé relancé donne 1."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Tir",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Paire de pistolets",
+   "Rapière",
+   "Dague",
+   "Cape (rondache)"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Rapière",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Paire de pistolets",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Cape (rondache)",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "soeurs",
+    "repurgateurs",
+    "guerriers-ombres"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Highwayman"
+ },
+ {
+  "id": "francs-tireurs/imperial-assassin",
+  "nom": "Assassin impérial",
+  "categorie": "franc",
+  "cout": 40,
+  "prime": 40,
+  "solde": 20,
+  "valeur": 22,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "4",
+   "CT": "4",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "5",
+   "A": "2",
+   "Cd": "8"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Maître d'armes",
+    "resume": "Sait manier toutes les armes ; celles achetées pour lui lui appartiennent et ne peuvent pas être données à un autre membre de la bande. N'utilise jamais d'armes à poudre noire."
+   },
+   {
+    "nom": "Empoisonneur",
+    "resume": "Commence chaque partie avec des armes enduites de Lotus noir ou de Venin noir, au choix, sans avoir à l'acheter ; il ne peut pas en fournir aux autres."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Tir",
+   "Vitesse",
+   "Spéciales (Assassin impérial)"
+  ],
+  "equipementDepart": [
+   "Épée",
+   "Dague",
+   "Couteaux et étoiles de lancer",
+   "Pistolet-arbalète"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Couteaux et étoiles de lancer",
+      "cout": 0
+     },
+     {
+      "nom": "Pistolet-arbalète",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "repurgateurs",
+    "soeurs",
+    "@orques",
+    "@skavens"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Imperial Assassin"
+ },
+ {
+  "id": "francs-tireurs/roadwarden",
+  "nom": "Patrouilleur",
+  "categorie": "franc",
+  "cout": 40,
+  "prime": 40,
+  "solde": 20,
+  "valeur": 22,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "4",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "3",
+   "A": "1",
+   "Cd": "8"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Tireur mortel",
+    "resume": "Cumule les effets des compétences Tireur habile et Yeux d'aigle."
+   },
+   {
+    "nom": "Impassible",
+    "resume": "Peut relancer un test de Commandement raté contre la panique ou la peur et ignore la règle « Seul contre tous »."
+   },
+   {
+    "nom": "Cavalier expert (patrouilleur)",
+    "resume": "À cheval, il compte comme ayant la compétence Agile et ne subit aucun malus pour tirer après avoir bougé."
+   },
+   {
+    "nom": "Diligences",
+    "resume": "Dans un scénario avec une diligence ou un chariot, il peut relancer un dé par tour, jusqu'à ce qu'un dé relancé donne 1."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Tir",
+   "Force"
+  ],
+  "equipementDepart": [
+   "Arbalète",
+   "Marteau de cavalier",
+   "Dague",
+   "Armure lourde",
+   "Torches (3)"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Marteau de cavalier",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Arbalète",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure lourde",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Torches (3)",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@mercenaires",
+    "repurgateurs",
+    "soeurs",
+    "@nains",
+    "kislevites",
+    "bretonnie",
+    "nuln",
+    "stirwood",
+    "caravanes-marchandes",
+    "amazones",
+    "guerriers-ombres"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Roadwarden"
+ },
+ {
+  "id": "francs-tireurs/tilean-marksman",
+  "nom": "Tireur tiléen",
+  "categorie": "franc",
+  "cout": 30,
+  "prime": 30,
+  "solde": 15,
+  "valeur": 16,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "4",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "3",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Mains sûres",
+    "resume": "Ignore le malus de longue portée lorsqu'il tire à l'arbalète."
+   },
+   {
+    "nom": "Tir infaillible",
+    "resume": "Ignore les malus de couvert lorsqu'il tire à l'arbalète."
+   }
+  ],
+  "competences": [
+   "Tir"
+  ],
+  "equipementDepart": [
+   "Armure légère",
+   "Épée",
+   "Dague",
+   "Arbalète"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Arbalète",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure légère",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "@skavens",
+    "@orques",
+    "@morts-vivants"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Tilean Marksman"
+ },
+ {
+  "id": "francs-tireurs/bard",
+  "nom": "Barde",
+  "categorie": "franc",
+  "cout": 20,
+  "prime": 20,
+  "solde": 10,
+  "valeur": 8,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "3",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "3",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Chanteur",
+    "resume": "Toute figurine amie à 6 ps ou moins peut relancer un test de Commandement raté (déroute comprise) avec +1 à son Commandement."
+   }
+  ],
+  "competences": [
+   "Érudition",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Épée",
+   "Dague",
+   "Armure légère"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure légère",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@mercenaires",
+    "soeurs",
+    "repurgateurs"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Bard"
+ },
+ {
+  "id": "francs-tireurs/big-game-hunter",
+  "nom": "Chasseur de gros gibier",
+  "categorie": "franc",
+  "cout": 40,
+  "prime": 40,
+  "solde": 18,
+  "valeur": 16,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "4",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Pièges à gros gibier",
+    "resume": "Après son déploiement, place jusqu'à six pions piège espacés d'au moins 6 ps ; une figurine qui passe à 3 ps lance 1D6 : sur 4+, elle subit une touche automatique et le pion est retiré."
+   }
+  ],
+  "competences": [
+   "Tir",
+   "Érudition"
+  ],
+  "equipementDepart": [
+   "Épée",
+   "Dague",
+   "Filet",
+   "Armure légère",
+   "Fusil de chasse"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Fusil de chasse",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure légère",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Filet",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@humains"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Big Game Hunter"
+ },
+ {
+  "id": "francs-tireurs/black-orc-overseer",
+  "nom": "Contremaître orque noir",
+  "categorie": "franc",
+  "cout": 60,
+  "prime": 60,
+  "solde": 40,
+  "valeur": 15,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "4",
+   "CT": "3",
+   "F": "4",
+   "E": "4",
+   "PV": "1",
+   "I": "2",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Contremaître",
+    "resume": "Les peaux-vertes proches de lui ne sont pas soumis à l'animosité."
+   },
+   {
+    "nom": "Relève",
+    "resume": "Peut prendre la tête de la bande si le chef est perdu."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Tir",
+   "Force",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Armure lourde",
+   "Casque",
+   "Hache",
+   "Hache"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Hache",
+      "cout": 0
+     },
+     {
+      "nom": "Arme lourde",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure lourde",
+      "cout": 0
+     },
+     {
+      "nom": "Casque",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@orques"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "orque",
+  "sansProgression": false,
+  "source": "mordheimer.net · Black Orc Overseer"
+ },
+ {
+  "id": "francs-tireurs/bounty-hunter",
+  "nom": "Chasseur de primes",
+  "categorie": "franc",
+  "cout": 40,
+  "prime": 40,
+  "solde": 15,
+  "valeur": 20,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "4",
+   "CT": "3",
+   "F": "4",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "8"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Capture",
+    "resume": "Au début de chaque bataille, désigne un héros ennemi : il le touche plus facilement et doit avancer vers lui. S'il le met hors de combat et que son camp gagne, le héros est capturé et la bande touche une récompense (la moitié pour le chasseur), plus 1D3 XP pour lui."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Tir",
+   "Force",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Épée",
+   "Dague",
+   "Pistolet",
+   "Arbalète",
+   "Armure lourde",
+   "Casque",
+   "Corde et grappin",
+   "Lanterne"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Pistolet",
+      "cout": 0
+     },
+     {
+      "nom": "Arbalète",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure lourde",
+      "cout": 0
+     },
+     {
+      "nom": "Casque",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Corde et grappin",
+      "cout": 0
+     },
+     {
+      "nom": "Lanterne",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "possedes",
+    "@morts-vivants",
+    "@skavens",
+    "@orques"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Bounty Hunter"
+ },
+ {
+  "id": "francs-tireurs/chameleon-skink",
+  "nom": "Skink caméléon",
+  "categorie": "franc",
+  "cout": 70,
+  "prime": 70,
+  "solde": 12,
+  "valeur": 16,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "6",
+   "CC": "4",
+   "CT": "4",
+   "F": "4",
+   "E": "2",
+   "PV": "1",
+   "I": "5",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Peau écailleuse",
+    "resume": "Sauvegarde naturelle de 6+, que les modificateurs de Force ne peuvent pas dégrader au-delà de 6 ; annulée par un coup critique « sans sauvegarde »."
+   },
+   {
+    "nom": "Sang-froid",
+    "resume": "Pour les tests de psychologie et de déroute, lancez 3D6 et gardez les deux plus faibles. Le Commandement d'un saurus ou d'un kroxigor ne peut servir aux tests de déroute."
+   },
+   {
+    "nom": "Amphibie",
+    "resume": "Se déplace dans l'eau sans pénalité et y compte comme à couvert."
+   },
+   {
+    "nom": "Né dans la jungle",
+    "resume": "Les skinks traversent la jungle sans pénalité de mouvement."
+   },
+   {
+    "nom": "Peau de caméléon",
+    "resume": "Un ennemi qui tente de le repérer quand il est caché divise son Initiative par deux ; il est touché à -2 par les tirs."
+   },
+   {
+    "nom": "Infiltration",
+    "resume": "Se déploie après la bande adverse, n'importe où hors de vue de l'ennemi et à plus de 12 ps de toute figurine ennemie ; si les deux camps ont des infiltrateurs, chacun lance 1D6 et le plus faible se place en premier."
+   }
+  ],
+  "competences": [
+   "Tir",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Dague",
+   "Sarbacane",
+   "Rondache"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Sarbacane",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Rondache",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "hommes-lezards"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "skink",
+  "sansProgression": false,
+  "source": "mordheimer.net · Chameleon Skink"
+ },
+ {
+  "id": "francs-tireurs/clan-skryre-rat-ogre",
+  "nom": "Rat-ogre du clan Skryre",
+  "categorie": "franc",
+  "cout": 100,
+  "prime": 100,
+  "solde": 0,
+  "valeur": 25,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "3",
+   "F": "5",
+   "E": "5",
+   "PV": "3",
+   "I": "1",
+   "A": "3",
+   "Cd": "10"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Peur",
+    "resume": "Inspire la peur : un ennemi chargé par cette figurine, ou qui veut la charger, doit d'abord réussir un test de Commandement. Les créatures qui causent la peur ne craignent pas celles qui la causent aussi."
+   },
+   {
+    "nom": "Grande cible",
+    "resume": "Grande cible : les tireurs ont +1 pour la toucher et peuvent la viser même si elle n'est pas l'ennemi le plus proche."
+   },
+   {
+    "nom": "Insensible à la psychologie",
+    "resume": "N'est jamais affecté par la psychologie (peur, déroute…) et ne quitte jamais un corps à corps de son plein gré."
+   },
+   {
+    "nom": "Insensible au poison",
+    "resume": "Aucun poison n'a d'effet sur cette figurine."
+   },
+   {
+    "nom": "Biomécanique",
+    "resume": "Pas vraiment vivant : ne quitte jamais un combat et est insensible au poison."
+   },
+   {
+    "nom": "Alimenté à la malepierre",
+    "resume": "Au lieu d'une solde en or, il faut lui fournir un fragment de malepierre avant chaque partie ; il ne gagne pas d'expérience."
+   },
+   {
+    "nom": "Jet de flammes",
+    "resume": "Son lance-feu trace une ligne de 6 ps sur 2 ps : chaque figurine touchée sur 4+ subit une touche de Force 4 et peut prendre feu."
+   },
+   {
+    "nom": "Peu fiable",
+    "resume": "Au début de chaque tour, lancez 1D6 : sur 1, il subit un dysfonctionnement (explosion, folie meurtrière, arrêt, perte de contrôle ou blocage temporaire)."
+   }
+  ],
+  "competences": [],
+  "equipementDepart": [
+   "Lance-feu de malefoudre"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Lance-feu de malefoudre",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@skavens"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": null,
+  "sansProgression": false,
+  "source": "mordheimer.net · Clan Skryre Rat Ogre"
+ },
+ {
+  "id": "francs-tireurs/dark-elf-assassin",
+  "nom": "Assassin elfe noir",
+  "categorie": "franc",
+  "cout": 70,
+  "prime": 70,
+  "solde": 25,
+  "valeur": 25,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "5",
+   "CC": "5",
+   "CT": "5",
+   "F": "4",
+   "E": "4",
+   "PV": "1",
+   "I": "7",
+   "A": "1",
+   "Cd": "8"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Tueur parfait",
+    "resume": "Toutes ses attaques, au tir comme au corps à corps, ont un modificateur de sauvegarde supplémentaire de -1."
+   },
+   {
+    "nom": "Haine fratricide",
+    "resume": "Les guerriers de la bande haïssent tous les Hauts Elfes, y compris les Hauts Elfes recrutés comme francs-tireurs."
+   },
+   {
+    "nom": "Vue perçante",
+    "resume": "Les elfes repèrent les ennemis cachés à une distance égale au double de leur Initiative en pas."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Tir",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Lame elfe noire",
+   "Dague",
+   "Arbalète à répétition",
+   "Venin noir",
+   "Armure légère",
+   "Cape sombre"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Lame elfe noire",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Arbalète à répétition",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure légère",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Venin noir",
+      "cout": 0
+     },
+     {
+      "nom": "Cape sombre",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@chaos",
+    "@morts-vivants",
+    "@skavens",
+    "@orques",
+    "elfes-noirs",
+    "norses"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "elfe",
+  "sansProgression": false,
+  "source": "mordheimer.net · Dark Elf Assassin"
+ },
+ {
+  "id": "francs-tireurs/duellist",
+  "nom": "Duelliste",
+  "categorie": "franc",
+  "cout": 35,
+  "prime": 35,
+  "solde": 15,
+  "valeur": 18,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "4",
+   "CT": "3",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "2",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Acier virevoltant",
+    "resume": "Peut parer avec son épée et sa rondache selon les règles normales de parade."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Tir"
+  ],
+  "equipementDepart": [
+   "Pistolet de duel",
+   "Épée",
+   "Dague",
+   "Cape (rondache)"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Pistolet de duel",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Cape (rondache)",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "@skavens",
+    "@morts-vivants"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Duellist"
+ },
+ {
+  "id": "francs-tireurs/dwarf-pathfinder",
+  "nom": "Éclaireur nain",
+  "categorie": "franc",
+  "cout": 35,
+  "prime": 35,
+  "solde": 15,
+  "valeur": 12,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "3",
+   "CC": "4",
+   "CT": "3",
+   "F": "3",
+   "E": "4",
+   "PV": "1",
+   "I": "2",
+   "A": "1",
+   "Cd": "9"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Durs à cuire",
+    "resume": "Sur le tableau des blessures, 1-2 = à terre, 3-5 = sonné, 6 = hors de combat."
+   },
+   {
+    "nom": "Tête dure",
+    "resume": "Les Nains ignorent les règles spéciales des masses, gourdins et autres armes contondantes utilisées contre eux."
+   },
+   {
+    "nom": "Éclaireur",
+    "resume": "Ajoute un dé d'exploration à la bande après chaque partie à laquelle il survit."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Tir"
+  ],
+  "equipementDepart": [
+   "Hache",
+   "Dague",
+   "Arbalète",
+   "Armure légère"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Hache",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Arbalète",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure légère",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@humains",
+    "@nains"
+   ]
+  },
+  "soldeSi": [
+   {
+    "siRace": "elfe",
+    "solde": 20
+   }
+  ],
+  "effets": {},
+  "race": "nain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Dwarf Pathfinder"
+ },
+ {
+  "id": "francs-tireurs/dwarf-treasure-hunter",
+  "nom": "Chasseur de trésors nain",
+  "categorie": "franc",
+  "cout": 55,
+  "prime": 55,
+  "solde": 30,
+  "valeur": 24,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "3",
+   "CC": "5",
+   "CT": "4",
+   "F": "3",
+   "E": "4",
+   "PV": "1",
+   "I": "2",
+   "A": "1",
+   "Cd": "9"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Durs à cuire",
+    "resume": "Sur le tableau des blessures, 1-2 = à terre, 3-5 = sonné, 6 = hors de combat."
+   },
+   {
+    "nom": "Tête dure",
+    "resume": "Les Nains ignorent les règles spéciales des masses, gourdins et autres armes contondantes utilisées contre eux."
+   },
+   {
+    "nom": "Haine des peaux-vertes",
+    "resume": "Tous les Nains haïssent les Orques et les Gobelins (voir Haine)."
+   },
+   {
+    "nom": "Harnais à lanterne",
+    "resume": "Peut utiliser une lanterne tout en gardant les deux mains libres."
+   },
+   {
+    "nom": "Pioche",
+    "resume": "Arme à deux mains, utilisée avec les règles de la hache ou du marteau à deux mains."
+   },
+   {
+    "nom": "Cartes au trésor",
+    "resume": "Après chaque partie à laquelle il survit, lancez 1D6 : embuscade, faux sans valeur, fragment de malepierre, tonneau de bière, dé d'exploration supplémentaire ou dé d'exploration au choix."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Force"
+  ],
+  "equipementDepart": [
+   "Armure en gromril",
+   "Casque",
+   "Pioche",
+   "Dague",
+   "Marteau",
+   "Cartes au trésor",
+   "Harnais à lanterne"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Pioche",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     },
+     {
+      "nom": "Marteau",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure en gromril",
+      "cout": 0
+     },
+     {
+      "nom": "Casque",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Cartes au trésor",
+      "cout": 0
+     },
+     {
+      "nom": "Harnais à lanterne",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@mercenaires",
+    "repurgateurs"
+   ]
+  },
+  "soldeSi": [
+   {
+    "siRace": "elfe",
+    "solde": 60
+   }
+  ],
+  "effets": {},
+  "race": "nain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Dwarf Treasure Hunter"
+ },
+ {
+  "id": "francs-tireurs/elf-mage",
+  "nom": "Mage elfe",
+  "categorie": "franc",
+  "cout": 45,
+  "prime": 45,
+  "solde": 0,
+  "valeur": 23,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "5",
+   "CC": "4",
+   "CT": "3",
+   "F": "3",
+   "E": "3",
+   "PV": "2",
+   "I": "6",
+   "A": "1",
+   "Cd": "8"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Sorcier (Sorts des Djed'hi)",
+    "resume": "Lance des sorts de la liste des Djed'hi."
+   },
+   {
+    "nom": "Sorcellerie",
+    "resume": "+1 à ses jets de lancement de sort."
+   },
+   {
+    "nom": "Féérique",
+    "resume": "Les sorts hostiles ne l'affectent pas sur 4+ sur 1D6."
+   },
+   {
+    "nom": "Vagabond",
+    "resume": "Ne reste qu'une partie ; une bande qui en a employé un doit livrer au moins une partie sans lui avant d'en engager un autre."
+   }
+  ],
+  "competences": [],
+  "equipementDepart": [
+   "Bâton",
+   "Cape elfique"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Bâton",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Cape elfique",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@mercenaires",
+    "hommes-lezards",
+    "amazones"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "elfe",
+  "sansProgression": false,
+  "source": "mordheimer.net · Elf Mage"
+ },
+ {
+  "id": "francs-tireurs/halfling-thief",
+  "nom": "Voleur halfling",
+  "categorie": "franc",
+  "cout": 25,
+  "prime": 25,
+  "solde": 15,
+  "valeur": 14,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "2",
+   "CT": "4",
+   "F": "2",
+   "E": "2",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Solde du voleur",
+    "resume": "Après chaque partie, lancez 1D6 : 1, il s'enfuit avec des valeurs de la bande ; 2-5, il réclame 15 co ; 6, il ne réclame rien."
+   },
+   {
+    "nom": "Coupe-bourse",
+    "resume": "Si le voleur combat sans être mis hors de combat, la bande gagne un trésor de plus."
+   },
+   {
+    "nom": "Furtif",
+    "resume": "Peut se cacher même après avoir couru, et courir à moins de 8 ps de l'ennemi s'il commence et finit caché."
+   },
+   {
+    "nom": "Infiltration",
+    "resume": "Se déploie après la bande adverse, n'importe où hors de vue de l'ennemi et à plus de 12 ps de toute figurine ennemie ; si les deux camps ont des infiltrateurs, chacun lance 1D6 et le plus faible se place en premier."
+   },
+   {
+    "nom": "Crocheteur",
+    "resume": "Ouvrir une porte verrouillée ne demande qu'un test d'Initiative réussi."
+   }
+  ],
+  "competences": [
+   "Vitesse",
+   "Tir",
+   "Spéciales (Voleur halfling)"
+  ],
+  "equipementDepart": [
+   "Épée",
+   "Dague",
+   "Couteaux et étoiles de lancer",
+   "Corde et grappin"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Couteaux et étoiles de lancer",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Corde et grappin",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@mercenaires",
+    "kislevites",
+    "@nains"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "halfling",
+  "sansProgression": false,
+  "source": "mordheimer.net · Halfling Thief"
+ },
+ {
+  "id": "francs-tireurs/human-scout",
+  "nom": "Éclaireur humain",
+  "categorie": "franc",
+  "cout": 10,
+  "prime": 10,
+  "solde": 5,
+  "valeur": 9,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "3",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "6"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Œil d'éclaireur",
+    "resume": "Peut aussi choisir Tir rapide, Yeux d'aigle ou Tireur habile dans la liste de Tir."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Arc",
+   "Épée",
+   "Dague"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Arc",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "@orques",
+    "hommes-betes",
+    "possedes"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Human Scout"
+ },
+ {
+  "id": "francs-tireurs/kislev-ranger",
+  "nom": "Rôdeur kislévite",
+  "categorie": "franc",
+  "cout": 30,
+  "prime": 30,
+  "solde": 15,
+  "valeur": 15,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "4",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Coup au cœur",
+    "resume": "Contre un grand monstre (ours compris), un 6 pour toucher suivi d'un 5+ pour blesser le tue net, sans sauvegarde."
+   },
+   {
+    "nom": "Cape de chasseur",
+    "resume": "Tirer ne révèle pas sa position quand il est caché ; l'ennemi peut tenter un test d'Initiative pour le repérer."
+   },
+   {
+    "nom": "Traqueur",
+    "resume": "Si le guerrier n'est pas mis hors de combat, il peut modifier de +1 ou -1 un dé d'exploration après la bataille."
+   },
+   {
+    "nom": "Solitaire",
+    "resume": "Le prêtre ignore les règles de combat seul contre plusieurs (« Seul au monde »)."
+   }
+  ],
+  "competences": [
+   "Tir",
+   "Vitesse",
+   "Spéciales (Rôdeur kislévite)"
+  ],
+  "equipementDepart": [
+   "Arc",
+   "Épée",
+   "Cape de chasseur"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Arc",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Cape de chasseur",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@mercenaires",
+    "repurgateurs",
+    "@nains"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Kislev Ranger"
+ },
+ {
+  "id": "francs-tireurs/mule-skinner",
+  "nom": "Muletier",
+  "categorie": "franc",
+  "cout": 35,
+  "prime": 35,
+  "solde": 15,
+  "valeur": 20,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "3",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "3",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Dresseur",
+    "resume": "Commence avec une compétence de dressage d'animaux."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Force"
+  ],
+  "equipementDepart": [
+   "Fouet",
+   "Dague"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Fouet",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "possedes",
+    "@skavens",
+    "@morts-vivants"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Mule Skinner"
+ },
+ {
+  "id": "francs-tireurs/nomad-scout",
+  "nom": "Éclaireur nomade",
+  "categorie": "franc",
+  "cout": 30,
+  "prime": 30,
+  "solde": 15,
+  "valeur": 12,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "4",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Guide du désert",
+    "resume": "Peut modifier de 1 le jet de source de ravitaillement."
+   }
+  ],
+  "competences": [
+   "Tir",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Cimeterre",
+   "Arc"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Cimeterre",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Arc",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {},
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Nomad Scout"
+ },
+ {
+  "id": "francs-tireurs/norse-shaman",
+  "nom": "Chaman norse",
+  "categorie": "franc",
+  "cout": 45,
+  "prime": 45,
+  "solde": 25,
+  "valeur": 25,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "2",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "8"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Sorcier (Runes nordiques)",
+    "resume": "Invoque des runes nordiques comme des prières, même en armure ; les protections contre les sorts s'y appliquent."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Érudition"
+  ],
+  "equipementDepart": [
+   "Bâton runique",
+   "Épée"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Bâton runique",
+      "cout": 0
+     },
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Hache",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@humains",
+    "norses"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Norse Shaman"
+ },
+ {
+  "id": "francs-tireurs/old-prospector",
+  "nom": "Vieux prospecteur",
+  "categorie": "franc",
+  "cout": 0,
+  "prime": 0,
+  "solde": 0,
+  "valeur": 15,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "2",
+   "CT": "2",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "3",
+   "A": "1",
+   "Cd": "9"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Payé en trésors",
+    "resume": "Ne se paie pas en or : il coûte 2 trésors à l'engagement et 1 trésor de solde."
+   },
+   {
+    "nom": "Chasseur de malepierre",
+    "resume": "Comme la compétence d'Érudition : permet de relancer un dé d'exploration s'il n'a pas été mis hors de combat."
+   },
+   {
+    "nom": "Robuste",
+    "resume": "Comme la compétence de Force : les attaques au corps à corps contre lui subissent -1 en Force."
+   },
+   {
+    "nom": "Insensible à la peur",
+    "resume": "N'est jamais affecté par la peur."
+   }
+  ],
+  "competences": [
+   "Force",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Tromblon",
+   "Pioche"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Pioche",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Tromblon",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "@nains"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Old Prospector"
+ },
+ {
+  "id": "francs-tireurs/pathfinder",
+  "nom": "Pisteur",
+  "categorie": "franc",
+  "cout": 60,
+  "prime": 60,
+  "solde": 15,
+  "valeur": 25,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "4",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "8"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Connaissance du terrain",
+    "resume": "Ignore les pénalités de terrain et peut contourner les obstacles infranchissables (pas traverser un mur)."
+   },
+   {
+    "nom": "Mythes et légendes",
+    "resume": "À l'exploration, s'il n'a pas été mis hors de combat, peut relancer un dé."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Tir",
+   "Vitesse",
+   "Spéciales (Pisteur)"
+  ],
+  "equipementDepart": [
+   "Épée",
+   "Dague",
+   "Arc long",
+   "Corde et grappin",
+   "Herbes curatives"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Arc long",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Corde et grappin",
+      "cout": 0
+     },
+     {
+      "nom": "Herbes curatives",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {},
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Pathfinder"
+ },
+ {
+  "id": "francs-tireurs/priest-of-morr",
+  "nom": "Prêtre de Morr",
+  "categorie": "franc",
+  "cout": 35,
+  "prime": 35,
+  "solde": 0,
+  "valeur": 5,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "2",
+   "CT": "2",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "9"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Héros mercenaire",
+    "resume": "Remplace un des héros de la bande (0-1) au lieu de s'ajouter comme franc-tireur."
+   },
+   {
+    "nom": "Solitaire",
+    "resume": "Le prêtre ignore les règles de combat seul contre plusieurs (« Seul au monde »)."
+   },
+   {
+    "nom": "Prières de Morr (rites funéraires)",
+    "resume": "Le prêtre connaît un rite funéraire de Morr tiré au hasard ; il l'accomplit comme un sort, dans la phase de magie."
+   }
+  ],
+  "competences": [
+   "Érudition",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Dague",
+   "Faux"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Dague",
+      "cout": 0
+     },
+     {
+      "nom": "Faux",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@mercenaires"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Priest of Morr"
+ },
+ {
+  "id": "francs-tireurs/runesmith-journeyman",
+  "nom": "Compagnon forgeron des runes",
+  "categorie": "franc",
+  "cout": 30,
+  "prime": 30,
+  "solde": 15,
+  "valeur": 15,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "3",
+   "CC": "4",
+   "CT": "3",
+   "F": "3",
+   "E": "4",
+   "PV": "1",
+   "I": "2",
+   "A": "1",
+   "Cd": "9"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Durs à cuire",
+    "resume": "Sur le tableau des blessures, 1-2 = à terre, 3-5 = sonné, 6 = hors de combat."
+   },
+   {
+    "nom": "Tête dure",
+    "resume": "Les Nains ignorent les règles spéciales des masses, gourdins et autres armes contondantes utilisées contre eux."
+   },
+   {
+    "nom": "Forgeron des runes",
+    "resume": "Grave des runes avant la bataille et réduit le coût de certaines armes pour la bande."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Force"
+  ],
+  "equipementDepart": [
+   "Marteau en gromril",
+   "Armure lourde"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Marteau en gromril",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure lourde",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@mercenaires",
+    "repurgateurs"
+   ]
+  },
+  "soldeSi": [
+   {
+    "siRace": "elfe",
+    "solde": 30
+   }
+  ],
+  "effets": {},
+  "race": "nain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Runesmith Journeyman"
+ },
+ {
+  "id": "francs-tireurs/shadow-warrior",
+  "nom": "Guerrier de l'ombre",
+  "categorie": "franc",
+  "cout": 35,
+  "prime": 35,
+  "solde": 15,
+  "valeur": 12,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "5",
+   "CC": "4",
+   "CT": "4",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "6",
+   "A": "1",
+   "Cd": "8"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Haine des Elfes Noirs",
+    "resume": "Tous les guerriers de la bande, hors francs-tireurs, haïssent les Elfes Noirs."
+   },
+   {
+    "nom": "Vue perçante",
+    "resume": "Les elfes repèrent les ennemis cachés à une distance égale au double de leur Initiative en pas."
+   },
+   {
+    "nom": "Ennemis jurés",
+    "resume": "Ne réclame pas de solde après une partie contre des elfes noirs ou une bande employant un franc-tireur elfe noir."
+   },
+   {
+    "nom": "Infiltration",
+    "resume": "Se déploie après la bande adverse, n'importe où hors de vue de l'ennemi et à plus de 12 ps de toute figurine ennemie ; si les deux camps ont des infiltrateurs, chacun lance 1D6 et le plus faible se place en premier."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Tir"
+  ],
+  "equipementDepart": [
+   "Épée",
+   "Arc long",
+   "Dague",
+   "Bouclier",
+   "Armure légère"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Arc long",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Bouclier",
+      "cout": 0
+     },
+     {
+      "nom": "Armure légère",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@humains",
+    "guerriers-ombres"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "elfe",
+  "sansProgression": false,
+  "source": "mordheimer.net · Shadow Warrior"
+ },
+ {
+  "id": "francs-tireurs/snake-charmer",
+  "nom": "Charmeur de serpents",
+  "categorie": "franc",
+  "cout": 40,
+  "prime": 40,
+  "solde": 10,
+  "valeur": 5,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "2",
+   "CT": "2",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Serpents",
+    "resume": "Accompagné de serpents : la solde augmente de 5 co et la valeur de 5 par serpent."
+   },
+   {
+    "nom": "Insensible au poison",
+    "resume": "Aucun poison n'a d'effet sur cette figurine."
+   }
+  ],
+  "competences": [
+   "Érudition",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Dague",
+   "Cimeterre",
+   "Serpents (3)"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Dague",
+      "cout": 0
+     },
+     {
+      "nom": "Cimeterre",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Serpents (3)",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@mercenaires",
+    "repurgateurs",
+    "soeurs",
+    "@nains",
+    "kislevites",
+    "bretonnie",
+    "nuln",
+    "stirwood",
+    "caravanes-marchandes",
+    "amazones",
+    "guerriers-ombres"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Snake Charmer"
+ },
+ {
+  "id": "francs-tireurs/thief",
+  "nom": "Voleur",
+  "categorie": "franc",
+  "cout": 30,
+  "prime": 30,
+  "solde": 15,
+  "valeur": 22,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "3",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Doigts agiles",
+    "resume": "Peut tenter de voler un objet pendant la phase de commerce."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Dague",
+   "Dague",
+   "Cape de voleur"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Cape de voleur",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "@morts-vivants"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Thief"
+ },
+ {
+  "id": "francs-tireurs/tomb-robber",
+  "nom": "Pilleur de tombes",
+  "categorie": "franc",
+  "cout": 30,
+  "prime": 30,
+  "solde": 15,
+  "valeur": 20,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "4",
+   "CT": "3",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "5",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Veinard",
+    "resume": "Bénéficie d'une sauvegarde spéciale de 5+ contre toutes les blessures."
+   },
+   {
+    "nom": "Science des tombeaux",
+    "resume": "Peut modifier un dé d'exploration."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Tir",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Épée",
+   "Pistolet-arbalète",
+   "Corde et grappin"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Pistolet-arbalète",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Corde et grappin",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@mercenaires",
+    "repurgateurs",
+    "soeurs",
+    "@nains",
+    "kislevites",
+    "bretonnie",
+    "nuln",
+    "stirwood",
+    "caravanes-marchandes",
+    "amazones",
+    "guerriers-ombres"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Tomb Robber"
+ },
+ {
+  "id": "francs-tireurs/warrior-priest-of-sigmar",
+  "nom": "Prêtre-guerrier de Sigmar",
+  "categorie": "franc",
+  "cout": 40,
+  "prime": 40,
+  "solde": 20,
+  "valeur": 16,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "3",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "8"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Prières de Sigmar",
+    "resume": "Peut invoquer les Prières de Sigmar comme un sorcier lance ses sorts."
+   }
+  ],
+  "competences": [
+   "Érudition"
+  ],
+  "equipementDepart": [
+   "Marteau de guerre sigmarite",
+   "Armure légère",
+   "Bouclier"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Marteau de guerre sigmarite",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure légère",
+      "cout": 0
+     },
+     {
+      "nom": "Bouclier",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "repurgateurs",
+    "middenheim",
+    "@chaos",
+    "@morts-vivants",
+    "@skavens",
+    "@orques",
+    "elfes-noirs",
+    "norses"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Warrior Priest of Sigmar"
+ },
+ {
+  "id": "francs-tireurs/witch",
+  "nom": "Sorcière",
+  "categorie": "franc",
+  "cout": 30,
+  "prime": 30,
+  "solde": 15,
+  "valeur": 14,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "2",
+   "CT": "2",
+   "F": "2",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Sorcier (Charmes et maléfices)",
+    "resume": "Lance des sorts de la liste des charmes et maléfices."
+   },
+   {
+    "nom": "Recluse",
+    "resume": "Pour l'engager, il faut obtenir 4+ sur 1D6 ; en cas d'échec, nouvelle tentative après la partie suivante."
+   },
+   {
+    "nom": "Potions",
+    "resume": "Avant la bataille, un héros peut boire une potion : 1D6 donne -1 en E, +1 en F, +1 en E ou un PV de plus."
+   },
+   {
+    "nom": "Réticente",
+    "resume": "Ne charge jamais et doit s'éloigner à plus de 8 ps des ennemis."
+   }
+  ],
+  "competences": [
+   "Érudition"
+  ],
+  "equipementDepart": [
+   "Bâton"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Bâton",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "repurgateurs",
+    "soeurs"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Witch"
+ },
+ {
+  "id": "francs-tireurs/witch-hunter",
+  "nom": "Répurgateur",
+  "categorie": "franc",
+  "cout": 30,
+  "prime": 30,
+  "solde": 15,
+  "valeur": 15,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "4",
+   "CT": "4",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "8"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Au bûcher !",
+    "resume": "Le répurgateur voue une haine féroce à tous les lanceurs de sorts (voir Haine)."
+   },
+   {
+    "nom": "Vagabond",
+    "resume": "Ne reste qu'une partie ; une bande qui en a employé un doit livrer au moins une partie sans lui avant d'en engager un autre."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Vitesse",
+   "Tir",
+   "Érudition",
+   "Force"
+  ],
+  "equipementDepart": [
+   "Pistolet de duel",
+   "Épée",
+   "Dague",
+   "Eau bénite",
+   "Ail"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Pistolet de duel",
+      "cout": 0
+     },
+     {
+      "nom": "Pistolet-arbalète",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Eau bénite",
+      "cout": 0
+     },
+     {
+      "nom": "Ail",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@humains"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Witch Hunter"
+ },
+ {
+  "id": "francs-tireurs/wolf-priest-of-ulric",
+  "nom": "Prêtre-loup d'Ulric",
+  "categorie": "franc",
+  "cout": 60,
+  "prime": 60,
+  "solde": 0,
+  "valeur": 5,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "2",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "3",
+   "A": "1",
+   "Cd": "8"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Héros mercenaire",
+    "resume": "Remplace un des héros de la bande (0-1) au lieu de s'ajouter comme franc-tireur."
+   },
+   {
+    "nom": "Prières d'Ulric",
+    "resume": "Invoque les prières d'Ulric avec les règles de magie ; ce ne sont pas des sorts."
+   },
+   {
+    "nom": "Haine",
+    "resume": "Lors du premier tour de chaque corps à corps contre un ennemi qu'elle hait, la figurine peut relancer tous ses jets pour toucher ratés."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Érudition",
+   "Force",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Cape de loup"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Dague",
+      "cout": 0
+     },
+     {
+      "nom": "Marteau",
+      "cout": 0
+     },
+     {
+      "nom": "Masse",
+      "cout": 0
+     },
+     {
+      "nom": "Gourdin",
+      "cout": 0
+     },
+     {
+      "nom": "Fléau",
+      "cout": 0
+     },
+     {
+      "nom": "Morgenstern",
+      "cout": 0
+     },
+     {
+      "nom": "Arme lourde",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Cape de loup",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "middenheim"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Wolf Priest of Ulric"
+ },
+ {
+  "id": "francs-tireurs/bone-goliath",
+  "nom": "Goliath d'os",
+  "categorie": "franc",
+  "cout": 225,
+  "prime": 225,
+  "solde": 0,
+  "valeur": 50,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "5",
+   "CC": "3",
+   "CT": "0",
+   "F": "5",
+   "E": "5",
+   "PV": "3",
+   "I": "2",
+   "A": "3",
+   "Cd": "6"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Peur",
+    "resume": "Inspire la peur : un ennemi chargé par cette figurine, ou qui veut la charger, doit d'abord réussir un test de Commandement. Les créatures qui causent la peur ne craignent pas celles qui la causent aussi."
+   },
+   {
+    "nom": "Grande cible",
+    "resume": "Grande cible : les tireurs ont +1 pour la toucher et peuvent la viser même si elle n'est pas l'ennemi le plus proche."
+   },
+   {
+    "nom": "Non-vivant",
+    "resume": "Les Loups funestes ne gagnent jamais d'expérience."
+   },
+   {
+    "nom": "Construction d'os",
+    "resume": "Construit plutôt qu'engagé, ne gagne pas d'expérience et ignore les résultats de blessure sur 4+."
+   }
+  ],
+  "competences": [],
+  "equipementDepart": [],
+  "equipement": [],
+  "employeurs": {
+   "seulement": [
+    "@morts-vivants"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": null,
+  "sansProgression": false,
+  "source": "mordheimer.net · Bone Goliath"
+ },
+ {
+  "id": "francs-tireurs/cathayan-merchant",
+  "nom": "Marchand cathayan",
+  "categorie": "franc",
+  "cout": 20,
+  "prime": 20,
+  "solde": 10,
+  "valeur": 10,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "2",
+   "CT": "2",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Marchandage",
+    "resume": "Possède la compétence Marchandage."
+   },
+   {
+    "nom": "Prêteur sur gages",
+    "resume": "S'il survit à la partie, la bande gagne quelques couronnes de plus pour chaque objet vendu."
+   },
+   {
+    "nom": "Négociant",
+    "resume": "Après chaque partie à laquelle il survit, il visite un marché (marché noir, marchandises étrangères ou receleur) et lance 1D6 pour savoir ce qu'il propose."
+   }
+  ],
+  "competences": [
+   "Érudition"
+  ],
+  "equipementDepart": [
+   "Épée"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@humains",
+    "@nains"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Cathayan Merchant"
+ },
+ {
+  "id": "francs-tireurs/chaos-centaur",
+  "nom": "Centaure du Chaos",
+  "categorie": "franc",
+  "cout": 65,
+  "prime": 65,
+  "solde": 25,
+  "valeur": 20,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "8",
+   "CC": "4",
+   "CT": "3",
+   "F": "4",
+   "E": "3",
+   "PV": "1",
+   "I": "3",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Ivre",
+    "resume": "Au début de chaque tour, peut devenir stupide ou frénétique."
+   },
+   {
+    "nom": "Piétinement",
+    "resume": "Les sabots du Centigor lui donnent une attaque supplémentaire qui ne bénéficie d'aucun bonus ni pénalité d'arme."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Force"
+  ],
+  "equipementDepart": [
+   "Haches de jet",
+   "Bouclier",
+   "Épée"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     },
+     {
+      "nom": "Lance",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Haches de jet",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Bouclier",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "hommes-betes",
+    "norses"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": null,
+  "sansProgression": false,
+  "source": "mordheimer.net · Chaos Centaur"
+ },
+ {
+  "id": "francs-tireurs/coachman",
+  "nom": "Cocher",
+  "categorie": "franc",
+  "cout": 20,
+  "prime": 20,
+  "solde": 10,
+  "valeur": 8,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "3",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Conducteur",
+    "resume": "Conduit et répare les chariots et diligences de la bande."
+   }
+  ],
+  "competences": [
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Fouet",
+   "Épée",
+   "Armure légère"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Fouet",
+      "cout": 0
+     },
+     {
+      "nom": "Épée",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Armure légère",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "@skavens",
+    "hommes-betes",
+    "@orques"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Coachman"
+ },
+ {
+  "id": "francs-tireurs/grave-robber",
+  "nom": "Pilleur de sépultures",
+  "categorie": "franc",
+  "cout": 45,
+  "prime": 45,
+  "solde": 18,
+  "valeur": 15,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "3",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "6"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Pilleur de cimetière",
+    "resume": "Peut piller un cimetière pendant l'exploration ; les fidèles de Sigmar le haïssent."
+   }
+  ],
+  "competences": [
+   "Combat",
+   "Vitesse"
+  ],
+  "equipementDepart": [
+   "Pioche",
+   "Dague",
+   "Lanterne",
+   "Cuirs renforcés"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Pioche",
+      "cout": 0
+     },
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Cuirs renforcés",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Lanterne",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "@morts-vivants"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Grave Robber"
+ },
+ {
+  "id": "francs-tireurs/hobgoblin-scout",
+  "nom": "Éclaireur hobgobelin",
+  "categorie": "franc",
+  "cout": 45,
+  "prime": 45,
+  "solde": 20,
+  "valeur": 19,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "3",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "2",
+   "A": "1",
+   "Cd": "6"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Solitaire",
+    "resume": "Le prêtre ignore les règles de combat seul contre plusieurs (« Seul au monde »)."
+   },
+   {
+    "nom": "Méprisé",
+    "resume": "Haï de tous les peaux-vertes ; aucun autre franc-tireur peau-verte ne peut être engagé avec lui."
+   }
+  ],
+  "competences": [
+   "Tir",
+   "Spéciales (Éclaireur hobgobelin)"
+  ],
+  "equipementDepart": [
+   "Dague",
+   "Arc court",
+   "Bouclier"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Dague",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Arc court",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Bouclier",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "nains-du-chaos"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "gobelin",
+  "sansProgression": false,
+  "source": "mordheimer.net · Hobgoblin Scout"
+ },
+ {
+  "id": "francs-tireurs/ninja",
+  "nom": "Ninja",
+  "categorie": "franc",
+  "cout": 70,
+  "prime": 70,
+  "solde": 0,
+  "valeur": 45,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "4",
+   "CT": "4",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "5",
+   "A": "2",
+   "Cd": "8"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Une seule bataille",
+    "resume": "Engagé pour une partie : ni solde ni expérience."
+   }
+  ],
+  "competences": [],
+  "equipementDepart": [
+   "Épée",
+   "Épée",
+   "Couteaux et étoiles de lancer",
+   "Corde et grappin",
+   "Bombe fumigène"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Épée",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armes de tir",
+    "objets": [
+     {
+      "nom": "Couteaux et étoiles de lancer",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Corde et grappin",
+      "cout": 0
+     },
+     {
+      "nom": "Bombe fumigène",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "sauf": [
+    "@skavens",
+    "@orques",
+    "hommes-betes",
+    "norses",
+    "nains-du-chaos"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Ninja"
+ },
+ {
+  "id": "francs-tireurs/pyromaniac",
+  "nom": "Pyromane",
+  "categorie": "franc",
+  "cout": 25,
+  "prime": 25,
+  "solde": 10,
+  "valeur": 9,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "3",
+   "F": "3",
+   "E": "3",
+   "PV": "1",
+   "I": "3",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Feux d'artifice",
+    "resume": "Lance des fusées à chaque tour ; ne court ni ne charge jamais."
+   }
+  ],
+  "competences": [
+   "Spéciales (Pyromane)"
+  ],
+  "equipementDepart": [
+   "Feux d'artifice",
+   "Pétards"
+  ],
+  "equipement": [
+   {
+    "categorie": "Divers",
+    "objets": [
+     {
+      "nom": "Feux d'artifice",
+      "cout": 0
+     },
+     {
+      "nom": "Pétards",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "caravanes-marchandes",
+    "@mercenaires"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Pyromaniac"
+ },
+ {
+  "id": "francs-tireurs/swordsmith",
+  "nom": "Forgeron d'épées",
+  "categorie": "franc",
+  "cout": 60,
+  "prime": 60,
+  "solde": 15,
+  "valeur": 10,
+  "min": 0,
+  "max": 1,
+  "xp": 0,
+  "profil": {
+   "M": "4",
+   "CC": "3",
+   "CT": "3",
+   "F": "4",
+   "E": "3",
+   "PV": "1",
+   "I": "4",
+   "A": "1",
+   "Cd": "7"
+  },
+  "regles": [
+   {
+    "nom": "Franc-tireur",
+    "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."
+   },
+   {
+    "nom": "Maître artisan",
+    "resume": "Réduit la rareté des épées pour la bande."
+   }
+  ],
+  "competences": [
+   "Érudition",
+   "Force",
+   "Spéciales (Forgeron d'épées)"
+  ],
+  "equipementDepart": [
+   "Marteau",
+   "Cuirs renforcés"
+  ],
+  "equipement": [
+   {
+    "categorie": "Armes de corps à corps",
+    "objets": [
+     {
+      "nom": "Marteau",
+      "cout": 0
+     }
+    ]
+   },
+   {
+    "categorie": "Armures",
+    "objets": [
+     {
+      "nom": "Cuirs renforcés",
+      "cout": 0
+     }
+    ]
+   }
+  ],
+  "employeurs": {
+   "seulement": [
+    "caravanes-marchandes",
+    "repurgateurs",
+    "soeurs",
+    "@mercenaires"
+   ]
+  },
+  "soldeSi": [],
+  "effets": {},
+  "race": "humain",
+  "sansProgression": false,
+  "source": "mordheimer.net · Swordsmith"
+ },
  {
   "id": "francs-tireurs/pit-fighter",
   "nom": "Gladiateur",

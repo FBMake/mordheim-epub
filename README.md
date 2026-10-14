@@ -292,7 +292,10 @@ Les bandes des grades 1a, 1b, 1c et 2a du site sont toutes saisies
 ### Francs-tireurs (`tools/bsdata/francs-tireurs*.json`)
 
 Les francs-tireurs (Hired Swords) s'engagent depuis la création d'une
-bande (« + Engager un franc-tireur »). Chacun a sa prime d'engagement,
+bande (« + Engager un franc-tireur ») : les 7 du livre de base
+(`francs-tireurs.json`) et 44 des suppléments, grades 1a à 1c
+(`francs-tireurs-autres.json`, dont le champ `notes` signale les chiffres
+pris d'une source secondaire, à vérifier). Chacun a sa prime d'engagement,
 sa solde (à payer après chaque partie, parfois modifiée selon la
 composition de la bande : `soldeSi`), sa valeur pour la valeur de bande,
 son équipement fourni, ses listes de compétences et ses employeurs

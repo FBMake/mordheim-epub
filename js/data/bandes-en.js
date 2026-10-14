@@ -523,6 +523,50 @@ export const EN = {
   "trantio/warriors": "Warriors",
   "trantio/marksmen": "Marksmen",
   "trantio/duellists": "Duellists",
+  "francs-tireurs/arabian-merchant": "Arabian Merchant",
+  "francs-tireurs/beast-hunter": "Beast Hunter",
+  "francs-tireurs/highwayman": "Highwayman",
+  "francs-tireurs/imperial-assassin": "Imperial Assassin",
+  "francs-tireurs/roadwarden": "Roadwarden",
+  "francs-tireurs/tilean-marksman": "Tilean Marksman",
+  "francs-tireurs/bard": "Bard",
+  "francs-tireurs/big-game-hunter": "Big Game Hunter",
+  "francs-tireurs/black-orc-overseer": "Black Orc Overseer",
+  "francs-tireurs/bounty-hunter": "Bounty Hunter",
+  "francs-tireurs/chameleon-skink": "Chameleon Skink",
+  "francs-tireurs/clan-skryre-rat-ogre": "Clan Skryre Rat Ogre",
+  "francs-tireurs/dark-elf-assassin": "Dark Elf Assassin",
+  "francs-tireurs/duellist": "Duellist",
+  "francs-tireurs/dwarf-pathfinder": "Dwarf Pathfinder",
+  "francs-tireurs/dwarf-treasure-hunter": "Dwarf Treasure Hunter",
+  "francs-tireurs/elf-mage": "Elf Mage",
+  "francs-tireurs/halfling-thief": "Halfling Thief",
+  "francs-tireurs/human-scout": "Human Scout",
+  "francs-tireurs/kislev-ranger": "Kislev Ranger",
+  "francs-tireurs/mule-skinner": "Mule Skinner",
+  "francs-tireurs/nomad-scout": "Nomad Scout",
+  "francs-tireurs/norse-shaman": "Norse Shaman",
+  "francs-tireurs/old-prospector": "Old Prospector",
+  "francs-tireurs/pathfinder": "Pathfinder",
+  "francs-tireurs/priest-of-morr": "Priest of Morr",
+  "francs-tireurs/runesmith-journeyman": "Runesmith Journeyman",
+  "francs-tireurs/shadow-warrior": "Shadow Warrior",
+  "francs-tireurs/snake-charmer": "Snake Charmer",
+  "francs-tireurs/thief": "Thief",
+  "francs-tireurs/tomb-robber": "Tomb Robber",
+  "francs-tireurs/warrior-priest-of-sigmar": "Warrior Priest of Sigmar",
+  "francs-tireurs/witch": "Witch",
+  "francs-tireurs/witch-hunter": "Witch Hunter",
+  "francs-tireurs/wolf-priest-of-ulric": "Wolf Priest of Ulric",
+  "francs-tireurs/bone-goliath": "Bone Goliath",
+  "francs-tireurs/cathayan-merchant": "Cathayan Merchant",
+  "francs-tireurs/chaos-centaur": "Chaos Centaur",
+  "francs-tireurs/coachman": "Coachman",
+  "francs-tireurs/grave-robber": "Grave Robber",
+  "francs-tireurs/hobgoblin-scout": "Hobgoblin Scout",
+  "francs-tireurs/ninja": "Ninja",
+  "francs-tireurs/pyromaniac": "Pyromaniac",
+  "francs-tireurs/swordsmith": "Swordsmith",
   "francs-tireurs/pit-fighter": "Pit Fighter",
   "francs-tireurs/ogre-bodyguard": "Ogre Bodyguard",
   "francs-tireurs/halfling-scout": "Halfling Scout",
@@ -3276,6 +3320,266 @@ export const EN = {
    "nom": "Trantine Wealth",
    "resume": "The best-equipped human warband in Lustria: it starts a one-off game with an extra 100 gc and a Lustrian campaign with an extra 20% gold."
   },
+  "Pawnbroker": {
+   "nom": "Pawnbroker",
+   "resume": "If he survived the battle, the warband earns extra gold for each item it sells."
+  },
+  "Marketeer": {
+   "nom": "Marketeer",
+   "resume": "After each battle he survives he visits a market (black market, foreign wares or fence) and rolls a D6 to see what is on offer."
+  },
+  "Stone Cutter": {
+   "nom": "Stone Cutter",
+   "resume": "When the warband sells wyrdstone he may cut it: a D6 roll gives bonus gold, or a loss."
+  },
+  "Merchant's Bodyguard": {
+   "nom": "Merchant's Bodyguard",
+   "resume": "He comes with a guard who stays within 1\" and intercepts shots and charges aimed at him unless already in combat; the guard does nothing else for the warband."
+  },
+  "Beastmen Vengeance": {
+   "nom": "Beastmen Vengeance",
+   "resume": "Hates all Beastmen (Gors, Ungors, Centigors, Minotaurs) and asks no upkeep after a battle against them."
+  },
+  "Skull Rack": {
+   "nom": "Skull Rack",
+   "resume": "Causes fear in all Beastmen."
+  },
+  "Predator": {
+   "nom": "Predator",
+   "resume": "In a wilderness battle against Beastmen he may be set up hidden after both warbands deploy, outside the enemy deployment zone."
+  },
+  "Expert Pistolier": {
+   "nom": "Expert Pistolier",
+   "resume": "Combines the effects of the Pistolier and Trick Shooter skills."
+  },
+  "Unscrupulous": {
+   "nom": "Unscrupulous",
+   "resume": "After each battle roll a D6: on a 1 the warband gets one fewer treasure, which he pockets."
+  },
+  "Expert Rider (Highwayman)": {
+   "nom": "Expert Rider (Highwayman)",
+   "resume": "When mounted he counts as stationary when shooting (no -1) and reloads quickly in the saddle."
+  },
+  "Expert Rider (Roadwarden)": {
+   "nom": "Expert Rider (Roadwarden)",
+   "resume": "When mounted he counts as having the Nimble skill and suffers no penalty for moving and shooting."
+  },
+  "Stagecoaches": {
+   "nom": "Stagecoaches",
+   "resume": "In a scenario with a stagecoach or wagon he may re-roll one dice per turn, until a re-rolled dice shows a 1."
+  },
+  "Weapons Master": {
+   "nom": "Weapons Master",
+   "resume": "Can use any weapon; weapons bought for him are his and cannot be passed to others. Never uses blackpowder weapons."
+  },
+  "Lethal Marksman": {
+   "nom": "Lethal Marksman",
+   "resume": "Combines the effects of the Trick Shooter and Eagle Eyes skills."
+  },
+  "Stern": {
+   "nom": "Stern",
+   "resume": "May re-roll failed Leadership tests for panic or fear and ignores the All Alone rule."
+  },
+  "Steady Hands": {
+   "nom": "Steady Hands",
+   "resume": "Ignores the long range to-hit penalty when shooting his crossbow."
+  },
+  "Dead Eye Shot": {
+   "nom": "Dead Eye Shot",
+   "resume": "Ignores cover to-hit penalties when shooting his crossbow."
+  },
+  "Set Traps (Big Game Hunter)": {
+   "nom": "Set Traps (Big Game Hunter)",
+   "resume": "After deploying he places up to six trap counters at least 6\" apart; a model moving within 3\" rolls a D6 and on a 4+ suffers an automatic hit, then the counter is removed."
+  },
+  "Overseer": {
+   "nom": "Overseer",
+   "resume": "Greenskins near him are not subject to animosity."
+  },
+  "Step Up": {
+   "nom": "Step Up",
+   "resume": "May take over as leader if the warband's leader is lost."
+  },
+  "Capture": {
+   "nom": "Capture",
+   "resume": "At the start of each battle he marks an enemy hero: he hits him more easily and must move towards him. If he takes him out of action and his side wins, the hero is captured and a bounty is paid (half to him), plus D3 experience."
+  },
+  "Chameleon Skin": {
+   "nom": "Chameleon Skin",
+   "resume": "Enemies trying to spot him while hidden halve their Initiative; missile fire is at -2 to hit him."
+  },
+  "Bio Machinery": {
+   "nom": "Bio Machinery",
+   "resume": "Not truly alive: never leaves a combat and is immune to poison."
+  },
+  "Wyrdstone Powered": {
+   "nom": "Wyrdstone Powered",
+   "resume": "Instead of gold upkeep he needs a wyrdstone shard before each battle; he gains no experience."
+  },
+  "Jet of Flame": {
+   "nom": "Jet of Flame",
+   "resume": "His warpfire thrower makes a 6\" by 2\" line: each model in it is hit on a 4+ at Strength 4 and may catch fire."
+  },
+  "Unreliable": {
+   "nom": "Unreliable",
+   "resume": "At the start of each turn roll a D6: on a 1 he malfunctions (explodes, goes berserk, shuts down, moves randomly or freezes)."
+  },
+  "Perfect Killer": {
+   "nom": "Perfect Killer",
+   "resume": "All his attacks, shooting and close combat, have an extra -1 armour save modifier."
+  },
+  "Darting Steel": {
+   "nom": "Darting Steel",
+   "resume": "Can parry with his sword and buckler using the normal parry rules."
+  },
+  "Pathfinder (Dwarf)": {
+   "nom": "Pathfinder (Dwarf)",
+   "resume": "Adds an extra exploration dice after each battle he survives."
+  },
+  "Lantern Rig": {
+   "nom": "Lantern Rig",
+   "resume": "Can use a lantern while keeping both hands free."
+  },
+  "Mining Pick": {
+   "nom": "Mining Pick",
+   "resume": "Two-handed weapon, used with the double-handed axe or hammer rules."
+  },
+  "Treasure Maps": {
+   "nom": "Treasure Maps",
+   "resume": "After each battle he survives roll a D6: ambush, worthless fake, extra wyrdstone shard, barrel of ale, extra exploration dice, or an exploration dice of your choice."
+  },
+  "Wizard (Djed'hi)": {
+   "nom": "Wizard (Djed'hi)",
+   "resume": "Casts spells from the Djed'hi list."
+  },
+  "Wanderer": {
+   "nom": "Wanderer",
+   "resume": "Stays for one battle only; a warband that used one must fight at least one battle without before hiring another."
+  },
+  "Thief's Upkeep": {
+   "nom": "Thief's Upkeep",
+   "resume": "After each battle roll a D6: 1, he runs off with some of the warband's valuables; 2-5, he asks 15 gc; 6, he asks nothing."
+  },
+  "Stealthy (Thief)": {
+   "nom": "Stealthy (Thief)",
+   "resume": "May hide even after running, and may run within 8\" of enemies if he starts and ends hidden."
+  },
+  "Scout's Eye": {
+   "nom": "Scout's Eye",
+   "resume": "May also choose Quick Shot, Eagle Eyes or Trick Shooter from the Shooting list."
+  },
+  "Heart Strike": {
+   "nom": "Heart Strike",
+   "resume": "Against a large monster (bears included), a 6 to hit followed by a 5+ to wound slays it outright, no save."
+  },
+  "Hunter's Cloak": {
+   "nom": "Hunter's Cloak",
+   "resume": "Shooting does not reveal him while hidden; enemies may take an Initiative test to spot him."
+  },
+  "Animal Handler": {
+   "nom": "Animal Handler",
+   "resume": "Starts with one animal handling skill."
+  },
+  "Desert Guide": {
+   "nom": "Desert Guide",
+   "resume": "May shift the supply source roll by 1."
+  },
+  "Wizard (Norse Runes)": {
+   "nom": "Wizard (Norse Runes)",
+   "resume": "Invokes Norse runes like prayers, even in armour; protections against spells apply to them."
+  },
+  "Paid in Treasure": {
+   "nom": "Paid in Treasure",
+   "resume": "Not paid in gold: he costs 2 treasures to hire and 1 treasure as upkeep."
+  },
+  "Immune to Fear": {
+   "nom": "Immune to Fear",
+   "resume": "Is never affected by fear."
+  },
+  "Lay of the Land": {
+   "nom": "Lay of the Land",
+   "resume": "Ignores terrain penalties and can get round impassable obstacles (not through walls)."
+  },
+  "Knowledge of Myths and Legends": {
+   "nom": "Knowledge of Myths and Legends",
+   "resume": "When exploring, if he was not taken out of action, may re-roll one dice."
+  },
+  "Mercenary Hero": {
+   "nom": "Mercenary Hero",
+   "resume": "Replaces one of the warband's heroes (0-1) instead of being added as a hired sword."
+  },
+  "Prayers of Ulric": {
+   "nom": "Prayers of Ulric",
+   "resume": "Invokes the prayers of Ulric using the magic rules; they are not spells."
+  },
+  "Runesmith": {
+   "nom": "Runesmith",
+   "resume": "Inscribes runes before battle and lowers the cost of some weapons for the warband."
+  },
+  "Bitter Enemies": {
+   "nom": "Bitter Enemies",
+   "resume": "Asks no upkeep after a battle against Dark Elves or a warband with a Dark Elf hired sword."
+  },
+  "Snakes": {
+   "nom": "Snakes",
+   "resume": "Comes with snakes: upkeep +5 gc and rating +5 per snake."
+  },
+  "Lucky": {
+   "nom": "Lucky",
+   "resume": "Has a 5+ special save against all wounds."
+  },
+  "Tomb Lore": {
+   "nom": "Tomb Lore",
+   "resume": "May adjust one exploration dice."
+  },
+  "Wizard (Charms and Hexes)": {
+   "nom": "Wizard (Charms and Hexes)",
+   "resume": "Casts spells from the Charms and Hexes list."
+  },
+  "Recluse": {
+   "nom": "Recluse",
+   "resume": "Hiring her needs a 4+ on a D6; on a failure, try again after the next battle."
+  },
+  "Potions": {
+   "nom": "Potions",
+   "resume": "Before battle one hero may drink a potion: a D6 gives -1 T, +1 S, +1 T or an extra wound."
+  },
+  "Reluctant": {
+   "nom": "Reluctant",
+   "resume": "Never charges and must move to stay more than 8\" from enemies."
+  },
+  "Bone Construct": {
+   "nom": "Bone Construct",
+   "resume": "Built rather than hired, gains no experience and ignores injury results on a 4+."
+  },
+  "Drunken (Centaur)": {
+   "nom": "Drunken (Centaur)",
+   "resume": "At the start of each turn he may become stupid or frenzied."
+  },
+  "Driver": {
+   "nom": "Driver",
+   "resume": "Drives and repairs the warband's wagons and coaches."
+  },
+  "Graveyard Looter": {
+   "nom": "Graveyard Looter",
+   "resume": "May loot a graveyard when exploring; followers of Sigmar hate him."
+  },
+  "Despised": {
+   "nom": "Despised",
+   "resume": "Hated by all greenskins; no other greenskin hired sword may be hired alongside him."
+  },
+  "One Battle Only": {
+   "nom": "One Battle Only",
+   "resume": "Hired for one battle: no upkeep and no experience."
+  },
+  "Fireworks": {
+   "nom": "Fireworks",
+   "resume": "Launches rockets every turn; never runs or charges."
+  },
+  "Master Craftsman": {
+   "nom": "Master Craftsman",
+   "resume": "Lowers the rarity of swords for the warband."
+  },
   "Hired Sword": {
    "nom": "Hired Sword",
    "resume": "Mercenary paid a hire fee, then an upkeep after every battle (or he leaves). He does not count towards the warband's maximum size or heroes, keeps his own equipment and cannot buy more, one of each type per warband; injuries as a henchman, advances on the heroes table."
@@ -3287,6 +3591,54 @@ export const EN = {
   "Cook": {
    "nom": "Cook",
    "resume": "A warband with a Halfling may exceed its maximum size by one model (not one more hero)."
+  },
+  "Backstabber": {
+   "nom": "Backstabber",
+   "resume": "May charge an enemy he cannot see if within reach; +1 to hit and +1 on injury rolls in the first round of combat."
+  },
+  "Wily Thief": {
+   "nom": "Wily Thief",
+   "resume": "If he takes an enemy out of action and is not taken out himself, the warband gains one extra treasure."
+  },
+  "Animal Call": {
+   "nom": "Animal Call",
+   "resume": "While hidden, enemies within 18\" that cannot charge must pass a Leadership test or be moved by him."
+  },
+  "Herb Lore": {
+   "nom": "Herb Lore",
+   "resume": "In the recovery phase, heals 1 wound on a 4+ to a model in contact (herself included), without moving that turn."
+  },
+  "Lookout!": {
+   "nom": "Lookout!",
+   "resume": "Helps the warband avoid a trap or hazard."
+  },
+  "This Way!": {
+   "nom": "This Way!",
+   "resume": "A model in contact with him may cross impassable terrain as he does."
+  },
+  "Spy": {
+   "nom": "Spy",
+   "resume": "May redeploy models after setup."
+  },
+  "Potshot": {
+   "nom": "Potshot",
+   "resume": "May shoot his bow after running, at -2."
+  },
+  "Rocket Science": {
+   "nom": "Rocket Science",
+   "resume": "Adjusts the fireworks roll by 1."
+  },
+  "Display Artist": {
+   "nom": "Display Artist",
+   "resume": "May detonate a rocket at will with an Initiative test."
+  },
+  "Honing": {
+   "nom": "Honing",
+   "resume": "Hones up to three swords for the next battle."
+  },
+  "Farrier": {
+   "nom": "Farrier",
+   "resume": "Lowers the chance of losing horses."
   },
   "Wisdom": {
    "nom": "Wisdom",
@@ -3971,10 +4323,88 @@ export const EN = {
   "Doigts agiles": "Light Fingers",
   "Bras exercé": "Practiced Arm",
   "Richesse de Trantio": "Trantine Wealth",
+  "Prêteur sur gages": "Pawnbroker",
+  "Négociant": "Marketeer",
+  "Tailleur de pierre": "Stone Cutter",
+  "Garde du corps du marchand": "Merchant's Bodyguard",
+  "Vengeance contre les hommes-bêtes": "Beastmen Vengeance",
+  "Trophées de crânes": "Skull Rack",
+  "Prédateur": "Predator",
+  "Pistolier expert": "Expert Pistolier",
+  "Sans scrupules": "Unscrupulous",
+  "Cavalier expert (bandit)": "Expert Rider (Highwayman)",
+  "Cavalier expert (patrouilleur)": "Expert Rider (Roadwarden)",
+  "Diligences": "Stagecoaches",
+  "Tireur mortel": "Lethal Marksman",
+  "Impassible": "Stern",
+  "Mains sûres": "Steady Hands",
+  "Tir infaillible": "Dead Eye Shot",
+  "Pièges à gros gibier": "Set Traps (Big Game Hunter)",
+  "Contremaître": "Overseer",
+  "Relève": "Step Up",
+  "Capture": "Capture",
+  "Peau de caméléon": "Chameleon Skin",
+  "Biomécanique": "Bio Machinery",
+  "Alimenté à la malepierre": "Wyrdstone Powered",
+  "Jet de flammes": "Jet of Flame",
+  "Peu fiable": "Unreliable",
+  "Tueur parfait": "Perfect Killer",
+  "Acier virevoltant": "Darting Steel",
+  "Harnais à lanterne": "Lantern Rig",
+  "Pioche": "Mining Pick",
+  "Cartes au trésor": "Treasure Maps",
+  "Sorcier (Sorts des Djed'hi)": "Wizard (Djed'hi)",
+  "Sorcellerie": "Sorcery",
+  "Féérique": "Fey",
+  "Vagabond": "Wanderer",
+  "Solde du voleur": "Thief's Upkeep",
+  "Œil d'éclaireur": "Scout's Eye",
+  "Coup au cœur": "Heart Strike",
+  "Cape de chasseur": "Hunter's Cloak",
+  "Dresseur": "Animal Handler",
+  "Guide du désert": "Desert Guide",
+  "Sorcier (Runes nordiques)": "Wizard (Norse Runes)",
+  "Payé en trésors": "Paid in Treasure",
+  "Chasseur de malepierre": "Wyrdstone Hunter",
+  "Robuste": "Resilient",
+  "Insensible à la peur": "Immune to Fear",
+  "Connaissance du terrain": "Lay of the Land",
+  "Mythes et légendes": "Knowledge of Myths and Legends",
+  "Héros mercenaire": "Mercenary Hero",
+  "Prières d'Ulric": "Prayers of Ulric",
+  "Forgeron des runes": "Runesmith",
+  "Ennemis jurés": "Bitter Enemies",
+  "Serpents": "Snakes",
+  "Veinard": "Lucky",
+  "Science des tombeaux": "Tomb Lore",
+  "Recluse": "Recluse",
+  "Potions": "Potions",
+  "Réticente": "Reluctant",
+  "Construction d'os": "Bone Construct",
+  "Ivre": "Drunken (Centaur)",
+  "Conducteur": "Driver",
+  "Pilleur de cimetière": "Graveyard Looter",
+  "Méprisé": "Despised",
+  "Une seule bataille": "One Battle Only",
+  "Feux d'artifice": "Fireworks",
+  "Maître artisan": "Master Craftsman",
   "Franc-tireur": "Hired Sword",
   "Gantelet à pointes": "Spiked Gauntlet",
   "Cuistot": "Cook",
   "Chercheur": "Seeker",
+  "Attaque sournoise": "Backstabber",
+  "Négociateur": "Deal Breaker",
+  "Voleur rusé": "Wily Thief",
+  "Appel animal": "Animal Call",
+  "Herboristerie": "Herb Lore",
+  "Attention !": "Lookout!",
+  "Par ici !": "This Way!",
+  "Espion": "Spy",
+  "Tir au jugé": "Potshot",
+  "Artificier": "Rocket Science",
+  "Artiste pyrotechnicien": "Display Artist",
+  "Affûtage": "Honing",
+  "Maréchal-ferrant": "Farrier",
   "Sagesse": "Wisdom",
   "Chance": "Luck"
  },
@@ -4221,6 +4651,29 @@ export const EN = {
   "Bracelets d'or noir": "Black Gold Wristbands",
   "Anneau de Strigos": "Ring of Strigos",
   "Livre maudit": "Cursed Book",
+  "Cimeterre": "Scimitar",
+  "Hache de jet": "Throwing Axe",
+  "Cape (rondache)": "Cloak (buckler)",
+  "Marteau de cavalier": "Horseman's Hammer",
+  "Torches (3)": "Torches (3)",
+  "Lanterne": "Lantern",
+  "Lance-feu de malefoudre": "Warpfire Thrower",
+  "Lame elfe noire": "Dark Elf Blade",
+  "Cape sombre": "Dark Cloak",
+  "Pioche": "Mining Pick",
+  "Cartes au trésor": "Treasure Maps",
+  "Harnais à lanterne": "Lantern Rig",
+  "Cape de chasseur": "Hunter's Cloak",
+  "Fouet": "Whip",
+  "Bâton runique": "Rune Staff",
+  "Marteau en gromril": "Gromril Hammer",
+  "Serpents (3)": "Snakes (3)",
+  "Cape de voleur": "Thief's Cloak",
+  "Ail": "Garlic",
+  "Haches de jet": "Throwing Axes",
+  "Bombe fumigène": "Smoke Bomb",
+  "Feux d'artifice": "Fireworks",
+  "Pétards": "Firecrackers",
   "Casserole": "Cooking Pot"
  },
  "competences": {
@@ -4277,6 +4730,14 @@ export const EN = {
   "Spéciales (Skavens du Clan Pestilens)": "Special Skills (Skaven Pestilens)",
   "Spéciales (Bande de snotlings)": "Special Skills (Snotlings)",
   "Spéciales (Survivants de Strigos)": "Special Skills (Survivors of Strigos)",
+  "Spéciales (Assassin impérial)": "Special Skills (Imperial Assassin)",
+  "Spéciales (Marchand arabien)": "Special Skills (Arabian Merchant)",
+  "Spéciales (Voleur halfling)": "Special Skills (Halfling Thief)",
+  "Spéciales (Rôdeur kislévite)": "Special Skills (Kislev Ranger)",
+  "Spéciales (Pisteur)": "Special Skills (Pathfinder)",
+  "Spéciales (Éclaireur hobgobelin)": "Special Skills (Hobgoblin Scout)",
+  "Spéciales (Pyromane)": "Special Skills (Pyromaniac)",
+  "Spéciales (Forgeron d'épées)": "Special Skills (Swordsmith)",
   "Spéciales (Éclaireur elfe)": "Special Skills (Elf Ranger)"
  },
  "categories": {
