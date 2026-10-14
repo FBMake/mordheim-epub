@@ -124,6 +124,49 @@ export function emplacementEquipement(guerrier, nom) {
   return "armure";
 }
 
+const ARMES_DEUX_MAINS = new Set(["Arme lourde", "Épée à deux mains", "Hallebarde", "Fléau", "Pique"]);
+const BOUCLIERS = new Set(["Bouclier", "Rondache"]);
+
+/**
+ * Une règle ou une compétence de la figurine (y compris gagnée plus tard)
+ * l'autorise-t-elle à porter un bouclier avec une arme à deux mains ? On
+ * cherche dans sa description une phrase qui cite les deux sans négation.
+ */
+export function autoriseDeuxMainsBouclier(fig) {
+  return [...(fig?.regles || []), ...(fig?.competences || [])].some((nom) =>
+    (descriptionRegle(nom) || "")
+      .split(/[.;]/)
+      .some(
+        (phrase) =>
+          /armes? à deux mains|arme lourde/i.test(phrase) &&
+          /bouclier/i.test(phrase) &&
+          !/\b(ne|n'|sans|pas)\b/i.test(phrase)
+      )
+  );
+}
+
+/**
+ * Combinaisons permises mais à signaler (pas bloquées) : clés i18n
+ * `equipement.alerte.*`. Une arme à deux mains rend le bouclier inutile au
+ * corps à corps (il garde son +1 contre le tir) ; la morgenstern ne
+ * s'utilise pas avec une rondache ; armure lourde et bouclier coûtent 1 en
+ * Mouvement ; le boulet et chaîne (encombrant) ne laisse rien d'autre que
+ * les champignons fous.
+ */
+export function avertissementsEquipement(fig) {
+  const eq = fig?.equipement || [];
+  const out = [];
+  if (eq.some((e) => ARMES_DEUX_MAINS.has(e)) && eq.some((e) => BOUCLIERS.has(e)) && !autoriseDeuxMainsBouclier(fig)) {
+    out.push("deuxMains");
+  }
+  if (eq.includes("Morgenstern") && eq.includes("Rondache")) out.push("morgenstern");
+  if (eq.includes("Armure lourde") && eq.includes("Bouclier")) out.push("armureLourdeBouclier");
+  if (eq.includes("Boulet et chaîne") && eq.some((e) => e !== "Boulet et chaîne" && e !== "Champignons fous")) {
+    out.push("encombrant");
+  }
+  return out;
+}
+
 /**
  * Pourquoi un objet ne peut plus être ajouté à l'équipement (clé de l'emplacement
  * plein, "tirDouble" pour une deuxième arme de tir identique, "dagueGratuite"
@@ -486,6 +529,9 @@ export function creationWarnings(creation) {
     const competences = competencesHorsListe(f, g);
     if (competences.length) {
       out.push(t("alerte.competences", { nom: f.type || g.nom, liste: competences.join(", ") }));
+    }
+    for (const a of avertissementsEquipement(f)) {
+      out.push(`${loc(f.type) || locGuerrier(g)} · ${t(`equipement.alerte.${a}`)}`);
     }
     for (const d of depassementsMaximum(f, g)) {
       out.push(t("alerte.maximum", { nom: f.type || g.nom, stat: t(`profil.${d.stat}`), valeur: d.valeur, max: d.max }));
