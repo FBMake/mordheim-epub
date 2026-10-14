@@ -16,6 +16,7 @@
  */
 
 import { RULE_TRANSLATIONS } from "../translations.js";
+import { COMPETENCES_SUPPLEMENTS, RACES_SUPPLEMENTS } from "./bandes.js";
 
 // condition : "chef" (règle Chef), "sorcier" (règle Sorcier…), "profane" (ni répurgateur
 // ni sœur de Sigmar, interdits de Savoir arcanique), ou un id de guerrier.
@@ -111,7 +112,7 @@ const translations = new Map(Object.entries(RULE_TRANSLATIONS).map(([k, v]) => [
 
 /** { [liste]: [{ en, nom, resume, condition }] } */
 export const COMPETENCES = Object.fromEntries(
-  Object.entries(LISTES).map(([liste, items]) => [
+  Object.entries({ ...LISTES, ...COMPETENCES_SUPPLEMENTS }).map(([liste, items]) => [
     liste,
     items.map(([en, nom, resume, condition = null]) => {
       const tr = translations.get(en.toLowerCase());
@@ -138,6 +139,8 @@ export const RACES = {
   hommeBete: { nom: "Homme-bête", max: P(5, 7, 6, 4, 5, 4, 6, 4, 9) },
   halfling: { nom: "Halfling", max: P(4, 5, 7, 3, 3, 3, 9, 4, 10) },
   ogre: { nom: "Ogre", max: P(6, 5, 4, 5, 5, 5, 6, 5, 9) },
+  // Races des bandes des suppléments (tools/bsdata/supplements/).
+  ...RACES_SUPPLEMENTS,
 };
 
 /** Guerriers qui ne gagnent pas d'expérience : leur profil de départ est leur maximum. */
@@ -197,7 +200,7 @@ const RACE_PAR_GUERRIER = {
  */
 export function maximumsGuerrier(guerrier) {
   if (!guerrier) return null;
-  if (SANS_PROGRESSION.has(guerrier.id)) {
+  if (SANS_PROGRESSION.has(guerrier.id) || guerrier.sansProgression) {
     const max = {};
     for (const [k, v] of Object.entries(guerrier.profil || {})) {
       const n = Number(v);
@@ -205,7 +208,9 @@ export function maximumsGuerrier(guerrier) {
     }
     return { race: null, sansProgression: true, max };
   }
-  const id = guerrier.id in RACE_PAR_GUERRIER ? RACE_PAR_GUERRIER[guerrier.id] : "humain";
+  // Les guerriers des suppléments portent leur race ; ceux de BSData passent par la table.
+  const id =
+    "race" in guerrier ? guerrier.race : guerrier.id in RACE_PAR_GUERRIER ? RACE_PAR_GUERRIER[guerrier.id] : "humain";
   const race = RACES[id];
   return race ? { race: race.nom, sansProgression: false, max: { ...race.max } } : null;
 }

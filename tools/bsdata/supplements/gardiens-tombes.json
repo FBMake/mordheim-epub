@@ -1,0 +1,619 @@
+{
+  "id": "gardiens-tombes",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/tomb-guardians",
+  "nomEn": "Tomb Guardians",
+  "nom": "Gardiens des tombes",
+  "tresor": 500,
+  "effectifMax": 15,
+  "regles": [
+    "Do Not Drink",
+    "Home Ground"
+  ],
+  "guerriers": [
+    {
+      "cle": "Tomb Lord",
+      "nom": "Seigneur des tombes",
+      "categorie": "heros",
+      "cout": 150,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "5",
+        "PV": "3",
+        "I": "3",
+        "A": "2",
+        "Cd": "8"
+      },
+      "race": null,
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Fear",
+        "Immune to Psychology",
+        "No Pain",
+        "May not run",
+        "Immune to Poison",
+        "Flammable"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Flail",
+              "nom": "Fléau",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Asp Arrows",
+              "nom": "Flèches d'aspic",
+              "cout": 10
+            },
+            {
+              "en": "Nehekharan Javelin",
+              "nom": "Javelot néhékharéen",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Liche Priest",
+      "nom": "Prêtre liche",
+      "categorie": "heros",
+      "cout": 55,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Wizard (Mortuary Cult)",
+        "Fear",
+        "Immune to Psychology",
+        "No Pain",
+        "May not run",
+        "Immune to Poison"
+      ],
+      "competences": [
+        "Érudition",
+        "Spéciales (Gardiens des tombes)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Staff",
+              "nom": "Bâton",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Serpent Staff",
+              "nom": "Bâton serpent",
+              "cout": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Acolyte",
+      "nom": "Acolyte",
+      "categorie": "heros",
+      "cout": 20,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Fear",
+        "Immune to Psychology",
+        "No Pain",
+        "May not run",
+        "Immune to Poison"
+      ],
+      "competences": [
+        "Combat",
+        "Érudition",
+        "Spéciales (Gardiens des tombes)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Staff",
+              "nom": "Bâton",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Skeleton Warriors",
+      "nom": "Guerriers squelettes",
+      "categorie": "hdm",
+      "cout": 20,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Fear",
+        "Immune to Psychology",
+        "No Pain",
+        "May not run",
+        "Immune to Poison",
+        "No Brain"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Flail",
+              "nom": "Fléau",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Tomb Guards",
+      "nom": "Gardes des tombes",
+      "categorie": "hdm",
+      "cout": 30,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "2",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": null,
+      "sansProgression": false,
+      "regles": [
+        "Fear",
+        "Immune to Psychology",
+        "No Pain",
+        "May not run",
+        "Immune to Poison"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Flail",
+              "nom": "Fléau",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Tomb Scorpions",
+      "nom": "Scorpions des tombes",
+      "categorie": "hdm",
+      "cout": 15,
+      "min": 0,
+      "max": 3,
+      "xp": 0,
+      "profil": {
+        "M": "5",
+        "CC": "2",
+        "CT": "-",
+        "F": "2",
+        "E": "2",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "4"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Animals",
+        "Scorpion Sting"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Do Not Drink": {
+      "fr": {
+        "nom": "Ni boire ni manger",
+        "resume": "Les morts-vivants n'ont besoin ni d'eau ni de nourriture ; seuls les animaux vivants qui les accompagnent suivent les règles normales sur l'eau."
+      },
+      "en": {
+        "nom": "Do Not Drink",
+        "resume": "The undead need neither food nor water; only living animals in the warband follow the normal water rules."
+      }
+    },
+    "Home Ground": {
+      "fr": {
+        "nom": "Terrain familier",
+        "resume": "La bande lance un dé supplémentaire lors de la phase d'exploration (règle pensée pour le désert ; son usage ailleurs est flou)."
+      },
+      "en": {
+        "nom": "Home Ground",
+        "resume": "The warband rolls one extra dice in the exploration phase (written for the desert setting; unclear elsewhere)."
+      }
+    },
+    "Flammable": {
+      "fr": {
+        "nom": "Inflammable",
+        "resume": "Les touches d'attaques enflammées infligent au Seigneur des tombes le double de blessures."
+      },
+      "en": {
+        "nom": "Flammable",
+        "resume": "Hits from fire-based attacks inflict double wounds on the Tomb Lord."
+      }
+    },
+    "Wizard (Mortuary Cult)": {
+      "fr": {
+        "nom": "Sorcier (Culte mortuaire)",
+        "resume": "Le prêtre liche est un sorcier qui utilise les parchemins du Culte mortuaire (ce n'est pas de la nécromancie). Il ne peut pas porter d'armure."
+      },
+      "en": {
+        "nom": "Wizard (Mortuary Cult)",
+        "resume": "The Liche Priest is a wizard using Mortuary Cult scrolls (not Necromancy). He may not wear armour."
+      }
+    },
+    "Scorpion Sting": {
+      "fr": {
+        "nom": "Dard de scorpion",
+        "resume": "Le dard du scorpion fonctionne comme une arme enduite de lotus noir. Créature vivante et animal, le scorpion ne gagne jamais d'expérience."
+      },
+      "en": {
+        "nom": "Scorpion Sting",
+        "resume": "The scorpion's sting works as if coated with Black Lotus. Being a living animal, it never gains experience."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Gardiens des tombes)",
+    "listeEn": "Special Skills (Tomb Guardians)",
+    "competences": [
+      {
+        "en": "Drive Chariot",
+        "nom": "Conduite de char",
+        "resume": "Indispensable pour charger avec le char squelette : sans elle, le conducteur ne peut pas charger.",
+        "resumeEn": "Required to charge with the Skeleton Chariot; without it the charioteer cannot charge.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Aucun tableau de maximums sur la page : race null pour le Seigneur des tombes (E5 dépasse le maximum humain), les squelettes et les scorpions ; 'humain' supposé pour le prêtre liche et l'acolyte. Les flèches d'aspic et le javelot néhékharéen sont réservés au Seigneur des tombes ; le bâton serpent au prêtre liche (parade ; peut renoncer à ses attaques pour une attaque unique CC4 F4 frappant en premier). Flèches d'aspic et javelots : +1 pour toucher, pas de règle d'arme de jet. Char squelette (0-1) : 200 + 10D6 co, tiré par deux destriers squelettes (M8 CC2 CT2 F3 E3 PV1 I2 A1 Cd5), char F4 E4 PV3 — non saisi comme guerrier. Conduite de char est classée en Érudition sur la page ; présentée ici comme liste spéciale accessible aux héros ayant Érudition (le Seigneur des tombes n'y a pas accès). Gardes des tombes : la page indique que la source d'origine leur fait gagner de l'expérience (avec les maximums du Seigneur des tombes) — saisis sans 'No Brain' et avec progression ; à confirmer. Scorpions : la F est marquée 2* sur la page (astérisque lié au dard), saisie '2' ; CT '-'. Le prêtre liche ne peut pas porter d'armure (sa liste n'en contient pas)."
+}

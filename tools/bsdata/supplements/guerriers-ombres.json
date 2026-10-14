@@ -1,0 +1,819 @@
+{
+  "id": "guerriers-ombres",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/shadow-warriors",
+  "nomEn": "Shadow Warriors",
+  "nom": "Guerriers des Ombres",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [
+    "Hate Dark Elves",
+    "Excellent Sight",
+    "Distaste for Poison",
+    "Unforgiving",
+    "Tolerant"
+  ],
+  "guerriers": [
+    {
+      "cle": "Shadow Master",
+      "nom": "Maître des ombres",
+      "categorie": "heros",
+      "cout": 70,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "5",
+        "CC": "5",
+        "CT": "5",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Leader"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Guerriers des Ombres)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Ithilmar Dagger",
+              "nom": "Dague en ithilmar",
+              "cout": 4
+            },
+            {
+              "en": "Ithilmar Sword",
+              "nom": "Épée en ithilmar",
+              "cout": 20
+            },
+            {
+              "en": "Ithilmar Spear",
+              "nom": "Lance en ithilmar",
+              "cout": 20
+            },
+            {
+              "en": "Ithilmar Double-handed weapon",
+              "nom": "Arme lourde en ithilmar",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            },
+            {
+              "en": "Elf Bow",
+              "nom": "Arc elfique",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Ithilmar Armour",
+              "nom": "Armure en ithilmar",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Standard of Nagarythe",
+              "nom": "Étendard de Nagarythe",
+              "cout": 75
+            },
+            {
+              "en": "War Horn of Nagarythe",
+              "nom": "Cor de guerre de Nagarythe",
+              "cout": 25
+            },
+            {
+              "en": "Elven Cloak",
+              "nom": "Cape elfique",
+              "cout": 75
+            },
+            {
+              "en": "Elven Wine",
+              "nom": "Vin elfique",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Shadow Walker",
+      "nom": "Arpenteur des ombres",
+      "categorie": "heros",
+      "cout": 45,
+      "min": 0,
+      "max": 3,
+      "xp": 12,
+      "profil": {
+        "M": "5",
+        "CC": "5",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse",
+        "Spéciales (Guerriers des Ombres)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Ithilmar Dagger",
+              "nom": "Dague en ithilmar",
+              "cout": 4
+            },
+            {
+              "en": "Ithilmar Sword",
+              "nom": "Épée en ithilmar",
+              "cout": 20
+            },
+            {
+              "en": "Ithilmar Spear",
+              "nom": "Lance en ithilmar",
+              "cout": 20
+            },
+            {
+              "en": "Ithilmar Double-handed weapon",
+              "nom": "Arme lourde en ithilmar",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            },
+            {
+              "en": "Elf Bow",
+              "nom": "Arc elfique",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Ithilmar Armour",
+              "nom": "Armure en ithilmar",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Standard of Nagarythe",
+              "nom": "Étendard de Nagarythe",
+              "cout": 75
+            },
+            {
+              "en": "War Horn of Nagarythe",
+              "nom": "Cor de guerre de Nagarythe",
+              "cout": 25
+            },
+            {
+              "en": "Elven Cloak",
+              "nom": "Cape elfique",
+              "cout": 75
+            },
+            {
+              "en": "Elven Wine",
+              "nom": "Vin elfique",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Shadow Weaver",
+      "nom": "Tisseur d'ombres",
+      "categorie": "heros",
+      "cout": 55,
+      "min": 0,
+      "max": 1,
+      "xp": 12,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Wizard (Shadow Magic)"
+      ],
+      "competences": [
+        "Combat",
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Guerriers des Ombres)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Ithilmar Dagger",
+              "nom": "Dague en ithilmar",
+              "cout": 4
+            },
+            {
+              "en": "Ithilmar Sword",
+              "nom": "Épée en ithilmar",
+              "cout": 20
+            },
+            {
+              "en": "Ithilmar Spear",
+              "nom": "Lance en ithilmar",
+              "cout": 20
+            },
+            {
+              "en": "Ithilmar Double-handed weapon",
+              "nom": "Arme lourde en ithilmar",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            },
+            {
+              "en": "Elf Bow",
+              "nom": "Arc elfique",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Ithilmar Armour",
+              "nom": "Armure en ithilmar",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Standard of Nagarythe",
+              "nom": "Étendard de Nagarythe",
+              "cout": 75
+            },
+            {
+              "en": "War Horn of Nagarythe",
+              "nom": "Cor de guerre de Nagarythe",
+              "cout": 25
+            },
+            {
+              "en": "Elven Cloak",
+              "nom": "Cape elfique",
+              "cout": 75
+            },
+            {
+              "en": "Elven Wine",
+              "nom": "Vin elfique",
+              "cout": 50
+            },
+            {
+              "en": "Elven Runestones",
+              "nom": "Pierres runiques elfiques",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Shadow Warrior",
+      "nom": "Guerrier des ombres",
+      "categorie": "hdm",
+      "cout": 35,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            },
+            {
+              "en": "Elf Bow",
+              "nom": "Arc elfique",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Elven Cloak",
+              "nom": "Cape elfique",
+              "cout": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Shadow Novice",
+      "nom": "Novice des ombres",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "5",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            },
+            {
+              "en": "Elf Bow",
+              "nom": "Arc elfique",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Elven Cloak",
+              "nom": "Cape elfique",
+              "cout": 75
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Hate Dark Elves": {
+      "fr": {
+        "nom": "Haine des Elfes Noirs",
+        "resume": "Tous les guerriers de la bande, hors francs-tireurs, haïssent les Elfes Noirs."
+      },
+      "en": {
+        "nom": "Hate Dark Elves",
+        "resume": "Every warrior in the warband except Hired Swords hates Dark Elves."
+      }
+    },
+    "Excellent Sight": {
+      "fr": {
+        "nom": "Vue perçante",
+        "resume": "Les elfes repèrent les ennemis cachés à une distance égale au double de leur Initiative en pas."
+      },
+      "en": {
+        "nom": "Excellent Sight",
+        "resume": "Elves detect Hidden enemies at twice their Initiative in inches."
+      }
+    },
+    "Distaste for Poison": {
+      "fr": {
+        "nom": "Dégoût du poison",
+        "resume": "Les guerriers de la bande ne peuvent utiliser aucun poison."
+      },
+      "en": {
+        "nom": "Distaste for Poison",
+        "resume": "Warriors of the warband may not use any kind of poison."
+      }
+    },
+    "Unforgiving": {
+      "fr": {
+        "nom": "Implacables",
+        "resume": "En partie à plusieurs joueurs, la bande ne peut jamais s'allier à une bande du Chaos."
+      },
+      "en": {
+        "nom": "Unforgiving",
+        "resume": "In multiplayer games the warband may never ally with a Chaotic warband."
+      }
+    },
+    "Tolerant": {
+      "fr": {
+        "nom": "Tolérants",
+        "resume": "La bande peut recruter des francs-tireurs ni maléfiques ni chaotiques, sauf les spécialistes du poison comme les assassins."
+      },
+      "en": {
+        "nom": "Tolerant",
+        "resume": "The warband may hire non-evil, non-Chaotic Hired Swords, but no poison users such as Assassins."
+      }
+    },
+    "Wizard (Shadow Magic)": {
+      "fr": {
+        "nom": "Sorcier (Magie des ombres)",
+        "resume": "Le tisseur d'ombres lance des sorts de Magie des ombres et ne peut pas lancer de sort s'il porte une armure."
+      },
+      "en": {
+        "nom": "Wizard (Shadow Magic)",
+        "resume": "The Shadow Weaver casts Shadow Magic and cannot cast while wearing armour."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Guerriers des Ombres)",
+    "listeEn": "Special Skills (Shadow Warriors)",
+    "competences": [
+      {
+        "en": "Infiltration",
+        "nom": "Infiltration",
+        "resume": "Le héros se déploie après l'adversaire, hors de sa vue et à plus de 12 ps de tout ennemi. Si les deux camps infiltrent, le plus bas sur 1D6 se place en premier.",
+        "resumeEn": "The hero deploys after the enemy, out of sight and over 12\" from enemies. If both sides infiltrate, lowest D6 sets up first.",
+        "condition": null
+      },
+      {
+        "en": "See in Shadows",
+        "nom": "Vision dans l'ombre",
+        "resume": "Le héros peut tenter de charger un ennemi qu'il ne voit pas, avec un jet de charge normal, si son mouvement le permet.",
+        "resumeEn": "The hero may try to charge unseen enemies with a normal charge roll if within reach.",
+        "condition": null
+      },
+      {
+        "en": "Hide in Shadows",
+        "nom": "Se fondre dans l'ombre",
+        "resume": "Un ennemi qui cherche à repérer ce héros caché divise d'abord son Initiative par deux.",
+        "resumeEn": "Enemies trying to spot this Hidden hero halve their Initiative first.",
+        "condition": null
+      },
+      {
+        "en": "Sniper",
+        "nom": "Tireur embusqué",
+        "resume": "Le héros peut tirer ou lancer un sort en restant caché ; si la cible survit, elle peut tenter un test d'Initiative pour le repérer.",
+        "resumeEn": "The hero may shoot or cast while Hidden and stay Hidden; a surviving target may test Initiative to spot him.",
+        "condition": null
+      },
+      {
+        "en": "Powerful Build",
+        "nom": "Carrure puissante",
+        "resume": "Donne accès aux compétences de Force. Interdite au tisseur d'ombres ; deux elfes au plus de la bande peuvent la posséder.",
+        "resumeEn": "Grants access to Strength skills. Not for Shadow Weavers; at most two Elves in the warband may have it.",
+        "condition": null
+      },
+      {
+        "en": "Master of Runes",
+        "nom": "Maître des runes",
+        "resume": "+1 aux jets de dissipation avec les pierres runiques elfiques ; peut graver l'équipement d'un guerrier, qui pourra relancer une fois par bataille une sauvegarde d'armure ou une parade ratée. Runes à refaire après chaque bataille.",
+        "resumeEn": "+1 to dispel with Elven Runestones; may rune one warrior's gear, granting one re-roll of a failed armour save or parry per battle. Runes must be redone after each battle.",
+        "condition": "guerriers-ombres/shadow-weaver"
+      }
+    ]
+  },
+  "races": {
+    "elfe": {
+      "nom": "Elfe",
+      "max": {
+        "M": 5,
+        "CC": 7,
+        "CT": 7,
+        "F": 4,
+        "E": 4,
+        "PV": 3,
+        "I": 9,
+        "A": 4,
+        "Cd": 10
+      }
+    }
+  },
+  "notes": "Arme en ithilmar : « 2 × le prix normal » ; décliné en dague 4, épée 20, lance 20, arme lourde 30 co. Objets réservés aux héros (astérisque) : armes et armure en ithilmar, étendard et cor de Nagarythe, vin elfique, pierres runiques ; la cape elfique n'est pas marquée et a été laissée aux hommes de main. Pierres runiques réservées aux tisseurs d'ombres (prix comptoir 50+2D6) et retirées des listes du maître et de l'arpenteur ; étendard et cor proposés à tous les héros. Prix de la liste = prix de départ réduits ; au comptoir : étendard 75+3D6, cor 25+1D6, vin 50+3D6. L'étendard ne s'achète qu'à la création de la bande. Familier (20+1D6, rare 8, lanceurs de sorts seulement) non inclus. Maximums elfes repris du livre de règles. Sorts de Magie des ombres non saisis (page séparée)."
+}

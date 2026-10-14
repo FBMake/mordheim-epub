@@ -1,0 +1,786 @@
+{
+  "id": "hommes-lezards",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/lizardmen",
+  "nomEn": "Lizardmen",
+  "nom": "Hommes-Lézards",
+  "tresor": 500,
+  "effectifMax": 20,
+  "regles": [
+    "Scaly Skin",
+    "Armour",
+    "Bite Attack",
+    "Cold Blooded",
+    "Aquatic",
+    "Jungle Born",
+    "Saurus Rarity"
+  ],
+  "guerriers": [
+    {
+      "cle": "Skink Priest",
+      "nom": "Prêtre skink",
+      "categorie": "heros",
+      "cout": 60,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "6",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "skink",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Wizard (Lizardmen Magic)",
+        "Cold Blooded",
+        "Aquatic",
+        "Jungle Born",
+        "Scaly Skin"
+      ],
+      "competences": [
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Hommes-Lézards)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Stone Axe",
+              "nom": "Hache de pierre",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bolas",
+              "nom": "Bolas",
+              "cout": 5
+            },
+            {
+              "en": "Javelins",
+              "nom": "Javelots",
+              "cout": 10
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            },
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Bone Helmet",
+              "nom": "Casque en os",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 20
+            },
+            {
+              "en": "Black Lotus",
+              "nom": "Lotus noir",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Saurus Totem Warrior",
+      "nom": "Guerrier totem saurus",
+      "categorie": "heros",
+      "cout": 60,
+      "min": 0,
+      "max": 1,
+      "xp": 11,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "0",
+        "F": "4",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1+1",
+        "Cd": "8"
+      },
+      "race": "saurus",
+      "sansProgression": false,
+      "regles": [
+        "Cold Blooded",
+        "Bite Attack",
+        "Scaly Skin"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Spéciales (Hommes-Lézards)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Stone Axe",
+              "nom": "Hache de pierre",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Bone Helmet",
+              "nom": "Casque en os",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Skink Great Crest",
+      "nom": "Grande crête skink",
+      "categorie": "heros",
+      "cout": 30,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "6",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "2",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "skink",
+      "sansProgression": false,
+      "regles": [
+        "Cold Blooded",
+        "Aquatic",
+        "Jungle Born",
+        "Scaly Skin"
+      ],
+      "competences": [
+        "Tir",
+        "Vitesse",
+        "Spéciales (Hommes-Lézards)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Stone Axe",
+              "nom": "Hache de pierre",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bolas",
+              "nom": "Bolas",
+              "cout": 5
+            },
+            {
+              "en": "Javelins",
+              "nom": "Javelots",
+              "cout": 10
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            },
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 20
+            },
+            {
+              "en": "Black Lotus",
+              "nom": "Lotus noir",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Skink Brave",
+      "nom": "Brave skink",
+      "categorie": "hdm",
+      "cout": 20,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "2",
+        "CT": "3",
+        "F": "3",
+        "E": "2",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "skink",
+      "sansProgression": false,
+      "regles": [
+        "Cold Blooded",
+        "Aquatic",
+        "Jungle Born",
+        "Scaly Skin"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Stone Axe",
+              "nom": "Hache de pierre",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bolas",
+              "nom": "Bolas",
+              "cout": 5
+            },
+            {
+              "en": "Javelins",
+              "nom": "Javelots",
+              "cout": 10
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            },
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Reptile Venom",
+              "nom": "Venin de reptile",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Saurus Brave",
+      "nom": "Brave saurus",
+      "categorie": "hdm",
+      "cout": 40,
+      "min": 0,
+      "max": 4,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "0",
+        "F": "4",
+        "E": "4",
+        "PV": "1",
+        "I": "1",
+        "A": "1+1",
+        "Cd": "7"
+      },
+      "race": "saurus",
+      "sansProgression": false,
+      "regles": [
+        "Cold Blooded",
+        "Bite Attack",
+        "Scaly Skin"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Stone Axe",
+              "nom": "Hache de pierre",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Bone Helmet",
+              "nom": "Casque en os",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Kroxigor",
+      "nom": "Kroxigor",
+      "categorie": "hdm",
+      "cout": 200,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "3",
+        "CT": "0",
+        "F": "5",
+        "E": "4",
+        "PV": "3",
+        "I": "1",
+        "A": "3",
+        "Cd": "8"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Scaly Skin",
+        "Aquatic",
+        "Cold Blooded",
+        "Fear",
+        "Large Target",
+        "Animal"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Scaly Skin": {
+      "fr": {
+        "nom": "Peau écailleuse",
+        "resume": "Sauvegarde naturelle (saurus 5+, skinks 6+, kroxigor 4+), jamais dégradée au-delà de 6 par la Force et annulée par un coup critique « sans sauvegarde » ; armure légère et bouclier donnent chacun +1."
+      },
+      "en": {
+        "nom": "Scaly Skin",
+        "resume": "Natural save (Saurus 5+, Skinks 6+, Kroxigor 4+), never worse than 6 from Strength, negated by a 'no save' critical; light armour and shield each add +1."
+      }
+    },
+    "Armour": {
+      "fr": {
+        "nom": "Armure saurienne",
+        "resume": "Pour cette bande, l'armure légère coûte toujours 50 co, même achetée au tableau d'équipement général."
+      },
+      "en": {
+        "nom": "Armour",
+        "resume": "Light armour always costs this warband 50 gc, even from the general Equipment chart."
+      }
+    },
+    "Bite Attack": {
+      "fr": {
+        "nom": "Morsure",
+        "resume": "Les saurus ont une attaque de morsure supplémentaire à leur propre Force, sans pénalité d'arme ; elle frappe toujours en dernier."
+      },
+      "en": {
+        "nom": "Bite Attack",
+        "resume": "Saurus have an extra bite attack at their own Strength with no unarmed penalty; it always strikes last."
+      }
+    },
+    "Cold Blooded": {
+      "fr": {
+        "nom": "Sang-froid",
+        "resume": "Pour les tests de psychologie et de déroute, lancez 3D6 et gardez les deux plus faibles. Le Commandement d'un saurus ou d'un kroxigor ne peut servir aux tests de déroute."
+      },
+      "en": {
+        "nom": "Cold Blooded",
+        "resume": "Roll 3D6 and keep the lowest two for psychology and Rout tests. Saurus or Kroxigor Leadership may not be used for Rout tests."
+      }
+    },
+    "Aquatic": {
+      "fr": {
+        "nom": "Amphibie",
+        "resume": "Se déplace dans l'eau sans pénalité et y compte comme à couvert."
+      },
+      "en": {
+        "nom": "Aquatic",
+        "resume": "Moves through water without penalty and counts as in cover while in it."
+      }
+    },
+    "Jungle Born": {
+      "fr": {
+        "nom": "Né dans la jungle",
+        "resume": "Les skinks traversent la jungle sans pénalité de mouvement."
+      },
+      "en": {
+        "nom": "Jungle Born",
+        "resume": "Skinks move through jungle without penalty."
+      }
+    },
+    "Saurus Rarity": {
+      "fr": {
+        "nom": "Rareté des saurus",
+        "resume": "La bande ne peut jamais compter plus de braves saurus que de braves skinks."
+      },
+      "en": {
+        "nom": "Saurus Rarity",
+        "resume": "The warband may never have more Saurus Braves than Skink Braves."
+      }
+    },
+    "Wizard (Lizardmen Magic)": {
+      "fr": {
+        "nom": "Sorcier (Magie des Hommes-Lézards)",
+        "resume": "Le prêtre skink lance des sorts de la magie des Hommes-Lézards."
+      },
+      "en": {
+        "nom": "Wizard (Lizardmen Magic)",
+        "resume": "The Skink Priest casts Lizardmen magic spells."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Hommes-Lézards)",
+    "listeEn": "Special Skills (Lizardmen)",
+    "competences": [
+      {
+        "en": "Infiltration",
+        "nom": "Infiltration",
+        "resume": "Skinks uniquement. Le héros se place n'importe où à plus de 12 ps d'un ennemi et commence la partie caché.",
+        "resumeEn": "Skinks only. The hero sets up anywhere over 12\" from enemies and starts the game Hidden.",
+        "condition": null
+      },
+      {
+        "en": "Great Hunter",
+        "nom": "Grand chasseur",
+        "resume": "Skinks uniquement. Les ennemis subissent un -1 supplémentaire pour toucher le héros à couvert.",
+        "resumeEn": "Skinks only. Enemies suffer an extra -1 to hit the hero when he is in cover.",
+        "condition": null
+      },
+      {
+        "en": "Bellowing Battle Roar",
+        "nom": "Rugissement de guerre",
+        "resume": "Saurus uniquement. Les ennemis au contact subissent -1 pour toucher lors du premier round de corps à corps.",
+        "resumeEn": "Saurus only. Enemies in base contact suffer -1 to hit in the first round of close combat.",
+        "condition": "hommes-lezards/saurus-totem-warrior"
+      },
+      {
+        "en": "Toughened Hide",
+        "nom": "Cuir endurci",
+        "resume": "Saurus uniquement. Le héros n'est mis hors de combat que sur 6+.",
+        "resumeEn": "Saurus only. The hero is only taken out of action on a 6+.",
+        "condition": "hommes-lezards/saurus-totem-warrior"
+      }
+    ]
+  },
+  "races": {
+    "skink": {
+      "nom": "Skink",
+      "max": {
+        "M": 6,
+        "CC": 5,
+        "CT": 6,
+        "F": 4,
+        "E": 3,
+        "PV": 3,
+        "I": 7,
+        "A": 4,
+        "Cd": 8
+      }
+    },
+    "saurus": {
+      "nom": "Saurus",
+      "max": {
+        "M": 4,
+        "CC": 6,
+        "CT": 0,
+        "F": 5,
+        "E": 5,
+        "PV": 3,
+        "I": 4,
+        "A": 4,
+        "Cd": 10
+      }
+    }
+  },
+  "notes": "Saurus : A notée « 1+1 » (attaque + morsure) ; maximum d'Attaques saurus « 4+1 » noté 4. Maximums skink/saurus repris des données BSData (non affichés sur la page mordheimer). Kroxigor (0-1) : équipé d'office d'une hallebarde (coût 0), sauvegarde 4+, Peur, Grande cible, Animal (ne gagne jamais d'expérience) ; race null. Épée réservée aux héros skinks ; casque en os réservé au prêtre skink côté skinks. Pas d'armes de tir pour les saurus. Venin noir (20) et lotus noir (10) : héros skinks, sur armes de tir uniquement ; les saurus peuvent les acheter au comptoir pour leurs armes de corps à corps (non saisi). Venin de reptile : 5 co par arme, hommes de main skinks, +1 F sans modificateur de sauvegarde, une bataille. Infiltration et Grand chasseur réservés aux skinks (prêtre et grande crête), condition laissée à null. Marques sacrées à l'achat d'un héros (une par héros), non saisies : Mâchoires énormes 40 co (saurus, +1 F à la morsure), Glandes à venin 40 co (skinks), Marque des Anciens 50 co. Si le prêtre meurt, il peut être remplacé après au moins une partie sans chef. Sorts de magie des Hommes-Lézards non saisis."
+}

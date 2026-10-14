@@ -16,7 +16,23 @@ export const EN = {
   "carnaval": "Carnival of Chaos",
   "kislevites": "Kislevites",
   "averland": "Averland Mercenaries",
-  "ostland": "Ostland Mercenaries"
+  "ostland": "Ostland Mercenaries",
+  "amazones": "Amazons",
+  "bretonnie": "Bretonnian Knights",
+  "caravanes-marchandes": "Merchant Caravans",
+  "elfes-noirs": "Dark Elves",
+  "gardiens-tombes": "Tomb Guardians",
+  "gladiateurs": "Pit Fighters",
+  "gobelins-foret": "Forest Goblins",
+  "guerriers-ombres": "Shadow Warriors",
+  "hommes-lezards": "Lizardmen",
+  "miragliano": "Tileans (Miragleans)",
+  "nains-du-chaos": "Sons of Hashut",
+  "norses": "Norse Explorers",
+  "nuln": "Gunnery School of Nuln",
+  "pirates": "Pirates",
+  "skavens-pestilens": "Skaven of Clan Pestilens",
+  "stirwood": "Outlaws of Stirwood Forest"
  },
  "guerriers": {
   "reikland/mercenary-captain": "Mercenary Captain",
@@ -116,7 +132,106 @@ export const EN = {
   "ostland/kin": "Kin",
   "ostland/jaeger": "Jaeger",
   "ostland/ruffians": "Ruffians",
-  "ostland/ogre": "Ogre"
+  "ostland/ogre": "Ogre",
+  "amazones/priestess": "Priestess",
+  "amazones/champion": "Champion",
+  "amazones/totem-warrior": "Totem Warrior",
+  "amazones/amazon-warriors": "Amazon Warriors",
+  "amazones/scouts": "Scouts",
+  "bretonnie/questing-knight": "Questing Knight",
+  "bretonnie/knight-errant": "Knight Errant",
+  "bretonnie/squire": "Squire",
+  "bretonnie/men-at-arms": "Men-at-Arms",
+  "bretonnie/bowmen": "Bowmen",
+  "caravanes-marchandes/merchant": "Merchant",
+  "caravanes-marchandes/apprentice": "Apprentice",
+  "caravanes-marchandes/knights-vanguard": "Knights Vanguard",
+  "caravanes-marchandes/magician": "Magician",
+  "caravanes-marchandes/sell-swords": "Sell-swords",
+  "caravanes-marchandes/marksmen": "Marksmen",
+  "caravanes-marchandes/blackguards": "Blackguards",
+  "elfes-noirs/high-born": "High Born",
+  "elfes-noirs/beastmaster": "Beastmaster",
+  "elfes-noirs/fellblades": "Fellblades",
+  "elfes-noirs/sorceress": "Sorceress",
+  "elfes-noirs/corsairs": "Corsairs",
+  "elfes-noirs/shades": "Shades",
+  "elfes-noirs/cold-one-beasthounds": "Cold One Beasthounds",
+  "gardiens-tombes/tomb-lord": "Tomb Lord",
+  "gardiens-tombes/liche-priest": "Liche Priest",
+  "gardiens-tombes/acolyte": "Acolyte",
+  "gardiens-tombes/skeleton-warriors": "Skeleton Warriors",
+  "gardiens-tombes/tomb-guards": "Tomb Guards",
+  "gardiens-tombes/tomb-scorpions": "Tomb Scorpions",
+  "gladiateurs/pit-king": "Pit King",
+  "gladiateurs/dwarf-troll-slayer": "Dwarf Troll Slayer",
+  "gladiateurs/pit-veteran": "Pit Veteran",
+  "gladiateurs/pit-fighter": "Pit Fighter",
+  "gladiateurs/pursuer": "Pursuer",
+  "gladiateurs/ogre-pit-fighter": "Ogre Pit Fighter",
+  "gobelins-foret/chieftain": "Chieftain",
+  "gobelins-foret/brave": "Brave",
+  "gobelins-foret/shaman": "Shaman",
+  "gobelins-foret/forest-goblin": "Forest Goblin",
+  "gobelins-foret/red-toof-goblin": "Red Toof Goblin",
+  "gobelins-foret/slugga": "Slugga",
+  "gobelins-foret/gigantic-spider": "Gigantic Spider",
+  "guerriers-ombres/shadow-master": "Shadow Master",
+  "guerriers-ombres/shadow-walker": "Shadow Walker",
+  "guerriers-ombres/shadow-weaver": "Shadow Weaver",
+  "guerriers-ombres/shadow-warrior": "Shadow Warrior",
+  "guerriers-ombres/shadow-novice": "Shadow Novice",
+  "hommes-lezards/skink-priest": "Skink Priest",
+  "hommes-lezards/saurus-totem-warrior": "Saurus Totem Warrior",
+  "hommes-lezards/skink-great-crest": "Skink Great Crest",
+  "hommes-lezards/skink-brave": "Skink Brave",
+  "hommes-lezards/saurus-brave": "Saurus Brave",
+  "hommes-lezards/kroxigor": "Kroxigor",
+  "miragliano/captain": "Captain",
+  "miragliano/champion": "Champion",
+  "miragliano/youngblood": "Youngblood",
+  "miragliano/warriors": "Warriors",
+  "miragliano/marksmen": "Marksmen",
+  "miragliano/duellists": "Duellists",
+  "nains-du-chaos/apprentice-sorcerer": "Apprentice Sorcerer",
+  "nains-du-chaos/bull-centaur": "Bull Centaur",
+  "nains-du-chaos/chaos-dwarf-champion": "Chaos Dwarf Champion",
+  "nains-du-chaos/chaos-dwarf-warrior": "Chaos Dwarf Warrior",
+  "nains-du-chaos/blunderbuss-chaos-dwarf": "Blunderbuss Chaos Dwarf",
+  "nains-du-chaos/hobgoblin": "Hobgoblin",
+  "norses/jarl": "Jarl",
+  "norses/berserker": "Berserker",
+  "norses/wulfen": "Wulfen",
+  "norses/bondsman": "Bondsman",
+  "norses/marauder": "Marauder",
+  "norses/hunter": "Hunter",
+  "norses/wolf": "Wolf",
+  "nuln/senior-gunnery-officer": "Senior Gunnery Officer",
+  "nuln/instructor": "Instructor",
+  "nuln/senior-student": "Senior Student",
+  "nuln/underclassmen": "Underclassmen",
+  "nuln/sons-of-the-guns": "Sons of the Guns",
+  "nuln/marksmen": "Marksmen",
+  "nuln/pistoliers": "Pistoliers",
+  "pirates/pirate-captain": "Pirate Captain",
+  "pirates/ships-mate": "Ship's Mate",
+  "pirates/cabin-boy": "Cabin Boy",
+  "pirates/crew": "Crew",
+  "pirates/gunner": "Gunner",
+  "pirates/boatswain": "Boatswain",
+  "skavens-pestilens/plague-priest": "Plague Priest",
+  "skavens-pestilens/pestilens-sorcerer": "Pestilens Sorcerer",
+  "skavens-pestilens/plague-monk": "Plague Monk",
+  "skavens-pestilens/monk-initiate": "Monk Initiate",
+  "skavens-pestilens/plague-novice": "Plague Novice",
+  "skavens-pestilens/giant-rat": "Giant Rat",
+  "skavens-pestilens/rat-ogre": "Rat Ogre",
+  "stirwood/bandit-leader": "Bandit Leader",
+  "stirwood/champion": "Champion",
+  "stirwood/cleric": "Cleric",
+  "stirwood/petty-thief": "Petty Thief",
+  "stirwood/marksmen": "Marksmen",
+  "stirwood/outlaws": "Outlaws"
  },
  "regles": {
   "Leader": {
@@ -742,6 +857,502 @@ export const EN = {
   "Berserker": {
    "nom": "Berserker",
    "resume": "+1 to hit in the turn he charges."
+  },
+  "Frenzy": {
+   "nom": "Frenzy",
+   "resume": "Must charge the nearest enemy within range and doubles its Attacks in close combat. Immune to psychology unless knocked down or stunned."
+  },
+  "Sacrifice": {
+   "nom": "Sacrifice",
+   "resume": "Amazons sacrifice captives to their gods, using the Cult of the Possessed rules for captives."
+  },
+  "Not one of us": {
+   "nom": "Not one of us",
+   "resume": "Amazons side with no one: they may only hire Hired Swords or Dramatis Personae who are Amazons."
+  },
+  "Wizard (Amazon Rituals)": {
+   "nom": "Wizard (Amazon Rituals)",
+   "resume": "The Priestess casts Amazon Rituals and starts with one random ritual."
+  },
+  "Stealthy": {
+   "nom": "Stealthy",
+   "resume": "Scouts may deploy twice as far onto the battlefield as other warriors and may start the battle Hidden."
+  },
+  "Lady of the Lake's Blessing": {
+   "nom": "Lady of the Lake's Blessing",
+   "resume": "Before each game the leader takes a Leadership test; if passed, enemy models must roll 4+ on a D6 to fire any black powder weapon."
+  },
+  "Curse on Knights": {
+   "nom": "Curse on Knights",
+   "resume": "An enemy model wishing to shoot at a Questing Knight or Knight Errant must first roll 4+ on a D6 or it may not shoot."
+  },
+  "Knights Virtue": {
+   "nom": "Knights Virtue",
+   "resume": "The knight never panics or flees combat and never has to take an 'all alone' test."
+  },
+  "Virtue of Purity": {
+   "nom": "Virtue of Purity",
+   "resume": "Any spell cast at the knight is dispelled on a D6 roll of 4+."
+  },
+  "Virtue of Valour": {
+   "nom": "Virtue of Valour",
+   "resume": "In close combat against a model with higher Strength, the knight re-rolls failed to-hit rolls."
+  },
+  "Virtue of Discipline": {
+   "nom": "Virtue of Discipline",
+   "resume": "Once per game, if not out of action, stunned or knocked down, the knight may re-roll a failed Rout test."
+  },
+  "Virtue of Noble Disdain": {
+   "nom": "Virtue of Noble Disdain",
+   "resume": "The knight hates every enemy armed with a missile weapon."
+  },
+  "Virtue of Impetuous": {
+   "nom": "Virtue of Impetuous",
+   "resume": "When charging the knight adds D3\" to his move, rolled before moving."
+  },
+  "Merchant": {
+   "nom": "Merchant",
+   "resume": "The Merchant leads the caravan. If he is lost a new leader takes over this rule; failing that, an Apprentice must be hired as soon as possible."
+  },
+  "Trade": {
+   "nom": "Trade",
+   "resume": "Before searching for rare items the Merchant may sell one rare item stored in the wagon: on a D6, 1-2 half base price, 3-4 base price, 5-6 one and a half times the base price. He may keep it to try again later."
+  },
+  "Open for Business": {
+   "nom": "Open for Business",
+   "resume": "Instead of searching for rare items a Hero may visit the Merchant to buy a stored item or sell one at a price agreed between players."
+  },
+  "Rarity": {
+   "nom": "Rarity",
+   "resume": "A rare item whose rarity drops to 2 or less (wagon reputation, Streetwise…) can be bought as a common item."
+  },
+  "Ride Warhorse": {
+   "nom": "Ride Warhorse",
+   "resume": "The knight is trained to ride a warhorse."
+  },
+  "Hirelings": {
+   "nom": "Hirelings",
+   "resume": "Paid by the Merchant, this hero can never lead the warband."
+  },
+  "Wizard (Lesser Magic)": {
+   "nom": "Wizard (Lesser Magic)",
+   "resume": "The Magician is a wizard using Lesser Magic."
+  },
+  "Unreliable Hirelings": {
+   "nom": "Unreliable Hirelings",
+   "resume": "These warriors can never become Heroes: re-roll 'The lad's got talent' results."
+  },
+  "Bribery": {
+   "nom": "Bribery",
+   "resume": "When a Rout test is due, paying 5 gc per non-Hero still in play lets one out-of-action member be ignored for it; repeatable while gold lasts."
+  },
+  "Dubious Income": {
+   "nom": "Dubious Income",
+   "resume": "After a battle he was not taken out of action in, take a Ld test: success gains 1 gc per Merchant XP, failure loses up to that much."
+  },
+  "Wholesale": {
+   "nom": "Wholesale",
+   "resume": "After each battle (if not taken out of action) he searches for D3+1 rare items instead of one."
+  },
+  "Deal Breaker": {
+   "nom": "Deal Breaker",
+   "resume": "+1 to the sale roll of the Trade rule."
+  },
+  "Connected": {
+   "nom": "Connected",
+   "resume": "Instead of a normal rare search he visits the black market: dispel scroll (50+4D6 gc, rare 12), magic scroll (100 gc, rare 14), lesser artefact (200+D6x15 gc, rare 16), magical artefact (350+D6x25 gc, rare 18); cannot be sold back."
+  },
+  "Kindred Hatred": {
+   "nom": "Kindred Hatred",
+   "resume": "The warband hates every High Elf model, High Elf Hired Swords included."
+  },
+  "Excellent Sight": {
+   "nom": "Excellent Sight",
+   "resume": "Elves detect Hidden enemies at twice their Initiative in inches."
+  },
+  "Black Powder Weapons": {
+   "nom": "Black Powder Weapons",
+   "resume": "The warband may never use black powder weapons."
+  },
+  "Cold One Beasthound": {
+   "nom": "Cold One Beasthound",
+   "resume": "The Beastmaster may be accompanied by up to two Cold One Beasthounds, bought as henchmen."
+  },
+  "Melee Specialists": {
+   "nom": "Melee Specialists",
+   "resume": "These warriors may not use any missile weapon."
+  },
+  "Wizard (Dark Elf Magic)": {
+   "nom": "Wizard (Dark Elf Magic)",
+   "resume": "The Sorceress casts Dark Elf Magic spells and cannot cast while wearing armour."
+  },
+  "Natural Stealth": {
+   "nom": "Natural Stealth",
+   "resume": "Enemies trying to spot a Hidden Dark Elf suffer -1 to their Initiative."
+  },
+  "Beastmaster": {
+   "nom": "Beastmaster",
+   "resume": "If the Beastmaster dies the hounds run off and are removed; they cannot fight when he cannot. They never gain experience."
+  },
+  "Scaly Skin": {
+   "nom": "Scaly Skin",
+   "resume": "Natural 6+ armour save, never worse than 6 from Strength modifiers; negated by a 'no save' critical hit."
+  },
+  "Fury of Khaine": {
+   "nom": "Fury of Khaine",
+   "resume": "After taking all opponents out of action, the hero may make a 4\" follow-up move; contacting a new enemy counts as a charge next turn. Not in the opponent's turn."
+  },
+  "Powerful Build": {
+   "nom": "Powerful Build",
+   "resume": "Grants access to Strength skills. Not for the Sorceress; at most two warriors in the warband may have it."
+  },
+  "Fey Quickness": {
+   "nom": "Fey Quickness",
+   "resume": "The hero avoids melee or missile hits on a 6; on 4+ in the relevant area if he also has Step Aside or Dodge."
+  },
+  "Master of Poisons": {
+   "nom": "Master of Poisons",
+   "resume": "Instead of searching for a rare item, the hero brews D3-1 doses of Dark Venom for the next battle; they cannot be sold or traded."
+  },
+  "Do Not Drink": {
+   "nom": "Do Not Drink",
+   "resume": "The undead need neither food nor water; only living animals in the warband follow the normal water rules."
+  },
+  "Home Ground": {
+   "nom": "Home Ground",
+   "resume": "The warband rolls one extra dice in the exploration phase (written for the desert setting; unclear elsewhere)."
+  },
+  "Flammable": {
+   "nom": "Flammable",
+   "resume": "Hits from fire-based attacks inflict double wounds on the Tomb Lord."
+  },
+  "Wizard (Mortuary Cult)": {
+   "nom": "Wizard (Mortuary Cult)",
+   "resume": "The Liche Priest is a wizard using Mortuary Cult scrolls (not Necromancy). He may not wear armour."
+  },
+  "Scorpion Sting": {
+   "nom": "Scorpion Sting",
+   "resume": "The scorpion's sting works as if coated with Black Lotus. Being a living animal, it never gains experience."
+  },
+  "Drive Chariot": {
+   "nom": "Drive Chariot",
+   "resume": "Required to charge with the Skeleton Chariot; without it the charioteer cannot charge."
+  },
+  "Fighting Styles": {
+   "nom": "Fighting Styles",
+   "resume": "Each warrior adopts a fighting style that sets his weapons and armour (the Ogre and Slayer use their own list). Heroes may go beyond them through skills, and styles may be swapped or bought again at any time."
+  },
+  "Free the Slaves!": {
+   "nom": "Free the Slaves!",
+   "resume": "The warband never sells captives to the slavers."
+  },
+  "In the Pit!": {
+   "nom": "In the Pit!",
+   "resume": "A captive may be made to fight a Pit Fighter in the pits. A winning Pit Fighter gains +2 XP, the captive's gear and 50 gc; a winning captive gains 50 gc and +2 XP and is freed on a 4+ on a D6."
+  },
+  "Evade": {
+   "nom": "Evade",
+   "resume": "When charged, the Pursuer may try to evade: a passed Initiative test turns the charge into a failed charge."
+  },
+  "Bulging Biceps": {
+   "nom": "Bulging Biceps",
+   "resume": "Ignores the heavy weapon penalty and keeps the Strength bonus in every round of close combat."
+  },
+  "Force of Will": {
+   "nom": "Force of Will",
+   "resume": "On losing his last wound he stays in the fight on a D6 roll equal to or under his Toughness, re-rolled each later round at a cumulative -1."
+  },
+  "Arms Master": {
+   "nom": "Arms Master",
+   "resume": "Ignores 'difficult to use' restrictions, e.g. a morning star with a buckler or two morning stars."
+  },
+  "Body Slam": {
+   "nom": "Body Slam",
+   "resume": "Instead of normal charge attacks, makes one attack at +1 S and +1 to hit with no weapon bonuses; critical on a 5+."
+  },
+  "Grizzled Veteran": {
+   "nom": "Grizzled Veteran",
+   "resume": "The warrior is immune to psychology."
+  },
+  "Natives": {
+   "nom": "Natives",
+   "resume": "The warrior ignores movement penalties in wooded terrain."
+  },
+  "Ride Spiders": {
+   "nom": "Ride Spiders",
+   "resume": "The Chieftain may ride Giant Spiders and the Gigantic Spider (optional mount rules)."
+  },
+  "Wizard (Forest Goblin Magic)": {
+   "nom": "Wizard (Forest Goblin Magic)",
+   "resume": "The Shaman is a wizard who starts with one random spell from the Forest Goblin spell list."
+  },
+  "Berserkers": {
+   "nom": "Berserkers",
+   "resume": "These goblins are subject to frenzy; if they start their turn within charge range of an enemy they ignore animosity that turn."
+  },
+  "Sluggas": {
+   "nom": "Sluggas",
+   "resume": "In the shooting phase a Slugga may throw its thrown weapons up to three times; cannot be combined with Quick Shot if promoted."
+  },
+  "Poisonous": {
+   "nom": "Poisonous",
+   "resume": "When it wounds, the injury roll is 1 knocked down, 2-4 stunned, 5-6 out of action."
+  },
+  "Non-sentient": {
+   "nom": "Non-sentient",
+   "resume": "The spider is subject to stupidity, may climb, and never gains experience."
+  },
+  "May Ride": {
+   "nom": "May Ride",
+   "resume": "The Chieftain may ride it: +1 armour save and moves 6\"; shots hit the rider on 1-2 and the spider on 3-6, the opponent picks the target in close combat. A ridden spider ignores stupidity."
+  },
+  "Lose Animosity": {
+   "nom": "Lose Animosity",
+   "resume": "Instead of choosing a skill, the Brave may remove the Animosity rule."
+  },
+  "Hate Dark Elves": {
+   "nom": "Hate Dark Elves",
+   "resume": "Every warrior in the warband except Hired Swords hates Dark Elves."
+  },
+  "Distaste for Poison": {
+   "nom": "Distaste for Poison",
+   "resume": "Warriors of the warband may not use any kind of poison."
+  },
+  "Unforgiving": {
+   "nom": "Unforgiving",
+   "resume": "In multiplayer games the warband may never ally with a Chaotic warband."
+  },
+  "Tolerant": {
+   "nom": "Tolerant",
+   "resume": "The warband may hire non-evil, non-Chaotic Hired Swords, but no poison users such as Assassins."
+  },
+  "Wizard (Shadow Magic)": {
+   "nom": "Wizard (Shadow Magic)",
+   "resume": "The Shadow Weaver casts Shadow Magic and cannot cast while wearing armour."
+  },
+  "See in Shadows": {
+   "nom": "See in Shadows",
+   "resume": "The hero may try to charge unseen enemies with a normal charge roll if within reach."
+  },
+  "Hide in Shadows": {
+   "nom": "Hide in Shadows",
+   "resume": "Enemies trying to spot this Hidden hero halve their Initiative first."
+  },
+  "Sniper": {
+   "nom": "Sniper",
+   "resume": "The hero may shoot or cast while Hidden and stay Hidden; a surviving target may test Initiative to spot him."
+  },
+  "Master of Runes": {
+   "nom": "Master of Runes",
+   "resume": "+1 to dispel with Elven Runestones; may rune one warrior's gear, granting one re-roll of a failed armour save or parry per battle. Runes must be redone after each battle."
+  },
+  "Armour": {
+   "nom": "Armour",
+   "resume": "Light armour always costs this warband 50 gc, even from the general Equipment chart."
+  },
+  "Bite Attack": {
+   "nom": "Bite Attack",
+   "resume": "Saurus have an extra bite attack at their own Strength with no unarmed penalty; it always strikes last."
+  },
+  "Cold Blooded": {
+   "nom": "Cold Blooded",
+   "resume": "Roll 3D6 and keep the lowest two for psychology and Rout tests. Saurus or Kroxigor Leadership may not be used for Rout tests."
+  },
+  "Aquatic": {
+   "nom": "Aquatic",
+   "resume": "Moves through water without penalty and counts as in cover while in it."
+  },
+  "Jungle Born": {
+   "nom": "Jungle Born",
+   "resume": "Skinks move through jungle without penalty."
+  },
+  "Saurus Rarity": {
+   "nom": "Saurus Rarity",
+   "resume": "The warband may never have more Saurus Braves than Skink Braves."
+  },
+  "Wizard (Lizardmen Magic)": {
+   "nom": "Wizard (Lizardmen Magic)",
+   "resume": "The Skink Priest casts Lizardmen magic spells."
+  },
+  "Great Hunter": {
+   "nom": "Great Hunter",
+   "resume": "Skinks only. Enemies suffer an extra -1 to hit the hero when he is in cover."
+  },
+  "Bellowing Battle Roar": {
+   "nom": "Bellowing Battle Roar",
+   "resume": "Saurus only. Enemies in base contact suffer -1 to hit in the first round of close combat."
+  },
+  "Toughened Hide": {
+   "nom": "Toughened Hide",
+   "resume": "Saurus only. The hero is only taken out of action on a 6+."
+  },
+  "Hate Skaven": {
+   "nom": "Hate Skaven",
+   "resume": "Since the red pox of 1812 all Miragleans hate Skaven; Hired Swords are not affected, and the warband may not hire Skaven Hired Swords."
+  },
+  "Miraglean Crossbows": {
+   "nom": "Miraglean Crossbows",
+   "resume": "Miraglean Heroes get +1 to hit when shooting with crossbows only."
+  },
+  "Miraglean Marksmen": {
+   "nom": "Miraglean Marksmen",
+   "resume": "These Marksmen get +1 to hit with any missile weapon."
+  },
+  "Cloak & Dagger": {
+   "nom": "Cloak & Dagger",
+   "resume": "The duellist uses his cloak to deflect blows and counts as having a buckler in close combat."
+  },
+  "Wizard (Chaos Dwarf Magic)": {
+   "nom": "Wizard (Chaos Dwarf Magic)",
+   "resume": "The Apprentice Sorcerer is a wizard who knows one random spell from the Chaos Dwarf list; he cannot cast spells while wearing armour."
+  },
+  "Slavers": {
+   "nom": "Slavers",
+   "resume": "Captives are never freed: each is sacrificed (+1 XP for the Apprentice Sorcerer) or put to work (+1 wyrdstone after the game, then on a D6 roll of 1 the slave escapes with his gear, otherwise he dies and the warband keeps his gear)."
+  },
+  "Uncommon": {
+   "nom": "Uncommon",
+   "resume": "Recruiting new members costs 1.5 times the normal experience (rounded up); this does not apply to Hobgoblins."
+  },
+  "Indentured Servants": {
+   "nom": "Indentured Servants",
+   "resume": "The warband must include at least 4 Hobgoblins; if it falls below 4, no one else may be recruited until it is back to 4."
+  },
+  "Skinny": {
+   "nom": "Skinny",
+   "resume": "On a Serious Injury roll of 1-3, the Hobgoblin deserts the warband."
+  },
+  "Nobody Cares About Them": {
+   "nom": "Nobody Cares About Them",
+   "resume": "A Hobgoblin counts as half a model for Rout tests and can never become a Hero."
+  },
+  "Unlimited Hatred": {
+   "nom": "Unlimited Hatred",
+   "resume": "He hates all enemies."
+  },
+  "Seafaring": {
+   "nom": "Seafaring",
+   "resume": "Norse get +2 Strength when rowing a boat (only used in the scenario The Script of Sigmar)."
+  },
+  "Bestial": {
+   "nom": "Bestial",
+   "resume": "The Wulfen is immune to psychology, can never become the warband leader, and uses no weapons or armour without the usual unarmed penalty."
+  },
+  "Pack Leader": {
+   "nom": "Pack Leader",
+   "resume": "Wolves may only be used if the warband includes a Wulfen; if he is lost, they cannot be used until he is replaced."
+  },
+  "Barbarian Courage": {
+   "nom": "Barbarian Courage",
+   "resume": "He never takes All Alone tests and may re-roll failed Fear tests."
+  },
+  "Berserk Charge": {
+   "nom": "Berserk Charge",
+   "resume": "When armed with an axe or double-handed weapon, he re-rolls all failed to-hit rolls when charging."
+  },
+  "Crushing Blow": {
+   "nom": "Crushing Blow",
+   "resume": "His attacks cannot be parried."
+  },
+  "Shield Master": {
+   "nom": "Shield Master",
+   "resume": "When armed with a shield he may parry with it, in addition to its 6+ save."
+  },
+  "Impeccable Care": {
+   "nom": "Impeccable Care",
+   "resume": "The warband always buys the black powder weapons of its starting list at the reduced price and gets +2 on rarity rolls for black powder weapons."
+  },
+  "Properly Used": {
+   "nom": "Properly Used",
+   "resume": "With the optional misfire rules, a misfire roll of 1 may be re-rolled; on 3+ the weapon does not misfire (the shot still misses)."
+  },
+  "Proud To A Fault!": {
+   "nom": "Proud To A Fault!",
+   "resume": "Warband members never use non-black-powder missile weapons; Hired Swords and Dramatis Personae are exempt."
+  },
+  "Quick Reload": {
+   "nom": "Quick Reload",
+   "resume": "Drilled to reload quickly under pressure, these marksmen have the Hunter skill; if promoted, taking Hunter again gives no extra benefit."
+  },
+  "Crack Shot": {
+   "nom": "Crack Shot",
+   "resume": "In the first round of close combat may re-roll missed to-hit rolls made with a pistol."
+  },
+  "Swabbies": {
+   "nom": "Swabbies",
+   "resume": "Swabbies are not bought: captured humans (defeated enemy Heroes or Henchmen, stragglers or prisoners found when exploring) are pressed into the crew. There may never be more Swabbies than Crew; Hired Swords and special characters can never be pressed."
+  },
+  "Kidnapped!": {
+   "nom": "Kidnapped!",
+   "resume": "A captured enemy human Hero may be pressed into the crew through a 2D6 Leadership contest (the Pirate adds the Captain's Ld); if he loses he becomes a Swabbie and his gear is taken."
+  },
+  "Succession": {
+   "nom": "Succession",
+   "resume": "If the Captain dies, a Ship's Mate takes command, as a Mercenary Champion would."
+  },
+  "Swivel Guns is Dangerous, Matey!": {
+   "nom": "Swivel Guns is Dangerous, Matey!",
+   "resume": "A Gunner carrying the warband's single Swivel Gun (Rare 8) always forms a group of one; he is hired alone or split from his group, keeping his experience and skills."
+  },
+  "Expert Riggers": {
+   "nom": "Expert Riggers",
+   "resume": "Boatswains start with a Rope & Hook they can never sell or give away, and re-roll failed Initiative tests to leap gaps, jump down, make diving charges or climb ropes."
+  },
+  "Sea Shanty Singer": {
+   "nom": "Sea Shanty Singer",
+   "resume": "At the start of the close combat phase, he distracts one enemy in base contact, which must pass a Ld test or lose 1 Attack that turn (no effect on Undead and other non-living creatures)."
+  },
+  "Sea Legs": {
+   "nom": "Sea Legs",
+   "resume": "When falling he may ignore the D3 hits on a 4+; near an edge, he may re-roll the Initiative test to avoid falling when knocked down or stunned."
+  },
+  "Cutlass Master": {
+   "nom": "Cutlass Master",
+   "resume": "With a sword he parries on a roll equal to (not only higher than) the enemy's to-hit roll, while in cover or within 2\" of terrain."
+  },
+  "Booming Voice": {
+   "nom": "Booming Voice",
+   "resume": "Once per turn, if standing and not in combat, he lets a pirate within 8\" re-roll a failed flee/rally test."
+  },
+  "Hardy Constitution": {
+   "nom": "Hardy Constitution",
+   "resume": "He ignores Critical Hits on a 5+."
+  },
+  "Swashbuckler": {
+   "nom": "Swashbuckler",
+   "resume": "At the end of a close combat phase, if still in contact, he may take a Ld test to break away without being struck; on a failure the fight goes on."
+  },
+  "Never Gain Experience": {
+   "nom": "Never Gain Experience",
+   "resume": "This warrior never gains experience."
+  },
+  "Censer Bearer": {
+   "nom": "Censer Bearer",
+   "resume": "Requires Black Hunger. He becomes subject to frenzy but may only use a censer in close combat."
+  },
+  "Rotten Body": {
+   "nom": "Rotten Body",
+   "resume": "Immune to poison and disease; if taken out of action by a failed test while wielding a censer he automatically recovers after the battle."
+  },
+  "Contagious": {
+   "nom": "Contagious",
+   "resume": "Requires Rotten Body. A model he takes out of action in close combat takes a Toughness test; a roll above T (or a 6) causes a wound. Undead and possessed are exempt."
+  },
+  "Ignore Pain": {
+   "nom": "Ignore Pain",
+   "resume": "Requires Resilient. Stunned results are treated as knocked down."
+  },
+  "Forest Bowmen": {
+   "nom": "Forest Bowmen",
+   "resume": "Every warrior must carry some kind of bow (never a crossbow) and may have only one missile weapon, whatever his skills; the Cleric need not carry a bow."
+  },
+  "Restricted Hired Swords": {
+   "nom": "Restricted Hired Swords",
+   "resume": "The warband may not hire a Bounty Hunter, Wolf-Priest of Ulric, Norse Shaman or Dark Elf Assassin."
+  },
+  "Disciple of Sigmar": {
+   "nom": "Disciple of Sigmar",
+   "resume": "The Cleric starts knowing one Prayer of Sigmar; he may wear armour but may not learn Sorcery or Arcane Lore."
   }
  },
  "reglesFr": {
@@ -825,6 +1436,7 @@ export const EN = {
   "Sylvestre": "Woodland Dwelling",
   "Sorcier (Rituels de Nurgle)": "Wizard (Nurgle Rituals)",
   "Sorcier (Magie de la Waaagh!)": "Wizard (Waaagh! Magic)",
+  "Frénésie": "Frenzy",
   "Coup Précis": "Strike To Injure",
   "Maître d'Armes": "Combat Master",
   "Entraînement aux Armes": "Weapons Traning",
@@ -862,7 +1474,143 @@ export const EN = {
   "Rugissement guerrier": "Bellowing Battle-Roar",
   "Chasseur d'hommes": "Manhunter",
   "Embuscade": "Ambush",
-  "Lanceur de couteaux": "Knife Fighter"
+  "Lanceur de couteaux": "Knife Fighter",
+  "Sacrifice": "Sacrifice",
+  "Pas des nôtres": "Not one of us",
+  "Sorcier (Rituels amazones)": "Wizard (Amazon Rituals)",
+  "Furtives": "Stealthy",
+  "Bénédiction de la Dame du Lac": "Lady of the Lake's Blessing",
+  "Malédiction protégeant les chevaliers": "Curse on Knights",
+  "Vertu chevaleresque": "Knights Virtue",
+  "Vertu de pureté": "Virtue of Purity",
+  "Vertu de bravoure": "Virtue of Valour",
+  "Vertu de discipline": "Virtue of Discipline",
+  "Vertu de noble dédain": "Virtue of Noble Disdain",
+  "Vertu d'impétuosité": "Virtue of Impetuous",
+  "Marchand": "Merchant",
+  "Commerce": "Trade",
+  "Boutique ouverte": "Open for Business",
+  "Rareté réduite": "Rarity",
+  "Réflexes foudroyants": "Lightning Reflexes",
+  "Cavalier": "Ride Warhorse",
+  "Mercenaires engagés": "Hirelings",
+  "Sorcier (Magie mineure)": "Wizard (Lesser Magic)",
+  "Costaud": "Strongman",
+  "Mercenaires peu fiables": "Unreliable Hirelings",
+  "Pots-de-vin": "Bribery",
+  "Revenus douteux": "Dubious Income",
+  "Vente en gros": "Wholesale",
+  "Négociateur redoutable": "Deal Breaker",
+  "Relations": "Connected",
+  "Haine fratricide": "Kindred Hatred",
+  "Vue perçante": "Excellent Sight",
+  "Armes à poudre": "Black Powder Weapons",
+  "Chiens de Sang-froid": "Cold One Beasthound",
+  "Spécialistes du corps à corps": "Melee Specialists",
+  "Sorcier (Magie elfe noire)": "Wizard (Dark Elf Magic)",
+  "Discrétion naturelle": "Natural Stealth",
+  "Lien avec le maître": "Beastmaster",
+  "Peau écailleuse": "Scaly Skin",
+  "Furie de Khaine": "Fury of Khaine",
+  "Carrure puissante": "Powerful Build",
+  "Vivacité féerique": "Fey Quickness",
+  "Infiltration": "Infiltration",
+  "Maître des poisons": "Master of Poisons",
+  "Ni boire ni manger": "Do Not Drink",
+  "Terrain familier": "Home Ground",
+  "Inflammable": "Flammable",
+  "Sorcier (Culte mortuaire)": "Wizard (Mortuary Cult)",
+  "Dard de scorpion": "Scorpion Sting",
+  "Conduite de char": "Drive Chariot",
+  "Combattant de fosse": "Pit Fighter",
+  "Styles de combat": "Fighting Styles",
+  "Libérez les esclaves !": "Free the Slaves!",
+  "Dans l'arène !": "In the Pit!",
+  "Dérobade": "Evade",
+  "Biceps saillants": "Bulging Biceps",
+  "Force de volonté": "Force of Will",
+  "Maître d'armes": "Arms Master",
+  "Placage": "Body Slam",
+  "Vieux briscard": "Grizzled Veteran",
+  "Charge féroce": "Ferocious Charge",
+  "Tueur de monstres": "Monster Slayer",
+  "Forcené": "Berserker",
+  "Natifs": "Natives",
+  "Chevaucheur d'araignées": "Ride Spiders",
+  "Sorcier (Magie des gobelins de la forêt)": "Wizard (Forest Goblin Magic)",
+  "Berserks": "Berserkers",
+  "Sluggas": "Sluggas",
+  "Venimeuse": "Poisonous",
+  "Créature sans conscience": "Non-sentient",
+  "Monture": "May Ride",
+  "Fin de l'animosité": "Lose Animosity",
+  "Haine des Elfes Noirs": "Hate Dark Elves",
+  "Dégoût du poison": "Distaste for Poison",
+  "Implacables": "Unforgiving",
+  "Tolérants": "Tolerant",
+  "Sorcier (Magie des ombres)": "Wizard (Shadow Magic)",
+  "Vision dans l'ombre": "See in Shadows",
+  "Se fondre dans l'ombre": "Hide in Shadows",
+  "Tireur embusqué": "Sniper",
+  "Maître des runes": "Master of Runes",
+  "Armure saurienne": "Armour",
+  "Morsure": "Bite Attack",
+  "Sang-froid": "Cold Blooded",
+  "Amphibie": "Aquatic",
+  "Né dans la jungle": "Jungle Born",
+  "Rareté des saurus": "Saurus Rarity",
+  "Sorcier (Magie des Hommes-Lézards)": "Wizard (Lizardmen Magic)",
+  "Grand chasseur": "Great Hunter",
+  "Rugissement de guerre": "Bellowing Battle Roar",
+  "Cuir endurci": "Toughened Hide",
+  "Haine des Skavens": "Hate Skaven",
+  "Arbalétriers miragliens": "Miraglean Crossbows",
+  "Tireurs miragliens": "Miraglean Marksmen",
+  "Cape et dague": "Cloak & Dagger",
+  "Sorcier (Magie des Nains du Chaos)": "Wizard (Chaos Dwarf Magic)",
+  "Esclavagistes": "Slavers",
+  "Peu nombreux": "Uncommon",
+  "Serviteurs asservis": "Indentured Servants",
+  "Maigrelet": "Skinny",
+  "Tout le monde s'en fiche": "Nobody Cares About Them",
+  "Cran véritable": "True Grit",
+  "Extrêmement résistant": "Extra Tough",
+  "Haine sans limite": "Unlimited Hatred",
+  "Crâne épais": "Thick Skull",
+  "Marins": "Seafaring",
+  "Bestial": "Bestial",
+  "Chef de meute": "Pack Leader",
+  "Courage barbare": "Barbarian Courage",
+  "Voix de commandement": "Battle Tongue",
+  "Charge berserk": "Berserk Charge",
+  "Coup écrasant": "Crushing Blow",
+  "Maître du bouclier": "Shield Master",
+  "Soin impeccable": "Impeccable Care",
+  "Bon usage": "Properly Used",
+  "Fierté mal placée !": "Proud To A Fault!",
+  "Chasseur": "Hunter",
+  "Rechargement rapide": "Quick Reload",
+  "Tireur hors pair": "Crack Shot",
+  "Moussaillons": "Swabbies",
+  "Enlevé !": "Kidnapped!",
+  "Succession": "Succession",
+  "Le pierrier, c'est dangereux, matelot !": "Swivel Guns is Dangerous, Matey!",
+  "Gréeurs experts": "Expert Riggers",
+  "Chanteur de shanties": "Sea Shanty Singer",
+  "Pied marin": "Sea Legs",
+  "Maître du sabre": "Cutlass Master",
+  "Voix de stentor": "Booming Voice",
+  "Constitution robuste": "Hardy Constitution",
+  "Bretteur": "Swashbuckler",
+  "Sans expérience": "Never Gain Experience",
+  "Faim noire": "Black Hunger",
+  "Porte-encensoir": "Censer Bearer",
+  "Corps putride": "Rotten Body",
+  "Contagieux": "Contagious",
+  "Ignorer la douleur": "Ignore Pain",
+  "Archers de la forêt": "Forest Bowmen",
+  "Francs-tireurs interdits": "Restricted Hired Swords",
+  "Disciple de Sigmar": "Disciple of Sigmar"
  },
  "equipement": {
   "Casque": "Helmet",
@@ -913,7 +1661,85 @@ export const EN = {
   "Paire de pistolets": "Brace of Pistols",
   "Paire de pistolets de duel": "Brace of Duelling Pistols",
   "Pistolet à deux canons": "Double Barrelled Pistol",
-  "Fusil de chasse à deux canons": "Double Barrelled Hunting Rifle"
+  "Fusil de chasse à deux canons": "Double Barrelled Hunting Rifle",
+  "Griffe des Anciens": "Claw of the Old Ones",
+  "Bâton solaire": "Sunstaff",
+  "Gantelet solaire": "Sun Gauntlet",
+  "Amulette de la Lune": "Amulet of the Moon",
+  "Herbes curatives": "Healing Herbs",
+  "Javelots": "Javelins",
+  "Lance de cavalerie": "Lance",
+  "Barde bretonnienne": "Bretonnian Barding",
+  "Cheval de guerre": "Warhorse",
+  "Cheval": "Horse",
+  "Rapière": "Rapier",
+  "Cape de soie de Cathay": "Cathayan Silk Cloak",
+  "Chariot marchand": "Trade Wagon",
+  "Épée dragon": "Dragon Sword",
+  "Pique": "Pike",
+  "Lame elfe noire (amélioration)": "Dark Elf Blade",
+  "Arbalète à répétition": "Repeater Crossbow",
+  "Venin noir": "Dark Venom",
+  "Cape de dragon des mers": "Sea Dragon Cloak",
+  "Fouet de dresseur": "Beastlash",
+  "Flèches d'aspic": "Asp Arrows",
+  "Javelot néhékharéen": "Nehekharan Javelin",
+  "Bâton": "Staff",
+  "Bâton serpent": "Serpent Staff",
+  "Style orque (casque, dague, hache, bouclier)": "Orc Style",
+  "Style mort-vivant (casque, dague, gantelet à pointes, épée)": "Undead Style",
+  "Style impérial (casque, dague, arme lourde, armure légère)": "Empire Style",
+  "Style du Chaos (casque, dague, fléau, bouclier, armure légère)": "Chaos Style",
+  "Gantelet à pointes": "Spiked Gauntlet",
+  "Style skink (casque, dague, trident ou javelots, filet ou rondache)": "Skink Style",
+  "Style elfe sorcière (casque, dague, 2 épées ou lance et filet)": "Witch Elf Style",
+  "Perche de chef": "Boss Pole",
+  "Armes de jet": "Throwing Weapons",
+  "Dague en ithilmar": "Ithilmar Dagger",
+  "Épée en ithilmar": "Ithilmar Sword",
+  "Lance en ithilmar": "Ithilmar Spear",
+  "Arme lourde en ithilmar": "Ithilmar Double-handed weapon",
+  "Arc elfique": "Elf Bow",
+  "Armure en ithilmar": "Ithilmar Armour",
+  "Étendard de Nagarythe": "Standard of Nagarythe",
+  "Cor de guerre de Nagarythe": "War Horn of Nagarythe",
+  "Cape elfique": "Elven Cloak",
+  "Vin elfique": "Elven Wine",
+  "Pierres runiques elfiques": "Elven Runestones",
+  "Hache de pierre": "Stone Axe",
+  "Bolas": "Bolas",
+  "Couteaux de lancer": "Throwing Knives",
+  "Casque en os": "Bone Helmet",
+  "Lotus noir": "Black Lotus",
+  "Venin de reptile": "Reptile Venom",
+  "Fusil de chasse": "Hunting Rifle",
+  "Arme d'obsidienne": "Obsidian Weapon",
+  "Tromblon nain du Chaos": "Chaos Dwarf Blunderbuss",
+  "Dagues empoisonnées hobgobelines": "Hobgoblin Poisoned Daggers",
+  "Haches de lancer": "Throwing Axes",
+  "Masse/Marteau": "Mace/Hammer",
+  "Paire de pistolets à deux canons": "Brace of Double Barrelled Pistols",
+  "Pistolet de duel à deux canons": "Double Barrelled Duelling Pistol",
+  "Paire de pistolets de duel à deux canons": "Brace of Double Barrelled Duelling Pistols",
+  "Arquebuse à deux canons": "Double Barrelled Handgun",
+  "Poudre noire supérieure": "Superior Black Powder",
+  "Pistolet à répétition": "Repeater Pistol",
+  "Arquebuse à répétition": "Repeater Handgun",
+  "Mortier portatif": "Hand-held Mortar",
+  "Pigeons explosifs": "Pigeon Bombs",
+  "Gaffe": "Boat Hook",
+  "Chat à neuf queues": "Cat O' Nine Tails",
+  "Sabre d'abordage (épée)": "Cutlass (Sword)",
+  "Cabillot": "Belaying Pin",
+  "Cuirs renforcés": "Toughened Leathers",
+  "Pierrier": "Swivel Gun",
+  "Boulets (pierrier)": "Ball Shot",
+  "Boulets ramés (pierrier)": "Chain Shot",
+  "Mitraille (pierrier)": "Grape Shot",
+  "Dague contaminée": "Disease Dagger",
+  "Encensoir": "Censer",
+  "Bâton/Gourdin/Masse": "Staff/Club/Mace",
+  "Cape forestière": "Forest Cloak"
  },
  "competences": {
   "Combat": "Combat",
@@ -926,7 +1752,19 @@ export const EN = {
   "Spéciales (Nains)": "Special (Dwarfs)",
   "Spéciales (Tueurs de trolls)": "Special (Troll Slayers)",
   "Spéciales (Orques)": "Special (Orcs)",
-  "Spéciales (Hommes-bêtes)": "Special (Beastmen)"
+  "Spéciales (Hommes-bêtes)": "Special (Beastmen)",
+  "Spéciales (Bretonnie)": "Bretonnian Knight Virtues",
+  "Spéciales (Caravane marchande)": "Special Skills (Merchant)",
+  "Spéciales (Elfes Noirs)": "Special Skills (Dark Elves)",
+  "Spéciales (Gardiens des tombes)": "Special Skills (Tomb Guardians)",
+  "Spéciales (Gladiateurs)": "Special Skills (Pit Fighters)",
+  "Spéciales (Gobelins de la forêt)": "Special Skills (Forest Goblins)",
+  "Spéciales (Guerriers des Ombres)": "Special Skills (Shadow Warriors)",
+  "Spéciales (Hommes-Lézards)": "Special Skills (Lizardmen)",
+  "Spéciales (Nains du Chaos)": "Special Skills (Chaos Dwarfs)",
+  "Spéciales (Norses)": "Special Skills (Norse)",
+  "Spéciales (Pirates)": "Special Skills (Pirates)",
+  "Spéciales (Skavens du Clan Pestilens)": "Special Skills (Skaven Pestilens)"
  },
  "categories": {
   "Armes de corps à corps": "Hand-to-hand Weapons",

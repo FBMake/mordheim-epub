@@ -1,0 +1,575 @@
+{
+  "id": "amazones",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/amazons",
+  "nomEn": "Amazons",
+  "nom": "Amazones",
+  "tresor": 500,
+  "effectifMax": 15,
+  "regles": [
+    "Sacrifice",
+    "Not one of us"
+  ],
+  "guerriers": [
+    {
+      "cle": "Priestess",
+      "nom": "Prêtresse",
+      "categorie": "heros",
+      "cout": 70,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Wizard (Amazon Rituals)"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Force",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Claw of the Old Ones",
+              "nom": "Griffe des Anciens",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Sunstaff",
+              "nom": "Bâton solaire",
+              "cout": 50
+            },
+            {
+              "en": "Sun Gauntlet",
+              "nom": "Gantelet solaire",
+              "cout": 40
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Amulet of the Moon",
+              "nom": "Amulette de la Lune",
+              "cout": 50
+            },
+            {
+              "en": "Healing Herbs",
+              "nom": "Herbes curatives",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Champion",
+      "nom": "Championne",
+      "categorie": "heros",
+      "cout": 35,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Claw of the Old Ones",
+              "nom": "Griffe des Anciens",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Sunstaff",
+              "nom": "Bâton solaire",
+              "cout": 50
+            },
+            {
+              "en": "Sun Gauntlet",
+              "nom": "Gantelet solaire",
+              "cout": 40
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Amulet of the Moon",
+              "nom": "Amulette de la Lune",
+              "cout": 50
+            },
+            {
+              "en": "Healing Herbs",
+              "nom": "Herbes curatives",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Totem Warrior",
+      "nom": "Guerrière totem",
+      "categorie": "heros",
+      "cout": 30,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Frenzy"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Claw of the Old Ones",
+              "nom": "Griffe des Anciens",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Sunstaff",
+              "nom": "Bâton solaire",
+              "cout": 50
+            },
+            {
+              "en": "Sun Gauntlet",
+              "nom": "Gantelet solaire",
+              "cout": 40
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Amulet of the Moon",
+              "nom": "Amulette de la Lune",
+              "cout": 50
+            },
+            {
+              "en": "Healing Herbs",
+              "nom": "Herbes curatives",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Amazon Warriors",
+      "nom": "Guerrières amazones",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 1,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Sling",
+              "nom": "Fronde",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Scouts",
+      "nom": "Éclaireuses",
+      "categorie": "hdm",
+      "cout": 30,
+      "min": 0,
+      "max": 3,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Stealthy"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Sling",
+              "nom": "Fronde",
+              "cout": 5
+            },
+            {
+              "en": "Javelins",
+              "nom": "Javelots",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Sacrifice": {
+      "fr": {
+        "nom": "Sacrifice",
+        "resume": "Les Amazones sacrifient leurs captifs à leurs dieux et suivent pour eux les règles des captifs du Culte des Possédés."
+      },
+      "en": {
+        "nom": "Sacrifice",
+        "resume": "Amazons sacrifice captives to their gods, using the Cult of the Possessed rules for captives."
+      }
+    },
+    "Not one of us": {
+      "fr": {
+        "nom": "Pas des nôtres",
+        "resume": "Les Amazones ne s'allient à personne : elles ne recrutent ni franc-tireur ni personnage spécial qui ne soit pas une Amazone."
+      },
+      "en": {
+        "nom": "Not one of us",
+        "resume": "Amazons side with no one: they may only hire Hired Swords or Dramatis Personae who are Amazons."
+      }
+    },
+    "Wizard (Amazon Rituals)": {
+      "fr": {
+        "nom": "Sorcier (Rituels amazones)",
+        "resume": "La prêtresse lance des Rituels amazones et commence avec un rituel tiré au hasard."
+      },
+      "en": {
+        "nom": "Wizard (Amazon Rituals)",
+        "resume": "The Priestess casts Amazon Rituals and starts with one random ritual."
+      }
+    },
+    "Stealthy": {
+      "fr": {
+        "nom": "Furtives",
+        "resume": "Les éclaireuses peuvent se déployer à deux fois la distance normale et commencer la bataille cachées."
+      },
+      "en": {
+        "nom": "Stealthy",
+        "resume": "Scouts may deploy twice as far onto the battlefield as other warriors and may start the battle Hidden."
+      }
+    }
+  },
+  "competencesSpeciales": null,
+  "races": {},
+  "notes": "Version Mordheim (Town Cryer #23), pas Lustria. Pas de liste de compétences spéciales. Maximums de caractéristiques : ceux des humains. Championnes et guerrières totem : « listes des héroïnes et d'équipement spécial » ; l'équipement spécial désigne l'accès au comptoir, seule la liste des héroïnes est saisie. Guerrières amazones : au moins un groupe obligatoire (min 1). Sorts (Rituels amazones) non saisis. Aucune restriction d'armure n'est indiquée pour la prêtresse."
+}

@@ -1,0 +1,951 @@
+{
+  "id": "pirates",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/pirates",
+  "nomEn": "Pirates",
+  "nom": "Pirates",
+  "tresor": 500,
+  "effectifMax": 15,
+  "regles": [
+    "Swabbies",
+    "Kidnapped!",
+    "Succession"
+  ],
+  "guerriers": [
+    {
+      "cle": "Pirate Captain",
+      "nom": "Capitaine pirate",
+      "categorie": "heros",
+      "cout": 60,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Leader"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Force",
+        "Vitesse",
+        "Spéciales (Pirates)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Boat Hook",
+              "nom": "Gaffe",
+              "cout": 8
+            },
+            {
+              "en": "Cat O' Nine Tails",
+              "nom": "Chat à neuf queues",
+              "cout": 8
+            },
+            {
+              "en": "Cutlass (Sword)",
+              "nom": "Sabre d'abordage (épée)",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Belaying Pin",
+              "nom": "Cabillot",
+              "cout": 3
+            },
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 30
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Toughened Leathers",
+              "nom": "Cuirs renforcés",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Ship's Mate",
+      "nom": "Second",
+      "categorie": "heros",
+      "cout": 35,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force",
+        "Spéciales (Pirates)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Boat Hook",
+              "nom": "Gaffe",
+              "cout": 8
+            },
+            {
+              "en": "Cat O' Nine Tails",
+              "nom": "Chat à neuf queues",
+              "cout": 8
+            },
+            {
+              "en": "Cutlass (Sword)",
+              "nom": "Sabre d'abordage (épée)",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Belaying Pin",
+              "nom": "Cabillot",
+              "cout": 3
+            },
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 30
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Toughened Leathers",
+              "nom": "Cuirs renforcés",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Cabin Boy",
+      "nom": "Mousse",
+      "categorie": "heros",
+      "cout": 15,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse",
+        "Spéciales (Pirates)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Boat Hook",
+              "nom": "Gaffe",
+              "cout": 8
+            },
+            {
+              "en": "Cat O' Nine Tails",
+              "nom": "Chat à neuf queues",
+              "cout": 8
+            },
+            {
+              "en": "Cutlass (Sword)",
+              "nom": "Sabre d'abordage (épée)",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Belaying Pin",
+              "nom": "Cabillot",
+              "cout": 3
+            },
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 30
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Toughened Leathers",
+              "nom": "Cuirs renforcés",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Crew",
+      "nom": "Matelots",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Boat Hook",
+              "nom": "Gaffe",
+              "cout": 8
+            },
+            {
+              "en": "Cutlass (Sword)",
+              "nom": "Sabre d'abordage (épée)",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Belaying Pin",
+              "nom": "Cabillot",
+              "cout": 3
+            },
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 30
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Toughened Leathers",
+              "nom": "Cuirs renforcés",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Gunner",
+      "nom": "Canonniers",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": 7,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Swivel Guns is Dangerous, Matey!"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Cutlass (Sword)",
+              "nom": "Sabre d'abordage (épée)",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Blunderbuss",
+              "nom": "Tromblon",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 30
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 60
+            },
+            {
+              "en": "Handgun",
+              "nom": "Arquebuse",
+              "cout": 35
+            },
+            {
+              "en": "Swivel Gun",
+              "nom": "Pierrier",
+              "cout": 65
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Toughened Leathers",
+              "nom": "Cuirs renforcés",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Ball Shot",
+              "nom": "Boulets (pierrier)",
+              "cout": 5
+            },
+            {
+              "en": "Chain Shot",
+              "nom": "Boulets ramés (pierrier)",
+              "cout": 2
+            },
+            {
+              "en": "Grape Shot",
+              "nom": "Mitraille (pierrier)",
+              "cout": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Boatswain",
+      "nom": "Maîtres d'équipage",
+      "categorie": "hdm",
+      "cout": 32,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Expert Riggers"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Boat Hook",
+              "nom": "Gaffe",
+              "cout": 8
+            },
+            {
+              "en": "Cutlass (Sword)",
+              "nom": "Sabre d'abordage (épée)",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Belaying Pin",
+              "nom": "Cabillot",
+              "cout": 3
+            },
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 30
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Toughened Leathers",
+              "nom": "Cuirs renforcés",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Swabbies": {
+      "fr": {
+        "nom": "Moussaillons",
+        "resume": "Les pirates ne recrutent pas de moussaillons contre de l'or : ils enrôlent de force des humains capturés (héros ou hommes de main ennemis vaincus, traînards ou prisonniers trouvés en exploration). Il ne peut jamais y avoir plus de moussaillons que de matelots ; ni francs-tireurs ni personnages spéciaux ne peuvent être enrôlés."
+      },
+      "en": {
+        "nom": "Swabbies",
+        "resume": "Swabbies are not bought: captured humans (defeated enemy Heroes or Henchmen, stragglers or prisoners found when exploring) are pressed into the crew. There may never be more Swabbies than Crew; Hired Swords and special characters can never be pressed."
+      }
+    },
+    "Kidnapped!": {
+      "fr": {
+        "nom": "Enlevé !",
+        "resume": "Un héros humain ennemi capturé peut se voir proposer de rejoindre l'équipage : on fait un duel de Commandement sur 2D6 (le pirate ajoute le Cd du capitaine) ; s'il perd, il devient un moussaillon et son équipement est confisqué."
+      },
+      "en": {
+        "nom": "Kidnapped!",
+        "resume": "A captured enemy human Hero may be pressed into the crew through a 2D6 Leadership contest (the Pirate adds the Captain's Ld); if he loses he becomes a Swabbie and his gear is taken."
+      }
+    },
+    "Succession": {
+      "fr": {
+        "nom": "Succession",
+        "resume": "Si le capitaine meurt, un second prend le commandement, comme le champion d'une bande de mercenaires."
+      },
+      "en": {
+        "nom": "Succession",
+        "resume": "If the Captain dies, a Ship's Mate takes command, as a Mercenary Champion would."
+      }
+    },
+    "Swivel Guns is Dangerous, Matey!": {
+      "fr": {
+        "nom": "Le pierrier, c'est dangereux, matelot !",
+        "resume": "Un canonnier armé du pierrier (un seul par bande, Rare 8) forme toujours un groupe à lui seul ; il doit être recruté à part ou être séparé d'un groupe existant en gardant expérience et compétences."
+      },
+      "en": {
+        "nom": "Swivel Guns is Dangerous, Matey!",
+        "resume": "A Gunner carrying the warband's single Swivel Gun (Rare 8) always forms a group of one; he is hired alone or split from his group, keeping his experience and skills."
+      }
+    },
+    "Expert Riggers": {
+      "fr": {
+        "nom": "Gréeurs experts",
+        "resume": "Les maîtres d'équipage commencent avec une corde et grappin qu'ils ne peuvent ni vendre ni céder, et relancent les tests d'Initiative ratés pour sauter un vide, sauter vers le bas, charger en plongeant ou grimper à la corde."
+      },
+      "en": {
+        "nom": "Expert Riggers",
+        "resume": "Boatswains start with a Rope & Hook they can never sell or give away, and re-roll failed Initiative tests to leap gaps, jump down, make diving charges or climb ropes."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Pirates)",
+    "listeEn": "Special Skills (Pirates)",
+    "competences": [
+      {
+        "en": "Sea Shanty Singer",
+        "nom": "Chanteur de shanties",
+        "resume": "Au début de la phase de corps à corps, il chante pour distraire un ennemi en contact : celui-ci doit réussir un test de Cd ou perdre 1 Attaque ce tour-ci (sans effet sur les morts-vivants et autres créatures non vivantes).",
+        "resumeEn": "At the start of the close combat phase, he distracts one enemy in base contact, which must pass a Ld test or lose 1 Attack that turn (no effect on Undead and other non-living creatures).",
+        "condition": null
+      },
+      {
+        "en": "Sea Legs",
+        "nom": "Pied marin",
+        "resume": "Lors d'une chute, il peut ignorer les D3 touches sur 4+ ; près d'un bord, il relance le test d'Initiative pour ne pas tomber quand il est mis à terre ou sonné.",
+        "resumeEn": "When falling he may ignore the D3 hits on a 4+; near an edge, he may re-roll the Initiative test to avoid falling when knocked down or stunned.",
+        "condition": null
+      },
+      {
+        "en": "Cutlass Master",
+        "nom": "Maître du sabre",
+        "resume": "Armé d'une épée, il pare sur un résultat égal (et non seulement supérieur) au jet pour toucher adverse, s'il est à couvert ou à 2 ps ou moins d'un décor.",
+        "resumeEn": "With a sword he parries on a roll equal to (not only higher than) the enemy's to-hit roll, while in cover or within 2\" of terrain.",
+        "condition": null
+      },
+      {
+        "en": "Booming Voice",
+        "nom": "Voix de stentor",
+        "resume": "Une fois par tour, s'il est debout et hors combat, il permet à un pirate à 8 ps ou moins qui rate un test de fuite ou de ralliement de le relancer.",
+        "resumeEn": "Once per turn, if standing and not in combat, he lets a pirate within 8\" re-roll a failed flee/rally test.",
+        "condition": "chef"
+      },
+      {
+        "en": "Hardy Constitution",
+        "nom": "Constitution robuste",
+        "resume": "Il ignore les coups critiques sur 5+.",
+        "resumeEn": "He ignores Critical Hits on a 5+.",
+        "condition": null
+      },
+      {
+        "en": "Swashbuckler",
+        "nom": "Bretteur",
+        "resume": "À la fin d'une phase de corps à corps, s'il est toujours en contact, il peut tenter un test de Cd pour se désengager sans que l'ennemi ne frappe ; en cas d'échec le combat continue.",
+        "resumeEn": "At the end of a close combat phase, if still in contact, he may take a Ld test to break away without being struck; on a failure the fight goes on.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Les moussaillons (Swabbies) ne se recrutent pas : ils rejoignent la bande par capture (règle « Moussaillons ») ; ils ne figurent donc pas parmi les guerriers à recruter. Effectif min 3. Partie unique : la bande commence avec deux moussaillons gratuits. Francs-tireurs : accès d'une bande de mercenaires humains (+20 co d'entretien si nains et elfes ensemble). Chat à neuf queues réservé aux héros (retiré de la liste des matelots/maîtres d'équipage). Le pierrier (65 co, Rare 8, un par bande) et ses munitions (boulets 5, boulets ramés 2, mitraille 2, mis en « Divers ») ne sont accessibles qu'aux canonniers ; les règles de tir du pierrier, de la gaffe, du chat à neuf queues, du cabillot et des cuirs renforcés ne sont pas sur la page. Pistolet de duel à 30 co (60 la paire) d'après la page (BSData indiquait 25). Maîtres d'équipage : corde et grappin gratuit inclus dans « Expert Riggers ». Moussaillons : coût 0 (non achetables), max 5 et jamais plus nombreux que les matelots ; liste d'équipement propre. Pas de section équipement divers sur la page (la BSData listait boussole, perroquet, jambe de bois… : non repris). Clés guerriers au singulier (Ship's Mate, Cabin Boy, Gunner, Boatswain, Swabbie)."
+}

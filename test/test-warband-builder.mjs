@@ -97,7 +97,7 @@ assert.equal(normalizeCreation({ figurines: [{ id: "a", coutGc: "-3", stats: { M
 console.log("Sauvegarde des bandes créées OK");
 
 // --- Bandes officielles de BSData (js/data/bandes.js) ---
-assert.equal(BANDES.length, 15);
+assert.equal(BANDES.length, 31);
 for (const b of BANDES) {
   const chefs = b.guerriers.filter((g) => g.categorie === "heros" && g.min === 1);
   assert.equal(chefs.length, 1, `${b.nom} : un seul chef obligatoire`);
