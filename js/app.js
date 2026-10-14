@@ -159,14 +159,17 @@ function showView(name) {
 }
 
 function showTab(name) {
+  // Tant que la bande n'est pas créée, seule la page de recrutement s'affiche, sans menu.
+  if (currentCreation?.brouillon) name = "brouillon";
+  else if (name === "brouillon") name = "composition";
   tabButtons.forEach((b) => {
     const on = b.dataset.tab === name;
     b.classList.toggle("active", on);
     b.setAttribute("aria-selected", on ? "true" : "false");
   });
   document.querySelectorAll(".tab-panel").forEach((p) => (p.hidden = p.dataset.panel !== name));
-  // Les noms personnalisés saisis dans « Figurines » apparaissent dans la composition.
-  if (name === "composition" && currentCreation) renderCreation();
+  // Les noms personnalisés saisis dans « Figurines » apparaissent sur les cartes des guerriers.
+  if (currentCreation) renderCreation();
 }
 
 // Petit écran : le menu est replié en haut de la page.
@@ -208,7 +211,7 @@ fillDatalist("equipment-list", EQUIPEMENT_COURANT);
 function renderBandeHead(model) {
   document.getElementById("bande-faction").textContent = model.meta.catalogue || t("bande.factionInconnue");
   document.getElementById("bande-origine").textContent =
-    (currentCreation ? t("bande.creee") : t("bande.importee")) +
+    (currentCreation ? t(currentCreation.brouillon ? "bande.brouillon" : "bande.creee") : t("bande.importee")) +
     (activeSlot ? t("bande.emplacement", { n: activeSlot }) : t("bande.nonEnregistree"));
   document.getElementById("unsaved-box").hidden = Boolean(activeSlot);
   navBande.hidden = false;
@@ -233,8 +236,15 @@ function renderPreview(model) {
     warningBox.hidden = true;
   }
 
+  const brouillon = Boolean(currentCreation?.brouillon);
+  document.getElementById("bande-menu").hidden = brouillon;
   document.getElementById("compo-import").hidden = Boolean(currentCreation);
   document.getElementById("compo-creation").hidden = !currentCreation;
+  document.getElementById("suivi-effectif").hidden = !currentCreation || brouillon;
+  // Héros et hommes de main modifiables : dans le brouillon, puis dans « Suivi de bande ».
+  const creaEdit = document.getElementById("crea-edit");
+  creaEdit.hidden = !currentCreation;
+  document.getElementById(brouillon ? "crea-zone-brouillon" : "crea-zone-suivi").appendChild(creaEdit);
   if (currentCreation) renderCreation();
   document.getElementById("figurines-empty").hidden = model.heros.length + model.hommesDeMain.length > 0;
 }
@@ -410,6 +420,10 @@ function persoCardTemplate(card, categorie) {
     ensureCustomisation(card.id).nom = nomInput.value;
     refreshTotals(currentModel);
     scheduleSave();
+  });
+  // Le nom choisi apparaît aussi sur la carte du guerrier (« Recrues et progressions »).
+  nomInput.addEventListener("change", () => {
+    if (currentCreation) renderCreation();
   });
 
   const bioInput = div.querySelector(".perso-bio-input");
@@ -1034,6 +1048,8 @@ newForm.addEventListener("submit", async (e) => {
     const creation = newCreation(newNom.value, faction, bandeId);
     const tresor = Number(newTresor.value);
     creation.tresorDepart = Number.isFinite(tresor) && newTresor.value !== "" ? Math.max(0, tresor) : TRESOR_DEPART;
+    // Brouillon gardé dans l'emplacement jusqu'au bouton « Créer la bande ».
+    creation.brouillon = true;
     activeSlot = n;
     loadRoster(buildRoster(creation), { creation });
     persoLoadedMsg.hidden = true;
@@ -1207,7 +1223,11 @@ function texteEntreeProgression(p) {
   return `${p.des[0] + p.des[1]} (${res})`;
 }
 
-function unitCard(fig) {
+/**
+ * Carte d'un guerrier de la bande créée. `lecture` : sans boutons (menu Composition).
+ * Dans le brouillon, seuls Modifier, Dupliquer et Retirer sont proposés.
+ */
+function unitCard(fig, { lecture = false } = {}) {
   const div = document.createElement("div");
   div.className = "unit-card";
   const custom = customisations[fig.id]?.nom;
@@ -1245,8 +1265,10 @@ function unitCard(fig) {
         : pisteXpHtml(xpCourante(fig), fig.categorie, { titre: t("perso.xpPiste") })
     }
     ${details.map((d) => `<p class="unit-detail">${d}</p>`).join("")}
-    <div class="slot-actions"></div>
+    ${lecture ? "" : `<div class="slot-actions"></div>`}
   `;
+  if (lecture) return div;
+  const brouillon = currentCreation.brouillon;
   const actions = div.querySelector(".slot-actions");
   const addBtn = (label, onClick) => {
     const b = document.createElement("button");
@@ -1257,9 +1279,9 @@ function unitCard(fig) {
     actions.appendChild(b);
   };
   addBtn(t("unite.modifier"), () => openFigDialog(fig));
-  const dues = sansXp ? 0 : progressionsDues(fig, xpCourante(fig));
+  const dues = sansXp || brouillon ? 0 : progressionsDues(fig, xpCourante(fig));
   if (dues) addBtn(t("unite.progression", { n: dues }), () => openProgDialog(fig));
-  if (groupe && nombre < MAX_GROUPE) {
+  if (groupe && nombre < MAX_GROUPE && !brouillon) {
     // Recrue en cours de campagne : même équipement et même XP que le groupe,
     // payée 2 co de plus par point d'expérience.
     const xp = xpCourante(fig);
@@ -1409,7 +1431,14 @@ function renderCreation() {
     const list = document.getElementById(`crea-list-${cat}`);
     list.innerHTML = figs.length ? "" : `<p class="hint-text small left">${t("compo.personne")}</p>`;
     figs.forEach((f) => list.appendChild(unitCard(f)));
+    // Composition : les mêmes cartes, sans modification possible.
+    document.getElementById(`lecture-count-${cat}`).textContent = figs.length;
+    const lecture = document.getElementById(`lecture-list-${cat}`);
+    lecture.innerHTML = figs.length ? "" : `<p class="hint-text small left">${t("compo.personne")}</p>`;
+    figs.forEach((f) => lecture.appendChild(unitCard(f, { lecture: true })));
   }
+  document.getElementById("lecture-regles-bloc").hidden = !c.reglesBande.length;
+  document.getElementById("lecture-regles").textContent = c.reglesBande.map(locNomRegle).join(", ");
 
   chipEditor(document.getElementById("crea-regles-bande"), c.reglesBande, {
     datalist: "rules-list",
@@ -1440,6 +1469,24 @@ creaTresor.addEventListener("change", () => {
   currentCreation.tresorDepart = Number.isFinite(n) && creaTresor.value !== "" ? Math.max(0, n) : TRESOR_DEPART;
   applyCreationChange();
 });
+// Fin du recrutement : la bande est créée et son menu apparaît.
+document.getElementById("crea-valider").addEventListener("click", async () => {
+  if (!currentCreation?.brouillon) return;
+  if (!currentCreation.figurines.length) {
+    alert(t("brouillon.vide"));
+    return;
+  }
+  const warnings = creationWarnings(currentCreation);
+  if (warnings.length && !confirm(t("brouillon.confirmAvertissements", { liste: warnings.map((w) => `• ${w}`).join("\n") }))) {
+    return;
+  }
+  currentCreation.brouillon = false;
+  applyCreationChange();
+  await saveNow();
+  showTab("composition");
+  bandeView.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
 document.querySelectorAll(".add-btn").forEach((b) =>
   b.addEventListener("click", () => {
     if (getBande(currentCreation?.bandeId)) openRecruitDialog(b.dataset.add);
@@ -1987,7 +2034,11 @@ async function renderSlots() {
     const div = document.createElement("div");
     div.className = `slot-card${rec ? "" : " empty"}${isActive ? " active" : ""}`;
     const catalogue = rec?.roster?.roster?.forces?.[0]?.catalogueName?.trim() || "";
-    const origine = rec ? (rec.creation ? t("slot.creeeIci") : t("slot.importee")) : "";
+    const origine = rec
+      ? rec.creation
+        ? t(rec.creation.brouillon ? "slot.brouillon" : "slot.creeeIci")
+        : t("slot.importee")
+      : "";
     div.innerHTML = `
       <p class="slot-num">${t("slot.num", { n })}${isActive ? t("slot.ouverte") : ""}</p>
       <p class="slot-name">${rec ? escapeHtml(rec.nom) : t("slot.vide")}</p>
@@ -2007,7 +2058,7 @@ async function renderSlots() {
       b.addEventListener("click", onClick);
       actions.appendChild(b);
     };
-    if (rec && !isActive) addBtn(t("slot.ouvrir"), () => openSlot(n));
+    if (rec && !isActive) addBtn(t(rec.creation?.brouillon ? "slot.reprendre" : "slot.ouvrir"), () => openSlot(n));
     if (isActive) addBtn(t("slot.afficher"), () => showView("bande"));
     if (!rec) addBtn(t("slot.nouvelle"), () => {
       showView("nouvelle");

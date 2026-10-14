@@ -136,6 +136,8 @@ export function newCreation(nom = "", faction = "", bandeId = "") {
     tresorDepart: bande ? bande.tresor : TRESOR_DEPART,
     reglesBande: bande ? bande.regles.map((r) => r.nom) : [],
     figurines: [],
+    // Brouillon : la bande est encore en cours de recrutement (bouton « Créer » pas encore appuyé).
+    brouillon: false,
   };
 }
 
@@ -232,6 +234,7 @@ export function normalizeCreation(c) {
   out.bandeId = getBande(c.bandeId) ? c.bandeId : "";
   out.tresorDepart = c.tresorDepart === undefined ? TRESOR_DEPART : toInt(c.tresorDepart);
   out.reglesBande = cleanList(c.reglesBande);
+  out.brouillon = c.brouillon === true;
   out.figurines = (Array.isArray(c.figurines) ? c.figurines : [])
     .filter((f) => f && f.id)
     .map((f) => {

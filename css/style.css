@@ -629,13 +629,25 @@ select.perso-nom-input { width: 100%; }
 .bande-origine { margin: 0.3rem 0 0; font-size: 0.85rem; color: var(--ink-soft); font-style: italic; }
 .bande-menu {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-bottom: 3px double var(--brass);
   margin-bottom: 1.4rem;
 }
 .bande-menu .tab-btn { border-bottom: none; padding: 0.7rem 0.3rem; }
 .bande-menu .tab-btn + .tab-btn { border-left: none; }
+.bande-menu[hidden] { display: none; }
 .tab-panel { animation: fadein 0.15s ease; }
+
+/* Suivi de bande : trésor, combats, recrues et figurines sur une même page. */
+.suivi-section + .suivi-section { margin-top: 2.2rem; }
+
+/* Brouillon : bouton « Créer la bande » au bas de la page de recrutement. */
+.brouillon-fin {
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  border-top: 3px double var(--brass);
+  text-align: center;
+}
 @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 
 /* Formulaires */
@@ -772,11 +784,6 @@ select.perso-nom-input { width: 100%; }
 .btn-ok:hover { background: var(--wax-light); }
 
 @media (max-width: 640px) {
-  /* 5 onglets : 3 sur la première ligne, 2 sur la seconde. */
-  .bande-menu { grid-template-columns: repeat(6, 1fr); }
-  .bande-menu .tab-btn { grid-column: span 2; }
-  .bande-menu .tab-btn:nth-child(n+4) { grid-column: span 3; }
-  .bande-menu .tab-btn:nth-child(4) { border-left: 1px solid var(--brass); }
   .compo-settings { grid-template-columns: 1fr; }
   .stats-edit { grid-template-columns: repeat(5, 1fr); }
   .stat-cell { font-size: 0.72rem; }
