@@ -793,6 +793,11 @@ select.perso-nom-input { width: 100%; }
 /* Les champs remplissent leur colonne sans déborder des grilles. */
 .perso-label { min-width: 0; }
 .perso-label > .perso-nom-input { width: 100%; min-width: 0; }
+/* Champs côte à côte : libellés alignés en haut, champs alignés en bas,
+   même quand un libellé passe sur deux lignes. */
+.compo-settings > .perso-label,
+.partie-grid > .perso-label,
+.partie-row > .perso-label { justify-content: space-between; }
 
 /* Données des bandes : recrutement, liste d'équipement, règles */
 .unit-card.complet { opacity: 0.55; }
