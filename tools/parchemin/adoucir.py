@@ -35,8 +35,15 @@ def distance_au_bord(opaque, maxi):
     return d
 
 
-def traiter(nom, haut=0, bas=0, boucle=False):
+def traiter(nom, haut=0, bas=0, boucle=False, liseres=()):
     img = np.asarray(Image.open(f"{src}/parchemin-{nom}.webp").convert("RGBA")).astype(float)
+    # Lignes claires laissées par le raccord rouleau / papier : remplacées
+    # par un dégradé entre la ligne du dessus et celle du dessous.
+    for y0, y1 in liseres:
+        avant, apres = img[y0 - 1].copy(), img[y1 + 1].copy()
+        for i, y in enumerate(range(y0, y1 + 1), 1):
+            w = i / (y1 - y0 + 2)
+            img[y] = avant * (1 - w) + apres * w
     alpha = img[..., 3]
     # Les raccords entre morceaux (lignes en fondu) ne sont pas des bords :
     # on prolonge le contour au-delà pour ne pas les brunir.
@@ -66,6 +73,6 @@ def traiter(nom, haut=0, bas=0, boucle=False):
 
 
 # Fondus de raccord de split.py : 40 dernières lignes du haut, 50 premières du bas.
-traiter("haut", bas=40)
+traiter("haut", bas=40, liseres=[(152, 153)])
 traiter("milieu", boucle=True)
 traiter("bas", haut=50)
