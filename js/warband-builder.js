@@ -104,10 +104,11 @@ export function prixEquipement(guerrier, nom) {
 }
 
 /**
- * Limites d'équipement des règles de Mordheim : deux armes de corps à corps
- * en plus de la dague gratuite, deux armes de tir différentes (une paire de
- * pistolets compte pour une), une armure, un bouclier (ou une rondache) et
- * un casque. Le reste (divers) n'est pas limité.
+ * Limites d'équipement du livre de règles (Constitution de la bande, « Armes
+ * et armures ») : deux armes de corps à corps en plus de la dague gratuite,
+ * deux armes de tir (une paire de pistolets compte pour une) et une armure.
+ * Un bouclier (ou une rondache) et un casque : un seul de chaque, faute de
+ * mieux. Le reste (divers) n'est pas limité.
  */
 const LIMITES_EQUIPEMENT = { corps: 2, tir: 2, armure: 1, bouclier: 1, casque: 1 };
 
@@ -126,6 +127,7 @@ export function emplacementEquipement(guerrier, nom) {
 
 const ARMES_DEUX_MAINS = new Set(["Arme lourde", "Épée à deux mains", "Hallebarde", "Fléau", "Pique"]);
 const BOUCLIERS = new Set(["Bouclier", "Rondache"]);
+const PROTECTIONS = new Set(["Bouclier", "Rondache", "Casque", "Armure légère", "Armure lourde", "Armure en gromril"]);
 
 /**
  * Une règle ou une compétence de la figurine (y compris gagnée plus tard)
@@ -151,7 +153,8 @@ export function autoriseDeuxMainsBouclier(fig) {
  * corps à corps (il garde son +1 contre le tir) ; la morgenstern ne
  * s'utilise pas avec une rondache ; armure lourde et bouclier coûtent 1 en
  * Mouvement ; le boulet et chaîne (encombrant) ne laisse rien d'autre que
- * les champignons fous.
+ * les champignons fous ; un sorcier ne lance pas de sort avec une armure, un
+ * bouclier, un casque ou une rondache (les prières de Sigmar le peuvent).
  */
 export function avertissementsEquipement(fig) {
   const eq = fig?.equipement || [];
@@ -161,6 +164,8 @@ export function avertissementsEquipement(fig) {
   }
   if (eq.includes("Morgenstern") && eq.includes("Rondache")) out.push("morgenstern");
   if (eq.includes("Armure lourde") && eq.includes("Bouclier")) out.push("armureLourdeBouclier");
+  const sorcier = [...(fig?.regles || []), ...(fig?.competences || [])].some((r) => /^Sorcier\b/.test(r));
+  if (sorcier && eq.some((e) => PROTECTIONS.has(e))) out.push("sorcier");
   if (eq.includes("Boulet et chaîne") && eq.some((e) => e !== "Boulet et chaîne" && e !== "Champignons fous")) {
     out.push("encombrant");
   }
@@ -169,14 +174,12 @@ export function avertissementsEquipement(fig) {
 
 /**
  * Pourquoi un objet ne peut plus être ajouté à l'équipement (clé de l'emplacement
- * plein, "tirDouble" pour une deuxième arme de tir identique, "dagueGratuite"
- * pour une deuxième dague gratuite), null s'il peut l'être.
+ * plein, ou "dagueGratuite" pour une deuxième dague gratuite), null s'il peut l'être.
  */
 export function equipementRefuse(guerrier, equipement, nom) {
   if (nom === "Dague gratuite" && equipement.includes(nom)) return "dagueGratuite";
   const emplacement = emplacementEquipement(guerrier, nom);
   if (!emplacement) return null;
-  if (emplacement === "tir" && equipement.includes(nom)) return "tirDouble";
   const pris = equipement.filter((e) => emplacementEquipement(guerrier, e) === emplacement).length;
   return pris >= LIMITES_EQUIPEMENT[emplacement] ? emplacement : null;
 }
