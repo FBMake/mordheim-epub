@@ -11,7 +11,7 @@
   --ink: #241d15;
   --ink-soft: #5a4a30;
   --brass: #8a6e3d;
-  --gunmetal: #1c232b;
+  --backdrop: #1a130d;
   --wax: #7a2e2e;
   --wax-light: #9c4444;
 }
@@ -20,19 +20,35 @@
 /* L'attribut hidden doit l'emporter sur les display: flex des composants. */
 [hidden] { display: none !important; }
 
+html {
+  /* Fond brun très sombre, dans les tons du parchemin, pour qu'il ne
+     ressorte pas comme une photo posée sur du bleu. Seul html a un fond :
+     celui de body masquerait le papier flou de body::before. */
+  background: var(--backdrop);
+}
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--gunmetal);
-  background-image:
-    radial-gradient(circle at 20% 10%, rgba(255,255,255,0.04), transparent 40%),
-    radial-gradient(circle at 80% 90%, rgba(255,255,255,0.03), transparent 40%);
   color: var(--ink);
   font-family: "EB Garamond", Georgia, serif;
   font-size: 18px;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-x: clip;
+}
+
+/* Le même papier, très flou et assombri, éclaire le fond autour du rouleau,
+   avec un vignettage vers les bords de l'écran. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -60px;
+  z-index: -10;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 45%, transparent 30%, rgba(10,6,3,0.85) 100%),
+    url("../images/parchemin-milieu.webp") center / cover no-repeat;
+  filter: blur(40px) brightness(0.42) saturate(0.85);
+  pointer-events: none;
 }
 
 /* Le parchemin (images/parchemin-*.webp, voir tools/parchemin/) est découpé
@@ -51,6 +67,12 @@ html, body {
   aspect-ratio: 1305 / 1156; /* hauteur minimale : le rouleau entier */
   /* Le contenu reste sur le papier, entre les rouleaux et les bords déchirés. */
   padding: calc(var(--w) * 0.16) calc(var(--w) * 0.19) calc(var(--w) * 0.15);
+  /* Bord fondu dans le fond, ombre portée et léger halo chaud : le rouleau
+     semble posé dans la pièce plutôt que collé sur la page. L'ombre suit la
+     forme du parchemin (bords déchirés, poignées) ; le contenu, posé sur le
+     papier opaque, n'en reçoit pas. */
+  filter: drop-shadow(0 0 2px rgba(40,22,8,0.75)) drop-shadow(0 12px 30px rgba(0,0,0,0.6))
+    drop-shadow(0 0 80px rgba(190,130,60,0.16));
 }
 /* Rouleau du haut et du bas, posés sur le motif du milieu. */
 .parchment-frame::before {
