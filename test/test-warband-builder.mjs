@@ -3,6 +3,7 @@ import { parseRoster } from "../js/parser.js";
 import {
   BANDES,
   equipementRefuse,
+  avertissementsEquipement,
   autoriseDeuxMainsBouclier,
   buildRoster,
   coutCalcule,
@@ -168,11 +169,16 @@ console.log("Brouillon OK");
   assert.equal(refus(["Bouclier"], "Rondache"), "bouclier");
   assert.equal(refus(["Casque"], "Casque"), "casque");
   assert.equal(refus(["Dague gratuite"], "Dague gratuite"), "dagueGratuite");
-  // Arme à deux mains et bouclier : incompatibles, dans un sens comme dans l'autre.
-  assert.equal(refus(["Arme lourde"], "Bouclier"), "deuxMains");
-  assert.equal(refus(["Hallebarde"], "Rondache"), "deuxMains");
-  assert.equal(refus(["Bouclier"], "Arme lourde"), "bouclierPorte");
-  assert.equal(refus(["Arme lourde"], "Casque"), null);
+  // Arme à deux mains et bouclier : permis, mais signalé.
+  assert.equal(refus(["Arme lourde"], "Bouclier"), null);
+  const alertes = (equipement, regles = []) => avertissementsEquipement({ equipement, regles, competences: [] });
+  assert.deepEqual(alertes(["Arme lourde", "Bouclier"]), ["deuxMains"]);
+  assert.deepEqual(alertes(["Hallebarde", "Rondache"]), ["deuxMains"]);
+  assert.deepEqual(alertes(["Épée", "Bouclier", "Casque"]), []);
+  assert.deepEqual(alertes(["Morgenstern", "Rondache"]), ["morgenstern"]);
+  assert.deepEqual(alertes(["Armure lourde", "Bouclier"]), ["armureLourdeBouclier"]);
+  assert.deepEqual(alertes(["Boulet et chaîne", "Champignons fous"]), []);
+  assert.deepEqual(alertes(["Boulet et chaîne", "Champignons fous", "Dague gratuite"]), ["encombrant"]);
   // Sauf si une règle de la figurine l'autorise (règle inventée pour le test, sans description connue : aucune exception).
   assert.equal(autoriseDeuxMainsBouclier({ regles: ["Chef"], competences: [] }), false);
   assert.equal(autoriseDeuxMainsBouclier({ regles: ["Une Seule Attaque, Sans Bouclier"], competences: [] }), false);

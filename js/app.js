@@ -49,6 +49,7 @@ import {
   reglesDeLaBande,
   texteSansXp,
   equipementRefuse,
+  avertissementsEquipement,
 } from "./warband-builder.js";
 import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
 import { flagSvg } from "./flags.js";
@@ -1744,7 +1745,7 @@ function renderArsenal(guerrier) {
     guerrier.equipement.map((cat) => ({
       titre: loc(cat.categorie),
       items: cat.objets.map((o) => {
-        const refus = equipementRefuse(guerrier, figDraft.equipement, o.nom, figDraft);
+        const refus = equipementRefuse(guerrier, figDraft.equipement, o.nom);
         return {
           texte: `${loc(o.nom)} · ${o.cout ?? 0} ${t("monnaie")}`,
           disabled: Boolean(refus),
@@ -1760,6 +1761,14 @@ function renderArsenal(guerrier) {
   );
 }
 
+/** Combinaisons d'équipement permises mais à signaler (arme à deux mains et bouclier…). */
+function renderEquipementAlertes() {
+  const box = document.getElementById("fig-equipement-alertes");
+  const alertes = avertissementsEquipement(figDraft);
+  box.hidden = !alertes.length;
+  box.innerHTML = alertes.map((a) => `<span>${escapeHtml(t(`equipement.alerte.${a}`))}</span>`).join("");
+}
+
 function renderFigEquipement() {
   // Une seule façon d'ajouter : la liste d'équipement du guerrier quand les données en ont une,
   // sinon le champ texte (bande saisie à la main).
@@ -1773,11 +1782,13 @@ function renderFigEquipement() {
     onChange: () => {
       syncCout();
       renderArsenal(guerrier);
+      renderEquipementAlertes();
     },
     label: loc,
   });
   // Les limites dépendent de ce qui est déjà porté : la liste est regrisée à chaque ajout.
   renderArsenal(guerrier);
+  renderEquipementAlertes();
 }
 
 // Les compétences d'un héros viennent de ses progressions : les modifier à la
@@ -1806,7 +1817,7 @@ function renderFigCompetences() {
   renderCompetencesChoix();
   renderHistorique();
   renderFigDepart();
-  renderArsenal(getGuerrier(figDraft.modele));
+  renderEquipementAlertes();
 }
 
 /**
@@ -2075,7 +2086,7 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
       if (isHero) renderCompetencesChoix();
       renderFigXpBloque();
       // Une règle peut autoriser le bouclier avec une arme à deux mains.
-      renderArsenal(guerrier);
+      renderEquipementAlertes();
     };
     renderRegles();
   }

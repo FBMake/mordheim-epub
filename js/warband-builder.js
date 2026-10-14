@@ -124,7 +124,7 @@ export function emplacementEquipement(guerrier, nom) {
   return "armure";
 }
 
-const ARMES_DEUX_MAINS = new Set(["Arme lourde", "Épée à deux mains", "Hallebarde", "Fléau", "Boulet et chaîne", "Pique"]);
+const ARMES_DEUX_MAINS = new Set(["Arme lourde", "Épée à deux mains", "Hallebarde", "Fléau", "Pique"]);
 const BOUCLIERS = new Set(["Bouclier", "Rondache"]);
 
 /**
@@ -146,19 +146,34 @@ export function autoriseDeuxMainsBouclier(fig) {
 }
 
 /**
+ * Combinaisons permises mais à signaler (pas bloquées) : clés i18n
+ * `equipement.alerte.*`. Une arme à deux mains rend le bouclier inutile au
+ * corps à corps (il garde son +1 contre le tir) ; la morgenstern ne
+ * s'utilise pas avec une rondache ; armure lourde et bouclier coûtent 1 en
+ * Mouvement ; le boulet et chaîne (encombrant) ne laisse rien d'autre que
+ * les champignons fous.
+ */
+export function avertissementsEquipement(fig) {
+  const eq = fig?.equipement || [];
+  const out = [];
+  if (eq.some((e) => ARMES_DEUX_MAINS.has(e)) && eq.some((e) => BOUCLIERS.has(e)) && !autoriseDeuxMainsBouclier(fig)) {
+    out.push("deuxMains");
+  }
+  if (eq.includes("Morgenstern") && eq.includes("Rondache")) out.push("morgenstern");
+  if (eq.includes("Armure lourde") && eq.includes("Bouclier")) out.push("armureLourdeBouclier");
+  if (eq.includes("Boulet et chaîne") && eq.some((e) => e !== "Boulet et chaîne" && e !== "Champignons fous")) {
+    out.push("encombrant");
+  }
+  return out;
+}
+
+/**
  * Pourquoi un objet ne peut plus être ajouté à l'équipement (clé de l'emplacement
  * plein, "tirDouble" pour une deuxième arme de tir identique, "dagueGratuite"
- * pour une deuxième dague gratuite, "deuxMains" / "bouclierPorte" pour un
- * bouclier avec une arme à deux mains), null s'il peut l'être. `fig` donne
- * les règles et compétences qui peuvent lever l'interdiction.
+ * pour une deuxième dague gratuite), null s'il peut l'être.
  */
-export function equipementRefuse(guerrier, equipement, nom, fig = null) {
+export function equipementRefuse(guerrier, equipement, nom) {
   if (nom === "Dague gratuite" && equipement.includes(nom)) return "dagueGratuite";
-  // Une arme à deux mains ne s'utilise pas avec un bouclier ou une rondache.
-  if (!autoriseDeuxMainsBouclier(fig)) {
-    if (BOUCLIERS.has(nom) && equipement.some((e) => ARMES_DEUX_MAINS.has(e))) return "deuxMains";
-    if (ARMES_DEUX_MAINS.has(nom) && equipement.some((e) => BOUCLIERS.has(e))) return "bouclierPorte";
-  }
   const emplacement = emplacementEquipement(guerrier, nom);
   if (!emplacement) return null;
   if (emplacement === "tir" && equipement.includes(nom)) return "tirDouble";
@@ -514,6 +529,9 @@ export function creationWarnings(creation) {
     const competences = competencesHorsListe(f, g);
     if (competences.length) {
       out.push(t("alerte.competences", { nom: f.type || g.nom, liste: competences.join(", ") }));
+    }
+    for (const a of avertissementsEquipement(f)) {
+      out.push(`${loc(f.type) || locGuerrier(g)} · ${t(`equipement.alerte.${a}`)}`);
     }
     for (const d of depassementsMaximum(f, g)) {
       out.push(t("alerte.maximum", { nom: f.type || g.nom, stat: t(`profil.${d.stat}`), valeur: d.valeur, max: d.max }));

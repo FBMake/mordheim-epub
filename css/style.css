@@ -1047,3 +1047,7 @@ button.xp-case { cursor: pointer; }
 @media (max-width: 640px) {
   .depart-slots { grid-template-columns: 1fr; }
 }
+/* Combinaisons d'équipement permises mais à signaler. */
+.equipement-alertes { color: var(--wax); font-style: italic; margin: 0 0 0.4rem; }
+.equipement-alertes span { display: block; }
+.equipement-alertes span::first-letter { text-transform: uppercase; }
