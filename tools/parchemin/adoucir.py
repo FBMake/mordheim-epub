@@ -1,9 +1,9 @@
-"""Brunit et adoucit le bord déchiré du parchemin.
+"""Adoucit le bord déchiré du parchemin.
 
 Lit les images brutes (tools/parchemin/brut/, sorties de split.py) et écrit
-les images du site (images/). Le papier est assombri progressivement sur les
-derniers pixels avant le bord, comme un papier roussi, et le contour est
-légèrement fondu : le parchemin ne tranche plus sur le fond sombre.
+les images du site (images/). Le contour est légèrement fondu, et le papier
+à peine assombri sur ses tout derniers pixels (réglages ci-dessous : plus
+LARGEUR est grand et SOMBRE petit, plus le bord paraît roussi).
 
     python3 tools/parchemin/adoucir.py tools/parchemin/brut images
 """
@@ -13,9 +13,9 @@ from PIL import Image
 
 src, dst = sys.argv[1], sys.argv[2]
 
-LARGEUR = 34        # px (image de 1305 px) sur lesquels le bord est bruni
-SOMBRE = 0.30       # luminosité restante tout au bord
-TEINTE = np.array([0.78, 0.55, 0.33])  # brun roussi vers lequel tire le bord
+LARGEUR = 6         # px (image de 1305 px) sur lesquels le bord est à peine assombri
+SOMBRE = 0.88       # luminosité restante tout au bord
+TEINTE = np.array([0.97, 0.93, 0.88])  # léger brun vers lequel tire le bord
 FONDU = 3           # px de contour rendus semi-transparents
 
 

@@ -101,11 +101,11 @@ body {
   aspect-ratio: 1305 / 1156; /* hauteur minimale : le rouleau entier */
   /* Le contenu reste sur le papier, entre les rouleaux et les bords déchirés. */
   padding: calc(var(--w) * 0.16) calc(var(--w) * 0.19) calc(var(--w) * 0.15);
-  /* Bord fondu dans le fond, ombre portée et léger halo chaud : le rouleau
+  /* Ombre portée et léger halo chaud : le rouleau
      semble posé dans la pièce plutôt que collé sur la page. L'ombre suit la
      forme du parchemin (bords déchirés, poignées) ; le contenu, posé sur le
      papier opaque, n'en reçoit pas. */
-  filter: drop-shadow(0 0 2px rgba(40,22,8,0.75)) drop-shadow(0 12px 30px rgba(0,0,0,0.6))
+  filter: drop-shadow(0 12px 30px rgba(0,0,0,0.55))
     drop-shadow(0 0 80px rgba(190,130,60,0.16));
 }
 /* Rouleau du haut et du bas, posés sur le motif du milieu. */
