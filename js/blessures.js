@@ -102,8 +102,13 @@ export function malusTotal(ids) {
  * pas sous 1.
  */
 export function appliquerMalus(stats, ids) {
+  return appliquerEcarts(stats, malusTotal(ids));
+}
+
+/** Profil modifié par des écarts ({ M: -1 }) : mêmes règles que les blessures. */
+export function appliquerEcarts(stats, ecarts) {
   const out = { ...stats };
-  for (const [k, v] of Object.entries(malusTotal(ids))) {
+  for (const [k, v] of Object.entries(ecarts)) {
     const n = Number(out[k]);
     if (out[k] !== undefined && String(out[k]).trim() !== "" && Number.isFinite(n)) {
       out[k] = String(Math.max(1, n + v));
