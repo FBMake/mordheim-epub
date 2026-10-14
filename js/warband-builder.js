@@ -26,6 +26,7 @@
 import { RULE_TRANSLATIONS } from "./translations.js";
 import { BANDES } from "./data/bandes.js";
 import { competencesHorsListe, depassementsMaximum } from "./data/competences.js";
+import { competencesDepartManquantes } from "./progression.js";
 import { t } from "./i18n.js";
 import { enAnglais, loc, locBande, locGuerrier, nomsReglesAnglais, regleAnglaise } from "./donnees-langue.js";
 
@@ -426,6 +427,13 @@ export function creationWarnings(creation) {
   if (tot.reste < 0) out.push(t("alerte.budget", { depassement: -tot.reste, tresor: tot.tresor }));
   if (tot.heros > MAX_HEROS) out.push(t("alerte.tropHeros", { n: tot.heros, max: MAX_HEROS }));
   if (tot.effectif && !tot.heros) out.push(t("alerte.sansChef"));
+  // Héros recruté avec de l'expérience : ses compétences de départ sont obligatoires.
+  for (const f of creation?.figurines || []) {
+    const manquantes = regleBloquantXp(f) ? 0 : competencesDepartManquantes(f);
+    if (manquantes) {
+      out.push(t("alerte.competencesDepart", { nom: loc(f.type) || t("categorie.heros"), n: manquantes, xp: f.xpDepart }));
+    }
+  }
 
   const bande = getBande(creation?.bandeId);
   if (!bande) return out;

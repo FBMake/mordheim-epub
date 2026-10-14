@@ -66,6 +66,27 @@ function seuilsHerosEnAttente(fig, xp) {
   return SEUILS_HEROS.filter((s) => s > depart && s <= toInt(xp) && !faits.has(s));
 }
 
+/**
+ * Compétences de départ d'un héros recruté avec de l'expérience : une par
+ * seuil de sa piste déjà franchi par son XP de départ (ex. 20 xp → 8).
+ * Elles se choisissent au recrutement, dans ses listes de compétences.
+ */
+export function competencesDepart(fig, xpDepart = fig?.xpDepart) {
+  if (fig?.categorie !== "heros") return 0;
+  return SEUILS_HEROS.filter((s) => s <= toInt(xpDepart)).length;
+}
+
+/** Compétences de la figurine qui ne viennent pas d'une progression (départ, saisie à la main). */
+export function competencesLibres(fig) {
+  const parProgression = new Set((fig?.progressions || []).map((p) => p.competence).filter(Boolean));
+  return (fig?.competences || []).filter((c) => !parProgression.has(c));
+}
+
+/** Nombre de compétences de départ encore à choisir. */
+export function competencesDepartManquantes(fig, xpDepart = fig?.xpDepart) {
+  return Math.max(0, competencesDepart(fig, xpDepart) - competencesLibres(fig).length);
+}
+
 /** Progressions que la figurine (héros ou groupe) doit encore lancer avec cette expérience. */
 export function progressionsDues(fig, xp) {
   if (fig?.categorie === "heros") return seuilsHerosEnAttente(fig, xp).length;

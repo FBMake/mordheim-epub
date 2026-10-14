@@ -57,6 +57,9 @@ import {
   annulerProgression,
   appliquerProgression,
   appliquerProgressionHeros,
+  competencesDepart,
+  competencesDepartManquantes,
+  competencesLibres,
   ecartsProfil,
   lancer2D6,
   progressionsDues,
@@ -1775,6 +1778,81 @@ function renderFigCompetences() {
   });
   renderCompetencesChoix();
   renderHistorique();
+  renderFigDepart();
+}
+
+/**
+ * XP de départ de la figurine en cours d'édition : celle du champ XP tant
+ * que la bande est en création (recrutement ou brouillon), sinon celle
+ * enregistrée au recrutement.
+ */
+function xpDepartFiche() {
+  if (!figOriginal || currentCreation?.brouillon) return Math.max(0, Number(figXp.value) || 0);
+  return figDraft.xpDepart;
+}
+
+/** Nombre de compétences de départ que ce héros doit avoir (0 si l'expérience lui est interdite). */
+function nbCompetencesDepart() {
+  return regleBloquantXp(figDraft) ? 0 : competencesDepart(figDraft, xpDepartFiche());
+}
+
+/**
+ * Compétences de départ d'un héros recruté avec de l'expérience : une case
+ * par seuil déjà franchi, remplie par une compétence de ses listes.
+ */
+function renderFigDepart() {
+  const n = figDraft.categorie === "heros" ? nbCompetencesDepart() : 0;
+  const bloc = document.getElementById("fig-depart-bloc");
+  bloc.hidden = n === 0;
+  document.getElementById("fig-depart-erreur").hidden = true;
+  if (!n) return;
+  document.getElementById("fig-depart-titre").textContent = t("fig.depart", { n, xp: xpDepartFiche() });
+  const box = document.getElementById("fig-depart-slots");
+  box.innerHTML = "";
+  const libres = competencesLibres(figDraft);
+  const listes = competencesAccessibles(figDraft, getGuerrier(figDraft.modele));
+  for (let i = 0; i < n; i++) {
+    const slot = document.createElement("div");
+    slot.className = "depart-slot";
+    const num = `<span class="depart-num">${i + 1}</span>`;
+    if (libres[i]) {
+      slot.innerHTML = `${num}${chipInfoHtml(locNomRegle(libres[i]), descriptionRegle(libres[i]))}`;
+      const del = document.createElement("button");
+      del.type = "button";
+      del.className = "chip-del";
+      del.textContent = "×";
+      del.setAttribute("aria-label", t("chip.retirer", { item: locNomRegle(libres[i]) }));
+      del.addEventListener("click", () => {
+        figDraft.competences.splice(figDraft.competences.indexOf(libres[i]), 1);
+        renderFigCompetences();
+      });
+      slot.querySelector(".chip").appendChild(del);
+    } else {
+      slot.classList.add("vide");
+      const select = document.createElement("select");
+      select.className = "perso-nom-input depart-select";
+      select.setAttribute("aria-label", t("fig.departChoisir"));
+      // Seulement les compétences de ses listes, ni déjà acquises ni réservées (chef, sorcier…).
+      select.innerHTML =
+        option("", t("fig.departChoisir")) +
+        listes
+          .map((l) => {
+            const items = l.competences.filter((c) => c.permise && !c.acquise);
+            return items.length
+              ? `<optgroup label="${escapeHtml(loc(l.liste))}">${items.map((c) => option(c.nom, locCompetence(c).nom)).join("")}</optgroup>`
+              : "";
+          })
+          .join("");
+      select.addEventListener("change", () => {
+        if (!select.value) return;
+        figDraft.competences.push(select.value);
+        renderFigCompetences();
+      });
+      slot.innerHTML = num;
+      slot.appendChild(select);
+    }
+    box.appendChild(slot);
+  }
 }
 
 /**
@@ -1885,6 +1963,11 @@ function reglesGuerriers(bande) {
   return bande ? reglesDeLaBande(bande).filter((r) => !bande.regles.includes(r)) : [];
 }
 
+// L'XP saisie au recrutement fixe le nombre de compétences de départ.
+figXp.addEventListener("input", () => {
+  if (figDraft?.categorie === "heros") renderFigDepart();
+});
+
 /** Une règle comme « Animaux » ou « Démon » interdit l'expérience : champ XP grisé. */
 function renderFigXpBloque() {
   const regle = regleBloquantXp(figDraft);
@@ -1942,7 +2025,8 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   // celles de leur profil dans les données, affichées sans être modifiables.
   document.getElementById("fig-competences-bloc").hidden = !isHero;
   // Pas de compétence encore : la saisie à la main est ouverte (recrutement, héros importé…).
-  document.getElementById("fig-comp-modifier").open = !fig;
+  // Héros recruté avec de l'expérience : ses compétences se choisissent dans les cases de départ.
+  document.getElementById("fig-comp-modifier").open = !fig && !(isHero && nbCompetencesDepart());
   if (isHero) renderFigCompetences();
   const reglesFixes = !isHero && !!guerrier;
   const reglesBox = document.getElementById("fig-regles");
@@ -2004,8 +2088,19 @@ figForm.addEventListener("submit", (e) => {
   if (figType.value.trim() !== loc(figDraft.type)) figDraft.type = figType.value.trim();
   figDraft.coutGc = Math.max(0, Number(figCout.value) || 0);
   figDraft.xp = Math.max(0, Number(figXp.value) || 0);
-  // Au recrutement, l'expérience saisie est le point de départ des progressions.
-  if (!figOriginal) figDraft.xpDepart = figDraft.xp;
+  // Au recrutement (et tant que la bande est en brouillon), l'expérience saisie est le point de départ des progressions.
+  if (!figOriginal || currentCreation.brouillon) figDraft.xpDepart = figDraft.xp;
+  // Les compétences de départ d'un héros recruté avec de l'expérience sont obligatoires.
+  const manquantes =
+    figDraft.categorie === "heros" && !regleBloquantXp(figDraft) ? competencesDepartManquantes(figDraft) : 0;
+  if (manquantes) {
+    renderFigDepart();
+    const erreur = document.getElementById("fig-depart-erreur");
+    erreur.textContent = t("fig.departManquantes", { n: manquantes });
+    erreur.hidden = false;
+    document.querySelector("#fig-depart-slots select")?.focus();
+    return;
+  }
   if (figDraft.categorie === "hdm") {
     figDraft.nombre = Math.min(MAX_GROUPE, Math.max(1, Math.round(Number(figNombre.value)) || 1));
     figDraft.competences = [];

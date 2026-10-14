@@ -360,6 +360,10 @@ export default {
   "fig.coutUnitaire": "Coût par figurine (co)",
   "fig.aucuneRegle": "Aucune règle spéciale.",
   "fig.competencesAide": "Un héros apprend ses compétences en progressant : le bouton « Progression » de sa carte apparaît quand son expérience atteint un seuil.",
+  "fig.depart": "Compétences de départ : {n} à choisir ({xp} xp au recrutement)",
+  "fig.departAide": "Une compétence par seuil d'expérience déjà franchi, choisie dans les listes de ce héros.",
+  "fig.departChoisir": "Choisir une compétence…",
+  "fig.departManquantes": "Choisissez encore {n} compétence(s) de départ.",
   "fig.historique": "Historique des progressions",
   "fig.modifierCompetences": "Modifier les compétences à la main",
   "fig.confirmModifCompetences": "Les compétences s'apprennent normalement en progressant, quand l'expérience atteint un seuil. Modifier quand même les compétences à la main ?",
@@ -381,6 +385,7 @@ export default {
   "alerte.min": "{nom} : il en faut au moins {min}.",
   "alerte.horsListe": "{nom} : {liste} hors de sa liste d'équipement (objet trouvé ou acheté au comptoir ?).",
   "alerte.competences": "{nom} : {liste} hors de ses listes de compétences.",
+  "alerte.competencesDepart": "{nom} : {n} compétence(s) de départ à choisir (recruté avec {xp} xp).",
   "alerte.maximum": "{nom} : {stat} {valeur} dépasse le maximum de sa race ({max}).",
   "alerte.groupe": "{nom} : groupe de {n}, {max} hommes de main au plus.",
 };

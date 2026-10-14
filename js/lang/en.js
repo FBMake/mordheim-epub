@@ -360,6 +360,10 @@ export default {
   "fig.coutUnitaire": "Cost per model (gc)",
   "fig.aucuneRegle": "No special rules.",
   "fig.competencesAide": "A hero learns skills by advancing: the “Advance” button on their card appears when their experience reaches a threshold.",
+  "fig.depart": "Starting skills: {n} to choose ({xp} xp when recruited)",
+  "fig.departAide": "One skill per experience threshold already reached, chosen from this hero's skill lists.",
+  "fig.departChoisir": "Choose a skill…",
+  "fig.departManquantes": "Choose {n} more starting skill(s).",
   "fig.historique": "Advance history",
   "fig.modifierCompetences": "Edit skills by hand",
   "fig.confirmModifCompetences": "Skills are normally learned by advancing, when experience reaches a threshold. Edit the skills by hand anyway?",
@@ -381,6 +385,7 @@ export default {
   "alerte.min": "{nom}: you need at least {min}.",
   "alerte.horsListe": "{nom}: {liste} not in their equipment list (found or bought at the trading post?).",
   "alerte.competences": "{nom}: {liste} not in their skill lists.",
+  "alerte.competencesDepart": "{nom}: {n} starting skill(s) to choose (recruited with {xp} xp).",
   "alerte.maximum": "{nom}: {stat} {valeur} exceeds their race maximum ({max}).",
   "alerte.groupe": "{nom}: group of {n}, {max} henchmen at most.",
 };
