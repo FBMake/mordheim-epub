@@ -1187,7 +1187,9 @@ function statLine(stats, ecarts = {}) {
     const d = ecarts[k] || 0;
     const cls = d > 0 ? " stat-plus" : d < 0 ? " stat-moins" : "";
     const title = d ? ` title="${escapeHtml(t("profil.ecart", { n: `${d > 0 ? "+" : "−"}${Math.abs(d)}` }))}"` : "";
-    return `<span class="stat-cell${cls}"${title}><b>${t(`profil.${k}`)}</b>${escapeHtml(stats[k])}</span>`;
+    // Chevron vers le haut (amélioration) ou vers le bas (blessure) à côté de la valeur.
+    const chevron = d ? `<i class="stat-chevron" aria-hidden="true">${d > 0 ? "▲" : "▼"}</i>` : "";
+    return `<span class="stat-cell${cls}"${title}><b>${t(`profil.${k}`)}</b><span>${escapeHtml(stats[k])}${chevron}</span></span>`;
   }).join("");
 }
 
@@ -1240,14 +1242,28 @@ function unitCard(fig, { lecture = false } = {}) {
   const blessures = partie.figurines[fig.id]?.blessures;
   const stats = appliquerMalus(fig.stats, blessures);
   const ecarts = ecartsProfil(fig, getGuerrier(fig.modele), malusTotal(blessures));
+  // Équipement, compétences et règles rangés en colonnes de pastilles.
+  const bloc = (titre, items) => `
+    <div class="unit-bloc">
+      <p class="unit-bloc-titre">${escapeHtml(titre)}</p>
+      ${
+        items.length
+          ? `<span class="chips">${items.map((x) => `<span class="chip chip-fixe">${escapeHtml(x)}</span>`).join("")}</span>`
+          : `<span class="unit-bloc-vide">—</span>`
+      }
+    </div>`;
+  const blocs = [
+    bloc(t("fig.equipement"), fig.equipement.map(loc)),
+    // Les hommes de main n'apprennent pas de compétences.
+    groupe ? "" : bloc(t("fig.competences"), fig.competences.map(locNomRegle)),
+    bloc(t("fig.regles"), fig.regles.map(locNomRegle)),
+  ].join("");
   const details = [
-    fig.equipement.length ? escapeHtml(t("unite.equipement", { liste: fig.equipement.map(loc).join(", ") })) : "",
-    fig.competences.length ? escapeHtml(t("unite.competences", { liste: fig.competences.map(locNomRegle).join(", ") })) : "",
-    fig.regles.length ? escapeHtml(t("unite.regles", { liste: fig.regles.map(locNomRegle).join(", ") })) : "",
     fig.progressions?.length
       ? escapeHtml(t("unite.progressions", { liste: fig.progressions.map(texteEntreeProgression).join(", ") }))
       : "",
-    getGuerrier(fig.modele)?.competences.length
+    // Accès aux compétences : utile pour faire progresser, pas dans la consultation.
+    !lecture && getGuerrier(fig.modele)?.competences.length
       ? `<span class="muted">${escapeHtml(t("unite.acces", { liste: getGuerrier(fig.modele).competences.map(loc).join(", ") }))}</span>`
       : "",
   ].filter(Boolean);
@@ -1264,6 +1280,7 @@ function unitCard(fig, { lecture = false } = {}) {
         ? pisteBloqueeHtml(xpCourante(fig), fig.categorie, locNomRegle(sansXp))
         : pisteXpHtml(xpCourante(fig), fig.categorie, { titre: t("perso.xpPiste") })
     }
+    <div class="unit-blocs${groupe ? " unit-blocs-hdm" : ""}">${blocs}</div>
     ${details.map((d) => `<p class="unit-detail">${d}</p>`).join("")}
     ${lecture ? "" : `<div class="slot-actions"></div>`}
   `;
