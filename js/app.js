@@ -1566,7 +1566,10 @@ function renderCreation() {
     .map((r) => chipInfoHtml(locNomRegle(r), descriptionRegle(r)))
     .join("")}</span>`;
 
+  // Règles de bande : on choisit dans la liste de la faction ; saisie libre seulement sans liste.
+  const reglesFaction = getBande(c.bandeId)?.regles || [];
   chipEditor(document.getElementById("crea-regles-bande"), c.reglesBande, {
+    saisie: !reglesFaction.length,
     info: descriptionRegle,
     datalist: "rules-list",
     placeholder: t("compo.regleBandePlaceholder"),
@@ -1578,7 +1581,7 @@ function renderCreation() {
     document.getElementById("crea-regles-choix"),
     document.getElementById("crea-regles-liste"),
     c.reglesBande,
-    getBande(c.bandeId)?.regles || [],
+    reglesFaction,
     applyCreationChange
   );
 }
