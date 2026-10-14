@@ -804,7 +804,7 @@ select.perso-nom-input { width: 100%; }
 .btn-slot:disabled { background: #a08e6a; cursor: not-allowed; }
 .muted { color: var(--ink-soft); font-style: italic; }
 .hint-inline { font-size: 0.8rem; font-style: italic; }
-abbr[title] { text-decoration: underline dotted; cursor: help; }
+abbr[title], abbr[data-info] { text-decoration: underline dotted; cursor: help; }
 .arsenal { margin: 0.2rem 0 0.4rem; font-size: 0.9rem; }
 .arsenal summary { cursor: pointer; color: var(--wax); font-size: 0.85rem; }
 .arsenal[open] > summary { margin-bottom: 0.2rem; }
@@ -977,3 +977,23 @@ button.xp-case { cursor: pointer; }
   .menu-ouvert .footer-note { display: block; }
   .app-nav .nav-btn.active { transform: translateX(8px) rotate(0deg); }
 }
+
+/* Bulle d'explication d'une règle ou compétence (survol, focus, toucher). */
+.chip-info { cursor: help; text-decoration: underline dotted rgba(90, 74, 48, 0.55); text-underline-offset: 3px; }
+.chip-info:focus-visible { outline: 2px solid var(--wax); outline-offset: 1px; }
+.bulle-info {
+  position: fixed;
+  z-index: 1000;
+  max-width: min(320px, calc(100vw - 16px));
+  padding: 0.55rem 0.75rem;
+  background: #2b1d12;
+  color: #f4e8cf;
+  border: 1px solid var(--brass);
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  font-family: "EB Garamond", serif;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  pointer-events: none;
+}
+.bulle-info[hidden] { display: none; }

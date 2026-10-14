@@ -34,6 +34,7 @@ import {
   buildRoster,
   creationTotals,
   creationWarnings,
+  descriptionRegle,
   duplicateFigurine,
   coutEntree,
   coutRecrue,
@@ -123,6 +124,101 @@ function escapeHtml(str) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 }
+
+// ---------------------------------------------------------------------
+// Bulle d'explication des règles et compétences : au survol de la souris,
+// au clavier (focus) et au toucher sur mobile (un toucher l'ouvre, un
+// autre ailleurs la ferme). Tout élément portant data-info en profite.
+// ---------------------------------------------------------------------
+function infoAttr(texte) {
+  return texte ? ` data-info="${escapeHtml(texte)}" tabindex="0"` : "";
+}
+/** Pastille fixe, avec bulle d'explication si `info` est donné. */
+function chipInfoHtml(nom, info = "") {
+  return `<span class="chip chip-fixe${info ? " chip-info" : ""}"${infoAttr(info)}>${escapeHtml(nom)}</span>`;
+}
+/** Ajoute la bulle d'explication à un élément créé en JavaScript. */
+function infoBulle(el, texte) {
+  if (!texte) return;
+  el.dataset.info = texte;
+  el.classList.add("chip-info");
+  if (el.tagName !== "BUTTON") el.tabIndex = 0;
+}
+
+const bulle = document.createElement("div");
+bulle.className = "bulle-info";
+bulle.setAttribute("role", "tooltip");
+bulle.hidden = true;
+document.body.appendChild(bulle);
+let bulleCible = null;
+
+function montrerBulle(el) {
+  bulleCible = el;
+  bulle.textContent = el.dataset.info;
+  bulle.hidden = false;
+  // Au-dessus de la pastille, sinon en dessous ; toujours dans l'écran.
+  const r = el.getBoundingClientRect();
+  const b = bulle.getBoundingClientRect();
+  const marge = 8;
+  const left = Math.min(Math.max(marge, r.left + r.width / 2 - b.width / 2), window.innerWidth - b.width - marge);
+  const dessus = r.top - b.height - marge >= 0;
+  bulle.style.left = `${left}px`;
+  bulle.style.top = `${dessus ? r.top - b.height - marge : r.bottom + marge}px`;
+  bulle.classList.toggle("dessous", !dessus);
+}
+function cacherBulle() {
+  bulleCible = null;
+  bulle.hidden = true;
+}
+// Les fenêtres (<dialog>) passent au-dessus de la page : la bulle s'y déplace.
+function placerBulle(el) {
+  const parent = el.closest("dialog[open]") || document.body;
+  if (bulle.parentElement !== parent) parent.appendChild(bulle);
+}
+// Type du dernier appui : un focus donné par un clic ou un toucher n'ouvre pas la bulle
+// (la souris l'a déjà ouverte au survol, le toucher l'ouvre au clic).
+let dernierAppui = { type: "", quand: 0 };
+document.addEventListener("pointerdown", (e) => (dernierAppui = { type: e.pointerType, quand: Date.now() }), true);
+const appuiRecent = () => Date.now() - dernierAppui.quand < 600;
+document.addEventListener("pointerover", (e) => {
+  if (e.pointerType !== "mouse") return;
+  const el = e.target.closest?.("[data-info]");
+  if (!el) return;
+  placerBulle(el);
+  montrerBulle(el);
+});
+document.addEventListener("pointerout", (e) => {
+  if (e.pointerType !== "mouse") return;
+  const el = e.target.closest?.("[data-info]");
+  if (el && !el.contains(e.relatedTarget)) cacherBulle();
+});
+document.addEventListener("focusin", (e) => {
+  if (appuiRecent()) return;
+  const el = e.target.closest?.("[data-info]");
+  if (!el) return;
+  placerBulle(el);
+  montrerBulle(el);
+});
+document.addEventListener("focusout", () => {
+  if (!appuiRecent()) cacherBulle();
+});
+document.addEventListener("click", (e) => {
+  const el = e.target.closest?.("[data-info]");
+  // Toucher une pastille (pas un bouton, ni sa croix de retrait) ouvre ou ferme sa bulle.
+  // À la souris, la bulle suit le survol : un clic sur la pastille ne la ferme pas.
+  if (el && appuiRecent() && dernierAppui.type === "mouse") return;
+  if (el && el.tagName !== "BUTTON" && !e.target.closest(".chip-del")) {
+    if (bulleCible === el && !bulle.hidden) cacherBulle();
+    else {
+      placerBulle(el);
+      montrerBulle(el);
+    }
+    return;
+  }
+  if (!bulle.hidden && !bulle.contains(e.target)) cacherBulle();
+});
+document.addEventListener("scroll", cacherBulle, { capture: true, passive: true });
+window.addEventListener("resize", cacherBulle);
 
 function safeBaseName(name) {
   return (name || "bande")
@@ -1088,7 +1184,7 @@ function applyCreationChange() {
  *  - unique : refuse un mot déjà dans la liste (même règle en français ou en anglais).
  *  - avantModif() : appelé avant chaque ajout ou retrait ; false l'annule.
  */
-function chipEditor(container, list, { datalist, placeholder, onChange, label = (item) => item, unique = false, avantModif }) {
+function chipEditor(container, list, { datalist, placeholder, onChange, label = (item) => item, unique = false, avantModif, info }) {
   const render = () => {
     container.innerHTML = "";
     const chips = document.createElement("div");
@@ -1097,6 +1193,7 @@ function chipEditor(container, list, { datalist, placeholder, onChange, label = 
       const chip = document.createElement("span");
       chip.className = "chip";
       chip.textContent = label(item);
+      infoBulle(chip, info?.(item));
       const del = document.createElement("button");
       del.type = "button";
       del.className = "chip-del";
@@ -1170,7 +1267,7 @@ function renderChoix(container, groupes) {
       b.className = "chip chip-btn";
       b.textContent = it.texte;
       b.disabled = !!it.disabled;
-      if (it.title) b.title = it.title;
+      infoBulle(b, it.title);
       b.addEventListener("click", it.onPick);
       row.appendChild(b);
     }
@@ -1243,20 +1340,23 @@ function unitCard(fig, { lecture = false } = {}) {
   const stats = appliquerMalus(fig.stats, blessures);
   const ecarts = ecartsProfil(fig, getGuerrier(fig.modele), malusTotal(blessures));
   // Équipement, compétences et règles rangés en colonnes de pastilles.
-  const bloc = (titre, items) => `
+  // Compétences et règles : explication au survol (ou au toucher sur mobile).
+  const bloc = (titre, items, avecInfo = false) => `
     <div class="unit-bloc">
       <p class="unit-bloc-titre">${escapeHtml(titre)}</p>
       ${
         items.length
-          ? `<span class="chips">${items.map((x) => `<span class="chip chip-fixe">${escapeHtml(x)}</span>`).join("")}</span>`
+          ? `<span class="chips">${items
+              .map((x) => (avecInfo ? chipInfoHtml(locNomRegle(x), descriptionRegle(x)) : chipInfoHtml(loc(x))))
+              .join("")}</span>`
           : `<span class="unit-bloc-vide">—</span>`
       }
     </div>`;
   const blocs = [
-    bloc(t("fig.equipement"), fig.equipement.map(loc)),
+    bloc(t("fig.equipement"), fig.equipement),
     // Les hommes de main n'apprennent pas de compétences.
-    groupe ? "" : bloc(t("fig.competences"), fig.competences.map(locNomRegle)),
-    bloc(t("fig.regles"), fig.regles.map(locNomRegle)),
+    groupe ? "" : bloc(t("fig.competences"), fig.competences, true),
+    bloc(t("fig.regles"), fig.regles, true),
   ].join("");
   const details = [
     fig.progressions?.length
@@ -1455,9 +1555,12 @@ function renderCreation() {
     figs.forEach((f) => lecture.appendChild(unitCard(f, { lecture: true })));
   }
   document.getElementById("lecture-regles-bloc").hidden = !c.reglesBande.length;
-  document.getElementById("lecture-regles").textContent = c.reglesBande.map(locNomRegle).join(", ");
+  document.getElementById("lecture-regles").innerHTML = `<span class="chips">${c.reglesBande
+    .map((r) => chipInfoHtml(locNomRegle(r), descriptionRegle(r)))
+    .join("")}</span>`;
 
   chipEditor(document.getElementById("crea-regles-bande"), c.reglesBande, {
+    info: descriptionRegle,
     datalist: "rules-list",
     placeholder: t("compo.regleBandePlaceholder"),
     onChange: applyCreationChange,
@@ -1520,7 +1623,7 @@ let recruitCategorie = "heros";
 function reglesText(regles) {
   return regles
     .map(locRegle)
-    .map((r) => `<abbr title="${escapeHtml(r.resume)}">${escapeHtml(r.nom)}</abbr>`)
+    .map((r) => `<abbr${infoAttr(r.resume)}>${escapeHtml(r.nom)}</abbr>`)
     .join(", ");
 }
 
@@ -1659,6 +1762,7 @@ function confirmerModifManuelle() {
 
 function renderFigCompetences() {
   chipEditor(document.getElementById("fig-competences"), figDraft.competences, {
+    info: descriptionRegle,
     datalist: "rules-list",
     placeholder: t("fig.competences.exemple"),
     onChange: () => {
@@ -1852,12 +1956,13 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
     reglesTexte.innerHTML = guerrier.regles.length
       ? `<span class="chips">${guerrier.regles
           .map(locRegle)
-          .map((r) => `<span class="chip chip-fixe" title="${escapeHtml(r.resume)}">${escapeHtml(r.nom)}</span>`)
+          .map((r) => chipInfoHtml(r.nom, r.resume))
           .join("")}</span>`
       : escapeHtml(t("fig.aucuneRegle"));
   } else {
     const renderRegles = () => {
       chipEditor(reglesBox, figDraft.regles, {
+    info: descriptionRegle,
         datalist: "rules-list",
         placeholder: t("fig.regles.exemple"),
         // « Chef » ou « Sorcier » ouvrent certaines compétences ; « Animaux » interdit l'expérience.

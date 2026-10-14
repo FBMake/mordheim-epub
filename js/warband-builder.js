@@ -309,6 +309,21 @@ export function resolveRuleName(saisie) {
   return frToKey.get(name.toLowerCase()) || name;
 }
 
+/**
+ * Explication d'une règle ou compétence (nom français, anglais ou clé du
+ * dictionnaire) dans la langue de l'interface, ou "" si elle est inconnue.
+ */
+export function descriptionRegle(nom) {
+  const n = String(nom || "").trim();
+  if (!n) return "";
+  if (enAnglais()) {
+    const en = regleAnglaise(n) || regleAnglaise(resolveRuleName(n));
+    if (en?.resume) return en.resume;
+  }
+  const key = resolveRuleName(n);
+  return resumes.get(n) || resumes.get(key) || RULE_TRANSLATIONS[key]?.description || "";
+}
+
 /** Clé de comparaison d'une règle ou compétence, quelle que soit la langue de saisie (« Esquive » = « Dodge »). */
 export function cleRegle(nom) {
   return resolveRuleName(nom).toLowerCase();
