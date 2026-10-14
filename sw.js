@@ -10,7 +10,7 @@
    Pensez à incrémenter CACHE_VERSION quand la liste PRECACHE change.
    ------------------------------------------------------------------ */
 
-const CACHE_VERSION = "v24";
+const CACHE_VERSION = "v26";
 const APP_CACHE = `fiches-bande-app-${CACHE_VERSION}`;
 const FONT_CACHE = "fiches-bande-fonts";
 

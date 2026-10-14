@@ -997,3 +997,33 @@ button.xp-case { cursor: pointer; }
   pointer-events: none;
 }
 .bulle-info[hidden] { display: none; }
+
+/* Compétences de départ d'un héros recruté avec de l'expérience */
+.depart-bloc {
+  margin: 0.5rem 0;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid rgba(138, 110, 61, 0.45);
+  border-radius: 8px;
+  background: rgba(255, 250, 238, 0.35);
+}
+.depart-bloc .hint-inline { margin: 0.15rem 0 0.5rem; }
+.depart-slots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.4rem 0.8rem; }
+.depart-slot { display: flex; align-items: center; gap: 0.45rem; min-width: 0; }
+.depart-slot .depart-select { flex: 1; min-width: 0; }
+.depart-num {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  background: var(--wax);
+  color: var(--parchment);
+}
+.depart-slot.vide .depart-num { background: transparent; color: var(--wax); border: 1.5px dashed var(--wax); }
+@media (max-width: 640px) {
+  .depart-slots { grid-template-columns: 1fr; }
+}
