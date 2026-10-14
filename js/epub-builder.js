@@ -101,7 +101,7 @@ h2.card-name {
   border: 2px solid #2b2118;
 }
 .xp-case.cochee {
-  background: #2b2118;
+  background: center / 100% 100% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%237a2e2e' d='M12,12 Q56,38 90,88 Q38,62 12,12 Z M88,10 Q62,58 12,90 Q38,42 88,10 Z'/%3E%3C/svg%3E");
 }
 .xp-plus {
   font-size: 0.7em;

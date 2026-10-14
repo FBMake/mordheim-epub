@@ -15,6 +15,7 @@
 
 import { PDFDocument, rgb, StandardFonts } from "./vendor/pdf-lib.esm.min.js";
 import { LANGUE_DEFAUT, getLang, t } from "./i18n.js";
+import { CROIX_XP_PATH } from "./experience.js";
 
 const FONT_MAP = {
   TimesRoman: { regular: StandardFonts.TimesRoman, bold: StandardFonts.TimesRomanBold },
@@ -111,20 +112,20 @@ function drawField(page, font, text, field) {
   });
 }
 
-/** Coche les cases d'expérience du gabarit (une par point, rangée par rangée). */
+/** Coche les cases d'expérience du gabarit d'une croix à la main (une par point, rangée par rangée). */
 function cocherXp(page, zone, xp) {
   const n = Math.min(Math.max(0, Math.round(Number(xp) || 0)), zone.rangs.length * zone.parRang);
-  const marge = zone.largeur * 0.2;
+  const cote = Math.min(zone.largeur, zone.hauteur);
   for (let i = 0; i < n; i++) {
-    const x = zone.x + (i % zone.parRang) * zone.pas;
-    const yHaut = zone.rangs[Math.floor(i / zone.parRang)];
-    const y = page.getHeight() - yHaut - zone.hauteur;
-    page.drawRectangle({
-      x: x + marge,
-      y: y + marge,
-      width: zone.largeur - 2 * marge,
-      height: zone.hauteur - 2 * marge,
-      color: INK,
+    const x = zone.x + (i % zone.parRang) * zone.pas + (zone.largeur - cote) / 2;
+    const yHaut = zone.rangs[Math.floor(i / zone.parRang)] + (zone.hauteur - cote) / 2;
+    // drawSvgPath place l'origine du tracé (axe y vers le bas) au point donné.
+    page.drawSvgPath(CROIX_XP_PATH, {
+      x,
+      y: page.getHeight() - yHaut,
+      scale: cote / 100,
+      color: WAX,
+      borderWidth: 0,
     });
   }
 }

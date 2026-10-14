@@ -824,7 +824,8 @@ abbr[title] { text-decoration: underline dotted; cursor: help; }
 .xp-case { aspect-ratio: 1; min-width: 0; padding: 0; border: 1px solid #b9ab8f; background: transparent; border-radius: 1px; }
 button.xp-case { cursor: pointer; }
 .xp-case.seuil { border: 2px solid var(--ink); }
-.xp-case.cochee { background: var(--ink); border-color: var(--ink); }
+/* Case cochée : croix à la main (même tracé que CROIX_XP_PATH, js/experience.js), le contour reste visible. */
+.xp-case.cochee { background: center / 100% 100% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%237a2e2e' d='M12,12 Q56,38 90,88 Q38,62 12,12 Z M88,10 Q62,58 12,90 Q38,42 88,10 Z'/%3E%3C/svg%3E"); }
 .xp-plus { grid-column: 1 / -1; font-size: 0.7rem; color: var(--ink-soft); }
 
 /* Petit écran : le menu passe en haut, replié derrière un bouton « Menu ». */
