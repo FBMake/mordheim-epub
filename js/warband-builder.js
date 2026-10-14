@@ -136,6 +136,8 @@ export function newCreation(nom = "", faction = "", bandeId = "") {
     tresorDepart: bande ? bande.tresor : TRESOR_DEPART,
     reglesBande: bande ? bande.regles.map((r) => r.nom) : [],
     figurines: [],
+    // Brouillon : la bande est encore en cours de recrutement (bouton « Créer » pas encore appuyé).
+    brouillon: false,
   };
 }
 
@@ -232,6 +234,7 @@ export function normalizeCreation(c) {
   out.bandeId = getBande(c.bandeId) ? c.bandeId : "";
   out.tresorDepart = c.tresorDepart === undefined ? TRESOR_DEPART : toInt(c.tresorDepart);
   out.reglesBande = cleanList(c.reglesBande);
+  out.brouillon = c.brouillon === true;
   out.figurines = (Array.isArray(c.figurines) ? c.figurines : [])
     .filter((f) => f && f.id)
     .map((f) => {
@@ -304,6 +307,21 @@ export function resolveRuleName(saisie) {
     }
   }
   return frToKey.get(name.toLowerCase()) || name;
+}
+
+/**
+ * Explication d'une règle ou compétence (nom français, anglais ou clé du
+ * dictionnaire) dans la langue de l'interface, ou "" si elle est inconnue.
+ */
+export function descriptionRegle(nom) {
+  const n = String(nom || "").trim();
+  if (!n) return "";
+  if (enAnglais()) {
+    const en = regleAnglaise(n) || regleAnglaise(resolveRuleName(n));
+    if (en?.resume) return en.resume;
+  }
+  const key = resolveRuleName(n);
+  return resumes.get(n) || resumes.get(key) || RULE_TRANSLATIONS[key]?.description || "";
 }
 
 /** Clé de comparaison d'une règle ou compétence, quelle que soit la langue de saisie (« Esquive » = « Dodge »). */

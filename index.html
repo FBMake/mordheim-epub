@@ -51,7 +51,7 @@
 
   <footer class="footer-note">
     <p data-i18n="pied.confidentialite">Tout le traitement se fait dans votre navigateur : vos bandes ne sont jamais envoyées sur un serveur.</p>
-    <p>V0.21</p>
+    <p>V0.25</p>
   </footer>
 </aside>
 
@@ -73,7 +73,7 @@
   <!-- ============ Nouvelle bande ============ -->
   <section id="view-nouvelle" class="view ledger-block" hidden>
     <h2 class="section-title" data-i18n="nouvelle.titre">Nouvelle bande</h2>
-    <p class="hint-text" data-i18n="nouvelle.aide">Donnez un nom et une faction à votre bande, puis recrutez héros et hommes de main depuis le menu de la bande.</p>
+    <p class="hint-text" data-i18n="nouvelle.aide">Donnez un nom et une faction à votre bande, fixez son trésor de départ, puis recrutez ses héros et hommes de main sur la page suivante.</p>
     <form id="new-form" class="form-stack">
       <label class="perso-label">
         <span data-i18n="champ.nomBande">Nom de la bande</span>
@@ -97,7 +97,7 @@
           <select id="new-slot" class="perso-nom-input"></select>
         </label>
       </div>
-      <button type="submit" class="btn-primary" data-i18n="nouvelle.creer">Créer la bande</button>
+      <button type="submit" class="btn-primary" data-i18n="nouvelle.continuer">Recruter les guerriers</button>
       <p id="new-status" class="status-msg" aria-live="polite"></p>
     </form>
   </section>
@@ -135,12 +135,10 @@
       <p class="bande-origine" id="bande-origine"></p>
     </div>
 
-    <nav class="bande-menu" aria-label="Menu de la bande" data-i18n-aria-label="bande.menuAria" role="tablist">
+    <nav class="bande-menu" id="bande-menu" aria-label="Menu de la bande" data-i18n-aria-label="bande.menuAria" role="tablist">
       <button type="button" class="tab-btn" data-tab="composition" role="tab" data-i18n="onglet.composition">Composition</button>
-      <button type="button" class="tab-btn" data-tab="partie" role="tab" data-i18n="onglet.partie">Suivi de partie</button>
-      <button type="button" class="tab-btn" data-tab="combats" role="tab" data-i18n="onglet.combats">Combats</button>
-      <button type="button" class="tab-btn" data-tab="figurines" role="tab" data-i18n="onglet.figurines">Figurines</button>
-      <button type="button" class="tab-btn" data-tab="imprimer" role="tab" data-i18n="onglet.imprimer">Imprimer</button>
+      <button type="button" class="tab-btn" data-tab="suivi" role="tab" data-i18n="onglet.suivi">Suivi de bande</button>
+      <button type="button" class="tab-btn" data-tab="imprimer" role="tab" data-i18n="onglet.imprimer">Impression</button>
     </nav>
 
     <div id="unsaved-box" class="warning-box" hidden>
@@ -148,7 +146,56 @@
       <p><span data-i18n="bande.nonEnregistree.texte">Elle sera perdue en quittant la page.</span> <button type="button" id="unsaved-go" class="btn-slot" data-i18n="bande.choisirEmplacement">Choisir un emplacement</button></p>
     </div>
 
-    <!-- Composition -->
+    <!-- Bande en cours de création (brouillon) : recrutement, sans les autres menus -->
+    <div class="tab-panel" data-panel="brouillon" hidden>
+      <p class="hint-text" data-i18n="brouillon.aide">Recrutez vos héros et vos hommes de main. Le brouillon est sauvegardé au fur et à mesure : vous pouvez le reprendre plus tard depuis « Mes bandes ».</p>
+      <div class="compo-settings">
+        <label class="perso-label">
+          <span data-i18n="champ.nomBande">Nom de la bande</span>
+          <input type="text" id="crea-nom" class="perso-nom-input" maxlength="80" />
+        </label>
+        <label class="perso-label">
+          <span data-i18n="champ.faction">Faction</span>
+          <input type="text" id="crea-faction" class="perso-nom-input" maxlength="80" list="factions-list" />
+        </label>
+        <label class="perso-label">
+          <span data-i18n="champ.tresorDepart">Trésor de départ (co)</span>
+          <input type="number" id="crea-tresor" class="perso-nom-input" inputmode="numeric" min="0" />
+        </label>
+      </div>
+      <p class="hint-text small left" id="crea-budget"></p>
+      <div id="crea-zone-brouillon"></div>
+      <div class="brouillon-fin">
+        <button type="button" id="crea-valider" class="btn-primary" data-i18n="brouillon.creer">Créer la bande</button>
+        <p class="hint-text small" data-i18n="brouillon.creerAide">Une fois la bande créée, sa composition, son suivi et l'impression des fiches apparaissent dans le menu de la bande.</p>
+      </div>
+    </div>
+
+    <!-- Héros, hommes de main et règles d'une bande créée ici : modifiables.
+         Ce bloc est placé dans le brouillon, puis dans « Suivi de bande » une fois la bande créée. -->
+    <div id="crea-edit" hidden>
+      <div id="creation-warnings" class="warning-box" hidden>
+        <strong data-i18n="aVerifier">À vérifier</strong>
+        <ul id="creation-warnings-list"></ul>
+      </div>
+
+      <h3 class="mini-title"><span data-i18n="compo.heros">Héros</span> (<span id="crea-count-heros">0</span>)</h3>
+      <div id="crea-list-heros" class="unit-list"></div>
+      <button type="button" class="btn-secondary add-btn" data-add="heros" data-i18n="compo.recruterHeros">+ Recruter un héros</button>
+
+      <h3 class="mini-title"><span data-i18n="compo.hdm">Hommes de main</span> (<span id="crea-count-hdm">0</span>)</h3>
+      <div id="crea-list-hdm" class="unit-list"></div>
+      <button type="button" class="btn-secondary add-btn" data-add="hdm" data-i18n="compo.recruterHdm">+ Recruter un homme de main</button>
+
+      <h3 class="mini-title" data-i18n="compo.reglesBande">Règles de la bande</h3>
+      <div class="chip-editor" id="crea-regles-bande"></div>
+      <details class="arsenal" id="crea-regles-choix" hidden>
+        <summary data-i18n="fig.reglesConnues">Règles de la bande</summary>
+        <div id="crea-regles-liste"></div>
+      </details>
+    </div>
+
+    <!-- Composition : consultation de la bande, sans modification -->
     <div class="tab-panel" data-panel="composition">
       <div class="preview-grid">
         <div class="stat-card"><span class="stat-label" data-i18n="stat.cout">Coût</span><span class="stat-value" id="preview-gc"></span></div>
@@ -157,12 +204,7 @@
         <div class="stat-card"><span class="stat-label" data-i18n="stat.xp">Expérience totale</span><span class="stat-value" id="preview-xp"></span></div>
       </div>
 
-      <div id="creation-warnings" class="warning-box" hidden>
-        <strong data-i18n="aVerifier">À vérifier</strong>
-        <ul id="creation-warnings-list"></ul>
-      </div>
-
-      <!-- Bande importée : lecture seule -->
+      <!-- Bande importée -->
       <div id="compo-import">
         <p class="hint-text" data-i18n="compo.importee">Bande importée : modifiez sa composition dans New Recruit puis réimportez l'export pour la mettre à jour (noms, photos et suivi de partie sont conservés).</p>
         <div class="preview-columns">
@@ -177,90 +219,81 @@
         </div>
       </div>
 
-      <!-- Bande créée ici : éditable -->
+      <!-- Bande créée ici -->
       <div id="compo-creation" hidden>
-        <div class="compo-settings">
+        <p class="hint-text" data-i18n="compo.lecture">Recrutements, progressions, blessures et combats se notent dans « Suivi de bande ».</p>
+        <h3 class="mini-title"><span data-i18n="compo.heros">Héros</span> (<span id="lecture-count-heros">0</span>)</h3>
+        <div id="lecture-list-heros" class="unit-list"></div>
+        <h3 class="mini-title"><span data-i18n="compo.hdm">Hommes de main</span> (<span id="lecture-count-hdm">0</span>)</h3>
+        <div id="lecture-list-hdm" class="unit-list"></div>
+        <div id="lecture-regles-bloc">
+          <h3 class="mini-title" data-i18n="compo.reglesBande">Règles de la bande</h3>
+          <p class="unit-detail" id="lecture-regles"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Suivi de bande : tout ce qui change après la création -->
+    <div class="tab-panel" data-panel="suivi" hidden>
+      <section class="suivi-section">
+        <h3 class="section-title small" data-i18n="suivi.tresor">Trésor et réserve</h3>
+        <p class="hint-text" data-i18n="partie.aide">Ces valeurs remplacent celles de la liste dans le PDF. Laissez un champ vide pour reprendre la valeur de la liste.</p>
+        <div class="partie-grid">
           <label class="perso-label">
-            <span data-i18n="champ.nomBande">Nom de la bande</span>
-            <input type="text" id="crea-nom" class="perso-nom-input" maxlength="80" />
+            <span data-i18n="champ.magot">Magot (co)</span>
+            <input type="number" id="partie-magot-or" class="perso-nom-input" inputmode="numeric" />
           </label>
           <label class="perso-label">
-            <span data-i18n="champ.faction">Faction</span>
-            <input type="text" id="crea-faction" class="perso-nom-input" maxlength="80" list="factions-list" />
-          </label>
-          <label class="perso-label">
-            <span data-i18n="champ.tresorDepart">Trésor de départ (co)</span>
-            <input type="number" id="crea-tresor" class="perso-nom-input" inputmode="numeric" min="0" />
+            <span data-i18n="champ.pierres">Pierres magiques</span>
+            <input type="number" id="partie-magot-pierres" class="perso-nom-input" inputmode="numeric" />
           </label>
         </div>
-        <p class="hint-text small left" id="crea-budget"></p>
-
-        <h3 class="mini-title"><span data-i18n="compo.heros">Héros</span> (<span id="crea-count-heros">0</span>)</h3>
-        <div id="crea-list-heros" class="unit-list"></div>
-        <button type="button" class="btn-secondary add-btn" data-add="heros" data-i18n="compo.recruterHeros">+ Recruter un héros</button>
-
-        <h3 class="mini-title"><span data-i18n="compo.hdm">Hommes de main</span> (<span id="crea-count-hdm">0</span>)</h3>
-        <div id="crea-list-hdm" class="unit-list"></div>
-        <button type="button" class="btn-secondary add-btn" data-add="hdm" data-i18n="compo.recruterHdm">+ Recruter un homme de main</button>
-
-        <h3 class="mini-title" data-i18n="compo.reglesBande">Règles de la bande</h3>
-        <div class="chip-editor" id="crea-regles-bande"></div>
-        <details class="arsenal" id="crea-regles-choix" hidden>
-          <summary data-i18n="fig.reglesConnues">Règles de la bande</summary>
-          <div id="crea-regles-liste"></div>
-        </details>
-      </div>
-    </div>
-
-    <!-- Suivi de partie -->
-    <div class="tab-panel" data-panel="partie" hidden>
-      <p class="hint-text" data-i18n="partie.aide">Ces valeurs remplacent celles de la liste dans le PDF. Laissez un champ vide pour reprendre la valeur de la liste. XP, état et blessures de chaque figurine se notent dans l'onglet Figurines.</p>
-      <div class="partie-grid">
         <label class="perso-label">
-          <span data-i18n="champ.magot">Magot (co)</span>
-          <input type="number" id="partie-magot-or" class="perso-nom-input" inputmode="numeric" />
+          <span data-i18n="champ.notesBande">Réserve d'équipement / notes de bande</span>
+          <textarea id="partie-notes" class="perso-bio-input" rows="4" placeholder="Objets en réserve, événements de campagne..." data-i18n-placeholder="champ.notesBande.exemple"></textarea>
         </label>
-        <label class="perso-label">
-          <span data-i18n="champ.pierres">Pierres magiques</span>
-          <input type="number" id="partie-magot-pierres" class="perso-nom-input" inputmode="numeric" />
-        </label>
-      </div>
-      <label class="perso-label">
-        <span data-i18n="champ.notesBande">Réserve d'équipement / notes de bande</span>
-        <textarea id="partie-notes" class="perso-bio-input" rows="4" placeholder="Objets en réserve, événements de campagne..." data-i18n-placeholder="champ.notesBande.exemple"></textarea>
-      </label>
-    </div>
-
-    <!-- Historique des combats (voir combats.js) -->
-    <div class="tab-panel" data-panel="combats" hidden>
-      <p class="hint-text" data-i18n="combats.aide">Notez chaque combat de la bande : l'expérience gagnée, les blessures et l'équipement gagné ou perdu sont reportés sur les combattants, les gains sur le magot.</p>
-      <button type="button" id="combat-new" class="btn-secondary combat-new" data-i18n="combats.nouveau">+ Noter un combat</button>
-      <p id="combats-vide" class="hint-text small left" data-i18n="combats.aucun">Aucun combat pour l'instant.</p>
-      <div id="combats-list" class="unit-list"></div>
-    </div>
-
-    <!-- Figurines : personnalisation + suivi par figurine -->
-    <div class="tab-panel" data-panel="figurines" hidden>
-      <p class="hint-text" data-i18n="figurines.aide">Nom, bio et photo sont optionnels. Si la bande est enregistrée dans un emplacement, tout est sauvegardé automatiquement dans ce navigateur.</p>
-      <p id="figurines-empty" class="hint-text" hidden data-i18n="figurines.aucune">Aucune figurine pour l'instant : recrutez-en depuis l'onglet Composition.</p>
-      <div id="perso-cards" class="perso-cards"></div>
-      <section id="cimetiere" class="cimetiere" hidden>
-        <h3 class="mini-title" data-i18n="cimetiere.titre">Cimetière</h3>
-        <p class="hint-text small left" data-i18n="cimetiere.aide">Les figurines mortes n'ont plus de fiche dans le PDF et ne comptent plus dans la valeur de bande. Une erreur ? Ramenez-les parmi les vivants.</p>
-        <ul id="cimetiere-list" class="cimetiere-list"></ul>
       </section>
-      <section id="perso-upload-section">
-        <div id="perso-dropzone" class="dropzone dropzone-secondary" tabindex="0" role="button" aria-label="Déposer ou choisir un fichier de personnalisation" data-i18n-aria-label="persoFichier.zoneAria">
-          <p class="drop-title" data-i18n="persoFichier.titre">Fichier de personnalisation (optionnel)</p>
-          <p class="drop-sub" data-i18n="persoFichier.aide">Déposez ici un fichier « …-personnalisation.json » téléchargé avec un PDF, pour retrouver noms, bios et photos.</p>
-          <input type="file" id="perso-file-input" accept="application/json,.json" hidden />
-        </div>
-        <p id="perso-loaded-msg" class="status-msg" hidden></p>
-        <div id="orphans-box" class="warning-box" hidden>
-          <strong data-i18n="orphelines.titre">Personnalisations orphelines</strong>
-          <p data-i18n="orphelines.texte">Ces personnalisations ne correspondent à aucune figurine de la bande (figurine supprimée depuis ?). Elles sont conservées et seront réincluses dans le prochain fichier de personnalisation téléchargé.</p>
-          <ul id="orphans-list"></ul>
-        </div>
+
+      <!-- Historique des combats (voir combats.js) -->
+      <section class="suivi-section">
+        <h3 class="section-title small" data-i18n="onglet.combats">Combats</h3>
+        <p class="hint-text" data-i18n="combats.aide">Notez chaque combat de la bande : l'expérience gagnée, les blessures et l'équipement gagné ou perdu sont reportés sur les combattants, les gains sur le magot.</p>
+        <button type="button" id="combat-new" class="btn-secondary combat-new" data-i18n="combats.nouveau">+ Noter un combat</button>
+        <p id="combats-vide" class="hint-text small left" data-i18n="combats.aucun">Aucun combat pour l'instant.</p>
+        <div id="combats-list" class="unit-list"></div>
+      </section>
+
+      <!-- Bande créée ici : recrues, progressions, équipement -->
+      <section class="suivi-section" id="suivi-effectif" hidden>
+        <h3 class="section-title small" data-i18n="suivi.effectif">Recrues et progressions</h3>
+        <p class="hint-text" data-i18n="suivi.effectifAide">Recrutez de nouveaux guerriers, faites progresser vos héros et hommes de main, modifiez leur équipement.</p>
+        <div id="crea-zone-suivi"></div>
+      </section>
+
+      <!-- Figurines : personnalisation + suivi par figurine -->
+      <section class="suivi-section">
+        <h3 class="section-title small" data-i18n="onglet.figurines">Figurines</h3>
+        <p class="hint-text" data-i18n="figurines.aide">Nom, bio et photo sont optionnels. Si la bande est enregistrée dans un emplacement, tout est sauvegardé automatiquement dans ce navigateur.</p>
+        <p id="figurines-empty" class="hint-text" hidden data-i18n="figurines.aucune">Aucune figurine pour l'instant : recrutez-en dans « Recrues et progressions ».</p>
+        <div id="perso-cards" class="perso-cards"></div>
+        <section id="cimetiere" class="cimetiere" hidden>
+          <h3 class="mini-title" data-i18n="cimetiere.titre">Cimetière</h3>
+          <p class="hint-text small left" data-i18n="cimetiere.aide">Les figurines mortes n'ont plus de fiche dans le PDF et ne comptent plus dans la valeur de bande. Une erreur ? Ramenez-les parmi les vivants.</p>
+          <ul id="cimetiere-list" class="cimetiere-list"></ul>
+        </section>
+        <section id="perso-upload-section">
+          <div id="perso-dropzone" class="dropzone dropzone-secondary" tabindex="0" role="button" aria-label="Déposer ou choisir un fichier de personnalisation" data-i18n-aria-label="persoFichier.zoneAria">
+            <p class="drop-title" data-i18n="persoFichier.titre">Fichier de personnalisation (optionnel)</p>
+            <p class="drop-sub" data-i18n="persoFichier.aide">Déposez ici un fichier « …-personnalisation.json » téléchargé avec un PDF, pour retrouver noms, bios et photos.</p>
+            <input type="file" id="perso-file-input" accept="application/json,.json" hidden />
+          </div>
+          <p id="perso-loaded-msg" class="status-msg" hidden></p>
+          <div id="orphans-box" class="warning-box" hidden>
+            <strong data-i18n="orphelines.titre">Personnalisations orphelines</strong>
+            <p data-i18n="orphelines.texte">Ces personnalisations ne correspondent à aucune figurine de la bande (figurine supprimée depuis ?). Elles sont conservées et seront réincluses dans le prochain fichier de personnalisation téléchargé.</p>
+            <ul id="orphans-list"></ul>
+          </div>
+        </section>
       </section>
     </div>
 

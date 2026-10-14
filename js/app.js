@@ -34,6 +34,7 @@ import {
   buildRoster,
   creationTotals,
   creationWarnings,
+  descriptionRegle,
   duplicateFigurine,
   coutEntree,
   coutRecrue,
@@ -124,6 +125,101 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;");
 }
 
+// ---------------------------------------------------------------------
+// Bulle d'explication des règles et compétences : au survol de la souris,
+// au clavier (focus) et au toucher sur mobile (un toucher l'ouvre, un
+// autre ailleurs la ferme). Tout élément portant data-info en profite.
+// ---------------------------------------------------------------------
+function infoAttr(texte) {
+  return texte ? ` data-info="${escapeHtml(texte)}" tabindex="0"` : "";
+}
+/** Pastille fixe, avec bulle d'explication si `info` est donné. */
+function chipInfoHtml(nom, info = "") {
+  return `<span class="chip chip-fixe${info ? " chip-info" : ""}"${infoAttr(info)}>${escapeHtml(nom)}</span>`;
+}
+/** Ajoute la bulle d'explication à un élément créé en JavaScript. */
+function infoBulle(el, texte) {
+  if (!texte) return;
+  el.dataset.info = texte;
+  el.classList.add("chip-info");
+  if (el.tagName !== "BUTTON") el.tabIndex = 0;
+}
+
+const bulle = document.createElement("div");
+bulle.className = "bulle-info";
+bulle.setAttribute("role", "tooltip");
+bulle.hidden = true;
+document.body.appendChild(bulle);
+let bulleCible = null;
+
+function montrerBulle(el) {
+  bulleCible = el;
+  bulle.textContent = el.dataset.info;
+  bulle.hidden = false;
+  // Au-dessus de la pastille, sinon en dessous ; toujours dans l'écran.
+  const r = el.getBoundingClientRect();
+  const b = bulle.getBoundingClientRect();
+  const marge = 8;
+  const left = Math.min(Math.max(marge, r.left + r.width / 2 - b.width / 2), window.innerWidth - b.width - marge);
+  const dessus = r.top - b.height - marge >= 0;
+  bulle.style.left = `${left}px`;
+  bulle.style.top = `${dessus ? r.top - b.height - marge : r.bottom + marge}px`;
+  bulle.classList.toggle("dessous", !dessus);
+}
+function cacherBulle() {
+  bulleCible = null;
+  bulle.hidden = true;
+}
+// Les fenêtres (<dialog>) passent au-dessus de la page : la bulle s'y déplace.
+function placerBulle(el) {
+  const parent = el.closest("dialog[open]") || document.body;
+  if (bulle.parentElement !== parent) parent.appendChild(bulle);
+}
+// Type du dernier appui : un focus donné par un clic ou un toucher n'ouvre pas la bulle
+// (la souris l'a déjà ouverte au survol, le toucher l'ouvre au clic).
+let dernierAppui = { type: "", quand: 0 };
+document.addEventListener("pointerdown", (e) => (dernierAppui = { type: e.pointerType, quand: Date.now() }), true);
+const appuiRecent = () => Date.now() - dernierAppui.quand < 600;
+document.addEventListener("pointerover", (e) => {
+  if (e.pointerType !== "mouse") return;
+  const el = e.target.closest?.("[data-info]");
+  if (!el) return;
+  placerBulle(el);
+  montrerBulle(el);
+});
+document.addEventListener("pointerout", (e) => {
+  if (e.pointerType !== "mouse") return;
+  const el = e.target.closest?.("[data-info]");
+  if (el && !el.contains(e.relatedTarget)) cacherBulle();
+});
+document.addEventListener("focusin", (e) => {
+  if (appuiRecent()) return;
+  const el = e.target.closest?.("[data-info]");
+  if (!el) return;
+  placerBulle(el);
+  montrerBulle(el);
+});
+document.addEventListener("focusout", () => {
+  if (!appuiRecent()) cacherBulle();
+});
+document.addEventListener("click", (e) => {
+  const el = e.target.closest?.("[data-info]");
+  // Toucher une pastille (pas un bouton, ni sa croix de retrait) ouvre ou ferme sa bulle.
+  // À la souris, la bulle suit le survol : un clic sur la pastille ne la ferme pas.
+  if (el && appuiRecent() && dernierAppui.type === "mouse") return;
+  if (el && el.tagName !== "BUTTON" && !e.target.closest(".chip-del")) {
+    if (bulleCible === el && !bulle.hidden) cacherBulle();
+    else {
+      placerBulle(el);
+      montrerBulle(el);
+    }
+    return;
+  }
+  if (!bulle.hidden && !bulle.contains(e.target)) cacherBulle();
+});
+document.addEventListener("scroll", cacherBulle, { capture: true, passive: true });
+window.addEventListener("resize", cacherBulle);
+
 function safeBaseName(name) {
   return (name || "bande")
     .normalize("NFD")
@@ -159,14 +255,17 @@ function showView(name) {
 }
 
 function showTab(name) {
+  // Tant que la bande n'est pas créée, seule la page de recrutement s'affiche, sans menu.
+  if (currentCreation?.brouillon) name = "brouillon";
+  else if (name === "brouillon") name = "composition";
   tabButtons.forEach((b) => {
     const on = b.dataset.tab === name;
     b.classList.toggle("active", on);
     b.setAttribute("aria-selected", on ? "true" : "false");
   });
   document.querySelectorAll(".tab-panel").forEach((p) => (p.hidden = p.dataset.panel !== name));
-  // Les noms personnalisés saisis dans « Figurines » apparaissent dans la composition.
-  if (name === "composition" && currentCreation) renderCreation();
+  // Les noms personnalisés saisis dans « Figurines » apparaissent sur les cartes des guerriers.
+  if (currentCreation) renderCreation();
 }
 
 // Petit écran : le menu est replié en haut de la page.
@@ -208,7 +307,7 @@ fillDatalist("equipment-list", EQUIPEMENT_COURANT);
 function renderBandeHead(model) {
   document.getElementById("bande-faction").textContent = model.meta.catalogue || t("bande.factionInconnue");
   document.getElementById("bande-origine").textContent =
-    (currentCreation ? t("bande.creee") : t("bande.importee")) +
+    (currentCreation ? t(currentCreation.brouillon ? "bande.brouillon" : "bande.creee") : t("bande.importee")) +
     (activeSlot ? t("bande.emplacement", { n: activeSlot }) : t("bande.nonEnregistree"));
   document.getElementById("unsaved-box").hidden = Boolean(activeSlot);
   navBande.hidden = false;
@@ -233,8 +332,15 @@ function renderPreview(model) {
     warningBox.hidden = true;
   }
 
+  const brouillon = Boolean(currentCreation?.brouillon);
+  document.getElementById("bande-menu").hidden = brouillon;
   document.getElementById("compo-import").hidden = Boolean(currentCreation);
   document.getElementById("compo-creation").hidden = !currentCreation;
+  document.getElementById("suivi-effectif").hidden = !currentCreation || brouillon;
+  // Héros et hommes de main modifiables : dans le brouillon, puis dans « Suivi de bande ».
+  const creaEdit = document.getElementById("crea-edit");
+  creaEdit.hidden = !currentCreation;
+  document.getElementById(brouillon ? "crea-zone-brouillon" : "crea-zone-suivi").appendChild(creaEdit);
   if (currentCreation) renderCreation();
   document.getElementById("figurines-empty").hidden = model.heros.length + model.hommesDeMain.length > 0;
 }
@@ -410,6 +516,10 @@ function persoCardTemplate(card, categorie) {
     ensureCustomisation(card.id).nom = nomInput.value;
     refreshTotals(currentModel);
     scheduleSave();
+  });
+  // Le nom choisi apparaît aussi sur la carte du guerrier (« Recrues et progressions »).
+  nomInput.addEventListener("change", () => {
+    if (currentCreation) renderCreation();
   });
 
   const bioInput = div.querySelector(".perso-bio-input");
@@ -1034,6 +1144,8 @@ newForm.addEventListener("submit", async (e) => {
     const creation = newCreation(newNom.value, faction, bandeId);
     const tresor = Number(newTresor.value);
     creation.tresorDepart = Number.isFinite(tresor) && newTresor.value !== "" ? Math.max(0, tresor) : TRESOR_DEPART;
+    // Brouillon gardé dans l'emplacement jusqu'au bouton « Créer la bande ».
+    creation.brouillon = true;
     activeSlot = n;
     loadRoster(buildRoster(creation), { creation });
     persoLoadedMsg.hidden = true;
@@ -1072,7 +1184,7 @@ function applyCreationChange() {
  *  - unique : refuse un mot déjà dans la liste (même règle en français ou en anglais).
  *  - avantModif() : appelé avant chaque ajout ou retrait ; false l'annule.
  */
-function chipEditor(container, list, { datalist, placeholder, onChange, label = (item) => item, unique = false, avantModif }) {
+function chipEditor(container, list, { datalist, placeholder, onChange, label = (item) => item, unique = false, avantModif, info }) {
   const render = () => {
     container.innerHTML = "";
     const chips = document.createElement("div");
@@ -1081,6 +1193,7 @@ function chipEditor(container, list, { datalist, placeholder, onChange, label = 
       const chip = document.createElement("span");
       chip.className = "chip";
       chip.textContent = label(item);
+      infoBulle(chip, info?.(item));
       const del = document.createElement("button");
       del.type = "button";
       del.className = "chip-del";
@@ -1154,7 +1267,7 @@ function renderChoix(container, groupes) {
       b.className = "chip chip-btn";
       b.textContent = it.texte;
       b.disabled = !!it.disabled;
-      if (it.title) b.title = it.title;
+      infoBulle(b, it.title);
       b.addEventListener("click", it.onPick);
       row.appendChild(b);
     }
@@ -1171,7 +1284,9 @@ function statLine(stats, ecarts = {}) {
     const d = ecarts[k] || 0;
     const cls = d > 0 ? " stat-plus" : d < 0 ? " stat-moins" : "";
     const title = d ? ` title="${escapeHtml(t("profil.ecart", { n: `${d > 0 ? "+" : "−"}${Math.abs(d)}` }))}"` : "";
-    return `<span class="stat-cell${cls}"${title}><b>${t(`profil.${k}`)}</b>${escapeHtml(stats[k])}</span>`;
+    // Chevron vers le haut (amélioration) ou vers le bas (blessure) à côté de la valeur.
+    const chevron = d ? `<i class="stat-chevron" aria-hidden="true">${d > 0 ? "▲" : "▼"}</i>` : "";
+    return `<span class="stat-cell${cls}"${title}><b>${t(`profil.${k}`)}</b><span>${escapeHtml(stats[k])}${chevron}</span></span>`;
   }).join("");
 }
 
@@ -1207,7 +1322,11 @@ function texteEntreeProgression(p) {
   return `${p.des[0] + p.des[1]} (${res})`;
 }
 
-function unitCard(fig) {
+/**
+ * Carte d'un guerrier de la bande créée. `lecture` : sans boutons (menu Composition).
+ * Dans le brouillon, seuls Modifier, Dupliquer et Retirer sont proposés.
+ */
+function unitCard(fig, { lecture = false } = {}) {
   const div = document.createElement("div");
   div.className = "unit-card";
   const custom = customisations[fig.id]?.nom;
@@ -1220,14 +1339,31 @@ function unitCard(fig) {
   const blessures = partie.figurines[fig.id]?.blessures;
   const stats = appliquerMalus(fig.stats, blessures);
   const ecarts = ecartsProfil(fig, getGuerrier(fig.modele), malusTotal(blessures));
+  // Équipement, compétences et règles rangés en colonnes de pastilles.
+  // Compétences et règles : explication au survol (ou au toucher sur mobile).
+  const bloc = (titre, items, avecInfo = false) => `
+    <div class="unit-bloc">
+      <p class="unit-bloc-titre">${escapeHtml(titre)}</p>
+      ${
+        items.length
+          ? `<span class="chips">${items
+              .map((x) => (avecInfo ? chipInfoHtml(locNomRegle(x), descriptionRegle(x)) : chipInfoHtml(loc(x))))
+              .join("")}</span>`
+          : `<span class="unit-bloc-vide">—</span>`
+      }
+    </div>`;
+  const blocs = [
+    bloc(t("fig.equipement"), fig.equipement),
+    // Les hommes de main n'apprennent pas de compétences.
+    groupe ? "" : bloc(t("fig.competences"), fig.competences, true),
+    bloc(t("fig.regles"), fig.regles, true),
+  ].join("");
   const details = [
-    fig.equipement.length ? escapeHtml(t("unite.equipement", { liste: fig.equipement.map(loc).join(", ") })) : "",
-    fig.competences.length ? escapeHtml(t("unite.competences", { liste: fig.competences.map(locNomRegle).join(", ") })) : "",
-    fig.regles.length ? escapeHtml(t("unite.regles", { liste: fig.regles.map(locNomRegle).join(", ") })) : "",
     fig.progressions?.length
       ? escapeHtml(t("unite.progressions", { liste: fig.progressions.map(texteEntreeProgression).join(", ") }))
       : "",
-    getGuerrier(fig.modele)?.competences.length
+    // Accès aux compétences : utile pour faire progresser, pas dans la consultation.
+    !lecture && getGuerrier(fig.modele)?.competences.length
       ? `<span class="muted">${escapeHtml(t("unite.acces", { liste: getGuerrier(fig.modele).competences.map(loc).join(", ") }))}</span>`
       : "",
   ].filter(Boolean);
@@ -1244,9 +1380,12 @@ function unitCard(fig) {
         ? pisteBloqueeHtml(xpCourante(fig), fig.categorie, locNomRegle(sansXp))
         : pisteXpHtml(xpCourante(fig), fig.categorie, { titre: t("perso.xpPiste") })
     }
+    <div class="unit-blocs${groupe ? " unit-blocs-hdm" : ""}">${blocs}</div>
     ${details.map((d) => `<p class="unit-detail">${d}</p>`).join("")}
-    <div class="slot-actions"></div>
+    ${lecture ? "" : `<div class="slot-actions"></div>`}
   `;
+  if (lecture) return div;
+  const brouillon = currentCreation.brouillon;
   const actions = div.querySelector(".slot-actions");
   const addBtn = (label, onClick) => {
     const b = document.createElement("button");
@@ -1257,9 +1396,9 @@ function unitCard(fig) {
     actions.appendChild(b);
   };
   addBtn(t("unite.modifier"), () => openFigDialog(fig));
-  const dues = sansXp ? 0 : progressionsDues(fig, xpCourante(fig));
+  const dues = sansXp || brouillon ? 0 : progressionsDues(fig, xpCourante(fig));
   if (dues) addBtn(t("unite.progression", { n: dues }), () => openProgDialog(fig));
-  if (groupe && nombre < MAX_GROUPE) {
+  if (groupe && nombre < MAX_GROUPE && !brouillon) {
     // Recrue en cours de campagne : même équipement et même XP que le groupe,
     // payée 2 co de plus par point d'expérience.
     const xp = xpCourante(fig);
@@ -1409,9 +1548,19 @@ function renderCreation() {
     const list = document.getElementById(`crea-list-${cat}`);
     list.innerHTML = figs.length ? "" : `<p class="hint-text small left">${t("compo.personne")}</p>`;
     figs.forEach((f) => list.appendChild(unitCard(f)));
+    // Composition : les mêmes cartes, sans modification possible.
+    document.getElementById(`lecture-count-${cat}`).textContent = figs.length;
+    const lecture = document.getElementById(`lecture-list-${cat}`);
+    lecture.innerHTML = figs.length ? "" : `<p class="hint-text small left">${t("compo.personne")}</p>`;
+    figs.forEach((f) => lecture.appendChild(unitCard(f, { lecture: true })));
   }
+  document.getElementById("lecture-regles-bloc").hidden = !c.reglesBande.length;
+  document.getElementById("lecture-regles").innerHTML = `<span class="chips">${c.reglesBande
+    .map((r) => chipInfoHtml(locNomRegle(r), descriptionRegle(r)))
+    .join("")}</span>`;
 
   chipEditor(document.getElementById("crea-regles-bande"), c.reglesBande, {
+    info: descriptionRegle,
     datalist: "rules-list",
     placeholder: t("compo.regleBandePlaceholder"),
     onChange: applyCreationChange,
@@ -1440,6 +1589,24 @@ creaTresor.addEventListener("change", () => {
   currentCreation.tresorDepart = Number.isFinite(n) && creaTresor.value !== "" ? Math.max(0, n) : TRESOR_DEPART;
   applyCreationChange();
 });
+// Fin du recrutement : la bande est créée et son menu apparaît.
+document.getElementById("crea-valider").addEventListener("click", async () => {
+  if (!currentCreation?.brouillon) return;
+  if (!currentCreation.figurines.length) {
+    alert(t("brouillon.vide"));
+    return;
+  }
+  const warnings = creationWarnings(currentCreation);
+  if (warnings.length && !confirm(t("brouillon.confirmAvertissements", { liste: warnings.map((w) => `• ${w}`).join("\n") }))) {
+    return;
+  }
+  currentCreation.brouillon = false;
+  applyCreationChange();
+  await saveNow();
+  showTab("composition");
+  bandeView.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
 document.querySelectorAll(".add-btn").forEach((b) =>
   b.addEventListener("click", () => {
     if (getBande(currentCreation?.bandeId)) openRecruitDialog(b.dataset.add);
@@ -1456,7 +1623,7 @@ let recruitCategorie = "heros";
 function reglesText(regles) {
   return regles
     .map(locRegle)
-    .map((r) => `<abbr title="${escapeHtml(r.resume)}">${escapeHtml(r.nom)}</abbr>`)
+    .map((r) => `<abbr${infoAttr(r.resume)}>${escapeHtml(r.nom)}</abbr>`)
     .join(", ");
 }
 
@@ -1595,6 +1762,7 @@ function confirmerModifManuelle() {
 
 function renderFigCompetences() {
   chipEditor(document.getElementById("fig-competences"), figDraft.competences, {
+    info: descriptionRegle,
     datalist: "rules-list",
     placeholder: t("fig.competences.exemple"),
     onChange: () => {
@@ -1788,12 +1956,13 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
     reglesTexte.innerHTML = guerrier.regles.length
       ? `<span class="chips">${guerrier.regles
           .map(locRegle)
-          .map((r) => `<span class="chip chip-fixe" title="${escapeHtml(r.resume)}">${escapeHtml(r.nom)}</span>`)
+          .map((r) => chipInfoHtml(r.nom, r.resume))
           .join("")}</span>`
       : escapeHtml(t("fig.aucuneRegle"));
   } else {
     const renderRegles = () => {
       chipEditor(reglesBox, figDraft.regles, {
+    info: descriptionRegle,
         datalist: "rules-list",
         placeholder: t("fig.regles.exemple"),
         // « Chef » ou « Sorcier » ouvrent certaines compétences ; « Animaux » interdit l'expérience.
@@ -1987,7 +2156,11 @@ async function renderSlots() {
     const div = document.createElement("div");
     div.className = `slot-card${rec ? "" : " empty"}${isActive ? " active" : ""}`;
     const catalogue = rec?.roster?.roster?.forces?.[0]?.catalogueName?.trim() || "";
-    const origine = rec ? (rec.creation ? t("slot.creeeIci") : t("slot.importee")) : "";
+    const origine = rec
+      ? rec.creation
+        ? t(rec.creation.brouillon ? "slot.brouillon" : "slot.creeeIci")
+        : t("slot.importee")
+      : "";
     div.innerHTML = `
       <p class="slot-num">${t("slot.num", { n })}${isActive ? t("slot.ouverte") : ""}</p>
       <p class="slot-name">${rec ? escapeHtml(rec.nom) : t("slot.vide")}</p>
@@ -2007,7 +2180,7 @@ async function renderSlots() {
       b.addEventListener("click", onClick);
       actions.appendChild(b);
     };
-    if (rec && !isActive) addBtn(t("slot.ouvrir"), () => openSlot(n));
+    if (rec && !isActive) addBtn(t(rec.creation?.brouillon ? "slot.reprendre" : "slot.ouvrir"), () => openSlot(n));
     if (isActive) addBtn(t("slot.afficher"), () => showView("bande"));
     if (!rec) addBtn(t("slot.nouvelle"), () => {
       showView("nouvelle");

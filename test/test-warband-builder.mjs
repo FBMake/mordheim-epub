@@ -135,3 +135,12 @@ assert.deepEqual(m.nonTraduits, []);
 assert.equal(normalizeCreation(mb).figurines[0].modele, "marienburg/mercenary-captain");
 assert.equal(normalizeCreation({ ...mb, bandeId: "inconnue" }).bandeId, "");
 console.log("Création d'après les données OK");
+
+// Brouillon : gardé dans l'emplacement tant que la bande n'est pas créée.
+assert.equal(newCreation("Brouillon").brouillon, false);
+assert.equal(normalizeCreation({ ...mb, brouillon: true }).brouillon, true);
+assert.equal(normalizeCreation({ ...mb, brouillon: "oui" }).brouillon, false);
+// Bande enregistrée avant le brouillon : considérée comme déjà créée.
+const { brouillon: _b, ...ancienne } = mb;
+assert.equal(normalizeCreation(ancienne).brouillon, false);
+console.log("Brouillon OK");
