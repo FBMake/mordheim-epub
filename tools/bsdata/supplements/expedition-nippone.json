@@ -1,0 +1,1033 @@
+{
+ "id": "expedition-nippone",
+ "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/nipponese-expedition",
+ "nomEn": "Nipponese Expedition",
+ "nom": "Expédition nipponne",
+ "tresor": 500,
+ "effectifMax": 12,
+ "regles": [
+  "Strategic Minded"
+ ],
+ "guerriers": [
+  {
+   "cle": "Hatamoto",
+   "nom": "Hatamoto",
+   "categorie": "heros",
+   "cout": 60,
+   "min": 1,
+   "max": 1,
+   "xp": 20,
+   "profil": {
+    "M": "4",
+    "CC": "4",
+    "CT": "4",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "8"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Leader",
+    "Ride"
+   ],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Érudition",
+    "Force",
+    "Vitesse",
+    "Spéciales (Expédition nipponne)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Tanto (dague)",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Tanto gratuit (dague)",
+       "cout": 0
+      },
+      {
+       "en": "Wakizashi (Sword)",
+       "nom": "Wakizashi (épée)",
+       "cout": 10
+      },
+      {
+       "en": "Yari (Spear)",
+       "nom": "Yari (lance)",
+       "cout": 10
+      },
+      {
+       "en": "Naginata (Halberd)",
+       "nom": "Naginata (hallebarde)",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Kanabo",
+       "nom": "Kanabo",
+       "cout": 15
+      },
+      {
+       "en": "Katana",
+       "nom": "Katana",
+       "cout": 20
+      },
+      {
+       "en": "Nagamaki (Cathayan Longsword)",
+       "nom": "Nagamaki (épée longue de Cathay)",
+       "cout": 75
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Hankyu (Short Bow)",
+       "nom": "Hankyu (arc court)",
+       "cout": 5
+      },
+      {
+       "en": "Yumi (Bow)",
+       "nom": "Yumi (arc)",
+       "cout": 10
+      },
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Teppo (Handgun)",
+       "nom": "Teppo (arquebuse)",
+       "cout": 35
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      },
+      {
+       "en": "Horo",
+       "nom": "Horo",
+       "cout": 10
+      },
+      {
+       "en": "Barding",
+       "nom": "Barde",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Sashimono",
+       "nom": "Sashimono",
+       "cout": 15
+      },
+      {
+       "en": "Horse",
+       "nom": "Cheval",
+       "cout": 40
+      },
+      {
+       "en": "Warhorse",
+       "nom": "Cheval de guerre",
+       "cout": 80
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Vim-To Mage",
+   "nom": "Mage vim-to",
+   "categorie": "heros",
+   "cout": 45,
+   "min": 0,
+   "max": 1,
+   "xp": 8,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "2",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Tenants of the Order",
+    "Wizard (Vim-Toist Magic)"
+   ],
+   "competences": [
+    "Érudition",
+    "Vitesse",
+    "Spéciales (Expédition nipponne)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Tanto (dague)",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Tanto gratuit (dague)",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin (bâton de marche)",
+       "cout": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Shinobi",
+   "nom": "Shinobi",
+   "categorie": "heros",
+   "cout": 70,
+   "min": 0,
+   "max": 1,
+   "xp": 15,
+   "profil": {
+    "M": "4",
+    "CC": "4",
+    "CT": "4",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Infiltration",
+    "Loner"
+   ],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Vitesse",
+    "Spéciales (Expédition nipponne)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Tanto (dague)",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Tanto gratuit (dague)",
+       "cout": 0
+      },
+      {
+       "en": "Wakizashi (Sword)",
+       "nom": "Wakizashi (épée)",
+       "cout": 10
+      },
+      {
+       "en": "Yari (Spear)",
+       "nom": "Yari (lance)",
+       "cout": 10
+      },
+      {
+       "en": "Katana",
+       "nom": "Katana",
+       "cout": 20
+      },
+      {
+       "en": "Kusarigama",
+       "nom": "Kusarigama",
+       "cout": 20
+      },
+      {
+       "en": "Sai (Sword Breaker)",
+       "nom": "Saï (brise-épée)",
+       "cout": 30
+      },
+      {
+       "en": "Fighting Claws",
+       "nom": "Griffes de combat",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Hankyu (Short Bow)",
+       "nom": "Hankyu (arc court)",
+       "cout": 5
+      },
+      {
+       "en": "Yumi (Bow)",
+       "nom": "Yumi (arc)",
+       "cout": 10
+      },
+      {
+       "en": "Shuriken (Throwing Stars)",
+       "nom": "Shuriken (étoiles de lancer)",
+       "cout": 15
+      },
+      {
+       "en": "Blowpipe",
+       "nom": "Sarbacane",
+       "cout": 25
+      },
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Rope & Hook",
+       "nom": "Corde et grappin",
+       "cout": 5
+      },
+      {
+       "en": "Caltrops",
+       "nom": "Chausse-trappes",
+       "cout": 15
+      },
+      {
+       "en": "Lockpicks",
+       "nom": "Crochets de serrurier",
+       "cout": 15
+      },
+      {
+       "en": "Tripwire",
+       "nom": "Fil de déclenchement",
+       "cout": 15
+      },
+      {
+       "en": "Flash Powder",
+       "nom": "Poudre aveuglante",
+       "cout": 25
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Retainer",
+   "nom": "Samouraï vassal",
+   "categorie": "heros",
+   "cout": 40,
+   "min": 0,
+   "max": 2,
+   "xp": 8,
+   "profil": {
+    "M": "4",
+    "CC": "4",
+    "CT": "4",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Ride"
+   ],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Vitesse",
+    "Spéciales (Expédition nipponne)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Tanto (dague)",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Tanto gratuit (dague)",
+       "cout": 0
+      },
+      {
+       "en": "Wakizashi (Sword)",
+       "nom": "Wakizashi (épée)",
+       "cout": 10
+      },
+      {
+       "en": "Yari (Spear)",
+       "nom": "Yari (lance)",
+       "cout": 10
+      },
+      {
+       "en": "Naginata (Halberd)",
+       "nom": "Naginata (hallebarde)",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Kanabo",
+       "nom": "Kanabo",
+       "cout": 15
+      },
+      {
+       "en": "Katana",
+       "nom": "Katana",
+       "cout": 20
+      },
+      {
+       "en": "Nagamaki (Cathayan Longsword)",
+       "nom": "Nagamaki (épée longue de Cathay)",
+       "cout": 75
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Hankyu (Short Bow)",
+       "nom": "Hankyu (arc court)",
+       "cout": 5
+      },
+      {
+       "en": "Yumi (Bow)",
+       "nom": "Yumi (arc)",
+       "cout": 10
+      },
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Teppo (Handgun)",
+       "nom": "Teppo (arquebuse)",
+       "cout": 35
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      },
+      {
+       "en": "Horo",
+       "nom": "Horo",
+       "cout": 10
+      },
+      {
+       "en": "Barding",
+       "nom": "Barde",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Sashimono",
+       "nom": "Sashimono",
+       "cout": 15
+      },
+      {
+       "en": "Horse",
+       "nom": "Cheval",
+       "cout": 40
+      },
+      {
+       "en": "Warhorse",
+       "nom": "Cheval de guerre",
+       "cout": 80
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Ashigaru",
+   "nom": "Ashigaru",
+   "categorie": "hdm",
+   "cout": 20,
+   "min": 0,
+   "max": null,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "2",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "6"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Wall of Steel"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Tanto (dague)",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Tanto gratuit (dague)",
+       "cout": 0
+      },
+      {
+       "en": "Wakizashi (Sword)",
+       "nom": "Wakizashi (épée)",
+       "cout": 10
+      },
+      {
+       "en": "Yari (Spear)",
+       "nom": "Yari (lance)",
+       "cout": 10
+      },
+      {
+       "en": "Naginata (Halberd)",
+       "nom": "Naginata (hallebarde)",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Kanabo",
+       "nom": "Kanabo",
+       "cout": 15
+      },
+      {
+       "en": "Katana",
+       "nom": "Katana",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Hankyu (Short Bow)",
+       "nom": "Hankyu (arc court)",
+       "cout": 5
+      },
+      {
+       "en": "Yumi (Bow)",
+       "nom": "Yumi (arc)",
+       "cout": 10
+      },
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Teppo (Handgun)",
+       "nom": "Teppo (arquebuse)",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Sashimono",
+       "nom": "Sashimono",
+       "cout": 15
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Onnabushi",
+   "nom": "Onnabushi",
+   "categorie": "hdm",
+   "cout": 30,
+   "min": 0,
+   "max": 2,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Wardens of the Castle"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Tanto (dague)",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Tanto gratuit (dague)",
+       "cout": 0
+      },
+      {
+       "en": "Wakizashi (Sword)",
+       "nom": "Wakizashi (épée)",
+       "cout": 10
+      },
+      {
+       "en": "Yari (Spear)",
+       "nom": "Yari (lance)",
+       "cout": 10
+      },
+      {
+       "en": "Naginata (Halberd)",
+       "nom": "Naginata (hallebarde)",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Kanabo",
+       "nom": "Kanabo",
+       "cout": 15
+      },
+      {
+       "en": "Katana",
+       "nom": "Katana",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Hankyu (Short Bow)",
+       "nom": "Hankyu (arc court)",
+       "cout": 5
+      },
+      {
+       "en": "Yumi (Bow)",
+       "nom": "Yumi (arc)",
+       "cout": 10
+      },
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Teppo (Handgun)",
+       "nom": "Teppo (arquebuse)",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Sashimono",
+       "nom": "Sashimono",
+       "cout": 15
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Warrior Monk",
+   "nom": "Moine guerrier",
+   "categorie": "hdm",
+   "cout": 30,
+   "min": 0,
+   "max": 3,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Tanto (dague)",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Tanto gratuit (dague)",
+       "cout": 0
+      },
+      {
+       "en": "Wakizashi (Sword)",
+       "nom": "Wakizashi (épée)",
+       "cout": 10
+      },
+      {
+       "en": "Yari (Spear)",
+       "nom": "Yari (lance)",
+       "cout": 10
+      },
+      {
+       "en": "Naginata (Halberd)",
+       "nom": "Naginata (hallebarde)",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Kanabo",
+       "nom": "Kanabo",
+       "cout": 15
+      },
+      {
+       "en": "Katana",
+       "nom": "Katana",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Yumi (Bow)",
+       "nom": "Yumi (arc)",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Sashimono",
+       "nom": "Sashimono",
+       "cout": 15
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "reglesTexte": {
+  "Strategic Minded": {
+   "fr": {
+    "nom": "Esprit stratège",
+    "resume": "La bande peut choisir de fuir avec une perte de moins que la normale."
+   },
+   "en": {
+    "nom": "Strategic Minded",
+    "resume": "The warband may choose to rout after suffering one fewer casualty than normal."
+   }
+  },
+  "Ride": {
+   "fr": {
+    "nom": "Monte",
+    "resume": "Possède la compétence Monte (règles de cavalerie) et peut monter un cheval ou un cheval de guerre."
+   },
+   "en": {
+    "nom": "Ride",
+    "resume": "Has the Ride skill from the cavalry rules and may ride a horse or warhorse."
+   }
+  },
+  "Tenants of the Order": {
+   "fr": {
+    "nom": "Préceptes de l'ordre",
+    "resume": "Vœu de pauvreté : ne peut porter qu'un bâton de marche (gourdin) et une dague."
+   },
+   "en": {
+    "nom": "Tenants of the Order",
+    "resume": "Vow of poverty: may carry only a walking staff (club) and a dagger."
+   }
+  },
+  "Wizard (Vim-Toist Magic)": {
+   "fr": {
+    "nom": "Sorcier (Magie vim-toïste)",
+    "resume": "Chef spirituel de la bande, il lance la magie vim-toïste (magie élémentaire arabienne) et commence avec un sort."
+   },
+   "en": {
+    "nom": "Wizard (Vim-Toist Magic)",
+    "resume": "Spiritual leader of the warband, casts Vim-Toist (Arabian Elemental) magic and starts with one spell."
+   }
+  },
+  "Infiltration": {
+   "fr": {
+    "nom": "Infiltration",
+    "resume": "Se déploie après l'adversaire, hors de sa vue et à plus de 12 ps de tout ennemi ; si les deux camps infiltrent, le plus faible résultat au D6 se place en premier."
+   },
+   "en": {
+    "nom": "Infiltration",
+    "resume": "Deploys after the enemy, out of sight and more than 12\" from any enemy; if both sides infiltrate, lowest D6 deploys first."
+   }
+  },
+  "Loner": {
+   "fr": {
+    "nom": "Solitaire",
+    "resume": "Ne peut jamais devenir chef de la bande."
+   },
+   "en": {
+    "nom": "Loner",
+    "resume": "Can never become the warband's leader."
+   }
+  },
+  "Wall of Steel": {
+   "fr": {
+    "nom": "Mur d'acier",
+    "resume": "Peut manier une lance à deux mains ; elle gagne alors la règle parade."
+   },
+   "en": {
+    "nom": "Wall of Steel",
+    "resume": "May wield a spear two-handed, giving it the parry rule."
+   }
+  },
+  "Wardens of the Castle": {
+   "fr": {
+    "nom": "Gardiennes du château",
+    "resume": "Cause la peur tant qu'elle se trouve dans un bâtiment ou des ruines (à définir avant la partie)."
+   },
+   "en": {
+    "nom": "Wardens of the Castle",
+    "resume": "Causes fear while inside buildings or ruins (agree which terrain counts before the game)."
+   }
+  }
+ },
+ "competencesSpeciales": {
+  "liste": "Spéciales (Expédition nipponne)",
+  "listeEn": "Nippon Special Skills",
+  "competences": [
+   {
+    "en": "Death before Dishonor",
+    "nom": "Plutôt la mort que le déshonneur",
+    "resume": "Une fois par combat, s'il doit être retiré par une attaque au corps à corps, le héros porte d'abord une attaque.",
+    "resumeEn": "Once per engagement, if about to be removed by a close combat attack, the hero first makes one close combat attack.",
+    "condition": null
+   },
+   {
+    "en": "Night Fighter",
+    "nom": "Combattant de la nuit",
+    "resume": "Le héros peut courir tout en restant caché.",
+    "resumeEn": "The hero may run and remain hidden.",
+    "condition": "expedition-nippone/shinobi"
+   },
+   {
+    "en": "Iaijutsu",
+    "nom": "Iaijutsu",
+    "resume": "Quand il est chargé, gagne +1 Attaque contre le chargeur, qui frappe en premier, à sa Force sans autre modificateur (une seule même s'il est chargé par plusieurs).",
+    "resumeEn": "When charged, gains +1 Attack against the charger that strikes first, at his own Strength without modifiers (only one even if charged by several).",
+    "condition": null
+   },
+   {
+    "en": "Last Stand",
+    "nom": "Dernier carré",
+    "resume": "Peut relancer un test de seul contre tous et, s'il est isolé de ses alliés en début de tour, gagne +1 CC ou +1 CT jusqu'à son tour suivant.",
+    "resumeEn": "May reroll an All Alone test and, if isolated from friends at the start of his turn, gains +1 WS or +1 BS until his next turn.",
+    "condition": null
+   },
+   {
+    "en": "Tea Ceremony",
+    "nom": "Cérémonie du thé",
+    "resume": "S'il n'a pas été mis hors de combat, il peut renoncer à chercher un objet rare et payer 10 co : un autre héros gagne 1 XP sur 3+ au D6.",
+    "resumeEn": "If not taken out of action, he may skip searching for rare items and pay 10 gc: another hero gains 1 XP on a 3+.",
+    "condition": null
+   },
+   {
+    "en": "Blessed by the Kami",
+    "nom": "Béni des kami",
+    "resume": "Peut relancer une fois son jet sur le tableau des blessures graves des héros, en gardant le second résultat.",
+    "resumeEn": "May reroll once on the Heroes' Serious Injury chart, keeping the second result.",
+    "condition": null
+   }
+  ]
+ },
+ "races": {},
+ "notes": "Effectif : 3 à 12. Recrute les francs-tireurs des mercenaires humains (non saisi). Hommes de main par groupes de 1 à 5. Objets réservés aux héros de la liste noble : Nagamaki 75 co, Pistolet 15 / paire 30, Horo 10 (rare 6), Barde 30, Cheval 40, Cheval de guerre 80. Sashimono (15 co) classé en Divers. Kusarigama rare 8. Le Mage vim-to (vœu de pauvreté) ne peut avoir qu'un bâton de marche (gourdin) et une dague : prix du gourdin non donné, saisi 3 co (prix standard). Magie vim-toïste = magie élémentaire arabienne, un sort au départ. Le tableau d'accès aux compétences est intitulé « Halfling skill table » sur la page (erreur de copie) ; les règles de Monte (Ride) renvoient à l'article Blazing Saddles. Le Samouraï vassal est appelé « HA Retainer » dans la page."
+}

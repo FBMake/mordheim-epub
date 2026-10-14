@@ -22,14 +22,29 @@ def charger_supplements(dossier):
     return [json.loads(f.read_text(encoding="utf-8")) for f in sorted(Path(dossier).glob("*.json"))]
 
 
+def charger_francs(dossier):
+    """Francs-tireurs : francs-tireurs.json, plus les fichiers francs-tireurs-*.json éventuels."""
+    out = {"groupes": {}, "francsTireurs": [], "reglesTexte": {}, "competencesSpeciales": []}
+    for f in sorted(Path(dossier).glob("francs-tireurs*.json")):
+        d = json.loads(f.read_text(encoding="utf-8"))
+        for k, v in d.get("groupes", {}).items():
+            out["groupes"].setdefault(k, v)
+        out["francsTireurs"] += d.get("francsTireurs", [])
+        for k, v in d.get("reglesTexte", {}).items():
+            out["reglesTexte"].setdefault(k, v)
+        out["competencesSpeciales"] += d.get("competencesSpeciales", [])
+    return out
+
+
 def slug(nom):
     return re.sub(r"[^a-z0-9]+", "-", nom.lower().replace("’", "").replace("'", "")).strip("-")
 
 
-def build_supplements(supplements, fr, missing):
-    """Bandes des suppléments, listes de compétences spéciales, races."""
+def build_supplements(supplements, fr, missing, francs=None):
+    """Bandes des suppléments, listes de compétences spéciales, races, francs-tireurs."""
+    francs = francs or {}
     textes = {}
-    for s in supplements:
+    for s in [*supplements, francs]:
         for key, val in s.get("reglesTexte", {}).items():
             textes.setdefault(key, val["fr"])
 
@@ -84,7 +99,56 @@ def build_supplements(supplements, fr, missing):
         if cs:
             listes[cs["liste"]] = [[c["en"], c["nom"], c["resume"], c.get("condition")] for c in cs["competences"]]
         races.update(s.get("races", {}))
-    return bandes, listes, races
+    for cs in francs.get("competencesSpeciales", []):
+        listes.setdefault(cs["liste"], [[c["en"], c["nom"], c["resume"], c.get("condition")] for c in cs["competences"]])
+
+    # Francs-tireurs : groupes de bandes résolus en identifiants existants.
+    ids = {b["id"] for b in bandes}
+    groupes = {nom: membres for nom, membres in francs.get("groupes", {}).items()}
+
+    def resoudre(liste):
+        out = []
+        for v in liste:
+            if v.startswith("@"):
+                if v[1:] not in groupes and v != "@humains":
+                    missing.add(f"groupe de bandes inconnu : {v}")
+                out.append(v)  # résolu à l'exécution (les bandes BSData n'ont pas encore d'id ici)
+            else:
+                out.append(v)
+        return out
+
+    tireurs = []
+    for f in francs.get("francsTireurs", []):
+        employeurs = {k: resoudre(v) for k, v in f.get("employeurs", {}).items()}
+        tireurs.append(
+            {
+                "id": f"francs-tireurs/{slug(f['cle'])}",
+                "nom": f["nom"],
+                "categorie": "franc",
+                "cout": f["prime"],
+                "prime": f["prime"],
+                "solde": f["solde"],
+                "valeur": f["valeur"],
+                "min": 0,
+                "max": 1,
+                "xp": 0,
+                "profil": f["profil"],
+                "regles": [regle(r) for r in f.get("regles", [])],
+                "competences": f.get("competences", []),
+                "equipementDepart": f.get("equipementDepart", []),
+                "equipement": [
+                    {"categorie": c["categorie"], "objets": [{"nom": o["nom"], "cout": o["cout"]} for o in c["objets"]]}
+                    for c in f.get("equipement", [])
+                ],
+                "employeurs": employeurs,
+                "soldeSi": f.get("soldeSi", []),
+                "effets": f.get("effets", {}),
+                "race": f.get("race"),
+                "sansProgression": bool(f.get("sansProgression")),
+                "source": f.get("source") or f"mordheimer.net · {f['cle']}",
+            }
+        )
+    return bandes, listes, races, tireurs, groupes
 
 
 def build(raw, fr):
@@ -165,7 +229,9 @@ if __name__ == "__main__":
     raw = json.loads(Path(raw_path).read_text(encoding="utf-8"))
     fr = json.loads(Path(fr_path).read_text(encoding="utf-8"))
     bandes, missing = build(raw, fr)
-    supp, listes, races = build_supplements(charger_supplements(Path(fr_path).parent / "supplements"), fr, missing)
+    dossier = Path(fr_path).parent
+    francs = charger_francs(dossier)
+    supp, listes, races, tireurs, groupes = build_supplements(charger_supplements(dossier / "supplements"), fr, missing, francs)
     bandes += supp
     if missing:
         print("Traductions manquantes :\n  " + "\n  ".join(sorted(missing)))
@@ -180,7 +246,10 @@ if __name__ == "__main__":
         "// Listes de compétences spéciales des suppléments : [anglais, français, résumé, condition].\n"
         f"export const COMPETENCES_SUPPLEMENTS = {json.dumps(listes, ensure_ascii=False, indent=1)};\n"
         "// Maximums de caractéristiques des races des suppléments.\n"
-        f"export const RACES_SUPPLEMENTS = {json.dumps(races, ensure_ascii=False, indent=1)};\n",
+        f"export const RACES_SUPPLEMENTS = {json.dumps(races, ensure_ascii=False, indent=1)};\n"
+        "// Francs-tireurs (tools/bsdata/francs-tireurs*.json) et groupes de bandes de leurs employeurs.\n"
+        f"export const FRANCS_TIREURS = {json.dumps(tireurs, ensure_ascii=False, indent=1)};\n"
+        f"export const GROUPES_BANDES = {json.dumps(groupes, ensure_ascii=False, indent=1)};\n",
         encoding="utf-8",
     )
     print(f"{len(bandes)} bandes, {sum(len(b['guerriers']) for b in bandes)} guerriers → {dest}")

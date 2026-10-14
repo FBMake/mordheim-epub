@@ -1,0 +1,803 @@
+{
+  "id": "maraudeurs-chaos",
+  "url": "https://mordheimer.net/docs/warbands/grade-1c-warbands/marauders-of-chaos",
+  "nomEn": "Marauders of Chaos",
+  "nom": "Maraudeurs du Chaos",
+  "tresor": 500,
+  "effectifMax": 15,
+  "regles": [
+    "Tribes",
+    "Eye of the Gods",
+    "Spawn of Chaos",
+    "Mark of Chaos"
+  ],
+  "guerriers": [
+    {
+      "cle": "Marauder Chieftain",
+      "nom": "Chef maraudeur",
+      "categorie": "heros",
+      "cout": 95,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "5",
+        "CT": "3",
+        "F": "4",
+        "E": "4",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "maraudeurChaos",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Marks of the Dark Gods"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Vitesse",
+        "Spéciales (Maraudeurs du Chaos)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Flail",
+              "nom": "Fléau",
+              "cout": 15
+            },
+            {
+              "en": "Barbed Whip",
+              "nom": "Fouet barbelé",
+              "cout": 15
+            },
+            {
+              "en": "Great Axe",
+              "nom": "Grande hache",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Seer",
+      "nom": "Voyant",
+      "categorie": "heros",
+      "cout": 45,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "maraudeurChaos",
+      "sansProgression": false,
+      "regles": [
+        "Wizard (Marks of Chaos)",
+        "Marks of the Dark Gods"
+      ],
+      "competences": [
+        "Combat",
+        "Érudition",
+        "Spéciales (Maraudeurs du Chaos)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Flail",
+              "nom": "Fléau",
+              "cout": 15
+            },
+            {
+              "en": "Barbed Whip",
+              "nom": "Fouet barbelé",
+              "cout": 15
+            },
+            {
+              "en": "Great Axe",
+              "nom": "Grande hache",
+              "cout": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Champions",
+      "nom": "Champions",
+      "categorie": "heros",
+      "cout": 45,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "maraudeurChaos",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Force",
+        "Spéciales (Maraudeurs du Chaos)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Flail",
+              "nom": "Fléau",
+              "cout": 15
+            },
+            {
+              "en": "Barbed Whip",
+              "nom": "Fouet barbelé",
+              "cout": 15
+            },
+            {
+              "en": "Great Axe",
+              "nom": "Grande hache",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Condemned",
+      "nom": "Condamné",
+      "categorie": "heros",
+      "cout": 55,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "D6",
+        "CT": "3",
+        "F": "D6",
+        "E": "D6",
+        "PV": "1",
+        "I": "4",
+        "A": "D3",
+        "Cd": "7"
+      },
+      "race": "maraudeurChaos",
+      "sansProgression": false,
+      "regles": [
+        "Fear",
+        "Inconsistency",
+        "Condemned Experience",
+        "Fate"
+      ],
+      "competences": [
+        "Force",
+        "Vitesse",
+        "Spéciales (Maraudeurs du Chaos)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Flail",
+              "nom": "Fléau",
+              "cout": 15
+            },
+            {
+              "en": "Barbed Whip",
+              "nom": "Fouet barbelé",
+              "cout": 15
+            },
+            {
+              "en": "Great Axe",
+              "nom": "Grande hache",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Chaos Marauders",
+      "nom": "Maraudeurs du Chaos",
+      "categorie": "hdm",
+      "cout": 35,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "maraudeurChaos",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Flail",
+              "nom": "Fléau",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Axes",
+              "nom": "Haches de lancer",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Warhounds of Chaos",
+      "nom": "Chiens du Chaos",
+      "categorie": "hdm",
+      "cout": 15,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "7",
+        "CC": "4",
+        "CT": "0",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Animals"
+      ],
+      "competences": [],
+      "equipement": []
+    },
+    {
+      "cle": "Spawn of Chaos",
+      "nom": "Rejeton du Chaos",
+      "categorie": "hdm",
+      "cout": 180,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "2D6",
+        "CC": "3",
+        "CT": "0",
+        "F": "4",
+        "E": "5",
+        "PV": "3",
+        "I": "2",
+        "A": "D6+1",
+        "Cd": "10"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Fear",
+        "Spawn Attacks",
+        "Spawn Movement",
+        "Spawn Psychology",
+        "No Brain",
+        "Large Target"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Tribes": {
+      "fr": {
+        "nom": "Tribus",
+        "resume": "À la création, la bande choisit sa tribu : Norses (bonus aux recherches d'objets rares), Kurgans (chiens illimités, arcs en os, malus aux objets rares) ou Hungs (12 guerriers max., chevaux à 40 co et Cavalier pour tous les héros)."
+      },
+      "en": {
+        "nom": "Tribes",
+        "resume": "At creation the warband picks a tribe: Norse (bonus to rare item searches), Kurgan (unlimited hounds, bone bows, rare item penalty) or Hung (max 12 warriors, 40 gc warhorses, all Heroes may ride)."
+      }
+    },
+    "Eye of the Gods": {
+      "fr": {
+        "nom": "Œil des dieux",
+        "resume": "Après chaque bataille où le chef a combattu, lancez 2D6 pour voir s'il gagne une Marque du Chaos ou devient un rejeton ; le test cesse une fois la Marque obtenue."
+      },
+      "en": {
+        "nom": "Eye of the Gods",
+        "resume": "After each battle the leader fought in, roll 2D6 to see whether he earns a Mark of Chaos or becomes a Spawn; the test stops once he has a Mark."
+      }
+    },
+    "Spawn of Chaos": {
+      "fr": {
+        "nom": "Déchéance",
+        "resume": "Après une défaite, +1 au jet par héros mis hors de combat ; sur 12+, le chef devient un rejeton du Chaos et perd tout (ou quitte la bande si un rejeton existe déjà)."
+      },
+      "en": {
+        "nom": "Spawn of Chaos",
+        "resume": "After a defeat, +1 per Hero taken out of action; on 12+ the leader becomes a Chaos Spawn and loses everything (or leaves if a Spawn already exists)."
+      }
+    },
+    "Mark of Chaos": {
+      "fr": {
+        "nom": "Marque du Chaos",
+        "resume": "Après une victoire, +1 au jet par ennemi mis hors de combat par le chef ; sur 12+, il peut choisir une Marque du Chaos."
+      },
+      "en": {
+        "nom": "Mark of Chaos",
+        "resume": "After a victory, +1 per enemy the leader took out of action; on 12+ he may choose a Mark of Chaos."
+      }
+    },
+    "Marks of the Dark Gods": {
+      "fr": {
+        "nom": "Marques des dieux sombres",
+        "resume": "Chaque Marque (Chaos universel, Tchar, Arkhar, Onogal, Shornaal) donne un effet différent au chef et au voyant ; hors Chaos universel, la bande ne peut mêler deux Marques différentes."
+      },
+      "en": {
+        "nom": "Marks of the Dark Gods",
+        "resume": "Each Mark (Undivided, Tchar, Arkhar, Onogal, Shornaal) gives the leader and the Seer a different effect; apart from Undivided, no two different Marks may be mixed."
+      }
+    },
+    "Wizard (Marks of Chaos)": {
+      "fr": {
+        "nom": "Sorcier (Marques du Chaos)",
+        "resume": "Le voyant est un sorcier ; il choisit une Marque au recrutement, qui fixe ses sorts (Rituels du Chaos, de Tchar, d'Onogal, de Shornaal) ou en fait un Père de sang sans sorts (Arkhar)."
+      },
+      "en": {
+        "nom": "Wizard (Marks of Chaos)",
+        "resume": "The Seer is a wizard; he picks a Mark when hired, which sets his spells (Chaos, Tchar, Onogal or Shornaal Rituals) or makes him a spell-less Bloodfather (Arkhar)."
+      }
+    },
+    "Inconsistency": {
+      "fr": {
+        "nom": "Instabilité",
+        "resume": "CC, F, E et A sont relancés à chaque tour."
+      },
+      "en": {
+        "nom": "Inconsistency",
+        "resume": "WS, S, T and A are re-rolled every turn."
+      }
+    },
+    "Condemned Experience": {
+      "fr": {
+        "nom": "Expérience du condamné",
+        "resume": "Au lieu de progresser normalement, il lance des dés pour ses caractéristiques et peut en fixer les résultats."
+      },
+      "en": {
+        "nom": "Condemned Experience",
+        "resume": "Instead of normal advances he rolls dice for his characteristics and may fix the results."
+      }
+    },
+    "Fate": {
+      "fr": {
+        "nom": "Destin",
+        "resume": "À 90 points d'expérience, s'il lui reste des caractéristiques non fixées, il devient un rejeton du Chaos (ou s'en va s'il y en a déjà un)."
+      },
+      "en": {
+        "nom": "Fate",
+        "resume": "At 90 experience with unfixed characteristics he becomes a Chaos Spawn (or wanders off if one exists)."
+      }
+    },
+    "Spawn Attacks": {
+      "fr": {
+        "nom": "Attaques du rejeton",
+        "resume": "Le nombre d'attaques (D6+1) est tiré à chaque phase de corps à corps."
+      },
+      "en": {
+        "nom": "Spawn Attacks",
+        "resume": "Its number of attacks (D6+1) is rolled in each close combat phase."
+      }
+    },
+    "Spawn Movement": {
+      "fr": {
+        "nom": "Mouvement du rejeton",
+        "resume": "Se déplace de 2D6 ps en ligne droite."
+      },
+      "en": {
+        "nom": "Spawn Movement",
+        "resume": "Moves 2D6\" in a straight line."
+      }
+    },
+    "Spawn Psychology": {
+      "fr": {
+        "nom": "Psychologie du rejeton",
+        "resume": "Réussit automatiquement tous ses tests de Commandement."
+      },
+      "en": {
+        "nom": "Spawn Psychology",
+        "resume": "Automatically passes all Leadership tests."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Maraudeurs du Chaos)",
+    "listeEn": "Special Skills (Marauders of Chaos)",
+    "competences": [
+      {
+        "en": "Chosen of Chaos",
+        "nom": "Élu du Chaos",
+        "resume": "Le héros devient un guerrier du Chaos : il utilise les maximums des guerriers du Chaos et la liste d'équipement des héros.",
+        "resumeEn": "The Hero becomes a Chaos Warrior, using the Warriors of Chaos maximums and the Hero equipment list.",
+        "condition": null
+      },
+      {
+        "en": "Tattooed Body",
+        "nom": "Corps tatoué",
+        "resume": "L'Œil des dieux se déclenche sur 10+ au lieu de 12+ (11+ pour un chef norse).",
+        "resumeEn": "Eye of the Gods triggers on 10+ instead of 12+ (11+ for a Norse leader).",
+        "condition": "chef"
+      },
+      {
+        "en": "Sweeping Blow",
+        "nom": "Coup circulaire",
+        "resume": "Avec une arme lourde, après avoir mis un ennemi hors de combat, fait une attaque supplémentaire contre une autre figurine au contact ; nécessite Costaud.",
+        "resumeEn": "With a double-handed weapon, after taking an enemy out of action, makes an extra attack on another model in contact; requires Strongman.",
+        "condition": null
+      },
+      {
+        "en": "Mutant",
+        "nom": "Mutant",
+        "resume": "Achète une mutation (liste des Possédés) ; un héros marqué d'Onogal peut prendre une Bénédiction de Nurgle. Peut être pris plusieurs fois.",
+        "resumeEn": "Buys one mutation (Possessed list); a Hero with the Mark of Onogal may take a Nurgle Blessing instead. May be taken several times.",
+        "condition": null
+      },
+      {
+        "en": "Heart of the Warrior",
+        "nom": "Cœur du guerrier",
+        "resume": "Relance les tests de déroute ratés et est immunisé à la peur et aux tests de combat seul.",
+        "resumeEn": "Re-rolls failed Rout tests and is immune to fear and All Alone tests.",
+        "condition": "chef"
+      }
+    ]
+  },
+  "races": {
+    "maraudeurChaos": {
+      "nom": "Maraudeur du Chaos",
+      "max": {
+        "M": 4,
+        "CC": 7,
+        "CT": 7,
+        "F": 4,
+        "E": 4,
+        "PV": 3,
+        "I": 7,
+        "A": 4,
+        "Cd": 9
+      }
+    }
+  },
+  "notes": "Effectif max 15 (12 pour une tribu hung). Tribus résumées dans la règle Tribes : Norses (Pillards : +1 aux jets de rareté ; Panthéon : Œil des dieux sur 13+), Kurgans (chiens du Chaos illimités au lieu de 0-5 ; arcs en os 10 co pour héros et maraudeurs ; -1 aux objets rares sauf grandes haches et fouets barbelés), Hungs (12 guerriers max. ; chevaux de guerre 40 co ; tous les héros ont Cavalier). Arcs kurgans non saisis dans les listes. Le voyant n'utilise que les armes de la liste des héros. Grande hache : rare 8, réservée aux héros Élus du Chaos (saisie dans la liste des héros). Le condamné : CC, F, E = D6 et A = D3, sans équipement au départ (il peut s'équiper une fois ses caractéristiques fixées) ; liste des héros attribuée. Rejeton : M 2D6, A D6+1 ; un seul par bande. Marque du Chaos universel : le voyant peut recruter 0-3 Gors (comptent dans les 15) : coût non donné, non saisis. Arkhar : voyant = Père de sang, sans sorts, peut prendre Force (non saisi). Maximums « Marauder Of Chaos » de la page Experience (race maraudeurChaos) ; un Élu du Chaos utilise ceux des guerriers du Chaos (M4 CC8 CT8 F5 E5 PV3 I8 A5 Cd9), non saisis comme race. Francs-tireurs limités : combattant de fosse, ogre, chaman norse, assassin impérial, sorcières et sorciers (sauf avec la Marque d'Arkhar). Équipement spécial : armure du Chaos 185 co, armes d'obsidienne, cape de loup (Middenheim) non incluses dans les listes."
+}

@@ -1,0 +1,702 @@
+{
+ "id": "nains-noirs",
+ "url": "https://mordheimer.net/docs/warbands/grade-1c-warbands/black-dwarfs",
+ "nomEn": "Black Dwarfs",
+ "nom": "Nains noirs",
+ "tresor": 500,
+ "effectifMax": 15,
+ "regles": [
+  "Hard to Kill",
+  "Hard Head",
+  "Armour Use"
+ ],
+ "guerriers": [
+  {
+   "cle": "Sorcerer",
+   "nom": "Sorcier",
+   "categorie": "heros",
+   "cout": 85,
+   "min": 1,
+   "max": 1,
+   "xp": 20,
+   "profil": {
+    "M": "3",
+    "CC": "4",
+    "CT": "3",
+    "F": "3",
+    "E": "4",
+    "PV": "1",
+    "I": "2",
+    "A": "1",
+    "Cd": "9"
+   },
+   "race": "nainDuChaos",
+   "sansProgression": false,
+   "regles": [
+    "Leader",
+    "Wizard (Rituals of Hashut)",
+    "Hard to Kill",
+    "Hard Head",
+    "Armour Use"
+   ],
+   "competences": [
+    "Combat",
+    "Érudition",
+    "Force",
+    "Spéciales (Nains noirs)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Blunderbuss",
+       "nom": "Tromblon",
+       "cout": 30
+      },
+      {
+       "en": "Handgun",
+       "nom": "Arquebuse",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Mechanical Suit",
+       "nom": "Armure mécanique",
+       "cout": 175
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Engine of Chaos",
+       "nom": "Machine du Chaos",
+       "cout": 125
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Bull Centaur",
+   "nom": "Centaure-taureau",
+   "categorie": "heros",
+   "cout": 100,
+   "min": 0,
+   "max": 1,
+   "xp": 10,
+   "profil": {
+    "M": "8",
+    "CC": "4",
+    "CT": "3",
+    "F": "4",
+    "E": "4",
+    "PV": "1",
+    "I": "3",
+    "A": "2",
+    "Cd": "9"
+   },
+   "race": "centaureTaureau",
+   "sansProgression": false,
+   "regles": [
+    "Large Target",
+    "Hard to Kill",
+    "Hard Head",
+    "Armour Use"
+   ],
+   "competences": [
+    "Combat",
+    "Force"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Engine of Chaos",
+       "nom": "Machine du Chaos",
+       "cout": 125
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Gaoler",
+   "nom": "Geôlier",
+   "categorie": "heros",
+   "cout": 50,
+   "min": 0,
+   "max": 2,
+   "xp": 8,
+   "profil": {
+    "M": "3",
+    "CC": "4",
+    "CT": "3",
+    "F": "3",
+    "E": "4",
+    "PV": "1",
+    "I": "2",
+    "A": "1",
+    "Cd": "9"
+   },
+   "race": "nainDuChaos",
+   "sansProgression": false,
+   "regles": [
+    "Nasty Reputation",
+    "Hard to Kill",
+    "Hard Head",
+    "Armour Use"
+   ],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Force",
+    "Spéciales (Nains noirs)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Steel Whip",
+       "nom": "Fouet d'acier",
+       "cout": 10
+      },
+      {
+       "en": "Man-catcher",
+       "nom": "Attrape-homme",
+       "cout": 25
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Blunderbuss",
+       "nom": "Tromblon",
+       "cout": 30
+      },
+      {
+       "en": "Handgun",
+       "nom": "Arquebuse",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Engine of Chaos",
+       "nom": "Machine du Chaos",
+       "cout": 125
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Informer",
+   "nom": "Informateur",
+   "categorie": "hdm",
+   "cout": 15,
+   "min": 0,
+   "max": null,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Drudgery"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Sling",
+       "nom": "Fronde",
+       "cout": 2
+      },
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Chaos Dwarf",
+   "nom": "Nain du Chaos",
+   "categorie": "hdm",
+   "cout": 40,
+   "min": 0,
+   "max": 5,
+   "xp": 0,
+   "profil": {
+    "M": "3",
+    "CC": "4",
+    "CT": "3",
+    "F": "3",
+    "E": "4",
+    "PV": "1",
+    "I": "2",
+    "A": "1",
+    "Cd": "9"
+   },
+   "race": "nainDuChaos",
+   "sansProgression": false,
+   "regles": [
+    "Hard to Kill",
+    "Hard Head",
+    "Armour Use"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Blunderbuss",
+       "nom": "Tromblon",
+       "cout": 30
+      },
+      {
+       "en": "Handgun",
+       "nom": "Arquebuse",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "reglesTexte": {
+  "Wizard (Rituals of Hashut)": {
+   "fr": {
+    "nom": "Sorcier (Rituels de Hashut)",
+    "resume": "Le sorcier lance des rituels de Hashut ; il commence avec le Rituel sacrificiel et un rituel de Hashut tiré au hasard."
+   },
+   "en": {
+    "nom": "Wizard (Rituals of Hashut)",
+    "resume": "The Sorcerer casts Rituals of Hashut; he starts with the Sacrificial Ritual and one random Hashut ritual."
+   }
+  },
+  "Nasty Reputation": {
+   "fr": {
+    "nom": "Sinistre réputation",
+    "resume": "Le geôlier provoque la peur chez les humains."
+   },
+   "en": {
+    "nom": "Nasty Reputation",
+    "resume": "The Gaoler causes fear in Humans."
+   }
+  },
+  "Drudgery": {
+   "fr": {
+    "nom": "Corvée",
+    "resume": "L'informateur ne peut jamais devenir un héros : relancez le résultat « Le gars a du talent »."
+   },
+   "en": {
+    "nom": "Drudgery",
+    "resume": "The Informer can never become a Hero; re-roll 'The lad's got talent' results."
+   }
+  }
+ },
+ "competencesSpeciales": {
+  "liste": "Spéciales (Nains noirs)",
+  "listeEn": "Special Skills (Black Dwarfs)",
+  "competences": [
+   {
+    "en": "Extra Tough",
+    "nom": "Coriace",
+    "resume": "Après une partie où il a été mis hors de combat, il peut relancer une fois le dé de blessure grave ; le second résultat s'applique.",
+    "resumeEn": "After a game in which he went out of action, he may re-roll the Serious Injury dice once; the second result stands.",
+    "condition": null
+   },
+   {
+    "en": "Chaos Engineer",
+    "nom": "Ingénieur du Chaos",
+    "resume": "+3 pour rechercher une armure du Chaos (combinaison mécanique comprise) ou une arme d'obsidienne, sans les règles Rareté et Don du Chaos ; il ne peut jamais porter d'armure du Chaos.",
+    "resumeEn": "+3 when searching for Chaos Armour (including Mechanical Suits) or Obsidian Weapons, ignoring the Rarity and Gift of Chaos rules; he can never wear Chaos Armour himself.",
+    "condition": null
+   },
+   {
+    "en": "Thick Skull",
+    "nom": "Crâne épais",
+    "resume": "Sauvegarde de 3+ contre l'étourdissement (2+ avec un casque) : s'il la réussit, il est seulement mis à terre.",
+    "resumeEn": "3+ save against being stunned (2+ with a helmet): if passed he is knocked down instead.",
+    "condition": null
+   },
+   {
+    "en": "Resource Hunter",
+    "nom": "Chercheur de ressources",
+    "resume": "Peut modifier de +1 ou -1 un jet sur le tableau d'exploration.",
+    "resumeEn": "May modify one Exploration chart roll by +1 or -1.",
+    "condition": null
+   },
+   {
+    "en": "Tyrant",
+    "nom": "Tyran",
+    "resume": "La bande relance les tests de déroute ratés tant que le chef n'est ni à terre ni sonné ; si le chef est mis hors de combat, test de déroute immédiat.",
+    "resumeEn": "The warband re-rolls failed Rout tests while the leader is not knocked down or stunned; if the leader goes out of action, an immediate Rout test is taken.",
+    "condition": "chef"
+   },
+   {
+    "en": "True Grit",
+    "nom": "Cran",
+    "resume": "Sur le tableau des blessures : 1-3 à terre, 4-5 sonné, 6 hors de combat.",
+    "resumeEn": "On the Injury table: 1-3 knocked down, 4-5 stunned, 6 out of action.",
+    "condition": null
+   }
+  ]
+ },
+ "races": {
+  "centaureTaureau": {
+   "nom": "Centaure-taureau",
+   "max": {
+    "M": 8,
+    "CC": 7,
+    "CT": 6,
+    "F": 5,
+    "E": 5,
+    "PV": 4,
+    "I": 6,
+    "A": 5,
+    "Cd": 10
+   }
+  }
+ },
+ "notes": "Grade 1c, source Border Town Burning. Les règles de bande (Durs à cuire, Tête dure, Habitués à l'armure) s'appliquent à tous sauf aux informateurs : reportées sur chaque guerrier concerné. Le sorcier n'achète que des armes selon sa fiche ; la combinaison mécanique (réservée au sorcier, 175 co au départ, 225 co ensuite, +3 M) et la machine du Chaos (125 co au départ, 195 co ensuite ; profil de chariot, transporte jusqu'à 6 captifs, sacrifice à Hashut pour de l'XP) lui ont été ajoutées ; la machine est aussi proposée aux héros (achat de bande). Fouet d'acier et attrape-homme : geôliers seulement. Le centaure-taureau n'utilise jamais d'arme de tir. Maximums : nains = nainDuChaos (identiques aux nains de la page expérience), centaure-taureau (Black Dwarfs) M8 CC7 CT6 F5 E5 PV4 I6 A5 Cd10 ; informateurs = humains. Rubrique hommes de main « achetés par groupes de 1 à 5 ». Francs-tireurs autorisés : garde du corps ogre, combattant de fosse, sorcier renégat, assassin impérial, éclaireur hobgobelin, etc. (jamais d'elfes)."
+}

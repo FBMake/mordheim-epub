@@ -9,7 +9,12 @@
  * avec, pour chaque figurine :
  *   { id, categorie: "heros" | "hdm", type, coutGc, xp, xpDepart, stats{M..Cd},
  *     nombre, surcout, progressions[],
- *     equipement[], competences[], regles[] }
+ *     equipement[], competences[], regles[], franc }
+ *
+ * Un franc-tireur (`franc: true`) est une figurine de catégorie « heros »
+ * (compétences, tableau de progression des héros) recrutée contre une prime,
+ * payée ensuite par une solde après chaque partie. Il ne compte ni parmi les
+ * héros ni dans l'effectif maximum de la bande.
  *
  * `buildRoster(creation)` le convertit en un JSON au format d'export
  * BattleScribe. Tout le reste de l'application (parser.js, emplacements,
@@ -24,8 +29,8 @@
  */
 
 import { RULE_TRANSLATIONS } from "./translations.js";
-import { BANDES } from "./data/bandes.js";
-import { competencesHorsListe, depassementsMaximum } from "./data/competences.js";
+import { BANDES, FRANCS_TIREURS, GROUPES_BANDES } from "./data/bandes.js";
+import { competencesHorsListe, depassementsMaximum, raceGuerrier } from "./data/competences.js";
 import { t } from "./i18n.js";
 import { enAnglais, loc, locBande, locGuerrier, nomsReglesAnglais, regleAnglaise } from "./donnees-langue.js";
 
@@ -39,7 +44,7 @@ export const MAX_GROUPE = 5;
 export const SURCOUT_XP_RECRUE = 2;
 export const STAT_KEYS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "Cd"];
 
-export { BANDES };
+export { BANDES, FRANCS_TIREURS };
 
 /**
  * Autres factions proposées à la création, sans données de règles (saisie
@@ -64,13 +69,19 @@ export const EQUIPEMENT_COURANT = [
 // ---------------------------------------------------------------------
 
 const bandesById = new Map(BANDES.map((b) => [b.id, b]));
-const guerriersById = new Map(BANDES.flatMap((b) => b.guerriers.map((g) => [g.id, g])));
+const guerriersById = new Map([
+  ...BANDES.flatMap((b) => b.guerriers.map((g) => [g.id, g])),
+  ...FRANCS_TIREURS.map((g) => [g.id, g]),
+]);
 // Résumés français des règles de bande et de guerrier, par nom français.
 const resumes = new Map();
 for (const b of BANDES) {
   for (const r of [...b.regles, ...b.guerriers.flatMap((g) => g.regles)]) {
     if (r.resume && !resumes.has(r.nom)) resumes.set(r.nom, r.resume);
   }
+}
+for (const r of FRANCS_TIREURS.flatMap((g) => g.regles)) {
+  if (r.resume && !resumes.has(r.nom)) resumes.set(r.nom, r.resume);
 }
 
 export function getBande(id) {
@@ -219,16 +230,19 @@ export function newCreation(nom = "", faction = "", bandeId = "") {
 export function newFigurineFromModele(guerrierId) {
   const g = getGuerrier(guerrierId);
   if (!g) throw new Error(`Guerrier inconnu : ${guerrierId}`);
-  const fig = newFigurine(g.categorie);
+  const franc = g.categorie === "franc";
+  const fig = newFigurine(franc ? "heros" : g.categorie);
   fig.modele = g.id;
   fig.type = g.nom;
-  fig.coutGc = g.cout;
+  fig.coutGc = franc ? g.prime : g.cout;
+  fig.franc = franc;
   fig.xp = g.xp;
   fig.xpDepart = g.xp;
   for (const k of STAT_KEYS) fig.stats[k] = g.profil?.[k] || "-";
   fig.regles = g.regles.map((r) => r.nom);
-  // Chaque guerrier a droit à une dague gratuite quand sa liste la prévoit.
-  if (prixEquipement(g, "Dague gratuite") !== null) fig.equipement.push("Dague gratuite");
+  // Un franc-tireur arrive avec son équipement ; les autres ont une dague gratuite quand leur liste la prévoit.
+  if (franc) fig.equipement = [...(g.equipementDepart || [])];
+  else if (prixEquipement(g, "Dague gratuite") !== null) fig.equipement.push("Dague gratuite");
   return fig;
 }
 
@@ -254,6 +268,7 @@ export function newFigurine(categorie = "heros") {
     // note aussi le seuil d'expérience atteint et la compétence choisie
     // ({ seuil, resultat: "competence", competence }), voir progression.js.
     progressions: [],
+    franc: false,
   };
 }
 
@@ -317,6 +332,7 @@ export function normalizeCreation(c) {
         if (f.stats?.[k] !== undefined && f.stats[k] !== null) stats[k] = String(f.stats[k]).trim() || "-";
       }
       const hdm = f.categorie === "hdm";
+      const franc = !hdm && (f.franc === true || getGuerrier(f.modele)?.categorie === "franc");
       return {
         id: String(f.id),
         modele: getGuerrier(f.modele) ? f.modele : "",
@@ -341,6 +357,7 @@ export function normalizeCreation(c) {
             ...(p.seuil ? { seuil: toInt(p.seuil) } : {}),
             ...(p.competence ? { competence: String(p.competence) } : {}),
           })),
+        franc,
       };
     });
   return out;
@@ -476,11 +493,25 @@ export function coutEntree(f) {
   return toInt(f.coutGc) * tailleGroupe(f) + (f?.categorie === "hdm" ? toInt(f.surcout) : 0);
 }
 
+/**
+ * Valeur d'une entrée dans la valeur de bande : 5 par figurine + 1 par point
+ * d'expérience (chaque membre d'un groupe a l'XP du groupe). Un franc-tireur
+ * compte pour sa valeur propre (livre de règles) + son expérience.
+ */
+export function valeurEntree(f) {
+  const g = f?.franc ? getGuerrier(f.modele) : null;
+  if (f?.franc) return toInt(g?.valeur ?? 5) + toInt(f.xp);
+  return (5 + toInt(f?.xp)) * tailleGroupe(f);
+}
+
 export function creationTotals(creation) {
   const figs = creation?.figurines || [];
+  const membres = figs.filter((f) => !f.franc);
+  const francs = figs.filter((f) => f.franc);
   const cout = figs.reduce((s, f) => s + coutEntree(f), 0);
-  const heros = figs.filter((f) => f.categorie === "heros").length;
-  const effectif = figs.reduce((s, f) => s + tailleGroupe(f), 0);
+  // Les francs-tireurs ne comptent ni parmi les héros ni dans l'effectif maximum.
+  const heros = membres.filter((f) => f.categorie === "heros").length;
+  const effectif = membres.reduce((s, f) => s + tailleGroupe(f), 0);
   const tresor = toInt(creation?.tresorDepart ?? TRESOR_DEPART);
   return {
     cout,
@@ -489,9 +520,79 @@ export function creationTotals(creation) {
     heros,
     hdm: effectif - heros,
     effectif,
-    // Valeur de bande Mordheim : 5 par figurine + 1 par point d'expérience (chaque membre d'un groupe a l'XP du groupe).
-    valeurDeBande: figs.reduce((s, f) => s + (5 + toInt(f.xp)) * tailleGroupe(f), 0),
+    francs: francs.length,
+    // Solde à verser après chaque partie pour garder les francs-tireurs.
+    solde: francs.reduce((s, f) => s + soldeFranc(f, creation), 0),
+    valeurDeBande: figs.reduce((s, f) => s + valeurEntree(f), 0),
   };
+}
+
+// ---------------------------------------------------------------------
+// Francs-tireurs
+// ---------------------------------------------------------------------
+
+/** Clés de race des guerriers d'une création (pour les soldes conditionnelles). */
+function racesDeLaBande(creation) {
+  return new Set(
+    (creation?.figurines || []).filter((f) => !f.franc).map((f) => raceGuerrier(getGuerrier(f.modele))).filter(Boolean),
+  );
+}
+
+/** Une bande est « humaine » quand son chef (ou son premier héros) est humain. */
+function bandeHumaine(bande) {
+  const chef = bande.guerriers.find((g) => g.regles.some((r) => r.nom === "Chef")) || bande.guerriers[0];
+  return raceGuerrier(chef) === "humain";
+}
+
+function correspond(bande, valeurs) {
+  return (valeurs || []).some((v) => {
+    if (v === "@humains") return bandeHumaine(bande);
+    if (v.startsWith("@")) return (GROUPES_BANDES[v.slice(1)] || []).includes(bande.id);
+    return v === bande.id;
+  });
+}
+
+/** Le franc-tireur accepte-t-il de servir cette bande ? (bande inconnue : oui, rien à contrôler). */
+export function employeurAutorise(guerrier, bandeId) {
+  const bande = getBande(bandeId);
+  const e = guerrier?.employeurs || {};
+  if (!bande) return true;
+  if (e.seulement) return correspond(bande, e.seulement);
+  if (e.sauf) return !correspond(bande, e.sauf);
+  return true;
+}
+
+/** Solde d'un franc-tireur après une partie, selon la bande qui l'emploie. */
+export function soldeFranc(fig, creation) {
+  const g = getGuerrier(fig?.modele);
+  if (!fig?.franc || !g) return 0;
+  const races = racesDeLaBande(creation);
+  for (const cas of g.soldeSi || []) {
+    if (cas.siRace && races.has(cas.siRace)) return toInt(cas.solde);
+    if (cas.siBande && cas.siBande.includes(creation?.bandeId)) return toInt(cas.solde);
+  }
+  return toInt(g.solde);
+}
+
+/** Francs-tireurs proposés au recrutement, avec ceux que la bande ne peut pas engager. */
+export function francsDisponibles(creation) {
+  const engages = new Set((creation?.figurines || []).filter((f) => f.franc).map((f) => f.modele));
+  return FRANCS_TIREURS.map((g) => ({
+    guerrier: g,
+    autorise: employeurAutorise(g, creation?.bandeId),
+    engage: engages.has(g.id),
+    solde: soldeFranc({ franc: true, modele: g.id }, creation),
+  }));
+}
+
+/** Taille maximale de la bande, francs-tireurs qui l'augmentent compris (ex. le cuistot halfling). */
+export function effectifMaximum(creation) {
+  const bande = getBande(creation?.bandeId);
+  if (!bande) return null;
+  const bonus = (creation.figurines || [])
+    .filter((f) => f.franc)
+    .reduce((s, f) => s + toInt(getGuerrier(f.modele)?.effets?.effectifMax), 0);
+  return bande.effectifMax + bonus;
 }
 
 export function creationWarnings(creation) {
@@ -503,10 +604,19 @@ export function creationWarnings(creation) {
 
   const bande = getBande(creation?.bandeId);
   if (!bande) return out;
-  if (tot.effectif > bande.effectifMax) {
-    out.push(t("alerte.effectif", { n: tot.effectif, bande: locBande(bande), max: bande.effectifMax }));
+  const max = effectifMaximum(creation);
+  if (tot.effectif > max) {
+    out.push(t("alerte.effectif", { n: tot.effectif, bande: locBande(bande), max }));
   }
   const figs = creation.figurines || [];
+  const vus = new Set();
+  for (const f of figs.filter((x) => x.franc)) {
+    const g = getGuerrier(f.modele);
+    if (!g) continue;
+    if (vus.has(g.id)) out.push(t("alerte.francDouble", { nom: locGuerrier(g) }));
+    vus.add(g.id);
+    if (!employeurAutorise(g, bande.id)) out.push(t("alerte.francEmployeur", { nom: locGuerrier(g), bande: locBande(bande) }));
+  }
   for (const g of bande.guerriers) {
     const n = figs.filter((f) => f.modele === g.id).reduce((s, f) => s + tailleGroupe(f), 0);
     if (g.max !== null && n > g.max) out.push(t("alerte.max", { n, nom: locGuerrier(g), max: g.max }));
@@ -587,10 +697,12 @@ function figurineSelection(fig) {
     name: type,
     number: tailleGroupe(fig),
     type: isHero ? "model" : "unit",
-    categories: [{ id: `${fig.id}-cat`, name: isHero ? "Héros" : "Hommes de main", primary: true }],
+    categories: [
+      { id: `${fig.id}-cat`, name: fig.franc ? "Francs-tireurs" : isHero ? "Héros" : "Hommes de main", primary: true },
+    ],
     costs: [
       cost("points", " gc", coutEntree(fig)),
-      cost("wb-rating", " Warband Rating", (5 + toInt(fig.xp)) * tailleGroupe(fig)),
+      cost("wb-rating", " Warband Rating", valeurEntree(fig)),
     ],
     profiles: [
       {
@@ -626,10 +738,11 @@ export function buildRoster(creation) {
       rules: ruleEntries(c.reglesBande, "bande"),
     });
   }
-  // Héros d'abord, puis hommes de main, dans l'ordre de saisie.
+  // Héros d'abord, puis hommes de main, puis francs-tireurs, dans l'ordre de saisie.
   const ordered = [
-    ...c.figurines.filter((f) => f.categorie === "heros"),
+    ...c.figurines.filter((f) => f.categorie === "heros" && !f.franc),
     ...c.figurines.filter((f) => f.categorie === "hdm"),
+    ...c.figurines.filter((f) => f.franc),
   ];
   for (const fig of ordered) selections.push(figurineSelection(fig));
 

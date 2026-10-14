@@ -1,0 +1,890 @@
+{
+  "id": "morts-sans-repos",
+  "url": "https://mordheimer.net/docs/warbands/grade-1c-warbands/restless-dead",
+  "nomEn": "The Restless Dead",
+  "nom": "Morts sans repos",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [],
+  "guerriers": [
+    {
+      "cle": "Liche",
+      "nom": "Liche",
+      "categorie": "heros",
+      "cout": 125,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "2",
+        "E": "2",
+        "PV": "4",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "liche",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Wizard (Restless Dead Necromancy)",
+        "Fear",
+        "Immune to Psychology",
+        "Immune to Poison",
+        "No Pain",
+        "Eternal",
+        "Feed Upon Magic",
+        "Warrior Wizard",
+        "Liche Advancement",
+        "No Mundane Weapons"
+      ],
+      "competences": [
+        "Érudition",
+        "Spéciales (Morts sans repos)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Necromancer",
+      "nom": "Nécromancien",
+      "categorie": "heros",
+      "cout": 40,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Wizard (Restless Dead Necromancy)",
+        "Apprentices",
+        "Gofer"
+      ],
+      "competences": [
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Morts sans repos)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Grave Guards",
+      "nom": "Gardes des tombes",
+      "categorie": "heros",
+      "cout": 35,
+      "min": 0,
+      "max": 3,
+      "xp": 6,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "gardeDesTombes",
+      "sansProgression": false,
+      "regles": [
+        "Wight Blades",
+        "Fear",
+        "Immune to Psychology",
+        "Immune to Poison",
+        "No Pain",
+        "May not run",
+        "No Deal"
+      ],
+      "competences": [
+        "Combat",
+        "Force"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Zombies",
+      "nom": "Zombies",
+      "categorie": "hdm",
+      "cout": 15,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "0",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "1",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Fear",
+        "Immune to Psychology",
+        "Immune to Poison",
+        "No Pain",
+        "May not run",
+        "No Brain"
+      ],
+      "competences": [],
+      "equipement": []
+    },
+    {
+      "cle": "Skeletons",
+      "nom": "Squelettes",
+      "categorie": "hdm",
+      "cout": 20,
+      "min": 0,
+      "max": 8,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Fear",
+        "Immune to Psychology",
+        "Immune to Poison",
+        "No Pain",
+        "May not run",
+        "No Brain"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Wights",
+      "nom": "Revenants",
+      "categorie": "hdm",
+      "cout": 30,
+      "min": 0,
+      "max": 3,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "gardeDesTombes",
+      "sansProgression": false,
+      "regles": [
+        "Fear",
+        "Immune to Psychology",
+        "Immune to Poison",
+        "No Pain",
+        "May not run",
+        "Wight Promotion"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Scarecrows",
+      "nom": "Épouvantails",
+      "categorie": "hdm",
+      "cout": 65,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "5",
+        "CC": "3",
+        "CT": "0",
+        "F": "3",
+        "E": "3(6)",
+        "PV": "1",
+        "I": "3",
+        "A": "2",
+        "Cd": "10"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Fear",
+        "Immune to Psychology",
+        "Immune to Poison",
+        "No Pain",
+        "No Brain",
+        "No Substance",
+        "Highly Flammable",
+        "Construct",
+        "Animated Construct"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Wizard (Restless Dead Necromancy)": {
+      "fr": {
+        "nom": "Sorcier (Nécromancie des Morts sans repos)",
+        "resume": "Lance des sorts de la liste de nécromancie propre aux Morts sans repos (différente de celle du livre de règles) ; la liche en connaît deux tirés au hasard."
+      },
+      "en": {
+        "nom": "Wizard (Restless Dead Necromancy)",
+        "resume": "Casts spells from the Restless Dead necromancy list (different from the core rules one); the Liche starts with two random spells."
+      }
+    },
+    "Eternal": {
+      "fr": {
+        "nom": "Éternel",
+        "resume": "Peut ignorer une blessure grave (sauf Mort) en perdant définitivement 1 PV ; un résultat Mort coûte D3 PV et la liche meurt si ses PV tombent à 0."
+      },
+      "en": {
+        "nom": "Eternal",
+        "resume": "May ignore a serious injury (except Dead) by permanently losing 1 Wound; a Dead result costs D3 Wounds and the Liche dies if it drops to 0."
+      }
+    },
+    "Feed Upon Magic": {
+      "fr": {
+        "nom": "Se nourrir de magie",
+        "resume": "Entre deux batailles, en consommant D3 trésors, la liche gagne définitivement +1 PV (pas si elle a cherché des objets rares ou a été mise hors de combat)."
+      },
+      "en": {
+        "nom": "Feed Upon Magic",
+        "resume": "Between battles, by consuming D3 treasures, the Liche permanently gains +1 Wound (not if it searched for rare items or was taken out of action)."
+      }
+    },
+    "Warrior Wizard": {
+      "fr": {
+        "nom": "Sorcier guerrier",
+        "resume": "Peut porter une armure et lancer des sorts."
+      },
+      "en": {
+        "nom": "Warrior Wizard",
+        "resume": "May wear armour and cast spells."
+      }
+    },
+    "Liche Advancement": {
+      "fr": {
+        "nom": "Progression de la liche",
+        "resume": "Une progression +1 PV peut être remplacée par une nouvelle compétence."
+      },
+      "en": {
+        "nom": "Liche Advancement",
+        "resume": "A +1 Wound advance may be exchanged for a new skill."
+      }
+    },
+    "No Mundane Weapons": {
+      "fr": {
+        "nom": "Aucune arme ordinaire",
+        "resume": "Ne peut porter aucune arme non magique, sans pénalité ; peut porter les armures de la liste."
+      },
+      "en": {
+        "nom": "No Mundane Weapons",
+        "resume": "May not carry non-magical weapons, without penalty; may wear armour from the list."
+      }
+    },
+    "Apprentices": {
+      "fr": {
+        "nom": "Apprenti",
+        "resume": "Commence avec l'un des sorts de la liche et ne peut connaître que des sorts qu'elle connaît, tant qu'elle vit."
+      },
+      "en": {
+        "nom": "Apprentices",
+        "resume": "Starts with one of the Liche's spells and may only know spells the Liche knows while it lives."
+      }
+    },
+    "Gofer": {
+      "fr": {
+        "nom": "Homme à tout faire",
+        "resume": "Pour chercher des objets rares, lance 3D6 et garde les deux meilleurs."
+      },
+      "en": {
+        "nom": "Gofer",
+        "resume": "When searching for rare items, rolls 3D6 and keeps the best two."
+      }
+    },
+    "Wight Blades": {
+      "fr": {
+        "nom": "Lames des revenants",
+        "resume": "Au corps à corps, un 6 pour toucher blesse automatiquement ; on jette quand même pour blesser afin de déterminer un critique."
+      },
+      "en": {
+        "nom": "Wight Blades",
+        "resume": "In close combat a to-hit roll of 6 wounds automatically; still roll to wound to check for a critical."
+      }
+    },
+    "No Deal": {
+      "fr": {
+        "nom": "Pas d'affaires",
+        "resume": "Ne peut pas chercher d'objets rares."
+      },
+      "en": {
+        "nom": "No Deal",
+        "resume": "May not search for rare items."
+      }
+    },
+    "Wight Promotion": {
+      "fr": {
+        "nom": "Promotion du revenant",
+        "resume": "Promu héros, il ne peut pas chercher d'objets rares, doit choisir Combat et Force et gagne Lames des revenants."
+      },
+      "en": {
+        "nom": "Wight Promotion",
+        "resume": "If promoted to Hero, it may not search for rare items, must choose Combat and Strength and gains Wight Blades."
+      }
+    },
+    "No Substance": {
+      "fr": {
+        "nom": "Sans substance",
+        "resume": "Compte comme E6 contre les tirs et projectiles magiques et ignore les critiques de tir."
+      },
+      "en": {
+        "nom": "No Substance",
+        "resume": "Counts as T6 against shooting and magic missiles and ignores shooting critical hits."
+      }
+    },
+    "Highly Flammable": {
+      "fr": {
+        "nom": "Très inflammable",
+        "resume": "Prend feu sur 3+ au lieu de 4+ et subit le double de dégâts des attaques enflammées."
+      },
+      "en": {
+        "nom": "Highly Flammable",
+        "resume": "Catches fire on 3+ instead of 4+ and takes double damage from fire attacks."
+      }
+    },
+    "Construct": {
+      "fr": {
+        "nom": "Construction",
+        "resume": "Peut relancer ses jets sur le tableau des blessures, sauf contre les blessures dues au feu."
+      },
+      "en": {
+        "nom": "Construct",
+        "resume": "May re-roll Injury table results, except for wounds caused by fire."
+      }
+    },
+    "Animated Construct": {
+      "fr": {
+        "nom": "Construction animée",
+        "resume": "Contrôlé par la liche ou le nécromancien (un chacun) ; absent si son maître l'est, et mis hors de combat si ce maître perd un PV et rate un test de Commandement."
+      },
+      "en": {
+        "nom": "Animated Construct",
+        "resume": "Controlled by the Liche or the Necromancer (one each); absent if its master is, and taken out of action if the master loses a Wound and fails a Leadership test."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Morts sans repos)",
+    "listeEn": "Special Skills (The Restless Dead)",
+    "competences": [
+      {
+        "en": "Corpse Bomb",
+        "nom": "Bombe de cadavre",
+        "resume": "Désigne en secret un zombie qui explose quand il charge ou est chargé : D3 touches de F4 sur toutes les figurines à D6 ps ; une seule bombe à la fois.",
+        "resumeEn": "Secretly picks a Zombie that explodes when it charges or is charged: D3 S4 hits on all models within D6\"; only one bomb at a time.",
+        "condition": null
+      },
+      {
+        "en": "Deathspeaker",
+        "nom": "Parole de mort",
+        "resume": "Déploie D3 zombies gratuits pour la bataille, hors limite d'effectif.",
+        "resumeEn": "Deploys D3 free Zombies for the battle, outside the warband size limit.",
+        "condition": null
+      },
+      {
+        "en": "Wraith Touch",
+        "nom": "Toucher spectral",
+        "resume": "Remplace ses attaques par une attaque à mains nues qui blesse automatiquement ; la liche récupère alors 1 PV perdu. Sans effet sur possédés et morts-vivants.",
+        "resumeEn": "Replaces its attacks with one unarmed attack that auto-wounds; the Liche then regains a lost Wound. No effect on Possessed or Undead.",
+        "condition": null
+      },
+      {
+        "en": "Forbidden Rite",
+        "nom": "Rite interdit",
+        "resume": "S'il n'a pas cherché d'objets rares, commence la bataille avec D3+1 bonus de +1 à ses jets de lancement de sorts.",
+        "resumeEn": "If it did not search for rare items, starts the battle with D3+1 bonuses of +1 to casting rolls.",
+        "condition": null
+      },
+      {
+        "en": "Summoner",
+        "nom": "Invocateur",
+        "resume": "Augmente de 1 l'effectif maximum de la bande.",
+        "resumeEn": "Increases the maximum warband size by 1.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {
+    "liche": {
+      "nom": "Liche",
+      "max": {
+        "M": 5,
+        "CC": 4,
+        "CT": 4,
+        "F": 4,
+        "E": 4,
+        "PV": 8,
+        "I": 6,
+        "A": 3,
+        "Cd": 10
+      }
+    },
+    "gardeDesTombes": {
+      "nom": "Garde des tombes",
+      "max": {
+        "M": 5,
+        "CC": 5,
+        "CT": 5,
+        "F": 4,
+        "E": 4,
+        "PV": 4,
+        "I": 5,
+        "A": 4,
+        "Cd": 10
+      }
+    }
+  },
+  "notes": "La liche est obligatoire (1) et considérée comme le chef (la page ne cite pas la règle Leader : choix fait). Elle ne peut porter que les armures de la liste (pas d'arme non magique, donc pas de dague). Sa liste de nécromancie diffère de celle du livre (https://mordheimer.net/docs/magic/necromancy-restless-dead), d'où une clé distincte. Maximums (page Experience) : Liche et Grave Guard ; les revenants utilisent ceux des gardes, le nécromancien ceux des humains. Zombies : ni arme ni armure. Épouvantails : E 3(6) (E6 contre les tirs), 0-2, chacun contrôlé par la liche ou le nécromancien (2 épouvantails exigent les deux). Squelettes et zombies : Sans cervelle (pas d'expérience) ; les revenants gagnent de l'expérience. Hommes de main par groupes de 1 à 5. Compétence Invocateur : effectif max +1. Les zombies de Parole de mort sont gratuits et temporaires (non saisis comme guerriers). Franc-tireur unique : Bone Goliath (page séparée, non saisi)."
+}

@@ -9,6 +9,7 @@
     "test:perso": "node test/test-personalization.mjs",
     "test:bandes": "node test/test-warband-store.mjs",
     "test:creation": "node test/test-warband-builder.mjs",
+    "test:francs": "node test/test-francs-tireurs.mjs",
     "test:combats": "node test/test-combats.mjs",
     "test:competences": "node test/test-competences.mjs",
     "test:groupes": "node test/test-groupes.mjs",

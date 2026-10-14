@@ -1,0 +1,591 @@
+{
+  "id": "chasseurs-vampires",
+  "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/vampire-hunters-of-sylvania",
+  "nomEn": "Vampire Hunters of Sylvania",
+  "nom": "Chasseurs de vampires de Sylvanie",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [],
+  "guerriers": [
+    {
+      "cle": "Vampire Hunter",
+      "nom": "Chasseur de vampires",
+      "categorie": "heros",
+      "cout": 60,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Stake the Vampire!"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Force",
+        "Vitesse",
+        "Spéciales (Chasseurs de vampires de Sylvanie)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Scythe",
+              "nom": "Faux",
+              "cout": 10
+            },
+            {
+              "en": "Silver-tip Stake",
+              "nom": "Pieu à pointe d'argent",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Blessed Water",
+              "nom": "Eau bénite",
+              "cout": 10
+            },
+            {
+              "en": "Blessed Bolts",
+              "nom": "Carreaux bénis",
+              "cout": 25
+            },
+            {
+              "en": "Holy Relic",
+              "nom": "Relique sacrée",
+              "cout": 15
+            },
+            {
+              "en": "Throat Guard",
+              "nom": "Gorgerin",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Priest of Morr",
+      "nom": "Prêtre de Morr",
+      "categorie": "heros",
+      "cout": 35,
+      "min": 0,
+      "max": 1,
+      "xp": 12,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Loner",
+        "Prayers of Morr"
+      ],
+      "competences": [
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Chasseurs de vampires de Sylvanie)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Scythe",
+              "nom": "Faux",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Slayers",
+      "nom": "Tueurs",
+      "categorie": "heros",
+      "cout": 25,
+      "min": 0,
+      "max": 3,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Stake the Vampire!"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force",
+        "Vitesse",
+        "Spéciales (Chasseurs de vampires de Sylvanie)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Scythe",
+              "nom": "Faux",
+              "cout": 10
+            },
+            {
+              "en": "Silver-tip Stake",
+              "nom": "Pieu à pointe d'argent",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Blessed Water",
+              "nom": "Eau bénite",
+              "cout": 10
+            },
+            {
+              "en": "Blessed Bolts",
+              "nom": "Carreaux bénis",
+              "cout": 25
+            },
+            {
+              "en": "Holy Relic",
+              "nom": "Relique sacrée",
+              "cout": 15
+            },
+            {
+              "en": "Throat Guard",
+              "nom": "Gorgerin",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Villagers",
+      "nom": "Villageois",
+      "categorie": "hdm",
+      "cout": 20,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear (Pitch Fork)",
+              "nom": "Lance (fourche)",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Pilgrims",
+      "nom": "Pèlerins",
+      "categorie": "hdm",
+      "cout": 40,
+      "min": 0,
+      "max": 4,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "4",
+        "E": "4",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "10"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Fanatical",
+        "Blunt"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Silver-tip Stake",
+              "nom": "Pieu à pointe d'argent",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Wolfhounds",
+      "nom": "Chiens-loups",
+      "categorie": "hdm",
+      "cout": 15,
+      "min": 0,
+      "max": 4,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "4",
+        "CT": "0",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Animals"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Stake the Vampire!": {
+      "fr": {
+        "nom": "Pieu dans le cœur !",
+        "resume": "Le guerrier hait les vampires. Il doit se déplacer vers tout vampire visible, sauf s'il peut lui tirer dessus, auquel cas le joueur choisit."
+      },
+      "en": {
+        "nom": "Stake the Vampire!",
+        "resume": "Hates Vampires. Must move towards a visible Vampire unless he can shoot at it, in which case the player chooses."
+      }
+    },
+    "Loner": {
+      "fr": {
+        "nom": "Solitaire",
+        "resume": "Le prêtre ignore les règles de combat seul contre plusieurs (« Seul au monde »)."
+      },
+      "en": {
+        "nom": "Loner",
+        "resume": "The priest ignores the All Alone rules."
+      }
+    },
+    "Prayers of Morr": {
+      "fr": {
+        "nom": "Prières de Morr (rites funéraires)",
+        "resume": "Le prêtre connaît un rite funéraire de Morr tiré au hasard ; il l'accomplit comme un sort, dans la phase de magie."
+      },
+      "en": {
+        "nom": "Prayers of Morr (Funerary Rites)",
+        "resume": "The priest knows one random Funerary Rite of Morr, used like a spell in the magic phase."
+      }
+    },
+    "Fanatical": {
+      "fr": {
+        "nom": "Fanatiques",
+        "resume": "Les pèlerins réussissent automatiquement tous les tests basés sur le Commandement mais ne peuvent jamais devenir chef de la bande."
+      },
+      "en": {
+        "nom": "Fanatical",
+        "resume": "Automatically pass all Leadership-based tests but may never become the warband leader."
+      }
+    },
+    "Blunt": {
+      "fr": {
+        "nom": "Armes contondantes",
+        "resume": "Les pèlerins n'utilisent ni armes tranchantes ni armes de tir, seulement masses, marteaux et bâtons, à l'exception du pieu à pointe d'argent."
+      },
+      "en": {
+        "nom": "Blunt",
+        "resume": "Pilgrims shun bladed and missile weapons, using only maces, hammers and staffs, except the Silver-tip Stake."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Chasseurs de vampires de Sylvanie)",
+    "listeEn": "Special Skills (Vampire Hunters of Sylvania)",
+    "competences": [
+      {
+        "en": "Iron Will",
+        "nom": "Volonté de fer",
+        "resume": "Le héros est immunisé contre la Peur.",
+        "resumeEn": "The hero is immune to Fear.",
+        "condition": null
+      },
+      {
+        "en": "Righteous Aura",
+        "nom": "Aura de justice",
+        "resume": "Lors du premier round de corps à corps, chaque adversaire possédé ou mort-vivant perd sa première attaque contre ce guerrier (minimum 1 attaque).",
+        "resumeEn": "In the first round of close combat, Possessed or Undead opponents lose their first attack against this warrior (minimum 1).",
+        "condition": null
+      },
+      {
+        "en": "Thirst for Vengeance",
+        "nom": "Soif de vengeance",
+        "resume": "Le héros hait tous les morts-vivants et gagne +1 Attaque au tour où il charge.",
+        "resumeEn": "The hero hates all Undead and gains +1 Attack in a turn in which he charged.",
+        "condition": null
+      },
+      {
+        "en": "Blessing of Morr",
+        "nom": "Bénédiction de Morr",
+        "resume": "+1 aux jets de blessure contre les morts-vivants.",
+        "resumeEn": "+1 to injury rolls against Undead.",
+        "condition": null
+      },
+      {
+        "en": "Touch of Darkness",
+        "nom": "Toucher des ténèbres",
+        "resume": "Le héros ignore les pénalités liées à l'obscurité.",
+        "resumeEn": "The hero ignores darkness penalties.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Pieu à pointe d'argent : 10 co dans les listes, 15 co dans la section équipement spécial ; 10 retenu (F utilisateur, +1 au jet de blessure contre un vampire). Faux : F+1, deux mains. Gorgerin (Throat Guard, rare 7) : sauvegarde spéciale 6+ contre les blessures infligées par des vampires. Pistolet-arbalète marqué d'un astérisque sans note explicative. Carreaux bénis (Blessed Bolts) : renvoi vers la page Protectorat de Sigmar. Objets divers réservés aux héros. Prêtre de Morr : seulement dague et faux, jamais d'armure ; ses « Funerary Rites » sont saisis sous la clé « Prayers of Morr » (rites non saisis). Il peut aussi prendre Bénédiction de Morr et Soif de vengeance de la liste spéciale (la page dit que chasseur et tueurs utilisent cette liste « au lieu » des listes standard, mais le tableau d'accès leur donne aussi les listes standard : tableau retenu). Villageois : nombre illimité. Francs-tireurs : comme une bande de mercenaires humains. La page de composition dit « A Slayer Warband » (coquille)."
+}

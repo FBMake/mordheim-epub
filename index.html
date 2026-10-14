@@ -51,7 +51,7 @@
 
   <footer class="footer-note">
     <p data-i18n="pied.confidentialite">Tout le traitement se fait dans votre navigateur : vos bandes ne sont jamais envoyées sur un serveur.</p>
-    <p>V0.34</p>
+    <p>V0.35</p>
   </footer>
 </aside>
 
@@ -187,6 +187,13 @@
       <div id="crea-list-hdm" class="unit-list"></div>
       <button type="button" class="btn-secondary add-btn" data-add="hdm" data-i18n="compo.recruterHdm">+ Recruter un homme de main</button>
 
+      <div id="crea-francs-bloc" hidden>
+        <h3 class="mini-title"><span data-i18n="compo.francs">Francs-tireurs</span> (<span id="crea-count-franc">0</span>)</h3>
+        <p class="hint-text small left" id="crea-solde"></p>
+        <div id="crea-list-franc" class="unit-list"></div>
+        <button type="button" class="btn-secondary add-btn" data-add="franc" data-i18n="compo.recruterFranc">+ Engager un franc-tireur</button>
+      </div>
+
       <h3 class="mini-title" data-i18n="compo.reglesBande">Règles de la bande</h3>
       <div class="chip-editor" id="crea-regles-bande"></div>
       <details class="arsenal" id="crea-regles-choix" open hidden>
@@ -226,6 +233,10 @@
         <div id="lecture-list-heros" class="unit-list"></div>
         <h3 class="mini-title"><span data-i18n="compo.hdm">Hommes de main</span> (<span id="lecture-count-hdm">0</span>)</h3>
         <div id="lecture-list-hdm" class="unit-list"></div>
+        <div id="lecture-francs-bloc" hidden>
+          <h3 class="mini-title"><span data-i18n="compo.francs">Francs-tireurs</span> (<span id="lecture-count-franc">0</span>)</h3>
+          <div id="lecture-list-franc" class="unit-list"></div>
+        </div>
         <div id="lecture-regles-bloc">
           <h3 class="mini-title" data-i18n="compo.reglesBande">Règles de la bande</h3>
           <p class="unit-detail" id="lecture-regles"></p>

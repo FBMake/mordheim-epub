@@ -1,0 +1,679 @@
+{
+  "id": "gobelins-nuit",
+  "url": "https://mordheimer.net/docs/warbands/grade-1c-warbands/night-goblins",
+  "nomEn": "Night Goblins",
+  "nom": "Gobelins de la nuit",
+  "tresor": 500,
+  "effectifMax": 20,
+  "regles": [
+    "Night Goblin Animosity",
+    "Hate Stunties"
+  ],
+  "guerriers": [
+    {
+      "cle": "Big Boss",
+      "nom": "Grand chef",
+      "categorie": "heros",
+      "cout": 45,
+      "min": 1,
+      "max": 1,
+      "xp": 17,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "gobelin",
+      "sansProgression": false,
+      "regles": [
+        "Leader"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force",
+        "Vitesse",
+        "Spéciales (Gobelins de la nuit)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Shaman",
+      "nom": "Chaman",
+      "categorie": "heros",
+      "cout": 50,
+      "min": 0,
+      "max": 1,
+      "xp": 10,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "gobelin",
+      "sansProgression": false,
+      "regles": [
+        "Wizard (Waaagh! Magic)"
+      ],
+      "competences": [
+        "Tir",
+        "Érudition",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Boss",
+      "nom": "Chef",
+      "categorie": "heros",
+      "cout": 25,
+      "min": 0,
+      "max": 4,
+      "xp": 6,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "gobelin",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse",
+        "Spéciales (Gobelins de la nuit)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Night Goblins",
+      "nom": "Gobelins de la nuit",
+      "categorie": "hdm",
+      "cout": 15,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": "gobelin",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Fanatics",
+      "nom": "Fanatiques",
+      "categorie": "hdm",
+      "cout": 20,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": "gobelin",
+      "sansProgression": true,
+      "regles": [
+        "Addict",
+        "Mushroom Brain",
+        "Looney",
+        "Frantic"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Ball and Chain",
+              "nom": "Boulet et chaîne",
+              "cout": 15
+            },
+            {
+              "en": "Poison Daggers",
+              "nom": "Dagues empoisonnées",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Mad Cap Mushrooms",
+              "nom": "Champignons fous",
+              "cout": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Cave Squigs",
+      "nom": "Squigs des cavernes",
+      "categorie": "hdm",
+      "cout": 15,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "2D6",
+        "CC": "4",
+        "CT": "0",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Movement",
+        "Minderz",
+        "Animals"
+      ],
+      "competences": [],
+      "equipement": []
+    },
+    {
+      "cle": "Troll",
+      "nom": "Troll",
+      "categorie": "hdm",
+      "cout": 200,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "3",
+        "CT": "1",
+        "F": "5",
+        "E": "4",
+        "PV": "3",
+        "I": "1",
+        "A": "3",
+        "Cd": "4"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Fear",
+        "Stupidity",
+        "Regeneration",
+        "Dumb Monster",
+        "Always Hungry",
+        "Vomit Attack",
+        "Large Target"
+      ],
+      "competences": [],
+      "equipement": []
+    },
+    {
+      "cle": "Snotling Mob",
+      "nom": "Bande de snotlings",
+      "categorie": "hdm",
+      "cout": 50,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "2",
+        "E": "2",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "4"
+      },
+      "race": null,
+      "sansProgression": false,
+      "regles": [
+        "Pointy Stick",
+        "Mob",
+        "Weedy",
+        "Dodgy",
+        "Insignificant"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Night Goblin Animosity": {
+      "fr": {
+        "nom": "Animosité des gobelins de la nuit",
+        "resume": "Au début de chaque tour, lancez 1D6 : sur 1, les gobelins de la nuit se chamaillent et ne font rien d'autre ce tour ; trolls, squigs et snotlings ne sont pas concernés."
+      },
+      "en": {
+        "nom": "Night Goblin Animosity",
+        "resume": "At the start of each turn roll a D6: on a 1 the Night Goblins squabble and do nothing else that turn; Trolls, Squigs and Snotlings are unaffected."
+      }
+    },
+    "Hate Stunties": {
+      "fr": {
+        "nom": "Haine des nabots",
+        "resume": "Les gobelins de la nuit haïssent les Nains (sauf les fanatiques)."
+      },
+      "en": {
+        "nom": "Hate Stunties",
+        "resume": "Night Goblins hate Dwarfs (Fanatics excepted)."
+      }
+    },
+    "Addict": {
+      "fr": {
+        "nom": "Accro",
+        "resume": "Doit recevoir des champignons fous avant chaque partie, sinon il ne joue pas ; il les mange avant la bataille."
+      },
+      "en": {
+        "nom": "Addict",
+        "resume": "Must be given Mad Cap Mushrooms before each game or he sits it out; he eats them before the battle."
+      }
+    },
+    "Mushroom Brain": {
+      "fr": {
+        "nom": "Cervelle de champignon",
+        "resume": "Le fanatique ne gagne jamais d'expérience."
+      },
+      "en": {
+        "nom": "Mushroom Brain",
+        "resume": "The Fanatic never gains experience."
+      }
+    },
+    "Looney": {
+      "fr": {
+        "nom": "Cinglé",
+        "resume": "Sujet à la frénésie ; doit toujours lancer pour les blessures graves après la bataille."
+      },
+      "en": {
+        "nom": "Looney",
+        "resume": "Subject to frenzy; must always roll for serious injury after the battle."
+      }
+    },
+    "Frantic": {
+      "fr": {
+        "nom": "Frénétique",
+        "resume": "Frappe toujours en premier au corps à corps, quels que soient armes et Initiative."
+      },
+      "en": {
+        "nom": "Frantic",
+        "resume": "Always strikes first in close combat, regardless of weapons and Initiative."
+      }
+    },
+    "Pointy Stick": {
+      "fr": {
+        "nom": "Bâton pointu",
+        "resume": "Arme gratuite comptant comme une dague : +1 à la sauvegarde ennemie (6+ si l'ennemi n'en a pas)."
+      },
+      "en": {
+        "nom": "Pointy Stick",
+        "resume": "Free weapon counting as a dagger: enemy gets +1 to its armour save (6+ if it has none)."
+      }
+    },
+    "Mob": {
+      "fr": {
+        "nom": "Grouillement",
+        "resume": "Les snotlings se déplacent et combattent en groupe, à 1 ps les uns des autres, et rejoignent les combats ensemble."
+      },
+      "en": {
+        "nom": "Mob",
+        "resume": "Snotlings move and fight as a group within 1\" of each other and join combats together."
+      }
+    },
+    "Weedy": {
+      "fr": {
+        "nom": "Chétif",
+        "resume": "Blessé, un snotling est à terre sur 1, sonné sur 2-3 et hors de combat sur 4-6."
+      },
+      "en": {
+        "nom": "Weedy",
+        "resume": "When wounded a Snotling is knocked down on a 1, stunned on 2-3 and out of action on 4-6."
+      }
+    },
+    "Dodgy": {
+      "fr": {
+        "nom": "Insaisissable",
+        "resume": "Sauvegarde d'esquive de 6+ contre les tirs."
+      },
+      "en": {
+        "nom": "Dodgy",
+        "resume": "6+ dodge save against shooting."
+      }
+    },
+    "Insignificant": {
+      "fr": {
+        "nom": "Insignifiant",
+        "resume": "La bande de snotlings compte pour une seule figurine (déroute, effectif, revenus) ; un héros ennemi ne gagne d'expérience que pour le dernier snotling retiré."
+      },
+      "en": {
+        "nom": "Insignificant",
+        "resume": "The mob counts as one model for rout, warband size and income; an enemy Hero only gains experience for the last Snotling removed."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Gobelins de la nuit)",
+    "listeEn": "Special Skills (Night Goblins)",
+    "competences": [
+      {
+        "en": "Ded Shooty",
+        "nom": "Tir d'enfer",
+        "resume": "Ajoute 6 ps à la portée des armes de tir (pas des filets).",
+        "resumeEn": "Adds 6\" to the range of missile weapons (not nets).",
+        "condition": null
+      },
+      {
+        "en": "Sneaky Git",
+        "nom": "Sale fourbe",
+        "resume": "Après tous les déploiements, déplace jusqu'à D3 membres de la bande.",
+        "resumeEn": "After all deployment, moves up to D3 warband members.",
+        "condition": "chef"
+      },
+      {
+        "en": "Infiltrate",
+        "nom": "Infiltration",
+        "resume": "Se déploie après l'adversaire, hors de vue et à plus de 12 ps de l'ennemi.",
+        "resumeEn": "Deploys after the enemy, out of sight and more than 12\" from enemy models.",
+        "condition": null
+      },
+      {
+        "en": "Netter",
+        "nom": "Lanceur de filet",
+        "resume": "Peut charger en lançant un filet : s'il touche et que la cible ne se libère pas, elle est à terre et la charge aboutit ; sinon la charge échoue.",
+        "resumeEn": "May charge by throwing a net: if it hits and the target fails to escape, it is knocked down and the charge succeeds; otherwise the charge fails.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Bande expérimentale (PDF broheim). La règle Leader du grand chef mentionne « Orc Boss » sur la page. Liste fanatique réservée aux fanatiques ; ils ne gagnent jamais d'expérience (Mushroom Brain) ; les champignons fous (25 co) doivent être rachetés avant chaque partie. Squigs : 0-5 et jamais plus que de gobelins de la nuit ; M 2D6. Troll : ne lance jamais pour les blessures graves ; entretien 15 co après chaque partie (Always Hungry). Bande de snotlings : 0-1, 5 snotlings pour 50 co (10 co par snotling de remplacement), saisie comme un seul guerrier ; elle compte pour une seule figurine dans l'effectif ; bâton pointu gratuit (dague). La page ne dit pas si les snotlings gagnent de l'expérience. Pas de filet dans les listes (la compétence Netter renvoie au livre de règles). Hommes de main par groupes de 1 à 5. Pas de tableau de maximums ni de variantes sur la page ; race gobelin utilisée."
+}

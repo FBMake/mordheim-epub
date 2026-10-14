@@ -1,0 +1,699 @@
+{
+ "id": "necrarques",
+ "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/necrarchs-the-soul-stealers",
+ "nomEn": "Necrarchs, the Soul Stealers",
+ "nom": "Nécrarques, voleurs d'âmes",
+ "tresor": 500,
+ "effectifMax": 15,
+ "regles": [
+  "Death of the Leader"
+ ],
+ "guerriers": [
+  {
+   "cle": "Necrarch Vampire",
+   "nom": "Vampire nécrarque",
+   "categorie": "heros",
+   "cout": 110,
+   "min": 1,
+   "max": 1,
+   "xp": 20,
+   "profil": {
+    "M": "6",
+    "CC": "3",
+    "CT": "3",
+    "F": "4",
+    "E": "4",
+    "PV": "2",
+    "I": "6",
+    "A": "1",
+    "Cd": "8"
+   },
+   "race": "necrarque",
+   "sansProgression": false,
+   "regles": [
+    "Leader",
+    "Fear",
+    "Immune to Psychology",
+    "Immune to Poison",
+    "No Pain",
+    "Wizard (Scrolls of Nagash)"
+   ],
+   "competences": [
+    "Érudition",
+    "Force",
+    "Vitesse",
+    "Spéciales (Nécrarques, voleurs d'âmes)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Staff of Damnation",
+       "nom": "Bâton de damnation",
+       "cout": 25
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Shortbow",
+       "nom": "Arc court",
+       "cout": 5
+      },
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Unholy Relic",
+       "nom": "Relique impie",
+       "cout": 15
+      },
+      {
+       "en": "Damned Book",
+       "nom": "Livre damné",
+       "cout": 48
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Thrall",
+   "nom": "Thrall",
+   "categorie": "heros",
+   "cout": 60,
+   "min": 0,
+   "max": 1,
+   "xp": 8,
+   "profil": {
+    "M": "5",
+    "CC": "3",
+    "CT": "3",
+    "F": "4",
+    "E": "4",
+    "PV": "1",
+    "I": "5",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "vampire",
+   "sansProgression": false,
+   "regles": [
+    "Fear",
+    "Immune to Psychology",
+    "Immune to Poison",
+    "No Pain"
+   ],
+   "competences": [
+    "Érudition",
+    "Force",
+    "Vitesse",
+    "Spéciales (Nécrarques, voleurs d'âmes)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Shortbow",
+       "nom": "Arc court",
+       "cout": 5
+      },
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Unholy Relic",
+       "nom": "Relique impie",
+       "cout": 15
+      },
+      {
+       "en": "Damned Book",
+       "nom": "Livre damné",
+       "cout": 48
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Acolyte",
+   "nom": "Acolyte",
+   "categorie": "heros",
+   "cout": 35,
+   "min": 0,
+   "max": 3,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Vassal"
+   ],
+   "competences": [
+    "Érudition",
+    "Vitesse"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Skeletal Warriors",
+   "nom": "Guerriers squelettes",
+   "categorie": "hdm",
+   "cout": 20,
+   "min": 0,
+   "max": 5,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "5"
+   },
+   "race": null,
+   "sansProgression": true,
+   "regles": [
+    "Fear",
+    "Immune to Psychology",
+    "Immune to Poison",
+    "No Pain",
+    "May not run",
+    "No Brain"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Zombies",
+   "nom": "Zombies",
+   "categorie": "hdm",
+   "cout": 15,
+   "min": 0,
+   "max": null,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "0",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "1",
+    "A": "1",
+    "Cd": "5"
+   },
+   "race": null,
+   "sansProgression": true,
+   "regles": [
+    "Fear",
+    "Immune to Psychology",
+    "Immune to Poison",
+    "No Pain",
+    "May not run",
+    "No Brain"
+   ],
+   "competences": [],
+   "equipement": []
+  },
+  {
+   "cle": "Abomination",
+   "nom": "Abomination",
+   "categorie": "hdm",
+   "cout": 190,
+   "min": 0,
+   "max": 1,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "0",
+    "F": "4",
+    "E": "5",
+    "PV": "3",
+    "I": "2",
+    "A": "3",
+    "Cd": "5"
+   },
+   "race": null,
+   "sansProgression": true,
+   "regles": [
+    "Fear",
+    "Immune to Psychology",
+    "Immune to Poison",
+    "No Pain",
+    "No Brain",
+    "Large Target",
+    "Powered",
+    "Spare Parts"
+   ],
+   "competences": [],
+   "equipement": []
+  },
+  {
+   "cle": "Waifs",
+   "nom": "Orphelins",
+   "categorie": "hdm",
+   "cout": 20,
+   "min": 0,
+   "max": 5,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "2",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "reglesTexte": {
+  "Death of the Leader": {
+   "fr": {
+    "nom": "Mort du chef",
+    "resume": "Si le Nécrarque meurt, le Thrall prend la tête de la bande et tire un sort ; on ne peut pas recruter de nouveau Nécrarque, mais un Acolyte peut devenir Thrall. Si les deux disparaissent ensemble, la bande est dissoute."
+   },
+   "en": {
+    "nom": "Death of the Leader",
+    "resume": "If the Necrarch dies the Thrall takes over and rolls a spell; no new Necrarch may be hired but an Acolyte may become a Thrall. If both are lost together the warband disbands."
+   }
+  },
+  "Wizard (Scrolls of Nagash)": {
+   "fr": {
+    "nom": "Sorcier (Parchemins de Nagash)",
+    "resume": "Lanceur de sorts : commence avec un sort tiré au hasard sur les Parchemins de Nagash."
+   },
+   "en": {
+    "nom": "Wizard (Scrolls of Nagash)",
+    "resume": "Spellcaster: starts with one random spell from the Dreaded Scrolls of Nagash."
+   }
+  },
+  "Vassal": {
+   "fr": {
+    "nom": "Vassal",
+    "resume": "Si le Nécrarque voit l'Acolyte et que celui-ci n'est pas au corps à corps, il peut lancer ses sorts depuis la position de l'Acolyte ; sur un double 1, l'Acolyte fait un jet de blessure à +1."
+   },
+   "en": {
+    "nom": "Vassal",
+    "resume": "If the Necrarch can see the Acolyte and it is not in combat, he may cast spells from the Acolyte's position; on a double 1 the Acolyte rolls on the Injury table at +1."
+   }
+  },
+  "Powered": {
+   "fr": {
+    "nom": "Animé par la malepierre",
+    "resume": "Il faut un fragment de malepierre pour l'animer ; celui qui le met hors de combat récupère ce fragment, et un nouveau fragment est nécessaire pour le réanimer."
+   },
+   "en": {
+    "nom": "Powered",
+    "resume": "Needs a wyrdstone shard to animate; whoever takes it out of action gains the shard, and a new shard is needed to reanimate it."
+   }
+  },
+  "Spare Parts": {
+   "fr": {
+    "nom": "Pièces de rechange",
+    "resume": "Les résultats 1 et 2 au jet de blessure après la bataille sont ignorés : il ne peut pas être détruit."
+   },
+   "en": {
+    "nom": "Spare Parts",
+    "resume": "Post-battle Injury results of 1 and 2 are ignored, so it cannot be destroyed."
+   }
+  }
+ },
+ "competencesSpeciales": {
+  "liste": "Spéciales (Nécrarques, voleurs d'âmes)",
+  "listeEn": "Special Skills (Necrarchs)",
+  "competences": [
+   {
+    "en": "Pupil of Nagash",
+    "nom": "Disciple de Nagash",
+    "resume": "Tire immédiatement un sort sur les Parchemins de Nagash ; peut reprendre cette compétence plus tard au lieu d'une autre.",
+    "resumeEn": "Immediately roll a spell from the Scrolls of Nagash; may be taken again instead of a later skill.",
+    "condition": null
+   },
+   {
+    "en": "Master of the Black Arts",
+    "nom": "Maître des arts noirs",
+    "resume": "La portée de tous ses sorts est augmentée de moitié.",
+    "resumeEn": "Increases the range of all his spells by half.",
+    "condition": null
+   },
+   {
+    "en": "Pull of Undeath",
+    "nom": "Emprise de la non-mort",
+    "resume": "Tant que le Nécrarque est à 4 ps ou moins d'un homme de main mort-vivant, il n'est mis hors de combat que sur un 6 naturel.",
+    "resumeEn": "While within 4\" of an undead henchman he is only taken out of action on a natural 6.",
+    "condition": "chef"
+   }
+  ]
+ },
+ "races": {
+  "necrarque": {
+   "nom": "Vampire nécrarque",
+   "max": {
+    "M": 6,
+    "CC": 4,
+    "CT": 4,
+    "F": 6,
+    "E": 6,
+    "PV": 4,
+    "I": 9,
+    "A": 3,
+    "Cd": 10
+   }
+  }
+ },
+ "notes": "Effectif : 3 à 15. Le Vampire nécrarque a sa propre table de maximums (race necrarque) ; le Thrall utilise la race vampire existante (non confirmé). Sorts : la page parle de « Necromancy spell list » mais liste les Parchemins de Nagash (Cage d'âme 9, Souffle noir 8, Serviteurs éternels auto, Peur des âges 9, Mur de désespoir 6, Griffes de Nagash 10) ; clé Wizard (Scrolls of Nagash). Le sort Serviteurs éternels invoque D3 zombies gratuits pour une partie, hors effectif : non saisis comme guerriers. Si le Nécrarque meurt, le Thrall devient chef et tire un sort ; un Acolyte peut devenir Thrall gratuitement (non saisi). L'Abomination doit être animée par un fragment de malepierre. Objets réservés aux héros : Bâton de damnation (25 co, Nécrarque seulement), Relique impie (15 co), Livre damné (45 + 3D6 co, saisi 48, rare 11). Les Acolytes utilisent la liste des hommes de main. L'astérisque sur l'accès Spéciales du Thrall n'est pas expliqué ; Disciple de Nagash et Maître des arts noirs laissés ouverts (condition null) bien que destinés aux lanceurs de sorts."
+}

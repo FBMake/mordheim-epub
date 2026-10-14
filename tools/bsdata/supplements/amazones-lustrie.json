@@ -1,0 +1,671 @@
+{
+  "id": "amazones-lustrie",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/amazons-lustria",
+  "nomEn": "Amazons of Lustria",
+  "nom": "Amazones de Lustrie",
+  "tresor": 500,
+  "effectifMax": 15,
+  "regles": [
+    "Isolationists",
+    "Sacrifice",
+    "Norse Enmity",
+    "Not one of us"
+  ],
+  "guerriers": [
+    {
+      "cle": "Serpent Priestess",
+      "nom": "Prêtresse du Serpent",
+      "categorie": "heros",
+      "cout": 70,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Wizard (Amazon Rituals)"
+      ],
+      "competences": [
+        "Combat",
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Amazones de Lustrie)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Starblade",
+              "nom": "Lame stellaire",
+              "cout": 15
+            },
+            {
+              "en": "Starsword",
+              "nom": "Épée stellaire",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Sunstaff",
+              "nom": "Bâton solaire",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Enchanted Skins",
+              "nom": "Peaux enchantées",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Amulet of the Moon",
+              "nom": "Amulette de la Lune",
+              "cout": 50
+            },
+            {
+              "en": "Healing Herbs",
+              "nom": "Herbes curatives",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Eagle Warrior",
+      "nom": "Guerrière Aigle",
+      "categorie": "heros",
+      "cout": 35,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Force",
+        "Vitesse",
+        "Spéciales (Amazones de Lustrie)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Starblade",
+              "nom": "Lame stellaire",
+              "cout": 15
+            },
+            {
+              "en": "Starsword",
+              "nom": "Épée stellaire",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Sunstaff",
+              "nom": "Bâton solaire",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Enchanted Skins",
+              "nom": "Peaux enchantées",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Amulet of the Moon",
+              "nom": "Amulette de la Lune",
+              "cout": 50
+            },
+            {
+              "en": "Healing Herbs",
+              "nom": "Herbes curatives",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Piranha Warrior",
+      "nom": "Guerrière Piranha",
+      "categorie": "heros",
+      "cout": 30,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse",
+        "Spéciales (Amazones de Lustrie)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Starblade",
+              "nom": "Lame stellaire",
+              "cout": 15
+            },
+            {
+              "en": "Starsword",
+              "nom": "Épée stellaire",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Sunstaff",
+              "nom": "Bâton solaire",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Enchanted Skins",
+              "nom": "Peaux enchantées",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Amulet of the Moon",
+              "nom": "Amulette de la Lune",
+              "cout": 50
+            },
+            {
+              "en": "Healing Herbs",
+              "nom": "Herbes curatives",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Amazon Warrior",
+      "nom": "Guerrière amazone",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 1,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Sling",
+              "nom": "Fronde",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Sunstaff",
+              "nom": "Bâton solaire",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Enchanted Skins",
+              "nom": "Peaux enchantées",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Jaguar Warrior",
+      "nom": "Guerrière Jaguar",
+      "categorie": "hdm",
+      "cout": 30,
+      "min": 0,
+      "max": 3,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "One with the Jungle"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Sling",
+              "nom": "Fronde",
+              "cout": 5
+            },
+            {
+              "en": "Bolas",
+              "nom": "Bolas",
+              "cout": 5
+            },
+            {
+              "en": "Javelins",
+              "nom": "Javelots",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Sunstaff",
+              "nom": "Bâton solaire",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Enchanted Skins",
+              "nom": "Peaux enchantées",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Isolationists": {
+      "fr": {
+        "nom": "Isolationnistes",
+        "resume": "Au premier round de chaque corps à corps contre des Hommes-Lézards ou des Norses, les Amazones relancent leurs attaques ratées."
+      },
+      "en": {
+        "nom": "Isolationists",
+        "resume": "In the first round of each combat against Lizardmen or Norse, Amazons re-roll their missed attacks."
+      }
+    },
+    "Norse Enmity": {
+      "fr": {
+        "nom": "Inimitié envers les Norses",
+        "resume": "Contre des Norses, les Amazones se battent jusqu'à la mort : elles relancent leur premier test de déroute raté et ne peuvent fuir volontairement que si leur cheffe est hors de combat."
+      },
+      "en": {
+        "nom": "Norse Enmity",
+        "resume": "Against Norse, Amazons fight to the death: they re-roll their first failed Rout test and may not rout voluntarily unless their leader is out of action."
+      }
+    },
+    "One with the Jungle": {
+      "fr": {
+        "nom": "Une avec la jungle",
+        "resume": "Elle traverse les terrains de jungle sans aucune pénalité de mouvement."
+      },
+      "en": {
+        "nom": "One with the Jungle",
+        "resume": "She moves through jungle terrain without any movement penalty."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Amazones de Lustrie)",
+    "listeEn": "Special Skills (Amazons of Lustria)",
+    "competences": [
+      {
+        "en": "Skink Hunter",
+        "nom": "Chasseuse de skinks",
+        "resume": "Au premier round d'un corps à corps contre des Skinks, elle frappe toujours en premier, quel que soit celui qui a chargé.",
+        "resumeEn": "In the first round of combat against Skinks she always strikes first, whoever charged.",
+        "condition": null
+      },
+      {
+        "en": "Elixir of Life",
+        "nom": "Élixir de vie",
+        "resume": "Après la bataille, elle peut relancer un jet de blessure grave et doit garder le second résultat.",
+        "resumeEn": "After a battle she may re-roll one Serious Injury roll and must keep the second result.",
+        "condition": null
+      },
+      {
+        "en": "Mesmerising Dance",
+        "nom": "Danse envoûtante",
+        "resume": "Au début de chaque tour, chaque ennemi en contact socle à socle doit réussir un test de Cd ou ne pas pouvoir attaquer ce tour (il se défend normalement). Les Hommes-Lézards et les morts-vivants y sont insensibles.",
+        "resumeEn": "At the start of each turn, enemies in base contact must pass a Ld test or be unable to attack that turn (they still defend). Lizardmen and Undead are immune.",
+        "condition": null
+      },
+      {
+        "en": "Savage Fury",
+        "nom": "Furie sauvage",
+        "resume": "+1 Attaque lorsqu'elle charge ; elle est insensible aux charmes et à la peur.",
+        "resumeEn": "+1 Attack when charging; she is immune to charm and fear.",
+        "condition": null
+      },
+      {
+        "en": "Concealment",
+        "nom": "Dissimulation",
+        "resume": "Cachée dans un terrain de jungle, elle ne peut être repérée qu'à la moitié de la distance habituelle.",
+        "resumeEn": "While hidden in jungle terrain, enemies may only spot her at half the usual range.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Source : Town Cryer #15 (cadre Lustrie). Effectif minimum 3. Guerrières amazones achetées par groupes de 1 à 5, au moins une obligatoire. Les règles « Sacrifice » et « Not one of us » reprennent les clés de la bande Amazones existante ; ici, sacrifier un Homme-Lézard capturé rapporte en plus des « Skins and Charms » gratuits. Les Guerrières Aigle et Piranha ont accès « à la liste des héroïnes et à la liste d'équipement spécial », mais la section Équipement spécial ne liste aucun objet (renvoi au comptoir commercial) : seule la liste des héroïnes est saisie. Le bâton solaire coûte ici 35 co (« Sunstaff (Lustria) », 50 co chez les Amazones) ; la page ne donne aucune règle pour le bâton solaire, les peaux enchantées, la lame et l'épée stellaires ni les bolas. Accès aux compétences saisi tel que coché sur la page (la prêtresse n'a ni Tir ni Force)."
+}

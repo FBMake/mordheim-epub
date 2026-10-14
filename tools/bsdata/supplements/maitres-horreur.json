@@ -1,0 +1,671 @@
+{
+ "id": "maitres-horreur",
+ "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/masters-of-horror",
+ "nomEn": "Masters of Horror",
+ "nom": "Maîtres de l'horreur",
+ "tresor": 500,
+ "effectifMax": 12,
+ "regles": [
+  "No Promotion"
+ ],
+ "guerriers": [
+  {
+   "cle": "Mad Scientist",
+   "nom": "Savant fou",
+   "categorie": "heros",
+   "cout": 60,
+   "min": 1,
+   "max": 1,
+   "xp": 20,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "8"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Leader",
+    "Immune to Psychology"
+   ],
+   "competences": [
+    "Érudition",
+    "Vitesse",
+    "Spéciales (Maîtres de l'horreur)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Chainsaw Sword",
+       "nom": "Épée tronçonneuse",
+       "cout": 16
+      },
+      {
+       "en": "Electric Trident",
+       "nom": "Trident électrique",
+       "cout": 16
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Shortbow",
+       "nom": "Arc court",
+       "cout": 5
+      },
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      },
+      {
+       "en": "Repeater Pistol",
+       "nom": "Pistolet à répétition",
+       "cout": 28
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Thrall",
+   "nom": "Thrall",
+   "categorie": "heros",
+   "cout": 70,
+   "min": 0,
+   "max": 1,
+   "xp": 8,
+   "profil": {
+    "M": "5",
+    "CC": "3",
+    "CT": "3",
+    "F": "4",
+    "E": "4",
+    "PV": "1",
+    "I": "5",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "vampire",
+   "sansProgression": false,
+   "regles": [
+    "Fear",
+    "Immune to Psychology",
+    "Immune to Poison",
+    "No Pain"
+   ],
+   "competences": [
+    "Combat",
+    "Force",
+    "Vitesse",
+    "Spéciales (Maîtres de l'horreur)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Chainsaw Sword",
+       "nom": "Épée tronçonneuse",
+       "cout": 16
+      },
+      {
+       "en": "Electric Trident",
+       "nom": "Trident électrique",
+       "cout": 16
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Shortbow",
+       "nom": "Arc court",
+       "cout": 5
+      },
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      },
+      {
+       "en": "Repeater Pistol",
+       "nom": "Pistolet à répétition",
+       "cout": 28
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Wolfman",
+   "nom": "Homme-loup",
+   "categorie": "heros",
+   "cout": 65,
+   "min": 0,
+   "max": 1,
+   "xp": 8,
+   "profil": {
+    "M": "6",
+    "CC": "3",
+    "CT": "3",
+    "F": "4",
+    "E": "3",
+    "PV": "2",
+    "I": "2",
+    "A": "2",
+    "Cd": "7"
+   },
+   "race": "hommeLoup",
+   "sansProgression": false,
+   "regles": [
+    "Tooth and Claw"
+   ],
+   "competences": [
+    "Combat",
+    "Force",
+    "Vitesse",
+    "Spéciales (Maîtres de l'horreur)"
+   ],
+   "equipement": []
+  },
+  {
+   "cle": "Hunchback",
+   "nom": "Bossu",
+   "categorie": "heros",
+   "cout": 25,
+   "min": 0,
+   "max": 2,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "2",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [
+    "Combat",
+    "Force",
+    "Vitesse",
+    "Spéciales (Maîtres de l'horreur)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Chainsaw Sword",
+       "nom": "Épée tronçonneuse",
+       "cout": 16
+      },
+      {
+       "en": "Electric Trident",
+       "nom": "Trident électrique",
+       "cout": 16
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Shortbow",
+       "nom": "Arc court",
+       "cout": 5
+      },
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      },
+      {
+       "en": "Repeater Pistol",
+       "nom": "Pistolet à répétition",
+       "cout": 28
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Zombie",
+   "nom": "Zombie",
+   "categorie": "hdm",
+   "cout": 20,
+   "min": 0,
+   "max": null,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "0",
+    "F": "3",
+    "E": "4",
+    "PV": "1",
+    "I": "1",
+    "A": "1",
+    "Cd": "5"
+   },
+   "race": null,
+   "sansProgression": true,
+   "regles": [
+    "Fear",
+    "Immune to Psychology",
+    "Immune to Poison",
+    "No Pain",
+    "May not run",
+    "No Brain"
+   ],
+   "competences": [],
+   "equipement": []
+  },
+  {
+   "cle": "Flesh Construct",
+   "nom": "Créature de chair",
+   "categorie": "hdm",
+   "cout": 80,
+   "min": 0,
+   "max": 1,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "0",
+    "F": "4",
+    "E": "5",
+    "PV": "2",
+    "I": "2",
+    "A": "2",
+    "Cd": "6"
+   },
+   "race": null,
+   "sansProgression": false,
+   "regles": [
+    "Fear",
+    "Immune to Psychology",
+    "Immune to Poison",
+    "No Pain",
+    "May not run",
+    "A Bit Unhinged",
+    "Only a Flesh Wound"
+   ],
+   "competences": [],
+   "equipement": []
+  },
+  {
+   "cle": "The Bitten",
+   "nom": "Mordu",
+   "categorie": "hdm",
+   "cout": 40,
+   "min": 0,
+   "max": 3,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "2",
+    "F": "4",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "6"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Transform"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "reglesTexte": {
+  "No Promotion": {
+   "fr": {
+    "nom": "Pas de promotion",
+    "resume": "Les zombies et les créatures de chair ne peuvent jamais devenir des héros grâce au résultat « Le petit a du talent »."
+   },
+   "en": {
+    "nom": "No Promotion",
+    "resume": "Zombies and Flesh Constructs can never become Heroes through the Lad's Got Talent result."
+   }
+  },
+  "Tooth and Claw": {
+   "fr": {
+    "nom": "Crocs et griffes",
+    "resume": "Ne peut porter aucun équipement ; il combat avec ses crocs et ses griffes sans pénalité de combat à mains nues."
+   },
+   "en": {
+    "nom": "Tooth and Claw",
+    "resume": "Cannot carry any equipment; fights with teeth and claws without the unarmed penalty."
+   }
+  },
+  "A Bit Unhinged": {
+   "fr": {
+    "nom": "Un peu dérangé",
+    "resume": "Après la partie, il doit réussir un test de Commandement pour gagner l'expérience de survie."
+   },
+   "en": {
+    "nom": "A Bit Unhinged",
+    "resume": "After the battle it must pass a Leadership test to gain the survival experience."
+   }
+  },
+  "Only a Flesh Wound": {
+   "fr": {
+    "nom": "Juste une égratignure",
+    "resume": "Sur un 1-2 au jet de blessure après une mise hors de combat, la bande peut le réparer pour D6×5 co ; faute de payer, il manque la bataille suivante et reste sur la feuille jusqu'à réparation ou abandon."
+   },
+   "en": {
+    "nom": "Only a Flesh Wound",
+    "resume": "On an Injury roll of 1-2 after going out of action it can be repaired for D6x5 gc; if unpaid it misses the next battle and stays on the roster until repaired or abandoned."
+   }
+  },
+  "Transform": {
+   "fr": {
+    "nom": "Transformation",
+    "resume": "À chaque tour, D6 : sur 1 il est stupide (et reprend forme humaine s'il était transformé), sur 6 il se transforme et gagne Frénésie et Sprint jusqu'au prochain 1 ; transformé, il lâche son équipement sauf une dague et combat à mains nues sans pénalité."
+   },
+   "en": {
+    "nom": "Transform",
+    "resume": "Each turn roll a D6: on a 1 it is Stupid (and reverts if transformed), on a 6 it transforms, gaining Frenzy and Sprint until a 1 is rolled; transformed, it drops its gear except a dagger and fights unarmed without penalty."
+   }
+  }
+ },
+ "competencesSpeciales": {
+  "liste": "Spéciales (Maîtres de l'horreur)",
+  "listeEn": "Special Skills (Masters of Horror)",
+  "competences": [
+   {
+    "en": "Surgeon",
+    "nom": "Chirurgien",
+    "resume": "Une fois par blessure grave, il peut relancer un des dés du jet de blessure d'un guerrier, mais doit garder le second résultat.",
+    "resumeEn": "May reroll one die of a single injury roll, keeping the second result.",
+    "condition": "chef"
+   },
+   {
+    "en": "Alchemist",
+    "nom": "Alchimiste",
+    "resume": "En début de partie, il lance un D6 pour une potion aléatoire (+1 E, +1 F, +1 M, un breuvage handicapant, ou +1 F et +1 E avec un risque d'accoutumance).",
+    "resumeEn": "Rolls a D6 before each game for a random potion (+1 T, +1 S, +1 M, a hindering brew, or +1 S and T with a risk of addiction).",
+    "condition": "chef"
+   },
+   {
+    "en": "Apt Revitalist",
+    "nom": "Revitaliste habile",
+    "resume": "Les zombies de la bande gagnent de l'expérience comme des hommes de main humains ordinaires.",
+    "resumeEn": "The warband's Zombies gain experience like normal human henchmen.",
+    "condition": "chef"
+   },
+   {
+    "en": "Lunatic",
+    "nom": "Lunatique",
+    "resume": "Le héros cause la peur et peut relancer tout test de Commandement raté.",
+    "resumeEn": "The hero causes Fear and may reroll any Leadership test.",
+    "condition": null
+   }
+  ]
+ },
+ "races": {
+  "hommeLoup": {
+   "nom": "Homme-loup",
+   "max": {
+    "M": 6,
+    "CC": 4,
+    "CT": 3,
+    "F": 5,
+    "E": 4,
+    "PV": 3,
+    "I": 7,
+    "A": 4,
+    "Cd": 8
+   }
+  }
+ },
+ "notes": "Recrute les mêmes francs-tireurs que les Morts-vivants (règle non saisie). Effectif : 3 à 12. Équipement variable : Épée tronçonneuse et Trident électrique 15 co + D6 (saisis 16), Pistolet à répétition 25 co + 3D6 (saisi 28) ; ces trois objets sont réservés aux héros et à cette bande. Le Thrall (« forme la plus basse de vampire ») utilise la race vampire existante, faute de tableau propre ; l'homme-loup a sa propre table de maximums (race hommeLoup). Les zombies ont « No Brain » (pas d'XP) sauf avec la compétence Revitaliste habile. Le Mordu transformé perd son équipement (garde une dague), gagne Frénésie et Sprint et subit la Stupidité sur un 1 : tout cela est résumé dans la règle Transform. La page indique que le Savant fou peut utiliser la liste spéciale au lieu des listes standards et que Lunatique est accessible à tous les héros ; le tableau donne l'accès Spéciales à tous les héros : Chirurgien, Alchimiste et Revitaliste habile sont supposés réservés au Savant fou (condition « chef »), interprétation incertaine. Le Savant fou n'est pas lanceur de sorts."
+}

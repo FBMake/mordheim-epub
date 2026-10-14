@@ -1,0 +1,842 @@
+{
+  "id": "marcheurs-reves",
+  "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/dreamwalkers-cult-of-morr",
+  "nomEn": "Dreamwalkers, Cult of Morr",
+  "nom": "Marcheurs des rêves, culte de Morr",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [
+    "Enemies of Morr",
+    "Chosen of Morr"
+  ],
+  "guerriers": [
+    {
+      "cle": "Dreamer",
+      "nom": "Rêveur",
+      "categorie": "heros",
+      "cout": 70,
+      "min": 0,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Chosen of Morr",
+        "Guiding Dream",
+        "Hate Undead"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Force",
+        "Vitesse",
+        "Spéciales (Marcheurs des rêves, culte de Morr)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Priest of Morr",
+      "nom": "Prêtre de Morr",
+      "categorie": "heros",
+      "cout": 35,
+      "min": 1,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Prayers of Morr",
+        "Loner",
+        "Hate Undead"
+      ],
+      "competences": [
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Marcheurs des rêves, culte de Morr)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Scythe",
+              "nom": "Faux",
+              "cout": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Black Guard of Morr",
+      "nom": "Garde noir de Morr",
+      "categorie": "heros",
+      "cout": 55,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Silent Guardian",
+        "Hate Undead"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse",
+        "Spéciales (Marcheurs des rêves, culte de Morr)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "The Andanti",
+      "nom": "Andanti",
+      "categorie": "heros",
+      "cout": 40,
+      "min": 0,
+      "max": 1,
+      "xp": 6,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Estalian Technique",
+        "Andanti Knowledge",
+        "Hate Undead"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force",
+        "Spéciales (Marcheurs des rêves, culte de Morr)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Rapier",
+              "nom": "Rapière",
+              "cout": 15
+            },
+            {
+              "en": "Main Gauche",
+              "nom": "Main gauche",
+              "cout": 7
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Death's Heads of Ostermark",
+      "nom": "Têtes de mort d'Ostermark",
+      "categorie": "hdm",
+      "cout": 40,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Expert Halberdier"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Morr Worshippers",
+      "nom": "Fidèles de Morr",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Enemies of Morr": {
+      "fr": {
+        "nom": "Ennemis de Morr",
+        "resume": "Les membres de la bande ne craignent pas les vampires, nécromanciens et morts-vivants : ils ignorent la Peur qu'ils causent."
+      },
+      "en": {
+        "nom": "Enemies of Morr",
+        "resume": "Warband members are not affected by Fear caused by vampires, necromancers or their undead."
+      }
+    },
+    "Chosen of Morr": {
+      "fr": {
+        "nom": "Élu de Morr",
+        "resume": "Pour recruter le Rêveur, un prêtre de Morr doit l'authentifier : sur 4+ au D6 il rejoint la bande et la mène ; sinon le prêtre est le chef. On peut réessayer après chaque bataille en payant le coût ; une fois un vrai Rêveur mort, on ne peut plus en recruter et le prêtre redevient chef."
+      },
+      "en": {
+        "nom": "Chosen of Morr",
+        "resume": "A Priest of Morr must vouch for the Dreamer: on a 4+ he is hired and leads the warband, otherwise the Priest is the leader. The roll may be retried after any battle by paying the cost; once a true Dreamer dies no other can be hired and leadership returns to the Priest."
+      }
+    },
+    "Guiding Dream": {
+      "fr": {
+        "nom": "Rêve guide",
+        "resume": "Au début de chaque bataille le Rêveur lance 1D6 : 1, -1 ps de Mouvement ; 2-3, +1 pour toucher un héros ennemi choisi ; 4-5, +1 en Force contre lui ; 6, Frénésie contre lui."
+      },
+      "en": {
+        "nom": "Guiding Dream",
+        "resume": "Each battle the Dreamer rolls a D6: 1, -1\" Movement; 2-3, +1 to hit a chosen enemy hero; 4-5, +1 Strength against it; 6, Frenzy against it."
+      }
+    },
+    "Hate Undead": {
+      "fr": {
+        "nom": "Haine des morts-vivants",
+        "resume": "Ce guerrier hait les vampires, les nécromanciens et tous les morts-vivants."
+      },
+      "en": {
+        "nom": "Hate Undead",
+        "resume": "This warrior hates vampires, necromancers and all undead."
+      }
+    },
+    "Prayers of Morr": {
+      "fr": {
+        "nom": "Prières de Morr",
+        "resume": "Le prêtre accomplit les Rites funéraires de Morr (liste décrite dans la section Magie) ; il ne peut porter aucune armure et n'utilise que dague et faux."
+      },
+      "en": {
+        "nom": "Prayers of Morr",
+        "resume": "The Priest performs the Funerary Rites of Morr (listed in the Magic section); he may never wear armour and uses only a dagger and a scythe."
+      }
+    },
+    "Loner": {
+      "fr": {
+        "nom": "Solitaire",
+        "resume": "Ce guerrier n'effectue jamais de test « Seul contre tous »."
+      },
+      "en": {
+        "nom": "Loner",
+        "resume": "This warrior never takes All Alone tests."
+      }
+    },
+    "Silent Guardian": {
+      "fr": {
+        "nom": "Gardien silencieux",
+        "resume": "Un ennemi doit réussir un test d'Initiative pour repérer un garde noir caché ; son armure ne le ralentit pas."
+      },
+      "en": {
+        "nom": "Silent Guardian",
+        "resume": "Enemies must pass an Initiative test to spot a Hidden Black Guard; armour does not slow him."
+      }
+    },
+    "Estalian Technique": {
+      "fr": {
+        "nom": "Technique estalienne",
+        "resume": "L'Andanti peut parer avec une rapière ou une main gauche en utilisant sa Capacité de Combat."
+      },
+      "en": {
+        "nom": "Estalian Technique",
+        "resume": "The Andanti may parry with a rapier or main gauche using his Weapon Skill."
+      }
+    },
+    "Andanti Knowledge": {
+      "fr": {
+        "nom": "Savoir des Andanti",
+        "resume": "+1 pour toucher les vampires au corps à corps."
+      },
+      "en": {
+        "nom": "Andanti Knowledge",
+        "resume": "+1 to hit vampires in close combat."
+      }
+    },
+    "Expert Halberdier": {
+      "fr": {
+        "nom": "Hallebardier expert",
+        "resume": "Peut manier une hallebarde d'une main et porter un bouclier de l'autre."
+      },
+      "en": {
+        "nom": "Expert Halberdier",
+        "resume": "May wield a halberd one-handed with a shield in the other hand."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Marcheurs des rêves, culte de Morr)",
+    "listeEn": "Special Skills (Dreamwalkers)",
+    "competences": [
+      {
+        "en": "Inspiring Presence",
+        "nom": "Présence inspirante",
+        "resume": "Les fidèles de Morr peuvent utiliser le Commandement du Rêveur jusqu'à 12 ps au lieu de 6.",
+        "resumeEn": "Morr Worshippers may use the Dreamer's Leadership within 12\" instead of 6\".",
+        "condition": "marcheurs-reves/dreamer"
+      },
+      {
+        "en": "Fanatical",
+        "nom": "Fanatique",
+        "resume": "Une fois par partie, relance d'un test de déroute raté si le Rêveur n'est ni hors de combat, ni sonné, ni à terre.",
+        "resumeEn": "Once per game, re-roll a failed rout test if the Dreamer is not out of action, stunned or knocked down.",
+        "condition": "marcheurs-reves/dreamer"
+      },
+      {
+        "en": "Inured to Horror",
+        "nom": "Endurci à l'horreur",
+        "resume": "Immunisé à la Peur et ne fait jamais de test « Seul contre tous ».",
+        "resumeEn": "Immune to Fear and never takes All Alone tests.",
+        "condition": null
+      },
+      {
+        "en": "Blessed by Morr",
+        "nom": "Béni de Morr",
+        "resume": "Un sort lancé par un mort-vivant qui vise ce héros est annulé sur 4+ au D6 (pour lui seul).",
+        "resumeEn": "A spell cast by an undead caster targeting this hero is nullified for him on a 4+.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Le Rêveur (0-1) n'est recruté que sur 4+ (Élu de Morr) ; sans lui, le prêtre de Morr est le chef (clé Leader non mise sur le prêtre). Prêtre : uniquement dague et faux, jamais d'armure ; coût de la faux non indiqué sur la page (mis à 0) ; faux = F+1, deux mains. Rites funéraires (prières) non saisis : décrits dans la section Magie du site. Rapière et main gauche réservées à l'Andanti (seul à les avoir dans sa liste). Garde noir : peut monter un cheval de guerre (coût non indiqué, règles montées ambiguës), non saisi. La page écrit « Morr Worshwishpers » (coquille) : clé « Morr Worshippers » retenue. Haine des morts-vivants : héros uniquement. Francs-tireurs : ceux des Mercenaires, Chasseurs de sorcières et Sœurs de Sigmar sauf nécromantiques/chaotiques ; pas d'alliance avec bandes nécromantiques ou chaotiques. Choix de compétences : mêmes restrictions que Chasseurs de sorcières/Sœurs de Sigmar. Pas de tableau de maximums : race humain."
+}

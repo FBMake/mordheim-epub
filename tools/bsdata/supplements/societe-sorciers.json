@@ -1,0 +1,843 @@
+{
+ "id": "societe-sorciers",
+ "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/sorcerous-society",
+ "nomEn": "Sorcerous Society",
+ "nom": "Société des sorciers",
+ "tresor": 500,
+ "effectifMax": 15,
+ "regles": [
+  "Keep it secret, keep it safe!",
+  "The Vagaries of Magic"
+ ],
+ "guerriers": [
+  {
+   "cle": "Magus",
+   "nom": "Mage suprême",
+   "categorie": "heros",
+   "cout": 75,
+   "min": 1,
+   "max": 1,
+   "xp": 20,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "8"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Leader",
+    "Wizard (Elemental or Lesser Magic)"
+   ],
+   "competences": [
+    "Érudition",
+    "Vitesse"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Wizard's Staff",
+       "nom": "Bâton de sorcier",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 15
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      },
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Handgun",
+       "nom": "Arquebuse",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Familiar",
+       "nom": "Familier",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Companion",
+   "nom": "Compagnon",
+   "categorie": "heros",
+   "cout": 45,
+   "min": 0,
+   "max": 2,
+   "xp": 8,
+   "profil": {
+    "M": "4",
+    "CC": "4",
+    "CT": "4",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "8"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Don't Look at Me!",
+    "Body Guard"
+   ],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Force"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Wizard's Staff",
+       "nom": "Bâton de sorcier",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 15
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      },
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Handgun",
+       "nom": "Arquebuse",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Familiar",
+       "nom": "Familier",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Mage",
+   "nom": "Mage",
+   "categorie": "heros",
+   "cout": 35,
+   "min": 0,
+   "max": 2,
+   "xp": 8,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "2",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Wizard (Elemental or Lesser Magic)",
+    "Respect Your Betters"
+   ],
+   "competences": [
+    "Érudition",
+    "Vitesse"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Wizard's Staff",
+       "nom": "Bâton de sorcier",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 15
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      },
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Handgun",
+       "nom": "Arquebuse",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Familiar",
+       "nom": "Familier",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Untrained",
+   "nom": "Novices",
+   "categorie": "hdm",
+   "cout": 25,
+   "min": 0,
+   "max": 5,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "2",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Here, Hold This",
+    "Harnessed"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Wizard's Staff",
+       "nom": "Bâton de sorcier",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 15
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      },
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Handgun",
+       "nom": "Arquebuse",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Grunts",
+   "nom": "Hommes de peine",
+   "categorie": "hdm",
+   "cout": 25,
+   "min": 0,
+   "max": null,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Prove That Talent!"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Wizard's Staff",
+       "nom": "Bâton de sorcier",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 15
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      },
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Handgun",
+       "nom": "Arquebuse",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "reglesTexte": {
+  "Keep it secret, keep it safe!": {
+   "fr": {
+    "nom": "Garde-le secret, garde-le en sûreté !",
+    "resume": "Aucun franc-tireur ni personnage spécial lanceur de sorts, sauf le mage haut elfe ; les autres francs-tireurs sont recrutés comme pour une bande de mercenaires humains."
+   },
+   "en": {
+    "nom": "Keep it secret, keep it safe!",
+    "resume": "No Hired Sword or Dramatis Personae with the Wizard ability except the High Elf Mage; others are hired as for a Human Mercenary warband."
+   }
+  },
+  "The Vagaries of Magic": {
+   "fr": {
+    "nom": "Les caprices de la magie",
+    "resume": "Un double 1 au lancer d'un sort oblige à jeter 2D6 sur la table d'échec magique (de la transformation en enfant du Chaos à une mutation gratuite)."
+   },
+   "en": {
+    "nom": "The Vagaries of Magic",
+    "resume": "A double 1 when casting forces a 2D6 roll on the Magical Failure table (from turning into a Chaos Spawn to a free mutation)."
+   }
+  },
+  "Wizard (Elemental or Lesser Magic)": {
+   "fr": {
+    "nom": "Sorcier (Magie élémentaire ou mineure)",
+    "resume": "Sorcier qui tire ses sorts au hasard dans l'un des domaines élémentaires (Eau, Feu, Terre, Air) ou dans la magie mineure ; le Mage suprême commence avec deux sorts, un mage avec un."
+   },
+   "en": {
+    "nom": "Wizard (Elemental or Lesser Magic)",
+    "resume": "Wizard who randomly generates spells from one Elemental lore (Water, Fire, Earth, Air) or Lesser Magic; the Magus starts with two spells, a Mage with one."
+   }
+  },
+  "Don't Look at Me!": {
+   "fr": {
+    "nom": "Ne me regardez pas !",
+    "resume": "Le compagnon ne peut jamais devenir chef ; son Commandement ne sert qu'à ses propres tests, y compris de déroute."
+   },
+   "en": {
+    "nom": "Don't Look at Me!",
+    "resume": "The Companion can never become leader; his Leadership is used only for his own tests, including Rout tests."
+   }
+  },
+  "Body Guard": {
+   "fr": {
+    "nom": "Garde du corps",
+    "resume": "À 2 ps d'un sorcier et hors combat, il encaisse les tirs et intercepte les charges visant le sorcier, en se déplaçant hors séquence si besoin."
+   },
+   "en": {
+    "nom": "Body Guard",
+    "resume": "Within 2\" of a Wizard and not in combat, he takes missile fire and intercepts charges aimed at the Wizard, moving out of sequence if needed."
+   }
+  },
+  "Respect Your Betters": {
+   "fr": {
+    "nom": "Respect des aînés",
+    "resume": "Un mage ne peut connaître plus de sorts que le chef ; sinon il doit l'affronter en duel de sorciers et le perdant quitte la bande."
+   },
+   "en": {
+    "nom": "Respect Your Betters",
+    "resume": "A Mage may not know more spells than the leader; otherwise he must fight him in a Wizard's Duel and the loser leaves the warband."
+   }
+  },
+  "Here, Hold This": {
+   "fr": {
+    "nom": "Tiens, porte ça",
+    "resume": "Les novices peuvent porter des objets spéciaux comme des reliques sacrées ou des porte-bonheur."
+   },
+   "en": {
+    "nom": "Here, Hold This",
+    "resume": "Untrained may carry special items such as holy relics or lucky charms."
+   }
+  },
+  "Harnessed": {
+   "fr": {
+    "nom": "Talent maîtrisé",
+    "resume": "Sur « Le gars a du talent », il devient sorcier : il peut renoncer à la progression pour tirer un sort ou faire le jet de héros normal."
+   },
+   "en": {
+    "nom": "Harnessed",
+    "resume": "On 'The Lad's Got Talent' he becomes a wizard: he may forgo the advance to generate a spell or take the normal hero roll."
+   }
+  },
+  "Prove That Talent!": {
+   "fr": {
+    "nom": "Prouve ton talent !",
+    "resume": "Sur « Le gars a du talent », il devient un héros ordinaire ou un novice ; deux fois ce résultat lui permettent de devenir sorcier."
+   },
+   "en": {
+    "nom": "Prove That Talent!",
+    "resume": "On 'The Lad's Got Talent' he becomes a mundane hero or an Untrained; two such results let him become a wizard."
+   }
+  }
+ },
+ "competencesSpeciales": null,
+ "races": {},
+ "notes": "Pas de liste spéciale : la page ajoute à la liste d'Érudition trois compétences du Town Cryer 7 / Annual 2002 (Scribe, Concentration, Aptitude magique), non saisies comme liste spéciale. Armure lourde à 20 co sur la page (saisi tel quel, probablement 50 normalement). Hallebarde 15 co (tel quel). « Shield/Buckler » 5 co saisi en deux objets. Familier : 20 co dans la liste (20 + 2D6 co dans sa description, rare 9) ; héros uniquement, un par sorcier (chien, chat, corbeau ou vipère). Bâton de sorcier : parade, deux mains, commotion. Sorts des domaines élémentaires d'Eau, Feu, Terre et Air détaillés sur la page (non saisis). Effectif minimum 3. Les novices/hommes de peine promus sorciers ne sont pas modélisés."
+}

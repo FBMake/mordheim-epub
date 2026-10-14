@@ -1,0 +1,746 @@
+{
+  "id": "elfes-sylvains",
+  "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/wood-elves-of-athel-loren",
+  "nomEn": "Wood Elves of Athel Loren",
+  "nom": "Elfes sylvains d'Athel Loren",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [
+    "Hate Dark Elves",
+    "Excellent Sight",
+    "Unforgiving",
+    "Tolerant"
+  ],
+  "guerriers": [
+    {
+      "cle": "Hunt Master",
+      "nom": "Maître de chasse",
+      "categorie": "heros",
+      "cout": 60,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "5",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Leader"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Elfes sylvains d'Athel Loren)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Ithilmar Dagger",
+              "nom": "Dague en ithilmar",
+              "cout": 4
+            },
+            {
+              "en": "Ithilmar Sword",
+              "nom": "Épée en ithilmar",
+              "cout": 20
+            },
+            {
+              "en": "Ithilmar Spear",
+              "nom": "Lance en ithilmar",
+              "cout": 20
+            },
+            {
+              "en": "Ithilmar Double-handed weapon",
+              "nom": "Arme lourde en ithilmar",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            },
+            {
+              "en": "Elf Bow",
+              "nom": "Arc elfique",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Ithilmar Armour",
+              "nom": "Armure en ithilmar",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Elven Cloak",
+              "nom": "Cape elfique",
+              "cout": 75
+            },
+            {
+              "en": "Elven Wine",
+              "nom": "Vin elfique",
+              "cout": 50
+            },
+            {
+              "en": "Hunting Arrows",
+              "nom": "Flèches de chasse",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Waywatchers",
+      "nom": "Gardes forestiers",
+      "categorie": "heros",
+      "cout": 40,
+      "min": 0,
+      "max": 2,
+      "xp": 12,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Sniper",
+        "Camouflage"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse",
+        "Spéciales (Elfes sylvains d'Athel Loren)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Ithilmar Dagger",
+              "nom": "Dague en ithilmar",
+              "cout": 4
+            },
+            {
+              "en": "Ithilmar Sword",
+              "nom": "Épée en ithilmar",
+              "cout": 20
+            },
+            {
+              "en": "Ithilmar Spear",
+              "nom": "Lance en ithilmar",
+              "cout": 20
+            },
+            {
+              "en": "Ithilmar Double-handed weapon",
+              "nom": "Arme lourde en ithilmar",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            },
+            {
+              "en": "Elf Bow",
+              "nom": "Arc elfique",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Ithilmar Armour",
+              "nom": "Armure en ithilmar",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Elven Cloak",
+              "nom": "Cape elfique",
+              "cout": 75
+            },
+            {
+              "en": "Elven Wine",
+              "nom": "Vin elfique",
+              "cout": 50
+            },
+            {
+              "en": "Hunting Arrows",
+              "nom": "Flèches de chasse",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Forest Mage",
+      "nom": "Mage sylvain",
+      "categorie": "heros",
+      "cout": 55,
+      "min": 0,
+      "max": 1,
+      "xp": 12,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Wizard (Woodland Incantations)"
+      ],
+      "competences": [
+        "Tir",
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Elfes sylvains d'Athel Loren)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Ithilmar Dagger",
+              "nom": "Dague en ithilmar",
+              "cout": 4
+            },
+            {
+              "en": "Ithilmar Sword",
+              "nom": "Épée en ithilmar",
+              "cout": 20
+            },
+            {
+              "en": "Ithilmar Spear",
+              "nom": "Lance en ithilmar",
+              "cout": 20
+            },
+            {
+              "en": "Ithilmar Double-handed weapon",
+              "nom": "Arme lourde en ithilmar",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            },
+            {
+              "en": "Elf Bow",
+              "nom": "Arc elfique",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Ithilmar Armour",
+              "nom": "Armure en ithilmar",
+              "cout": 60
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Elven Cloak",
+              "nom": "Cape elfique",
+              "cout": 75
+            },
+            {
+              "en": "Elven Wine",
+              "nom": "Vin elfique",
+              "cout": 50
+            },
+            {
+              "en": "Hunting Arrows",
+              "nom": "Flèches de chasse",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Deepwood Scouts",
+      "nom": "Éclaireurs des bois profonds",
+      "categorie": "hdm",
+      "cout": 35,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "5",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Crossfire"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            },
+            {
+              "en": "Elf Bow",
+              "nom": "Arc elfique",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Elven Cloak",
+              "nom": "Cape elfique",
+              "cout": 75
+            },
+            {
+              "en": "Elven Wine",
+              "nom": "Vin elfique",
+              "cout": 50
+            },
+            {
+              "en": "Hunting Arrows",
+              "nom": "Flèches de chasse",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Glade Guard",
+      "nom": "Gardes des clairières",
+      "categorie": "hdm",
+      "cout": 30,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "5",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            },
+            {
+              "en": "Elf Bow",
+              "nom": "Arc elfique",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Elven Cloak",
+              "nom": "Cape elfique",
+              "cout": 75
+            },
+            {
+              "en": "Elven Wine",
+              "nom": "Vin elfique",
+              "cout": 50
+            },
+            {
+              "en": "Hunting Arrows",
+              "nom": "Flèches de chasse",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Sniper": {
+      "fr": {
+        "nom": "Tireur embusqué",
+        "resume": "Le garde forestier peut tirer tout en restant caché ; après le tir, sur 5+ sur 1D6, il reste caché car personne ne repère d'où vient la flèche."
+      },
+      "en": {
+        "nom": "Sniper",
+        "resume": "May shoot while hidden; after shooting, on a 5+ on a D6 nobody spots where the arrow came from and he stays hidden."
+      }
+    },
+    "Camouflage": {
+      "fr": {
+        "nom": "Camouflage",
+        "resume": "Quand il est caché, chaque ennemi doit en plus réussir un test d'Initiative pour le repérer."
+      },
+      "en": {
+        "nom": "Camouflage",
+        "resume": "While hidden, each enemy must also pass an Initiative test to spot him."
+      }
+    },
+    "Wizard (Woodland Incantations)": {
+      "fr": {
+        "nom": "Sorcier (Incantations sylvestres)",
+        "resume": "Le mage est un lanceur de sorts et tire ses sorts dans la liste des Incantations sylvestres."
+      },
+      "en": {
+        "nom": "Wizard (Woodland Incantations)",
+        "resume": "The mage is a spellcaster using the Woodland Incantations list."
+      }
+    },
+    "Crossfire": {
+      "fr": {
+        "nom": "Feux croisés",
+        "resume": "Si plusieurs éclaireurs tirent sur la même cible, ils gagnent +1 au jet de blessure."
+      },
+      "en": {
+        "nom": "Crossfire",
+        "resume": "If more than one Scout shoots at the same target, they get +1 to the injury roll."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Elfes sylvains d'Athel Loren)",
+    "listeEn": "Special Skills (Wood Elves of Athel Loren)",
+    "competences": [
+      {
+        "en": "Fey",
+        "nom": "Féerique",
+        "resume": "Le héros bénéficie d'une sauvegarde de 4+ contre la magie hostile.",
+        "resumeEn": "The hero has a 4+ save against hostile magic.",
+        "condition": null
+      },
+      {
+        "en": "Elven Luck",
+        "nom": "Chance elfique",
+        "resume": "Une fois par partie, le héros peut relancer un jet raté.",
+        "resumeEn": "Once per game the hero may re-roll any failed roll.",
+        "condition": null
+      },
+      {
+        "en": "Excellent Sight",
+        "nom": "Vue perçante",
+        "resume": "Le héros repère les ennemis cachés jusqu'à deux fois son Initiative en pas (redondant avec la règle de bande).",
+        "resumeEn": "The hero spots hidden enemies up to twice his Initiative in inches (redundant with the warband rule).",
+        "condition": null
+      },
+      {
+        "en": "Seeker",
+        "nom": "Traqueur",
+        "resume": "Le héros peut modifier un dé d'exploration de +1 ou -1. Un seul héros elfe de la bande peut avoir cette compétence.",
+        "resumeEn": "The hero may modify one exploration dice by +1 or -1. Only one Elf hero in the warband may have it.",
+        "condition": null
+      },
+      {
+        "en": "Infiltration",
+        "nom": "Infiltration",
+        "resume": "Le héros se déploie toujours en dernier, n'importe où hors de vue de l'ennemi. Si les deux camps infiltrent, le plus bas sur 1D6 se place en premier.",
+        "resumeEn": "Always deployed last, anywhere out of enemy sight. If both sides have Infiltration, lowest D6 deploys first.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Les héros utilisent la « Wood Elf equipment list » : liste des héros retenue. « Ithilmar weapon : 2 x prix » (héros uniquement) traduit en dague 4, épée 20, lance 20, arme lourde 30 co ; armure en ithilmar 60 co, héros uniquement (non proposée aux éclaireurs/gardes). Hommes de main achetés par groupes de 1 à 5, nombre illimité. Règle Tolerant réutilisée (la version guerriers des ombres exclut en plus les empoisonneurs, pas celle-ci). Le texte du Leader appelle le chef « Protector of the Hunt » (coquille). Incantations sylvestres non saisies. Maximums elfes : race « elfe » existante."
+}

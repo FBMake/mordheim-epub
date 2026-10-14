@@ -1,0 +1,704 @@
+{
+ "id": "skavens-moulder",
+ "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/skaven-of-clan-moulder",
+ "nomEn": "Skaven of Clan Moulder",
+ "nom": "Skavens du Clan Moulder",
+ "tresor": 500,
+ "effectifMax": 20,
+ "regles": [
+  "Goading",
+  "Mutations"
+ ],
+ "guerriers": [
+  {
+   "cle": "Packmaster",
+   "nom": "Maître de meute",
+   "categorie": "heros",
+   "cout": 75,
+   "min": 1,
+   "max": 1,
+   "xp": 20,
+   "profil": {
+    "M": "5",
+    "CC": "4",
+    "CT": "4",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "5",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "skaven",
+   "sansProgression": false,
+   "regles": [
+    "Leader",
+    "Master Handler",
+    "Poke 'em in the Squidgy Bits"
+   ],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Érudition",
+    "Force",
+    "Vitesse",
+    "Spéciales (Skavens du Clan Moulder)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace/Club",
+       "nom": "Masse/Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Flail",
+       "nom": "Fléau",
+       "cout": 15
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Beastwhip",
+       "nom": "Fouet à bêtes",
+       "cout": 25
+      },
+      {
+       "en": "Thingcatcher",
+       "nom": "Attrape-chose",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Sling",
+       "nom": "Fronde",
+       "cout": 2
+      },
+      {
+       "en": "Warplock Pistol",
+       "nom": "Pistolet à malepierre",
+       "cout": 35
+      },
+      {
+       "en": "Brace of Warplock Pistols",
+       "nom": "Paire de pistolets à malepierre",
+       "cout": 70
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Stormvermin",
+   "nom": "Vermine de choc",
+   "categorie": "heros",
+   "cout": 40,
+   "min": 0,
+   "max": 2,
+   "xp": 8,
+   "profil": {
+    "M": "5",
+    "CC": "4",
+    "CT": "3",
+    "F": "4",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "6"
+   },
+   "race": "skaven",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [
+    "Combat",
+    "Force",
+    "Vitesse",
+    "Spéciales (Skavens du Clan Moulder)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace/Club",
+       "nom": "Masse/Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Flail",
+       "nom": "Fléau",
+       "cout": 15
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Sling",
+       "nom": "Fronde",
+       "cout": 2
+      },
+      {
+       "en": "Warplock Pistol",
+       "nom": "Pistolet à malepierre",
+       "cout": 35
+      },
+      {
+       "en": "Brace of Warplock Pistols",
+       "nom": "Paire de pistolets à malepierre",
+       "cout": 70
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Apprentice",
+   "nom": "Apprenti",
+   "categorie": "heros",
+   "cout": 25,
+   "min": 0,
+   "max": 2,
+   "xp": 4,
+   "profil": {
+    "M": "5",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "5"
+   },
+   "race": "skaven",
+   "sansProgression": false,
+   "regles": [
+    "Novice Handler",
+    "Heir to Power"
+   ],
+   "competences": [
+    "Combat",
+    "Érudition",
+    "Vitesse",
+    "Spéciales (Skavens du Clan Moulder)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace/Club",
+       "nom": "Masse/Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Flail",
+       "nom": "Fléau",
+       "cout": 15
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Beastwhip",
+       "nom": "Fouet à bêtes",
+       "cout": 25
+      },
+      {
+       "en": "Thingcatcher",
+       "nom": "Attrape-chose",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Sling",
+       "nom": "Fronde",
+       "cout": 2
+      },
+      {
+       "en": "Warplock Pistol",
+       "nom": "Pistolet à malepierre",
+       "cout": 35
+      },
+      {
+       "en": "Brace of Warplock Pistols",
+       "nom": "Paire de pistolets à malepierre",
+       "cout": 70
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Clanrats",
+   "nom": "Guerriers des clans",
+   "categorie": "hdm",
+   "cout": 20,
+   "min": 0,
+   "max": 5,
+   "xp": 0,
+   "profil": {
+    "M": "5",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "5"
+   },
+   "race": "skaven",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Sling",
+       "nom": "Fronde",
+       "cout": 2
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Giant Rats",
+   "nom": "Rats géants",
+   "categorie": "hdm",
+   "cout": 15,
+   "min": 0,
+   "max": null,
+   "xp": 0,
+   "profil": {
+    "M": "6",
+    "CC": "2",
+    "CT": "0",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "4"
+   },
+   "race": null,
+   "sansProgression": true,
+   "regles": [
+    "Animals"
+   ],
+   "competences": [],
+   "equipement": []
+  },
+  {
+   "cle": "Wolf Rats",
+   "nom": "Rats-loups",
+   "categorie": "hdm",
+   "cout": 30,
+   "min": 0,
+   "max": 3,
+   "xp": 0,
+   "profil": {
+    "M": "9",
+    "CC": "3",
+    "CT": "0",
+    "F": "4",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "4"
+   },
+   "race": null,
+   "sansProgression": true,
+   "regles": [
+    "Animals",
+    "Poisoned Attack"
+   ],
+   "competences": [],
+   "equipement": []
+  },
+  {
+   "cle": "Rat Ogre",
+   "nom": "Rat-ogre",
+   "categorie": "hdm",
+   "cout": 200,
+   "min": 0,
+   "max": 2,
+   "xp": 0,
+   "profil": {
+    "M": "6",
+    "CC": "3",
+    "CT": "3",
+    "F": "5",
+    "E": "5",
+    "PV": "3",
+    "I": "4",
+    "A": "3",
+    "Cd": "4"
+   },
+   "race": null,
+   "sansProgression": true,
+   "regles": [
+    "Fear",
+    "Stupidity",
+    "Large Target",
+    "Never Gain Experience",
+    "It's Alive!",
+    "Hard to Handle"
+   ],
+   "competences": [],
+   "equipement": []
+  }
+ ],
+ "reglesTexte": {
+  "Goading": {
+   "fr": {
+    "nom": "Aiguillonnage",
+    "resume": "Au début du tour, le maître de meute et chaque apprenti peuvent aiguillonner une bête ou un groupe de bêtes à 6 ps (2D6 ≥ 6 rat géant, 8 rat-loup, 10 rat-ogre) : sur un succès, 1D6 donne une course forcée, une charge obligatoire ou frénésie et haine ; sur un échec, la cible teste la stupidité."
+   },
+   "en": {
+    "nom": "Goading",
+    "resume": "At the start of the turn the Packmaster and each Apprentice may goad one beast or beast group within 6\" (2D6 ≥ 6 Giant Rat, 8 Wolf Rat, 10 Rat Ogre): on a success a D6 gives a forced run, a forced charge, or Frenzy and Hatred; on a failure the target tests for Stupidity."
+   }
+  },
+  "Master Handler": {
+   "fr": {
+    "nom": "Maître dresseur",
+    "resume": "Il peut aiguillonner et commence avec la compétence Monter un rat-loup et une compétence de dressage supplémentaire."
+   },
+   "en": {
+    "nom": "Master Handler",
+    "resume": "He may Goad and starts with Ride Wolf Rat plus one extra Beast Handling skill."
+   }
+  },
+  "Poke 'em in the Squidgy Bits": {
+   "fr": {
+    "nom": "Là où ça fait mal",
+    "resume": "S'il en est équipé, il cumule les bonus du fouet à bêtes et de l'attrape-chose lors d'un aiguillonnage."
+   },
+   "en": {
+    "nom": "Poke 'em in the Squidgy Bits",
+    "resume": "If equipped, he gains the benefits of both Beastwhip and Thingcatcher when Goading."
+   }
+  },
+  "Novice Handler": {
+   "fr": {
+    "nom": "Dresseur novice",
+    "resume": "Il peut aiguillonner mais n'utilise qu'un seul des bonus du fouet à bêtes ou de l'attrape-chose par tentative."
+   },
+   "en": {
+    "nom": "Novice Handler",
+    "resume": "He may Goad but uses only one of the Beastwhip or Thingcatcher benefits per attempt."
+   }
+  },
+  "Heir to Power": {
+   "fr": {
+    "nom": "Héritier du pouvoir",
+    "resume": "Si le maître de meute meurt, un apprenti le remplace et un nouvel apprenti peut être recruté ; sans apprenti survivant, la bande est dissoute."
+   },
+   "en": {
+    "nom": "Heir to Power",
+    "resume": "If the Packmaster dies, an Apprentice replaces him and a new Apprentice may be hired; with no Apprentice left, the warband disbands."
+   }
+  },
+  "Poisoned Attack": {
+   "fr": {
+    "nom": "Attaque empoisonnée",
+    "resume": "Ses attaques sont de Force 4 mais ne modifient pas la sauvegarde d'armure."
+   },
+   "en": {
+    "nom": "Poisoned Attack",
+    "resume": "Its attacks are Strength 4 but do not modify armour saves."
+   }
+  },
+  "It's Alive!": {
+   "fr": {
+    "nom": "Il est vivant !",
+    "resume": "À son recrutement, le rat-ogre doit acheter une mutation de la liste des Possédés au prix indiqué."
+   },
+   "en": {
+    "nom": "It's Alive!",
+    "resume": "When hired, the Rat Ogre must buy one Mutation from the Possessed list at the listed price."
+   }
+  },
+  "Hard to Handle": {
+   "fr": {
+    "nom": "Difficile à mener",
+    "resume": "Les rats-ogres s'achètent individuellement et ne forment jamais de groupe d'hommes de main."
+   },
+   "en": {
+    "nom": "Hard to Handle",
+    "resume": "Rat Ogres are bought individually and never form a henchman group."
+   }
+  }
+ },
+ "competencesSpeciales": {
+  "liste": "Spéciales (Skavens du Clan Moulder)",
+  "listeEn": "Special Skills (Clan Moulder)",
+  "competences": [
+   {
+    "en": "Black Hunger",
+    "nom": "Faim noire",
+    "resume": "Déclarée au début du tour : +1 Attaque et +1D3 ps de mouvement ce tour, puis le héros subit 1D3 touches de Force 3 sans sauvegarde d'armure à la fin du tour.",
+    "resumeEn": "Declared at the start of the turn: +1 Attack and +D3\" Movement this turn, then the hero suffers D3 Strength 3 hits with no armour save at the end of the turn.",
+    "condition": null
+   },
+   {
+    "en": "Beastkin",
+    "nom": "Frère des bêtes",
+    "resume": "La portée de ses compétences de dressage est doublée à 12 ps.",
+    "resumeEn": "The range of his Beast/Animal Handling skills is doubled to 12\".",
+    "condition": null
+   },
+   {
+    "en": "Hypnotic Musk",
+    "nom": "Musc hypnotique",
+    "resume": "Les animaux et bêtes adverses doivent réussir un test de Commandement pour le charger, sauf charge due à un aiguillonnage ; les montures n'y sont pas sensibles.",
+    "resumeEn": "Enemy animals and beasts must pass a Leadership test to charge him, unless the charge comes from Goading; mounts are immune.",
+    "condition": null
+   },
+   {
+    "en": "Subjugator of Mankind",
+    "nom": "Asservisseur des hommes",
+    "resume": "Avec un attrape-chose, un ennemi qu'il met hors de combat est automatiquement « capturé » au lieu de jeter pour les blessures graves (sauf grandes créatures).",
+    "resumeEn": "With a Thingcatcher, an enemy he takes out of action is automatically 'Captured' instead of rolling for serious injury (not large creatures).",
+    "condition": null
+   },
+   {
+    "en": "Twistkin",
+    "nom": "Engeance tordue",
+    "resume": "En prenant cette compétence, le héros doit acheter une mutation de la liste des Possédés à moitié prix.",
+    "resumeEn": "On taking this skill the hero must buy a Mutation from the Possessed list at half cost.",
+    "condition": "skavens-moulder/stormvermin"
+   }
+  ]
+ },
+ "races": {},
+ "notes": "Monnaie : « warp tokens » (équivalents aux couronnes d'or). Effectif maximum 20, minimum 3. Conçue pour Blazing Saddles (Annual 2002). Fouet à bêtes et attrape-chose : maître de meute et apprentis seulement (Clan Moulder uniquement). Pistolet à malepierre 35, paire 70. Monture rat-loup (90, rare 11, profil M9 CC3 CT0 F4 E3 PV1 I4 A1 Cd4) : équipement spécial hors listes, non saisi. Les compétences « Monter un rat-loup » et de dressage (Beast Handling) ne sont pas définies sur la page. Les compétences spéciales peuvent remplacer n'importe quelle table normale accessible. Rats géants : nombre illimité dans la limite de l'effectif. Rat-ogre : stupidité sauf héros du Clan Moulder à 6 ps ; achète obligatoirement une mutation (coût en sus). Rats géants, rats-loups et rats-ogres : race inconnue (null). Mutations : certaines figurines peuvent acheter des mutations de la liste des Possédés."
+}

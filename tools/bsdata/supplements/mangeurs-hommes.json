@@ -1,0 +1,787 @@
+{
+  "id": "mangeurs-hommes",
+  "url": "https://mordheimer.net/docs/warbands/grade-1c-warbands/maneaters",
+  "nomEn": "Maneaters",
+  "nom": "Mangeurs d'hommes",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [
+    "Gluttony",
+    "Slow Witted",
+    "Difficult Customers",
+    "Cannibals"
+  ],
+  "guerriers": [
+    {
+      "cle": "Captain",
+      "nom": "Capitaine",
+      "categorie": "heros",
+      "cout": 145,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "6",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "4",
+        "PV": "3",
+        "I": "3",
+        "A": "2",
+        "Cd": "8"
+      },
+      "race": "ogre",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Fear",
+        "Large Target"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Spéciales (Mangeurs d'hommes)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Cleaver",
+              "nom": "Couperet (hache)",
+              "cout": 5
+            },
+            {
+              "en": "Ogre Club",
+              "nom": "Gourdin ogre",
+              "cout": 10
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Iron Fist",
+              "nom": "Poing de fer",
+              "cout": 15
+            },
+            {
+              "en": "Cathayan Longsword",
+              "nom": "Épée longue de Cathay",
+              "cout": 75
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Hand-held Mortar",
+              "nom": "Mortier portatif",
+              "cout": 70
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Gnoblar Fighter",
+              "nom": "Gnoblar combattant",
+              "cout": 15
+            },
+            {
+              "en": "Lookout-Gnoblar",
+              "nom": "Gnoblar guetteur",
+              "cout": 20
+            },
+            {
+              "en": "Luck-Gnoblar",
+              "nom": "Gnoblar porte-bonheur",
+              "cout": 25
+            },
+            {
+              "en": "Sword-Gnoblar",
+              "nom": "Gnoblar bretteur",
+              "cout": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Mountain Guide",
+      "nom": "Guide des montagnes",
+      "categorie": "heros",
+      "cout": 145,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "6",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "4",
+        "PV": "3",
+        "I": "3",
+        "A": "2",
+        "Cd": "8"
+      },
+      "race": "ogre",
+      "sansProgression": false,
+      "regles": [
+        "Fear",
+        "Large Target",
+        "Ranger",
+        "Loner"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Spéciales (Mangeurs d'hommes)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Cleaver",
+              "nom": "Couperet (hache)",
+              "cout": 5
+            },
+            {
+              "en": "Ogre Club",
+              "nom": "Gourdin ogre",
+              "cout": 10
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Harpoon Crossbow",
+              "nom": "Arbalète à harpon",
+              "cout": 50
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Youngbloods",
+      "nom": "Jeunes sangs",
+      "categorie": "heros",
+      "cout": 45,
+      "min": 0,
+      "max": 3,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "4",
+        "PV": "2",
+        "I": "2",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "ogre",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Force",
+        "Spéciales (Mangeurs d'hommes)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Cleaver",
+              "nom": "Couperet (hache)",
+              "cout": 5
+            },
+            {
+              "en": "Ogre Club",
+              "nom": "Gourdin ogre",
+              "cout": 10
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Iron Fist",
+              "nom": "Poing de fer",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Hand-held Mortar",
+              "nom": "Mortier portatif",
+              "cout": 70
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Gnoblar Fighter",
+              "nom": "Gnoblar combattant",
+              "cout": 15
+            },
+            {
+              "en": "Lookout-Gnoblar",
+              "nom": "Gnoblar guetteur",
+              "cout": 20
+            },
+            {
+              "en": "Luck-Gnoblar",
+              "nom": "Gnoblar porte-bonheur",
+              "cout": 25
+            },
+            {
+              "en": "Sword-Gnoblar",
+              "nom": "Gnoblar bretteur",
+              "cout": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Bulls",
+      "nom": "Taureaux",
+      "categorie": "hdm",
+      "cout": 140,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "3",
+        "CT": "2",
+        "F": "4",
+        "E": "4",
+        "PV": "3",
+        "I": "2",
+        "A": "3",
+        "Cd": "7"
+      },
+      "race": "ogre",
+      "sansProgression": false,
+      "regles": [
+        "Fear",
+        "Large Target",
+        "Bull Charge"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Cleaver",
+              "nom": "Couperet (hache)",
+              "cout": 5
+            },
+            {
+              "en": "Ogre Club",
+              "nom": "Gourdin ogre",
+              "cout": 10
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Iron Fist",
+              "nom": "Poing de fer",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Hand-held Mortar",
+              "nom": "Mortier portatif",
+              "cout": 70
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Gnoblar Fighter",
+              "nom": "Gnoblar combattant",
+              "cout": 15
+            },
+            {
+              "en": "Lookout-Gnoblar",
+              "nom": "Gnoblar guetteur",
+              "cout": 20
+            },
+            {
+              "en": "Luck-Gnoblar",
+              "nom": "Gnoblar porte-bonheur",
+              "cout": 25
+            },
+            {
+              "en": "Sword-Gnoblar",
+              "nom": "Gnoblar bretteur",
+              "cout": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Half-growns",
+      "nom": "Demi-portions",
+      "categorie": "hdm",
+      "cout": 85,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "3",
+        "CT": "2",
+        "F": "4",
+        "E": "4",
+        "PV": "2",
+        "I": "2",
+        "A": "2",
+        "Cd": "7"
+      },
+      "race": "ogre",
+      "sansProgression": false,
+      "regles": [
+        "Fear"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Cleaver",
+              "nom": "Couperet (hache)",
+              "cout": 5
+            },
+            {
+              "en": "Ogre Club",
+              "nom": "Gourdin ogre",
+              "cout": 10
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Iron Fist",
+              "nom": "Poing de fer",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Hand-held Mortar",
+              "nom": "Mortier portatif",
+              "cout": 70
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Gnoblar Fighter",
+              "nom": "Gnoblar combattant",
+              "cout": 15
+            },
+            {
+              "en": "Lookout-Gnoblar",
+              "nom": "Gnoblar guetteur",
+              "cout": 20
+            },
+            {
+              "en": "Luck-Gnoblar",
+              "nom": "Gnoblar porte-bonheur",
+              "cout": 25
+            },
+            {
+              "en": "Sword-Gnoblar",
+              "nom": "Gnoblar bretteur",
+              "cout": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Sabretusks",
+      "nom": "Dents-de-sabre",
+      "categorie": "hdm",
+      "cout": 125,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "8",
+        "CC": "4",
+        "CT": "0",
+        "F": "4",
+        "E": "4",
+        "PV": "2",
+        "I": "4",
+        "A": "3",
+        "Cd": "4"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Fear",
+        "Large Target",
+        "Animals",
+        "Guide's Beast",
+        "Feral Instinct",
+        "Ignored"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Gluttony": {
+      "fr": {
+        "nom": "Gloutonnerie",
+        "resume": "Chaque Ogre compte pour deux figurines à la vente de pierre magique ; les captifs et même les membres de la bande peuvent être mangés, et un héros ogre qui mange gagne autant d'expérience que de figurines dévorées."
+      },
+      "en": {
+        "nom": "Gluttony",
+        "resume": "Each Ogre counts as two models when selling wyrdstone; captives and even warband members may be eaten, and an Ogre Hero who eats gains experience per model eaten."
+      }
+    },
+    "Difficult Customers": {
+      "fr": {
+        "nom": "Clients difficiles",
+        "resume": "Les héros ogres subissent -1 aux jets de recherche d'objets rares non réservés aux Ogres."
+      },
+      "en": {
+        "nom": "Difficult Customers",
+        "resume": "Ogre Heroes suffer -1 when searching for rare items not exclusive to Ogres."
+      }
+    },
+    "Cannibals": {
+      "fr": {
+        "nom": "Cannibales",
+        "resume": "Seuls les francs-tireurs halflings et le garde du corps ogre peuvent être engagés, sauf exception ; ils peuvent être mangés en fin de contrat."
+      },
+      "en": {
+        "nom": "Cannibals",
+        "resume": "Only Halfling Hired Swords and the Ogre Bodyguard may be hired unless stated otherwise; they may be eaten when their contract ends."
+      }
+    },
+    "Ranger": {
+      "fr": {
+        "nom": "Pisteur",
+        "resume": "S'il n'a pas été mis hors de combat, lance deux dés à l'exploration et en garde un (ce n'est pas une relance)."
+      },
+      "en": {
+        "nom": "Ranger",
+        "resume": "If not taken out of action, rolls two dice for exploration and picks one (not a re-roll)."
+      }
+    },
+    "Loner": {
+      "fr": {
+        "nom": "Solitaire",
+        "resume": "Immunisé aux tests de combat seul ; ne prend jamais de gnoblars et ne peut pas devenir chef."
+      },
+      "en": {
+        "nom": "Loner",
+        "resume": "Immune to All Alone tests; never claims Gnoblars and cannot become the leader."
+      }
+    },
+    "Bull Charge": {
+      "fr": {
+        "nom": "Charge du taureau",
+        "resume": "En charge, fait une seule attaque à +1 pour toucher ; si elle touche, l'ennemi est mis à terre."
+      },
+      "en": {
+        "nom": "Bull Charge",
+        "resume": "When charging, makes a single attack at +1 to hit; if it hits, the enemy is knocked down."
+      }
+    },
+    "Guide's Beast": {
+      "fr": {
+        "nom": "Bête du guide",
+        "resume": "Utilise le Commandement du guide des montagnes à 6 ps ; sans guide, il reste en cage au camp."
+      },
+      "en": {
+        "nom": "Guide's Beast",
+        "resume": "Uses the Mountain Guide's Leadership within 6\"; without a Guide it stays caged at camp."
+      }
+    },
+    "Feral Instinct": {
+      "fr": {
+        "nom": "Instinct sauvage",
+        "resume": "Test de Commandement au début du tour : en cas d'échec, l'adversaire le déplace ce tour et il peut charger ses propres alliés."
+      },
+      "en": {
+        "nom": "Feral Instinct",
+        "resume": "Leadership test at the start of the turn: if failed, the opponent moves it that turn and it may charge friendly models."
+      }
+    },
+    "Ignored": {
+      "fr": {
+        "nom": "Négligé",
+        "resume": "Hors de combat, il ne compte pas pour les tests de déroute."
+      },
+      "en": {
+        "nom": "Ignored",
+        "resume": "Does not count towards Rout tests when out of action."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Mangeurs d'hommes)",
+    "listeEn": "Special Skills (Maneaters)",
+    "competences": [
+      {
+        "en": "Master of Arms",
+        "nom": "Maître d'armes",
+        "resume": "Peut manier une arme difficile à utiliser avec une arme de base, mais pas deux armes difficiles.",
+        "resumeEn": "May wield a difficult-to-use weapon together with a hand weapon, but not two difficult weapons.",
+        "condition": null
+      },
+      {
+        "en": "Crude Belch",
+        "nom": "Rot immonde",
+        "resume": "Les ennemis au contact doivent réussir un test de Commandement ou subir -1 pour toucher ce tour ; réutilisable seulement contre un nouvel adversaire.",
+        "resumeEn": "Enemies in base contact must pass a Leadership test or suffer -1 to hit that turn; reusable only against a new opponent.",
+        "condition": null
+      },
+      {
+        "en": "Maneater",
+        "nom": "Mangeur d'hommes",
+        "resume": "Donne une compétence de la liste Tir ou Érudition ; une seule fois, interdit au guide.",
+        "resumeEn": "Grants one skill from the Shooting or Academic list; once only, not for the Guide.",
+        "condition": null
+      },
+      {
+        "en": "Bull Charge",
+        "nom": "Charge du taureau",
+        "resume": "En charge, une seule attaque à +1 pour toucher qui met l'ennemi à terre si elle touche.",
+        "resumeEn": "When charging, a single attack at +1 to hit that knocks the enemy down if it hits.",
+        "condition": null
+      },
+      {
+        "en": "Dog of War",
+        "nom": "Chien de guerre",
+        "resume": "Permet d'engager les francs-tireurs des Mercenaires ; s'il meurt, ils quittent la bande.",
+        "resumeEn": "Allows hiring Hired Swords available to Mercenaries; if he dies they leave the warband.",
+        "condition": "chef"
+      },
+      {
+        "en": "Bellowing Roar",
+        "nom": "Rugissement tonitruant",
+        "resume": "Permet de relancer le premier test de déroute raté.",
+        "resumeEn": "Allows re-rolling the first failed Rout test.",
+        "condition": "chef"
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Les Ogres n'ont jamais de dague gratuite ni de dague (listes sans dague). Épée longue de Cathay réservée au capitaine (seulement dans sa liste). Mortier portatif : 70 co dans la liste, mais 80 + 2D6 co (rare 12) dans la section équipement spécial ; 70 retenu. Gnoblars réclamés (guetteur = Esquive, porte-bonheur = une relance par bataille, bretteur = attaque F2 supplémentaire) : pas des figurines, 2 différents au plus par Ogre, rares et réservés aux Ogres ; le « Gnoblar Fighter » 15 co n'est pas expliqué. Saisis dans la liste ogre des héros comme des hommes de main (la page ne restreint pas). Peur : tous les Ogres sauf les jeunes sangs. Grande cible : tous sauf jeunes sangs et demi-portions. Dents-de-sabre seulement si la bande a un guide des montagnes ; ils ne gagnent jamais d'expérience (Animals). Hommes de main achetés par groupes de 1 à 5. Compétence Maneater interdite au guide (condition non exprimable). Liste spéciale utilisable à la place des listes standard."
+}
