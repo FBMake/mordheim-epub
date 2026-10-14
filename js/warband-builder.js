@@ -7,8 +7,8 @@
  * La bande créée est décrite par un petit modèle éditable (`creation`) :
  *   { version, nom, faction, tresorDepart, reglesBande[], figurines[] }
  * avec, pour chaque figurine :
- *   { id, categorie: "heros" | "hdm", type, coutGc, xp, stats{M..Cd},
- *     nombre, surcout,
+ *   { id, categorie: "heros" | "hdm", type, coutGc, xp, xpDepart, stats{M..Cd},
+ *     nombre, surcout, progressions[],
  *     equipement[], competences[], regles[] }
  *
  * `buildRoster(creation)` le convertit en un JSON au format d'export
@@ -148,6 +148,7 @@ export function newFigurineFromModele(guerrierId) {
   fig.type = g.nom;
   fig.coutGc = g.cout;
   fig.xp = g.xp;
+  fig.xpDepart = g.xp;
   for (const k of STAT_KEYS) fig.stats[k] = g.profil?.[k] || "-";
   fig.regles = g.regles.map((r) => r.nom);
   // Chaque guerrier a droit à une dague gratuite quand sa liste la prévoit.
@@ -163,6 +164,8 @@ export function newFigurine(categorie = "heros") {
     type: "",
     coutGc: 0,
     xp: 0,
+    // Expérience au recrutement : seuls les seuils franchis ensuite donnent une progression.
+    xpDepart: 0,
     stats: defaultStats(),
     equipement: [],
     competences: [],
@@ -171,7 +174,9 @@ export function newFigurine(categorie = "heros") {
     // campagne ont coûté en plus du prix de base (expérience du groupe).
     nombre: 1,
     surcout: 0,
-    // Jets de progression déjà faits par le groupe : [{ des: [d1, d2], resultat }].
+    // Jets de progression déjà faits : [{ des: [d1, d2], resultat }] ; un héros
+    // note aussi le seuil d'expérience atteint et la compétence choisie
+    // ({ seuil, resultat: "competence", competence }), voir progression.js.
     progressions: [],
   };
 }
@@ -242,6 +247,8 @@ export function normalizeCreation(c) {
         type: String(f.type || "").trim(),
         coutGc: toInt(f.coutGc),
         xp: toInt(f.xp),
+        // Bande enregistrée avant ce champ : XP du profil des données, sinon XP actuelle (aucune progression rétroactive).
+        xpDepart: toInt(f.xpDepart ?? getGuerrier(f.modele)?.xp ?? f.xp),
         stats,
         equipement: cleanList(f.equipement),
         // Les hommes de main n'apprennent pas de compétences et gardent les règles de leur profil.
@@ -251,7 +258,12 @@ export function normalizeCreation(c) {
         surcout: hdm ? toInt(f.surcout) : 0,
         progressions: (Array.isArray(f.progressions) ? f.progressions : [])
           .filter((p) => Array.isArray(p?.des) && p.des.length === 2)
-          .map((p) => ({ des: p.des.map((d) => Math.min(6, Math.max(1, toInt(d)))), resultat: String(p.resultat || "") })),
+          .map((p) => ({
+            des: p.des.map((d) => Math.min(6, Math.max(1, toInt(d)))),
+            resultat: String(p.resultat || ""),
+            ...(p.seuil ? { seuil: toInt(p.seuil) } : {}),
+            ...(p.competence ? { competence: String(p.competence) } : {}),
+          })),
       };
     });
   return out;
@@ -292,6 +304,56 @@ export function resolveRuleName(saisie) {
     }
   }
   return frToKey.get(name.toLowerCase()) || name;
+}
+
+/** Clé de comparaison d'une règle ou compétence, quelle que soit la langue de saisie (« Esquive » = « Dodge »). */
+export function cleRegle(nom) {
+  return resolveRuleName(nom).toLowerCase();
+}
+
+/** La liste contient-elle déjà cette règle ou compétence ? */
+export function contientRegle(list, nom) {
+  const cle = cleRegle(nom);
+  return (list || []).some((n) => cleRegle(n) === cle);
+}
+
+// ---------------------------------------------------------------------
+// Règles qui empêchent de gagner de l'expérience (animaux, démons, morts sans esprit…)
+// ---------------------------------------------------------------------
+
+const TEXTE_SANS_XP =
+  /ne\s+gagnen?t?\s+(jamais|pas)\s+(d['’]|de\s+l['’])exp[ée]rience|never\s+gains?\s+(any\s+)?experience|gains?\s+no\s+experience|do(es)?\s+not\s+gain\s+(any\s+)?experience/i;
+// « Garde du corps » est une compétence du Marchand : c'est son garde, pas lui, qui ne gagne pas d'expérience.
+const PAS_SANS_XP = new Set(["Guardian"]);
+
+/** Le texte d'une règle dit-il que la figurine ne gagne jamais d'expérience ? */
+export function texteSansXp(texte) {
+  return TEXTE_SANS_XP.test(String(texte || ""));
+}
+
+/** La règle (nom français, anglais ou clé du dictionnaire) empêche-t-elle de gagner de l'expérience ? */
+export function regleSansXp(nom) {
+  const n = String(nom || "").trim();
+  if (!n) return false;
+  if (resumes.has(n)) return texteSansXp(resumes.get(n));
+  const key = resolveRuleName(n);
+  if (PAS_SANS_XP.has(key)) return false;
+  if (resumes.has(key)) return texteSansXp(resumes.get(key));
+  return texteSansXp(RULE_TRANSLATIONS[key]?.description) || texteSansXp(regleAnglaise(n)?.resume);
+}
+
+/** Première règle de la figurine qui l'empêche de gagner de l'expérience, ou null. */
+export function regleBloquantXp(fig) {
+  return (fig?.regles || []).find(regleSansXp) || null;
+}
+
+/** Règles connues des guerriers d'une bande des données (pour les choisir dans une liste), sans doublon. */
+export function reglesDeLaBande(bande) {
+  const out = new Map();
+  for (const r of [...(bande?.regles || []), ...(bande?.guerriers || []).flatMap((g) => g.regles)]) {
+    if (!out.has(r.nom)) out.set(r.nom, r);
+  }
+  return [...out.values()];
 }
 
 let frParCle = null;

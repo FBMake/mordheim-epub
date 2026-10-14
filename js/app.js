@@ -43,15 +43,38 @@ import {
   knownRuleNames,
   newCreation,
   newFigurine,
+  contientRegle,
+  regleBloquantXp,
+  reglesDeLaBande,
+  texteSansXp,
 } from "./warband-builder.js";
 import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
 import { flagSvg } from "./flags.js";
 import { loc, locBande, locCompetence, locGuerrier, locNomRegle, locRegle } from "./donnees-langue.js";
 import { pisteXpHtml } from "./experience.js";
-import { appliquerProgression, lancer2D6, progressionsDues, promouvoir, resultatProgression } from "./progression.js";
+import {
+  annulerProgression,
+  appliquerProgression,
+  appliquerProgressionHeros,
+  ecartsProfil,
+  lancer2D6,
+  progressionsDues,
+  promouvoir,
+  resultatProgression,
+  resultatProgressionHeros,
+} from "./progression.js";
 import { competencesAccessibles, maximumsGuerrier } from "./data/competences.js";
 import { RESULTATS, appliquerCombat, bilanFigurine, splitItems } from "./combats.js";
-import { MORT, blessuresPour, getBlessure, libelleBlessure, malusTotal, nomBlessure, texteMalus } from "./blessures.js";
+import {
+  MORT,
+  appliquerMalus,
+  blessuresPour,
+  getBlessure,
+  libelleBlessure,
+  malusTotal,
+  nomBlessure,
+  texteMalus,
+} from "./blessures.js";
 
 setLang(detectLang(), { remember: false });
 
@@ -306,8 +329,14 @@ function profilBlesseHtml(card) {
   const malus = malusTotal(card.blessuresPartie);
   const keys = Object.keys(malus).filter((k) => card.stats[k] !== card.statsRoster?.[k]);
   if (!keys.length) return "";
-  const profil = keys.map((k) => `${k} ${card.stats[k]} (${malus[k] > 0 ? "+" : "−"}${Math.abs(malus[k])})`).join(", ");
-  return `<p class="perso-bilan">${escapeHtml(t("blessures.profil", { profil }))}</p>`;
+  const profil = keys
+    .map((k) => {
+      const cls = malus[k] > 0 ? "stat-plus" : "stat-moins";
+      return `<span class="${cls}">${escapeHtml(`${k} ${card.stats[k]} (${malus[k] > 0 ? "+" : "−"}${Math.abs(malus[k])})`)}</span>`;
+    })
+    .join(", ");
+  // Le texte traduit garde « {profil} », remplacé par les valeurs colorées.
+  return `<p class="perso-bilan">${escapeHtml(t("blessures.profil", { profil: "{profil}" })).replace("{profil}", profil)}</p>`;
 }
 
 function persoCardTemplate(card, categorie) {
@@ -344,7 +373,9 @@ function persoCardTemplate(card, categorie) {
         <label class="perso-label">
           ${t("perso.xp")}
           <input type="number" class="perso-nom-input partie-xp-input" inputmode="numeric"
-            placeholder="${card.xpRoster ?? card.xp}" value="${partie.figurines[card.id]?.xp ?? ""}" />
+            placeholder="${card.xpRoster ?? card.xp}" value="${partie.figurines[card.id]?.xp ?? ""}" ${
+              regleSansXpCarte(card) ? "disabled" : ""
+            } />
         </label>
         <label class="perso-label">
           ${t("perso.etat")}
@@ -396,12 +427,14 @@ function persoCardTemplate(card, categorie) {
   // Piste d'expérience en cases à cocher, comme sur la fiche d'origine : cliquer
   // une case fixe l'XP à cette valeur (cliquer la dernière cochée la décoche).
   const pisteBox = div.querySelector(".xp-piste-wrap");
+  // Une règle « ne gagne jamais d'expérience » grise la piste et le champ.
+  const sansXp = regleSansXpCarte(card);
   const renderPiste = () => {
     const xp = partie.figurines[card.id]?.xp ?? card.xpRoster ?? card.xp;
-    pisteBox.innerHTML = pisteXpHtml(xp, currentModel.heros.includes(card) ? "heros" : "hdm", {
-      modifiable: true,
-      titre: t("perso.xpPiste"),
-    });
+    const categorie = currentModel.heros.includes(card) ? "heros" : "hdm";
+    pisteBox.innerHTML = sansXp
+      ? pisteBloqueeHtml(xp, categorie, sansXp)
+      : pisteXpHtml(xp, categorie, { modifiable: true, titre: t("perso.xpPiste") });
   };
   renderPiste();
   pisteBox.addEventListener("click", (e) => {
@@ -783,7 +816,9 @@ function openCombatDialog() {
       <div class="partie-row">
         <label class="perso-label">
           ${t("effet.xp")}
-          <input type="number" class="perso-nom-input effet-xp" inputmode="numeric" min="0" placeholder="0" />
+          <input type="number" class="perso-nom-input effet-xp" inputmode="numeric" min="0" placeholder="0" ${
+            regleSansXpCarte(card) ? `disabled title="${escapeHtml(t("xp.bloquee", { regle: regleSansXpCarte(card) }))}"` : ""
+          } />
         </label>
         <label class="perso-label">
           ${t("effet.etat")}
@@ -1034,8 +1069,10 @@ function applyCreationChange() {
 /**
  * Petite liste éditable de mots (équipement, compétences, règles) :
  * pastilles supprimables + champ avec saisie automatique.
+ *  - unique : refuse un mot déjà dans la liste (même règle en français ou en anglais).
+ *  - avantModif() : appelé avant chaque ajout ou retrait ; false l'annule.
  */
-function chipEditor(container, list, { datalist, placeholder, onChange, label = (item) => item }) {
+function chipEditor(container, list, { datalist, placeholder, onChange, label = (item) => item, unique = false, avantModif }) {
   const render = () => {
     container.innerHTML = "";
     const chips = document.createElement("div");
@@ -1050,6 +1087,7 @@ function chipEditor(container, list, { datalist, placeholder, onChange, label = 
       del.setAttribute("aria-label", t("chip.retirer", { item: label(item) }));
       del.textContent = "×";
       del.addEventListener("click", () => {
+        if (avantModif && !avantModif()) return;
         list.splice(i, 1);
         render();
         onChange?.();
@@ -1073,11 +1111,18 @@ function chipEditor(container, list, { datalist, placeholder, onChange, label = 
     const add = () => {
       const v = input.value.trim();
       if (!v) return;
+      if (unique && contientRegle(list, v)) {
+        input.setCustomValidity(t("chip.dejaPresent", { item: v }));
+        input.reportValidity();
+        return;
+      }
+      if (avantModif && !avantModif()) return;
       list.push(v);
       render();
       onChange?.();
       container.querySelector(".chip-add input")?.focus();
     };
+    input.addEventListener("input", () => input.setCustomValidity(""));
     btn.addEventListener("click", add);
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
@@ -1091,13 +1136,75 @@ function chipEditor(container, list, { datalist, placeholder, onChange, label = 
   render();
 }
 
-function statLine(stats) {
-  return STAT_KEYS.map((k) => `<span class="stat-cell"><b>${t(`profil.${k}`)}</b>${escapeHtml(stats[k])}</span>`).join("");
+/**
+ * Liste de choix commune (équipement, compétences, règles) : un titre par
+ * groupe et une pastille par élément, grisée quand il est déjà pris ou
+ * interdit. groupes = [{ titre, items: [{ texte, title, disabled, onPick }] }]
+ */
+function renderChoix(container, groupes) {
+  container.innerHTML = "";
+  for (const g of groupes) {
+    if (!g.items.length) continue;
+    const row = document.createElement("div");
+    row.className = "arsenal-cat";
+    if (g.titre) row.innerHTML = `<p class="arsenal-titre">${escapeHtml(g.titre)}</p>`;
+    for (const it of g.items) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip chip-btn";
+      b.textContent = it.texte;
+      b.disabled = !!it.disabled;
+      if (it.title) b.title = it.title;
+      b.addEventListener("click", it.onPick);
+      row.appendChild(b);
+    }
+    container.appendChild(row);
+  }
+}
+
+/**
+ * Ligne de profil ; `ecarts` ({ CC: 1, M: -1 }) colore les caractéristiques
+ * améliorées en vert et diminuées en rouge par rapport au profil de base.
+ */
+function statLine(stats, ecarts = {}) {
+  return STAT_KEYS.map((k) => {
+    const d = ecarts[k] || 0;
+    const cls = d > 0 ? " stat-plus" : d < 0 ? " stat-moins" : "";
+    const title = d ? ` title="${escapeHtml(t("profil.ecart", { n: `${d > 0 ? "+" : "−"}${Math.abs(d)}` }))}"` : "";
+    return `<span class="stat-cell${cls}"${title}><b>${t(`profil.${k}`)}</b>${escapeHtml(stats[k])}</span>`;
+  }).join("");
 }
 
 /** XP actuelle d'une figurine : celle du suivi de partie si elle a été saisie, sinon celle de la fiche. */
 function xpCourante(fig) {
   return partie.figurines[fig.id]?.xp ?? fig.xp;
+}
+
+/** Figurine de la bande créée correspondant à une carte du suivi de partie (même identifiant). */
+function figurineDeCarte(card) {
+  return currentCreation?.figurines.find((f) => f.id === card.id) || null;
+}
+
+/** Règle qui empêche la carte de gagner de l'expérience (nom affiché), ou null. */
+function regleSansXpCarte(card) {
+  const fig = figurineDeCarte(card);
+  if (fig) {
+    const r = regleBloquantXp(fig);
+    return r ? locNomRegle(r) : null;
+  }
+  return (card.reglesSpeciales || []).find((r) => texteSansXp(r.description))?.name || null;
+}
+
+/** Piste d'XP grisée et non cliquable, avec la règle qui l'explique. */
+function pisteBloqueeHtml(xp, categorie, regle) {
+  return `<div class="xp-bloquee">${pisteXpHtml(xp, categorie, { titre: t("xp.bloquee", { regle }) })}
+    <p class="hint-inline">${escapeHtml(t("xp.bloquee", { regle }))}</p></div>`;
+}
+
+/** Texte d'une progression de l'historique : « 7 → +1 CC », « 11 → Esquive ». */
+function texteEntreeProgression(p) {
+  const res = p.resultat === "competence" ? locNomRegle(p.competence) : texteProgression(p.resultat);
+  return `${p.des[0] + p.des[1]} (${res})`;
 }
 
 function unitCard(fig) {
@@ -1108,12 +1215,17 @@ function unitCard(fig) {
   const nombre = tailleGroupe(fig);
   const titre =
     escapeHtml(loc(fig.type) || t(groupe ? "categorie.hdm" : "categorie.heros")) + (nombre > 1 ? ` ×${nombre}` : "");
+  const sansXp = regleBloquantXp(fig);
+  // Profil avec les blessures du suivi de partie ; améliorations en vert, malus en rouge.
+  const blessures = partie.figurines[fig.id]?.blessures;
+  const stats = appliquerMalus(fig.stats, blessures);
+  const ecarts = ecartsProfil(fig, getGuerrier(fig.modele), malusTotal(blessures));
   const details = [
     fig.equipement.length ? escapeHtml(t("unite.equipement", { liste: fig.equipement.map(loc).join(", ") })) : "",
     fig.competences.length ? escapeHtml(t("unite.competences", { liste: fig.competences.map(locNomRegle).join(", ") })) : "",
     fig.regles.length ? escapeHtml(t("unite.regles", { liste: fig.regles.map(locNomRegle).join(", ") })) : "",
     fig.progressions?.length
-      ? escapeHtml(t("unite.progressions", { liste: fig.progressions.map((p) => `${p.des[0] + p.des[1]} (${texteProgression(p.resultat)})`).join(", ") }))
+      ? escapeHtml(t("unite.progressions", { liste: fig.progressions.map(texteEntreeProgression).join(", ") }))
       : "",
     getGuerrier(fig.modele)?.competences.length
       ? `<span class="muted">${escapeHtml(t("unite.acces", { liste: getGuerrier(fig.modele).competences.map(loc).join(", ") }))}</span>`
@@ -1126,8 +1238,12 @@ function unitCard(fig) {
         nombre > 1 ? t("unite.coutGroupe", { total: coutEntree(fig), unite: fig.coutGc }) : `${coutEntree(fig)} ${t("monnaie")}`
       } · ${fig.xp} xp</span>
     </div>
-    <div class="stat-line">${statLine(fig.stats)}</div>
-    ${pisteXpHtml(xpCourante(fig), fig.categorie, { titre: t("perso.xpPiste") })}
+    <div class="stat-line">${statLine(stats, ecarts)}</div>
+    ${
+      sansXp
+        ? pisteBloqueeHtml(xpCourante(fig), fig.categorie, locNomRegle(sansXp))
+        : pisteXpHtml(xpCourante(fig), fig.categorie, { titre: t("perso.xpPiste") })
+    }
     ${details.map((d) => `<p class="unit-detail">${d}</p>`).join("")}
     <div class="slot-actions"></div>
   `;
@@ -1141,7 +1257,7 @@ function unitCard(fig) {
     actions.appendChild(b);
   };
   addBtn(t("unite.modifier"), () => openFigDialog(fig));
-  const dues = groupe ? progressionsDues(fig, xpCourante(fig)) : 0;
+  const dues = sansXp ? 0 : progressionsDues(fig, xpCourante(fig));
   if (dues) addBtn(t("unite.progression", { n: dues }), () => openProgDialog(fig));
   if (groupe && nombre < MAX_GROUPE) {
     // Recrue en cours de campagne : même équipement et même XP que le groupe,
@@ -1188,14 +1304,37 @@ function texteProgression(resultat) {
   return resultat === "talent" ? t("prog.talent") : `+1 ${t(`profil.${resultat}`)}`;
 }
 
+const progCompetence = document.getElementById("prog-competence");
+const progHeros = () => progFig?.categorie === "heros";
+
 function renderProgResultat(message = "") {
   const total = Number(progD1.value) + Number(progD2.value);
   const valide = [progD1.value, progD2.value].every((v) => /^[1-6]$/.test(v));
-  const res = valide ? resultatProgression(total) : null;
-  document.getElementById("prog-choix-wrap").hidden = res?.code !== "CC/CT";
-  document.getElementById("prog-resultat").textContent = res
-    ? `${total} : ${t(`prog.res.${res.code}`)}${message ? ` ${message}` : ""}`
-    : "";
+  const res = valide ? (progHeros() ? resultatProgressionHeros(total) : resultatProgression(total)) : null;
+  const deuxStats = res?.stats.length === 2;
+  document.getElementById("prog-choix-wrap").hidden = !deuxStats;
+  if (deuxStats && progChoix.dataset.code !== res.code) {
+    progChoix.innerHTML = res.stats.map((k) => option(k, `+1 ${t(`profil.${k}`)}`)).join("");
+    progChoix.dataset.code = res.code;
+  }
+  document.getElementById("prog-competence-wrap").hidden = res?.code !== "competence";
+  const cle = res ? `prog.res${progHeros() ? "Heros" : ""}.${res.code}` : "";
+  document.getElementById("prog-resultat").textContent = res ? `${total} : ${t(cle)}${message ? ` ${message}` : ""}` : "";
+}
+
+/** Compétences qu'un héros peut apprendre, groupées par liste (déjà acquises et réservées exclues). */
+function renderProgCompetences(fig) {
+  const listes = competencesAccessibles(fig, getGuerrier(fig.modele));
+  progCompetence.innerHTML =
+    option("", t("prog.choisirCompetence")) +
+    listes
+      .map((l) => {
+        const opts = l.competences.filter((c) => c.permise && !c.acquise);
+        return opts.length
+          ? `<optgroup label="${escapeHtml(loc(l.liste))}">${opts.map((c) => option(c.nom, locCompetence(c).nom)).join("")}</optgroup>`
+          : "";
+      })
+      .join("");
 }
 
 function lancerProg() {
@@ -1205,25 +1344,37 @@ function lancerProg() {
 
 function openProgDialog(fig) {
   progFig = fig;
-  document.getElementById("prog-title").textContent = t("prog.titre", { nom: loc(fig.type) || t("categorie.hdm") });
+  const heros = fig.categorie === "heros";
+  const nom = customisations[fig.id]?.nom || loc(fig.type) || t(heros ? "categorie.heros" : "categorie.hdm");
+  document.getElementById("prog-title").textContent = t("prog.titre", { nom });
+  document.getElementById("prog-aide").textContent = t(heros ? "prog.aideHeros" : "prog.aide");
+  progChoix.dataset.code = "";
+  if (heros) renderProgCompetences(fig);
   lancerProg();
   progDialog.showModal();
 }
 
 progD1.addEventListener("input", () => renderProgResultat());
+progCompetence.addEventListener("change", () => progCompetence.setCustomValidity(""));
 progD2.addEventListener("input", () => renderProgResultat());
 document.getElementById("prog-lancer").addEventListener("click", lancerProg);
 document.getElementById("prog-cancel").addEventListener("click", () => progDialog.close());
 document.getElementById("prog-form").addEventListener("submit", (e) => {
   e.preventDefault();
   const fig = progFig;
-  const r = appliquerProgression(fig, [Number(progD1.value), Number(progD2.value)], {
-    choix: progChoix.value,
-    guerrier: getGuerrier(fig.modele),
-  });
+  const des = [Number(progD1.value), Number(progD2.value)];
+  const guerrier = getGuerrier(fig.modele);
+  const r = progHeros()
+    ? appliquerProgressionHeros(fig, des, { xp: xpCourante(fig), choix: progChoix.value, competence: progCompetence.value, guerrier })
+    : appliquerProgression(fig, des, { choix: progChoix.value, guerrier });
+  if (r.manque === "competence") {
+    progCompetence.setCustomValidity(t("prog.choisirCompetence"));
+    progCompetence.reportValidity();
+    return;
+  }
   if (r.relancer) {
     // Caractéristique déjà au maximum de la race : on relance sans rien enregistrer.
-    renderProgResultat(t("prog.auMaximum", { stat: t(`profil.${r.stat}`) }));
+    renderProgResultat(t(progHeros() ? "prog.auMaximumHeros" : "prog.auMaximum", { stat: t(`profil.${r.stat}`) }));
     return;
   }
   if (r.code === "talent") {
@@ -1265,7 +1416,15 @@ function renderCreation() {
     placeholder: t("compo.regleBandePlaceholder"),
     onChange: applyCreationChange,
     label: locNomRegle,
+    unique: true,
   });
+  renderReglesChoix(
+    document.getElementById("crea-regles-choix"),
+    document.getElementById("crea-regles-liste"),
+    c.reglesBande,
+    getBande(c.bandeId)?.regles || [],
+    applyCreationChange
+  );
 }
 
 creaNom.addEventListener("change", () => {
@@ -1400,26 +1559,21 @@ function renderArsenal(guerrier) {
   const box = document.getElementById("fig-arsenal");
   box.hidden = !guerrier?.equipement.length;
   if (box.hidden) return;
-  const liste = document.getElementById("fig-arsenal-liste");
-  liste.innerHTML = "";
-  for (const cat of guerrier.equipement) {
-    const row = document.createElement("div");
-    row.className = "arsenal-cat";
-    row.innerHTML = `<p class="arsenal-titre">${escapeHtml(loc(cat.categorie))}</p>`;
-    for (const o of cat.objets) {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "chip chip-btn";
-      b.textContent = `${loc(o.nom)} · ${o.cout ?? 0} ${t("monnaie")}`;
-      b.addEventListener("click", () => {
-        figDraft.equipement.push(o.nom);
-        renderFigEquipement();
-        syncCout();
-      });
-      row.appendChild(b);
-    }
-    liste.appendChild(row);
-  }
+  // Un objet peut être pris plusieurs fois (deux dagues…) : rien n'est grisé.
+  renderChoix(
+    document.getElementById("fig-arsenal-liste"),
+    guerrier.equipement.map((cat) => ({
+      titre: loc(cat.categorie),
+      items: cat.objets.map((o) => ({
+        texte: `${loc(o.nom)} · ${o.cout ?? 0} ${t("monnaie")}`,
+        onPick: () => {
+          figDraft.equipement.push(o.nom);
+          renderFigEquipement();
+          syncCout();
+        },
+      })),
+    }))
+  );
 }
 
 function renderFigEquipement() {
@@ -1431,14 +1585,73 @@ function renderFigEquipement() {
   });
 }
 
+// Les compétences d'un héros viennent de ses progressions : les modifier à la
+// main demande une confirmation (une fois par ouverture de la fiche).
+let modifManuelleOk = false;
+function confirmerModifManuelle() {
+  if (!modifManuelleOk) modifManuelleOk = confirm(t("fig.confirmModifCompetences"));
+  return modifManuelleOk;
+}
+
 function renderFigCompetences() {
   chipEditor(document.getElementById("fig-competences"), figDraft.competences, {
     datalist: "rules-list",
     placeholder: t("fig.competences.exemple"),
-    onChange: renderCompetencesChoix,
+    onChange: () => {
+      renderCompetencesChoix();
+      renderHistorique();
+    },
     label: locNomRegle,
+    unique: true,
+    avantModif: confirmerModifManuelle,
   });
   renderCompetencesChoix();
+  renderHistorique();
+}
+
+/**
+ * Historique des progressions de la figurine, dans l'ordre : seuil
+ * d'expérience, jet et résultat. Retirer une ligne défait son effet, après
+ * une alerte.
+ */
+function renderHistorique() {
+  const prog = figDraft.progressions || [];
+  // Compétences prises hors progression (bande importée, saisie à la main).
+  const hors = figDraft.competences.filter((c) => !prog.some((p) => p.competence === c));
+  const bloc = document.getElementById("fig-historique-bloc");
+  bloc.hidden = !prog.length && !hors.length;
+  const ol = document.getElementById("fig-historique");
+  ol.innerHTML = "";
+  prog.forEach((p, i) => {
+    const li = document.createElement("li");
+    const xp = p.seuil ? `<span class="historique-xp">${p.seuil} xp</span>` : "";
+    const res = p.resultat === "competence" ? `<b>${escapeHtml(locNomRegle(p.competence))}</b>` : escapeHtml(texteProgression(p.resultat));
+    li.innerHTML = `${xp}<span class="historique-jet">${p.des[0]} + ${p.des[1]}</span><span>${res}</span>`;
+    if (p.resultat !== "talent") {
+      const del = document.createElement("button");
+      del.type = "button";
+      del.className = "chip-del";
+      del.textContent = "×";
+      del.setAttribute("aria-label", t("chip.retirer", { item: li.textContent }));
+      del.addEventListener("click", () => {
+        if (!confirm(t("fig.confirmRetirerProgression"))) return;
+        annulerProgression(figDraft, i);
+        figStats.querySelectorAll("input").forEach((inp) => (inp.value = figDraft.stats[inp.dataset.stat]));
+        renderFigCompetences();
+        renderFigStatsEcarts();
+      });
+      li.appendChild(del);
+    }
+    ol.appendChild(li);
+  });
+  for (const c of hors) {
+    const li = document.createElement("li");
+    li.className = "historique-hors";
+    li.innerHTML = `<span class="historique-xp">—</span><span class="historique-jet"></span><span><b>${escapeHtml(
+      locNomRegle(c)
+    )}</b> <em>${escapeHtml(t("fig.horsProgression"))}</em></span>`;
+    ol.appendChild(li);
+  }
 }
 
 /**
@@ -1451,34 +1664,86 @@ function renderCompetencesChoix() {
   const listes = competencesAccessibles(figDraft, getGuerrier(figDraft.modele));
   box.hidden = !listes.length;
   if (box.hidden) return;
-  const liste = document.getElementById("fig-comp-liste");
-  liste.innerHTML = "";
-  for (const l of listes) {
-    const row = document.createElement("div");
-    row.className = "arsenal-cat";
-    row.innerHTML = `<p class="arsenal-titre">${escapeHtml(loc(l.liste))}</p>`;
-    for (const c of l.competences) {
-      const affiche = locCompetence(c);
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "chip chip-btn";
-      b.textContent = affiche.nom;
-      b.disabled = c.acquise || !c.permise;
-      const etat = c.acquise ? t("fig.competenceAcquise") : !c.permise ? t("fig.competenceReservee") : "";
-      b.title = [etat, affiche.resume].filter(Boolean).join(" · ");
-      b.addEventListener("click", () => {
-        figDraft.competences.push(c.nom);
-        renderFigCompetences();
-      });
-      row.appendChild(b);
-    }
-    liste.appendChild(row);
-  }
+  renderChoix(
+    document.getElementById("fig-comp-liste"),
+    listes.map((l) => ({
+      titre: loc(l.liste),
+      items: l.competences.map((c) => {
+        const affiche = locCompetence(c);
+        const etat = c.acquise ? t("fig.competenceAcquise") : !c.permise ? t("fig.competenceReservee") : "";
+        return {
+          texte: affiche.nom,
+          disabled: c.acquise || !c.permise,
+          title: [etat, affiche.resume].filter(Boolean).join(" · "),
+          onPick: () => {
+            if (!confirmerModifManuelle()) return;
+            figDraft.competences.push(c.nom);
+            renderFigCompetences();
+          },
+        };
+      }),
+    }))
+  );
 }
+
+/**
+ * Règles de la bande des données à choisir d'un clic, grisées quand la
+ * liste les contient déjà. `list` est modifiée en place puis `rerender()`.
+ */
+function renderReglesChoix(details, liste, list, regles, rerender) {
+  details.hidden = !regles.length;
+  if (details.hidden) return;
+  renderChoix(liste, [
+    {
+      items: regles.map((r) => {
+        const affiche = locRegle(r);
+        const deja = contientRegle(list, r.nom);
+        return {
+          texte: affiche.nom,
+          disabled: deja,
+          title: [deja ? t("fig.regleDejaPresente") : "", affiche.resume].filter(Boolean).join(" · "),
+          onPick: () => {
+            list.push(r.nom);
+            rerender();
+          },
+        };
+      }),
+    },
+  ]);
+}
+
+/** Règles des guerriers d'une bande des données (sans les règles de la bande elle-même). */
+function reglesGuerriers(bande) {
+  return bande ? reglesDeLaBande(bande).filter((r) => !bande.regles.includes(r)) : [];
+}
+
+/** Une règle comme « Animaux » ou « Démon » interdit l'expérience : champ XP grisé. */
+function renderFigXpBloque() {
+  const regle = regleBloquantXp(figDraft);
+  figXp.disabled = !!regle;
+  const note = document.getElementById("fig-xp-bloque");
+  note.hidden = !regle;
+  note.textContent = regle ? t("xp.bloquee", { regle: locNomRegle(regle) }) : "";
+}
+
+/** Caractéristiques au-dessus (vert) ou au-dessous (rouge) du profil du guerrier. */
+function renderFigStatsEcarts() {
+  const lu = { stats: {} };
+  figStats.querySelectorAll("input").forEach((inp) => (lu.stats[inp.dataset.stat] = inp.value.trim()));
+  const ecarts = ecartsProfil({ ...figDraft, stats: lu.stats }, getGuerrier(figDraft.modele));
+  figStats.querySelectorAll("input").forEach((inp) => {
+    const d = ecarts[inp.dataset.stat] || 0;
+    inp.classList.toggle("stat-plus", d > 0);
+    inp.classList.toggle("stat-moins", d < 0);
+  });
+}
+figStats.addEventListener("input", renderFigStatsEcarts);
 
 function openFigDialog(fig, categorie = "heros", draft = null) {
   figOriginal = fig;
   figDraft = draft || (fig ? structuredClone(fig) : newFigurine(categorie));
+  // Recrutement : on peut composer librement ; une fois le héros dans la bande, l'alerte s'applique.
+  modifManuelleOk = !fig;
   const guerrier = getGuerrier(figDraft.modele);
   const isHero = figDraft.categorie === "heros";
   document.getElementById("fig-title").textContent = fig
@@ -1495,6 +1760,8 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   figNombre.value = tailleGroupe(figDraft);
   document.getElementById("fig-cout-label").textContent = t(isHero ? "fig.cout" : "fig.coutUnitaire");
   figStats.querySelectorAll("input").forEach((inp) => (inp.value = figDraft.stats[inp.dataset.stat]));
+  renderFigStatsEcarts();
+  renderFigXpBloque();
   renderFigEquipement();
   renderArsenal(guerrier);
   applyStatMaximums(guerrier);
@@ -1506,22 +1773,45 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   // Les hommes de main n'apprennent pas de compétences ; leurs règles sont
   // celles de leur profil dans les données, affichées sans être modifiables.
   document.getElementById("fig-competences-bloc").hidden = !isHero;
+  // Pas de compétence encore : la saisie à la main est ouverte (recrutement, héros importé…).
+  document.getElementById("fig-comp-modifier").open = !fig;
   if (isHero) renderFigCompetences();
   const reglesFixes = !isHero && !!guerrier;
   const reglesBox = document.getElementById("fig-regles");
   const reglesTexte = document.getElementById("fig-regles-fixes");
+  const reglesChoix = document.getElementById("fig-regles-choix");
   reglesBox.hidden = reglesFixes;
   reglesTexte.hidden = !reglesFixes;
+  reglesChoix.hidden = true;
   if (reglesFixes) {
-    reglesTexte.innerHTML = guerrier.regles.length ? reglesText(guerrier.regles) : escapeHtml(t("fig.aucuneRegle"));
+    // Mêmes pastilles que les listes modifiables, sans bouton de retrait.
+    reglesTexte.innerHTML = guerrier.regles.length
+      ? `<span class="chips">${guerrier.regles
+          .map(locRegle)
+          .map((r) => `<span class="chip chip-fixe" title="${escapeHtml(r.resume)}">${escapeHtml(r.nom)}</span>`)
+          .join("")}</span>`
+      : escapeHtml(t("fig.aucuneRegle"));
   } else {
-    chipEditor(reglesBox, figDraft.regles, {
-      datalist: "rules-list",
-      placeholder: t("fig.regles.exemple"),
-      // « Chef » ou « Sorcier » ouvrent certaines compétences.
-      onChange: renderCompetencesChoix,
-      label: locNomRegle,
-    });
+    const renderRegles = () => {
+      chipEditor(reglesBox, figDraft.regles, {
+        datalist: "rules-list",
+        placeholder: t("fig.regles.exemple"),
+        // « Chef » ou « Sorcier » ouvrent certaines compétences ; « Animaux » interdit l'expérience.
+        onChange: renderRegles,
+        label: locNomRegle,
+        unique: true,
+      });
+      renderReglesChoix(
+        reglesChoix,
+        document.getElementById("fig-regles-liste"),
+        figDraft.regles,
+        reglesGuerriers(getBande(currentCreation?.bandeId)),
+        renderRegles
+      );
+      if (isHero) renderCompetencesChoix();
+      renderFigXpBloque();
+    };
+    renderRegles();
   }
   figDialog.showModal();
   figType.focus();
@@ -1536,14 +1826,17 @@ figForm.addEventListener("submit", (e) => {
     ["fig-regles", "regles"],
   ]) {
     if (document.getElementById(id).closest("[hidden]")) continue;
-    const pending = document.querySelector(`#${id} .chip-add input`);
-    if (pending?.value.trim()) figDraft[key].push(pending.value.trim());
+    const pending = document.querySelector(`#${id} .chip-add input`)?.value.trim();
+    if (!pending || (key !== "equipement" && contientRegle(figDraft[key], pending))) continue;
+    figDraft[key].push(pending);
   }
   // Le coût suit l'équipement ajouté, sauf si le joueur l'a modifié après coup.
   syncCout();
   if (figType.value.trim() !== loc(figDraft.type)) figDraft.type = figType.value.trim();
   figDraft.coutGc = Math.max(0, Number(figCout.value) || 0);
   figDraft.xp = Math.max(0, Number(figXp.value) || 0);
+  // Au recrutement, l'expérience saisie est le point de départ des progressions.
+  if (!figOriginal) figDraft.xpDepart = figDraft.xp;
   if (figDraft.categorie === "hdm") {
     figDraft.nombre = Math.min(MAX_GROUPE, Math.max(1, Math.round(Number(figNombre.value)) || 1));
     figDraft.competences = [];

@@ -218,7 +218,18 @@ Les compétences et règles connues du dictionnaire de traduction sont
 proposées en saisie automatique : leur texte français complet est alors
 repris dans le PDF. Une bande créée est convertie en export au format
 BattleScribe (`js/warband-builder.js`), puis traitée exactement comme
-une bande importée.
+une bande importée. Une règle ou compétence déjà présente sur la
+figurine (même saisie en anglais) n'est pas ajoutée une seconde fois.
+
+**Progression.** Quand l'expérience d'un héros franchit un seuil de sa
+piste après son recrutement, sa carte propose *Progression* : jet de
+2D6 sur le tableau des héros (`js/progression.js`), nouvelle compétence
+choisie dans ses listes sur 2-5 ou 10-12. C'est ainsi que s'ajoutent les
+compétences ; la fiche du héros garde l'historique (seuil, dés,
+résultat), modifiable à la main après une alerte. Les caractéristiques
+au-dessus du profil de base sont en vert, celles diminuées (blessures)
+en rouge. Une règle qui interdit l'expérience (Animaux, Démon, Sans
+cervelle…) grise le champ XP et la piste.
 
 **Bandes officielles de BSData** (livre de base : Reikland, Middenheim,
 Marienburg, Culte des Possédés, Répurgateurs, Sœurs de Sigmar,
