@@ -1,0 +1,1060 @@
+{
+ "id": "cour-plaisirs",
+ "url": "https://mordheimer.net/docs/warbands/grade-1c-warbands/court-of-the-profane-pleasures",
+ "nomEn": "Court of the Profane Pleasures",
+ "nom": "Cour des plaisirs profanes",
+ "tresor": 500,
+ "effectifMax": 15,
+ "regles": [
+  "Corruption of the Mind and Flesh",
+  "Mutations"
+ ],
+ "guerriers": [
+  {
+   "cle": "Slaaneshi Whipmaster",
+   "nom": "Maître-fouetteur de Slaanesh",
+   "categorie": "heros",
+   "cout": 70,
+   "min": 0,
+   "max": 1,
+   "xp": 8,
+   "profil": {
+    "M": "4",
+    "CC": "4",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "8"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Agony and Ecstasy",
+    "Pain and Pleasure"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Hedonist Whip",
+       "nom": "Fouet hédoniste",
+       "cout": 15
+      },
+      {
+       "en": "Slaaneshi Man-Catcher",
+       "nom": "Attrape-homme de Slaanesh",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 15
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Hochland Long Rifle",
+       "nom": "Long fusil d'Hochland",
+       "cout": 200
+      },
+      {
+       "en": "Crossbow Pistol",
+       "nom": "Pistolet-arbalète",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Crimson Shade",
+       "nom": "Ombre pourpre",
+       "cout": 35
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Slaaneshi Danseuse",
+   "nom": "Danseuse de Slaanesh",
+   "categorie": "heros",
+   "cout": 70,
+   "min": 0,
+   "max": 1,
+   "xp": 8,
+   "profil": {
+    "M": "4",
+    "CC": "4",
+    "CT": "4",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Strange Allure"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Hedonist Whip",
+       "nom": "Fouet hédoniste",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 15
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Hochland Long Rifle",
+       "nom": "Long fusil d'Hochland",
+       "cout": 200
+      },
+      {
+       "en": "Crossbow Pistol",
+       "nom": "Pistolet-arbalète",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Crimson Shade",
+       "nom": "Ombre pourpre",
+       "cout": 35
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Slaaneshi Flesh Merchant",
+   "nom": "Marchand de chair de Slaanesh",
+   "categorie": "heros",
+   "cout": 65,
+   "min": 0,
+   "max": 1,
+   "xp": 8,
+   "profil": {
+    "M": "4",
+    "CC": "4",
+    "CT": "3",
+    "F": "4",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Pound of Flesh",
+    "Cruel Fate"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Hedonist Whip",
+       "nom": "Fouet hédoniste",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 15
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Hochland Long Rifle",
+       "nom": "Long fusil d'Hochland",
+       "cout": 200
+      },
+      {
+       "en": "Crossbow Pistol",
+       "nom": "Pistolet-arbalète",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Crimson Shade",
+       "nom": "Ombre pourpre",
+       "cout": 35
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Slaaneshi Priest of Obscene",
+   "nom": "Prêtre de l'obscène de Slaanesh",
+   "categorie": "heros",
+   "cout": 50,
+   "min": 0,
+   "max": 1,
+   "xp": 6,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "8"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Wizard (Chaos Rituals)",
+    "Flesh Reserve"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Hedonist Whip",
+       "nom": "Fouet hédoniste",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 15
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Hochland Long Rifle",
+       "nom": "Long fusil d'Hochland",
+       "cout": 200
+      },
+      {
+       "en": "Crossbow Pistol",
+       "nom": "Pistolet-arbalète",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Crimson Shade",
+       "nom": "Ombre pourpre",
+       "cout": 35
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Slaaneshi Devout",
+   "nom": "Dévot de Slaanesh",
+   "categorie": "heros",
+   "cout": 65,
+   "min": 0,
+   "max": 1,
+   "xp": 8,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Fluctuating Form",
+    "Immune to Psychology"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Hedonist Whip",
+       "nom": "Fouet hédoniste",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 15
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Hochland Long Rifle",
+       "nom": "Long fusil d'Hochland",
+       "cout": 200
+      },
+      {
+       "en": "Crossbow Pistol",
+       "nom": "Pistolet-arbalète",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Crimson Shade",
+       "nom": "Ombre pourpre",
+       "cout": 35
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Slaaneshi Chaos Hound",
+   "nom": "Chien du Chaos de Slaanesh",
+   "categorie": "hdm",
+   "cout": 15,
+   "min": 0,
+   "max": 3,
+   "xp": 0,
+   "profil": {
+    "M": "7",
+    "CC": "4",
+    "CT": "0",
+    "F": "4",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "3"
+   },
+   "race": null,
+   "sansProgression": true,
+   "regles": [
+    "Animals"
+   ],
+   "competences": [],
+   "equipement": []
+  },
+  {
+   "cle": "Slaaneshi Beastman",
+   "nom": "Homme-bête de Slaanesh",
+   "categorie": "hdm",
+   "cout": 35,
+   "min": 0,
+   "max": 3,
+   "xp": 0,
+   "profil": {
+    "M": "5",
+    "CC": "4",
+    "CT": "3",
+    "F": "3",
+    "E": "4",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "6"
+   },
+   "race": "hommeBete",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 15
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Hochland Long Rifle",
+       "nom": "Long fusil d'Hochland",
+       "cout": 200
+      },
+      {
+       "en": "Crossbow Pistol",
+       "nom": "Pistolet-arbalète",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Slaaneshi Wretch",
+   "nom": "Misérable de Slaanesh",
+   "categorie": "hdm",
+   "cout": 10,
+   "min": 0,
+   "max": null,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "2",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "5"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Slaves to Darkness"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Shortbow",
+       "nom": "Arc court",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Cultist",
+   "nom": "Cultiste",
+   "categorie": "hdm",
+   "cout": 25,
+   "min": 0,
+   "max": 5,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 15
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Hochland Long Rifle",
+       "nom": "Long fusil d'Hochland",
+       "cout": 200
+      },
+      {
+       "en": "Crossbow Pistol",
+       "nom": "Pistolet-arbalète",
+       "cout": 35
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "reglesTexte": {
+  "Corruption of the Mind and Flesh": {
+   "fr": {
+    "nom": "Corruption de l'esprit et de la chair",
+    "resume": "Quand une figurine meurt, on peut dépenser 1 fragment de malepierre pour greffer une caractéristique du mort sur un homme-bête, un cultiste ou un chien de Slaanesh (un héros renonce alors à chercher un objet rare)."
+   },
+   "en": {
+    "nom": "Corruption of the Mind and Flesh",
+    "resume": "When a model dies, you may spend 1 wyrdstone to graft one of its characteristics onto a Slaaneshi Beastman, Cultist or Hound (one Hero then cannot search for rare items)."
+   }
+  },
+  "Agony and Ecstasy": {
+   "fr": {
+    "nom": "Agonie et extase",
+    "resume": "Avec un fouet hédoniste, il peut fouetter un ami à 3 ps (touche auto, +1 pour blesser) pour doubler son Endurance ; test de Commandement à chaque tour pour maintenir l'effet."
+   },
+   "en": {
+    "nom": "Agony and Ecstasy",
+    "resume": "With a Hedonist Whip he may scourge a friend within 3\" (auto-hit, +1 to wound) to double his Toughness; a Leadership test each turn keeps the effect."
+   }
+  },
+  "Pain and Pleasure": {
+   "fr": {
+    "nom": "Douleur et plaisir",
+    "resume": "Après une blessure non sauvegardée, il est frénétique jusqu'à la fin de son tour suivant."
+   },
+   "en": {
+    "nom": "Pain and Pleasure",
+    "resume": "After an unsaved wound he is subject to Frenzy until the end of his next turn."
+   }
+  },
+  "Strange Allure": {
+   "fr": {
+    "nom": "Étrange séduction",
+    "resume": "Un ennemi doit réussir un test de Commandement avant de l'attaquer ou de lui tirer dessus, sinon il relance ses touches réussies."
+   },
+   "en": {
+    "nom": "Strange Allure",
+    "resume": "An enemy must pass a Leadership test before attacking or shooting at her, or re-roll successful hits."
+   }
+  },
+  "Pound of Flesh": {
+   "fr": {
+    "nom": "Livre de chair",
+    "resume": "Avant la bataille, un misérable peut lui servir de bouclier de chair et encaisser une blessure à sa place (il est alors retiré)."
+   },
+   "en": {
+    "nom": "Pound of Flesh",
+    "resume": "Before battle a Wretch may be assigned as a meat shield and take a wound in his place (it is then removed)."
+   }
+  },
+  "Cruel Fate": {
+   "fr": {
+    "nom": "Sort cruel",
+    "resume": "Les captifs obtenus peuvent devenir gratuitement des misérables."
+   },
+   "en": {
+    "nom": "Cruel Fate",
+    "resume": "Captives gained may become Wretches for free."
+   }
+  },
+  "Flesh Reserve": {
+   "fr": {
+    "nom": "Réserve de chair",
+    "resume": "Avant la bataille, un misérable lui est attaché : il peut le sacrifier pour relancer un sort raté."
+   },
+   "en": {
+    "nom": "Flesh Reserve",
+    "resume": "Before battle a Wretch is attached to him; he may sacrifice it to re-roll a failed spell."
+   }
+  },
+  "Fluctuating Form": {
+   "fr": {
+    "nom": "Forme changeante",
+    "resume": "Au début de la bataille et à chaque phase de ralliement hors combat, choisit la forme masculine (+1 CC, F, E, A) ou féminine (+1 CT, +2 I, +2 Cd, +2 M)."
+   },
+   "en": {
+    "nom": "Fluctuating Form",
+    "resume": "At the start of battle and each Recovery phase out of combat, picks male form (+1 WS, S, T, A) or female form (+1 BS, +2 I, +2 Ld, +2 M)."
+   }
+  },
+  "Slaves to Darkness": {
+   "fr": {
+    "nom": "Esclaves des ténèbres",
+    "resume": "Insensible à la psychologie et au « Seul contre tous » à 6 ps d'un héros ami ; ne devient jamais un héros."
+   },
+   "en": {
+    "nom": "Slaves to Darkness",
+    "resume": "Immune to psychology and All Alone within 6\" of a friendly Hero; can never become a Hero."
+   }
+  }
+ },
+ "competencesSpeciales": null,
+ "races": {},
+ "notes": "Grade 1c, bande marquée brouillon (work in progress). Aucun tableau de compétences publié (les auteurs le reconnaissent) : listes de compétences des héros laissées vides. Pas de chef désigné : n'importe quel héros peut être choisi comme chef (règle Leader non attribuée) ; un seul héros de chaque type. Profil du dévot = profil de base (forme masculine 4 4 3 4 4 1 3 2 7, féminine 6 3 4 3 3 1 5 1 9). Fouet hédoniste : héros seulement ; attrape-homme de Slaanesh : maître-fouetteur seulement ; la danseuse ne porte jamais d'armure. « Long rifle » (200 co) assimilé au long fusil d'Hochland. Arc à 15 co sur la page. Liste des misérables : dague à 2 co sans dague gratuite. Mutations à l'achat pour tout héros (bras supplémentaire, tentacule, grande pince) selon les règles des Possédés. Liste de sorts du prêtre : Rituels du Chaos. Chiens : aucun équipement ; race inconnue (null). Effectif pouvant augmenter (livre de cuisine halfling)."
+}

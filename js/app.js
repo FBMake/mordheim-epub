@@ -51,6 +51,8 @@ import {
   equipementRefuse,
   avertissementsEquipement,
   malusEquipement,
+  francsDisponibles,
+  soldeFranc,
 } from "./warband-builder.js";
 import { LANGUES, detectLang, getLang, getLocale, setLang, t } from "./i18n.js";
 import { flagSvg } from "./flags.js";
@@ -1385,7 +1387,7 @@ function unitCard(fig, { lecture = false } = {}) {
       <span class="unit-name">${custom ? `${escapeHtml(custom)} <em>(${titre})</em>` : titre}</span>
       <span class="unit-cost">${
         nombre > 1 ? t("unite.coutGroupe", { total: coutEntree(fig), unite: fig.coutGc }) : `${coutEntree(fig)} ${t("monnaie")}`
-      } · ${fig.xp} xp</span>
+      }${fig.franc ? ` · ${escapeHtml(t("franc.solde", { solde: soldeFranc(fig, currentCreation) }))}` : ""} · ${fig.xp} xp</span>
     </div>
     <div class="stat-line">${statLine(stats, ecarts)}</div>
     ${
@@ -1427,7 +1429,8 @@ function unitCard(fig, { lecture = false } = {}) {
       applyCreationChange();
     });
   }
-  addBtn(t("unite.dupliquer"), () => {
+  // Un seul franc-tireur de chaque type par bande : pas de copie.
+  if (!fig.franc) addBtn(t("unite.dupliquer"), () => {
     const i = currentCreation.figurines.indexOf(fig);
     currentCreation.figurines.splice(i + 1, 0, duplicateFigurine(fig));
     applyCreationChange();
@@ -1555,8 +1558,12 @@ function renderCreation() {
   document.getElementById("creation-warnings").hidden = !warnings.length;
   document.getElementById("creation-warnings-list").innerHTML = warnings.map((w) => `<li>${escapeHtml(w)}</li>`).join("");
 
-  for (const cat of ["heros", "hdm"]) {
-    const figs = c.figurines.filter((f) => f.categorie === cat);
+  // Francs-tireurs : section proposée pour une bande des données, ou dès qu'il y en a un.
+  document.getElementById("crea-francs-bloc").hidden = !getBande(c.bandeId) && !tot.francs;
+  document.getElementById("lecture-francs-bloc").hidden = !tot.francs;
+  document.getElementById("crea-solde").textContent = tot.francs ? t("franc.soldeTotale", { solde: tot.solde }) : t("franc.aide");
+  for (const cat of ["heros", "hdm", "franc"]) {
+    const figs = c.figurines.filter((f) => (cat === "franc" ? f.franc : f.categorie === cat && !f.franc));
     document.getElementById(`crea-count-${cat}`).textContent = figs.length;
     const list = document.getElementById(`crea-list-${cat}`);
     list.innerHTML = figs.length ? "" : `<p class="hint-text small left">${t("compo.personne")}</p>`;
@@ -1625,7 +1632,8 @@ document.getElementById("crea-valider").addEventListener("click", async () => {
 
 document.querySelectorAll(".add-btn").forEach((b) =>
   b.addEventListener("click", () => {
-    if (getBande(currentCreation?.bandeId)) openRecruitDialog(b.dataset.add);
+    if (b.dataset.add === "franc") openFrancDialog();
+    else if (getBande(currentCreation?.bandeId)) openRecruitDialog(b.dataset.add);
     else openFigDialog(null, b.dataset.add);
   })
 );
@@ -1677,6 +1685,61 @@ function openRecruitDialog(categorie) {
   }
   recruitDialog.showModal();
 }
+
+/** Texte des employeurs d'un franc-tireur (« toute bande sauf … »). */
+function employeursText(g) {
+  const nom = (v) => (v.startsWith("@") ? t(`franc.groupe.${v.slice(1)}`) : getBande(v) ? locBande(getBande(v)) : v);
+  const e = g.employeurs || {};
+  if (e.seulement) return t("franc.seulement", { liste: e.seulement.map(nom).join(", ") });
+  if (e.sauf) return t("franc.sauf", { liste: e.sauf.map(nom).join(", ") });
+  return t("franc.tous");
+}
+
+/** Engagement d'un franc-tireur : prime, solde et conditions d'emploi de chacun. */
+function openFrancDialog() {
+  recruitCategorie = "franc";
+  document.getElementById("recruit-title").textContent = t("fig.recruterFranc");
+  const list = document.getElementById("recruit-list");
+  list.innerHTML = `<p class="hint-text small left">${escapeHtml(t("franc.regles"))}</p>`;
+  const dispo = francsDisponibles(currentCreation);
+  // Ceux que la bande peut engager d'abord.
+  dispo.sort((a, b) => Number(b.autorise) - Number(a.autorise));
+  for (const { guerrier: g, autorise, engage, solde } of dispo) {
+    const div = document.createElement("div");
+    div.className = `unit-card${autorise && !engage ? "" : " complet"}`;
+    const conditions = [
+      employeursText(g),
+      ...(g.soldeSi || []).map((s) =>
+        s.siRace ? t("franc.soldeSiRace", { race: t(`franc.race.${s.siRace}`), solde: s.solde }) : t("franc.soldeSiBande", { solde: s.solde })
+      ),
+      g.effets?.effectifMax ? t("franc.effectif", { n: g.effets.effectifMax }) : "",
+    ].filter(Boolean);
+    div.innerHTML = `
+      <div class="unit-head">
+        <span class="unit-name">${escapeHtml(locGuerrier(g))}</span>
+        <span class="unit-cost">${escapeHtml(t("franc.cout", { prime: g.prime, solde, valeur: g.valeur }))}</span>
+      </div>
+      <div class="stat-line">${statLine(g.profil)}</div>
+      ${g.regles.length ? `<p class="unit-detail">${t("unite.regles", { liste: reglesText(g.regles) })}</p>` : ""}
+      ${g.equipementDepart?.length ? `<p class="unit-detail">${escapeHtml(t("franc.equipement", { liste: g.equipementDepart.map(loc).join(", ") }))}</p>` : ""}
+      <p class="unit-detail">${escapeHtml(conditions.join(" · "))}</p>
+      <div class="slot-actions"></div>`;
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "btn-slot";
+    b.textContent = engage ? t("franc.engage") : autorise ? t("franc.engager") : t("franc.refuse");
+    b.disabled = engage || !autorise;
+    b.addEventListener("click", () => {
+      recruitDialog.close();
+      openFigDialog(null, "heros", newFigurineFromModele(g.id));
+    });
+    div.querySelector(".slot-actions").appendChild(b);
+    list.appendChild(div);
+  }
+  document.getElementById("recruit-libre").hidden = true;
+  recruitDialog.showModal();
+}
+recruitDialog.addEventListener("close", () => (document.getElementById("recruit-libre").hidden = false));
 document.getElementById("recruit-cancel").addEventListener("click", () => recruitDialog.close());
 document.getElementById("recruit-libre").addEventListener("click", () => {
   recruitDialog.close();
@@ -2020,9 +2083,11 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   modifManuelleOk = !fig;
   const guerrier = getGuerrier(figDraft.modele);
   const isHero = figDraft.categorie === "heros";
-  document.getElementById("fig-title").textContent = fig
-    ? t(isHero ? "fig.modifierHeros" : "fig.modifierHdm")
-    : t(isHero ? "fig.recruterHeros" : "fig.recruterHdm");
+  document.getElementById("fig-title").textContent = figDraft.franc
+    ? t(fig ? "fig.modifierFranc" : "fig.recruterFranc")
+    : fig
+      ? t(isHero ? "fig.modifierHeros" : "fig.modifierHdm")
+      : t(isHero ? "fig.recruterHeros" : "fig.recruterHdm");
   // Le type est enregistré en français ; il s'affiche dans la langue de l'interface.
   figType.value = loc(figDraft.type);
   figCout.value = figDraft.coutGc;
@@ -2032,7 +2097,7 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
   document.getElementById("fig-nombre-wrap").hidden = isHero;
   figNombre.max = MAX_GROUPE;
   figNombre.value = tailleGroupe(figDraft);
-  document.getElementById("fig-cout-label").textContent = t(isHero ? "fig.cout" : "fig.coutUnitaire");
+  document.getElementById("fig-cout-label").textContent = t(figDraft.franc ? "fig.prime" : isHero ? "fig.cout" : "fig.coutUnitaire");
   figStats.querySelectorAll("input").forEach((inp) => (inp.value = figDraft.stats[inp.dataset.stat]));
   renderFigStatsEcarts();
   renderFigXpBloque();

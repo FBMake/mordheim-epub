@@ -1,0 +1,4247 @@
+{
+  "francsTireurs": [
+    {
+      "cle": "Arabian Merchant",
+      "nom": "Marchand arabien",
+      "grade": "1a",
+      "prime": 20,
+      "solde": 10,
+      "valeur": 10,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Haggle",
+        "Pawnbroker",
+        "Marketeer",
+        "Stone Cutter",
+        "Merchant's Bodyguard"
+      ],
+      "competences": [
+        "Érudition",
+        "Spéciales (Marchand arabien)"
+      ],
+      "equipementDepart": [
+        "Cimeterre"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Scimitar",
+              "nom": "Cimeterre",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@mercenaires",
+          "repurgateurs",
+          "soeurs",
+          "@nains",
+          "kislevites",
+          "bretonnie",
+          "nuln",
+          "stirwood",
+          "caravanes-marchandes",
+          "amazones",
+          "guerriers-ombres"
+        ]
+      },
+      "notes": "Source : Town Cryer 22. Recrutable par toute bande « du bon côté » (mercenaires, nains, répurgateurs, pilleurs de tombes…) : liste d'identifiants approximative. Le cimeterre compte comme une épée. Il est accompagné d'un garde du corps (profil non saisi) qui reste à 1 ps de lui et intercepte tirs et charges qui le visent.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Beast Hunter",
+      "nom": "Chasseur de bêtes",
+      "grade": "1a",
+      "prime": 35,
+      "solde": 15,
+      "valeur": 18,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "4",
+        "A": "2",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Beastmen Vengeance",
+        "Skull Rack",
+        "Predator"
+      ],
+      "competences": [
+        "Combat",
+        "Force"
+      ],
+      "equipementDepart": [
+        "Hache",
+        "Hache",
+        "Hache de jet",
+        "Armure légère"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Axe",
+              "nom": "Hache de jet",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "@skavens",
+          "hommes-betes",
+          "@morts-vivants",
+          "@orques",
+          "possedes",
+          "carnaval"
+        ]
+      },
+      "notes": "Source : Town Cryer 28 / Empire in Flames. Deux haches. La hache de jet compte comme un couteau de lancer avec +1 en Force. Profil selon mordheimer.net (E 4 ; certaines copies du compendium Broheim indiquent E 3).",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Highwayman",
+      "nom": "Bandit de grand chemin",
+      "grade": "1a",
+      "prime": 35,
+      "solde": 20,
+      "valeur": 20,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Expert Pistolier",
+        "Unscrupulous",
+        "Expert Rider (Highwayman)",
+        "Stagecoaches"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Paire de pistolets",
+        "Rapière",
+        "Dague",
+        "Cape (rondache)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Rapier",
+              "nom": "Rapière",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Cloak (buckler)",
+              "nom": "Cape (rondache)",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "soeurs",
+          "repurgateurs",
+          "guerriers-ombres"
+        ]
+      },
+      "notes": "Source : Town Cryer 26 / Empire in Flames. Interdit aussi aux bandes d'elfes « bons » (seuls les Guerriers de l'ombre ont un identifiant). Ne rejoint jamais une bande qui emploie un patrouilleur. Avec les règles de cavalerie, monte un cheval (M8 CC0 CT0 F3 E3 PV1 I3 A0 Cd5) : sauvegarde 6+ monté, aucune à pied ; il a alors aussi accès aux compétences de cavalerie. La cape compte comme une rondache au corps à corps.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Imperial Assassin",
+      "nom": "Assassin impérial",
+      "grade": "1a",
+      "prime": 40,
+      "solde": 20,
+      "valeur": 22,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "2",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Weapons Master",
+        "Poisoner"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse",
+        "Spéciales (Assassin impérial)"
+      ],
+      "equipementDepart": [
+        "Épée",
+        "Dague",
+        "Couteaux et étoiles de lancer",
+        "Pistolet-arbalète"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Knives/Stars",
+              "nom": "Couteaux et étoiles de lancer",
+              "cout": 0
+            },
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "repurgateurs",
+          "soeurs",
+          "@orques",
+          "@skavens"
+        ]
+      },
+      "notes": "Source : Mordheim Annual 2002 (« Show me the money »). Peut aussi choisir la compétence de Force « Charge irrésistible ». N'utilise jamais d'armes à poudre noire.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Roadwarden",
+      "nom": "Patrouilleur",
+      "grade": "1a",
+      "prime": 40,
+      "solde": 20,
+      "valeur": 22,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Lethal Marksman",
+        "Stern",
+        "Expert Rider (Roadwarden)",
+        "Stagecoaches"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force"
+      ],
+      "equipementDepart": [
+        "Arbalète",
+        "Marteau de cavalier",
+        "Dague",
+        "Armure lourde",
+        "Torches (3)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Horseman's Hammer",
+              "nom": "Marteau de cavalier",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Torches (3)",
+              "nom": "Torches (3)",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@mercenaires",
+          "repurgateurs",
+          "soeurs",
+          "@nains",
+          "kislevites",
+          "bretonnie",
+          "nuln",
+          "stirwood",
+          "caravanes-marchandes",
+          "amazones",
+          "guerriers-ombres"
+        ]
+      },
+      "notes": "Source : Town Cryer 26 / Empire in Flames. Recrutable par toute bande « du bon côté » (répurgateurs, sœurs de Sigmar, nains, mercenaires humains…) : liste approximative. Ne rejoint jamais une bande qui emploie un bandit de grand chemin. Avec les règles de cavalerie, monte un cheval (M8 CC0 CT0 F3 E3 PV1 I3 A0 Cd5) : sauvegarde 4+ monté, 5+ à pied ; accès aux compétences de cavalerie.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Tilean Marksman",
+      "nom": "Tireur tiléen",
+      "grade": "1a",
+      "prime": 30,
+      "solde": 15,
+      "valeur": 16,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Steady Hands",
+        "Dead Eye Shot"
+      ],
+      "competences": [
+        "Tir"
+      ],
+      "equipementDepart": [
+        "Armure légère",
+        "Épée",
+        "Dague",
+        "Arbalète"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "@skavens",
+          "@orques",
+          "@morts-vivants"
+        ]
+      },
+      "notes": "Source : Mordheim Annual 2002.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Bard",
+      "nom": "Barde",
+      "grade": "1b",
+      "prime": 20,
+      "solde": 10,
+      "valeur": 8,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Songster"
+      ],
+      "competences": [
+        "Érudition",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Épée",
+        "Dague",
+        "Armure légère"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@mercenaires",
+          "soeurs",
+          "repurgateurs"
+        ]
+      },
+      "notes": "Source : Town Cryer 13.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Big Game Hunter",
+      "nom": "Chasseur de gros gibier",
+      "grade": "1b",
+      "prime": 40,
+      "solde": 18,
+      "valeur": 16,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Set Traps (Big Game Hunter)"
+      ],
+      "competences": [
+        "Tir",
+        "Érudition"
+      ],
+      "equipementDepart": [
+        "Épée",
+        "Dague",
+        "Filet",
+        "Armure légère",
+        "Fusil de chasse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Hunting Rifle",
+              "nom": "Fusil de chasse",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Net",
+              "nom": "Filet",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@humains"
+        ]
+      },
+      "notes": "Source : Town Cryer 13 (Lustrie). Le fusil de chasse suit les règles du long fusil d'Hochland.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Black Orc Overseer",
+      "nom": "Contremaître orque noir",
+      "grade": "1b",
+      "prime": 60,
+      "solde": 40,
+      "valeur": 15,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "orque",
+      "regles": [
+        "Hired Sword",
+        "Overseer",
+        "Step Up"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Armure lourde",
+        "Casque",
+        "Hache",
+        "Hache"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 0
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 0
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@orques"
+        ]
+      },
+      "notes": "Source : supplément The Nemesis Crown ; chiffres tirés d'une base secondaire reprenant mordheimer.net, à vérifier. Armes au choix : deux haches ou une arme à deux mains.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Bounty Hunter",
+      "nom": "Chasseur de primes",
+      "grade": "1b",
+      "prime": 40,
+      "solde": 15,
+      "valeur": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Capture"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Épée",
+        "Dague",
+        "Pistolet",
+        "Arbalète",
+        "Armure lourde",
+        "Casque",
+        "Corde et grappin",
+        "Lanterne"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 0
+            },
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 0
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Rope & Hook",
+              "nom": "Corde et grappin",
+              "cout": 0
+            },
+            {
+              "en": "Lantern",
+              "nom": "Lanterne",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "possedes",
+          "@morts-vivants",
+          "@skavens",
+          "@orques"
+        ]
+      },
+      "notes": "Source : Town Cryer 13.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Chameleon Skink",
+      "nom": "Skink caméléon",
+      "grade": "1b",
+      "prime": 70,
+      "solde": 12,
+      "valeur": 16,
+      "profil": {
+        "M": "6",
+        "CC": "4",
+        "CT": "4",
+        "F": "4",
+        "E": "2",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "skink",
+      "regles": [
+        "Hired Sword",
+        "Scaly Skin",
+        "Cold Blooded",
+        "Aquatic",
+        "Jungle Born",
+        "Chameleon Skin",
+        "Infiltration"
+      ],
+      "competences": [
+        "Tir",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Dague",
+        "Sarbacane",
+        "Rondache"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "hommes-lezards"
+        ]
+      },
+      "notes": "Source : Town Cryer 12 (Lustrie). Sarbacane à fléchettes empoisonnées. Peau écailleuse : sauvegarde naturelle 6+. Selon certaines versions, peut aussi choisir les compétences spéciales des hommes-lézards. Profil d'après une base secondaire, à vérifier.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Clan Skryre Rat Ogre",
+      "nom": "Rat-ogre du clan Skryre",
+      "grade": "1b",
+      "prime": 100,
+      "solde": 0,
+      "valeur": 25,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "5",
+        "E": "5",
+        "PV": "3",
+        "I": "1",
+        "A": "3",
+        "Cd": "10"
+      },
+      "race": null,
+      "regles": [
+        "Hired Sword",
+        "Fear",
+        "Large Target",
+        "Immune to Psychology",
+        "Immune to Poison",
+        "Bio Machinery",
+        "Wyrdstone Powered",
+        "Jet of Flame",
+        "Unreliable"
+      ],
+      "competences": [],
+      "equipementDepart": [
+        "Lance-feu de malefoudre"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Warpfire Thrower",
+              "nom": "Lance-feu de malefoudre",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@skavens"
+        ]
+      },
+      "notes": "Source : Town Cryer 25. Pas de solde en or : il faut lui fournir un fragment de malepierre avant chaque partie. Ne gagne pas d'expérience. Sauvegarde 4+ (blindage). Lance-feu intégré au bras : gabarit de 6 ps × 2 ps, touche sur 4+ chaque figurine traversée (F4, -1 à la sauvegarde selon certaines versions), peut l'enflammer. Ne peut pas courir.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Dark Elf Assassin",
+      "nom": "Assassin elfe noir",
+      "grade": "1b",
+      "prime": 70,
+      "solde": 25,
+      "valeur": 25,
+      "profil": {
+        "M": "5",
+        "CC": "5",
+        "CT": "5",
+        "F": "4",
+        "E": "4",
+        "PV": "1",
+        "I": "7",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "regles": [
+        "Hired Sword",
+        "Perfect Killer",
+        "Kindred Hatred",
+        "Excellent Sight"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Lame elfe noire",
+        "Dague",
+        "Arbalète à répétition",
+        "Venin noir",
+        "Armure légère",
+        "Cape sombre"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dark Elf Blade",
+              "nom": "Lame elfe noire",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Repeater Crossbow",
+              "nom": "Arbalète à répétition",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 0
+            },
+            {
+              "en": "Dark Cloak",
+              "nom": "Cape sombre",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@chaos",
+          "@morts-vivants",
+          "@skavens",
+          "@orques",
+          "elfes-noirs",
+          "norses"
+        ]
+      },
+      "notes": "Source : Town Cryer 12 (Lustrie). Recrutable par toute bande « maléfique » : liste d'identifiants approximative. La cape sombre compte comme une cape elfique. Peut choisir les compétences spéciales elfes noires au lieu des listes normales. Profil d'après une base secondaire, à vérifier.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Duellist",
+      "nom": "Duelliste",
+      "grade": "1b",
+      "prime": 35,
+      "solde": 15,
+      "valeur": 18,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "2",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Darting Steel"
+      ],
+      "competences": [
+        "Combat",
+        "Tir"
+      ],
+      "equipementDepart": [
+        "Pistolet de duel",
+        "Épée",
+        "Dague",
+        "Cape (rondache)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Cloak (buckler)",
+              "nom": "Cape (rondache)",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "@skavens",
+          "@morts-vivants"
+        ]
+      },
+      "notes": "Source : Town Cryer 13. La cape compte comme une rondache.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Dwarf Pathfinder",
+      "nom": "Éclaireur nain",
+      "grade": "1b",
+      "prime": 35,
+      "solde": 15,
+      "valeur": 12,
+      "profil": {
+        "M": "3",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "nain",
+      "regles": [
+        "Hired Sword",
+        "Hard to Kill",
+        "Hard Head",
+        "Pathfinder (Dwarf)"
+      ],
+      "competences": [
+        "Combat",
+        "Tir"
+      ],
+      "equipementDepart": [
+        "Hache",
+        "Dague",
+        "Arbalète",
+        "Armure légère"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@humains",
+          "@nains"
+        ]
+      },
+      "soldeSi": [
+        {
+          "siRace": "elfe",
+          "solde": 20
+        }
+      ],
+      "notes": "Source : supplément The Nemesis Crown ; chiffres d'après une base secondaire reprenant mordheimer.net, à vérifier. Bandes humaines ou naines, sauf celles alignées sur le Chaos. Une bande avec un elfe paie 5 co de solde en plus.",
+      "effets": {}
+    },
+    {
+      "cle": "Dwarf Treasure Hunter",
+      "nom": "Chasseur de trésors nain",
+      "grade": "1b",
+      "prime": 55,
+      "solde": 30,
+      "valeur": 24,
+      "profil": {
+        "M": "3",
+        "CC": "5",
+        "CT": "4",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "nain",
+      "regles": [
+        "Hired Sword",
+        "Hard to Kill",
+        "Hard Head",
+        "Hate Orcs and Goblins",
+        "Lantern Rig",
+        "Mining Pick",
+        "Treasure Maps"
+      ],
+      "competences": [
+        "Combat",
+        "Force"
+      ],
+      "equipementDepart": [
+        "Armure en gromril",
+        "Casque",
+        "Pioche",
+        "Dague",
+        "Marteau",
+        "Cartes au trésor",
+        "Harnais à lanterne"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Mining Pick",
+              "nom": "Pioche",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Gromril Armour",
+              "nom": "Armure en gromril",
+              "cout": 0
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Treasure Maps",
+              "nom": "Cartes au trésor",
+              "cout": 0
+            },
+            {
+              "en": "Lantern Rig",
+              "nom": "Harnais à lanterne",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@mercenaires",
+          "repurgateurs"
+        ]
+      },
+      "soldeSi": [
+        {
+          "siRace": "elfe",
+          "solde": 60
+        }
+      ],
+      "notes": "Source : Fanatic Magazine 8. Une bande avec des elfes peut l'engager mais paie une solde double. Les bandes de chasseurs de trésors nains ne peuvent pas l'engager.",
+      "effets": {}
+    },
+    {
+      "cle": "Elf Mage",
+      "nom": "Mage elfe",
+      "grade": "1b",
+      "prime": 45,
+      "solde": 0,
+      "valeur": 23,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "regles": [
+        "Hired Sword",
+        "Wizard (Djed'hi)",
+        "Sorcery",
+        "Fey",
+        "Wanderer"
+      ],
+      "competences": [],
+      "equipementDepart": [
+        "Bâton",
+        "Cape elfique"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Staff",
+              "nom": "Bâton",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Elven Cloak",
+              "nom": "Cape elfique",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@mercenaires",
+          "hommes-lezards",
+          "amazones"
+        ]
+      },
+      "notes": "Source : Fanatic Magazine 5 (Lustrie). Engagé pour une seule partie (pas de solde, pas de compétence). Connaît trois sorts tirés au hasard dans les sorts des Djed'hi. Recrutable par les Tiléens, Estaliens, hommes-lézards et amazones (selon la version lustrienne) ; liste approximative. Profil d'après une base secondaire.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Halfling Thief",
+      "nom": "Voleur halfling",
+      "grade": "1b",
+      "prime": 25,
+      "solde": 15,
+      "valeur": 14,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "4",
+        "F": "2",
+        "E": "2",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "halfling",
+      "regles": [
+        "Hired Sword",
+        "Thief's Upkeep",
+        "Cutpurse",
+        "Stealthy (Thief)",
+        "Infiltration",
+        "Pick Locks"
+      ],
+      "competences": [
+        "Vitesse",
+        "Tir",
+        "Spéciales (Voleur halfling)"
+      ],
+      "equipementDepart": [
+        "Épée",
+        "Dague",
+        "Couteaux et étoiles de lancer",
+        "Corde et grappin"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Knives/Stars",
+              "nom": "Couteaux et étoiles de lancer",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Rope & Hook",
+              "nom": "Corde et grappin",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@mercenaires",
+          "kislevites",
+          "@nains"
+        ]
+      },
+      "notes": "Source : Fanatic Magazine 7. Aussi recrutable par les bandes d'elfes sylvains (pas d'identifiant). Solde variable : 1D6 après chaque partie (1 : il s'enfuit avec des valeurs ; 2-5 : 15 co ; 6 : rien).",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Human Scout",
+      "nom": "Éclaireur humain",
+      "grade": "1b",
+      "prime": 10,
+      "solde": 5,
+      "valeur": 9,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Scout's Eye"
+      ],
+      "competences": [
+        "Combat",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Arc",
+        "Épée",
+        "Dague"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "@orques",
+          "hommes-betes",
+          "possedes"
+        ]
+      },
+      "notes": "Source : supplément The Nemesis Crown ; données secondaires, à vérifier. Peut aussi apprendre Tir rapide, Yeux d'aigle ou Tireur habile dans la liste de Tir.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Kislev Ranger",
+      "nom": "Rôdeur kislévite",
+      "grade": "1b",
+      "prime": 30,
+      "solde": 15,
+      "valeur": 15,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Heart Strike",
+        "Hunter's Cloak",
+        "Seeker",
+        "Loner"
+      ],
+      "competences": [
+        "Tir",
+        "Vitesse",
+        "Spéciales (Rôdeur kislévite)"
+      ],
+      "equipementDepart": [
+        "Arc",
+        "Épée",
+        "Cape de chasseur"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Hunter's Cloak",
+              "nom": "Cape de chasseur",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@mercenaires",
+          "repurgateurs",
+          "@nains"
+        ]
+      },
+      "notes": "Source : Fanatic Magazine 6. Listes de compétences selon le compendium Broheim (Tir, Vitesse + spéciales) ; d'autres versions donnent aussi Combat, Érudition et Force.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Mule Skinner",
+      "nom": "Muletier",
+      "grade": "1b",
+      "prime": 35,
+      "solde": 15,
+      "valeur": 20,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Animal Handler"
+      ],
+      "competences": [
+        "Combat",
+        "Force"
+      ],
+      "equipementDepart": [
+        "Fouet",
+        "Dague"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Whip",
+              "nom": "Fouet",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "possedes",
+          "@skavens",
+          "@morts-vivants"
+        ]
+      },
+      "notes": "Source : Town Cryer 14 ; données secondaires, à vérifier. Commence avec une compétence de dressage d'animaux ; peut aussi apprendre Débrouillardise et Marchandage.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Nomad Scout",
+      "nom": "Éclaireur nomade",
+      "grade": "1b",
+      "prime": 30,
+      "solde": 15,
+      "valeur": 12,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Desert Guide"
+      ],
+      "competences": [
+        "Tir",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Cimeterre",
+        "Arc"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Scimitar",
+              "nom": "Cimeterre",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {},
+      "notes": "Source : Town Cryer 19 (Khemri) ; données secondaires, à vérifier. Le cimeterre compte comme une épée.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Norse Shaman",
+      "nom": "Chaman norse",
+      "grade": "1b",
+      "prime": 45,
+      "solde": 25,
+      "valeur": 25,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Wizard (Norse Runes)"
+      ],
+      "competences": [
+        "Combat",
+        "Érudition"
+      ],
+      "equipementDepart": [
+        "Bâton runique",
+        "Épée"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Rune Staff",
+              "nom": "Bâton runique",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@humains",
+          "norses"
+        ]
+      },
+      "notes": "Source : Town Cryer 12 (Lustrie). Arme au choix : épée ou hache, en plus du bâton runique. Commence avec deux runes tirées au hasard (Hurlement du Nord, Furie d'Angvar, Lance de froid, Don des Destinées, Baiser du givre, Force de l'ours) ; peut les invoquer en armure. Peut tirer une rune supplémentaire au lieu d'une compétence. Certaines sources indiquent 40 co de prime.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Old Prospector",
+      "nom": "Vieux prospecteur",
+      "grade": "1b",
+      "prime": 0,
+      "solde": 0,
+      "valeur": 15,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Paid in Treasure",
+        "Wyrdstone Hunter",
+        "Resilient",
+        "Immune to Fear"
+      ],
+      "competences": [
+        "Force",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Tromblon",
+        "Pioche"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Pick",
+              "nom": "Pioche",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Blunderbuss",
+              "nom": "Tromblon",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "@nains"
+        ]
+      },
+      "notes": "Source : supplément The Nemesis Crown ; données secondaires, à vérifier. Payé en trésors et non en or : 2 trésors à l'engagement, 1 trésor de solde. La pioche est une arme à deux mains.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Pathfinder",
+      "nom": "Pisteur",
+      "grade": "1b",
+      "prime": 60,
+      "solde": 15,
+      "valeur": 25,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Lay of the Land",
+        "Knowledge of Myths and Legends"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse",
+        "Spéciales (Pisteur)"
+      ],
+      "equipementDepart": [
+        "Épée",
+        "Dague",
+        "Arc long",
+        "Corde et grappin",
+        "Herbes curatives"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Rope & Hook",
+              "nom": "Corde et grappin",
+              "cout": 0
+            },
+            {
+              "en": "Healing Herbs",
+              "nom": "Herbes curatives",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {},
+      "notes": "Source : Town Cryer 12 (Lustrie). Profil et listes de compétences d'après une base secondaire, à vérifier.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Priest of Morr",
+      "nom": "Prêtre de Morr",
+      "grade": "1b",
+      "prime": 35,
+      "solde": 0,
+      "valeur": 5,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Mercenary Hero",
+        "Loner",
+        "Prayers of Morr"
+      ],
+      "competences": [
+        "Érudition",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Dague",
+        "Faux"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            },
+            {
+              "en": "Scythe",
+              "nom": "Faux",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@mercenaires"
+        ]
+      },
+      "notes": "Source : Town Cryer 12. Héros mercenaire 0-1 qui remplace un des héros de la bande et commence avec 8 points d'expérience ; pas de solde indiquée. Valeur saisie à 5 (comme un héros) : la source n'en donne pas. Ne porte jamais d'armure. La faux : F+1, difficile à manier, à deux mains.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Runesmith Journeyman",
+      "nom": "Compagnon forgeron des runes",
+      "grade": "1b",
+      "prime": 30,
+      "solde": 15,
+      "valeur": 15,
+      "profil": {
+        "M": "3",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "nain",
+      "regles": [
+        "Hired Sword",
+        "Hard to Kill",
+        "Hard Head",
+        "Runesmith"
+      ],
+      "competences": [
+        "Combat",
+        "Force"
+      ],
+      "equipementDepart": [
+        "Marteau en gromril",
+        "Armure lourde"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Gromril Hammer",
+              "nom": "Marteau en gromril",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@mercenaires",
+          "repurgateurs"
+        ]
+      },
+      "soldeSi": [
+        {
+          "siRace": "elfe",
+          "solde": 30
+        }
+      ],
+      "notes": "Source : supplément The Nemesis Crown ; données secondaires, à vérifier.",
+      "effets": {}
+    },
+    {
+      "cle": "Shadow Warrior",
+      "nom": "Guerrier de l'ombre",
+      "grade": "1b",
+      "prime": 35,
+      "solde": 15,
+      "valeur": 12,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "regles": [
+        "Hired Sword",
+        "Hate Dark Elves",
+        "Excellent Sight",
+        "Bitter Enemies",
+        "Infiltration"
+      ],
+      "competences": [
+        "Combat",
+        "Tir"
+      ],
+      "equipementDepart": [
+        "Épée",
+        "Arc long",
+        "Dague",
+        "Bouclier",
+        "Armure légère"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 0
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@humains",
+          "guerriers-ombres"
+        ]
+      },
+      "notes": "Source : Town Cryer 13 (Lustrie). Bandes humaines et de hauts elfes, jamais une bande maléfique ni une bande qui emploie un franc-tireur maléfique. Peut aussi prendre les compétences spéciales des guerriers de l'ombre (Town Cryer 10), non saisies.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Snake Charmer",
+      "nom": "Charmeur de serpents",
+      "grade": "1b",
+      "prime": 40,
+      "solde": 10,
+      "valeur": 5,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Snakes",
+        "Immune to Poison"
+      ],
+      "competences": [
+        "Érudition",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Dague",
+        "Cimeterre",
+        "Serpents (3)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            },
+            {
+              "en": "Scimitar",
+              "nom": "Cimeterre",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Snakes (3)",
+              "nom": "Serpents (3)",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@mercenaires",
+          "repurgateurs",
+          "soeurs",
+          "@nains",
+          "kislevites",
+          "bretonnie",
+          "nuln",
+          "stirwood",
+          "caravanes-marchandes",
+          "amazones",
+          "guerriers-ombres"
+        ]
+      },
+      "notes": "Source : Town Cryer 19 (Khemri) ; données secondaires, à vérifier. Solde : 10 co + 5 co par serpent ; valeur : +5 par serpent. Bandes « du bon côté » : liste approximative.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Thief",
+      "nom": "Voleur",
+      "grade": "1b",
+      "prime": 30,
+      "solde": 15,
+      "valeur": 22,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Light Fingers"
+      ],
+      "competences": [
+        "Combat",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Dague",
+        "Dague",
+        "Cape de voleur"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Thief's Cloak",
+              "nom": "Cape de voleur",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "@morts-vivants"
+        ]
+      },
+      "notes": "Source : Town Cryer 19 (Khemri) ; données secondaires, à vérifier.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Tomb Robber",
+      "nom": "Pilleur de tombes",
+      "grade": "1b",
+      "prime": 30,
+      "solde": 15,
+      "valeur": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Lucky",
+        "Tomb Lore"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Épée",
+        "Pistolet-arbalète",
+        "Corde et grappin"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Rope & Hook",
+              "nom": "Corde et grappin",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@mercenaires",
+          "repurgateurs",
+          "soeurs",
+          "@nains",
+          "kislevites",
+          "bretonnie",
+          "nuln",
+          "stirwood",
+          "caravanes-marchandes",
+          "amazones",
+          "guerriers-ombres"
+        ]
+      },
+      "notes": "Source : Town Cryer 19 (Khemri) ; données secondaires, à vérifier. Bandes « du bon côté » : liste approximative.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Warrior Priest of Sigmar",
+      "nom": "Prêtre-guerrier de Sigmar",
+      "grade": "1b",
+      "prime": 40,
+      "solde": 20,
+      "valeur": 16,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Prayers of Sigmar"
+      ],
+      "competences": [
+        "Érudition"
+      ],
+      "equipementDepart": [
+        "Marteau de guerre sigmarite",
+        "Armure légère",
+        "Bouclier"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sigmarite Warhammer",
+              "nom": "Marteau de guerre sigmarite",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 0
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "repurgateurs",
+          "middenheim",
+          "@chaos",
+          "@morts-vivants",
+          "@skavens",
+          "@orques",
+          "elfes-noirs",
+          "norses"
+        ]
+      },
+      "notes": "Source : Town Cryer 28. Interdit aux répurgateurs, à Middenheim et aux bandes « maléfiques » (possédés, peaux-vertes, skavens…). Au lieu d'une compétence, peut tirer au hasard une prière de Sigmar.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Witch",
+      "nom": "Sorcière",
+      "grade": "1b",
+      "prime": 30,
+      "solde": 15,
+      "valeur": 14,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "2",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Wizard (Charms and Hexes)",
+        "Recluse",
+        "Potions",
+        "Reluctant"
+      ],
+      "competences": [
+        "Érudition"
+      ],
+      "equipementDepart": [
+        "Bâton"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Staff",
+              "nom": "Bâton",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "repurgateurs",
+          "soeurs"
+        ]
+      },
+      "notes": "Source : Town Cryer 13. Connaît deux sorts tirés au hasard (Charmes et maléfices) ; peut tirer un nouveau sort au lieu d'une compétence. Certaines copies indiquent 13 co de solde. La version lustrienne l'interdit aussi aux guerriers de l'ombre et aux hommes-lézards.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Witch Hunter",
+      "nom": "Répurgateur",
+      "grade": "1b",
+      "prime": 30,
+      "solde": 15,
+      "valeur": 15,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Burn The Witch",
+        "Wanderer"
+      ],
+      "competences": [
+        "Combat",
+        "Vitesse",
+        "Tir",
+        "Érudition",
+        "Force"
+      ],
+      "equipementDepart": [
+        "Pistolet de duel",
+        "Épée",
+        "Dague",
+        "Eau bénite",
+        "Ail"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 0
+            },
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Blessed Water",
+              "nom": "Eau bénite",
+              "cout": 0
+            },
+            {
+              "en": "Garlic",
+              "nom": "Ail",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@humains"
+        ]
+      },
+      "notes": "Source : supplément The Nemesis Crown ; données secondaires, à vérifier. Bandes humaines non alignées sur le Chaos. Pistolet au choix : pistolet de duel ou pistolet-arbalète. Hait les lanceurs de sorts ennemis ; ne reste qu'une partie.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Wolf Priest of Ulric",
+      "nom": "Prêtre-loup d'Ulric",
+      "grade": "1b",
+      "prime": 60,
+      "solde": 0,
+      "valeur": 5,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Mercenary Hero",
+        "Prayers of Ulric",
+        "Hatred"
+      ],
+      "competences": [
+        "Combat",
+        "Érudition",
+        "Force",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Cape de loup"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 0
+            },
+            {
+              "en": "Club",
+              "nom": "Gourdin",
+              "cout": 0
+            },
+            {
+              "en": "Flail",
+              "nom": "Fléau",
+              "cout": 0
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 0
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Wolfcloak",
+              "nom": "Cape de loup",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "middenheim"
+        ]
+      },
+      "notes": "Source : Town Cryer 8. Remplace un des champions d'une bande de Middenheim (héros mercenaire, pas de solde indiquée ; valeur saisie à 5). Cape de loup : sauvegarde 6+. Pas d'armure ; armes contondantes seulement (marteaux, masses, gourdins, fléaux, morgensterns et leurs versions à deux mains) et dague. Hait les répurgateurs, prêtres-guerriers, matriarches et sœurs supérieures. Peut être accompagné d'un loup (25 co, M6 CC4 CT0 F4 E4 PV1 I5 A2 Cd6, sauvegarde 6+).",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Bone Goliath",
+      "nom": "Goliath d'os",
+      "grade": "1c",
+      "prime": 225,
+      "solde": 0,
+      "valeur": 50,
+      "profil": {
+        "M": "5",
+        "CC": "3",
+        "CT": "0",
+        "F": "5",
+        "E": "5",
+        "PV": "3",
+        "I": "2",
+        "A": "3",
+        "Cd": "6"
+      },
+      "race": null,
+      "regles": [
+        "Hired Sword",
+        "Fear",
+        "Large Target",
+        "Unliving",
+        "Bone Construct"
+      ],
+      "competences": [],
+      "equipementDepart": [],
+      "equipement": [],
+      "employeurs": {
+        "seulement": [
+          "@morts-vivants"
+        ]
+      },
+      "notes": "Source : supplément Border Town Burning ; données secondaires (base reprenant mordheimer.net), à vérifier. Construit (225 co) par les bandes des Morts sans repos (pas d'identifiant). Ne gagne pas d'expérience. Ne peut pas courir.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Cathayan Merchant",
+      "nom": "Marchand cathayan",
+      "grade": "1c",
+      "prime": 20,
+      "solde": 10,
+      "valeur": 10,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Haggle",
+        "Pawnbroker",
+        "Marketeer"
+      ],
+      "competences": [
+        "Érudition"
+      ],
+      "equipementDepart": [
+        "Épée"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@humains",
+          "@nains"
+        ]
+      },
+      "notes": "Source : supplément Border Town Burning ; données secondaires (base reprenant mordheimer.net), à vérifier. Le marché qu'il visite peut aussi être celui des marchandises exotiques de Cathay.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Chaos Centaur",
+      "nom": "Centaure du Chaos",
+      "grade": "1c",
+      "prime": 65,
+      "solde": 25,
+      "valeur": 20,
+      "profil": {
+        "M": "8",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": null,
+      "regles": [
+        "Hired Sword",
+        "Drunken (Centaur)",
+        "Trample"
+      ],
+      "competences": [
+        "Combat",
+        "Force"
+      ],
+      "equipementDepart": [
+        "Haches de jet",
+        "Bouclier",
+        "Épée"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Axes",
+              "nom": "Haches de jet",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "hommes-betes",
+          "norses"
+        ]
+      },
+      "notes": "Source : supplément Border Town Burning ; données secondaires (base reprenant mordheimer.net), à vérifier. Aussi recrutable par les maraudeurs du Chaos et les ogres (pas d'identifiant). Arme au choix : épée ou lance. Peut acheter une mutation au lieu d'une compétence.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Coachman",
+      "nom": "Cocher",
+      "grade": "1c",
+      "prime": 20,
+      "solde": 10,
+      "valeur": 8,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Driver"
+      ],
+      "competences": [
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Fouet",
+        "Épée",
+        "Armure légère"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Whip",
+              "nom": "Fouet",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "@skavens",
+          "hommes-betes",
+          "@orques"
+        ]
+      },
+      "notes": "Source : supplément Border Town Burning ; données secondaires (base reprenant mordheimer.net), à vérifier.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Grave Robber",
+      "nom": "Pilleur de sépultures",
+      "grade": "1c",
+      "prime": 45,
+      "solde": 18,
+      "valeur": 15,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Graveyard Looter"
+      ],
+      "competences": [
+        "Combat",
+        "Vitesse"
+      ],
+      "equipementDepart": [
+        "Pioche",
+        "Dague",
+        "Lanterne",
+        "Cuirs renforcés"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Pickaxe",
+              "nom": "Pioche",
+              "cout": 0
+            },
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Toughened Leathers",
+              "nom": "Cuirs renforcés",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Lantern",
+              "nom": "Lanterne",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "@morts-vivants"
+        ]
+      },
+      "notes": "Source : supplément Border Town Burning ; données secondaires (base reprenant mordheimer.net), à vérifier. Bandes de vampires, nécromanciens ou liches. La pioche compte comme une hache. Les figurines qui utilisent les prières de Sigmar le haïssent.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Hobgoblin Scout",
+      "nom": "Éclaireur hobgobelin",
+      "grade": "1c",
+      "prime": 45,
+      "solde": 20,
+      "valeur": 19,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "gobelin",
+      "regles": [
+        "Hired Sword",
+        "Loner",
+        "Despised"
+      ],
+      "competences": [
+        "Tir",
+        "Spéciales (Éclaireur hobgobelin)"
+      ],
+      "equipementDepart": [
+        "Dague",
+        "Arc court",
+        "Bouclier"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "nains-du-chaos"
+        ]
+      },
+      "notes": "Source : supplément Border Town Burning ; données secondaires (base reprenant mordheimer.net), à vérifier. Aussi recrutable par les ogres (pas d'identifiant). Monte un loup géant (profil non saisi).",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Ninja",
+      "nom": "Ninja",
+      "grade": "1c",
+      "prime": 70,
+      "solde": 0,
+      "valeur": 45,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "2",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "One Battle Only"
+      ],
+      "competences": [],
+      "equipementDepart": [
+        "Épée",
+        "Épée",
+        "Couteaux et étoiles de lancer",
+        "Corde et grappin",
+        "Bombe fumigène"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Knives/Stars",
+              "nom": "Couteaux et étoiles de lancer",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Rope & Hook",
+              "nom": "Corde et grappin",
+              "cout": 0
+            },
+            {
+              "en": "Smoke Bomb",
+              "nom": "Bombe fumigène",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "sauf": [
+          "@skavens",
+          "@orques",
+          "hommes-betes",
+          "norses",
+          "nains-du-chaos"
+        ]
+      },
+      "notes": "Source : supplément Border Town Burning ; données secondaires (base reprenant mordheimer.net), à vérifier. Prime : 70 co + 3D6. Pour une partie seulement : pas de solde, pas d'expérience. Interdit aussi aux maraudeurs du Chaos.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Pyromaniac",
+      "nom": "Pyromane",
+      "grade": "1c",
+      "prime": 25,
+      "solde": 10,
+      "valeur": 9,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Fireworks"
+      ],
+      "competences": [
+        "Spéciales (Pyromane)"
+      ],
+      "equipementDepart": [
+        "Feux d'artifice",
+        "Pétards"
+      ],
+      "equipement": [
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Fireworks",
+              "nom": "Feux d'artifice",
+              "cout": 0
+            },
+            {
+              "en": "Firecrackers",
+              "nom": "Pétards",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "caravanes-marchandes",
+          "@mercenaires"
+        ]
+      },
+      "notes": "Source : supplément Border Town Burning ; données secondaires (base reprenant mordheimer.net), à vérifier. Aussi recrutable par les moines guerriers (pas d'identifiant). Pétards en quantité illimitée.",
+      "soldeSi": [],
+      "effets": {}
+    },
+    {
+      "cle": "Swordsmith",
+      "nom": "Forgeron d'épées",
+      "grade": "1c",
+      "prime": 60,
+      "solde": 15,
+      "valeur": 10,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "regles": [
+        "Hired Sword",
+        "Master Craftsman"
+      ],
+      "competences": [
+        "Érudition",
+        "Force",
+        "Spéciales (Forgeron d'épées)"
+      ],
+      "equipementDepart": [
+        "Marteau",
+        "Cuirs renforcés"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Toughened Leathers",
+              "nom": "Cuirs renforcés",
+              "cout": 0
+            }
+          ]
+        }
+      ],
+      "employeurs": {
+        "seulement": [
+          "caravanes-marchandes",
+          "repurgateurs",
+          "soeurs",
+          "@mercenaires"
+        ]
+      },
+      "notes": "Source : supplément Border Town Burning ; données secondaires (base reprenant mordheimer.net), à vérifier. Aussi recrutable par les moines guerriers (pas d'identifiant).",
+      "soldeSi": [],
+      "effets": {}
+    }
+  ],
+  "reglesTexte": {
+    "Pawnbroker": {
+      "fr": {
+        "nom": "Prêteur sur gages",
+        "resume": "S'il survit à la partie, la bande gagne quelques couronnes de plus pour chaque objet vendu."
+      },
+      "en": {
+        "nom": "Pawnbroker",
+        "resume": "If he survived the battle, the warband earns extra gold for each item it sells."
+      }
+    },
+    "Marketeer": {
+      "fr": {
+        "nom": "Négociant",
+        "resume": "Après chaque partie à laquelle il survit, il visite un marché (marché noir, marchandises étrangères ou receleur) et lance 1D6 pour savoir ce qu'il propose."
+      },
+      "en": {
+        "nom": "Marketeer",
+        "resume": "After each battle he survives he visits a market (black market, foreign wares or fence) and rolls a D6 to see what is on offer."
+      }
+    },
+    "Stone Cutter": {
+      "fr": {
+        "nom": "Tailleur de pierre",
+        "resume": "Quand la bande vend de la malepierre, il peut la tailler : un jet de 1D6 rapporte un bonus ou une perte."
+      },
+      "en": {
+        "nom": "Stone Cutter",
+        "resume": "When the warband sells wyrdstone he may cut it: a D6 roll gives bonus gold, or a loss."
+      }
+    },
+    "Merchant's Bodyguard": {
+      "fr": {
+        "nom": "Garde du corps du marchand",
+        "resume": "Il est accompagné d'un garde qui reste à 1 ps de lui et intercepte les tirs et charges qui le visent, sauf s'il est déjà au corps à corps ; ce garde n'a aucun autre rôle dans la bande."
+      },
+      "en": {
+        "nom": "Merchant's Bodyguard",
+        "resume": "He comes with a guard who stays within 1\" and intercepts shots and charges aimed at him unless already in combat; the guard does nothing else for the warband."
+      }
+    },
+    "Beastmen Vengeance": {
+      "fr": {
+        "nom": "Vengeance contre les hommes-bêtes",
+        "resume": "Hait tous les hommes-bêtes (gors, ungors, centigors, minotaures) et ne réclame aucune solde après une bataille contre eux."
+      },
+      "en": {
+        "nom": "Beastmen Vengeance",
+        "resume": "Hates all Beastmen (Gors, Ungors, Centigors, Minotaurs) and asks no upkeep after a battle against them."
+      }
+    },
+    "Skull Rack": {
+      "fr": {
+        "nom": "Trophées de crânes",
+        "resume": "Provoque la peur chez tous les hommes-bêtes."
+      },
+      "en": {
+        "nom": "Skull Rack",
+        "resume": "Causes fear in all Beastmen."
+      }
+    },
+    "Predator": {
+      "fr": {
+        "nom": "Prédateur",
+        "resume": "Dans une bataille en pleine nature contre des hommes-bêtes, il peut être placé caché après le déploiement des deux bandes, hors de la zone ennemie."
+      },
+      "en": {
+        "nom": "Predator",
+        "resume": "In a wilderness battle against Beastmen he may be set up hidden after both warbands deploy, outside the enemy deployment zone."
+      }
+    },
+    "Expert Pistolier": {
+      "fr": {
+        "nom": "Pistolier expert",
+        "resume": "Cumule les effets des compétences Pistolier et Tireur habile."
+      },
+      "en": {
+        "nom": "Expert Pistolier",
+        "resume": "Combines the effects of the Pistolier and Trick Shooter skills."
+      }
+    },
+    "Unscrupulous": {
+      "fr": {
+        "nom": "Sans scrupules",
+        "resume": "Après chaque partie, lancez 1D6 : sur 1, la bande perd un trésor, qu'il garde pour lui."
+      },
+      "en": {
+        "nom": "Unscrupulous",
+        "resume": "After each battle roll a D6: on a 1 the warband gets one fewer treasure, which he pockets."
+      }
+    },
+    "Expert Rider (Highwayman)": {
+      "fr": {
+        "nom": "Cavalier expert (bandit)",
+        "resume": "À cheval, il compte comme immobile pour tirer (pas de -1) et recharge rapidement en selle."
+      },
+      "en": {
+        "nom": "Expert Rider (Highwayman)",
+        "resume": "When mounted he counts as stationary when shooting (no -1) and reloads quickly in the saddle."
+      }
+    },
+    "Expert Rider (Roadwarden)": {
+      "fr": {
+        "nom": "Cavalier expert (patrouilleur)",
+        "resume": "À cheval, il compte comme ayant la compétence Agile et ne subit aucun malus pour tirer après avoir bougé."
+      },
+      "en": {
+        "nom": "Expert Rider (Roadwarden)",
+        "resume": "When mounted he counts as having the Nimble skill and suffers no penalty for moving and shooting."
+      }
+    },
+    "Stagecoaches": {
+      "fr": {
+        "nom": "Diligences",
+        "resume": "Dans un scénario avec une diligence ou un chariot, il peut relancer un dé par tour, jusqu'à ce qu'un dé relancé donne 1."
+      },
+      "en": {
+        "nom": "Stagecoaches",
+        "resume": "In a scenario with a stagecoach or wagon he may re-roll one dice per turn, until a re-rolled dice shows a 1."
+      }
+    },
+    "Weapons Master": {
+      "fr": {
+        "nom": "Maître d'armes",
+        "resume": "Sait manier toutes les armes ; celles achetées pour lui lui appartiennent et ne peuvent pas être données à un autre membre de la bande. N'utilise jamais d'armes à poudre noire."
+      },
+      "en": {
+        "nom": "Weapons Master",
+        "resume": "Can use any weapon; weapons bought for him are his and cannot be passed to others. Never uses blackpowder weapons."
+      }
+    },
+    "Poisoner": {
+      "fr": {
+        "nom": "Empoisonneur",
+        "resume": "Commence chaque partie avec des armes enduites de Lotus noir ou de Venin noir, au choix, sans avoir à l'acheter ; il ne peut pas en fournir aux autres."
+      },
+      "en": {
+        "nom": "Poisoner",
+        "resume": "Starts each battle with his weapons coated in Black Lotus or Dark Venom (player's choice) at no cost; he cannot share it."
+      }
+    },
+    "Lethal Marksman": {
+      "fr": {
+        "nom": "Tireur mortel",
+        "resume": "Cumule les effets des compétences Tireur habile et Yeux d'aigle."
+      },
+      "en": {
+        "nom": "Lethal Marksman",
+        "resume": "Combines the effects of the Trick Shooter and Eagle Eyes skills."
+      }
+    },
+    "Stern": {
+      "fr": {
+        "nom": "Impassible",
+        "resume": "Peut relancer un test de Commandement raté contre la panique ou la peur et ignore la règle « Seul contre tous »."
+      },
+      "en": {
+        "nom": "Stern",
+        "resume": "May re-roll failed Leadership tests for panic or fear and ignores the All Alone rule."
+      }
+    },
+    "Steady Hands": {
+      "fr": {
+        "nom": "Mains sûres",
+        "resume": "Ignore le malus de longue portée lorsqu'il tire à l'arbalète."
+      },
+      "en": {
+        "nom": "Steady Hands",
+        "resume": "Ignores the long range to-hit penalty when shooting his crossbow."
+      }
+    },
+    "Dead Eye Shot": {
+      "fr": {
+        "nom": "Tir infaillible",
+        "resume": "Ignore les malus de couvert lorsqu'il tire à l'arbalète."
+      },
+      "en": {
+        "nom": "Dead Eye Shot",
+        "resume": "Ignores cover to-hit penalties when shooting his crossbow."
+      }
+    },
+    "Songster": {
+      "fr": {
+        "nom": "Chanteur",
+        "resume": "Toute figurine amie à 6 ps ou moins peut relancer un test de Commandement raté (déroute comprise) avec +1 à son Commandement."
+      },
+      "en": {
+        "nom": "Songster",
+        "resume": "Friendly models within 6\" may re-roll a failed Leadership test, rout tests included, at +1 Leadership."
+      }
+    },
+    "Set Traps (Big Game Hunter)": {
+      "fr": {
+        "nom": "Pièges à gros gibier",
+        "resume": "Après son déploiement, place jusqu'à six pions piège espacés d'au moins 6 ps ; une figurine qui passe à 3 ps lance 1D6 : sur 4+, elle subit une touche automatique et le pion est retiré."
+      },
+      "en": {
+        "nom": "Set Traps (Big Game Hunter)",
+        "resume": "After deploying he places up to six trap counters at least 6\" apart; a model moving within 3\" rolls a D6 and on a 4+ suffers an automatic hit, then the counter is removed."
+      }
+    },
+    "Overseer": {
+      "fr": {
+        "nom": "Contremaître",
+        "resume": "Les peaux-vertes proches de lui ne sont pas soumis à l'animosité."
+      },
+      "en": {
+        "nom": "Overseer",
+        "resume": "Greenskins near him are not subject to animosity."
+      }
+    },
+    "Step Up": {
+      "fr": {
+        "nom": "Relève",
+        "resume": "Peut prendre la tête de la bande si le chef est perdu."
+      },
+      "en": {
+        "nom": "Step Up",
+        "resume": "May take over as leader if the warband's leader is lost."
+      }
+    },
+    "Capture": {
+      "fr": {
+        "nom": "Capture",
+        "resume": "Au début de chaque bataille, désigne un héros ennemi : il le touche plus facilement et doit avancer vers lui. S'il le met hors de combat et que son camp gagne, le héros est capturé et la bande touche une récompense (la moitié pour le chasseur), plus 1D3 XP pour lui."
+      },
+      "en": {
+        "nom": "Capture",
+        "resume": "At the start of each battle he marks an enemy hero: he hits him more easily and must move towards him. If he takes him out of action and his side wins, the hero is captured and a bounty is paid (half to him), plus D3 experience."
+      }
+    },
+    "Chameleon Skin": {
+      "fr": {
+        "nom": "Peau de caméléon",
+        "resume": "Un ennemi qui tente de le repérer quand il est caché divise son Initiative par deux ; il est touché à -2 par les tirs."
+      },
+      "en": {
+        "nom": "Chameleon Skin",
+        "resume": "Enemies trying to spot him while hidden halve their Initiative; missile fire is at -2 to hit him."
+      }
+    },
+    "Bio Machinery": {
+      "fr": {
+        "nom": "Biomécanique",
+        "resume": "Pas vraiment vivant : ne quitte jamais un combat et est insensible au poison."
+      },
+      "en": {
+        "nom": "Bio Machinery",
+        "resume": "Not truly alive: never leaves a combat and is immune to poison."
+      }
+    },
+    "Wyrdstone Powered": {
+      "fr": {
+        "nom": "Alimenté à la malepierre",
+        "resume": "Au lieu d'une solde en or, il faut lui fournir un fragment de malepierre avant chaque partie ; il ne gagne pas d'expérience."
+      },
+      "en": {
+        "nom": "Wyrdstone Powered",
+        "resume": "Instead of gold upkeep he needs a wyrdstone shard before each battle; he gains no experience."
+      }
+    },
+    "Jet of Flame": {
+      "fr": {
+        "nom": "Jet de flammes",
+        "resume": "Son lance-feu trace une ligne de 6 ps sur 2 ps : chaque figurine touchée sur 4+ subit une touche de Force 4 et peut prendre feu."
+      },
+      "en": {
+        "nom": "Jet of Flame",
+        "resume": "His warpfire thrower makes a 6\" by 2\" line: each model in it is hit on a 4+ at Strength 4 and may catch fire."
+      }
+    },
+    "Unreliable": {
+      "fr": {
+        "nom": "Peu fiable",
+        "resume": "Au début de chaque tour, lancez 1D6 : sur 1, il subit un dysfonctionnement (explosion, folie meurtrière, arrêt, perte de contrôle ou blocage temporaire)."
+      },
+      "en": {
+        "nom": "Unreliable",
+        "resume": "At the start of each turn roll a D6: on a 1 he malfunctions (explodes, goes berserk, shuts down, moves randomly or freezes)."
+      }
+    },
+    "Perfect Killer": {
+      "fr": {
+        "nom": "Tueur parfait",
+        "resume": "Toutes ses attaques, au tir comme au corps à corps, ont un modificateur de sauvegarde supplémentaire de -1."
+      },
+      "en": {
+        "nom": "Perfect Killer",
+        "resume": "All his attacks, shooting and close combat, have an extra -1 armour save modifier."
+      }
+    },
+    "Darting Steel": {
+      "fr": {
+        "nom": "Acier virevoltant",
+        "resume": "Peut parer avec son épée et sa rondache selon les règles normales de parade."
+      },
+      "en": {
+        "nom": "Darting Steel",
+        "resume": "Can parry with his sword and buckler using the normal parry rules."
+      }
+    },
+    "Pathfinder (Dwarf)": {
+      "fr": {
+        "nom": "Éclaireur",
+        "resume": "Ajoute un dé d'exploration à la bande après chaque partie à laquelle il survit."
+      },
+      "en": {
+        "nom": "Pathfinder (Dwarf)",
+        "resume": "Adds an extra exploration dice after each battle he survives."
+      }
+    },
+    "Lantern Rig": {
+      "fr": {
+        "nom": "Harnais à lanterne",
+        "resume": "Peut utiliser une lanterne tout en gardant les deux mains libres."
+      },
+      "en": {
+        "nom": "Lantern Rig",
+        "resume": "Can use a lantern while keeping both hands free."
+      }
+    },
+    "Mining Pick": {
+      "fr": {
+        "nom": "Pioche",
+        "resume": "Arme à deux mains, utilisée avec les règles de la hache ou du marteau à deux mains."
+      },
+      "en": {
+        "nom": "Mining Pick",
+        "resume": "Two-handed weapon, used with the double-handed axe or hammer rules."
+      }
+    },
+    "Treasure Maps": {
+      "fr": {
+        "nom": "Cartes au trésor",
+        "resume": "Après chaque partie à laquelle il survit, lancez 1D6 : embuscade, faux sans valeur, fragment de malepierre, tonneau de bière, dé d'exploration supplémentaire ou dé d'exploration au choix."
+      },
+      "en": {
+        "nom": "Treasure Maps",
+        "resume": "After each battle he survives roll a D6: ambush, worthless fake, extra wyrdstone shard, barrel of ale, extra exploration dice, or an exploration dice of your choice."
+      }
+    },
+    "Wizard (Djed'hi)": {
+      "fr": {
+        "nom": "Sorcier (Sorts des Djed'hi)",
+        "resume": "Lance des sorts de la liste des Djed'hi."
+      },
+      "en": {
+        "nom": "Wizard (Djed'hi)",
+        "resume": "Casts spells from the Djed'hi list."
+      }
+    },
+    "Sorcery": {
+      "fr": {
+        "nom": "Sorcellerie",
+        "resume": "+1 à ses jets de lancement de sort."
+      },
+      "en": {
+        "nom": "Sorcery",
+        "resume": "+1 to his spell casting rolls."
+      }
+    },
+    "Fey": {
+      "fr": {
+        "nom": "Féérique",
+        "resume": "Les sorts hostiles ne l'affectent pas sur 4+ sur 1D6."
+      },
+      "en": {
+        "nom": "Fey",
+        "resume": "Hostile spells do not affect him on a D6 roll of 4+."
+      }
+    },
+    "Wanderer": {
+      "fr": {
+        "nom": "Vagabond",
+        "resume": "Ne reste qu'une partie ; une bande qui en a employé un doit livrer au moins une partie sans lui avant d'en engager un autre."
+      },
+      "en": {
+        "nom": "Wanderer",
+        "resume": "Stays for one battle only; a warband that used one must fight at least one battle without before hiring another."
+      }
+    },
+    "Thief's Upkeep": {
+      "fr": {
+        "nom": "Solde du voleur",
+        "resume": "Après chaque partie, lancez 1D6 : 1, il s'enfuit avec des valeurs de la bande ; 2-5, il réclame 15 co ; 6, il ne réclame rien."
+      },
+      "en": {
+        "nom": "Thief's Upkeep",
+        "resume": "After each battle roll a D6: 1, he runs off with some of the warband's valuables; 2-5, he asks 15 gc; 6, he asks nothing."
+      }
+    },
+    "Stealthy (Thief)": {
+      "fr": {
+        "nom": "Furtif",
+        "resume": "Peut se cacher même après avoir couru, et courir à moins de 8 ps de l'ennemi s'il commence et finit caché."
+      },
+      "en": {
+        "nom": "Stealthy (Thief)",
+        "resume": "May hide even after running, and may run within 8\" of enemies if he starts and ends hidden."
+      }
+    },
+    "Scout's Eye": {
+      "fr": {
+        "nom": "Œil d'éclaireur",
+        "resume": "Peut aussi choisir Tir rapide, Yeux d'aigle ou Tireur habile dans la liste de Tir."
+      },
+      "en": {
+        "nom": "Scout's Eye",
+        "resume": "May also choose Quick Shot, Eagle Eyes or Trick Shooter from the Shooting list."
+      }
+    },
+    "Heart Strike": {
+      "fr": {
+        "nom": "Coup au cœur",
+        "resume": "Contre un grand monstre (ours compris), un 6 pour toucher suivi d'un 5+ pour blesser le tue net, sans sauvegarde."
+      },
+      "en": {
+        "nom": "Heart Strike",
+        "resume": "Against a large monster (bears included), a 6 to hit followed by a 5+ to wound slays it outright, no save."
+      }
+    },
+    "Hunter's Cloak": {
+      "fr": {
+        "nom": "Cape de chasseur",
+        "resume": "Tirer ne révèle pas sa position quand il est caché ; l'ennemi peut tenter un test d'Initiative pour le repérer."
+      },
+      "en": {
+        "nom": "Hunter's Cloak",
+        "resume": "Shooting does not reveal him while hidden; enemies may take an Initiative test to spot him."
+      }
+    },
+    "Animal Handler": {
+      "fr": {
+        "nom": "Dresseur",
+        "resume": "Commence avec une compétence de dressage d'animaux."
+      },
+      "en": {
+        "nom": "Animal Handler",
+        "resume": "Starts with one animal handling skill."
+      }
+    },
+    "Desert Guide": {
+      "fr": {
+        "nom": "Guide du désert",
+        "resume": "Peut modifier de 1 le jet de source de ravitaillement."
+      },
+      "en": {
+        "nom": "Desert Guide",
+        "resume": "May shift the supply source roll by 1."
+      }
+    },
+    "Wizard (Norse Runes)": {
+      "fr": {
+        "nom": "Sorcier (Runes nordiques)",
+        "resume": "Invoque des runes nordiques comme des prières, même en armure ; les protections contre les sorts s'y appliquent."
+      },
+      "en": {
+        "nom": "Wizard (Norse Runes)",
+        "resume": "Invokes Norse runes like prayers, even in armour; protections against spells apply to them."
+      }
+    },
+    "Paid in Treasure": {
+      "fr": {
+        "nom": "Payé en trésors",
+        "resume": "Ne se paie pas en or : il coûte 2 trésors à l'engagement et 1 trésor de solde."
+      },
+      "en": {
+        "nom": "Paid in Treasure",
+        "resume": "Not paid in gold: he costs 2 treasures to hire and 1 treasure as upkeep."
+      }
+    },
+    "Wyrdstone Hunter": {
+      "fr": {
+        "nom": "Chasseur de malepierre",
+        "resume": "Comme la compétence d'Érudition : permet de relancer un dé d'exploration s'il n'a pas été mis hors de combat."
+      },
+      "en": {
+        "nom": "Wyrdstone Hunter",
+        "resume": "As the Academic skill: may re-roll one exploration dice if he was not taken out of action."
+      }
+    },
+    "Resilient": {
+      "fr": {
+        "nom": "Robuste",
+        "resume": "Comme la compétence de Force : les attaques au corps à corps contre lui subissent -1 en Force."
+      },
+      "en": {
+        "nom": "Resilient",
+        "resume": "As the Strength skill: close combat attacks against him are at -1 Strength."
+      }
+    },
+    "Immune to Fear": {
+      "fr": {
+        "nom": "Insensible à la peur",
+        "resume": "N'est jamais affecté par la peur."
+      },
+      "en": {
+        "nom": "Immune to Fear",
+        "resume": "Is never affected by fear."
+      }
+    },
+    "Lay of the Land": {
+      "fr": {
+        "nom": "Connaissance du terrain",
+        "resume": "Ignore les pénalités de terrain et peut contourner les obstacles infranchissables (pas traverser un mur)."
+      },
+      "en": {
+        "nom": "Lay of the Land",
+        "resume": "Ignores terrain penalties and can get round impassable obstacles (not through walls)."
+      }
+    },
+    "Knowledge of Myths and Legends": {
+      "fr": {
+        "nom": "Mythes et légendes",
+        "resume": "À l'exploration, s'il n'a pas été mis hors de combat, peut relancer un dé."
+      },
+      "en": {
+        "nom": "Knowledge of Myths and Legends",
+        "resume": "When exploring, if he was not taken out of action, may re-roll one dice."
+      }
+    },
+    "Mercenary Hero": {
+      "fr": {
+        "nom": "Héros mercenaire",
+        "resume": "Remplace un des héros de la bande (0-1) au lieu de s'ajouter comme franc-tireur."
+      },
+      "en": {
+        "nom": "Mercenary Hero",
+        "resume": "Replaces one of the warband's heroes (0-1) instead of being added as a hired sword."
+      }
+    },
+    "Prayers of Ulric": {
+      "fr": {
+        "nom": "Prières d'Ulric",
+        "resume": "Invoque les prières d'Ulric avec les règles de magie ; ce ne sont pas des sorts."
+      },
+      "en": {
+        "nom": "Prayers of Ulric",
+        "resume": "Invokes the prayers of Ulric using the magic rules; they are not spells."
+      }
+    },
+    "Runesmith": {
+      "fr": {
+        "nom": "Forgeron des runes",
+        "resume": "Grave des runes avant la bataille et réduit le coût de certaines armes pour la bande."
+      },
+      "en": {
+        "nom": "Runesmith",
+        "resume": "Inscribes runes before battle and lowers the cost of some weapons for the warband."
+      }
+    },
+    "Bitter Enemies": {
+      "fr": {
+        "nom": "Ennemis jurés",
+        "resume": "Ne réclame pas de solde après une partie contre des elfes noirs ou une bande employant un franc-tireur elfe noir."
+      },
+      "en": {
+        "nom": "Bitter Enemies",
+        "resume": "Asks no upkeep after a battle against Dark Elves or a warband with a Dark Elf hired sword."
+      }
+    },
+    "Snakes": {
+      "fr": {
+        "nom": "Serpents",
+        "resume": "Accompagné de serpents : la solde augmente de 5 co et la valeur de 5 par serpent."
+      },
+      "en": {
+        "nom": "Snakes",
+        "resume": "Comes with snakes: upkeep +5 gc and rating +5 per snake."
+      }
+    },
+    "Light Fingers": {
+      "fr": {
+        "nom": "Doigts agiles",
+        "resume": "Peut tenter de voler un objet pendant la phase de commerce."
+      },
+      "en": {
+        "nom": "Light Fingers",
+        "resume": "May try to steal an item during the trading phase."
+      }
+    },
+    "Lucky": {
+      "fr": {
+        "nom": "Veinard",
+        "resume": "Bénéficie d'une sauvegarde spéciale de 5+ contre toutes les blessures."
+      },
+      "en": {
+        "nom": "Lucky",
+        "resume": "Has a 5+ special save against all wounds."
+      }
+    },
+    "Tomb Lore": {
+      "fr": {
+        "nom": "Science des tombeaux",
+        "resume": "Peut modifier un dé d'exploration."
+      },
+      "en": {
+        "nom": "Tomb Lore",
+        "resume": "May adjust one exploration dice."
+      }
+    },
+    "Wizard (Charms and Hexes)": {
+      "fr": {
+        "nom": "Sorcier (Charmes et maléfices)",
+        "resume": "Lance des sorts de la liste des charmes et maléfices."
+      },
+      "en": {
+        "nom": "Wizard (Charms and Hexes)",
+        "resume": "Casts spells from the Charms and Hexes list."
+      }
+    },
+    "Recluse": {
+      "fr": {
+        "nom": "Recluse",
+        "resume": "Pour l'engager, il faut obtenir 4+ sur 1D6 ; en cas d'échec, nouvelle tentative après la partie suivante."
+      },
+      "en": {
+        "nom": "Recluse",
+        "resume": "Hiring her needs a 4+ on a D6; on a failure, try again after the next battle."
+      }
+    },
+    "Potions": {
+      "fr": {
+        "nom": "Potions",
+        "resume": "Avant la bataille, un héros peut boire une potion : 1D6 donne -1 en E, +1 en F, +1 en E ou un PV de plus."
+      },
+      "en": {
+        "nom": "Potions",
+        "resume": "Before battle one hero may drink a potion: a D6 gives -1 T, +1 S, +1 T or an extra wound."
+      }
+    },
+    "Reluctant": {
+      "fr": {
+        "nom": "Réticente",
+        "resume": "Ne charge jamais et doit s'éloigner à plus de 8 ps des ennemis."
+      },
+      "en": {
+        "nom": "Reluctant",
+        "resume": "Never charges and must move to stay more than 8\" from enemies."
+      }
+    },
+    "Bone Construct": {
+      "fr": {
+        "nom": "Construction d'os",
+        "resume": "Construit plutôt qu'engagé, ne gagne pas d'expérience et ignore les résultats de blessure sur 4+."
+      },
+      "en": {
+        "nom": "Bone Construct",
+        "resume": "Built rather than hired, gains no experience and ignores injury results on a 4+."
+      }
+    },
+    "Drunken (Centaur)": {
+      "fr": {
+        "nom": "Ivre",
+        "resume": "Au début de chaque tour, peut devenir stupide ou frénétique."
+      },
+      "en": {
+        "nom": "Drunken (Centaur)",
+        "resume": "At the start of each turn he may become stupid or frenzied."
+      }
+    },
+    "Driver": {
+      "fr": {
+        "nom": "Conducteur",
+        "resume": "Conduit et répare les chariots et diligences de la bande."
+      },
+      "en": {
+        "nom": "Driver",
+        "resume": "Drives and repairs the warband's wagons and coaches."
+      }
+    },
+    "Graveyard Looter": {
+      "fr": {
+        "nom": "Pilleur de cimetière",
+        "resume": "Peut piller un cimetière pendant l'exploration ; les fidèles de Sigmar le haïssent."
+      },
+      "en": {
+        "nom": "Graveyard Looter",
+        "resume": "May loot a graveyard when exploring; followers of Sigmar hate him."
+      }
+    },
+    "Despised": {
+      "fr": {
+        "nom": "Méprisé",
+        "resume": "Haï de tous les peaux-vertes ; aucun autre franc-tireur peau-verte ne peut être engagé avec lui."
+      },
+      "en": {
+        "nom": "Despised",
+        "resume": "Hated by all greenskins; no other greenskin hired sword may be hired alongside him."
+      }
+    },
+    "One Battle Only": {
+      "fr": {
+        "nom": "Une seule bataille",
+        "resume": "Engagé pour une partie : ni solde ni expérience."
+      },
+      "en": {
+        "nom": "One Battle Only",
+        "resume": "Hired for one battle: no upkeep and no experience."
+      }
+    },
+    "Fireworks": {
+      "fr": {
+        "nom": "Feux d'artifice",
+        "resume": "Lance des fusées à chaque tour ; ne court ni ne charge jamais."
+      },
+      "en": {
+        "nom": "Fireworks",
+        "resume": "Launches rockets every turn; never runs or charges."
+      }
+    },
+    "Master Craftsman": {
+      "fr": {
+        "nom": "Maître artisan",
+        "resume": "Réduit la rareté des épées pour la bande."
+      },
+      "en": {
+        "nom": "Master Craftsman",
+        "resume": "Lowers the rarity of swords for the warband."
+      }
+    }
+  },
+  "competencesSpeciales": [
+    {
+      "liste": "Spéciales (Assassin impérial)",
+      "listeEn": "Special Skills (Imperial Assassin)",
+      "competences": [
+        {
+          "en": "Backstabber",
+          "nom": "Attaque sournoise",
+          "resume": "Peut charger un ennemi qu'il ne voit pas s'il est à portée ; +1 pour toucher et +1 aux jets de blessure au premier tour de combat.",
+          "resumeEn": "May charge an enemy he cannot see if within reach; +1 to hit and +1 on injury rolls in the first round of combat.",
+          "condition": null
+        },
+        {
+          "en": "Hide in Shadows",
+          "nom": "Se fondre dans l'ombre",
+          "resume": "À 1 ps d'un mur ou d'un obstacle, l'ennemi doit réussir un test d'Initiative pour le charger ou lui tirer dessus.",
+          "resumeEn": "Within 1\" of a wall or obstacle, enemies must pass an Initiative test to charge or shoot him.",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "liste": "Spéciales (Marchand arabien)",
+      "listeEn": "Special Skills (Arabian Merchant)",
+      "competences": [
+        {
+          "en": "Bribery",
+          "nom": "Pots-de-vin",
+          "resume": "Payer 5 co par homme de main pour ignorer une perte lors d'un test de déroute.",
+          "resumeEn": "Pay 5 gc per henchman to ignore one casualty for a rout test.",
+          "condition": null
+        },
+        {
+          "en": "Dubious Income",
+          "nom": "Revenus douteux",
+          "resume": "Test de Commandement après la partie : gagne ou perd autant d'or que son expérience.",
+          "resumeEn": "Leadership test after the battle: gains, or loses, gold equal to his experience.",
+          "condition": null
+        },
+        {
+          "en": "Wholesale",
+          "nom": "Vente en gros",
+          "resume": "Recherche 1D3+1 objets rares.",
+          "resumeEn": "Searches for D3+1 rare items.",
+          "condition": null
+        },
+        {
+          "en": "Deal Breaker",
+          "nom": "Négociateur",
+          "resume": "+1 lors d'une vente.",
+          "resumeEn": "+1 when selling.",
+          "condition": null
+        },
+        {
+          "en": "Connected",
+          "nom": "Relations",
+          "resume": "Peut chercher parchemins et artefacts au marché noir.",
+          "resumeEn": "May search the black market for scrolls and artefacts.",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "liste": "Spéciales (Voleur halfling)",
+      "listeEn": "Special Skills (Halfling Thief)",
+      "competences": [
+        {
+          "en": "Wily Thief",
+          "nom": "Voleur rusé",
+          "resume": "S'il met un ennemi hors de combat sans être lui-même mis hors de combat, la bande gagne un trésor supplémentaire.",
+          "resumeEn": "If he takes an enemy out of action and is not taken out himself, the warband gains one extra treasure.",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "liste": "Spéciales (Rôdeur kislévite)",
+      "listeEn": "Special Skills (Kislev Ranger)",
+      "competences": [
+        {
+          "en": "Animal Call",
+          "nom": "Appel animal",
+          "resume": "Caché, il peut troubler les ennemis à 18 ps : ceux qui ne peuvent pas charger doivent réussir un test de Commandement ou être déplacés par lui.",
+          "resumeEn": "While hidden, enemies within 18\" that cannot charge must pass a Leadership test or be moved by him.",
+          "condition": null
+        },
+        {
+          "en": "Herb Lore",
+          "nom": "Herboristerie",
+          "resume": "À la phase de récupération, soigne 1 PV sur 4+ à une figurine en contact (elle comprise), sans bouger ce tour.",
+          "resumeEn": "In the recovery phase, heals 1 wound on a 4+ to a model in contact (herself included), without moving that turn.",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "liste": "Spéciales (Pisteur)",
+      "listeEn": "Special Skills (Pathfinder)",
+      "competences": [
+        {
+          "en": "Lookout!",
+          "nom": "Attention !",
+          "resume": "Aide la bande à éviter un piège ou un danger.",
+          "resumeEn": "Helps the warband avoid a trap or hazard.",
+          "condition": null
+        },
+        {
+          "en": "This Way!",
+          "nom": "Par ici !",
+          "resume": "Une figurine en contact avec lui peut franchir un terrain infranchissable comme lui.",
+          "resumeEn": "A model in contact with him may cross impassable terrain as he does.",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "liste": "Spéciales (Éclaireur hobgobelin)",
+      "listeEn": "Special Skills (Hobgoblin Scout)",
+      "competences": [
+        {
+          "en": "Spy",
+          "nom": "Espion",
+          "resume": "Peut redéployer des figurines après le déploiement.",
+          "resumeEn": "May redeploy models after setup.",
+          "condition": null
+        },
+        {
+          "en": "Potshot",
+          "nom": "Tir au jugé",
+          "resume": "Peut tirer à l'arc après avoir couru, à -2.",
+          "resumeEn": "May shoot his bow after running, at -2.",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "liste": "Spéciales (Pyromane)",
+      "listeEn": "Special Skills (Pyromaniac)",
+      "competences": [
+        {
+          "en": "Rocket Science",
+          "nom": "Artificier",
+          "resume": "Modifie de 1 le jet des feux d'artifice.",
+          "resumeEn": "Adjusts the fireworks roll by 1.",
+          "condition": null
+        },
+        {
+          "en": "Display Artist",
+          "nom": "Artiste pyrotechnicien",
+          "resume": "Peut faire exploser une fusée à volonté sur un test d'Initiative.",
+          "resumeEn": "May detonate a rocket at will with an Initiative test.",
+          "condition": null
+        }
+      ]
+    },
+    {
+      "liste": "Spéciales (Forgeron d'épées)",
+      "listeEn": "Special Skills (Swordsmith)",
+      "competences": [
+        {
+          "en": "Honing",
+          "nom": "Affûtage",
+          "resume": "Affûte jusqu'à trois épées pour la partie suivante.",
+          "resumeEn": "Hones up to three swords for the next battle.",
+          "condition": null
+        },
+        {
+          "en": "Farrier",
+          "nom": "Maréchal-ferrant",
+          "resume": "Réduit le risque de perdre des chevaux.",
+          "resumeEn": "Lowers the chance of losing horses.",
+          "condition": null
+        }
+      ]
+    }
+  ]
+}

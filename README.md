@@ -240,7 +240,8 @@ Mercenaires d'Averland et d'Ostland) **et bandes des suppléments**
 Gardiens des tombes, Gladiateurs, Gobelins de la forêt, Guerriers des
 Ombres, Hommes-Lézards, Mercenaires de Miragliano, Nains du Chaos,
 Norses, École d'Artillerie de Nuln, Pirates, Skavens du Clan Pestilens,
-Hors-la-loi de Stirwood) : *Recruter* propose les guerriers de la bande avec leur
+Hors-la-loi de Stirwood, et une quarantaine d'autres bandes des grades
+1b, 1c et 2a de mordheimer.net) : *Recruter* propose les guerriers de la bande avec leur
 profil, leur coût et leur effectif maximum, la fiche du guerrier propose
 sa liste d'équipement (le coût suit les achats) et son accès aux
 compétences, et la composition est contrôlée (effectifs, taille de la
@@ -285,6 +286,24 @@ résumées en français et en anglais. Le champ `notes` de chaque fichier
 garde les points simplifiés ou à vérifier (montures, objets réservés,
 sorts non détaillés…). `build.py` et `build_en.py` les ajoutent
 automatiquement à `js/data/bandes.js` et `js/data/bandes-en.js`.
+Les bandes des grades 1a, 1b, 1c et 2a du site sont toutes saisies
+(69 bandes en tout avec celles de BSData).
+
+### Francs-tireurs (`tools/bsdata/francs-tireurs*.json`)
+
+Les francs-tireurs (Hired Swords) s'engagent depuis la création d'une
+bande (« + Engager un franc-tireur ») : les 7 du livre de base
+(`francs-tireurs.json`) et 44 des suppléments, grades 1a à 1c
+(`francs-tireurs-autres.json`, dont le champ `notes` signale les chiffres
+pris d'une source secondaire, à vérifier). Chacun a sa prime d'engagement,
+sa solde (à payer après chaque partie, parfois modifiée selon la
+composition de la bande : `soldeSi`), sa valeur pour la valeur de bande,
+son équipement fourni, ses listes de compétences et ses employeurs
+(`employeurs` : `seulement` / `sauf`, avec des identifiants de bande ou
+des groupes `@mercenaires`, `@skavens`… définis dans `groupes`).
+L'application vérifie qu'un seul franc-tireur de chaque type est engagé,
+que la bande peut l'employer, et ne le compte ni parmi les héros ni dans
+l'effectif maximum (`effets.effectifMax` l'augmente, ex. le halfling).
 
 ### Version anglaise (`js/data/bandes-en.js`)
 

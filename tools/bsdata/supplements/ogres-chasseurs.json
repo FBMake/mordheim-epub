@@ -1,0 +1,834 @@
+{
+ "id": "ogres-chasseurs",
+ "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/ogre-hunting-party",
+ "nomEn": "Ogre Hunting Party",
+ "nom": "Troupe de chasse ogre",
+ "tresor": 500,
+ "effectifMax": 20,
+ "regles": [
+  "Greenskins",
+  "Bicker",
+  "Ideas Above Their Station",
+  "Distasteful Company"
+ ],
+ "guerriers": [
+  {
+   "cle": "Ogre Hunter",
+   "nom": "Chasseur ogre",
+   "categorie": "heros",
+   "cout": 145,
+   "min": 1,
+   "max": 1,
+   "xp": 20,
+   "profil": {
+    "M": "6",
+    "CC": "4",
+    "CT": "3",
+    "F": "4",
+    "E": "4",
+    "PV": "3",
+    "I": "3",
+    "A": "2",
+    "Cd": "8"
+   },
+   "race": "ogre",
+   "sansProgression": false,
+   "regles": [
+    "Leader",
+    "Huuuuge",
+    "Slow Witted",
+    "Don't Fight with Eating Knives",
+    "Lazy",
+    "Central Figure"
+   ],
+   "competences": [
+    "Combat",
+    "Force",
+    "Spéciales (Troupe de chasse ogre)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Cleaver",
+       "nom": "Couperet (hache)",
+       "cout": 5
+      },
+      {
+       "en": "Ogre Club",
+       "nom": "Gourdin ogre",
+       "cout": 10
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Harpoon Crossbow",
+       "nom": "Arbalète à harpon",
+       "cout": 50
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Trapper",
+   "nom": "Trappeur",
+   "categorie": "heros",
+   "cout": 30,
+   "min": 0,
+   "max": 3,
+   "xp": 8,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "4",
+    "F": "2",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "6"
+   },
+   "race": "gnoblar",
+   "sansProgression": false,
+   "regles": [
+    "Veteran Tracker"
+   ],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Vitesse",
+    "Spéciales (Troupe de chasse ogre)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Cleaver",
+       "nom": "Couperet (hache)",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Free Sharp Stuff",
+       "nom": "Bric-à-brac pointu gratuit",
+       "cout": 0
+      },
+      {
+       "en": "Sharp Stuff",
+       "nom": "Bric-à-brac pointu",
+       "cout": 3
+      },
+      {
+       "en": "Throwing Knives",
+       "nom": "Couteaux de lancer",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Rope & Hook",
+       "nom": "Corde et grappin",
+       "cout": 5
+      },
+      {
+       "en": "Pigback Mount",
+       "nom": "Monture cochon",
+       "cout": 50
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Sabre-Baiter",
+   "nom": "Appât à sabre-dents",
+   "categorie": "heros",
+   "cout": 20,
+   "min": 0,
+   "max": 1,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "3",
+    "F": "2",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "5"
+   },
+   "race": "gnoblar",
+   "sansProgression": false,
+   "regles": [
+    "Bait"
+   ],
+   "competences": [
+    "Combat",
+    "Vitesse",
+    "Spéciales (Troupe de chasse ogre)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Cleaver",
+       "nom": "Couperet (hache)",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Free Sharp Stuff",
+       "nom": "Bric-à-brac pointu gratuit",
+       "cout": 0
+      },
+      {
+       "en": "Sharp Stuff",
+       "nom": "Bric-à-brac pointu",
+       "cout": 3
+      },
+      {
+       "en": "Throwing Knives",
+       "nom": "Couteaux de lancer",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Rope & Hook",
+       "nom": "Corde et grappin",
+       "cout": 5
+      },
+      {
+       "en": "Pigback Mount",
+       "nom": "Monture cochon",
+       "cout": 50
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Gnoblar Fighters",
+   "nom": "Combattants gnoblars",
+   "categorie": "hdm",
+   "cout": 15,
+   "min": 0,
+   "max": null,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "3",
+    "F": "2",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "5"
+   },
+   "race": "gnoblar",
+   "sansProgression": false,
+   "regles": [
+    "Bicker"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Cleaver",
+       "nom": "Couperet (hache)",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Free Sharp Stuff",
+       "nom": "Bric-à-brac pointu gratuit",
+       "cout": 0
+      },
+      {
+       "en": "Sharp Stuff",
+       "nom": "Bric-à-brac pointu",
+       "cout": 3
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Rope & Hook",
+       "nom": "Corde et grappin",
+       "cout": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Flingers",
+   "nom": "Lanceurs gnoblars",
+   "categorie": "hdm",
+   "cout": 20,
+   "min": 0,
+   "max": 7,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "3",
+    "F": "2",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "5"
+   },
+   "race": "gnoblar",
+   "sansProgression": false,
+   "regles": [
+    "Bicker",
+    "Scrap Slinger"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Cleaver",
+       "nom": "Couperet (hache)",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Free Sharp Stuff",
+       "nom": "Bric-à-brac pointu gratuit",
+       "cout": 0
+      },
+      {
+       "en": "Sharp Stuff",
+       "nom": "Bric-à-brac pointu",
+       "cout": 3
+      },
+      {
+       "en": "Sling",
+       "nom": "Fronde",
+       "cout": 2
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Rope & Hook",
+       "nom": "Corde et grappin",
+       "cout": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Sabretusk Cubs",
+   "nom": "Jeunes sabre-dents",
+   "categorie": "hdm",
+   "cout": 50,
+   "min": 0,
+   "max": 3,
+   "xp": 0,
+   "profil": {
+    "M": "6",
+    "CC": "3",
+    "CT": "0",
+    "F": "4",
+    "E": "4",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "4"
+   },
+   "race": null,
+   "sansProgression": true,
+   "regles": [
+    "Fear",
+    "Animals",
+    "Untamed",
+    "Charge",
+    "Tough Hide"
+   ],
+   "competences": [],
+   "equipement": []
+  }
+ ],
+ "reglesTexte": {
+  "Greenskins": {
+   "fr": {
+    "nom": "Peaux-vertes",
+    "resume": "Les gnoblars comptent comme des peaux-vertes mais ne subissent pas l'Animosité : ils se chamaillent à la place."
+   },
+   "en": {
+    "nom": "Greenskins",
+    "resume": "Gnoblars count as Greenskins but suffer Bicker instead of Animosity."
+   }
+  },
+  "Bicker": {
+   "fr": {
+    "nom": "Chamailleries",
+    "resume": "Chaque gnoblar homme de main hors combat lance un D6 en début de tour et en fin de phase de ralliement : sur 1, il insulte le gnoblar le plus proche et ne peut ni bouger, ni tirer, ni lancer de sort ce tour."
+   },
+   "en": {
+    "nom": "Bicker",
+    "resume": "Each Gnoblar henchman not in combat rolls a D6 at the start of the turn and end of the Recovery phase: on a 1 it insults the nearest Gnoblar and cannot move, shoot or cast that turn."
+   }
+  },
+  "Ideas Above Their Station": {
+   "fr": {
+    "nom": "Folie des grandeurs",
+    "resume": "Si le Chasseur ogre meurt, le gnoblar au meilleur Commandement (puis à la plus forte expérience) prend la tête jusqu'au recrutement d'un nouveau Chasseur ogre."
+   },
+   "en": {
+    "nom": "Ideas Above Their Station",
+    "resume": "If the Ogre Hunter dies, the Gnoblar with the best Leadership (then most experience) leads until a new Ogre Hunter is hired."
+   }
+  },
+  "Huuuuge": {
+   "fr": {
+    "nom": "Énooorme",
+    "resume": "Cause la peur, est une grande cible, ignore les tests de seul contre tous et ne peut porter ni ithilmar, ni gromril, ni armure lourde ; il compte pour 20 + son expérience dans la valeur de bande."
+   },
+   "en": {
+    "nom": "Huuuuge",
+    "resume": "Causes fear, is a Large Target, ignores All Alone tests and cannot wear ithilmar, gromril or heavy armour; counts 20 plus experience for warband rating."
+   }
+  },
+  "Don't Fight with Eating Knives": {
+   "fr": {
+    "nom": "Pas de couteau de table",
+    "resume": "Sans arme, il combat à mains nues sans le malus de -1 en Force (l'ennemi garde son +1 de sauvegarde), avec une attaque par point d'Attaque ; il ne peut pas les combiner avec une arme."
+   },
+   "en": {
+    "nom": "Don't Fight with Eating Knives",
+    "resume": "Without weapons he fights unarmed with no -1 Strength penalty (the enemy keeps its +1 save), one attack per Attack, never combined with a weapon."
+   }
+  },
+  "Lazy": {
+   "fr": {
+    "nom": "Paresseux",
+    "resume": "N'ajoute aucun dé d'exploration ni de recherche, sauf si aucun héros gnoblar ne peut le faire."
+   },
+   "en": {
+    "nom": "Lazy",
+    "resume": "Adds no exploration or search dice unless no Gnoblar hero is able to."
+   }
+  },
+  "Central Figure": {
+   "fr": {
+    "nom": "Figure centrale",
+    "resume": "S'il est mis hors de combat, la bande atteint automatiquement son seuil de déroute."
+   },
+   "en": {
+    "nom": "Central Figure",
+    "resume": "If he is taken out of action, the warband automatically reaches its Rout level."
+   }
+  },
+  "Veteran Tracker": {
+   "fr": {
+    "nom": "Pisteur vétéran",
+    "resume": "Choisit à l'embauche une compétence parmi Infiltration (un seul trappeur), Poseur de pièges, Lanceur de filets ou Fin limier."
+   },
+   "en": {
+    "nom": "Veteran Tracker",
+    "resume": "Chooses one skill when hired: Infiltration (max one), Set Traps, Netter or Scent Hound."
+   }
+  },
+  "Bait": {
+   "fr": {
+    "nom": "Appât",
+    "resume": "Une fois par tour, quand il est chargé et n'est ni à terre, ni sonné, ni au combat, il peut reculer de D6 ps (2D6 face à un sabre-dents) droit loin du chargeur."
+   },
+   "en": {
+    "nom": "Bait",
+    "resume": "Once per turn when charged, if not down, stunned or engaged, may move D6\" (2D6\" from a Sabretusk) directly away from the charger."
+   }
+  },
+  "Scrap Slinger": {
+   "fr": {
+    "nom": "Lanceur de ferraille",
+    "resume": "Lance 3 projectiles de bric-à-brac pointu par tour au lieu d'un ; ne se cumule pas avec Lanceur de couteaux et ne s'applique pas aux couteaux de lancer."
+   },
+   "en": {
+    "nom": "Scrap Slinger",
+    "resume": "Throws 3 pieces of Sharp Stuff per turn instead of 1; does not combine with Knife Thrower or apply to throwing knives."
+   }
+  },
+  "Untamed": {
+   "fr": {
+    "nom": "Indompté",
+    "resume": "Ne se chamaille pas ; hors combat, sur un 1 au D6 chaque tour, il charge de 3D6 ps la figurine non sabre-dents la plus proche, amie ou ennemie (s'écartant ensuite d'1 ps d'un allié)."
+   },
+   "en": {
+    "nom": "Untamed",
+    "resume": "Does not Bicker; if not in combat, on a 1 each turn it charges 3D6\" at the nearest non-Sabretusk model, friend or foe (moving 1\" away from a friend afterwards)."
+   }
+  },
+  "Tough Hide": {
+   "fr": {
+    "nom": "Cuir épais",
+    "resume": "Sauvegarde d'armure naturelle de 5+."
+   },
+   "en": {
+    "nom": "Tough Hide",
+    "resume": "Natural 5+ armour save."
+   }
+  }
+ },
+ "competencesSpeciales": {
+  "liste": "Spéciales (Troupe de chasse ogre)",
+  "listeEn": "Special Skills (Ogre Hunting Party)",
+  "competences": [
+   {
+    "en": "Crude Belch",
+    "nom": "Rot grossier",
+    "resume": "Le héros souffle des vapeurs sur les ennemis au contact : ceux qui ratent un test de Commandement subissent -1 pour toucher ce tour ; réutilisable seulement quand un nouvel ennemi l'engage.",
+    "resumeEn": "Releases fumes at engaged enemies: those failing a Ld test suffer -1 to hit that turn; reusable only when a new enemy engages.",
+    "condition": null
+   },
+   {
+    "en": "Scent Hound",
+    "nom": "Fin limier",
+    "resume": "Repère les ennemis cachés à deux fois la distance normale (deux fois son Initiative en ps).",
+    "resumeEn": "Spots hidden enemies at twice the normal distance (twice Initiative in inches).",
+    "condition": null
+   },
+   {
+    "en": "Sabre Trainer",
+    "nom": "Dresseur de sabre-dents",
+    "resume": "Quand un sabre-dents qui a commencé son tour à 6 ps du héros obtient 1 pour Indompté, il peut se déplacer de 3D6 ps vers n'importe quelle figurine visible à 12 ps.",
+    "resumeEn": "When a Sabretusk that began its turn within 6\" rolls a 1 for Untamed, it may move 3D6\" towards any visible model within 12\".",
+    "condition": null
+   },
+   {
+    "en": "Maneater",
+    "nom": "Mangeur d'hommes",
+    "resume": "Ogres seulement : apprend une compétence de la liste Tir ou Érudition ; une seule fois.",
+    "resumeEn": "Ogres only: learns one Shooting or Academic skill; may be taken once.",
+    "condition": "ogres-chasseurs/ogre-hunter"
+   },
+   {
+    "en": "Bull Charge",
+    "nom": "Charge du taureau",
+    "resume": "Ogres seulement : en chargeant, peut faire une seule attaque à +1 pour toucher au lieu de ses attaques ; si elle touche, l'ennemi est automatiquement mis à terre.",
+    "resumeEn": "Ogres only: when charging may make a single attack at +1 to hit instead; a hit automatically knocks the enemy down.",
+    "condition": "ogres-chasseurs/ogre-hunter"
+   },
+   {
+    "en": "Bellowing Roar",
+    "nom": "Rugissement tonitruant",
+    "resume": "Chef ogre seulement : relance le premier test de déroute raté.",
+    "resumeEn": "Ogre leader only: rerolls the first failed Rout test.",
+    "condition": "chef"
+   },
+   {
+    "en": "Set Traps",
+    "nom": "Poseur de pièges",
+    "resume": "Gnoblars seulement : passe un tour à poser un piège au contact ; une figurine passant à 2 ps le déclenche sur 3+ et subit une touche de F4.",
+    "resumeEn": "Gnoblars only: spends a turn placing a trap; a model moving within 2\" triggers it on a 3+ and takes a S4 hit.",
+    "condition": null
+   },
+   {
+    "en": "Infiltration",
+    "nom": "Infiltration",
+    "resume": "Gnoblars seulement : se déploie après l'adversaire, hors de sa vue et à plus de 12 ps des ennemis.",
+    "resumeEn": "Gnoblars only: deploys after the enemy, out of sight and more than 12\" from enemies.",
+    "condition": null
+   },
+   {
+    "en": "Netter",
+    "nom": "Lanceur de filets",
+    "resume": "Gnoblars seulement : commence chaque partie avec 3 filets gratuits, perdus à la fin et impossibles à vendre ou céder.",
+    "resumeEn": "Gnoblars only: starts every game with 3 free nets that are lost afterwards and cannot be sold or given away.",
+    "condition": null
+   }
+  ]
+ },
+ "races": {
+  "gnoblar": {
+   "nom": "Gnoblar",
+   "max": {
+    "M": 4,
+    "CC": 5,
+    "CT": 6,
+    "F": 3,
+    "E": 4,
+    "PV": 3,
+    "I": 6,
+    "A": 4,
+    "Cd": 7
+   }
+  }
+ },
+ "notes": "Effectif : 3 à 20. Le Chasseur ogre utilise la race ogre existante ; la page donne pour les ogres M6 CC6 CT4 F5 E5 PV5 I4 A5 Cd9 (à comparer avec la table existante). Il commence avec la compétence Dresseur de sabre-dents (règle « Sabre Trainer », saisie comme compétence et non comme règle). Pas de dague gratuite pour l'ogre. Le Trappeur choisit à l'embauche une compétence : Infiltration (un seul trappeur), Poseur de pièges, Lanceur de filets ou Fin limier. Mangeur d'hommes et Charge du taureau : ogres seulement (condition mise sur le Chasseur ogre) ; Poseur de pièges, Infiltration et Lanceur de filets : gnoblars seulement (condition null car plusieurs guerriers concernés). Couteaux de lancer (15 co) et Monture cochon (50 co, profil M5 CC2 F2 PV1 I3 A1 Cd5) réservés aux héros gnoblars ; Fronde (2 co) réservée aux Lanceurs. Bric-à-brac pointu : 1er gratuit puis 3 co, portée 8 ps, F2. Francs-tireurs limités (Compagnie peu recommandable) : éclaireur hobgobelin, boucher gnoblar, ninja gnoblar ; sans Chasseur ogre, garde du corps ogre et/ou esclavagiste ogre. La compétence « That Lad's Got Talent » qui retire Bicker n'est pas dans la liste spéciale."
+}

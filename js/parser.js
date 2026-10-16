@@ -364,6 +364,15 @@ export function parseRoster(json, { lang = getLang() } = {}) {
       continue;
     }
 
+    // Francs-tireurs : fiche de héros (compétences, tableau des héros), marquée comme telle.
+    if (cat === "Francs-tireurs" || cat === "Hired Swords" || cat === "Hired Sword") {
+      const card = extractCharacterCard(sel, ruleDict, report);
+      card.franc = true;
+      model.heros.push(card);
+      model.bande.xpTotal += card.xp;
+      continue;
+    }
+
     if (cat === "Héros") {
       const card = extractCharacterCard(sel, ruleDict, report);
       model.heros.push(card);

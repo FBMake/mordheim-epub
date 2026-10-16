@@ -1,0 +1,864 @@
+{
+ "id": "garde-chapelle",
+ "url": "https://mordheimer.net/docs/warbands/grade-1c-warbands/bretonnian-chapel-guard",
+ "nomEn": "Bretonnian Chapel Guard",
+ "nom": "Garde de la chapelle bretonnienne",
+ "tresor": 500,
+ "effectifMax": 15,
+ "regles": [
+  "Chivalry",
+  "Lord's Boon",
+  "Virtue of Purity"
+ ],
+ "guerriers": [
+  {
+   "cle": "Questing Knight",
+   "nom": "Chevalier de la quête",
+   "categorie": "heros",
+   "cout": 75,
+   "min": 1,
+   "max": 1,
+   "xp": 20,
+   "profil": {
+    "M": "4",
+    "CC": "4",
+    "CT": "3",
+    "F": "4",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "8"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Leader",
+    "Chivalry",
+    "Lord's Boon",
+    "Virtue of Purity",
+    "Ride Warhorse",
+    "Vow of Poverty"
+   ],
+   "competences": [
+    "Combat",
+    "Érudition",
+    "Force",
+    "Vitesse",
+    "Spéciales (Garde de la chapelle bretonnienne)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Broadsword",
+       "nom": "Épée large",
+       "cout": 15
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Morning Star",
+       "nom": "Morgenstern",
+       "cout": 15
+      },
+      {
+       "en": "Flail",
+       "nom": "Fléau",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Kite Shield",
+       "nom": "Écu",
+       "cout": 10
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Barding",
+       "nom": "Barde",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Warhorse",
+       "nom": "Cheval de guerre",
+       "cout": 80
+      },
+      {
+       "en": "Lucky Charm",
+       "nom": "Porte-bonheur",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Damsel",
+   "nom": "Damoiselle",
+   "categorie": "heros",
+   "cout": 35,
+   "min": 0,
+   "max": 1,
+   "xp": 12,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Prayers of the Lady"
+   ],
+   "competences": [
+    "Érudition",
+    "Vitesse"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Shortsword",
+       "nom": "Épée courte",
+       "cout": 7
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Horse",
+       "nom": "Cheval",
+       "cout": 40
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Knight Errant",
+   "nom": "Chevalier errant",
+   "categorie": "heros",
+   "cout": 35,
+   "min": 0,
+   "max": 3,
+   "xp": 8,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Chivalry",
+    "Lord's Boon",
+    "Virtue of Purity",
+    "Vain",
+    "Impetuous"
+   ],
+   "competences": [
+    "Combat",
+    "Force",
+    "Vitesse",
+    "Spéciales (Garde de la chapelle bretonnienne)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Broadsword",
+       "nom": "Épée large",
+       "cout": 15
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Morning Star",
+       "nom": "Morgenstern",
+       "cout": 15
+      },
+      {
+       "en": "Flail",
+       "nom": "Fléau",
+       "cout": 15
+      },
+      {
+       "en": "Lance",
+       "nom": "Lance de cavalerie",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Kite Shield",
+       "nom": "Écu",
+       "cout": 10
+      },
+      {
+       "en": "Barding",
+       "nom": "Barde",
+       "cout": 30
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Warhorse",
+       "nom": "Cheval de guerre",
+       "cout": 80
+      },
+      {
+       "en": "Lucky Charm",
+       "nom": "Porte-bonheur",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Squire",
+   "nom": "Écuyer",
+   "categorie": "hdm",
+   "cout": 25,
+   "min": 0,
+   "max": 5,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Knighthood"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Shortsword",
+       "nom": "Épée courte",
+       "cout": 7
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      },
+      {
+       "en": "Longbow",
+       "nom": "Arc long",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Horse",
+       "nom": "Cheval",
+       "cout": 40
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Battle Pilgrim",
+   "nom": "Pèlerin combattant",
+   "categorie": "hdm",
+   "cout": 30,
+   "min": 0,
+   "max": 5,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Low Caste",
+    "Hatred",
+    "Stubborn",
+    "Holy Relics"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Mace",
+       "nom": "Masse",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Shortsword",
+       "nom": "Épée courte",
+       "cout": 7
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Halberd",
+       "nom": "Hallebarde",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Holy Relic",
+       "nom": "Relique sacrée",
+       "cout": 25
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Bowman",
+   "nom": "Archer",
+   "categorie": "hdm",
+   "cout": 15,
+   "min": 0,
+   "max": 7,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "4"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Low Caste"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Shortsword",
+       "nom": "Épée courte",
+       "cout": 7
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Bow",
+       "nom": "Arc",
+       "cout": 10
+      },
+      {
+       "en": "Longbow",
+       "nom": "Arc long",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "reglesTexte": {
+  "Chivalry": {
+   "fr": {
+    "nom": "Chevalerie",
+    "resume": "Les chevaliers n'utilisent aucune arme de tir (sauf l'eau bénite), ni drogue, ni poison, et n'apprennent pas de sorts (les prières restent permises)."
+   },
+   "en": {
+    "nom": "Chivalry",
+    "resume": "Knights never use missile weapons (except Holy Water), drugs or poisons, and cannot learn spells, though prayers are allowed."
+   }
+  },
+  "Lord's Boon": {
+   "fr": {
+    "nom": "Faveur du seigneur",
+    "resume": "Chaque chevalier peut commencer avec un cheval de guerre, une armure légère ou une armure lourde à moitié prix ; l'objet ne peut être ni échangé ni vendu et disparaît à sa mort."
+   },
+   "en": {
+    "nom": "Lord's Boon",
+    "resume": "Each Knight may start with a Warhorse, Light Armour or Heavy Armour at half price; it cannot be traded or sold and is lost if he dies."
+   }
+  },
+  "Virtue of Purity": {
+   "fr": {
+    "nom": "Vertu de pureté",
+    "resume": "Le chevalier ne quitte jamais volontairement un combat sauf s'il est à terre et ignore « Seul contre tous » ; seuls les effets magiques de fuite l'affectent."
+   },
+   "en": {
+    "nom": "Virtue of Purity",
+    "resume": "The Knight never leaves combat voluntarily unless knocked down and ignores All Alone; only magical flee effects affect him."
+   }
+  },
+  "Vow of Poverty": {
+   "fr": {
+    "nom": "Vœu de pauvreté",
+    "resume": "Le chevalier de la quête ne peut pas prendre de lance de cavalerie."
+   },
+   "en": {
+    "nom": "Vow of Poverty",
+    "resume": "The Questing Knight may not take a Lance."
+   }
+  },
+  "Prayers of the Lady": {
+   "fr": {
+    "nom": "Prières de la Dame du Lac",
+    "resume": "La damoiselle commence avec une prière de la liste des prières de la Dame et peut en apprendre d'autres selon les règles de magie."
+   },
+   "en": {
+    "nom": "Prayers of the Lady",
+    "resume": "The Damsel starts with one prayer from the Lady's Prayers list and may learn more under the magic rules."
+   }
+  },
+  "Vain": {
+   "fr": {
+    "nom": "Vaniteux",
+    "resume": "Le chevalier errant ne porte jamais de casque."
+   },
+   "en": {
+    "nom": "Vain",
+    "resume": "The Knight Errant may never wear a helmet."
+   }
+  },
+  "Impetuous": {
+   "fr": {
+    "nom": "Impétueux",
+    "resume": "S'il n'est pas au combat, il doit charger un ennemi debout à portée ; les tests de psychologie empêchant cette charge sont réussis automatiquement."
+   },
+   "en": {
+    "nom": "Impetuous",
+    "resume": "If not in combat, he must charge a standing enemy in range; psychology tests that would stop this charge are passed automatically."
+   }
+  },
+  "Knighthood": {
+   "fr": {
+    "nom": "Adoubement",
+    "resume": "Sur « Le gars a du talent », l'écuyer reste écuyer (deux listes de compétences au choix) ou devient chevalier errant (peut dépasser la limite de trois)."
+   },
+   "en": {
+    "nom": "Knighthood",
+    "resume": "On 'The Lad's Got Talent', the Squire either stays a Squire (picks two skill lists) or becomes a Knight Errant (may exceed the limit of three)."
+   }
+  },
+  "Low Caste": {
+   "fr": {
+    "nom": "Basse extraction",
+    "resume": "Progresse normalement mais relance « Le gars a du talent » et ne devient jamais un héros."
+   },
+   "en": {
+    "nom": "Low Caste",
+    "resume": "Advances normally but re-rolls 'The Lad's Got Talent' and can never become a Hero."
+   }
+  },
+  "Stubborn": {
+   "fr": {
+    "nom": "Obstiné",
+    "resume": "Peut relancer un test de Commandement raté ; le second résultat s'applique."
+   },
+   "en": {
+    "nom": "Stubborn",
+    "resume": "May re-roll one failed Leadership test; the second result stands."
+   }
+  },
+  "Holy Relics": {
+   "fr": {
+    "nom": "Reliques saintes",
+    "resume": "Un pèlerin peut porter une relique sacrée ; il devient alors sujet à la frénésie (et insensible à la haine tant qu'il est frénétique) et forme son propre groupe."
+   },
+   "en": {
+    "nom": "Holy Relics",
+    "resume": "A Pilgrim may carry a Holy Relic; he then becomes subject to Frenzy (immune to Hatred while frenzied) and forms his own group."
+   }
+  }
+ },
+ "competencesSpeciales": {
+  "liste": "Spéciales (Garde de la chapelle bretonnienne)",
+  "listeEn": "Knightly Skills (Chapel Guard)",
+  "competences": [
+   {
+    "en": "Renowned Virtue",
+    "nom": "Vertu renommée",
+    "resume": "Apprend une vertu de la liste de la bande de chevaliers bretonniens ; une seule fois.",
+    "resumeEn": "Learns one Virtue from the Bretonnian Knights warband list; only once.",
+    "condition": null
+   },
+   {
+    "en": "Questing Vow",
+    "nom": "Vœu de quête",
+    "resume": "Contre un ennemi qui cause la peur (charge, chargé ou au combat), relance un test de Commandement raté, test de déroute compris.",
+    "resumeEn": "Against a fear-causing enemy (charging, charged or in combat), re-rolls one failed Leadership test, including Rout tests.",
+    "condition": "chef"
+   },
+   {
+    "en": "Shield Bash",
+    "nom": "Coup de bouclier",
+    "resume": "Une attaque supplémentaire par tour avec son bouclier ou son écu, à Force -1, comme un gourdin.",
+    "resumeEn": "One extra attack per turn with a shield or kite shield at -1 Strength, counting as a club.",
+    "condition": null
+   },
+   {
+    "en": "Bulging Muscles",
+    "nom": "Muscles saillants",
+    "resume": "Conserve le bonus de Force du fléau et du morgenstern après le premier tour de combat.",
+    "resumeEn": "Keeps the Strength bonus of flails and morning stars after the first round of combat.",
+    "condition": null
+   },
+   {
+    "en": "Untiring",
+    "nom": "Infatigable",
+    "resume": "Ignore les pénalités de mouvement d'armure à pied ; sa sauvegarde ne peut pas tomber sous 5+ par des moyens non magiques.",
+    "resumeEn": "Ignores armour movement penalties on foot; non-magical modifiers cannot lower his save below 5+.",
+    "condition": null
+   }
+  ]
+ },
+ "races": {},
+ "notes": "Grade 1c, bande communautaire (d'après la bande bretonnienne de Tom Merrigan). Règles de bande Chevalerie, Faveur du seigneur et Vertu de pureté = règle « Knight » des chevaliers (de la quête et errants). Lance de cavalerie interdite au chevalier de la quête ; casque retiré de la liste du chevalier errant (Vaniteux). Damoiselle : objets de la liste des archers hors tir et armures (donc armes de corps à corps et cheval). Écuyers : listes des pèlerins (sans relique) et des archers ; cheval (40 co) seulement si le chevalier de la quête et les chevaliers errants montent un cheval de guerre. Relique sacrée : pèlerins seulement. Cheval de guerre 80 co (moitié prix via Faveur du seigneur). Hommes de main achetés par groupes de 1 à 5. Liste des prières de la Dame non reproduite sur la page. Écu : à retirer si le groupe joue une règle maison de boucliers renforcés."
+}

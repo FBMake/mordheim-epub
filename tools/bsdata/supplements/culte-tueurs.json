@@ -1,0 +1,728 @@
+{
+  "id": "culte-tueurs",
+  "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/dwarf-slayer-cult",
+  "nomEn": "Dwarf Slayer Cult",
+  "nom": "Culte des Tueurs nains",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [
+    "Hard to Kill",
+    "Hard Head",
+    "Grudgebearers",
+    "Damnable Luck",
+    "Only in Victory",
+    "Record of Valor"
+  ],
+  "guerriers": [
+    {
+      "cle": "Giant Slayer",
+      "nom": "Tueur de géants",
+      "categorie": "heros",
+      "cout": 85,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "3",
+        "CC": "5",
+        "CT": "4",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Deathwish",
+        "No Armour, No Toys!"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Force",
+        "Spéciales (Culte des Tueurs nains)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace/Hammer",
+              "nom": "Masse/Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Axes",
+              "nom": "Haches de lancer",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Doomseeker",
+      "nom": "Chercheur de mort",
+      "categorie": "heros",
+      "cout": 55,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "3",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [
+        "Deathwish",
+        "No Armour, No Toys!"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Spéciales (Culte des Tueurs nains)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace/Hammer",
+              "nom": "Masse/Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Flail",
+              "nom": "Fléau",
+              "cout": 15
+            },
+            {
+              "en": "Whirling Blades",
+              "nom": "Lames tourbillonnantes (paire)",
+              "cout": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Rememberer",
+      "nom": "Chroniqueur",
+      "categorie": "heros",
+      "cout": 40,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "3",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [
+        "Hate Orcs and Goblins",
+        "Rememberer",
+        "Pick up the Slack"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Spéciales (Culte des Tueurs nains)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace/Hammer",
+              "nom": "Masse/Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Axes",
+              "nom": "Haches de lancer",
+              "cout": 15
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Troll Slayer",
+      "nom": "Tueur de trolls",
+      "categorie": "hdm",
+      "cout": 40,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "3",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [
+        "Deathwish",
+        "No Armour, No Toys!"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace/Hammer",
+              "nom": "Masse/Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Axes",
+              "nom": "Haches de lancer",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Axe Hurler",
+      "nom": "Lanceur de haches",
+      "categorie": "hdm",
+      "cout": 40,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "3",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [
+        "Hate Orcs and Goblins",
+        "Strong Arm",
+        "Born Marksmen",
+        "Skittish"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace/Hammer",
+              "nom": "Masse/Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Axes",
+              "nom": "Haches de lancer",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Stubbles",
+      "nom": "Imberbes",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "3",
+        "CC": "3",
+        "CT": "2",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [
+        "Hate Orcs and Goblins",
+        "Skittish"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace/Hammer",
+              "nom": "Masse/Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Axes",
+              "nom": "Haches de lancer",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Damnable Luck": {
+      "fr": {
+        "nom": "Chance maudite",
+        "resume": "Après les jets de blessure d'après-partie, la bande peut relancer un résultat « mort » d'un seul tueur (héros ou homme de main) ; le second résultat s'applique."
+      },
+      "en": {
+        "nom": "Damnable Luck",
+        "resume": "After post-game injury rolls, re-roll one Dead result for a single Slayer; the second result stands."
+      }
+    },
+    "No Armour, No Toys!": {
+      "fr": {
+        "nom": "Ni armure ni jouets !",
+        "resume": "Les tueurs ne portent ni armure ni cape donnant une sauvegarde permanente (porte-bonheur permis), n'utilisent pas d'armes de tir autres que de jet et n'apprennent pas la magie."
+      },
+      "en": {
+        "nom": "No Armour, No Toys!",
+        "resume": "Slayers wear no armour or save-granting cloaks (lucky charms allowed), use no non-thrown missile weapons and learn no magic."
+      }
+    },
+    "Only in Victory": {
+      "fr": {
+        "nom": "Seulement dans la victoire",
+        "resume": "Les héros tueurs ne gagnent de dés d'exploration qu'en cas de victoire, d'égalité ou d'alliance avec le vainqueur (pas le chroniqueur)."
+      },
+      "en": {
+        "nom": "Only in Victory",
+        "resume": "Slayer heroes only get exploration dice on a win, tie or alliance with the winner (not the Rememberer)."
+      }
+    },
+    "Record of Valor": {
+      "fr": {
+        "nom": "Registre de bravoure",
+        "resume": "Si un héros tueur est mis hors de combat par un ennemi ou un PNJ alors que le chroniqueur est sur la table, la bande gagne un dé d'exploration supplémentaire. Un barde franc-tireur peut tenir ce rôle ; deux chroniqueurs ne se cumulent pas."
+      },
+      "en": {
+        "nom": "Record of Valor",
+        "resume": "If a Slayer hero is taken out of action by an enemy or NPC while the Rememberer is on the table, gain +1 exploration die. A Bard Hired Sword can do this too; two Rememberers don't stack."
+      }
+    },
+    "Rememberer": {
+      "fr": {
+        "nom": "Chroniqueur",
+        "resume": "Une fois par partie, un héros tueur à 6 ps ou moins peut relancer ses jets pour toucher ratés contre une grande cible ou une créature d'Endurance 5+. Le chroniqueur n'est pas un tueur et ne peut pas être chef."
+      },
+      "en": {
+        "nom": "Rememberer",
+        "resume": "Once per game, a Slayer hero within 6\" may re-roll failed to-hit rolls against a Large or Toughness 5+ creature. The Rememberer is not a Slayer and cannot lead."
+      }
+    },
+    "Pick up the Slack": {
+      "fr": {
+        "nom": "Prendre le relais",
+        "resume": "S'il n'a pas été mis hors de combat, le chroniqueur fait un jet de rareté ou de Dramatis Personae supplémentaire par héros tueur mis hors de combat pendant la partie."
+      },
+      "en": {
+        "nom": "Pick up the Slack",
+        "resume": "If not taken out of action, the Rememberer makes an extra rarity or Dramatis Personae roll per Slayer hero taken out of action that game."
+      }
+    },
+    "Strong Arm": {
+      "fr": {
+        "nom": "Bras puissant",
+        "resume": "Ajoute sa Force en pas à la portée des armes de jet."
+      },
+      "en": {
+        "nom": "Strong Arm",
+        "resume": "Adds his Strength in inches to thrown weapon range."
+      }
+    },
+    "Born Marksmen": {
+      "fr": {
+        "nom": "Tireur né",
+        "resume": "Sur « Ce gars a du talent », il peut toujours choisir les compétences de Tir."
+      },
+      "en": {
+        "nom": "Born Marksmen",
+        "resume": "On \"That Lad's Got Talent\" he may always pick Shooting skills."
+      }
+    },
+    "Skittish": {
+      "fr": {
+        "nom": "Craintif",
+        "resume": "Commence sans Vœu de mort et subit la psychologie normalement ; sur « Ce gars a du talent », il doit apprendre Vœu de mort."
+      },
+      "en": {
+        "nom": "Skittish",
+        "resume": "Starts without Deathwish and is subject to psychology; on \"That Lad's Got Talent\" he must learn Deathwish."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Culte des Tueurs nains)",
+    "listeEn": "Special Skills (Dwarf Slayer Cult)",
+    "competences": [
+      {
+        "en": "Deathwish",
+        "nom": "Vœu de mort",
+        "resume": "Immunisé à toute psychologie et ne teste jamais pour combat seul.",
+        "resumeEn": "Immune to all psychology and never tests for fighting alone.",
+        "condition": null
+      },
+      {
+        "en": "Ferocious Charge",
+        "nom": "Charge féroce",
+        "resume": "Double ses attaques au tour où le tueur charge, avec -1 pour toucher ce tour-là. Tueurs uniquement.",
+        "resumeEn": "Doubles attacks on the charge turn at -1 to hit. Slayers only.",
+        "condition": null
+      },
+      {
+        "en": "Monster Slayer",
+        "nom": "Tueur de monstres",
+        "resume": "Blesse toujours sur 4+ quelle que soit l'Endurance, sauf si sa Force donne mieux. Tueurs uniquement.",
+        "resumeEn": "Always wounds on 4+ regardless of Toughness unless his Strength gives better. Slayers only.",
+        "condition": null
+      },
+      {
+        "en": "Berserker",
+        "nom": "Forcené",
+        "resume": "+1 pour toucher au corps à corps au tour de la charge. Tueurs uniquement.",
+        "resumeEn": "+1 to hit in close combat on the charge turn. Slayers only.",
+        "condition": null
+      },
+      {
+        "en": "Deathblow",
+        "nom": "Coup fatal",
+        "resume": "Mis hors de combat au corps à corps (ou à terre ou sonné), il porte d'abord ses attaques restantes. Tueurs uniquement.",
+        "resumeEn": "When taken out of action (or knocked down/stunned) in close combat, he first makes his remaining attacks. Slayers only.",
+        "condition": null
+      },
+      {
+        "en": "Relentless",
+        "nom": "Implacable",
+        "resume": "Une charge ratée permet tout de même le mouvement complet, contre un ennemi vu ou détecté. Tueurs uniquement.",
+        "resumeEn": "A failed charge still allows the full move, against a seen or detected enemy. Slayers only.",
+        "condition": null
+      },
+      {
+        "en": "Axe Mastery",
+        "nom": "Maîtrise de la hache",
+        "resume": "Relance les attaques ratées avec une hache ou une hache naine au tour de la charge ; pas avec les lames tourbillonnantes.",
+        "resumeEn": "Re-rolls missed attacks with an axe or Dwarf axe on the charge turn; not with Whirling Blades.",
+        "condition": null
+      },
+      {
+        "en": "True Grit",
+        "nom": "Cran",
+        "resume": "Blessures : 1-3 à terre, 4-5 sonné, 6 hors de combat.",
+        "resumeEn": "Injury results: 1-3 knocked down, 4-5 stunned, 6 out of action.",
+        "condition": null
+      },
+      {
+        "en": "Thick Skull",
+        "nom": "Crâne épais",
+        "resume": "Sauvegarde de 3+ contre le résultat sonné, qui devient alors à terre.",
+        "resumeEn": "3+ save to turn a stunned result into knocked down.",
+        "condition": null
+      },
+      {
+        "en": "Songster",
+        "nom": "Chanteur",
+        "resume": "Les figurines amies à 6 ps peuvent relancer leurs tests de Commandement ratés, déroute comprise, avec +1 en Commandement (max 10). Chroniqueur uniquement.",
+        "resumeEn": "Friends within 6\" may re-roll failed Ld tests, including rout, at +1 Ld (max 10). Rememberer only.",
+        "condition": "culte-tueurs/rememberer"
+      },
+      {
+        "en": "Song of Honor",
+        "nom": "Chant d'honneur",
+        "resume": "Après la partie, si un tueur est mort, tous les héros et hommes de main gagnent +1 XP. Chroniqueur uniquement.",
+        "resumeEn": "Post-game, if any Slayer died, all heroes and henchmen gain +1 XP. Rememberer only.",
+        "condition": "culte-tueurs/rememberer"
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Toute la bande : règles naines (Dur à cuire, Tête dure, Rancuniers). Haine des peaux-vertes : chroniqueur, lanceurs de haches et imberbes (ignorée une fois immunisés à la psychologie). Tueurs (tueur de géants, chercheurs de mort, tueurs de trolls) : Vœu de mort + Ni armure ni jouets. Arme en gromril (3 × le prix, seulement à la création) non saisie. Lames tourbillonnantes 30 co la paire, tueurs uniquement. Haches de lancer communes pour les tueurs (Rare 5 sinon). Hache naine et arme en gromril réservées aux nains dans la liste du chroniqueur (tous le sont). Cape de dragon des mers : uniquement via le Rite de la mise à mort du dragon, jamais achetée. Rite de la mise à mort du troll : un homme de main tueur qui abat une grande créature à plusieurs PV gagne de quoi progresser et tire sur « Ce gars a du talent ». Compétences spéciales « tueurs uniquement » (Charge féroce, Tueur de monstres, Forcené, Coup fatal, Implacable) : condition laissée à null (plusieurs guerriers). Vœu de mort comme compétence : pour imberbes/lanceurs promus et tueurs (page contradictoire). Pas de tableau de maximums : race nain. Francs-tireurs : aucun elfe ni Dramatis Personae elfe ; barde mentionné."
+}

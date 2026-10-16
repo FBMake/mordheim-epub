@@ -1,0 +1,188 @@
+{
+  "_note": "Francs-tireurs (Hired Swords) proposés au recrutement. Ceux du livre de base viennent du Livre des Règles de Mordheim (VF, p. 147-151) ; les autres de mordheimer.net (fichier francs-tireurs-autres.json). Coûts : prime de recrutement, puis solde après chaque partie. « employeurs » : seulement / sauf, avec des identifiants de bande ou des groupes (@mercenaires…) définis dans « groupes ». Résumés de règles rédigés pour l'application.",
+  "groupes": {
+    "mercenaires": ["reikland", "middenheim", "marienburg", "averland", "ostland", "miragliano", "remas", "trantio"],
+    "skavens": ["skavens", "skavens-pestilens", "skavens-moulder"],
+    "morts-vivants": ["morts-vivants", "gardiens-tombes", "necrarques", "morts-sans-repos", "cavalcade-maudite"],
+    "chaos": ["possedes", "hommes-betes", "carnaval", "nains-du-chaos", "nains-noirs", "maraudeurs-chaos", "cour-plaisirs", "chasseurs-cornus"],
+    "elfes": ["elfes-noirs", "guerriers-ombres", "druchii", "elfes-sylvains"],
+    "nains": ["nains", "rangers-nains", "culte-tueurs"],
+    "orques": ["orques", "orques-noirs", "gobelins-foret", "gobelins-nuit", "snotlings"],
+    "lezards": ["hommes-lezards"]
+  },
+  "francsTireurs": [
+    {
+      "cle": "Pit Fighter",
+      "nom": "Gladiateur",
+      "source": "Livre de règles, p. 148",
+      "prime": 30, "solde": 15, "valeur": 22,
+      "profil": {"M": "4", "CC": "4", "CT": "3", "F": "4", "E": "4", "PV": "1", "I": "4", "A": "2", "Cd": "7"},
+      "race": "humain",
+      "regles": ["Hired Sword", "Spiked Gauntlet"],
+      "competences": ["Combat", "Vitesse", "Force"],
+      "equipementDepart": ["Morgenstern", "Gantelet à pointes", "Casque"],
+      "equipement": [
+        {"categorie": "Armes de corps à corps", "objets": [
+          {"en": "Morning Star", "nom": "Morgenstern", "cout": 0},
+          {"en": "Spiked Gauntlet", "nom": "Gantelet à pointes", "cout": 0}
+        ]},
+        {"categorie": "Armures", "objets": [{"en": "Helmet", "nom": "Casque", "cout": 0}]}
+      ],
+      "employeurs": {"sauf": ["@morts-vivants", "@skavens"]}
+    },
+    {
+      "cle": "Ogre Bodyguard",
+      "nom": "Ogre",
+      "source": "Livre de règles, p. 148",
+      "prime": 80, "solde": 30, "valeur": 25,
+      "profil": {"M": "6", "CC": "3", "CT": "2", "F": "4", "E": "4", "PV": "3", "I": "3", "A": "2", "Cd": "7"},
+      "race": "ogre",
+      "regles": ["Hired Sword", "Fear", "Large Target"],
+      "competences": ["Combat", "Force"],
+      "equipementDepart": ["Arme lourde", "Armure légère"],
+      "equipement": [
+        {"categorie": "Armes de corps à corps", "objets": [
+          {"en": "Double-handed weapon", "nom": "Arme lourde", "cout": 0},
+          {"en": "Sword", "nom": "Épée", "cout": 0},
+          {"en": "Axe", "nom": "Hache", "cout": 0},
+          {"en": "Club", "nom": "Gourdin", "cout": 0}
+        ]},
+        {"categorie": "Armures", "objets": [{"en": "Light Armour", "nom": "Armure légère", "cout": 0}]}
+      ],
+      "employeurs": {"sauf": ["@skavens"]},
+      "notes": "Armes au choix : deux épées, haches ou gourdins (ou un mélange), ou une arme à deux mains."
+    },
+    {
+      "cle": "Halfling Scout",
+      "nom": "Halfling",
+      "source": "Livre de règles, p. 149",
+      "prime": 15, "solde": 5, "valeur": 5,
+      "profil": {"M": "4", "CC": "2", "CT": "4", "F": "2", "E": "2", "PV": "1", "I": "4", "A": "1", "Cd": "8"},
+      "race": "halfling",
+      "regles": ["Hired Sword", "Cook"],
+      "competences": ["Vitesse", "Tir"],
+      "equipementDepart": ["Arc", "Dague", "Casserole"],
+      "equipement": [
+        {"categorie": "Armes de corps à corps", "objets": [{"en": "Dagger", "nom": "Dague", "cout": 0}]},
+        {"categorie": "Armes de tir", "objets": [{"en": "Bow", "nom": "Arc", "cout": 0}]},
+        {"categorie": "Armures", "objets": [{"en": "Cooking Pot", "nom": "Casserole", "cout": 0}]}
+      ],
+      "employeurs": {"sauf": ["@skavens", "@morts-vivants", "possedes"]},
+      "effets": {"effectifMax": 1}
+    },
+    {
+      "cle": "Warlock",
+      "nom": "Mage",
+      "source": "Livre de règles, p. 149",
+      "prime": 30, "solde": 15, "valeur": 16,
+      "profil": {"M": "4", "CC": "2", "CT": "2", "F": "3", "E": "3", "PV": "1", "I": "4", "A": "1", "Cd": "8"},
+      "race": "humain",
+      "regles": ["Hired Sword", "Wizard (Lesser Magic)"],
+      "competences": ["Érudition"],
+      "equipementDepart": ["Bâton"],
+      "equipement": [
+        {"categorie": "Armes de corps à corps", "objets": [{"en": "Staff", "nom": "Bâton", "cout": 0}]}
+      ],
+      "employeurs": {"sauf": ["repurgateurs", "soeurs", "protectorat-sigmar"]},
+      "notes": "Connaît deux sorts de magie mineure tirés au hasard ; à chaque nouvelle compétence, il peut tirer un nouveau sort à la place."
+    },
+    {
+      "cle": "Freelance Knight",
+      "nom": "Chevalier solitaire",
+      "source": "Livre de règles, p. 150",
+      "prime": 50, "solde": 20, "valeur": 21,
+      "profil": {"M": "4", "CC": "4", "CT": "3", "F": "4", "E": "3", "PV": "1", "I": "4", "A": "1", "Cd": "7"},
+      "race": "humain",
+      "regles": ["Hired Sword"],
+      "competences": ["Combat", "Force"],
+      "equipementDepart": ["Armure lourde", "Bouclier", "Lance de cavalerie", "Épée"],
+      "equipement": [
+        {"categorie": "Armes de corps à corps", "objets": [
+          {"en": "Lance", "nom": "Lance de cavalerie", "cout": 0},
+          {"en": "Sword", "nom": "Épée", "cout": 0}
+        ]},
+        {"categorie": "Armures", "objets": [
+          {"en": "Heavy Armour", "nom": "Armure lourde", "cout": 0},
+          {"en": "Shield", "nom": "Bouclier", "cout": 0}
+        ]},
+        {"categorie": "Divers", "objets": [{"en": "Warhorse", "nom": "Cheval de guerre", "cout": 0}]}
+      ],
+      "employeurs": {"seulement": ["@mercenaires", "repurgateurs"]},
+      "notes": "Avec les règles optionnelles de cavalerie, il monte un destrier (M8 CC3 CT0 F3 E3 PV1 I3 A1 Cd5), a la compétence Équitation et une sauvegarde de 3+ (4+ à pied)."
+    },
+    {
+      "cle": "Elf Ranger",
+      "nom": "Éclaireur elfe",
+      "source": "Livre de règles, p. 150",
+      "prime": 40, "solde": 20, "valeur": 12,
+      "profil": {"M": "5", "CC": "4", "CT": "5", "F": "3", "E": "3", "PV": "1", "I": "6", "A": "1", "Cd": "8"},
+      "race": "elfe",
+      "regles": ["Hired Sword", "Seeker", "Excellent Sight"],
+      "competences": ["Tir", "Vitesse", "Spéciales (Éclaireur elfe)"],
+      "equipementDepart": ["Arc elfique", "Épée", "Cape elfique"],
+      "equipement": [
+        {"categorie": "Armes de corps à corps", "objets": [{"en": "Sword", "nom": "Épée", "cout": 0}]},
+        {"categorie": "Armes de tir", "objets": [{"en": "Elf Bow", "nom": "Arc elfique", "cout": 0}]},
+        {"categorie": "Divers", "objets": [{"en": "Elven Cloak", "nom": "Cape elfique", "cout": 0}]}
+      ],
+      "employeurs": {"seulement": ["@mercenaires", "repurgateurs"]},
+      "soldeSi": [{"siRace": "nain", "solde": 40}]
+    },
+    {
+      "cle": "Dwarf Troll Slayer",
+      "nom": "Tueur de trolls nain",
+      "source": "Livre de règles, p. 151",
+      "prime": 25, "solde": 10, "valeur": 12,
+      "profil": {"M": "3", "CC": "4", "CT": "3", "F": "3", "E": "4", "PV": "1", "I": "2", "A": "1", "Cd": "9"},
+      "race": "nain",
+      "regles": ["Hired Sword", "Deathwish", "Hard to Kill", "Hard Head"],
+      "competences": ["Combat", "Force", "Spéciales (Tueurs de trolls)"],
+      "equipementDepart": ["Hache", "Hache"],
+      "equipement": [
+        {"categorie": "Armes de corps à corps", "objets": [
+          {"en": "Axe", "nom": "Hache", "cout": 0},
+          {"en": "Double-handed weapon", "nom": "Arme lourde", "cout": 0}
+        ]}
+      ],
+      "employeurs": {"seulement": ["@mercenaires", "repurgateurs"]},
+      "soldeSi": [{"siRace": "elfe", "solde": 20}],
+      "notes": "Armes au choix : deux haches ou une hache à deux mains."
+    }
+  ],
+  "reglesTexte": {
+    "Hired Sword": {
+      "fr": {"nom": "Franc-tireur", "resume": "Mercenaire engagé contre une prime puis une solde après chaque partie (sinon il part). Il ne compte pas dans l'effectif maximum ni parmi les héros, garde son équipement sans en acheter d'autre, un seul de chaque type par bande ; blessures comme un homme de main, progressions sur le tableau des héros."},
+      "en": {"nom": "Hired Sword", "resume": "Mercenary paid a hire fee, then an upkeep after every battle (or he leaves). He does not count towards the warband's maximum size or heroes, keeps his own equipment and cannot buy more, one of each type per warband; injuries as a henchman, advances on the heroes table."}
+    },
+    "Spiked Gauntlet": {
+      "fr": {"nom": "Gantelet à pointes", "resume": "Compte à la fois comme une rondache et comme une arme additionnelle. Vos héros ne peuvent pas apprendre à s'en servir."},
+      "en": {"nom": "Spiked Gauntlet", "resume": "Counts both as a buckler and as an additional hand weapon. Your heroes cannot learn to use it."}
+    },
+    "Cook": {
+      "fr": {"nom": "Cuistot", "resume": "Une bande avec un halfling peut compter une figurine de plus que sa taille maximale (pas un héros de plus)."},
+      "en": {"nom": "Cook", "resume": "A warband with a Halfling may exceed its maximum size by one model (not one more hero)."}
+    },
+    "Seeker": {
+      "fr": {"nom": "Chercheur", "resume": "Sur le tableau d'exploration, permet de modifier le résultat d'un dé de -1 ou +1."},
+      "en": {"nom": "Seeker", "resume": "When rolling on the Exploration chart, may modify one dice result by -1 or +1."}
+    },
+    "Excellent Sight": {
+      "fr": {"nom": "Vue perçante", "resume": "Les elfes repèrent les ennemis cachés à une distance égale au double de leur Initiative en pas."},
+      "en": {"nom": "Excellent Sight", "resume": "Elves spot hidden enemies at twice their Initiative in inches."}
+    },
+    "Wizard (Lesser Magic)": {
+      "fr": {"nom": "Sorcier (Magie mineure)", "resume": "Lance des sorts de magie mineure."},
+      "en": {"nom": "Wizard (Lesser Magic)", "resume": "Casts spells from Lesser Magic."}
+    }
+  },
+  "competencesSpeciales": [
+    {
+      "liste": "Spéciales (Éclaireur elfe)",
+      "listeEn": "Special Skills (Elf Ranger)",
+      "competences": [
+        {"en": "Wisdom", "nom": "Sagesse", "resume": "Les sorts hostiles n'affectent pas l'elfe sur 4+ sur 1D6.", "resumeEn": "Hostile spells do not affect the Elf on a D6 roll of 4+.", "condition": null},
+        {"en": "Luck", "nom": "Chance", "resume": "Une fois par partie, peut relancer un de ses propres jets de dé.", "resumeEn": "Once per battle, may re-roll one of his own dice rolls.", "condition": null}
+      ]
+    }
+  ]
+}

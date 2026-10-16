@@ -1,0 +1,631 @@
+{
+  "id": "survivants-strigos",
+  "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/survivors-of-strigos",
+  "nomEn": "Survivors of Strigos",
+  "nom": "Survivants de Strigos",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [
+    "Undead Leader"
+  ],
+  "guerriers": [
+    {
+      "cle": "Strigoi Vampire",
+      "nom": "Vampire strigoï",
+      "categorie": "heros",
+      "cout": 115,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "6",
+        "CC": "4",
+        "CT": "4",
+        "F": "4",
+        "E": "4",
+        "PV": "2",
+        "I": "6",
+        "A": "2",
+        "Cd": "8"
+      },
+      "race": "vampire",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Kindred Hatred (Vampires)",
+        "Fear",
+        "Immune to Psychology",
+        "Immune to Poison",
+        "No Pain"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Vitesse",
+        "Spéciales (Survivants de Strigos)"
+      ],
+      "equipement": []
+    },
+    {
+      "cle": "Seer",
+      "nom": "Voyante",
+      "categorie": "heros",
+      "cout": 40,
+      "min": 0,
+      "max": 1,
+      "xp": 12,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Seeker",
+        "Wizard (Charms & Hexes)"
+      ],
+      "competences": [
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Survivants de Strigos)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Chest Talon",
+              "nom": "Serre de poitrine",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Black Gold Wristbands",
+              "nom": "Bracelets d'or noir",
+              "cout": 35
+            },
+            {
+              "en": "Ring of Strigos",
+              "nom": "Anneau de Strigos",
+              "cout": 20
+            },
+            {
+              "en": "Unholy Relic",
+              "nom": "Relique impie",
+              "cout": 15
+            },
+            {
+              "en": "Cursed Book",
+              "nom": "Livre maudit",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Domnu",
+      "nom": "Domnu",
+      "categorie": "heros",
+      "cout": 30,
+      "min": 0,
+      "max": 3,
+      "xp": 4,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Child of Darkness",
+        "Gypsy Ward"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Spéciales (Survivants de Strigos)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Chest Talon",
+              "nom": "Serre de poitrine",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Black Gold Wristbands",
+              "nom": "Bracelets d'or noir",
+              "cout": 35
+            },
+            {
+              "en": "Ring of Strigos",
+              "nom": "Anneau de Strigos",
+              "cout": 20
+            },
+            {
+              "en": "Unholy Relic",
+              "nom": "Relique impie",
+              "cout": 15
+            },
+            {
+              "en": "Cursed Book",
+              "nom": "Livre maudit",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Strigany",
+      "nom": "Strigany",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Ghouls",
+      "nom": "Goules",
+      "categorie": "hdm",
+      "cout": 40,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "3",
+        "A": "2",
+        "Cd": "5"
+      },
+      "race": "goule",
+      "sansProgression": false,
+      "regles": [
+        "Fear"
+      ],
+      "competences": [],
+      "equipement": []
+    },
+    {
+      "cle": "Giant Bats",
+      "nom": "Chauves-souris géantes",
+      "categorie": "hdm",
+      "cout": 40,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "3",
+        "CT": "0",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "3",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Animals",
+        "Flying",
+        "Large Target",
+        "Sonic"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Undead Leader": {
+      "fr": {
+        "nom": "Chef mort-vivant",
+        "resume": "Le vampire strigoï est le seul mort-vivant de la bande. S'il meurt, la bande continue mais ne peut pas recruter de nouveau vampire."
+      },
+      "en": {
+        "nom": "Undead Leader",
+        "resume": "The Strigoi is the warband's only Undead model. If he dies the warband carries on but can never hire a new vampire."
+      }
+    },
+    "Kindred Hatred (Vampires)": {
+      "fr": {
+        "nom": "Haine des lignées",
+        "resume": "Le strigoï hait les vampires des autres lignées."
+      },
+      "en": {
+        "nom": "Kindred Hatred",
+        "resume": "The Strigoi hates vampires of other bloodlines."
+      }
+    },
+    "Seeker": {
+      "fr": {
+        "nom": "Traqueur",
+        "resume": "Si le guerrier n'est pas mis hors de combat, il peut modifier de +1 ou -1 un dé d'exploration après la bataille."
+      },
+      "en": {
+        "nom": "Seeker",
+        "resume": "If the model was not taken out of action, it may modify one exploration dice by +1 or -1 after the battle."
+      }
+    },
+    "Wizard (Charms & Hexes)": {
+      "fr": {
+        "nom": "Sorcier (Charmes et maléfices)",
+        "resume": "La voyante est un lanceur de sorts : elle commence avec un sort tiré au hasard dans la liste des Charmes et maléfices."
+      },
+      "en": {
+        "nom": "Wizard (Charms & Hexes)",
+        "resume": "The Seer is a spellcaster and starts with one random spell from the Charms & Hexes list."
+      }
+    },
+    "Child of Darkness": {
+      "fr": {
+        "nom": "Enfant des ténèbres",
+        "resume": "Le domnu n'est pas affecté par la règle « Sinistre » (Spooky) de la Sylvanie."
+      },
+      "en": {
+        "nom": "Child of Darkness",
+        "resume": "The Domnu is unaffected by Sylvania's Spooky rule."
+      }
+    },
+    "Gypsy Ward": {
+      "fr": {
+        "nom": "Protection tzigane",
+        "resume": "Le guerrier bénéficie d'une sauvegarde spéciale de 5+ contre les attaques magiques."
+      },
+      "en": {
+        "nom": "Gypsy Ward",
+        "resume": "The model has a 5+ special save against magical attacks."
+      }
+    },
+    "Flying": {
+      "fr": {
+        "nom": "Vol",
+        "resume": "La créature ignore les règles d'escalade et de saut au-dessus des vides, et peut même terminer son mouvement au-dessus du vide."
+      },
+      "en": {
+        "nom": "Flying",
+        "resume": "Ignores climbing and jumping across gaps, and may even end its move over empty space."
+      }
+    },
+    "Sonic": {
+      "fr": {
+        "nom": "Écholocation",
+        "resume": "La créature n'a pas besoin de ligne de vue pour charger."
+      },
+      "en": {
+        "nom": "Sonic",
+        "resume": "The creature does not need line of sight to charge."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Survivants de Strigos)",
+    "listeEn": "Special Skills (Survivors of Strigos)",
+    "competences": [
+      {
+        "en": "Iron Sinews",
+        "nom": "Nerfs d'acier",
+        "resume": "Le strigoï gagne +1 en Force.",
+        "resumeEn": "The Strigoi gains +1 Strength.",
+        "condition": "chef"
+      },
+      {
+        "en": "Great Thirster",
+        "nom": "Grande soif",
+        "resume": "Dès qu'il met un ennemi hors de combat, le strigoï devient frénétique jusqu'à ce qu'il soit à terre, sonné ou hors de combat.",
+        "resumeEn": "Once he takes an enemy out of action the Strigoi becomes frenzied until knocked down, stunned or taken out of action.",
+        "condition": "chef"
+      },
+      {
+        "en": "Curse of the Revenant",
+        "nom": "Malédiction du revenant",
+        "resume": "Nécessite Grande soif. Une fois par tour, le strigoï récupère un point de vie perdu sur 5+ sur 1D6.",
+        "resumeEn": "Requires Great Thirster. Once per turn the Strigoi regains a lost wound on a 5+.",
+        "condition": "chef"
+      },
+      {
+        "en": "Dark Arts",
+        "nom": "Arts sombres",
+        "resume": "Le strigoï gagne Savoir arcanique et tire aussitôt un sort des Arts sombres ; il pourra ensuite choisir de nouveaux sorts à la place de compétences.",
+        "resumeEn": "The Strigoi gains Arcane Lore and immediately rolls a Dark Arts spell; later he may take new spells instead of skills.",
+        "condition": "chef"
+      },
+      {
+        "en": "Light Fingers",
+        "nom": "Doigts agiles",
+        "resume": "Une fois par partie, quand le héros met un ennemi hors de combat, la bande trouve un fragment de pierre magique supplémentaire. Interdite au strigoï.",
+        "resumeEn": "Once per game, when the hero takes an enemy out of action, the warband finds an extra wyrdstone shard. Not for the Strigoi.",
+        "condition": null
+      },
+      {
+        "en": "Practiced Arm",
+        "nom": "Bras exercé",
+        "resume": "Le héros peut lancer deux couteaux par tour sur la même cible, chacun avec +1 au jet de blessure. Interdite au strigoï.",
+        "resumeEn": "The hero may throw two knives per turn at the same target, each with +1 to injury. Not for the Strigoi.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Le strigoï ne porte aucune arme ni armure et combat à mains nues sans pénalité (équipement vide). La page renvoie à une « Strigany Equipment List » inexistante : liste des héros attribuée à la voyante et au domnu, liste des hommes de main aux Strigany. Serre de poitrine (Chest Talon) marquée « Strigany uniquement » : interdite au strigoï de fait ; arme à deux mains, F+1, +1 pour blesser les buveurs de sang. Bracelets d'or noir, anneau de Strigos et livre maudit : coûts variables dans la description (35+2D6, 20+D6, 50+3D6) ; coût fixe des listes retenu ; objets réservés aux héros. Goules : nombre illimité, coût 40 co tel qu'indiqué. Clé « Kindred Hatred (Vampires) » distincte de « Kindred Hatred » des Elfes Noirs (sens différent). Les compétences Light Fingers / Practiced Arm sont réservées aux héros strigany (condition non exprimable : null + mention dans le résumé). Recrutement de francs-tireurs : ceux autorisés aux bandes de morts-vivants. Sorts (Charmes et maléfices, Arts sombres) non saisis."
+}

@@ -1,0 +1,933 @@
+{
+  "id": "remas",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/tileans",
+  "nomEn": "Tileans (Remasens)",
+  "nom": "Mercenaires de Remas",
+  "tresor": 500,
+  "effectifMax": 15,
+  "regles": [
+    "Remasen Hatred",
+    "Remasen Officers"
+  ],
+  "guerriers": [
+    {
+      "cle": "Captain",
+      "nom": "Capitaine",
+      "categorie": "heros",
+      "cout": 60,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "2",
+        "Cd": "9"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Leader"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Force",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Pike",
+              "nom": "Pique",
+              "cout": 12
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Rapier",
+              "nom": "Rapière",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 25
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 50
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Champion",
+      "nom": "Champion",
+      "categorie": "heros",
+      "cout": 35,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Érudition",
+        "Force"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Pike",
+              "nom": "Pique",
+              "cout": 12
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Rapier",
+              "nom": "Rapière",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 25
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 50
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Youngblood",
+      "nom": "Jeune sang",
+      "categorie": "heros",
+      "cout": 15,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Érudition",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Pike",
+              "nom": "Pique",
+              "cout": 12
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Rapier",
+              "nom": "Rapière",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 25
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 50
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Warriors",
+      "nom": "Guerriers",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Pike",
+              "nom": "Pique",
+              "cout": 12
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Rapier",
+              "nom": "Rapière",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 25
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 50
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Marksmen",
+      "nom": "Tireurs",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": 7,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 25
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 50
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            },
+            {
+              "en": "Handgun",
+              "nom": "Arquebuse",
+              "cout": 35
+            },
+            {
+              "en": "Hunting Rifle",
+              "nom": "Fusil de chasse",
+              "cout": 200
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Duellists",
+      "nom": "Duellistes",
+      "categorie": "hdm",
+      "cout": 35,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Cloak & Dagger"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Pike",
+              "nom": "Pique",
+              "cout": 12
+            },
+            {
+              "en": "Morning Star",
+              "nom": "Morgenstern",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Rapier",
+              "nom": "Rapière",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 30
+            },
+            {
+              "en": "Duelling Pistol",
+              "nom": "Pistolet de duel",
+              "cout": 25
+            },
+            {
+              "en": "Brace of Duelling Pistols",
+              "nom": "Paire de pistolets de duel",
+              "cout": 50
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Remasen Hatred": {
+      "fr": {
+        "nom": "Haine des Druchii",
+        "resume": "Contre une bande d'Elfes Noirs uniquement, le joueur de Remas peut relancer une fois un test de déroute et doit garder le second résultat. La bande ne peut pas engager de franc-tireur elfe noir."
+      },
+      "en": {
+        "nom": "Remasen Hatred",
+        "resume": "Against Dark Elf warbands only, the Remasen player may re-roll a rout test once and must keep the second result. The warband may not hire Dark Elf Hired Swords."
+      }
+    },
+    "Remasen Officers": {
+      "fr": {
+        "nom": "Officiers de Remas",
+        "resume": "Le Capitaine, les Champions et les Jeunes sangs de Remas ont +1 en Commandement contre tout adversaire (déjà inclus dans les profils saisis)."
+      },
+      "en": {
+        "nom": "Remasen Officers",
+        "resume": "Remasen Captain, Champions and Youngbloods have +1 Leadership against any opponent (already included in the profiles entered)."
+      }
+    }
+  },
+  "competencesSpeciales": null,
+  "races": {},
+  "notes": "Variante Remas de la bande tiléenne. Mêmes guerriers, coûts, profils et listes d'équipement que la bande Miragliano (page tiléenne commune) ; clés reprises de miragliano.json, règles miragliennes (arbalètes, tireurs, haine des Skavens) retirées. Capitaine A 2 et icônes d'édition (I des Tireurs) comme sur la page. Taille 3 à 15. Pas de compétences spéciales. Le +1 en Commandement des héros (Remasen Officers) est déjà ajouté aux profils : Capitaine Cd 9, Champion 8, Jeune sang 7. Clés anglaises des deux règles choisies par moi (la page ne les nomme pas). La page parle de « 500 points » : saisi 500 co."
+}

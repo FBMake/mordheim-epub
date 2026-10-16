@@ -1,0 +1,931 @@
+{
+  "id": "rangers-nains",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/dwarf-rangers",
+  "nomEn": "Dwarf Rangers",
+  "nom": "Rangers nains",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [
+    "Don't Trust 'Em",
+    "Hard to Kill",
+    "Hard Head",
+    "Armour Use",
+    "Hate Orcs and Goblins",
+    "Grudgebearers",
+    "Incomparable Miners"
+  ],
+  "guerriers": [
+    {
+      "cle": "Runesmith",
+      "nom": "Forgeron des runes",
+      "categorie": "heros",
+      "cout": 85,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "3",
+        "CC": "5",
+        "CT": "4",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "10"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Inscribe Runes"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Force",
+        "Spéciales (Rangers nains)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Gromril Armour",
+              "nom": "Armure en gromril",
+              "cout": 75
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Apprentice Runesmith",
+      "nom": "Apprenti forgeron des runes",
+      "categorie": "heros",
+      "cout": 40,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "3",
+        "CC": "3",
+        "CT": "2",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [
+        "Extra Set of Hands"
+      ],
+      "competences": [
+        "Combat",
+        "Érudition",
+        "Force",
+        "Spéciales (Rangers nains)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Gromril Armour",
+              "nom": "Armure en gromril",
+              "cout": 75
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Troll Slayer",
+      "nom": "Tueur de trolls",
+      "categorie": "heros",
+      "cout": 50,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "3",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [
+        "Deathwish"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Spéciales (Rangers nains)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Longbeard",
+      "nom": "Long-barbe",
+      "categorie": "hdm",
+      "cout": 50,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "3",
+        "CC": "5",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [
+        "Stubborn"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Gromril Armour",
+              "nom": "Armure en gromril",
+              "cout": 75
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Clansman",
+      "nom": "Guerrier du clan",
+      "categorie": "hdm",
+      "cout": 40,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "3",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Gromril Armour",
+              "nom": "Armure en gromril",
+              "cout": 75
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Crossbowman",
+      "nom": "Arbalétrier",
+      "categorie": "hdm",
+      "cout": 40,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "3",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Beardling",
+      "nom": "Barbe-courte",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "3",
+        "CC": "3",
+        "CT": "2",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "nain",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Dwarf Axe",
+              "nom": "Hache naine",
+              "cout": 15
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            },
+            {
+              "en": "Gromril Armour",
+              "nom": "Armure en gromril",
+              "cout": 75
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Don't Trust 'Em": {
+      "fr": {
+        "nom": "Pas confiance",
+        "resume": "Les Rangers peuvent s'allier à d'autres bandes naines en multijoueur sans être des figurines amies : elles se gênent pour marcher et ne s'aident pas pour les tests « Seul contre tous », mais ne sont pas ennemies et partagent normalement les trésors."
+      },
+      "en": {
+        "nom": "Don't Trust 'Em",
+        "resume": "Rangers may ally with other Dwarf warbands in multiplayer games but are not friendly models: they block each other's marching and give no help for All Alone tests, though they are not enemies and share treasure normally."
+      }
+    },
+    "Inscribe Runes": {
+      "fr": {
+        "nom": "Graver les runes",
+        "resume": "Il commence avec une rune mineure tirée au hasard et peut, à chaque progression, apprendre une nouvelle rune au lieu d'une compétence. Avant chaque partie il grave une rune sur un objet (2D6 ≥ difficulté ; un 2 détruit l'objet)."
+      },
+      "en": {
+        "nom": "Inscribe Runes",
+        "resume": "He starts with one random minor rune and may learn a new rune instead of a skill when advancing. Before each game he inscribes a rune on an item (2D6 ≥ difficulty; a 2 destroys the item)."
+      }
+    },
+    "Extra Set of Hands": {
+      "fr": {
+        "nom": "Une paire de mains en plus",
+        "resume": "Avec l'apprenti, le forgeron des runes peut graver deux objets avant chaque partie au lieu d'un."
+      },
+      "en": {
+        "nom": "Extra Set of Hands",
+        "resume": "With the apprentice, the Runesmith may inscribe two items before each game instead of one."
+      }
+    },
+    "Stubborn": {
+      "fr": {
+        "nom": "Têtus",
+        "resume": "Ils peuvent relancer un test de Commandement raté ; une relance ne peut pas être relancée."
+      },
+      "en": {
+        "nom": "Stubborn",
+        "resume": "They may re-roll one failed Leadership test; a re-roll cannot be re-rolled."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Rangers nains)",
+    "listeEn": "Special Skills (Dwarf Rangers)",
+    "competences": [
+      {
+        "en": "Combat Master",
+        "nom": "Maître du combat",
+        "resume": "Ses parades réussissent aussi en cas d'égalité avec le meilleur jet pour toucher adverse ; avec deux armes de parade, il peut parer deux attaques.",
+        "resumeEn": "His parries also succeed on a tie with the opponent's highest to-hit roll; with two parrying weapons he may parry two attacks.",
+        "condition": null
+      },
+      {
+        "en": "Extra Tough",
+        "nom": "Extrêmement résistant",
+        "resume": "Après une partie où il a été mis hors de combat, il peut relancer une fois son jet de blessure grave et garde le nouveau résultat.",
+        "resumeEn": "After a game in which he was taken out of action, he may re-roll his Serious Injury roll once and keep the new result.",
+        "condition": null
+      },
+      {
+        "en": "Resource Hunter",
+        "nom": "Chercheur de ressources",
+        "resume": "Il peut modifier un dé d'exploration de +1 ou -1.",
+        "resumeEn": "He may modify one Exploration die by +1 or -1.",
+        "condition": null
+      },
+      {
+        "en": "True Grit",
+        "nom": "Cran",
+        "resume": "Ses jets de blessure sont décalés : 1-3 à terre, 4-5 sonné, 6 hors de combat.",
+        "resumeEn": "His injury rolls are shifted: 1-3 knocked down, 4-5 stunned, 6 out of action.",
+        "condition": null
+      },
+      {
+        "en": "Thick Skull",
+        "nom": "Crâne épais",
+        "resume": "Sauvegarde de 3+ (2+ avec un casque) contre l'étourdissement : un « sonné » sauvegardé devient « à terre ».",
+        "resumeEn": "3+ save (2+ with a helmet) against being stunned: a saved stun becomes knocked down.",
+        "condition": null
+      },
+      {
+        "en": "Ferocious Charge",
+        "nom": "Charge féroce",
+        "resume": "Il double ses Attaques le tour où il charge, mais subit -1 pour toucher ce tour-là.",
+        "resumeEn": "He doubles his Attacks on the turn he charges, at -1 to hit that turn.",
+        "condition": "rangers-nains/troll-slayer"
+      },
+      {
+        "en": "Monster Slayer",
+        "nom": "Tueur de monstres",
+        "resume": "Il blesse toujours sur 4+, quelle que soit l'Endurance de la cible, sauf si sa Force lui permet de faire mieux.",
+        "resumeEn": "He always wounds on 4+ regardless of Toughness, unless his Strength would need a lower roll.",
+        "condition": "rangers-nains/troll-slayer"
+      },
+      {
+        "en": "Berserker",
+        "nom": "Forcené",
+        "resume": "+1 pour toucher le tour où il charge.",
+        "resumeEn": "+1 to hit on the turn he charges.",
+        "condition": "rangers-nains/troll-slayer"
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Source : supplément Nemesis Crown. Effectif minimum 3, maximum 12. La page a deux tables : « Dwarf Special Skills » (tous les héros nains) et « Slayer Special Skills » (Tueurs de trolls uniquement) ; fusionnées en une seule liste, les trois compétences de Tueur portant la condition rangers-nains/troll-slayer. Les nains ne peuvent jamais prendre Arcane Lore. Règles naines générales (Hard to Kill, Hard Head, Armour → clé « Armour Use », Hate Orcs and Goblins, Grudgebearers, Incomparable Miners) mises en règles de bande. Tueurs de trolls : ni armes de tir ni armure (liste réduite aux armes de corps à corps). L'apprenti « peut être armé d'armes » de la liste : il reçoit la liste complète (armure comprise) faute de restriction explicite. Arme en gromril : n'importe quelle arme au triple de son prix (à la création seulement) — non saisie comme objet. Armure en gromril à 75 co et prix de création uniquement ; ensuite prix du livre. Runes mineures (pierre, tranchant, vitesse, protection, précision, foulée ; difficultés 6 à 9) non saisies. Clansmen et Beardlings : nombre illimité. Hache naine : règles spéciales (tranchant, parade limitée) sur la page."
+}

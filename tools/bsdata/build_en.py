@@ -84,6 +84,21 @@ if __name__ == "__main__":
     data, missing = build(fr, en)
     supplements = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((Path(fr_path).parent / "supplements").glob("*.json"))]
     add_supplements(data, supplements, missing)
+    francs = {"francsTireurs": [], "reglesTexte": {}, "competencesSpeciales": []}
+    for f in sorted(Path(fr_path).parent.glob("francs-tireurs*.json")):
+        d = json.loads(f.read_text(encoding="utf-8"))
+        for k in ("francsTireurs", "competencesSpeciales"):
+            francs[k] += d.get(k, [])
+        francs["reglesTexte"].update({k: v for k, v in d.get("reglesTexte", {}).items() if k not in francs["reglesTexte"]})
+    add_supplements(
+        data,
+        [{"id": "francs-tireurs", "nomEn": "Hired Swords", "guerriers": francs["francsTireurs"],
+          "reglesTexte": francs["reglesTexte"]}]
+        + [{"id": "_", "nomEn": "", "guerriers": [], "competencesSpeciales": cs} for cs in francs["competencesSpeciales"]],
+        missing,
+    )
+    data["bandes"].pop("_", None)
+    data["bandes"].pop("francs-tireurs", None)
     if missing:
         print("Versions anglaises manquantes :\n  " + "\n  ".join(sorted(missing)))
         sys.exit(1)

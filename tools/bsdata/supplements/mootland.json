@@ -1,0 +1,520 @@
+{
+  "id": "mootland",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/mootlanders",
+  "nomEn": "Mootlanders",
+  "nom": "Halflings du Moot",
+  "tresor": 500,
+  "effectifMax": 20,
+  "regles": [
+    "Halflings"
+  ],
+  "guerriers": [
+    {
+      "cle": "Moot Elder",
+      "nom": "Ancien du Moot",
+      "categorie": "heros",
+      "cout": 55,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "5",
+        "F": "2",
+        "E": "2",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "halfling",
+      "sansProgression": false,
+      "regles": [
+        "Leader"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Sling",
+              "nom": "Fronde",
+              "cout": 2
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Cooking Pot Helmet",
+              "nom": "Casque-marmite",
+              "cout": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Master Chef",
+      "nom": "Maître cuisinier",
+      "categorie": "heros",
+      "cout": 35,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "2",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "halfling",
+      "sansProgression": false,
+      "regles": [
+        "Inspired Cooking"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Kitchen Knife",
+              "nom": "Couteau de cuisine",
+              "cout": 2
+            },
+            {
+              "en": "Cleaver",
+              "nom": "Couperet",
+              "cout": 3
+            },
+            {
+              "en": "Ladle",
+              "nom": "Louche",
+              "cout": 2
+            },
+            {
+              "en": "Tenderiser",
+              "nom": "Attendrisseur",
+              "cout": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Halfling Thieves",
+      "nom": "Voleurs halflings",
+      "categorie": "heros",
+      "cout": 25,
+      "min": 0,
+      "max": 3,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "4",
+        "F": "2",
+        "E": "2",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "halfling",
+      "sansProgression": false,
+      "regles": [
+        "Sneaky"
+      ],
+      "competences": [
+        "Tir",
+        "Érudition",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Sling",
+              "nom": "Fronde",
+              "cout": 2
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Cooking Pot Helmet",
+              "nom": "Casque-marmite",
+              "cout": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Warriors",
+      "nom": "Guerriers",
+      "categorie": "hdm",
+      "cout": 15,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "4",
+        "F": "2",
+        "E": "2",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "halfling",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Sling",
+              "nom": "Fronde",
+              "cout": 2
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Cooking Pot Helmet",
+              "nom": "Casque-marmite",
+              "cout": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Scouts",
+      "nom": "Éclaireurs",
+      "categorie": "hdm",
+      "cout": 20,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "4",
+        "F": "2",
+        "E": "2",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "halfling",
+      "sansProgression": false,
+      "regles": [
+        "Keen Eyesight"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Sling",
+              "nom": "Fronde",
+              "cout": 2
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Cooking Pot Helmet",
+              "nom": "Casque-marmite",
+              "cout": 8
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Halflings": {
+      "fr": {
+        "nom": "Halflings",
+        "resume": "Les halflings sont si frêles qu'un résultat de 2 sur leurs jets de blessure compte comme « sonné »."
+      },
+      "en": {
+        "nom": "Halflings",
+        "resume": "Halflings are so puny that a roll of 2 on their injury rolls counts as 'stunned'."
+      }
+    },
+    "Inspired Cooking": {
+      "fr": {
+        "nom": "Cuisine inspirée",
+        "resume": "Les halflings à 6 ps ou moins du maître cuisinier peuvent relancer leurs jets pour toucher ratés au corps à corps, une fois par tour."
+      },
+      "en": {
+        "nom": "Inspired Cooking",
+        "resume": "Halflings within 6\" of the Master Chef may re-roll failed to-hit rolls in close combat, once per turn."
+      }
+    },
+    "Sneaky": {
+      "fr": {
+        "nom": "Sournois",
+        "resume": "Les tirs visant un voleur halfling subissent toujours -1 pour toucher, en plus des autres modificateurs."
+      },
+      "en": {
+        "nom": "Sneaky",
+        "resume": "Shots at a Halfling Thief always suffer -1 to hit, on top of other modifiers."
+      }
+    },
+    "Keen Eyesight": {
+      "fr": {
+        "nom": "Vue perçante",
+        "resume": "L'éclaireur repère les ennemis cachés à une distance égale au double de son Initiative en ps."
+      },
+      "en": {
+        "nom": "Keen Eyesight",
+        "resume": "The scout spots hidden enemies at twice his Initiative in inches."
+      }
+    }
+  },
+  "competencesSpeciales": null,
+  "races": {},
+  "notes": "Source Citadel Journal 36 (grade 1b). Taille 3 à 20. Voleurs halflings 0-3 : la page imprimée indiquait « 0-2 » dans l'en-tête mais « trois » dans le texte ; la page retient 0-3. Pistolet (15 co) réservé à l'Ancien du Moot. Le Maître cuisinier n'utilise que la liste d'ustensiles (Couteau de cuisine, Couperet, Louche, Attendrisseur ; aucune règle donnée pour ces objets, pas de dague gratuite indiquée). Casque-marmite 8 co sans règle donnée. Pas de compétences spéciales. Race halfling (maximums existants)."
+}

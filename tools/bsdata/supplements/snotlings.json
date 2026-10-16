@@ -1,0 +1,1105 @@
+{
+ "id": "snotlings",
+ "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/snotlings",
+ "nomEn": "Snotlings",
+ "nom": "Bande de snotlings",
+ "tresor": 500,
+ "effectifMax": 30,
+ "regles": [
+  "Dodgy",
+  "Small Target",
+  "Small Hands",
+  "Not-So-Tough Gits",
+  "Weakness in Numbers",
+  "Scavengers!",
+  "That Git's Got Talent!",
+  "Too Unruly"
+ ],
+ "guerriers": [
+  {
+   "cle": "Bullied Goblin",
+   "nom": "Gobelin malmené",
+   "categorie": "heros",
+   "cout": 35,
+   "min": 1,
+   "max": 1,
+   "xp": 20,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "6"
+   },
+   "race": "gobelin",
+   "sansProgression": false,
+   "regles": [
+    "Leader",
+    "Not a Snotling",
+    "Mob Rule",
+    "The Rigors of Leadership"
+   ],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Vitesse",
+    "Spéciales (Bande de snotlings)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Pointy Stick",
+       "nom": "Bâton pointu",
+       "cout": 2
+      },
+      {
+       "en": "Free Pointy Stick",
+       "nom": "Bâton pointu gratuit",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Shortbow",
+       "nom": "Arc court",
+       "cout": 10
+      },
+      {
+       "en": "Pebble",
+       "nom": "Caillou",
+       "cout": 0
+      },
+      {
+       "en": "Slingshot",
+       "nom": "Lance-pierre",
+       "cout": 2
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Snotling BigSnotz",
+   "nom": "Gros-Morveux snotling",
+   "categorie": "heros",
+   "cout": 15,
+   "min": 0,
+   "max": 2,
+   "xp": 8,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "2",
+    "F": "2",
+    "E": "2",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "5"
+   },
+   "race": "snotling",
+   "sansProgression": false,
+   "regles": [
+    "Mob Rule",
+    "The Rigors of Leadership"
+   ],
+   "competences": [
+    "Combat",
+    "Vitesse",
+    "Spéciales (Bande de snotlings)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Pointy Stick",
+       "nom": "Bâton pointu",
+       "cout": 2
+      },
+      {
+       "en": "Free Pointy Stick",
+       "nom": "Bâton pointu gratuit",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Shortbow",
+       "nom": "Arc court",
+       "cout": 10
+      },
+      {
+       "en": "Pebble",
+       "nom": "Caillou",
+       "cout": 0
+      },
+      {
+       "en": "Slingshot",
+       "nom": "Lance-pierre",
+       "cout": 2
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Snotling Scouts",
+   "nom": "Éclaireur snotling",
+   "categorie": "heros",
+   "cout": 20,
+   "min": 0,
+   "max": 2,
+   "xp": 4,
+   "profil": {
+    "M": "5",
+    "CC": "1",
+    "CT": "2",
+    "F": "1",
+    "E": "1",
+    "PV": "1",
+    "I": "5",
+    "A": "1",
+    "Cd": "4"
+   },
+   "race": "snotling",
+   "sansProgression": false,
+   "regles": [
+    "Mob Rule",
+    "The Rigors of Leadership",
+    "Scout",
+    "He's No Threat!"
+   ],
+   "competences": [
+    "Tir",
+    "Vitesse",
+    "Spéciales (Bande de snotlings)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Pointy Stick",
+       "nom": "Bâton pointu",
+       "cout": 2
+      },
+      {
+       "en": "Free Pointy Stick",
+       "nom": "Bâton pointu gratuit",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pebble",
+       "nom": "Caillou",
+       "cout": 0
+      },
+      {
+       "en": "Slingshot",
+       "nom": "Lance-pierre",
+       "cout": 2
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Snotling Shaman",
+   "nom": "Chamane snotling",
+   "categorie": "heros",
+   "cout": 30,
+   "min": 0,
+   "max": 1,
+   "xp": 4,
+   "profil": {
+    "M": "4",
+    "CC": "1",
+    "CT": "1",
+    "F": "1",
+    "E": "1",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "5"
+   },
+   "race": "snotling",
+   "sansProgression": false,
+   "regles": [
+    "Mob Rule",
+    "The Rigors of Leadership",
+    "Wizard (Snotling Waaagh! Magic)",
+    "'Eadache!"
+   ],
+   "competences": [
+    "Vitesse",
+    "Spéciales (Bande de snotlings)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Pointy Stick",
+       "nom": "Bâton pointu",
+       "cout": 2
+      },
+      {
+       "en": "Free Pointy Stick",
+       "nom": "Bâton pointu gratuit",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pebble",
+       "nom": "Caillou",
+       "cout": 0
+      },
+      {
+       "en": "Slingshot",
+       "nom": "Lance-pierre",
+       "cout": 2
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Snotling Shoota Team",
+   "nom": "Équipe de tireurs snotlings",
+   "categorie": "hdm",
+   "cout": 25,
+   "min": 0,
+   "max": 5,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "3",
+    "F": "1",
+    "E": "1",
+    "PV": "2",
+    "I": "3",
+    "A": "2",
+    "Cd": "4"
+   },
+   "race": "snotling",
+   "sansProgression": false,
+   "regles": [
+    "Teamwork",
+    "Cumbersome",
+    "Recoil"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Pointy Stick",
+       "nom": "Bâton pointu",
+       "cout": 2
+      },
+      {
+       "en": "Free Pointy Stick",
+       "nom": "Bâton pointu gratuit",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pebble",
+       "nom": "Caillou",
+       "cout": 0
+      },
+      {
+       "en": "Slingshot",
+       "nom": "Lance-pierre",
+       "cout": 2
+      },
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Blunderbuss",
+       "nom": "Tromblon",
+       "cout": 30
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Snotling Mobs",
+   "nom": "Grouillot de snotlings",
+   "categorie": "hdm",
+   "cout": 40,
+   "min": 0,
+   "max": 3,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "2",
+    "CT": "2",
+    "F": "2",
+    "E": "2",
+    "PV": "3",
+    "I": "3",
+    "A": "3",
+    "Cd": "5"
+   },
+   "race": "snotling",
+   "sansProgression": false,
+   "regles": [
+    "Teamwork",
+    "Not So Small, Surprisingly Tough",
+    "Mass Stupidity",
+    "Mob Mentality"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Pointy Stick",
+       "nom": "Bâton pointu",
+       "cout": 2
+      },
+      {
+       "en": "Free Pointy Stick",
+       "nom": "Bâton pointu gratuit",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pebble",
+       "nom": "Caillou",
+       "cout": 0
+      },
+      {
+       "en": "Slingshot",
+       "nom": "Lance-pierre",
+       "cout": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Snotling Wheelo",
+   "nom": "Roulo snotling",
+   "categorie": "hdm",
+   "cout": 100,
+   "min": 0,
+   "max": 1,
+   "xp": 0,
+   "profil": {
+    "M": "D6",
+    "CC": "2",
+    "CT": "2",
+    "F": "4",
+    "E": "3",
+    "PV": "2",
+    "I": "5",
+    "A": "2",
+    "Cd": "6"
+   },
+   "race": null,
+   "sansProgression": false,
+   "regles": [
+    "Wheelo Movement",
+    "Impact Hits",
+    "Tough Machine",
+    "Wheelo Upgrades"
+   ],
+   "competences": [],
+   "equipement": []
+  },
+  {
+   "cle": "Runts",
+   "nom": "Avortons snotlings",
+   "categorie": "hdm",
+   "cout": 5,
+   "min": 0,
+   "max": null,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "1",
+    "CT": "1",
+    "F": "1",
+    "E": "1",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "3"
+   },
+   "race": "snotling",
+   "sansProgression": false,
+   "regles": [
+    "Teeny Hands",
+    "Smallest of the Small"
+   ],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Pointy Stick",
+       "nom": "Bâton pointu",
+       "cout": 2
+      },
+      {
+       "en": "Free Pointy Stick",
+       "nom": "Bâton pointu gratuit",
+       "cout": 0
+      },
+      {
+       "en": "Club",
+       "nom": "Gourdin",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Pebble",
+       "nom": "Caillou",
+       "cout": 0
+      },
+      {
+       "en": "Slingshot",
+       "nom": "Lance-pierre",
+       "cout": 2
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "reglesTexte": {
+  "Dodgy": {
+   "fr": {
+    "nom": "Insaisissable",
+    "resume": "Les snotlings ont une sauvegarde d'esquive de 6+ ; un héros ayant Esquive ou Esquive latérale la porte à 4+."
+   },
+   "en": {
+    "nom": "Dodgy",
+    "resume": "Snotlings have a 6+ dodge save; a hero with Dodge or Step Aside raises it to 4+."
+   }
+  },
+  "Small Target": {
+   "fr": {
+    "nom": "Petite cible",
+    "resume": "Les tirs contre les snotlings subissent -1 pour toucher."
+   },
+   "en": {
+    "nom": "Small Target",
+    "resume": "Missile attacks against Snotlings suffer -1 to hit."
+   }
+  },
+  "Small Hands": {
+   "fr": {
+    "nom": "Petites mains",
+    "resume": "Les snotlings et le gobelin ne peuvent pas utiliser arcs longs, arcs elfiques, arquebuses, longs fusils ni tromblons, sauf les équipes de tireurs."
+   },
+   "en": {
+    "nom": "Small Hands",
+    "resume": "Snotlings and the Goblin cannot use longbows, elf bows, handguns, long rifles or blunderbusses, except Shoota Teams."
+   }
+  },
+  "Not-So-Tough Gits": {
+   "fr": {
+    "nom": "Pas si coriaces",
+    "resume": "Blessures : 1 à terre, 2-3 sonné, 4-6 hors de combat ; les hommes de main hors de combat meurent sur 1-3 et les héros snotlings jettent deux fois sur le tableau des blessures graves."
+   },
+   "en": {
+    "nom": "Not-So-Tough Gits",
+    "resume": "Injuries: 1 knocked down, 2-3 stunned, 4-6 out of action; henchmen out of action die on 1-3 and Snotling heroes roll twice for serious injuries."
+   }
+  },
+  "Weakness in Numbers": {
+   "fr": {
+    "nom": "Faiblesse du nombre",
+    "resume": "La valeur de la bande est divisée par deux, et l'effectif est divisé par deux (arrondi au supérieur) pour les revenus et le commerce."
+   },
+   "en": {
+    "nom": "Weakness in Numbers",
+    "resume": "The warband rating is halved, and warband size is halved (rounded up) for income and trading."
+   }
+  },
+  "Scavengers!": {
+   "fr": {
+    "nom": "Charognards !",
+    "resume": "La bande lance un dé d'exploration supplémentaire, même si tous les héros ont été mis hors de combat."
+   },
+   "en": {
+    "nom": "Scavengers!",
+    "resume": "The warband rolls one extra exploration die, even if all heroes were taken out of action."
+   }
+  },
+  "That Git's Got Talent!": {
+   "fr": {
+    "nom": "Le morveux a du talent !",
+    "resume": "Un homme de main snotling qui devient héros gagne automatiquement Loi de la meute et Les rigueurs du commandement."
+   },
+   "en": {
+    "nom": "That Git's Got Talent!",
+    "resume": "A Snotling henchman who becomes a hero automatically gains Mob Rule and The Rigors of Leadership."
+   }
+  },
+  "Too Unruly": {
+   "fr": {
+    "nom": "Trop indisciplinés",
+    "resume": "La bande ne peut engager que des francs-tireurs ou personnages snotlings, ou ceux qui la nomment."
+   },
+   "en": {
+    "nom": "Too Unruly",
+    "resume": "The warband may only use Snotling Hired Swords or Dramatis Personae, or those naming the warband."
+   }
+  },
+  "Not a Snotling": {
+   "fr": {
+    "nom": "Pas un snotling",
+    "resume": "Le gobelin ignore Insaisissable, Petite cible et Pas si coriaces, mais sa valeur est quand même divisée par deux et il peut utiliser des cailloux."
+   },
+   "en": {
+    "nom": "Not a Snotling",
+    "resume": "The Goblin ignores Dodgy, Small Target and Not-So-Tough Gits, but his rating is still halved and he may use pebbles."
+   }
+  },
+  "Mob Rule": {
+   "fr": {
+    "nom": "Loi de la meute",
+    "resume": "+1 en Commandement pour chaque paire de snotlings à 6 ps ou moins, jusqu'à 10 maximum."
+   },
+   "en": {
+    "nom": "Mob Rule",
+    "resume": "+1 Leadership for every 2 Snotlings within 6\", up to a maximum of 10."
+   }
+  },
+  "The Rigors of Leadership": {
+   "fr": {
+    "nom": "Les rigueurs du commandement",
+    "resume": "Les héros de la bande gagnent +2 points d'expérience lorsqu'ils survivent à une bataille."
+   },
+   "en": {
+    "nom": "The Rigors of Leadership",
+    "resume": "Heroes in the warband gain +2 experience for surviving a battle."
+   }
+  },
+  "Scout": {
+   "fr": {
+    "nom": "Éclaireur",
+    "resume": "Se déploie après l'adversaire, hors de vue et à plus de 8 ps de tout ennemi."
+   },
+   "en": {
+    "nom": "Scout",
+    "resume": "Deploys after the enemy, out of sight and more than 8\" from any enemy."
+   }
+  },
+  "He's No Threat!": {
+   "fr": {
+    "nom": "Inoffensif !",
+    "resume": "Il peut toujours courir, même avec des ennemis à 8 ps ou moins."
+   },
+   "en": {
+    "nom": "He's No Threat!",
+    "resume": "He may always run, even with enemies within 8\"."
+   }
+  },
+  "Wizard (Snotling Waaagh! Magic)": {
+   "fr": {
+    "nom": "Sorcier (Magie Waaagh! snotling)",
+    "resume": "Le chamane est un sorcier qui commence avec un sort de la magie Waaagh! snotling."
+   },
+   "en": {
+    "nom": "Wizard (Snotling Waaagh! Magic)",
+    "resume": "The Shaman is a wizard starting with one spell from Snotling Waaagh! Magic."
+   }
+  },
+  "'Eadache!": {
+   "fr": {
+    "nom": "Mal de crâne !",
+    "resume": "Après chaque tentative de lancer de sort, sur 1-2 sur 1D6 le chamane et les figurines en contact subissent une touche magique de F5."
+   },
+   "en": {
+    "nom": "'Eadache!",
+    "resume": "After each casting attempt, on a 1-2 on a D6 the Shaman and models in base contact suffer a Strength 5 magical hit."
+   }
+  },
+  "Teamwork": {
+   "fr": {
+    "nom": "Travail d’équipe",
+    "resume": "L'équipe compte comme une seule figurine."
+   },
+   "en": {
+    "nom": "Teamwork",
+    "resume": "The team counts as a single model."
+   }
+  },
+  "Cumbersome": {
+   "fr": {
+    "nom": "Encombrés",
+    "resume": "Avec une arme de tir autre que caillou ou lance-pierre, l'équipe peut charger mais pas courir."
+   },
+   "en": {
+    "nom": "Cumbersome",
+    "resume": "With a missile weapon other than pebble or slingshot, the team may charge but not run."
+   }
+  },
+  "Recoil": {
+   "fr": {
+    "nom": "Recul",
+    "resume": "Tirer avec une arme qualifiée repousse l'équipe de 1D6 ps ; les collisions infligent des touches de F2."
+   },
+   "en": {
+    "nom": "Recoil",
+    "resume": "Firing a qualifying weapon pushes the team back D6\"; collisions inflict Strength 2 hits."
+   }
+  },
+  "Not So Small, Surprisingly Tough": {
+   "fr": {
+    "nom": "Pas si petits, étonnamment coriaces",
+    "resume": "Pas de malus de petite cible et tableau de blessures normal (mort sur 1-2), mais garde Insaisissable."
+   },
+   "en": {
+    "nom": "Not So Small, Surprisingly Tough",
+    "resume": "No small-target modifier and normal injury table (dies on 1-2), but keeps Dodgy."
+   }
+  },
+  "Mass Stupidity": {
+   "fr": {
+    "nom": "Stupidité de masse",
+    "resume": "Le grouillot ne peut jamais devenir héros : relancez ce résultat."
+   },
+   "en": {
+    "nom": "Mass Stupidity",
+    "resume": "The Mob can never become a hero; re-roll that result."
+   }
+  },
+  "Mob Mentality": {
+   "fr": {
+    "nom": "Mentalité de meute",
+    "resume": "Deux grouillots à 2 ps l'un de l'autre au début du tour sont insensibles à la psychologie jusqu'à la fin du tour adverse."
+   },
+   "en": {
+    "nom": "Mob Mentality",
+    "resume": "Two Mobs within 2\" at the start of the turn are immune to psychology until the end of the opponent's turn."
+   }
+  },
+  "Wheelo Movement": {
+   "fr": {
+    "nom": "Déplacement du roulo",
+    "resume": "Il avance de 1D6 ps en ligne droite (2D6 en course ou charge), stoppé par les obstacles ; traverser un terrain difficile ou un bâtiment lui inflige une touche de F5."
+   },
+   "en": {
+    "nom": "Wheelo Movement",
+    "resume": "It moves D6\" straight (2D6 when running or charging) and is stopped by obstacles; difficult terrain or buildings inflict a Strength 5 hit."
+   }
+  },
+  "Impact Hits": {
+   "fr": {
+    "nom": "Touches d’impact",
+    "resume": "Quand il charge, il inflige 1D3 touches de F4 avant le combat, au premier round seulement."
+   },
+   "en": {
+    "nom": "Impact Hits",
+    "resume": "When it charges it inflicts D3 Strength 4 hits before blows, in the first round only."
+   }
+  },
+  "Tough Machine": {
+   "fr": {
+    "nom": "Machine robuste",
+    "resume": "Ignore Pas si coriaces, Petite cible et Insaisissable ; hors de combat, 1 = détruit, 2 = 1D3 parties de réparation, 3-6 = rien."
+   },
+   "en": {
+    "nom": "Tough Machine",
+    "resume": "Ignores Not-So-Tough Gits, Small Target and Dodgy; out of action, 1 = destroyed, 2 = misses D3 games, 3-6 = no effect."
+   }
+  },
+  "Wheelo Upgrades": {
+   "fr": {
+    "nom": "Améliorations du roulo",
+    "resume": "Il progresse sur le tableau des héros (compétences de Combat, Force et Vitesse adaptées), chaque caractéristique une seule fois, jamais héros."
+   },
+   "en": {
+    "nom": "Wheelo Upgrades",
+    "resume": "It advances on the Hero table (adapted Combat, Strength and Speed skills), each characteristic only once, never becoming a hero."
+   }
+  },
+  "Teeny Hands": {
+   "fr": {
+    "nom": "Toutes petites mains",
+    "resume": "Une seule arme à une main et aucune armure, jusqu'à ce qu'il devienne héros."
+   },
+   "en": {
+    "nom": "Teeny Hands",
+    "resume": "Only one one-handed weapon and no armour, until promoted to hero."
+   }
+  },
+  "Smallest of the Small": {
+   "fr": {
+    "nom": "Le plus petit des petits",
+    "resume": "-2 au total pour le toucher au tir ; meurt sur 1-4 au jet de blessure d'après-bataille."
+   },
+   "en": {
+    "nom": "Smallest of the Small",
+    "resume": "-2 total to be hit by missiles; dies on 1-4 on the post-battle injury roll."
+   }
+  }
+ },
+ "competencesSpeciales": {
+  "liste": "Spéciales (Bande de snotlings)",
+  "listeEn": "Special Skills (Snotlings)",
+  "competences": [
+   {
+    "en": "Stampede",
+    "nom": "Ruée",
+    "resume": "Quand le héros charge, les snotlings ayant chargé la même cible peuvent renoncer à leurs attaques : +1 F par attaque de base sacrifiée, jusqu'à F10.",
+    "resumeEn": "When the hero charges, Snotlings charging the same target may forfeit their attacks: +1 Strength per forfeited base attack, up to 10.",
+    "condition": null
+   },
+   {
+    "en": "Achilles' Heel",
+    "nom": "Talon d’Achille",
+    "resume": "Les jets pour blesser de 6 infligent des coups critiques quelle que soit l'Endurance ; avec Ruée, les blessures sur 5+ annulent la sauvegarde.",
+    "resumeEn": "Wound rolls of 6 cause critical hits regardless of Toughness; with Stampede, wounds on 5+ deny armour saves.",
+    "condition": null
+   },
+   {
+    "en": "Worm",
+    "nom": "Ver",
+    "resume": "Pendant le mouvement il peut traverser les murs (charge comprise) ; sur un 1 il reste coincé. Incompatible avec Ruée.",
+    "resumeEn": "During movement he can pass through walls (including charging); on a 1 he gets stuck. Cannot be combined with Stampede.",
+    "condition": "snotlings/snotling-scouts"
+   },
+   {
+    "en": "Big Bully",
+    "nom": "Grosse brute",
+    "resume": "Le héros gagne une compétence de Force. Incompatible avec Ridiculement minuscule.",
+    "resumeEn": "The hero gains one Strength skill. Cannot be combined with Frustratingly Tiny.",
+    "condition": "snotlings/snotling-bigsnotz"
+   },
+   {
+    "en": "Frustratingly Tiny",
+    "nom": "Ridiculement minuscule",
+    "resume": "-1 pour le toucher au corps à corps contre lui ; les ennemis divisent leur Initiative par deux pour le repérer caché. Snotlings uniquement, incompatible avec Grosse brute.",
+    "resumeEn": "-1 to hit him in close combat; enemies halve Initiative to detect him when hidden. Snotlings only, not with Big Bully.",
+    "condition": null
+   },
+   {
+    "en": "Mob Master",
+    "nom": "Maître de la meute",
+    "resume": "À 2 ps d'un grouillot, lui et le grouillot sont insensibles à la psychologie ; avec Ruée, +1 pour toucher par attaque sacrifiée.",
+    "resumeEn": "Within 2\" of a Mob, he and the Mob are immune to psychology; with Stampede, +1 to hit per forfeited attack.",
+    "condition": null
+   }
+  ]
+ },
+ "races": {
+  "snotling": {
+   "nom": "Snotling",
+   "max": {
+    "M": 4,
+    "CC": 4,
+    "CT": 4,
+    "F": 3,
+    "E": 3,
+    "PV": 2,
+    "I": 9,
+    "A": 4,
+    "Cd": 6
+   }
+  }
+ },
+ "notes": "Effectif 3 à 30. Le gobelin malmené utilise la race gobelin existante (maximums de la page identiques : 4 5 6 4 4 3 6 4 7). Maximums snotling repris du tableau de la page. Arc court et armure légère : gobelin et Gros-Morveux uniquement. « Dague / bâton pointu » (1er gratuit / 2 co) : saisis comme deux paires d'objets. Caillou gratuit (remplacé gratuitement). Équipe de tireurs : une seule arme de tir autre que caillou/lance-pierre ; tromblon limité à 0-2 dans la bande ; pistolet sans paire. Avortons : une seule arme à une main, pas d'armure (arme lourde et armures retirées) ; tueur d'un avorton : +1 XP sur 5+. Roulo snotling (0-1, homme de main, 100 co) : M variable (1D6, saisi « D6 »), équipage armé d'une dague et d'un caillou (équipement fixe, liste vide), race null, progresse sur la table des héros (Combat, Force, Vitesse) sans être un héros ; sorties d'améliorations (armes, Sprint, Coup puissant) non saisies. Worm : éclaireurs et avortons promus. Power Squig (20+1D6 co, rare 8) comme un familier : hors listes, non saisi. Magie Waaagh! snotling : Bénédiction de Mork 6, On peut voler ! 7, Pied de Gork 9, Cailloux du destin 6, Bâton pointu de la mort 7, Bénédiction de la crevette 6."
+}

@@ -193,6 +193,14 @@ const RACE_PAR_GUERRIER = {
   "ostland/ogre": "ogre",
 };
 
+/** Clé de race d'un guerrier des données (humain, nain, skaven…), null si inconnue. */
+export function raceGuerrier(guerrier) {
+  if (!guerrier) return null;
+  // Les guerriers des suppléments portent leur race ; ceux de BSData passent par la table.
+  if ("race" in guerrier) return guerrier.race;
+  return guerrier.id in RACE_PAR_GUERRIER ? RACE_PAR_GUERRIER[guerrier.id] : "humain";
+}
+
 /**
  * Maximums de caractéristiques d'un guerrier des données.
  * @returns {{ race: string, max: Object<string, number> } | null}
@@ -208,10 +216,7 @@ export function maximumsGuerrier(guerrier) {
     }
     return { race: null, sansProgression: true, max };
   }
-  // Les guerriers des suppléments portent leur race ; ceux de BSData passent par la table.
-  const id =
-    "race" in guerrier ? guerrier.race : guerrier.id in RACE_PAR_GUERRIER ? RACE_PAR_GUERRIER[guerrier.id] : "humain";
-  const race = RACES[id];
+  const race = RACES[raceGuerrier(guerrier)];
   return race ? { race: race.nom, sansProgression: false, max: { ...race.max } } : null;
 }
 
@@ -248,7 +253,8 @@ function conditionRemplie(condition, fig) {
 export function competencesAccessibles(fig, guerrier) {
   if (fig.categorie !== "heros") return [];
   // Un homme de main promu (« Ce gars a du talent ») n'a pas de listes dans les données : listes communes.
-  const listes = guerrier?.categorie === "heros" ? guerrier.competences : LISTES_COMMUNES;
+  // Un franc-tireur a les siennes, comme un héros.
+  const listes = guerrier && guerrier.categorie !== "hdm" ? guerrier.competences : LISTES_COMMUNES;
   const acquises = new Set((fig.competences || []).map((c) => c.toLowerCase()));
   return listes
     .filter((liste) => COMPETENCES[liste])

@@ -1,0 +1,1156 @@
+{
+  "id": "pillards-lustrie",
+  "url": "https://mordheimer.net/docs/warbands/grade-1c-warbands/lustrian-reavers",
+  "nomEn": "Lustrian Reavers",
+  "nom": "Pillards de Lustrie",
+  "tresor": 500,
+  "effectifMax": 10,
+  "regles": [
+    "Chosen Leader",
+    "Rare Heroes",
+    "Promotions"
+  ],
+  "guerriers": [
+    {
+      "cle": "Conqueror",
+      "nom": "Conquérant",
+      "categorie": "heros",
+      "cout": 150,
+      "min": 0,
+      "max": 1,
+      "xp": 24,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "4",
+        "PV": "2",
+        "I": "3",
+        "A": "2",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Survivor"
+      ],
+      "competences": [
+        "Combat",
+        "Force"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Misericordia",
+              "nom": "Miséricorde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Lance",
+              "nom": "Lance de cavalerie",
+              "cout": 40
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Javelins",
+              "nom": "Javelots",
+              "cout": 10
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            },
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 15
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 10
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Rope & Hook",
+              "nom": "Corde et grappin",
+              "cout": 5
+            },
+            {
+              "en": "Crimson Shade",
+              "nom": "Teinte cramoisie",
+              "cout": 35
+            },
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 30
+            },
+            {
+              "en": "Net",
+              "nom": "Filet",
+              "cout": 5
+            },
+            {
+              "en": "Warhorse",
+              "nom": "Cheval de guerre",
+              "cout": 80
+            },
+            {
+              "en": "Warhound",
+              "nom": "Chien de guerre",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Saurus Slayer",
+      "nom": "Tueur de saurus",
+      "categorie": "heros",
+      "cout": 135,
+      "min": 0,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "2",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Duellist"
+      ],
+      "competences": [
+        "Combat",
+        "Force",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Misericordia",
+              "nom": "Miséricorde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Lance",
+              "nom": "Lance de cavalerie",
+              "cout": 40
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Javelins",
+              "nom": "Javelots",
+              "cout": 10
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            },
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 15
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 10
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 10
+            },
+            {
+              "en": "Trophy Slann Holy Headdress",
+              "nom": "Coiffe sacrée de slann (trophée)",
+              "cout": 35
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Rope & Hook",
+              "nom": "Corde et grappin",
+              "cout": 5
+            },
+            {
+              "en": "Crimson Shade",
+              "nom": "Teinte cramoisie",
+              "cout": 35
+            },
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 30
+            },
+            {
+              "en": "Net",
+              "nom": "Filet",
+              "cout": 5
+            },
+            {
+              "en": "Warhorse",
+              "nom": "Cheval de guerre",
+              "cout": 80
+            },
+            {
+              "en": "Warhound",
+              "nom": "Chien de guerre",
+              "cout": 20
+            },
+            {
+              "en": "Lizardmen Skin Cloak",
+              "nom": "Cape en peau d'homme-lézard",
+              "cout": 10
+            },
+            {
+              "en": "Skull Mask",
+              "nom": "Masque-crâne",
+              "cout": 15
+            },
+            {
+              "en": "Lizardman Sword",
+              "nom": "Épée d'homme-lézard (amélioration)",
+              "cout": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Beastmaster",
+      "nom": "Maître des bêtes",
+      "categorie": "heros",
+      "cout": 90,
+      "min": 0,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "War Beasts"
+      ],
+      "competences": [
+        "Tir",
+        "Force",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Misericordia",
+              "nom": "Miséricorde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Lance",
+              "nom": "Lance de cavalerie",
+              "cout": 40
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Javelins",
+              "nom": "Javelots",
+              "cout": 10
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            },
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 15
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 10
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Rope & Hook",
+              "nom": "Corde et grappin",
+              "cout": 5
+            },
+            {
+              "en": "Crimson Shade",
+              "nom": "Teinte cramoisie",
+              "cout": 35
+            },
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 30
+            },
+            {
+              "en": "Net",
+              "nom": "Filet",
+              "cout": 5
+            },
+            {
+              "en": "Warhorse",
+              "nom": "Cheval de guerre",
+              "cout": 80
+            },
+            {
+              "en": "Warhound",
+              "nom": "Chien de guerre",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Jungle Shadow",
+      "nom": "Ombre de la jungle",
+      "categorie": "heros",
+      "cout": 90,
+      "min": 0,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Silent Hunter",
+        "Surprise Attack",
+        "Canopy Walker"
+      ],
+      "competences": [
+        "Tir",
+        "Érudition",
+        "Vitesse"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Misericordia",
+              "nom": "Miséricorde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Lance",
+              "nom": "Lance de cavalerie",
+              "cout": 40
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Javelins",
+              "nom": "Javelots",
+              "cout": 10
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            },
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 15
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 10
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Rope & Hook",
+              "nom": "Corde et grappin",
+              "cout": 5
+            },
+            {
+              "en": "Crimson Shade",
+              "nom": "Teinte cramoisie",
+              "cout": 35
+            },
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 30
+            },
+            {
+              "en": "Net",
+              "nom": "Filet",
+              "cout": 5
+            },
+            {
+              "en": "Warhorse",
+              "nom": "Cheval de guerre",
+              "cout": 80
+            },
+            {
+              "en": "Warhound",
+              "nom": "Chien de guerre",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Trapmaster",
+      "nom": "Maître piégeur",
+      "categorie": "heros",
+      "cout": 140,
+      "min": 0,
+      "max": 1,
+      "xp": 17,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Deadeye",
+        "Traps"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Mace",
+              "nom": "Masse",
+              "cout": 3
+            },
+            {
+              "en": "Misericordia",
+              "nom": "Miséricorde",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Lance",
+              "nom": "Lance de cavalerie",
+              "cout": 40
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Javelins",
+              "nom": "Javelots",
+              "cout": 10
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            },
+            {
+              "en": "Blowpipe",
+              "nom": "Sarbacane",
+              "cout": 15
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 10
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Rope & Hook",
+              "nom": "Corde et grappin",
+              "cout": 5
+            },
+            {
+              "en": "Crimson Shade",
+              "nom": "Teinte cramoisie",
+              "cout": 35
+            },
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 30
+            },
+            {
+              "en": "Net",
+              "nom": "Filet",
+              "cout": 5
+            },
+            {
+              "en": "Warhorse",
+              "nom": "Cheval de guerre",
+              "cout": 80
+            },
+            {
+              "en": "Warhound",
+              "nom": "Chien de guerre",
+              "cout": 20
+            },
+            {
+              "en": "Trap",
+              "nom": "Piège",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Prospects",
+      "nom": "Aspirants",
+      "categorie": "hdm",
+      "cout": 35,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Prospect"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 10
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Estalian Warhound",
+      "nom": "Chien de guerre estalien",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "4",
+        "CT": "0",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Animals",
+        "War Beast"
+      ],
+      "competences": [],
+      "equipement": []
+    },
+    {
+      "cle": "Barbary Monkey",
+      "nom": "Singe de Barbarie",
+      "categorie": "hdm",
+      "cout": 40,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "4",
+        "CT": "0",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "2",
+        "Cd": "6"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Animals",
+        "War Beast",
+        "Agile Ape"
+      ],
+      "competences": [],
+      "equipement": []
+    },
+    {
+      "cle": "Tilean Hunting Hawk",
+      "nom": "Faucon de chasse tiléen",
+      "categorie": "hdm",
+      "cout": 30,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "12",
+        "CC": "4",
+        "CT": "0",
+        "F": "4",
+        "E": "3",
+        "PV": "-",
+        "I": "5",
+        "A": "1",
+        "Cd": "-"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Animals",
+        "War Beast",
+        "Hunting Hawk"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Chosen Leader": {
+      "fr": {
+        "nom": "Chef désigné",
+        "resume": "La bande doit compter au moins un héros ; n'importe lequel peut être désigné comme chef."
+      },
+      "en": {
+        "nom": "Chosen Leader",
+        "resume": "The warband needs at least one Hero, and any Hero may be designated as its leader."
+      }
+    },
+    "Rare Heroes": {
+      "fr": {
+        "nom": "Héros uniques",
+        "resume": "Chaque type de héros ne peut être recruté qu'une seule fois pendant toute l'existence de la bande."
+      },
+      "en": {
+        "nom": "Rare Heroes",
+        "resume": "Each Hero type may be hired only once during the whole life of the warband."
+      }
+    },
+    "Promotions": {
+      "fr": {
+        "nom": "Promotions",
+        "resume": "Un héros perdu n'est pas remplacé : un aspirant est promu à sa place, récupère son équipement, choisit deux listes de compétences et fait aussitôt un jet de progression de héros."
+      },
+      "en": {
+        "nom": "Promotions",
+        "resume": "A lost Hero cannot be rebought: a Prospect is promoted in his place, keeps his gear, picks two skill lists and immediately rolls once on the Hero advance table."
+      }
+    },
+    "Survivor": {
+      "fr": {
+        "nom": "Survivant",
+        "resume": "Ne peut être mis hors de combat que s'il est déjà à terre ou sonné (sinon il est sonné) ; son premier résultat « Mort » aux blessures graves devient « Blessures multiples »."
+      },
+      "en": {
+        "nom": "Survivor",
+        "resume": "Can only be taken out of action if already knocked down or stunned (otherwise he is stunned); his first Dead serious injury becomes Multiple Injuries."
+      }
+    },
+    "Duellist": {
+      "fr": {
+        "nom": "Duelliste",
+        "resume": "Au premier tour d'un corps à corps contre un seul ennemi, relance ses jets pour toucher ratés, qu'il ait chargé ou non."
+      },
+      "en": {
+        "nom": "Duellist",
+        "resume": "In the first turn of a close combat against a single enemy, re-rolls missed to-hit rolls whether charging or charged."
+      }
+    },
+    "War Beasts": {
+      "fr": {
+        "nom": "Bêtes de guerre",
+        "resume": "Peut adjoindre jusqu'à 2 bêtes de guerre à la bande, qui peuvent utiliser son Commandement à 6 ps."
+      },
+      "en": {
+        "nom": "War Beasts",
+        "resume": "May add up to 2 War Beasts to the warband, which may use his Leadership within 6\"."
+      }
+    },
+    "War Beast": {
+      "fr": {
+        "nom": "Bête de guerre",
+        "resume": "Animal du maître des bêtes : utilise son Commandement à 6 ps, ne gagne jamais d'expérience et meurt sur 1-2 s'il est mis hors de combat."
+      },
+      "en": {
+        "nom": "War Beast",
+        "resume": "Beastmaster's animal: uses his Leadership within 6\", never gains experience and dies on a 1-2 when taken out of action."
+      }
+    },
+    "Agile Ape": {
+      "fr": {
+        "nom": "Singe agile",
+        "resume": "Escalade sans test d'Initiative, relance les tests de charge plongeante ratés, entre dans les bâtiments et a une sauvegarde invulnérable de 5+."
+      },
+      "en": {
+        "nom": "Agile Ape",
+        "resume": "Climbs without Initiative tests, re-rolls failed diving charge tests, may enter buildings and has a 5+ ward save."
+      }
+    },
+    "Hunting Hawk": {
+      "fr": {
+        "nom": "Faucon de chasse",
+        "resume": "Attaque au corps à corps un ennemi jusqu'à 12 ps puis revient aussitôt ; il ne peut pas être ciblé seul et n'attaque pas si le maître est engagé."
+      },
+      "en": {
+        "nom": "Hunting Hawk",
+        "resume": "Attacks an enemy up to 12\" away in close combat and returns at once; cannot be targeted on its own and does not attack if the Beastmaster is engaged."
+      }
+    },
+    "Silent Hunter": {
+      "fr": {
+        "nom": "Chasseur silencieux",
+        "resume": "Est caché tant qu'il touche un décor d'au moins 1 ps de haut ; tirer ne le révèle pas, lancer un sort si."
+      },
+      "en": {
+        "nom": "Silent Hunter",
+        "resume": "Counts as hidden while touching terrain at least 1\" high; shooting does not reveal him but casting does."
+      }
+    },
+    "Surprise Attack": {
+      "fr": {
+        "nom": "Attaque surprise",
+        "resume": "Relance ses jets pour toucher ratés contre un ennemi attaqué par l'arrière."
+      },
+      "en": {
+        "nom": "Surprise Attack",
+        "resume": "Re-rolls missed hits against enemies attacked from behind."
+      }
+    },
+    "Canopy Walker": {
+      "fr": {
+        "nom": "Marcheur de canopée",
+        "resume": "Réussit automatiquement ses tests d'escalade, de saut et de chute."
+      },
+      "en": {
+        "nom": "Canopy Walker",
+        "resume": "Automatically passes climbing, jumping and falling tests."
+      }
+    },
+    "Deadeye": {
+      "fr": {
+        "nom": "Œil de lynx",
+        "resume": "Ne subit pas de malus de tir à longue portée."
+      },
+      "en": {
+        "nom": "Deadeye",
+        "resume": "Suffers no long-range shooting penalty."
+      }
+    },
+    "Traps": {
+      "fr": {
+        "nom": "Pièges",
+        "resume": "Pendant la phase de tir, pose un vrai et un faux pion piège à 3 ps de lui ; une figurine qui passe à 2 ps révèle le pion, et un vrai piège inflige D3 touches de F5 sans critique."
+      },
+      "en": {
+        "nom": "Traps",
+        "resume": "In the shooting phase, places one real and one false trap counter within 3\"; a model moving within 2\" reveals it and a real trap deals D3 S5 hits with no criticals."
+      }
+    },
+    "Prospect": {
+      "fr": {
+        "nom": "Aspirant",
+        "resume": "Relance les résultats « Ce gars a du talent » ; une fois promu, il cesse de compter comme aspirant et libère une place."
+      },
+      "en": {
+        "nom": "Prospect",
+        "resume": "Re-rolls The Lad's Got Talent results; once promoted he no longer counts as a Prospect, freeing a slot."
+      }
+    }
+  },
+  "competencesSpeciales": null,
+  "races": {},
+  "notes": "Effectif max 10, les bêtes de guerre comptent dedans ; jusqu'à 5 aspirants. Tous les héros sont 0-1 et l'un d'eux est désigné chef (aucun n'a la règle Leader en propre). Les coûts de recrutement incluent apparemment l'équipement de départ (non précisé par la page) : Conquérant (armure lourde de maître 4+, bec de corbin, casque), Tueur de saurus (armure lourde, miséricorde, 2 épées, casque), Maître des bêtes (armure lourde, lance, épée), Ombre de la jungle (javelots, armure légère, 2 dagues), Maître piégeur (armure lourde, épée, fusil de chasse tiléen, pots à feu, manteau de feuilles, 1 piège). Cet équipement de départ hors liste ne peut pas être remplacé et n'est pas saisi. Options du tueur de saurus (cape en peau d'homme-lézard 6+ invulnérable, masque-crâne = Peur, épée d'homme-lézard = amélioration d'épée, coiffe slann +2 en sauvegarde) saisies dans sa seule liste. Pièges supplémentaires : 5 co chacun, 5 au plus (en plus du premier), saisis dans la liste du maître piégeur. L'Ombre de la jungle peut devenir sorcier (Magie mineure, 1 sort) pour +30 co en perdant son armure légère : option non saisie comme règle. Bêtes de guerre : réservées au maître des bêtes, 2 au maximum au total, achetées à la création et remplaçables ; chien estalien sauvegarde 5+ ; faucon PV et Cd « - ». Pas de liste de compétences spéciales. Francs-tireurs autorisés : garde du corps ogre, tueur de trolls nain, tireur d'élite tiléen, grand chasseur de gibier. Javelin(s) saisi avec la clé Javelins."
+}

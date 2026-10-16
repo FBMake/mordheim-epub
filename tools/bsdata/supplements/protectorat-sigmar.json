@@ -1,0 +1,937 @@
+{
+ "id": "protectorat-sigmar",
+ "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/protectorate-of-sigmar",
+ "nomEn": "Protectorate of Sigmar",
+ "nom": "Protectorat de Sigmar",
+ "tresor": 500,
+ "effectifMax": 15,
+ "regles": [
+  "Death of a Leader",
+  "Witch Hunter Hired Swords"
+ ],
+ "guerriers": [
+  {
+   "cle": "Warrior Priest",
+   "nom": "Prêtre-guerrier",
+   "categorie": "heros",
+   "cout": 80,
+   "min": 1,
+   "max": 1,
+   "xp": 20,
+   "profil": {
+    "M": "4",
+    "CC": "4",
+    "CT": "3",
+    "F": "4",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "8"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Leader",
+    "Prayers of Sigmar"
+   ],
+   "competences": [
+    "Combat",
+    "Érudition",
+    "Force",
+    "Vitesse",
+    "Spéciales (Protectorat de Sigmar)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Sigmarite Warhammer",
+       "nom": "Marteau de guerre sigmarite",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Longbow",
+       "nom": "Arc long",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Shield of Sigmar",
+       "nom": "Bouclier de Sigmar",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Holy Water",
+       "nom": "Eau bénite",
+       "cout": 5
+      },
+      {
+       "en": "Blessed Bolts",
+       "nom": "Carreaux bénis",
+       "cout": 25
+      },
+      {
+       "en": "Holy Relic",
+       "nom": "Relique sacrée",
+       "cout": 15
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Templar",
+   "nom": "Templier",
+   "categorie": "heros",
+   "cout": 45,
+   "min": 0,
+   "max": 2,
+   "xp": 12,
+   "profil": {
+    "M": "4",
+    "CC": "4",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Zealous"
+   ],
+   "competences": [
+    "Combat",
+    "Force",
+    "Vitesse",
+    "Spéciales (Protectorat de Sigmar)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Sigmarite Warhammer",
+       "nom": "Marteau de guerre sigmarite",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Longbow",
+       "nom": "Arc long",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Shield of Sigmar",
+       "nom": "Bouclier de Sigmar",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Holy Water",
+       "nom": "Eau bénite",
+       "cout": 5
+      },
+      {
+       "en": "Blessed Bolts",
+       "nom": "Carreaux bénis",
+       "cout": 25
+      },
+      {
+       "en": "Holy Relic",
+       "nom": "Relique sacrée",
+       "cout": 15
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Acolyte",
+   "nom": "Acolyte",
+   "categorie": "heros",
+   "cout": 25,
+   "min": 0,
+   "max": 2,
+   "xp": 2,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "2",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [
+    "Combat",
+    "Érudition",
+    "Force",
+    "Vitesse",
+    "Spéciales (Protectorat de Sigmar)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      },
+      {
+       "en": "Sigmarite Warhammer",
+       "nom": "Marteau de guerre sigmarite",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Longbow",
+       "nom": "Arc long",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      },
+      {
+       "en": "Shield of Sigmar",
+       "nom": "Bouclier de Sigmar",
+       "cout": 20
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Holy Water",
+       "nom": "Eau bénite",
+       "cout": 5
+      },
+      {
+       "en": "Blessed Bolts",
+       "nom": "Carreaux bénis",
+       "cout": 25
+      },
+      {
+       "en": "Holy Relic",
+       "nom": "Relique sacrée",
+       "cout": 15
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Huntsman",
+   "nom": "Veneur",
+   "categorie": "heros",
+   "cout": 45,
+   "min": 0,
+   "max": 1,
+   "xp": 8,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "4",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [
+    "Beastmaster (Huntsman)"
+   ],
+   "competences": [
+    "Combat",
+    "Tir",
+    "Spéciales (Protectorat de Sigmar)"
+   ],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Longbow",
+       "nom": "Arc long",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Divers",
+     "objets": [
+      {
+       "en": "Blessed Bolts",
+       "nom": "Carreaux bénis",
+       "cout": 25
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Archers",
+   "nom": "Archers",
+   "categorie": "hdm",
+   "cout": 35,
+   "min": 0,
+   "max": 5,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "4",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Longbow",
+       "nom": "Arc long",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Crusaders",
+   "nom": "Croisés",
+   "categorie": "hdm",
+   "cout": 25,
+   "min": 0,
+   "max": 5,
+   "xp": 0,
+   "profil": {
+    "M": "4",
+    "CC": "3",
+    "CT": "3",
+    "F": "3",
+    "E": "3",
+    "PV": "1",
+    "I": "3",
+    "A": "1",
+    "Cd": "7"
+   },
+   "race": "humain",
+   "sansProgression": false,
+   "regles": [],
+   "competences": [],
+   "equipement": [
+    {
+     "categorie": "Armes de corps à corps",
+     "objets": [
+      {
+       "en": "Dagger",
+       "nom": "Dague",
+       "cout": 2
+      },
+      {
+       "en": "Free Dagger",
+       "nom": "Dague gratuite",
+       "cout": 0
+      },
+      {
+       "en": "Hammer",
+       "nom": "Marteau",
+       "cout": 3
+      },
+      {
+       "en": "Axe",
+       "nom": "Hache",
+       "cout": 5
+      },
+      {
+       "en": "Sword",
+       "nom": "Épée",
+       "cout": 10
+      },
+      {
+       "en": "Spear",
+       "nom": "Lance",
+       "cout": 10
+      },
+      {
+       "en": "Double-handed weapon",
+       "nom": "Arme lourde",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armes de tir",
+     "objets": [
+      {
+       "en": "Crossbow",
+       "nom": "Arbalète",
+       "cout": 25
+      },
+      {
+       "en": "Pistol",
+       "nom": "Pistolet",
+       "cout": 15
+      },
+      {
+       "en": "Brace of Pistols",
+       "nom": "Paire de pistolets",
+       "cout": 30
+      },
+      {
+       "en": "Longbow",
+       "nom": "Arc long",
+       "cout": 15
+      }
+     ]
+    },
+    {
+     "categorie": "Armures",
+     "objets": [
+      {
+       "en": "Light Armour",
+       "nom": "Armure légère",
+       "cout": 20
+      },
+      {
+       "en": "Heavy Armour",
+       "nom": "Armure lourde",
+       "cout": 50
+      },
+      {
+       "en": "Shield",
+       "nom": "Bouclier",
+       "cout": 5
+      },
+      {
+       "en": "Buckler",
+       "nom": "Rondache",
+       "cout": 5
+      },
+      {
+       "en": "Helmet",
+       "nom": "Casque",
+       "cout": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "cle": "Hounds",
+   "nom": "Molosses",
+   "categorie": "hdm",
+   "cout": 15,
+   "min": 0,
+   "max": 5,
+   "xp": 0,
+   "profil": {
+    "M": "6",
+    "CC": "4",
+    "CT": "0",
+    "F": "4",
+    "E": "3",
+    "PV": "1",
+    "I": "4",
+    "A": "1",
+    "Cd": "6"
+   },
+   "race": null,
+   "sansProgression": true,
+   "regles": [
+    "Animals",
+    "Devoted",
+    "Jaws and Brutality"
+   ],
+   "competences": [],
+   "equipement": []
+  }
+ ],
+ "reglesTexte": {
+  "Death of a Leader": {
+   "fr": {
+    "nom": "Mort du chef",
+    "resume": "Si le prêtre-guerrier meurt, l'acolyte le plus expérimenté prend la tête de la bande avec ses avantages mais sans prière ; il pourra en prendre une à sa prochaine progression. Un nouvel acolyte peut alors être recruté."
+   },
+   "en": {
+    "nom": "Death of a Leader",
+    "resume": "If the Warrior Priest dies, the most experienced Acolyte becomes leader with his benefits but no prayer; he may take one at his next advance. Another Acolyte may then be hired."
+   }
+  },
+  "Witch Hunter Hired Swords": {
+   "fr": {
+    "nom": "Francs-tireurs des répurgateurs",
+    "resume": "La bande recrute ses francs-tireurs comme une bande de répurgateurs."
+   },
+   "en": {
+    "nom": "Witch Hunter Hired Swords",
+    "resume": "The warband hires Hired Swords as if it were a Witch Hunter warband."
+   }
+  },
+  "Zealous": {
+   "fr": {
+    "nom": "Zélé",
+    "resume": "Le templier hait toute figurine d'une bande chaotique (skavens, possédés, carnaval du Chaos, hommes-bêtes, bandes comptant un démon)."
+   },
+   "en": {
+    "nom": "Zealous",
+    "resume": "The Templar hates every model from a chaotic warband (Skaven, Possessed, Carnival of Chaos, Beastmen, any warband with a Daemon)."
+   }
+  },
+  "Beastmaster (Huntsman)": {
+   "fr": {
+    "nom": "Maître des bêtes",
+    "resume": "Les animaux de la bande à 6 ps ou moins peuvent utiliser son Commandement ; les bêtes ennemies doivent réussir un test de Commandement pour le charger."
+   },
+   "en": {
+    "nom": "Beastmaster (Huntsman)",
+    "resume": "Warband animals within 6\" may use his Leadership; hostile beasts must pass a Leadership test to charge him."
+   }
+  },
+  "Devoted": {
+   "fr": {
+    "nom": "Dévoué",
+    "resume": "Le molosse peut relancer un test de Commandement raté s'il est à 12 ps ou moins du prêtre-guerrier."
+   },
+   "en": {
+    "nom": "Devoted",
+    "resume": "A Hound may re-roll a failed Leadership test if within 12\" of the Warrior Priest."
+   }
+  },
+  "Jaws and Brutality": {
+   "fr": {
+    "nom": "Crocs et brutalité",
+    "resume": "Les molosses n'utilisent jamais d'armes ni d'armure et ne subissent aucune pénalité pour cela."
+   },
+   "en": {
+    "nom": "Jaws and Brutality",
+    "resume": "Hounds never use weapons or armour and suffer no penalty for it."
+   }
+  }
+ },
+ "competencesSpeciales": {
+  "liste": "Spéciales (Protectorat de Sigmar)",
+  "listeEn": "Special Skills (Protectorate of Sigmar)",
+  "competences": [
+   {
+    "en": "Protection of Sigmar",
+    "nom": "Protection de Sigmar",
+    "resume": "Tout sort qui l'affecterait est annulé sur 4+ sur 1D6 ; un sort annulé n'affecte alors aucune autre figurine.",
+    "resumeEn": "Any spell affecting him is nullified on a 4+ on a D6; a nullified spell affects no other model either.",
+    "condition": null
+   },
+   {
+    "en": "Unshakeable Faith",
+    "nom": "Foi inébranlable",
+    "resume": "Le héros est immunisé contre la peur.",
+    "resumeEn": "The hero is immune to Fear.",
+    "condition": null
+   },
+   {
+    "en": "Utter Determination",
+    "nom": "Détermination absolue",
+    "resume": "Le prêtre-guerrier peut relancer les tests de déroute ratés.",
+    "resumeEn": "The Warrior Priest may re-roll failed Rout tests.",
+    "condition": "chef"
+   },
+   {
+    "en": "Rousing Sermon",
+    "nom": "Sermon exaltant",
+    "resume": "Déclaré au début du tour, une fois par partie : le prêtre-guerrier et les figurines amies à 6 ps ou moins gagnent +1 Attaque pendant la phase de corps à corps de ce tour.",
+    "resumeEn": "Declared at the start of the turn, once per game: the Warrior Priest and friendly models within 6\" gain +1 Attack in that turn's close combat phase.",
+    "condition": "chef"
+   },
+   {
+    "en": "Sigmar's Guidance",
+    "nom": "Guidance de Sigmar",
+    "resume": "Le héros peut choisir librement la cible de ses tirs, pas seulement l'ennemi le plus proche.",
+    "resumeEn": "The hero may freely choose the target of his ranged attacks, not only the closest enemy.",
+    "condition": null
+   }
+  ]
+ },
+ "races": {},
+ "notes": "Le tableau de compétences n'a pas de colonne « Spéciales » ; la page dit seulement « les héros du Protectorat ayant accès aux compétences spéciales » : accès donné à tous les héros (choix). Le Veneur (0-1) remplace un Templier : Templiers + Veneur ≤ 2 (non modélisé). Objets « Heroes only » (marteau sigmarite, bouclier de Sigmar, eau bénite, carreaux bénis, relique) retirés des hommes de main. Prêtre-guerrier : une prière de Sigmar tirée au hasard. Molosses : race inconnue (null). Clé « Beastmaster (Huntsman) » choisie pour ne pas entrer en conflit avec la règle « Beastmaster » des Elfes noirs. Carreaux bénis : +1 F contre morts-vivants, créatures du Chaos et sorciers. Bouclier de Sigmar : sauvegarde spéciale 6+ contre les tirs, pas de malus avec armure lourde. Effectif minimum 3."
+}

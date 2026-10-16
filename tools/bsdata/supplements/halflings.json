@@ -1,0 +1,841 @@
+{
+  "id": "halflings",
+  "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/halflings",
+  "nomEn": "Halflings",
+  "nom": "Halflings",
+  "tresor": 500,
+  "effectifMax": 20,
+  "regles": [
+    "Pretty Much Human",
+    "Too Big",
+    "Halfling Items"
+  ],
+  "guerriers": [
+    {
+      "cle": "Halfling Elder",
+      "nom": "Ancien halfling",
+      "categorie": "heros",
+      "cout": 60,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "5",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "halfling",
+      "sansProgression": false,
+      "regles": [
+        "Leader"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Halflings)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Hunting Arrows",
+              "nom": "Flèches de chasse",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Halfling Cook",
+      "nom": "Cuisinier halfling",
+      "categorie": "heros",
+      "cout": 35,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "halfling",
+      "sansProgression": false,
+      "regles": [
+        "Master Chef"
+      ],
+      "competences": [
+        "Force",
+        "Vitesse",
+        "Spéciales (Halflings)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Tenderiser (Hammer)",
+              "nom": "Attendrisseur (marteau)",
+              "cout": 3
+            },
+            {
+              "en": "Meat Cleaver (Axe)",
+              "nom": "Couperet (hache)",
+              "cout": 5
+            },
+            {
+              "en": "Machete (Sword)",
+              "nom": "Machette (épée)",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Cooking Pot (Helmet)",
+              "nom": "Marmite (casque)",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Halfling Thief",
+      "nom": "Voleur halfling",
+      "categorie": "heros",
+      "cout": 30,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "4",
+        "F": "2",
+        "E": "2",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "halfling",
+      "sansProgression": false,
+      "regles": [
+        "Infiltration",
+        "Pick Locks",
+        "Cutpurse"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse",
+        "Spéciales (Halflings)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 35
+            },
+            {
+              "en": "Pistol",
+              "nom": "Pistolet",
+              "cout": 25
+            },
+            {
+              "en": "Brace of Pistols",
+              "nom": "Paire de pistolets",
+              "cout": 40
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Rope and Hook",
+              "nom": "Corde et grappin",
+              "cout": 5
+            },
+            {
+              "en": "Lock Picks",
+              "nom": "Crochets de serrurier",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Halfling Youths",
+      "nom": "Jeunes halflings",
+      "categorie": "heros",
+      "cout": 10,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "3",
+        "F": "2",
+        "E": "2",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "halfling",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Tir",
+        "Vitesse",
+        "Spéciales (Halflings)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Halfling Scouts",
+      "nom": "Éclaireurs halflings",
+      "categorie": "hdm",
+      "cout": 20,
+      "min": 0,
+      "max": 7,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "4",
+        "F": "2",
+        "E": "2",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "halfling",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Hunting Arrows",
+              "nom": "Flèches de chasse",
+              "cout": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Halfling Warriors",
+      "nom": "Guerriers halflings",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "halfling",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Piggies",
+      "nom": "Cochons",
+      "categorie": "hdm",
+      "cout": 20,
+      "min": 0,
+      "max": 4,
+      "xp": 0,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "0",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "4"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Animals",
+        "Never Gain Experience"
+      ],
+      "competences": [],
+      "equipement": []
+    },
+    {
+      "cle": "Village Ogre",
+      "nom": "Ogre du village",
+      "categorie": "hdm",
+      "cout": 140,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "3",
+        "CT": "2",
+        "F": "4",
+        "E": "4",
+        "PV": "3",
+        "I": "3",
+        "A": "2",
+        "Cd": "7"
+      },
+      "race": "ogre",
+      "sansProgression": false,
+      "regles": [
+        "Fear",
+        "Large Target",
+        "Slow Witted",
+        "Protective"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Hammer",
+              "nom": "Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reglesTexte": {
+    "Pretty Much Human": {
+      "fr": {
+        "nom": "Presque humains",
+        "resume": "Les halflings peuvent engager tous les francs-tireurs accessibles aux mercenaires humains."
+      },
+      "en": {
+        "nom": "Pretty Much Human",
+        "resume": "Halflings may hire any Hired Sword available to human mercenaries."
+      }
+    },
+    "Too Big": {
+      "fr": {
+        "nom": "Trop grand",
+        "resume": "Les halflings ne peuvent jamais utiliser arc long, arc elfique, arquebuse, long fusil ni tromblon, même via une progression."
+      },
+      "en": {
+        "nom": "Too Big",
+        "resume": "Halflings may never use longbows, elf bows, handguns, long rifles or blunderbusses, even through advances."
+      }
+    },
+    "Halfling Items": {
+      "fr": {
+        "nom": "Objets halflings",
+        "resume": "Les objets halflings (livre de cuisine halfling, etc.) n'apportent aucun bonus à la bande."
+      },
+      "en": {
+        "nom": "Halfling Items",
+        "resume": "Halfling items such as the Halfling Cookbook give this warband no bonus."
+      }
+    },
+    "Master Chef": {
+      "fr": {
+        "nom": "Maître cuisinier",
+        "resume": "À la vente de trésors ou de malepierre, sur 5+ au D6 la bande compte comme d'une taille inférieure."
+      },
+      "en": {
+        "nom": "Master Chef",
+        "resume": "When selling treasure or Wyrdstone, on a 5+ the warband counts as one size smaller."
+      }
+    },
+    "Infiltration": {
+      "fr": {
+        "nom": "Infiltration",
+        "resume": "Se déploie après l'adversaire, hors de sa vue et à au moins 12 ps de tout ennemi ; si plusieurs figurines infiltrent, jet pour l'ordre."
+      },
+      "en": {
+        "nom": "Infiltration",
+        "resume": "Deploys after the enemy, out of sight and at least 12\" from any enemy; roll off if several models infiltrate."
+      }
+    },
+    "Pick Locks": {
+      "fr": {
+        "nom": "Crocheteur",
+        "resume": "Ouvrir une porte verrouillée ne demande qu'un test d'Initiative réussi."
+      },
+      "en": {
+        "nom": "Pick Locks",
+        "resume": "Opening a locked door needs only a passed Initiative test."
+      }
+    },
+    "Cutpurse": {
+      "fr": {
+        "nom": "Coupe-bourse",
+        "resume": "Si le voleur combat sans être mis hors de combat, la bande gagne un trésor de plus."
+      },
+      "en": {
+        "nom": "Cutpurse",
+        "resume": "If the Thief fights and is not taken out of action, the warband gains +1 Treasure."
+      }
+    },
+    "Protective": {
+      "fr": {
+        "nom": "Protecteur",
+        "resume": "Une fois l'ogre du village recruté, aucun garde du corps ogre ne peut rejoindre la bande (celui déjà engagé part)."
+      },
+      "en": {
+        "nom": "Protective",
+        "resume": "Once a Village Ogre is hired, no Ogre Bodyguard may join; one already hired leaves."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Halflings)",
+    "listeEn": "Special Skills (Halflings)",
+    "competences": [
+      {
+        "en": "Quiet as a Mouse",
+        "nom": "Discret comme une souris",
+        "resume": "Pour repérer ce halfling caché, l'ennemi n'utilise que la moitié de son Initiative (arrondie à l'inférieur) en pas.",
+        "resumeEn": "Enemies use half their Initiative (rounded down) in inches to detect this hidden Halfling.",
+        "condition": null
+      },
+      {
+        "en": "Crude Belch",
+        "nom": "Rot grossier",
+        "resume": "Au premier round de corps à corps, chaque ennemi au contact fait un test de Commandement ; s'il échoue, il rate sa première attaque.",
+        "resumeEn": "In the first round of combat, enemies in base contact take a Ld test; on a failure they miss their first attack.",
+        "condition": null
+      },
+      {
+        "en": "Wizened Halfling",
+        "nom": "Halfling chenu",
+        "resume": "Les halflings à 6 ps du chef peuvent relancer leurs tests de Commandement ratés, avec le Commandement du chef. Chef uniquement.",
+        "resumeEn": "Halflings within 6\" of the leader may re-roll failed Ld tests using his Ld. Leader only.",
+        "condition": "chef"
+      },
+      {
+        "en": "Stealthy",
+        "nom": "Furtif",
+        "resume": "Peut se cacher après avoir couru et courir à moins de 8 ps des ennemis s'il commence et finit caché. Voleur uniquement.",
+        "resumeEn": "May hide after running and run within 8\" of enemies if starting and ending hidden. Thief only.",
+        "condition": "halflings/halfling-thief"
+      },
+      {
+        "en": "Skilled Huntsman",
+        "nom": "Chasseur habile",
+        "resume": "Après un tir depuis une cachette, reste caché sur 3+ au D6 ; pas avec les armes à poudre.",
+        "resumeEn": "After shooting from hiding, stays hidden on a 3+; not with black powder weapons.",
+        "condition": null
+      },
+      {
+        "en": "Layers of Fat",
+        "nom": "Couches de graisse",
+        "resume": "Sauvegarde de base de 6 quelle que soit la Force adverse, en plus de l'armure.",
+        "resumeEn": "Basic 6+ save regardless of attacker's Strength, in addition to armour.",
+        "condition": null
+      },
+      {
+        "en": "Shifty",
+        "nom": "Fuyant",
+        "resume": "Quand il est chargé, gagne une attaque bonus qui frappe en premier.",
+        "resumeEn": "When charged, gains a bonus attack that strikes first.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Liste Aventurier à restrictions, répartie par guerrier : dague, marteau (attendrisseur), hache (couperet), épée (machette) et casque (marmite) réservés au cuisinier selon la page ; dague 1re gratuite donnée à tous (règle de base, la page la réserve au cuisinier). Arme lourde et lance : héros et guerriers halflings. Arc : pas pour les guerriers halflings. Flèches de chasse (35 co) : ancien et éclaireurs. Voleur : pistolet 25 co (40 la paire) d'après la page. XP de départ des hommes de main non indiquée : 0. Cochons : animaux sans arme, se battent sans malus, ne gagnent jamais d'expérience ; race null. Ogre du village : promu héros, seulement compétences de Combat et Force ; gain d'expérience réduit de moitié. Pas de tableau de maximums : races halfling et ogre existantes."
+}

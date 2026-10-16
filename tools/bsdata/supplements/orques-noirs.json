@@ -1,0 +1,783 @@
+{
+  "id": "orques-noirs",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/black-orcs",
+  "nomEn": "Black Orcs",
+  "nom": "Orques noirs",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [
+    "Let the Goons Do the Work",
+    "Da Boss is Dead!",
+    "Animosity"
+  ],
+  "guerriers": [
+    {
+      "cle": "Black Orc Boss",
+      "nom": "Chef orque noir",
+      "categorie": "heros",
+      "cout": 90,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "4",
+        "E": "4",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "orque",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Black Orc",
+        "Oi Behave!"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force",
+        "Vitesse",
+        "Spéciales (Orques noirs)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Choppa",
+              "nom": "Kikoup' (morgenstern)",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Black Orc",
+      "nom": "Orque noir",
+      "categorie": "heros",
+      "cout": 60,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "3",
+        "F": "4",
+        "E": "4",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "orque",
+      "sansProgression": false,
+      "regles": [
+        "Black Orc"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force",
+        "Vitesse",
+        "Spéciales (Orques noirs)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Choppa",
+              "nom": "Kikoup' (morgenstern)",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Heavy Armour",
+              "nom": "Armure lourde",
+              "cout": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Young'un",
+      "nom": "Jeunot",
+      "categorie": "heros",
+      "cout": 25,
+      "min": 0,
+      "max": 2,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "orque",
+      "sansProgression": false,
+      "regles": [
+        "Black Orc Blood"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Spéciales (Orques noirs)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Choppa",
+              "nom": "Kikoup' (morgenstern)",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Orc Boy",
+      "nom": "Boy orque",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "orque",
+      "sansProgression": false,
+      "regles": [
+        "Animosity"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Choppa",
+              "nom": "Kikoup' (morgenstern)",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Orc Shoota",
+      "nom": "Tireur orque",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "6"
+      },
+      "race": "orque",
+      "sansProgression": false,
+      "regles": [
+        "Animosity"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Choppa",
+              "nom": "Kikoup' (morgenstern)",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Crossbow",
+              "nom": "Arbalète",
+              "cout": 25
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Orc Nutta",
+      "nom": "Cinglé orque",
+      "categorie": "hdm",
+      "cout": 40,
+      "min": 0,
+      "max": 4,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "2",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "2",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": "orque",
+      "sansProgression": false,
+      "regles": [
+        "Unstable",
+        "Crazy",
+        "Savage"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Choppa",
+              "nom": "Kikoup' (morgenstern)",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Troll",
+      "nom": "Troll",
+      "categorie": "hdm",
+      "cout": 200,
+      "min": 0,
+      "max": 1,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "3",
+        "CT": "1",
+        "F": "5",
+        "E": "4",
+        "PV": "3",
+        "I": "1",
+        "A": "3",
+        "Cd": "4"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Fear",
+        "Stupidity",
+        "Regeneration",
+        "Dumb Monster",
+        "Always Hungry",
+        "Vomit Attack",
+        "Large Target"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Let the Goons Do the Work": {
+      "fr": {
+        "nom": "Laisser le boulot aux larbins",
+        "resume": "Les Orques noirs combattent à pied et ne montent jamais : seuls les Orques ordinaires peuvent chevaucher un sanglier ou une monture similaire."
+      },
+      "en": {
+        "nom": "Let the Goons Do the Work",
+        "resume": "Black Orcs fight on foot and never ride: only ordinary Orcs may ride a boar or similar mount."
+      }
+    },
+    "Da Boss is Dead!": {
+      "fr": {
+        "nom": "Le boss est mort !",
+        "resume": "Si le chef meurt, un Orque noir prend la tête de la bande en priorité, quelle que soit son expérience, et gagne « Oi Behave! »."
+      },
+      "en": {
+        "nom": "Da Boss is Dead!",
+        "resume": "If the Boss dies, a Black Orc takes command first, whatever his experience, and gains 'Oi Behave!'."
+      }
+    },
+    "Black Orc": {
+      "fr": {
+        "nom": "Orque noir",
+        "resume": "Il bénéficie d'une sauvegarde d'armure naturelle de 6+, cumulable avec son équipement."
+      },
+      "en": {
+        "nom": "Black Orc",
+        "resume": "He has a natural 6+ armour save, which combines with his equipment."
+      }
+    },
+    "Oi Behave!": {
+      "fr": {
+        "nom": "Tenez-vous bien !",
+        "resume": "Le chef peut gifler un homme de main qui rate son test d'animosité : la Force de la gifle s'ajoute au jet d'animosité."
+      },
+      "en": {
+        "nom": "Oi Behave!",
+        "resume": "The Boss may slap a henchman who fails Animosity, adding the slap's Strength to the Animosity roll."
+      }
+    },
+    "Black Orc Blood": {
+      "fr": {
+        "nom": "Sang d'Orque noir",
+        "resume": "Un seul Jeunot peut devenir un Jeunot orque noir pour 10 co, ce qui lui ouvre la compétence « Guerrier aguerri »."
+      },
+      "en": {
+        "nom": "Black Orc Blood",
+        "resume": "One Young'un may be upgraded to a Black Orc Young'un for 10 gc, which lets him take the Proven Warrior skill."
+      }
+    },
+    "Unstable": {
+      "fr": {
+        "nom": "Instables",
+        "resume": "Les Cinglés ne sont pas soumis à l'animosité."
+      },
+      "en": {
+        "nom": "Unstable",
+        "resume": "Nuttaz do not suffer from Animosity."
+      }
+    },
+    "Crazy": {
+      "fr": {
+        "nom": "Fêlés",
+        "resume": "Ils réussissent automatiquement tous les tests basés sur le Commandement, mais ne peuvent jamais apprendre de compétences d'Érudition."
+      },
+      "en": {
+        "nom": "Crazy",
+        "resume": "They automatically pass all Leadership-based tests but can never learn Academic skills."
+      }
+    },
+    "Savage": {
+      "fr": {
+        "nom": "Sauvages",
+        "resume": "Ils doivent courir ou charger vers l'ennemi visible le plus proche et ont une attaque supplémentaire au corps à corps ; ils ne portent ni armure ni arme de tir et ne peuvent ni mener la bande ni prêter leur Cd pour la déroute."
+      },
+      "en": {
+        "nom": "Savage",
+        "resume": "They must run or charge toward the nearest visible enemy and get an extra close-combat attack; they use no armour or missile weapons and can neither lead nor lend their Ld for Rout tests."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Orques noirs)",
+    "listeEn": "Special Skills (Black Orcs)",
+    "competences": [
+      {
+        "en": "Proven Warrior",
+        "nom": "Guerrier aguerri",
+        "resume": "Un Jeunot au sang d'Orque noir ayant 25 points d'expérience devient un Orque noir à part entière (règles, équipement, compétences) tout en gardant son titre.",
+        "resumeEn": "A Young'un with Black Orc Blood and 25 experience becomes a full Black Orc (rules, equipment, skills) while keeping his title.",
+        "condition": "orques-noirs/youngun"
+      },
+      {
+        "en": "'Ard 'ead",
+        "nom": "Tête dure",
+        "resume": "Sauvegarde de 3+ contre l'étourdissement (2+ avec un casque) : un résultat sonné réussi devient « à terre ».",
+        "resumeEn": "3+ save against being stunned (2+ with a helmet): a saved stun becomes knocked down.",
+        "condition": null
+      },
+      {
+        "en": "Waaagh!",
+        "nom": "Waaagh !",
+        "resume": "Ajoute D3 ps à sa distance de charge.",
+        "resumeEn": "Adds D3\" to his charge range.",
+        "condition": null
+      },
+      {
+        "en": "'Ere we go!",
+        "nom": "C'est parti !",
+        "resume": "Il n'a pas à faire de test de peur lorsqu'il charge.",
+        "resumeEn": "He ignores fear tests when charging.",
+        "condition": null
+      },
+      {
+        "en": "Da Cunnin' Plan",
+        "nom": "Le plan rusé",
+        "resume": "Tant que le chef n'est pas hors de combat, la bande peut relancer ses tests de déroute ratés.",
+        "resumeEn": "While the Boss is not out of action, the warband may re-roll failed Rout tests.",
+        "condition": "chef"
+      },
+      {
+        "en": "'Eadbasher",
+        "nom": "Fracasse-crâne",
+        "resume": "Les résultats « à terre » infligés par ses attaques au corps à corps deviennent « sonné ».",
+        "resumeEn": "Knocked-down results from his close-combat attacks become stunned instead.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Source : supplément Nemesis Crown. Effectif minimum 3, maximum 12. Les Jeunots sont des héros (rubrique Heroes) à 0 XP utilisant la liste des hommes de main. Les Tireurs (Shootaz) ne peuvent pas être plus nombreux que les Boyz (max saisi null) ; s'ils deviennent plus nombreux après une mort, il faut recruter un Boy. Boyz, Tireurs et Cinglés s'achètent par groupes de 1 à 5. Restrictions de la liste des hommes de main appliquées par guerrier : arme lourde réservée aux Boyz et Cinglés, arbalète réservée aux Tireurs, Jeunots sans les deux ; Cinglés limités aux armes de corps à corps (règle Sauvages). Kikoup' (Choppa) = compte comme un morgenstern. Profil des Cinglés : Cd « 5* » sur la page, astérisque non expliquée (probablement liée à Fêlés). Troll : ne gagne pas d'expérience (Monstre stupide), aucun équipement, entretien de 20 co par partie ; à défaut, le chef peut le compter comme 2 membres (entretien 5 co), l'effectif maximum tombant alors à 11 ; pas de race (maximums inconnus). La page signale une incohérence : l'animosité suit l'Annual 2002 (déclenchée sur 1 au D6) alors que les profils de Boyz/Tireurs parlent d'un test de Cd."
+}

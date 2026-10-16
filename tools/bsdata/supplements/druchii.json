@@ -1,0 +1,984 @@
+{
+  "id": "druchii",
+  "url": "https://mordheimer.net/docs/warbands/grade-2a-warbands/druchii",
+  "nomEn": "Druchii",
+  "nom": "Druchii",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [
+    "Kindred Hatred",
+    "Fey Acuity",
+    "Disdain",
+    "Slavers (Druchii)"
+  ],
+  "guerriers": [
+    {
+      "cle": "Noble",
+      "nom": "Noble",
+      "categorie": "heros",
+      "cout": 75,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "5",
+        "CC": "5",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "9"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Leader"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Druchii)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Draich",
+              "nom": "Draich",
+              "cout": 25
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Repeater Crossbow",
+              "nom": "Arbalète à répétition",
+              "cout": 20
+            },
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 35
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Sea Dragon Cloak",
+              "nom": "Cape de dragon des mers",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Lordling",
+      "nom": "Seigneur",
+      "categorie": "heros",
+      "cout": 45,
+      "min": 0,
+      "max": 2,
+      "xp": 8,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "6",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Vitesse",
+        "Spéciales (Druchii)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Draich",
+              "nom": "Draich",
+              "cout": 25
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Repeater Crossbow",
+              "nom": "Arbalète à répétition",
+              "cout": 20
+            },
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 35
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Sea Dragon Cloak",
+              "nom": "Cape de dragon des mers",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Sorceress",
+      "nom": "Sorcière",
+      "categorie": "heros",
+      "cout": 45,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "5",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Wizard (Dark Magic)"
+      ],
+      "competences": [
+        "Érudition",
+        "Vitesse",
+        "Spéciales (Druchii)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Draich",
+              "nom": "Draich",
+              "cout": 25
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Repeater Crossbow",
+              "nom": "Arbalète à répétition",
+              "cout": 20
+            },
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 35
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Sea Dragon Cloak",
+              "nom": "Cape de dragon des mers",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Beastmaster",
+      "nom": "Maître des bêtes",
+      "categorie": "heros",
+      "cout": 40,
+      "min": 0,
+      "max": 1,
+      "xp": 8,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [
+        "Combat",
+        "Vitesse",
+        "Spéciales (Druchii)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Draich",
+              "nom": "Draich",
+              "cout": 25
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            },
+            {
+              "en": "Beastlash",
+              "nom": "Fouet de dresseur",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Repeater Crossbow",
+              "nom": "Arbalète à répétition",
+              "cout": 20
+            },
+            {
+              "en": "Crossbow Pistol",
+              "nom": "Pistolet-arbalète",
+              "cout": 35
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Sea Dragon Cloak",
+              "nom": "Cape de dragon des mers",
+              "cout": 30
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Dark Venom",
+              "nom": "Venin noir",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Corsairs",
+      "nom": "Corsaires",
+      "categorie": "hdm",
+      "cout": 35,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Repeater Crossbow",
+              "nom": "Arbalète à répétition",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            },
+            {
+              "en": "Buckler",
+              "nom": "Rondache",
+              "cout": 5
+            },
+            {
+              "en": "Sea Dragon Cloak",
+              "nom": "Cape de dragon des mers",
+              "cout": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Shades",
+      "nom": "Ombres",
+      "categorie": "hdm",
+      "cout": 35,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "5",
+        "CC": "3",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Natural Stealth (Shades)"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Repeater Crossbow",
+              "nom": "Arbalète à répétition",
+              "cout": 20
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Throwing Knives",
+              "nom": "Couteaux de lancer",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Witch Elves",
+      "nom": "Elfes sorcières",
+      "categorie": "hdm",
+      "cout": 45,
+      "min": 0,
+      "max": 3,
+      "xp": 0,
+      "profil": {
+        "M": "5",
+        "CC": "4",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "elfe",
+      "sansProgression": false,
+      "regles": [
+        "Frenzy",
+        "Maiden Poison"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Halberd",
+              "nom": "Hallebarde",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Helmet",
+              "nom": "Casque",
+              "cout": 10
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Black Lotus",
+              "nom": "Lotus noir",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Slavehounds",
+      "nom": "Chiens d'esclaves",
+      "categorie": "hdm",
+      "cout": 25,
+      "min": 0,
+      "max": 3,
+      "xp": 0,
+      "profil": {
+        "M": "7",
+        "CC": "4",
+        "CT": "0",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Animals",
+        "Never Gain Experience",
+        "Pack Work"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Fey Acuity": {
+      "fr": {
+        "nom": "Acuité féerique",
+        "resume": "Si au moins un héros a exploré, la bande trouve un artefact ou un fragment de malepierre de plus lors de la phase d'exploration."
+      },
+      "en": {
+        "nom": "Fey Acuity",
+        "resume": "If at least one hero searched, the warband finds one extra artifact or Wyrdstone shard in the Exploration phase."
+      }
+    },
+    "Disdain": {
+      "fr": {
+        "nom": "Dédain",
+        "resume": "Les Druchii ne peuvent jamais utiliser d'armes à poudre noire."
+      },
+      "en": {
+        "nom": "Disdain",
+        "resume": "Druchii may never use black powder weapons."
+      }
+    },
+    "Slavers (Druchii)": {
+      "fr": {
+        "nom": "Esclavagistes druchii",
+        "resume": "Sur un résultat « prisonnier » (333) en exploration, la bande peut appliquer les règles de prisonniers des Skavens."
+      },
+      "en": {
+        "nom": "Slavers (Druchii)",
+        "resume": "On a prisoner result (333) in Exploration, the warband may use the Skaven prisoner rules."
+      }
+    },
+    "Wizard (Dark Magic)": {
+      "fr": {
+        "nom": "Sorcier (Magie noire)",
+        "resume": "La sorcière lance des sorts de Magie noire druchii (Éclair funeste, Mot de douleur, Voleur d'âme, Lame noire de Khaine, Spasme mortel, Vol de sorcière) ; elle ne peut pas lancer de sorts si elle porte une armure."
+      },
+      "en": {
+        "nom": "Wizard (Dark Magic)",
+        "resume": "The Sorceress casts Druchii Dark Magic (Doombolt, Word of Pain, Soul Stealer, Black Blade of Khaine, Deathspasm, Witch Flight); she cannot cast while wearing armour."
+      }
+    },
+    "Natural Stealth (Shades)": {
+      "fr": {
+        "nom": "Discrétion naturelle (Ombres)",
+        "resume": "Quand une ombre est cachée, l'ennemi n'utilise que la moitié de son Initiative pour la repérer."
+      },
+      "en": {
+        "nom": "Natural Stealth (Shades)",
+        "resume": "When a Shade is Hidden, enemies use half their Initiative to detect it."
+      }
+    },
+    "Maiden Poison": {
+      "fr": {
+        "nom": "Poison des vierges",
+        "resume": "La bande peut acheter du lotus noir à 5 co la dose, réservé aux elfes sorcières ; il doit servir à la bataille suivante et ne peut être ni vendu ni échangé."
+      },
+      "en": {
+        "nom": "Maiden Poison",
+        "resume": "The warband may buy Black Lotus at 5 gc per dose for Witch Elves only; it must be used next battle and cannot be sold or traded."
+      }
+    },
+    "Pack Work": {
+      "fr": {
+        "nom": "Travail de meute",
+        "resume": "Les chiens utilisent le Commandement du maître des bêtes à 6 ps et ne combattent pas sans lui. Si un chien connaît la position d'un ennemi, le maître et les autres chiens peuvent le charger sans le voir."
+      },
+      "en": {
+        "nom": "Pack Work",
+        "resume": "Slavehounds use the Beastmaster's Leadership within 6\" and stay in camp without him. If one knows of an enemy, the Beastmaster and other hounds may charge it unseen."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Druchii)",
+    "listeEn": "Special Skills (Druchii)",
+    "competences": [
+      {
+        "en": "Frenzied Charge",
+        "nom": "Charge frénétique",
+        "resume": "Après avoir mis hors de combat tous ses adversaires, le héros fait un mouvement de poursuite de 4 ps ; s'il touche un ennemi, il compte comme chargeant au tour suivant.",
+        "resumeEn": "After taking all opponents out of action, make a 4\" follow-up move; contacting an enemy counts as a charge next turn.",
+        "condition": null
+      },
+      {
+        "en": "Fey Quickness",
+        "nom": "Vivacité féerique",
+        "resume": "Évite une attaque de corps à corps ou de tir sur 6 ; sur 4+ dans le domaine concerné s'il possède Esquive latérale ou Esquive.",
+        "resumeEn": "Avoids close combat or missile attacks on a 6, improved to 4+ in the relevant area with Step Aside or Dodge.",
+        "condition": null
+      },
+      {
+        "en": "Infiltration",
+        "nom": "Infiltration",
+        "resume": "Le héros peut s'infiltrer comme avec la compétence skaven du même nom.",
+        "resumeEn": "The hero may Infiltrate, as the Skaven skill.",
+        "condition": null
+      },
+      {
+        "en": "Poisoner",
+        "nom": "Empoisonneur",
+        "resume": "Au lieu de chercher un objet rare, le héros prépare D2 doses de venin noir, à utiliser à la bataille suivante, ni vendables ni échangeables.",
+        "resumeEn": "Instead of searching for rare items, make D2 doses of Dark Venom for the next battle; cannot be sold or traded.",
+        "condition": null
+      },
+      {
+        "en": "Marksman of Naggaroth",
+        "nom": "Tireur de Naggaroth",
+        "resume": "Ignore le malus de longue portée aux armes de type arbalète ; immobile, il tire deux fois sans malus à l'arbalète à répétition, ou trois fois à -1.",
+        "resumeEn": "Ignores long-range penalty with crossbow-type weapons; if stationary, a repeater crossbow fires twice without penalty or three times at -1 to hit.",
+        "condition": null
+      },
+      {
+        "en": "Will to Survive",
+        "nom": "Volonté de survivre",
+        "resume": "Sur un résultat « mort » de blessure grave, test de Commandement non modifié : réussi, le héros survit mais manque D3 batailles.",
+        "resumeEn": "On a dead Serious Injury result, pass an unmodified Ld test to survive, missing D3 battles.",
+        "condition": null
+      },
+      {
+        "en": "Keen Sight",
+        "nom": "Vue affûtée",
+        "resume": "Repère les ennemis cachés à deux fois son Initiative en pas.",
+        "resumeEn": "Spots Hidden enemies at twice his Initiative in inches.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Page : maximums druchii M5 CC7 CT7 F4 E3 PV3 I9 A4 Cd10 (Endurance max 3, contre 4 pour la race elfe existante) : race elfe réutilisée, écart à arbitrer. Arbalète à répétition à 20 co (prix réduit de départ ; ensuite prix standard + jet de rareté). Draich 25 co dans la liste mais 25+1D6 au comptoir (Rare 8) ; fouet de dresseur 10 (10+D6, maître des bêtes uniquement) ; cape de dragon des mers 30 (30+2D6, Rare 10) : prix fixes de liste retenus. Lame d'acier noir (Darksteel blade, 3 × le prix de l'arme, Rare 9, tout héros) non saisie comme objet. Lotus noir 5 co : elfes sorcières uniquement. Les hommes de main promus gardent leur liste. Chiens d'esclaves : 0-3, sans équipement, uniquement avec un maître des bêtes ; race null. Pas de compétences de Force dans le tableau d'accès. Francs-tireurs autorisés : Pit Fighter, Ogre Bodyguard, Warlock, Imperial Assassin, Tilean Marksman, Highwayman, Duelist, Witch, Emissary of Chaos, Human Scout, Old Prospector, Dark Elf Assassin, Pathfinder, Nomad Scout, Thief, Shade Scout. Sorts de Magie noire non saisis en détail (résumé dans la règle du sorcier). Règles « Slavers » et « Natural Stealth » existantes ont un autre effet : clés distinctes « Slavers (Druchii) » et « Natural Stealth (Shades) »."
+}

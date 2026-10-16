@@ -1,0 +1,669 @@
+{
+  "id": "chasseurs-cornus",
+  "url": "https://mordheimer.net/docs/warbands/grade-1b-warbands/horned-hunters",
+  "nomEn": "Horned Hunters",
+  "nom": "Chasseurs cornus",
+  "tresor": 500,
+  "effectifMax": 12,
+  "regles": [
+    "Woodcraft"
+  ],
+  "guerriers": [
+    {
+      "cle": "Horned Hunter",
+      "nom": "Chasseur cornu",
+      "categorie": "heros",
+      "cout": 60,
+      "min": 1,
+      "max": 1,
+      "xp": 20,
+      "profil": {
+        "M": "4",
+        "CC": "4",
+        "CT": "4",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "8"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Leader",
+        "Hang the Bandit!"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force",
+        "Vitesse",
+        "Spéciales (Chasseurs cornus)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace/Hammer",
+              "nom": "Masse/Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 5
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Toughened Leathers",
+              "nom": "Cuirs renforcés",
+              "cout": 5
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Hunting Arrows",
+              "nom": "Flèches de chasse",
+              "cout": 20
+            },
+            {
+              "en": "Blessed Stag Hide",
+              "nom": "Peau de cerf bénie",
+              "cout": 40
+            },
+            {
+              "en": "Trip wire",
+              "nom": "Fil de piège",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Priest of Taal",
+      "nom": "Prêtre de Taal",
+      "categorie": "heros",
+      "cout": 45,
+      "min": 0,
+      "max": 1,
+      "xp": 12,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Prayers of Taal",
+        "Strictures"
+      ],
+      "competences": [
+        "Combat",
+        "Érudition",
+        "Force",
+        "Vitesse",
+        "Spéciales (Chasseurs cornus)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace/Hammer",
+              "nom": "Masse/Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 5
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Toughened Leathers",
+              "nom": "Cuirs renforcés",
+              "cout": 5
+            },
+            {
+              "en": "Light Armour",
+              "nom": "Armure légère",
+              "cout": 20
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Hunting Arrows",
+              "nom": "Flèches de chasse",
+              "cout": 20
+            },
+            {
+              "en": "Blessed Stag Hide",
+              "nom": "Peau de cerf bénie",
+              "cout": 40
+            },
+            {
+              "en": "Trip wire",
+              "nom": "Fil de piège",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Initiates",
+      "nom": "Initiés",
+      "categorie": "heros",
+      "cout": 40,
+      "min": 0,
+      "max": 3,
+      "xp": 8,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Infiltration",
+        "Hang the Bandit!",
+        "Strictures"
+      ],
+      "competences": [
+        "Combat",
+        "Tir",
+        "Force",
+        "Vitesse",
+        "Spéciales (Chasseurs cornus)"
+      ],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace/Hammer",
+              "nom": "Masse/Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 5
+            },
+            {
+              "en": "Double-handed weapon",
+              "nom": "Arme lourde",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Shortbow",
+              "nom": "Arc court",
+              "cout": 5
+            },
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            },
+            {
+              "en": "Longbow",
+              "nom": "Arc long",
+              "cout": 15
+            }
+          ]
+        },
+        {
+          "categorie": "Divers",
+          "objets": [
+            {
+              "en": "Hunting Arrows",
+              "nom": "Flèches de chasse",
+              "cout": 20
+            },
+            {
+              "en": "Blessed Stag Hide",
+              "nom": "Peau de cerf bénie",
+              "cout": 40
+            },
+            {
+              "en": "Trip wire",
+              "nom": "Fil de piège",
+              "cout": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Drunken Gang",
+      "nom": "Bande d'ivrognes",
+      "categorie": "hdm",
+      "cout": 30,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "3",
+        "CT": "3",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Drunk"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace/Hammer",
+              "nom": "Masse/Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        },
+        {
+          "categorie": "Armures",
+          "objets": [
+            {
+              "en": "Toughened Leathers",
+              "nom": "Cuirs renforcés",
+              "cout": 5
+            },
+            {
+              "en": "Shield",
+              "nom": "Bouclier",
+              "cout": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Zealots",
+      "nom": "Fanatiques",
+      "categorie": "hdm",
+      "cout": 20,
+      "min": 0,
+      "max": null,
+      "xp": 0,
+      "profil": {
+        "M": "4",
+        "CC": "2",
+        "CT": "2",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3",
+        "A": "1",
+        "Cd": "7"
+      },
+      "race": "humain",
+      "sansProgression": false,
+      "regles": [
+        "Strictures"
+      ],
+      "competences": [],
+      "equipement": [
+        {
+          "categorie": "Armes de corps à corps",
+          "objets": [
+            {
+              "en": "Dagger",
+              "nom": "Dague",
+              "cout": 2
+            },
+            {
+              "en": "Free Dagger",
+              "nom": "Dague gratuite",
+              "cout": 0
+            },
+            {
+              "en": "Mace/Hammer",
+              "nom": "Masse/Marteau",
+              "cout": 3
+            },
+            {
+              "en": "Axe",
+              "nom": "Hache",
+              "cout": 5
+            },
+            {
+              "en": "Sword",
+              "nom": "Épée",
+              "cout": 10
+            },
+            {
+              "en": "Spear",
+              "nom": "Lance",
+              "cout": 5
+            }
+          ]
+        },
+        {
+          "categorie": "Armes de tir",
+          "objets": [
+            {
+              "en": "Bow",
+              "nom": "Arc",
+              "cout": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cle": "Warhounds",
+      "nom": "Chiens de guerre",
+      "categorie": "hdm",
+      "cout": 15,
+      "min": 0,
+      "max": 5,
+      "xp": 0,
+      "profil": {
+        "M": "6",
+        "CC": "4",
+        "CT": "0",
+        "F": "4",
+        "E": "3",
+        "PV": "1",
+        "I": "4",
+        "A": "1",
+        "Cd": "5"
+      },
+      "race": null,
+      "sansProgression": true,
+      "regles": [
+        "Animals"
+      ],
+      "competences": [],
+      "equipement": []
+    }
+  ],
+  "reglesTexte": {
+    "Woodcraft": {
+      "fr": {
+        "nom": "Science des bois",
+        "resume": "Les figurines de la bande ne subissent aucune pénalité de mouvement en terrain difficile."
+      },
+      "en": {
+        "nom": "Woodcraft",
+        "resume": "Models in the warband suffer no movement penalty for difficult terrain."
+      }
+    },
+    "Hang the Bandit!": {
+      "fr": {
+        "nom": "Pendez le brigand !",
+        "resume": "Ce guerrier hait les bandits et les hors-la-loi (règles de haine)."
+      },
+      "en": {
+        "nom": "Hang the Bandit!",
+        "resume": "This warrior hates Bandits and Outlaws."
+      }
+    },
+    "Infiltration": {
+      "fr": {
+        "nom": "Infiltration",
+        "resume": "Se déploie après la bande adverse, n'importe où hors de vue de l'ennemi et à plus de 12 ps de toute figurine ennemie ; si les deux camps ont des infiltrateurs, chacun lance 1D6 et le plus faible se place en premier."
+      },
+      "en": {
+        "nom": "Infiltration",
+        "resume": "Deploys after the enemy warband, anywhere out of enemy sight and over 12\" from any enemy; if both sides have infiltrators, each rolls a D6 and the lowest sets up first."
+      }
+    }
+  },
+  "competencesSpeciales": {
+    "liste": "Spéciales (Chasseurs cornus)",
+    "listeEn": "Special Skills (Horned Hunters)",
+    "competences": [
+      {
+        "en": "Master Trapper",
+        "nom": "Maître trappeur",
+        "resume": "Le fil de piège du guerrier porte à 4 ps et ses pièges se déclenchent sur 2+.",
+        "resumeEn": "The warrior's trip wire reaches 4\" and his traps trigger on a 2+.",
+        "condition": null
+      },
+      {
+        "en": "Infiltration",
+        "nom": "Infiltration",
+        "resume": "Le guerrier gagne la règle Infiltration : il se déploie après l'adversaire, hors de vue et à plus de 12 ps de tout ennemi.",
+        "resumeEn": "The warrior gains the Infiltration rule: he deploys after the enemy, out of sight and over 12\" from any enemy.",
+        "condition": null
+      },
+      {
+        "en": "Foul Odour",
+        "nom": "Odeur infecte",
+        "resume": "Les ennemis vivants (ni morts-vivants ni possédés) ont -1 pour toucher ce guerrier au corps à corps ; il ne peut porter de flamme nue et les attaques de feu contre lui ont +1 en Force.",
+        "resumeEn": "Living enemies (not Undead or Possessed) suffer -1 to hit him in close combat; he cannot carry open flames and fire attacks against him get +1 Strength.",
+        "condition": null
+      },
+      {
+        "en": "Animal Friendship",
+        "nom": "Amitié animale",
+        "resume": "Les animaux ordinaires n'attaquent jamais ce guerrier, et jusqu'à deux de ses chiens de guerre ne comptent pas dans l'effectif maximum de la bande.",
+        "resumeEn": "Normal animals never attack this warrior, and up to two of his warhounds do not count towards the warband's maximum size.",
+        "condition": null
+      },
+      {
+        "en": "Pathfinder",
+        "nom": "Pisteur",
+        "resume": "La bande lance un dé supplémentaire lors de la phase d'exploration ; une seule figurine de la bande peut avoir cette compétence.",
+        "resumeEn": "The warband rolls one extra die in the exploration phase; only one warrior per warband may have this skill.",
+        "condition": null
+      },
+      {
+        "en": "Hide in Shadows",
+        "nom": "Se fondre dans l'ombre",
+        "resume": "Les ennemis qui tentent de repérer ce guerrier caché utilisent la moitié de leur Initiative.",
+        "resumeEn": "Enemies trying to spot this warrior while Hidden halve their Initiative.",
+        "condition": null
+      }
+    ]
+  },
+  "races": {},
+  "notes": "Source Nemesis Crown (grade 1b). Taille 3 à 12 figurines ; exactement un Chasseur cornu. Le Prêtre de Taal ne peut jamais porter d'armure lourde (aucune dans sa liste de toute façon) ; Initiés et Fanatiques ne peuvent jamais porter d'armure : catégorie Armures retirée de leurs listes. La clé « Strictures » couvre donc deux interdits différents selon le guerrier. Fanatiques : nombre illimité. Chiens de guerre : 0-5, aucun équipement, profil F 4 tel que sur la page. Lance à 5 co et Masse/Marteau à 3 co (un seul objet) tels que sur la page. Cuirs renforcés, Peau de cerf bénie et Fil de piège : prix seulement, aucune description sur la page (noms anglais « Trip wire », « Blessed Stag Hide » repris de la page). Le Prêtre n'a pas accès au Tir. Pas de tableau de maximums : profil humain."
+}

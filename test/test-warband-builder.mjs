@@ -97,11 +97,13 @@ assert.equal(normalizeCreation({ figurines: [{ id: "a", coutGc: "-3", stats: { M
 console.log("Sauvegarde des bandes créées OK");
 
 // --- Bandes officielles de BSData (js/data/bandes.js) ---
-assert.equal(BANDES.length, 31);
+assert.equal(BANDES.length, 69);
+// Bandes dont n'importe quel héros peut être désigné chef.
+const CHEF_AU_CHOIX = new Set(["cour-plaisirs", "pillards-lustrie"]);
 for (const b of BANDES) {
   const chefs = b.guerriers.filter((g) => g.categorie === "heros" && g.min === 1);
-  assert.equal(chefs.length, 1, `${b.nom} : un seul chef obligatoire`);
-  assert.ok(chefs[0].regles.some((r) => r.nom === "Chef"), `${b.nom} : le chef a la règle Chef`);
+  if (CHEF_AU_CHOIX.has(b.id)) assert.equal(chefs.length, 0, `${b.nom} : chef au choix`);
+  else assert.ok(chefs.some((g) => g.regles.some((r) => r.nom === "Chef")), `${b.nom} : un héros obligatoire a la règle Chef`);
   for (const g of b.guerriers) {
     assert.ok(Number.isFinite(g.cout) && g.cout > 0, `${g.id} : coût`);
     // Le Char de la peste n'a qu'une Endurance et des points de vie.
