@@ -330,6 +330,7 @@ export default {
 
   // Footer
   "pied.confidentialite": "Everything happens in your browser: your warbands are never sent to a server.",
+  "pied.don": "☕ Help cover hosting",
 
   // Model and recruitment dialogs
   "fig.typeProfil": "Type / profile",
