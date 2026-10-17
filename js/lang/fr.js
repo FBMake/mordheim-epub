@@ -330,6 +330,7 @@ export default {
 
   // Pied de page
   "pied.confidentialite": "Tout le traitement se fait dans votre navigateur : vos bandes ne sont jamais envoyées sur un serveur.",
+  "pied.don": "☕ Soutenir l'hébergement",
 
   // Fenêtres figurine et recrutement
   "fig.typeProfil": "Type / profil",
