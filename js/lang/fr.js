@@ -279,8 +279,9 @@ export default {
   "blessure.survit.effet": "Le guerrier se rétablit complètement et gagne +1 point d'expérience.",
 
   // Figurines
-  "figurines.aide": "Nom, bio et photo sont optionnels. Si la bande est enregistrée dans un emplacement, tout est sauvegardé automatiquement dans ce navigateur.",
+  "figurines.aide": "Nom, bio et photo des héros sont optionnels. Si la bande est enregistrée dans un emplacement, tout est sauvegardé automatiquement dans ce navigateur.",
   "figurines.aucune": "Aucune figurine pour l'instant.",
+  "perso.photoRetirer": "Retirer la photo",
   "perso.photo": "Photo",
   "perso.nom": "Nom personnalisé",
   "perso.bio": "Bio",

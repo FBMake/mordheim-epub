@@ -358,7 +358,7 @@ function refreshTotals(model) {
   document.getElementById("preview-magot").textContent = model.bande.magotOr;
   document.getElementById("preview-xp").textContent = model.bande.xpTotal;
   const item = (h) => {
-    const nom = escapeHtml(customisations[h.id]?.nom || h.nom);
+    const nom = escapeHtml(persoHeros(h.id).nom || h.nom);
     const statut = h.statut ? ` — ${escapeHtml(t(`statut.${h.statut}`))}` : "";
     return `<li>${nom} <em>(${h.xp} xp${statut})</em></li>`;
   };
@@ -374,6 +374,19 @@ function ensureCustomisation(id) {
     customisations[id] = { nom: "", bio: "", photo: null };
   }
   return customisations[id];
+}
+
+/** Les hommes de main ne se personnalisent pas : nom, bio et photo sont réservés aux héros (francs-tireurs compris). */
+function estHommeDeMain(id) {
+  return Boolean(
+    currentModel?.hommesDeMain.some((c) => c.id === id) ||
+      currentCreation?.figurines.some((f) => f.id === id && f.categorie === "hdm")
+  );
+}
+
+/** Personnalisation d'une figurine, vide pour un homme de main (une ancienne saisie est conservée mais ignorée). */
+function persoHeros(id) {
+  return estHommeDeMain(id) ? {} : customisations[id] || {};
 }
 
 /** Résumé de l'historique des combats d'une figurine (vide si aucun). */
@@ -453,12 +466,15 @@ function profilBlesseHtml(card) {
 }
 
 function persoCardTemplate(card, categorie) {
-  const custom = ensureCustomisation(card.id);
+  const estHeros = currentModel.heros.includes(card);
+  const custom = estHeros ? ensureCustomisation(card.id) : {};
   const div = document.createElement("div");
-  div.className = "perso-card";
+  div.className = estHeros ? "perso-card" : "perso-card perso-card-hdm";
   div.dataset.id = card.id;
 
-  div.innerHTML = `
+  // Héros : photo, nom et bio. Homme de main : seulement le suivi (XP, état, notes).
+  const persoHtml = estHeros
+    ? `
     <div class="perso-photo-wrap">
       <img class="perso-photo-preview" src="${
         custom.photo || ""
@@ -467,12 +483,13 @@ function persoCardTemplate(card, categorie) {
         ${t("perso.photo")}
         <input type="file" accept="image/*" class="perso-photo-input" hidden />
       </label>
-    </div>
-    <div class="perso-fields">
-      <p class="perso-original-name">${categorie} — ${escapeHtml(card.nom)}</p>
+    </div>`
+    : "";
+  const champsHtml = estHeros
+    ? `
       <label class="perso-label">
         ${t("perso.nom")}
-        <input type="text" class="perso-nom-input" placeholder="${escapeHtml(card.nom)}" value="${escapeHtml(
+        <input type="text" class="perso-nom-input perso-nom-custom" placeholder="${escapeHtml(card.nom)}" value="${escapeHtml(
           custom.nom
         )}" />
       </label>
@@ -481,7 +498,14 @@ function persoCardTemplate(card, categorie) {
         <textarea class="perso-bio-input" rows="2" placeholder="${escapeHtml(t("perso.bio.exemple"))}">${escapeHtml(
           custom.bio
         )}</textarea>
-      </label>
+      </label>`
+    : "";
+
+  div.innerHTML = `
+    ${persoHtml}
+    <div class="perso-fields">
+      <p class="perso-original-name">${categorie} — ${escapeHtml(card.nom)}</p>
+      ${champsHtml}
       <div class="partie-row">
         <label class="perso-label">
           ${t("perso.xp")}
@@ -518,19 +542,19 @@ function persoCardTemplate(card, categorie) {
     </div>
   `;
 
-  const nomInput = div.querySelector(".perso-nom-input");
-  nomInput.addEventListener("input", () => {
+  const nomInput = div.querySelector(".perso-nom-custom");
+  nomInput?.addEventListener("input", () => {
     ensureCustomisation(card.id).nom = nomInput.value;
     refreshTotals(currentModel);
     scheduleSave();
   });
   // Le nom choisi apparaît aussi sur la carte du guerrier (« Recrues et progressions »).
-  nomInput.addEventListener("change", () => {
+  nomInput?.addEventListener("change", () => {
     if (currentCreation) renderCreation();
   });
 
   const bioInput = div.querySelector(".perso-bio-input");
-  bioInput.addEventListener("input", () => {
+  bioInput?.addEventListener("input", () => {
     ensureCustomisation(card.id).bio = bioInput.value;
     scheduleSave();
   });
@@ -604,7 +628,7 @@ function persoCardTemplate(card, categorie) {
 
   const photoInput = div.querySelector(".perso-photo-input");
   const photoPreview = div.querySelector(".perso-photo-preview");
-  photoInput.addEventListener("change", async () => {
+  photoInput?.addEventListener("change", async () => {
     const file = photoInput.files?.[0];
     if (!file) return;
     try {
@@ -613,6 +637,7 @@ function persoCardTemplate(card, categorie) {
       photoPreview.src = dataUrl;
       photoPreview.style.display = "";
       scheduleSave();
+      if (currentCreation) renderCreation();
     } catch (err) {
       console.error(err);
       showError(t("perso.erreurPhoto", { err: err.message }));
@@ -642,7 +667,7 @@ function renderCimetiere(model) {
   cimetiereBox.hidden = morts.length === 0;
   cimetiereList.innerHTML = "";
   for (const [card, categorie] of morts) {
-    const custom = customisations[card.id] || {};
+    const custom = persoHeros(card.id);
     const blessures = card.blessuresPartie.map(nomBlessure);
     const li = document.createElement("li");
     li.className = "tombe";
@@ -836,7 +861,7 @@ generateBtn.addEventListener("click", async () => {
   try {
     // Applique les personnalisations actuelles (issues des formulaires) au modèle.
     [...currentModel.heros, ...currentModel.hommesDeMain].forEach((card) => {
-      const c = customisations[card.id] || {};
+      const c = persoHeros(card.id);
       card.nomPersonnalise = c.nom || "";
       card.bio = c.bio || "";
       card.photo = c.photo || null;
@@ -916,7 +941,7 @@ function renderResultatOptions() {
   combatResultat.innerHTML = ["", ...RESULTATS].map((r) => option(r, t(`resultat.${r}`))).join("");
 }
 
-const nomFigurine = (card) => customisations[card.id]?.nom || card.nom;
+const nomFigurine = (card) => persoHeros(card.id).nom || card.nom;
 
 function openCombatDialog() {
   combatForm.reset();
@@ -1341,8 +1366,9 @@ function texteEntreeProgression(p) {
 function unitCard(fig, { lecture = false } = {}) {
   const div = document.createElement("div");
   div.className = "unit-card";
-  const custom = customisations[fig.id]?.nom;
   const groupe = fig.categorie === "hdm";
+  const perso = groupe ? {} : customisations[fig.id] || {};
+  const custom = perso.nom;
   const nombre = tailleGroupe(fig);
   const titre =
     escapeHtml(loc(fig.type) || t(groupe ? "categorie.hdm" : "categorie.heros")) + (nombre > 1 ? ` ×${nombre}` : "");
@@ -1384,11 +1410,14 @@ function unitCard(fig, { lecture = false } = {}) {
   ].filter(Boolean);
   div.innerHTML = `
     <div class="unit-head">
-      <span class="unit-name">${custom ? `${escapeHtml(custom)} <em>(${titre})</em>` : titre}</span>
+      <span class="unit-name">${
+        perso.photo ? `<img class="unit-photo" src="${perso.photo}" alt="" />` : ""
+      }${custom ? `${escapeHtml(custom)} <em>(${titre})</em>` : titre}</span>
       <span class="unit-cost">${
         nombre > 1 ? t("unite.coutGroupe", { total: coutEntree(fig), unite: fig.coutGc }) : `${coutEntree(fig)} ${t("monnaie")}`
       }${fig.franc ? ` · ${escapeHtml(t("franc.solde", { solde: soldeFranc(fig, currentCreation) }))}` : ""} · ${fig.xp} xp</span>
     </div>
+    ${perso.bio ? `<p class="unit-bio">${escapeHtml(perso.bio)}</p>` : ""}
     <div class="stat-line">${statLine(stats, ecarts)}</div>
     ${
       sansXp
@@ -1500,7 +1529,7 @@ function lancerProg() {
 function openProgDialog(fig) {
   progFig = fig;
   const heros = fig.categorie === "heros";
-  const nom = customisations[fig.id]?.nom || loc(fig.type) || t(heros ? "categorie.heros" : "categorie.hdm");
+  const nom = persoHeros(fig.id).nom || loc(fig.type) || t(heros ? "categorie.heros" : "categorie.hdm");
   document.getElementById("prog-title").textContent = t("prog.titre", { nom });
   document.getElementById("prog-aide").textContent = t(heros ? "prog.aideHeros" : "prog.aide");
   progChoix.dataset.code = "";
@@ -1758,6 +1787,37 @@ const figNombre = document.getElementById("fig-nombre");
 const figStats = document.getElementById("fig-stats");
 let figDraft = null; // copie en cours d'édition
 let figOriginal = null; // figurine remplacée à la validation (null = recrutement)
+// Nom, bio et photo du héros en cours d'édition, enregistrés seulement à la validation.
+let figPerso = null;
+const figNom = document.getElementById("fig-nom");
+const figBio = document.getElementById("fig-bio");
+const figPhotoPreview = document.getElementById("fig-photo-preview");
+const figPhotoInput = document.getElementById("fig-photo-input");
+const figPhotoRetirer = document.getElementById("fig-photo-retirer");
+
+function renderFigPhoto() {
+  figPhotoPreview.src = figPerso?.photo || "";
+  figPhotoPreview.style.display = figPerso?.photo ? "" : "none";
+  figPhotoRetirer.hidden = !figPerso?.photo;
+}
+figNom.addEventListener("input", () => (figPerso.nom = figNom.value));
+figBio.addEventListener("input", () => (figPerso.bio = figBio.value));
+figPhotoInput.addEventListener("change", async () => {
+  const file = figPhotoInput.files?.[0];
+  figPhotoInput.value = "";
+  if (!file) return;
+  try {
+    figPerso.photo = await resizeAndCompressImage(file);
+    renderFigPhoto();
+  } catch (err) {
+    console.error(err);
+    showError(t("perso.erreurPhoto", { err: err.message }));
+  }
+});
+figPhotoRetirer.addEventListener("click", () => {
+  figPerso.photo = null;
+  renderFigPhoto();
+});
 
 // Le coût saisi à la main n'est plus recalculé (objet acheté à un autre prix…).
 figCout.addEventListener("input", () => (figCout.dataset.manuel = "1"));
@@ -2088,6 +2148,13 @@ function openFigDialog(fig, categorie = "heros", draft = null) {
     : fig
       ? t(isHero ? "fig.modifierHeros" : "fig.modifierHdm")
       : t(isHero ? "fig.recruterHeros" : "fig.recruterHdm");
+  // Personnalisation (nom, bio, photo) : héros et francs-tireurs seulement.
+  document.getElementById("fig-perso-bloc").hidden = !isHero;
+  figPerso = { nom: "", bio: "", photo: null, ...customisations[figDraft.id] };
+  figNom.value = figPerso.nom;
+  figNom.placeholder = loc(figDraft.type) || t("categorie.heros");
+  figBio.value = figPerso.bio;
+  renderFigPhoto();
   // Le type est enregistré en français ; il s'affiche dans la langue de l'interface.
   figType.value = loc(figDraft.type);
   figCout.value = figDraft.coutGc;
@@ -2190,12 +2257,18 @@ figForm.addEventListener("submit", (e) => {
   figStats.querySelectorAll("input").forEach((inp) => {
     figDraft.stats[inp.dataset.stat] = inp.value.trim() || "-";
   });
+  if (figDraft.categorie === "heros") {
+    const c = ensureCustomisation(figDraft.id);
+    c.nom = figPerso.nom.trim();
+    c.bio = figPerso.bio;
+    c.photo = figPerso.photo;
+  }
   const figs = currentCreation.figurines;
   const i = figs.indexOf(figOriginal);
   if (i >= 0) figs[i] = figDraft;
   else figs.push(figDraft);
   figDialog.close();
-  figDraft = figOriginal = null;
+  figDraft = figOriginal = figPerso = null;
   applyCreationChange();
 });
 document.getElementById("fig-cancel").addEventListener("click", () => figDialog.close());
