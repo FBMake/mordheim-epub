@@ -51,7 +51,7 @@
 
   <footer class="footer-note">
     <p data-i18n="pied.confidentialite">Tout le traitement se fait dans votre navigateur : vos bandes ne sont jamais envoyées sur un serveur.</p>
-    <p>V0.35</p>
+    <p>V0.36</p>
   </footer>
 </aside>
 
@@ -284,7 +284,7 @@
       <!-- Figurines : personnalisation + suivi par figurine -->
       <section class="suivi-section">
         <h3 class="section-title small" data-i18n="onglet.figurines">Figurines</h3>
-        <p class="hint-text" data-i18n="figurines.aide">Nom, bio et photo sont optionnels. Si la bande est enregistrée dans un emplacement, tout est sauvegardé automatiquement dans ce navigateur.</p>
+        <p class="hint-text" data-i18n="figurines.aide">Nom, bio et photo des héros sont optionnels. Si la bande est enregistrée dans un emplacement, tout est sauvegardé automatiquement dans ce navigateur.</p>
         <p id="figurines-empty" class="hint-text" hidden data-i18n="figurines.aucune">Aucune figurine pour l'instant : recrutez-en dans « Recrues et progressions ».</p>
         <div id="perso-cards" class="perso-cards"></div>
         <section id="cimetiere" class="cimetiere" hidden>
@@ -327,6 +327,27 @@
 <dialog id="fig-dialog" class="fig-dialog">
   <form id="fig-form" method="dialog" class="form-stack">
     <h3 class="section-title small" id="fig-title">Héros</h3>
+    <!-- Personnalisation d'un héros : nom, bio et photo (pas pour les hommes de main) -->
+    <div class="perso-card fig-perso" id="fig-perso-bloc">
+      <div class="perso-photo-wrap">
+        <img class="perso-photo-preview" id="fig-photo-preview" alt="" style="display:none" />
+        <label class="perso-photo-btn">
+          <span data-i18n="perso.photo">Photo</span>
+          <input type="file" accept="image/*" id="fig-photo-input" hidden />
+        </label>
+        <button type="button" id="fig-photo-retirer" class="btn-slot" data-i18n="perso.photoRetirer" hidden>Retirer la photo</button>
+      </div>
+      <div class="perso-fields">
+        <label class="perso-label">
+          <span data-i18n="perso.nom">Nom personnalisé</span>
+          <input type="text" id="fig-nom" class="perso-nom-input" maxlength="80" />
+        </label>
+        <label class="perso-label">
+          <span data-i18n="perso.bio">Bio</span>
+          <textarea id="fig-bio" class="perso-bio-input" rows="2" placeholder="Quelques lignes d'histoire..." data-i18n-placeholder="perso.bio.exemple"></textarea>
+        </label>
+      </div>
+    </div>
     <div class="partie-grid">
       <label class="perso-label">
         <span data-i18n="fig.typeProfil">Type / profil</span>

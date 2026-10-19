@@ -442,6 +442,11 @@ body {
 .perso-photo-btn:hover { background: var(--ink-soft); }
 
 .perso-fields { display: flex; flex-direction: column; gap: 0.4rem; }
+/* Homme de main : pas de photo, nom ni bio, seulement le suivi. */
+.perso-card.perso-card-hdm { grid-template-columns: 1fr; }
+/* Fiche d'un héros : sa personnalisation en tête. */
+.fig-perso { margin-bottom: 0.4rem; }
+.fig-perso .btn-slot { width: 100%; }
 .perso-original-name {
   margin: 0;
   font-size: 0.78rem;
@@ -670,6 +675,15 @@ select.perso-nom-input { width: 100%; }
 .unit-head { display: flex; justify-content: space-between; gap: 0.6rem; align-items: baseline; }
 .unit-name { font-weight: 600; overflow-wrap: anywhere; }
 .unit-name em { font-weight: 400; color: var(--ink-soft); }
+.unit-photo {
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: cover;
+  border: 1px solid var(--brass);
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+.unit-bio { margin: 0.3rem 0 0; font-style: italic; color: var(--ink-soft); white-space: pre-line; }
 .unit-cost { font-family: "JetBrains Mono", monospace; font-size: 0.78rem; color: var(--wax); white-space: nowrap; }
 .stat-line {
   display: grid;

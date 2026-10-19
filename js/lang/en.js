@@ -279,8 +279,9 @@ export default {
   "blessure.survit.effet": "The warrior makes a full recovery and gains +1 experience.",
 
   // Models
-  "figurines.aide": "Name, bio and photo are optional. If the warband is saved in a slot, everything is saved automatically in this browser.",
+  "figurines.aide": "Heroes' name, bio and photo are optional. If the warband is saved in a slot, everything is saved automatically in this browser.",
   "figurines.aucune": "No models yet.",
+  "perso.photoRetirer": "Remove photo",
   "perso.photo": "Photo",
   "perso.nom": "Custom name",
   "perso.bio": "Bio",
