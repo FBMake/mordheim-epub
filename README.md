@@ -84,15 +84,16 @@ test/                    Scripts Node de test (parseur, personnalisation)
 
 ## Remplissage des gabarits : comment ça marche
 
-Chaque gabarit (`data/templates/fr/hero.png`, `homme_de_main.png`,
-`bande.png`) est une image fixe : `pdf-builder.js` la pose en fond de
+Chaque gabarit (`data/templates/fr/couverture.jpg`, `bande.jpg`,
+`compte.jpg`, `effectif.jpg`, `hero.jpg`, `homme_de_main.jpg`,
+`regles.jpg`, `historique.jpg`) est une image fixe : `pdf-builder.js` la pose en fond de
 page PDF, puis écrit le texte par-dessus aux coordonnées définies dans
 le fichier JSON correspondant (`tools/coords/hero-coords.json`, etc.).
 
 Format d'un fichier de coordonnées :
 ```json
 {
-  "image": "hero.png",
+  "image": "hero.jpg",
   "width": 1414, "height": 2000,
   "fields": {
     "nom": { "x": 260, "y": 262, "align": "left", "size": 32 },
@@ -146,12 +147,11 @@ besoin, ou dites-le et on continue ensemble.
 
 ### Le chapitre "Règles"
 
-Le gabarit `Règles.png` d'origine n'a que 15 lignes à puces, très
-insuffisant pour les centaines de règles traduites. `regles-vierge.png`
-est donc une version nettoyée (bordure + titre "Règles" conservés,
-puces effacées), réutilisée par `pdf-builder.js` sur autant de pages
-que nécessaire pour lister les Règles des Armes, Règles Spéciales et
-Règles d'Équipe, sans limite de longueur.
+`regles.jpg` (cadre vide) est réutilisé par `pdf-builder.js` sur autant
+de pages que nécessaire pour lister les Règles des Armes, Règles
+Spéciales et Règles d'Équipe, sans limite de longueur. `historique.jpg`
+fonctionne de même pour les combats enregistrés (laissée vierge s'il
+n'y en a aucun, pour écrire à la main).
 
 ## Comment fonctionne la traduction
 

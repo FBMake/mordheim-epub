@@ -1,0 +1,30 @@
+{
+  "image": "compte.jpg",
+  "width": 1414,
+  "height": 2000,
+  "fields": {
+    "magot_couronnes": {
+      "x": 385,
+      "y": 338,
+      "align": "left",
+      "size": 34,
+      "bold": true
+    },
+    "magot_pierres": {
+      "x": 520,
+      "y": 590,
+      "align": "left",
+      "size": 34,
+      "bold": true
+    },
+    "reserve": {
+      "x": 145,
+      "y": 1100,
+      "align": "left",
+      "size": 24,
+      "maxWidth": 1120,
+      "lineHeight": 34,
+      "maxY": 1830
+    }
+  }
+}

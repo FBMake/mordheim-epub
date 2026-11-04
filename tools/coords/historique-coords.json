@@ -1,0 +1,19 @@
+{
+  "image": "historique.jpg",
+  "width": 1414,
+  "height": 2000,
+  "fields": {
+    "content": {
+      "x": 110,
+      "y": 300,
+      "width": 1175,
+      "height": 1570
+    },
+    "titre": {
+      "size": 24
+    },
+    "texte": {
+      "size": 20
+    }
+  }
+}

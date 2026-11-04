@@ -5,8 +5,8 @@
  * d'origine : une case par point d'expérience, les cases épaisses marquant
  * les seuils de progression.
  *
- *  - Héros : 90 cases (3 rangées de 30, comme sur les gabarits hero.png et
- *    homme_de_main.png), seuils 2, 4, 6, 8, 11, 14… 90.
+ *  - Héros : 90 cases (3 rangées de 30, comme sur les gabarits hero.jpg et
+ *    homme_de_main.jpg), seuils 2, 4, 6, 8, 11, 14… 90.
  *  - Hommes de main : 14 cases, seuils 2, 5, 9 et 14.
  *
  * Module sans DOM (testé par test/test-progression.mjs).

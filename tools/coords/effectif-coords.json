@@ -1,0 +1,53 @@
+{
+  "image": "effectif.jpg",
+  "width": 1414,
+  "height": 2000,
+  "_note": "Une ligne par héros ou groupe d'hommes de main ; y des lignes = haut de chaque cadre, champs placés relativement.",
+  "lignes": [
+    247,
+    378,
+    509,
+    639,
+    769,
+    900,
+    1031,
+    1161,
+    1292,
+    1422,
+    1553,
+    1683,
+    1814
+  ],
+  "fields": {
+    "nom": {
+      "x": 152,
+      "dy": 44,
+      "align": "left",
+      "size": 24,
+      "bold": true,
+      "maxWidth": 385
+    },
+    "type": {
+      "x": 78,
+      "dy": 90,
+      "align": "left",
+      "size": 18,
+      "maxWidth": 460
+    },
+    "stats": {
+      "xs": [
+        613,
+        697,
+        781,
+        865,
+        949,
+        1033,
+        1116,
+        1200,
+        1285
+      ],
+      "dy": 82,
+      "size": 22
+    }
+  }
+}
