@@ -10,7 +10,7 @@
    Pensez à incrémenter CACHE_VERSION quand la liste PRECACHE change.
    ------------------------------------------------------------------ */
 
-const CACHE_VERSION = "v34";
+const CACHE_VERSION = "v35";
 const APP_CACHE = `fiches-bande-app-${CACHE_VERSION}`;
 const FONT_CACHE = "fiches-bande-fonts";
 
@@ -46,14 +46,22 @@ const PRECACHE = [
   "js/data/competences.js",
   "js/pdf-builder.js",
   "js/vendor/pdf-lib.esm.min.js",
-  "data/templates/fr/bande.png",
-  "data/templates/fr/hero.png",
-  "data/templates/fr/homme_de_main.png",
-  "data/templates/fr/regles-vierge.png",
+  "data/templates/fr/couverture.jpg",
+  "data/templates/fr/bande.jpg",
+  "data/templates/fr/compte.jpg",
+  "data/templates/fr/effectif.jpg",
+  "data/templates/fr/hero.jpg",
+  "data/templates/fr/homme_de_main.jpg",
+  "data/templates/fr/regles.jpg",
+  "data/templates/fr/historique.jpg",
   "tools/coords/bande-coords.json",
   "tools/coords/hero-coords.json",
   "tools/coords/homme_de_main-coords.json",
   "tools/coords/regles-coords.json",
+  "tools/coords/couverture-coords.json",
+  "tools/coords/compte-coords.json",
+  "tools/coords/effectif-coords.json",
+  "tools/coords/historique-coords.json",
   "icons/icon-192.png",
   "icons/icon-512.png",
   "icons/apple-touch-icon.png",

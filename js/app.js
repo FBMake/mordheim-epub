@@ -870,7 +870,7 @@ generateBtn.addEventListener("click", async () => {
 
     const base = safeBaseName(currentModel.meta.nom);
 
-    const blob = await buildPdf(currentModel);
+    const blob = await buildPdf(currentModel, { combats: partie.combats || [] });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;

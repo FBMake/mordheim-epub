@@ -1,121 +1,95 @@
 {
-  "image": "homme_de_main.png",
+  "image": "homme_de_main.jpg",
   "width": 1414,
   "height": 2000,
+  "_note": "Cinq groupes par page ; chaque groupe a son haut (y) et un petit décalage horizontal (dx) ; champs placés relativement.",
+  "groupes": [
+    {
+      "y": 267,
+      "dx": 0
+    },
+    {
+      "y": 597,
+      "dx": 0
+    },
+    {
+      "y": 927,
+      "dx": 0
+    },
+    {
+      "y": 1257,
+      "dx": 4
+    },
+    {
+      "y": 1587,
+      "dx": 4
+    }
+  ],
   "fields": {
     "nom": {
-      "x": 260,
-      "y": 262,
+      "x": 75,
+      "dy": 82,
       "align": "left",
-      "size": 32
+      "size": 24,
+      "bold": true,
+      "maxWidth": 460
     },
     "type": {
-      "x": 260,
-      "y": 335,
+      "x": 75,
+      "dy": 176,
       "align": "left",
-      "size": 26
+      "size": 19,
+      "maxWidth": 212,
+      "lineHeight": 22,
+      "maxDy": 206
     },
-    "type_code": {
-      "x": 495,
-      "y": 335,
+    "quantite": {
+      "x": 420,
+      "dy": 176,
       "align": "center",
-      "size": 26
+      "size": 30,
+      "bold": true
     },
-    "bio": {
-      "x": 90,
-      "y": 400,
-      "align": "left",
-      "size": 20,
-      "maxWidth": 720,
-      "lineHeight": 28
-    },
-    "photo": {
-      "x": 908,
-      "y": 130,
-      "width": 450,
-      "height": 560
-    },
-    "stat_M": {
-      "x": 158,
-      "y": 845,
-      "align": "center",
-      "size": 26
-    },
-    "stat_CC": {
-      "x": 293,
-      "y": 845,
-      "align": "center",
-      "size": 26
-    },
-    "stat_CT": {
-      "x": 428,
-      "y": 845,
-      "align": "center",
-      "size": 26
-    },
-    "stat_F": {
-      "x": 563,
-      "y": 845,
-      "align": "center",
-      "size": 26
-    },
-    "stat_E": {
-      "x": 698,
-      "y": 845,
-      "align": "center",
-      "size": 26
-    },
-    "stat_PV": {
-      "x": 833,
-      "y": 845,
-      "align": "center",
-      "size": 26
-    },
-    "stat_I": {
-      "x": 968,
-      "y": 845,
-      "align": "center",
-      "size": 26
-    },
-    "stat_A": {
-      "x": 1104,
-      "y": 845,
-      "align": "center",
-      "size": 26
-    },
-    "stat_CD": {
-      "x": 1239,
-      "y": 845,
-      "align": "center",
-      "size": 26
+    "stats": {
+      "xs": [
+        100,
+        149,
+        199,
+        249,
+        299,
+        348,
+        398,
+        448,
+        497
+      ],
+      "dy": 284,
+      "size": 22
     },
     "equipement": {
-      "x": 90,
-      "y": 1040,
+      "x": 562,
+      "dy": 78,
       "align": "left",
-      "size": 20,
-      "maxWidth": 1250,
-      "lineHeight": 27
+      "size": 18,
+      "maxWidth": 372,
+      "lineHeight": 23,
+      "maxDy": 232
     },
-    "competences_blessures": {
-      "x": 90,
-      "y": 1450,
+    "regles": {
+      "x": 962,
+      "dy": 78,
       "align": "left",
-      "size": 20,
-      "maxWidth": 1250,
-      "lineHeight": 27
+      "size": 18,
+      "maxWidth": 372,
+      "lineHeight": 23,
+      "maxDy": 232
     },
     "xp_cases": {
-      "x": 109,
-      "pas": 39.41,
-      "largeur": 30,
-      "hauteur": 30,
-      "rangs": [
-        1776,
-        1814,
-        1853
-      ],
-      "parRang": 30
+      "x": 664,
+      "dy": 258,
+      "pas": 39.4,
+      "largeur": 29,
+      "hauteur": 29,
+      "parRang": 14
     }
   }
 }

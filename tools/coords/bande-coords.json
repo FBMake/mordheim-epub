@@ -1,67 +1,43 @@
 {
-  "image": "bande.png",
+  "image": "bande.jpg",
   "width": 1414,
   "height": 2000,
+  "font": "TimesRoman",
   "fields": {
     "nom_bande": {
-      "x": 480,
-      "y": 245,
+      "x": 455,
+      "y": 302,
       "align": "left",
-      "size": 26
+      "size": 32,
+      "bold": true
     },
     "type_bande": {
-      "x": 480,
-      "y": 320,
+      "x": 410,
+      "y": 412,
       "align": "left",
-      "size": 22
+      "size": 28
     },
     "bio": {
-      "x": 90,
-      "y": 410,
+      "x": 105,
+      "y": 580,
       "align": "left",
-      "size": 20,
-      "maxWidth": 1250,
-      "lineHeight": 27
-    },
-    "equipement_col1": {
-      "x": 130,
-      "y": 970,
-      "align": "left",
-      "size": 18,
-      "maxWidth": 480,
-      "lineHeight": 118
-    },
-    "equipement_col2": {
-      "x": 745,
-      "y": 970,
-      "align": "left",
-      "size": 18,
-      "maxWidth": 480,
-      "lineHeight": 118
-    },
-    "magot_couronnes": {
-      "x": 320,
-      "y": 1560,
-      "align": "center",
-      "size": 26
-    },
-    "magot_pierres": {
-      "x": 1010,
-      "y": 1560,
-      "align": "center",
-      "size": 26
+      "size": 24,
+      "maxWidth": 1180,
+      "lineHeight": 32,
+      "maxY": 1280
     },
     "valeur_bande_exp": {
-      "x": 700,
-      "y": 1898,
+      "x": 848,
+      "y": 1500,
       "align": "center",
-      "size": 22
+      "size": 30
     },
     "valeur_bande_total": {
-      "x": 1235,
-      "y": 1898,
+      "x": 1052,
+      "y": 1500,
       "align": "left",
-      "size": 22
+      "size": 30,
+      "bold": true
     }
   }
 }

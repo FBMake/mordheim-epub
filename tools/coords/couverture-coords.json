@@ -1,0 +1,21 @@
+{
+  "image": "couverture.jpg",
+  "width": 1414,
+  "height": 2000,
+  "fields": {
+    "nom_bande": {
+      "x": 707,
+      "y": 820,
+      "align": "center",
+      "size": 64,
+      "bold": true,
+      "maxWidth": 1100
+    },
+    "type_bande": {
+      "x": 707,
+      "y": 910,
+      "align": "center",
+      "size": 34
+    }
+  }
+}
