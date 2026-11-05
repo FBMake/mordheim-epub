@@ -51,7 +51,7 @@
 
   <footer class="footer-note">
     <p data-i18n="pied.confidentialite">Tout le traitement se fait dans votre navigateur : vos bandes ne sont jamais envoyées sur un serveur.</p>
-    <p>V0.37</p>
+    <p>V0.38</p>
   </footer>
 </aside>
 
@@ -504,9 +504,27 @@
 <script type="module" src="js/app.js"></script>
 <script>
   // PWA : enregistre le service worker (installation + usage hors ligne).
+  // Une appli installée reste souvent ouverte des jours en arrière-plan : on
+  // cherche une nouvelle version à chaque retour au premier plan, et on recharge
+  // la page dès qu'elle est installée, pour ne pas garder d'anciens scripts qui
+  // réclament des fichiers retirés du site (ex. anciens gabarits du PDF).
   if ("serviceWorker" in navigator) {
+    // Pas de rechargement à la toute première installation (aucune version précédente).
+    let rechargeable = Boolean(navigator.serviceWorker.controller);
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (!rechargeable) {
+        rechargeable = true;
+        return;
+      }
+      rechargeable = false;
+      window.location.reload();
+    });
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("sw.js").catch((err) => {
+      navigator.serviceWorker.register("sw.js").then((reg) => {
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible") reg.update().catch(() => {});
+        });
+      }).catch((err) => {
         console.warn("Service worker non enregistré :", err);
       });
     });
